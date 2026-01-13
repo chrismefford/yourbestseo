@@ -26,10 +26,7 @@ const Blog = () => {
       <Header />
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4 sm:px-6">
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-8 text-center">
-            Blog
-          </h1>
-          {/* DropInBlog will render here */}
+          {/* DropInBlog will render here with its own title */}
           <div id="dib-posts"></div>
         </div>
       </main>
