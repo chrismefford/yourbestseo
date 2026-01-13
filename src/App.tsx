@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Blog from "./pages/Blog";
 import Services from "./pages/Services";
+import Pricing from "./pages/Pricing";
 import NotFound from "./pages/NotFound";
 
 // San Diego neighborhood pages
@@ -42,6 +43,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/pricing" element={<Pricing />} />
           <Route path="/blog" element={<Blog />} />
           
           {/* San Diego neighborhood SEO pages */}
