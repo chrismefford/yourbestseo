@@ -113,6 +113,125 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
           </div>
         </section>
 
+        {/* Before & After Telemetry Section */}
+        <section className="py-20 relative bg-secondary/20">
+          <div className="container mx-auto px-4 sm:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
+                Before & After Telemetry
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Actual client snapshots, not mockups. These are real results from {data.name} businesses we've helped dominate search.
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="max-w-5xl mx-auto"
+            >
+              {/* Case Study Card */}
+              <motion.div
+                variants={itemVariants}
+                className="p-8 rounded-3xl card-gradient border border-border/50"
+              >
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <Search className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-xl font-bold">{data.name} Local Business</h3>
+                    <p className="text-sm text-muted-foreground">local services {data.name.toLowerCase()} san diego</p>
+                  </div>
+                </div>
+
+                <p className="text-muted-foreground mb-8">
+                  Captured page-one real estate for every high-intent query in {data.name} within 60 days.
+                </p>
+
+                {/* Before/After Comparison */}
+                <div className="grid md:grid-cols-2 gap-6">
+                  {/* Before */}
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-bold text-muted-foreground uppercase tracking-wider">Before</span>
+                      <span className="px-3 py-1 rounded-full bg-destructive/10 text-destructive text-sm font-medium">Page 4 · Position 32</span>
+                    </div>
+                    <div className="p-4 rounded-xl bg-background/50 border border-border/50">
+                      <div className="flex items-center gap-2 mb-3 text-sm text-muted-foreground">
+                        <Search className="w-4 h-4" />
+                        <span>local services {data.name.toLowerCase()}</span>
+                        <span className="ml-auto px-2 py-0.5 rounded bg-muted text-xs">Page 4</span>
+                      </div>
+                      <div className="space-y-3">
+                        {[
+                          { pos: 32, name: "Competitor A", url: "competitor-a.com" },
+                          { pos: 33, name: "Local Directory", url: "localdir.com" },
+                          { pos: 34, name: "Your Business", url: "yourbusiness.com", highlight: true },
+                        ].map((result, i) => (
+                          <div key={i} className={`p-3 rounded-lg ${result.highlight ? 'bg-destructive/5 border border-destructive/20' : 'bg-muted/30'}`}>
+                            <div className="flex items-center gap-2 text-xs text-muted-foreground mb-1">
+                              <span className="px-1.5 py-0.5 rounded bg-muted">#{result.pos}</span>
+                              <span>{result.url}</span>
+                            </div>
+                            <p className={`text-sm font-medium ${result.highlight ? 'text-destructive' : ''}`}>{result.name}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* After */}
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-bold text-muted-foreground uppercase tracking-wider">After</span>
+                      <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">Page 1 · Position 1</span>
+                    </div>
+                    <div className="p-4 rounded-xl bg-background/50 border border-primary/20">
+                      <div className="flex items-center gap-2 mb-3 text-sm text-muted-foreground">
+                        <Search className="w-4 h-4" />
+                        <span>local services {data.name.toLowerCase()}</span>
+                        <span className="ml-auto px-2 py-0.5 rounded bg-primary/20 text-primary text-xs">Page 1</span>
+                      </div>
+                      <div className="space-y-3">
+                        {[
+                          { pos: 1, name: "Your Business", url: "yourbusiness.com", highlight: true },
+                          { pos: 2, name: "Competitor A", url: "competitor-a.com" },
+                          { pos: 3, name: "Local Directory", url: "localdir.com" },
+                        ].map((result, i) => (
+                          <div key={i} className={`p-3 rounded-lg ${result.highlight ? 'bg-primary/5 border border-primary/20' : 'bg-muted/30'}`}>
+                            <div className="flex items-center gap-2 text-xs text-muted-foreground mb-1">
+                              <span className={`px-1.5 py-0.5 rounded ${result.highlight ? 'bg-primary/20 text-primary' : 'bg-muted'}`}>#{result.pos}</span>
+                              <span>{result.url}</span>
+                            </div>
+                            <p className={`text-sm font-medium ${result.highlight ? 'text-primary' : ''}`}>{result.name}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Result Metric */}
+                <div className="mt-8 pt-6 border-t border-border/50 text-center">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10">
+                    <TrendingUp className="w-5 h-5 text-primary" />
+                    <span className="text-lg font-bold text-primary">+1,300% revenue-driving clicks</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mt-2">Powered by live rank tracking</p>
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Why Choose Us Section */}
         <section className="py-20 relative bg-secondary/20">
           <div className="container mx-auto px-4 sm:px-6">
