@@ -190,7 +190,7 @@ const Pricing = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className={`relative rounded-2xl p-8 ${
+                className={`relative rounded-2xl p-8 flex flex-col ${
                   tier.featured 
                     ? 'bg-primary text-primary-foreground glow-gold' 
                     : 'bg-card border border-border'
@@ -226,7 +226,7 @@ const Pricing = () => {
                   </p>
                 </div>
 
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-3 flex-grow">
                   {tier.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-3 text-sm">
                       <Check className={`w-5 h-5 shrink-0 mt-0.5 ${tier.featured ? 'text-primary-foreground' : 'text-primary'}`} />
@@ -237,13 +237,15 @@ const Pricing = () => {
                   ))}
                 </ul>
 
-                <Button 
-                  variant={tier.featured ? "secondary" : "outline"} 
-                  className="w-full"
-                  asChild
-                >
-                  <a href={tier.href}>{tier.cta}</a>
-                </Button>
+                <div className="mt-8">
+                  <Button 
+                    variant={tier.featured ? "secondary" : "outline"} 
+                    className="w-full"
+                    asChild
+                  >
+                    <a href={tier.href}>{tier.cta}</a>
+                  </Button>
+                </div>
               </motion.div>
             ))}
           </div>
