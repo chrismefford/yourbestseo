@@ -220,22 +220,27 @@ const Services = () => {
               className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
             >
               {stateMissions.map((mission, index) => (
-                <motion.div
+                <a
                   key={index}
-                  variants={itemVariants}
-                  className="p-6 rounded-2xl card-gradient border border-border/50 hover:border-primary/30 transition-all duration-300 group cursor-pointer"
+                  href={`/states/${mission.state.toLowerCase().replace(/\s+/g, '-')}-seo`}
+                  className="block"
                 >
-                  <h3 className="font-display text-lg font-bold mb-1">{mission.state} SEO</h3>
-                  <p className="text-muted-foreground text-sm mb-4">{mission.cities}</p>
-                  <div className="flex items-baseline gap-2 mb-2">
-                    <span className="text-2xl font-bold text-primary">{mission.stat}</span>
-                    <span className="text-sm text-muted-foreground">{mission.statLabel}</span>
-                  </div>
-                  <p className="text-xs text-muted-foreground">{mission.description}</p>
-                  <div className="mt-4 flex items-center text-primary text-sm font-medium group-hover:gap-2 transition-all">
-                    View mission <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </motion.div>
+                  <motion.div
+                    variants={itemVariants}
+                    className="p-6 rounded-2xl card-gradient border border-border/50 hover:border-primary/30 transition-all duration-300 group cursor-pointer h-full"
+                  >
+                    <h3 className="font-display text-lg font-bold mb-1">{mission.state} SEO</h3>
+                    <p className="text-muted-foreground text-sm mb-4">{mission.cities}</p>
+                    <div className="flex items-baseline gap-2 mb-2">
+                      <span className="text-2xl font-bold text-primary">{mission.stat}</span>
+                      <span className="text-sm text-muted-foreground">{mission.statLabel}</span>
+                    </div>
+                    <p className="text-xs text-muted-foreground">{mission.description}</p>
+                    <div className="mt-4 flex items-center text-primary text-sm font-medium group-hover:gap-2 transition-all">
+                      View mission <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </motion.div>
+                </a>
               ))}
             </motion.div>
           </div>
