@@ -112,7 +112,7 @@ const ServiceLanding = ({ data }: { data: ServiceData }) => {
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                   <Button size="lg" variant="outline" asChild>
-                    <a href="/#contact">Talk to an Expert</a>
+                    <a href="/pricing#a-la-carte">View All Services</a>
                   </Button>
                 </div>
 
