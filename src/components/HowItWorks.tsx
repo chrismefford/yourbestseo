@@ -1,36 +1,51 @@
 import { motion } from "framer-motion";
+import { Rocket, Phone, Zap, DollarSign } from "lucide-react";
 
 const steps = [
   {
     number: "01",
+    icon: Rocket,
     title: "Your client asks about SEO",
     description:
       "You panic internally because your team is maxed out and the last SEO vendor ghosted you for three weeks.",
+    color: "from-amber-500/20 to-amber-500/5",
   },
   {
     number: "02",
+    icon: Phone,
     title: "You call or email us",
     description:
       "We jump on within a few hours, gather the intel we need, and show you a timeline that makes your client think you've had a plan all along.",
+    color: "from-blue-500/20 to-blue-500/5",
   },
   {
     number: "03",
+    icon: Zap,
     title: "We move fast, you look brilliant",
     description:
       "While other agencies are still 'analyzing the competitive landscape' in week 3, we've already published 10 optimized pages and fixed 47 technical issues. Your client thinks you're a magician.",
+    color: "from-emerald-500/20 to-emerald-500/5",
   },
   {
     number: "04",
+    icon: DollarSign,
     title: "You mark up our work, everyone wins",
     description:
       "We charge $1,800. You charge $5K. Your client gets results faster than they've ever seen. You make $3,200 doing absolutely nothing. We all sleep well at night.",
+    color: "from-primary/20 to-primary/5",
   },
 ];
 
 const HowItWorks = () => {
   return (
-    <section className="py-24 lg:py-32 relative">
-      <div className="container mx-auto px-4 sm:px-6">
+    <section className="py-24 lg:py-32 relative overflow-hidden">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -46,34 +61,36 @@ const HowItWorks = () => {
           </h2>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative flex gap-6 md:gap-10 pb-12 last:pb-0"
+              className="relative group"
             >
-              {/* Timeline line */}
+              {/* Connector line */}
               {index !== steps.length - 1 && (
-                <div className="absolute left-6 md:left-8 top-16 w-px h-[calc(100%-4rem)] bg-gradient-to-b from-primary/50 to-border" />
+                <div className="hidden lg:block absolute top-12 left-[60%] w-[80%] h-px bg-gradient-to-r from-primary/30 to-transparent" />
               )}
 
-              {/* Number circle */}
-              <div className="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary/10 border-2 border-primary flex items-center justify-center">
-                <span className="font-display text-lg md:text-xl font-bold text-primary">
-                  {step.number}
-                </span>
-              </div>
+              <div className={`p-6 rounded-2xl bg-gradient-to-b ${step.color} border border-border/50 hover:border-primary/30 transition-all duration-500 h-full`}>
+                {/* Number badge */}
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center">
+                    <step.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <span className="font-display text-4xl font-bold text-primary/20 group-hover:text-primary/40 transition-colors">
+                    {step.number}
+                  </span>
+                </div>
 
-              {/* Content */}
-              <div className="flex-1 pt-2 md:pt-3">
-                <h3 className="font-display text-xl md:text-2xl font-bold mb-3">
+                <h3 className="font-display text-lg font-bold mb-3">
                   {step.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {step.description}
                 </p>
               </div>
