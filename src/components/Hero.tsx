@@ -36,8 +36,9 @@ const Hero = () => {
             </h1>
 
             <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8">
-              An SEO partner that shows you everything we do, delivers<br />
-              results fast, and costs 90% less—no excuses, no BS.
+              An SEO partner that shows you everything we do, delivers
+              <br className="hidden sm:block" />
+              {" "}results fast, and costs 90% less—no excuses, no BS.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
