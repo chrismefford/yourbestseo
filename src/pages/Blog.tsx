@@ -1,0 +1,41 @@
+import { useEffect } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+
+const Blog = () => {
+  useEffect(() => {
+    // Check if script already exists
+    const existingScript = document.querySelector(
+      'script[src="https://io.dropinblog.com/embedjs/aaccbdb9-3466-4e98-8baf-d86ddbe61db7.js"]'
+    );
+    
+    if (!existingScript) {
+      const script = document.createElement("script");
+      script.src = "https://io.dropinblog.com/embedjs/aaccbdb9-3466-4e98-8baf-d86ddbe61db7.js";
+      script.async = true;
+      document.body.appendChild(script);
+
+      return () => {
+        document.body.removeChild(script);
+      };
+    }
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main className="pt-24 pb-16">
+        <div className="container mx-auto px-4 sm:px-6">
+          <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-8 text-center">
+            Blog
+          </h1>
+          {/* DropInBlog will render here */}
+          <div id="dib-posts"></div>
+        </div>
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default Blog;
