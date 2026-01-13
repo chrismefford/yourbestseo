@@ -237,40 +237,6 @@ const StateLanding = ({ data }: { data: StateData }) => {
           </div>
         </section>
 
-        {/* Keywords Section */}
-        <section className="py-20 relative">
-          <div className="container mx-auto px-4 sm:px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-12"
-            >
-              <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-                Keywords We Target for {data.name}
-              </h2>
-            </motion.div>
-
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto"
-            >
-              {data.keywords.map((keyword, index) => (
-                <motion.span
-                  key={index}
-                  variants={itemVariants}
-                  className="px-4 py-2 rounded-full bg-secondary border border-border/50 text-sm font-medium hover:border-primary/50 transition-colors"
-                >
-                  {keyword}
-                </motion.span>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
         {/* FAQ Section */}
         <section className="py-20 relative bg-secondary/20">
           <div className="container mx-auto px-4 sm:px-6">
@@ -301,6 +267,40 @@ const StateLanding = ({ data }: { data: StateData }) => {
                   <h3 className="font-display text-lg font-bold mb-3">{faq.question}</h3>
                   <p className="text-muted-foreground">{faq.answer}</p>
                 </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Keywords Section */}
+        <section className="py-10 relative">
+          <div className="container mx-auto px-4 sm:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-6"
+            >
+              <h3 className="font-display text-xl md:text-2xl font-bold mb-2">
+                Keywords We Target for {data.name}
+              </h3>
+            </motion.div>
+
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto"
+            >
+              {data.keywords.map((keyword, index) => (
+                <motion.span
+                  key={index}
+                  variants={itemVariants}
+                  className="px-3 py-1.5 rounded-full bg-secondary border border-border/50 text-xs font-medium hover:border-primary/50 transition-colors"
+                >
+                  {keyword}
+                </motion.span>
               ))}
             </motion.div>
           </div>
