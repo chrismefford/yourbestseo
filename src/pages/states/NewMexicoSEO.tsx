@@ -5,19 +5,34 @@ const data = {
   heroTitle: "New Mexico SEO Services – Grow Your Southwest Business",
   heroDescription: "Award-winning SEO agency serving New Mexico businesses from Albuquerque to Santa Fe. We help New Mexico companies rank higher and generate more leads.",
   cities: ["Albuquerque", "Santa Fe", "Las Cruces", "Rio Rancho", "Roswell", "Los Alamos", "Farmington", "Taos", "Clovis", "Carlsbad"],
-  keywords: [
-    "New Mexico SEO",
-    "SEO services New Mexico",
-    "New Mexico SEO company",
-    "SEO agency New Mexico",
-    "Albuquerque SEO",
-    "Santa Fe SEO",
-    "Las Cruces SEO",
-    "New Mexico digital marketing",
-    "government contractor SEO",
-    "tourism SEO New Mexico",
-    "healthcare SEO New Mexico",
-    "local SEO New Mexico",
+  searchIntents: [
+    {
+      intent: "I need help NOW",
+      terms: [
+        "SEO company near me",
+        "Albuquerque SEO agency",
+        "Santa Fe digital marketing",
+        "SEO services Las Cruces",
+      ],
+    },
+    {
+      intent: "I need specialized help",
+      terms: [
+        "healthcare SEO New Mexico",
+        "tourism marketing Albuquerque",
+        "government contractor SEO",
+        "arts & gallery SEO Santa Fe",
+      ],
+    },
+    {
+      intent: "I'm exploring options",
+      terms: [
+        "What does an SEO agency do?",
+        "How much does SEO cost in NM?",
+        "Best SEO services Santa Fe",
+        "Local SEO vs national SEO",
+      ],
+    },
   ],
   stats: [
     { value: "+171%", label: "Gov Pipeline" },

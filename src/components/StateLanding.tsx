@@ -4,12 +4,18 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 
+interface SearchIntentCategory {
+  intent: string;
+  terms: string[];
+}
+
 interface StateData {
   name: string;
   heroTitle: string;
   heroDescription: string;
   cities: string[];
-  keywords: string[];
+  keywords?: string[]; // Legacy support
+  searchIntents?: SearchIntentCategory[]; // New intent-based structure
   stats: { value: string; label: string }[];
   services: { title: string; description: string }[];
   faqs: { question: string; answer: string }[];
@@ -272,37 +278,72 @@ const StateLanding = ({ data }: { data: StateData }) => {
           </div>
         </section>
 
-        {/* Keywords Section */}
-        <section className="py-10 relative">
+        {/* Search Intent Section */}
+        <section className="py-12 relative">
           <div className="container mx-auto px-4 sm:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mb-6"
+              className="text-center mb-8"
             >
               <h3 className="font-display text-xl md:text-2xl font-bold mb-2">
-                Search Terms Your Customers Use in {data.name}
+                How {data.name} Businesses Find SEO Help
               </h3>
+              <p className="text-muted-foreground text-sm max-w-xl mx-auto">
+                We understand where you are in your search—and we're ready to help.
+              </p>
             </motion.div>
 
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto"
-            >
-              {data.keywords.map((keyword, index) => (
-                <motion.span
-                  key={index}
-                  variants={itemVariants}
-                  className="px-3 py-1.5 rounded-full bg-secondary border border-border/50 text-xs font-medium hover:border-primary/50 transition-colors"
-                >
-                  {keyword}
-                </motion.span>
-              ))}
-            </motion.div>
+            {data.searchIntents ? (
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto"
+              >
+                {data.searchIntents.map((category, index) => (
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    className="p-5 rounded-xl bg-secondary/50 border border-border/50"
+                  >
+                    <h4 className="text-sm font-semibold text-primary mb-3 italic">
+                      "{category.intent}"
+                    </h4>
+                    <div className="flex flex-wrap gap-1.5">
+                      {category.terms.map((term, termIndex) => (
+                        <span
+                          key={termIndex}
+                          className="px-2.5 py-1 rounded-full bg-background border border-border/50 text-xs hover:border-primary/50 transition-colors"
+                        >
+                          {term}
+                        </span>
+                      ))}
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            ) : data.keywords ? (
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto"
+              >
+                {data.keywords.map((keyword, index) => (
+                  <motion.span
+                    key={index}
+                    variants={itemVariants}
+                    className="px-3 py-1.5 rounded-full bg-secondary border border-border/50 text-xs font-medium hover:border-primary/50 transition-colors"
+                  >
+                    {keyword}
+                  </motion.span>
+                ))}
+              </motion.div>
+            ) : null}
           </div>
         </section>
 
