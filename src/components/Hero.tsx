@@ -25,7 +25,7 @@ const Hero = () => {
               SEO That's Out of This World
             </span>
 
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] mb-6">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] mb-6">
               Your
               <br />
               <span className="text-gradient-gold">Outsourced</span>
