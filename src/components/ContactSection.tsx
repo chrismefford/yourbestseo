@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, ArrowRight } from "lucide-react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
+
+const EMAIL_ADDRESS = "chris@yourbestseo.com";
 
 const ContactSection = () => {
   return (
@@ -69,11 +72,33 @@ const ContactSection = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-center mt-12"
         >
-          <Button 
-            variant="hero" 
-            size="xl" 
-            className="gap-2" 
-            onClick={() => window.location.href = "mailto:chris@yourbestseo.com"}
+          <Button
+            variant="hero"
+            size="xl"
+            className="gap-2"
+            onClick={async () => {
+              // In many embedded previews, `mailto:` can be blocked by the iframe.
+              // We'll try opening it, and also copy the email as a reliable fallback.
+              const mailto = `mailto:${EMAIL_ADDRESS}`;
+
+              try {
+                // Prefer _top to escape iframe restrictions when possible.
+                window.open(mailto, "_top");
+              } catch {
+                // ignore
+              }
+
+              try {
+                await navigator.clipboard.writeText(EMAIL_ADDRESS);
+                toast.success("Email copied", {
+                  description: "If your email app didn’t open, paste it into your message.",
+                });
+              } catch {
+                toast("Email address", {
+                  description: EMAIL_ADDRESS,
+                });
+              }
+            }}
           >
             Send Us a Message
             <ArrowRight className="w-5 h-5" />
