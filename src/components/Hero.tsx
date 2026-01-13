@@ -35,7 +35,7 @@ const Hero = () => {
               Department
             </h1>
 
-            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8 max-w-lg">
+            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8 max-w-xl">
               An SEO partner that shows you everything we do, delivers results fast, and costs 90% less—no excuses, no BS.
             </p>
 
