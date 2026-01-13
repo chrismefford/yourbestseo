@@ -69,11 +69,14 @@ const ContactSection = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-center mt-12"
         >
-          <Button variant="hero" size="xl" className="gap-2" asChild>
-            <a href="mailto:chris@yourbestseo.com">
-              Send Us a Message
-              <ArrowRight className="w-5 h-5" />
-            </a>
+          <Button 
+            variant="hero" 
+            size="xl" 
+            className="gap-2" 
+            onClick={() => window.location.href = "mailto:chris@yourbestseo.com"}
+          >
+            Send Us a Message
+            <ArrowRight className="w-5 h-5" />
           </Button>
         </motion.div>
       </div>
