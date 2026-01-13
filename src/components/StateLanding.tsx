@@ -282,7 +282,7 @@ const StateLanding = ({ data }: { data: StateData }) => {
               className="text-center mb-6"
             >
               <h3 className="font-display text-xl md:text-2xl font-bold mb-2">
-                Keywords We Target for {data.name}
+                Search Terms Your Customers Use in {data.name}
               </h3>
             </motion.div>
 
