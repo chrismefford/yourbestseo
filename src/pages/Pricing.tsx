@@ -72,16 +72,16 @@ const pricingTiers = [
 ];
 
 const alaCarteServices = [
-  "10 SEO-Optimized Blog Posts",
-  "5 Existing Page Content Refreshes",
-  "Technical SEO Quick-Fix Package",
-  "Google Business Profile Complete Optimization",
-  "30 High-Quality Local Citations",
-  "Competitive Keyword Gap Analysis",
-  "30-Day Content Calendar with Keyword Mapping",
-  "Internal Linking Architecture Audit + Implementation",
-  "Video SEO Optimization (25 Videos)",
-  "One-Hour SEO Strategy Session + Action Plan"
+  { name: "10 SEO-Optimized Blog Posts", href: "/services/seo-blog-posts", price: "$999" },
+  { name: "Technical SEO Quick-Fix Package", href: "/services/technical-seo", price: "$449" },
+  { name: "Google Business Profile Optimization", href: "/services/google-business-profile", price: "$399" },
+  { name: "Keyword Research & Roadmap", href: "/services/keyword-research", price: "$299" },
+  { name: "Competitor Keyword Analysis", href: "/services/competitor-analysis", price: "$349" },
+  { name: "10 White-Hat Backlinks", href: "/services/white-hat-backlinks", price: "$1,999" },
+  { name: "50 Local Citations", href: "/services/local-citations", price: "$799" },
+  { name: "Review Response Management", href: "/services/review-management", price: "$499" },
+  { name: "Schema Markup Implementation", href: "/services/schema-markup", price: "$899" },
+  { name: "Monthly Ranking Reports", href: "/services/ranking-reports", price: "$249" }
 ];
 
 const comparisonData = [
@@ -253,7 +253,7 @@ const Pricing = () => {
       </section>
 
       {/* À La Carte Section */}
-      <section className="py-20 bg-card/50">
+      <section id="a-la-carte" className="py-20 bg-card/50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <motion.div
@@ -292,15 +292,18 @@ const Pricing = () => {
                 {alaCarteServices.map((service, index) => (
                   <motion.a
                     key={index}
-                    href="/services"
+                    href={service.href}
                     initial={{ opacity: 0, x: -10 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.4, delay: index * 0.05 }}
                     viewport={{ once: true }}
-                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
+                    className="flex items-center justify-between gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
                   >
-                    <ArrowRight className="w-4 h-4 text-primary group-hover:translate-x-1 transition-transform" />
-                    <span className="text-foreground group-hover:text-primary transition-colors">{service}</span>
+                    <div className="flex items-center gap-3">
+                      <ArrowRight className="w-4 h-4 text-primary group-hover:translate-x-1 transition-transform" />
+                      <span className="text-foreground group-hover:text-primary transition-colors">{service.name}</span>
+                    </div>
+                    <span className="text-primary font-semibold">{service.price}</span>
                   </motion.a>
                 ))}
               </div>
