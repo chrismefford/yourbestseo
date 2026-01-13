@@ -3,6 +3,7 @@ import { Trophy, Check, ArrowRight, FileText, Link2, MapPin, Rocket } from "luci
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const includedServices = [
   { service: "Keyword Research & Clustering", notes: "100+ keyword maps per topic" },
@@ -108,9 +109,11 @@ const Services = () => {
                 <Trophy className="w-5 h-5" />
                 <span className="font-medium">2025 Finalist – North America's Top 5 SEO Agencies (Search Engine Land Awards)</span>
               </div>
-              <Button size="lg" className="group">
-                Book a Meeting
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <Button size="lg" className="group" asChild>
+                <a href="/#contact">
+                  Book a Meeting
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </a>
               </Button>
             </motion.div>
           </div>
@@ -335,9 +338,11 @@ const Services = () => {
               <p className="text-lg text-muted-foreground mb-8">
                 Let us show you how AI, strategy, and award-winning SEO experience come together to create massive ranking gains—without massive retainers.
               </p>
-              <Button size="lg" className="group">
-                Book My Strategy Call
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <Button size="lg" className="group" asChild>
+                <a href="/#contact">
+                  Book My Strategy Call
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </a>
               </Button>
             </motion.div>
           </div>

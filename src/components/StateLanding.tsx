@@ -3,6 +3,7 @@ import { Trophy, Check, ArrowRight, MapPin, TrendingUp, Target, Users, BarChart3
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 interface SearchIntentCategory {
   intent: string;
@@ -66,12 +67,14 @@ const StateLanding = ({ data }: { data: StateData }) => {
                   <span className="font-medium">2025 Finalist – Top 5 SEO Agencies in North America</span>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" className="group">
-                    Get Your Free SEO Audit
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <Button size="lg" className="group" asChild>
+                    <a href="/#contact">
+                      Get Your Free SEO Audit
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </a>
                   </Button>
-                  <Button size="lg" variant="outline">
-                    Schedule a Call
+                  <Button size="lg" variant="outline" asChild>
+                    <a href="tel:+18332374376">Schedule a Call</a>
                   </Button>
                 </div>
               </motion.div>
@@ -364,12 +367,14 @@ const StateLanding = ({ data }: { data: StateData }) => {
                   Get a free SEO audit and discover how we can help your {data.name} business rank higher and generate more leads.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button size="lg" variant="secondary" className="group">
-                    Get My Free SEO Audit
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <Button size="lg" variant="secondary" className="group" asChild>
+                    <a href="/#contact">
+                      Get My Free SEO Audit
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </a>
                   </Button>
-                  <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
-                    Schedule a Call
+                  <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" asChild>
+                    <a href="tel:+18332374376">Schedule a Call</a>
                   </Button>
                 </div>
               </div>
