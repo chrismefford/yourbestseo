@@ -15,6 +15,46 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
+// Google-style search result component
+const SearchResult = ({ 
+  position, 
+  title, 
+  url, 
+  description, 
+  isHighlighted, 
+  highlightColor 
+}: { 
+  position: number;
+  title: string;
+  url: string;
+  description: string;
+  isHighlighted?: boolean;
+  highlightColor?: "primary" | "destructive";
+}) => {
+  const borderClass = isHighlighted 
+    ? highlightColor === "primary" 
+      ? "border-primary/40 bg-primary/5" 
+      : "border-destructive/40 bg-destructive/5"
+    : "border-transparent bg-muted/10";
+  
+  return (
+    <div className={`p-3 rounded-lg border ${borderClass} transition-all`}>
+      <div className="flex items-center gap-2 mb-1">
+        <div className="w-5 h-5 rounded-full bg-muted/30 flex items-center justify-center">
+          <span className="text-[10px] font-bold text-muted-foreground">{url.charAt(0).toUpperCase()}</span>
+        </div>
+        <div className="flex flex-col">
+          <span className="text-xs text-muted-foreground">{url}</span>
+        </div>
+      </div>
+      <h4 className={`text-sm font-medium mb-1 ${isHighlighted && highlightColor === "primary" ? "text-blue-400" : isHighlighted && highlightColor === "destructive" ? "text-blue-400/60" : "text-blue-400/80"}`}>
+        {title}
+      </h4>
+      <p className="text-xs text-muted-foreground line-clamp-2">{description}</p>
+    </div>
+  );
+};
+
 const BeforeAfterTelemetry = () => {
   const [activeCase, setActiveCase] = useState(0);
 
@@ -26,14 +66,34 @@ const BeforeAfterTelemetry = () => {
       metricLabel: "revenue-driving clicks",
       before: { page: 4, position: 32 },
       after: { page: 1, position: 1 },
+      beforeResults: [
+        { position: 30, title: "Top 10 Mocktail Bars in California | Nightlife Guide", url: "nightlifeguide.com", description: "Discover the best mocktail bars and alcohol-free venues across California. Perfect for sober curious adventures..." },
+        { position: 31, title: "NA Drinks Directory - Find Stores Near You", url: "nadirectory.com", description: "Browse our comprehensive directory of non-alcoholic beverage retailers. Filter by location, brands, and more." },
+        { position: 32, title: "Monday Morning Bottle Shop | San Diego's Premier NA Store", url: "mondaymorning-af.com", description: "Award-winning non-alcoholic bottle shop in San Diego. Craft NA spirits, zero-proof cocktails, and curated tasting flights.", isClient: true },
+      ],
+      afterResults: [
+        { position: 1, title: "Monday Morning Bottle Shop | San Diego's Premier NA Store", url: "mondaymorning-af.com", description: "Award-winning non-alcoholic bottle shop in San Diego. Craft NA spirits, zero-proof cocktails, and curated tasting flights.", isClient: true },
+        { position: 2, title: "Best Non-Alcoholic Bottle Shops in San Diego - Yelp", url: "yelp.com", description: "Top 10 Best Non-Alcoholic Bottle Shops in San Diego, CA - Monday Morning, Spirited Away, The Mindful Bar..." },
+        { position: 3, title: "NA Drinks Directory - San Diego Locations", url: "nadirectory.com", description: "Find non-alcoholic beverage retailers in San Diego. Compare prices, read reviews, and discover new NA brands." },
+      ],
     },
     {
       name: "Dental Collective",
-      keyword: "dentist near me",
+      keyword: "cosmetic dentist downtown san diego",
       metric: "4.6×",
       metricLabel: "appointment requests",
-      before: { page: 3, position: 20 },
-      after: { page: 1, position: 2 },
+      before: { page: 3, position: 24 },
+      after: { page: 1, position: 1 },
+      beforeResults: [
+        { position: 22, title: "Find a Dentist Near You | American Dental Association", url: "ada.org", description: "Use our dentist finder tool to locate ADA member dentists in your area. Search by specialty, location, and insurance." },
+        { position: 23, title: "Top Rated Dentists in San Diego - Healthgrades", url: "healthgrades.com", description: "Compare ratings and reviews for the best dentists in San Diego. Book appointments online with verified providers." },
+        { position: 24, title: "Inspire Smiles Cosmetic Dentistry | Downtown San Diego", url: "inspiresmilessd.com", description: "Transform your smile with San Diego's premier cosmetic dentist. Veneers, whitening, implants & more. Free consultations.", isClient: true },
+      ],
+      afterResults: [
+        { position: 1, title: "Inspire Smiles Cosmetic Dentistry | Downtown San Diego", url: "inspiresmilessd.com", description: "Transform your smile with San Diego's premier cosmetic dentist. Veneers, whitening, implants & more. Free consultations.", isClient: true },
+        { position: 2, title: "Best Cosmetic Dentists in Downtown San Diego - Yelp", url: "yelp.com", description: "Top 10 Best Cosmetic Dentists near Downtown San Diego, CA - Inspire Smiles, Pacific Dental, Gaslamp Dentistry..." },
+        { position: 3, title: "Cosmetic Dentistry San Diego | Zocdoc", url: "zocdoc.com", description: "Book appointments with top-rated cosmetic dentists in San Diego. Read reviews, compare prices, and schedule online." },
+      ],
       isGrid: true,
     },
   ];
@@ -106,97 +166,79 @@ const BeforeAfterTelemetry = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="max-w-5xl mx-auto"
+          className="max-w-6xl mx-auto"
         >
           {/* Visual Before/After Comparison */}
-          <motion.div variants={itemVariants} className="grid md:grid-cols-2 gap-8 items-center">
+          <motion.div variants={itemVariants} className="grid md:grid-cols-2 gap-6 items-stretch relative">
             {/* Before Card */}
             <div className="relative">
-              <div className="absolute -top-3 left-4 px-3 py-1 bg-destructive/20 text-destructive text-xs font-bold uppercase tracking-wider rounded-full">
+              <div className="absolute -top-3 left-4 px-3 py-1 bg-destructive text-destructive-foreground text-xs font-bold uppercase tracking-wider rounded-full z-10">
                 Before
               </div>
-              <div className="p-6 rounded-2xl bg-gradient-to-b from-destructive/10 to-transparent border border-destructive/20">
-                {currentCase.isGrid ? (
-                  <div className="grid grid-cols-7 gap-1">
-                    {generateGrid("before").map((cell, i) => (
-                      <div
-                        key={i}
-                        className={`aspect-square rounded text-xs flex items-center justify-center font-bold ${
-                          cell.rank <= 10 ? "bg-amber-500/30 text-amber-400" : "bg-destructive/20 text-destructive/50"
-                        }`}
-                      >
-                        {cell.rank}
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-                      <Search className="w-4 h-4" />
-                      <span className="truncate">{currentCase.keyword}</span>
-                    </div>
-                    {[1, 2, 3].map((_, i) => (
-                      <div key={i} className={`p-3 rounded-lg ${i === 2 ? 'bg-destructive/10 border border-destructive/30' : 'bg-muted/20'}`}>
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className={`text-xs px-2 py-0.5 rounded ${i === 2 ? 'bg-destructive/20 text-destructive' : 'bg-muted text-muted-foreground'}`}>
-                            #{currentCase.before.position - 2 + i}
-                          </span>
-                        </div>
-                        <div className={`h-3 rounded ${i === 2 ? 'bg-destructive/30 w-3/4' : 'bg-muted/30 w-full'}`} />
-                      </div>
-                    ))}
-                  </div>
-                )}
-                <div className="mt-4 pt-4 border-t border-destructive/20 text-center">
-                  <span className="text-destructive font-bold">Page {currentCase.before.page} · Position {currentCase.before.position}</span>
+              <div className="h-full p-5 rounded-2xl bg-gradient-to-b from-destructive/15 to-destructive/5 border border-destructive/30">
+                {/* Google-style search bar */}
+                <div className="flex items-center gap-3 p-3 rounded-full bg-background/80 border border-border/50 mb-5">
+                  <Search className="w-4 h-4 text-muted-foreground" />
+                  <span className="text-sm text-foreground">{currentCase.keyword}</span>
+                </div>
+
+                {/* Search Results */}
+                <div className="space-y-3">
+                  {currentCase.beforeResults.map((result, i) => (
+                    <SearchResult
+                      key={i}
+                      position={result.position}
+                      title={result.title}
+                      url={result.url}
+                      description={result.description}
+                      isHighlighted={result.isClient}
+                      highlightColor="destructive"
+                    />
+                  ))}
+                </div>
+
+                <div className="mt-5 pt-4 border-t border-destructive/20 text-center">
+                  <span className="text-destructive font-bold text-lg">Page {currentCase.before.page} · Position {currentCase.before.position}</span>
                 </div>
               </div>
             </div>
 
-            {/* Arrow */}
-            <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-              <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg shadow-primary/30">
+            {/* Arrow - centered between cards */}
+            <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+              <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center shadow-xl shadow-primary/40 border-4 border-background">
                 <ArrowRight className="w-6 h-6 text-primary-foreground" />
               </div>
             </div>
 
             {/* After Card */}
             <div className="relative">
-              <div className="absolute -top-3 left-4 px-3 py-1 bg-primary/20 text-primary text-xs font-bold uppercase tracking-wider rounded-full">
+              <div className="absolute -top-3 left-4 px-3 py-1 bg-primary text-primary-foreground text-xs font-bold uppercase tracking-wider rounded-full z-10">
                 After
               </div>
-              <div className="p-6 rounded-2xl bg-gradient-to-b from-primary/10 to-transparent border border-primary/20">
-                {currentCase.isGrid ? (
-                  <div className="grid grid-cols-7 gap-1">
-                    {generateGrid("after").map((cell, i) => (
-                      <div
-                        key={i}
-                        className="aspect-square rounded text-xs flex items-center justify-center font-bold bg-primary/30 text-primary"
-                      >
-                        {cell.rank}
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-                      <Search className="w-4 h-4" />
-                      <span className="truncate">{currentCase.keyword}</span>
-                    </div>
-                    {[1, 2, 3].map((_, i) => (
-                      <div key={i} className={`p-3 rounded-lg ${i === 0 ? 'bg-primary/10 border border-primary/30' : 'bg-muted/20'}`}>
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className={`text-xs px-2 py-0.5 rounded ${i === 0 ? 'bg-primary/20 text-primary' : 'bg-muted text-muted-foreground'}`}>
-                            #{i + 1}
-                          </span>
-                        </div>
-                        <div className={`h-3 rounded ${i === 0 ? 'bg-primary/40 w-full' : 'bg-muted/30 w-3/4'}`} />
-                      </div>
-                    ))}
-                  </div>
-                )}
-                <div className="mt-4 pt-4 border-t border-primary/20 text-center">
-                  <span className="text-primary font-bold">Page {currentCase.after.page} · Position {currentCase.after.position}</span>
+              <div className="h-full p-5 rounded-2xl bg-gradient-to-b from-primary/15 to-primary/5 border border-primary/30">
+                {/* Google-style search bar */}
+                <div className="flex items-center gap-3 p-3 rounded-full bg-background/80 border border-primary/30 mb-5">
+                  <Search className="w-4 h-4 text-primary" />
+                  <span className="text-sm text-foreground">{currentCase.keyword}</span>
+                </div>
+
+                {/* Search Results */}
+                <div className="space-y-3">
+                  {currentCase.afterResults.map((result, i) => (
+                    <SearchResult
+                      key={i}
+                      position={result.position}
+                      title={result.title}
+                      url={result.url}
+                      description={result.description}
+                      isHighlighted={result.isClient}
+                      highlightColor="primary"
+                    />
+                  ))}
+                </div>
+
+                <div className="mt-5 pt-4 border-t border-primary/20 text-center">
+                  <span className="text-primary font-bold text-lg">Page {currentCase.after.page} · Position {currentCase.after.position}</span>
                 </div>
               </div>
             </div>
