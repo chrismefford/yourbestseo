@@ -205,7 +205,7 @@ const Services = () => {
                 🌌 Western state missions
               </span>
               <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-                Deploy mission control from California to Wyoming
+                Local SEO That Dominates Every Market
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 We cloned our flagship service template for every western U.S. market so your agency can launch geo-specific pitches in minutes.
