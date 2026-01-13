@@ -8,6 +8,7 @@ import Blog from "./pages/Blog";
 import Services from "./pages/Services";
 import Pricing from "./pages/Pricing";
 import NotFound from "./pages/NotFound";
+import PaymentSuccess from "./pages/PaymentSuccess";
 
 // San Diego neighborhood pages
 import DowntownSanDiegoSEO from "./pages/san-diego/DowntownSanDiegoSEO";
@@ -32,6 +33,18 @@ import IdahoSEO from "./pages/states/IdahoSEO";
 import MontanaSEO from "./pages/states/MontanaSEO";
 import WyomingSEO from "./pages/states/WyomingSEO";
 
+// À La Carte Service pages
+import SEOBlogPosts from "./pages/services/SEOBlogPosts";
+import TechnicalSEO from "./pages/services/TechnicalSEO";
+import GoogleBusinessProfile from "./pages/services/GoogleBusinessProfile";
+import KeywordResearch from "./pages/services/KeywordResearch";
+import CompetitorAnalysis from "./pages/services/CompetitorAnalysis";
+import WhiteHatBacklinks from "./pages/services/WhiteHatBacklinks";
+import LocalCitations from "./pages/services/LocalCitations";
+import ReviewManagement from "./pages/services/ReviewManagement";
+import SchemaMarkup from "./pages/services/SchemaMarkup";
+import RankingReports from "./pages/services/RankingReports";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -45,6 +58,19 @@ const App = () => (
           <Route path="/services" element={<Services />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/payment-success" element={<PaymentSuccess />} />
+          
+          {/* À La Carte Service pages */}
+          <Route path="/services/seo-blog-posts" element={<SEOBlogPosts />} />
+          <Route path="/services/technical-seo" element={<TechnicalSEO />} />
+          <Route path="/services/google-business-profile" element={<GoogleBusinessProfile />} />
+          <Route path="/services/keyword-research" element={<KeywordResearch />} />
+          <Route path="/services/competitor-analysis" element={<CompetitorAnalysis />} />
+          <Route path="/services/white-hat-backlinks" element={<WhiteHatBacklinks />} />
+          <Route path="/services/local-citations" element={<LocalCitations />} />
+          <Route path="/services/review-management" element={<ReviewManagement />} />
+          <Route path="/services/schema-markup" element={<SchemaMarkup />} />
+          <Route path="/services/ranking-reports" element={<RankingReports />} />
           
           {/* San Diego neighborhood SEO pages */}
           <Route path="/san-diego/downtown-san-diego-seo" element={<DowntownSanDiegoSEO />} />
