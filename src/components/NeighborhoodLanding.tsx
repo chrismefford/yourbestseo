@@ -37,36 +37,55 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
         <section className="pt-32 pb-20 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-secondary/30 to-background" />
           <div className="container mx-auto px-4 sm:px-6 relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="max-w-4xl mx-auto text-center"
-            >
-              <div className="flex items-center justify-center gap-2 mb-6">
-                <MapPin className="w-5 h-5 text-primary" />
-                <span className="badge-outline">{data.name} SEO Agency</span>
-              </div>
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                {data.heroTitle}
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-                {data.heroDescription}
-              </p>
-              <div className="flex items-center justify-center gap-2 text-primary mb-8">
-                <Trophy className="w-5 h-5" />
-                <span className="font-medium">2025 Finalist – Top 5 SEO Agencies in North America</span>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="group">
-                  Get Your Free SEO Audit
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <Button size="lg" variant="outline">
-                  Call (619) SEO-RANK
-                </Button>
-              </div>
-            </motion.div>
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="max-w-2xl"
+              >
+                <div className="flex items-center gap-2 mb-6">
+                  <MapPin className="w-5 h-5 text-primary" />
+                  <span className="badge-outline">{data.name} SEO Agency</span>
+                </div>
+                <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                  {data.heroTitle}
+                </h1>
+                <p className="text-lg md:text-xl text-muted-foreground mb-8">
+                  {data.heroDescription}
+                </p>
+                <div className="flex items-center gap-2 text-primary mb-8">
+                  <Trophy className="w-5 h-5" />
+                  <span className="font-medium">2025 Finalist – Top 5 SEO Agencies in North America</span>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button size="lg" className="group">
+                    Get Your Free SEO Audit
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                  <Button size="lg" variant="outline">
+                    Call (619) SEO-RANK
+                  </Button>
+                </div>
+              </motion.div>
+
+              {/* Astronaut Image */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="relative flex justify-center lg:justify-end"
+              >
+                <div className="relative">
+                  <img
+                    src="https://static.riff.new/public/thick-melancholic-rhythm-du4n/Astro%20Final.gif"
+                    alt="Astronaut floating in space"
+                    className="w-full max-w-sm lg:max-w-md animate-float"
+                  />
+                  <div className="absolute inset-0 bg-primary/10 rounded-full blur-3xl -z-10 scale-75" />
+                </div>
+              </motion.div>
+            </div>
           </div>
         </section>
 
