@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import MissionObjectives from "@/components/MissionObjectives";
 import HowItWorks from "@/components/HowItWorks";
 import TrustBadge from "@/components/TrustBadge";
+import BeforeAfterTelemetry from "@/components/BeforeAfterTelemetry";
 import MissionReports from "@/components/MissionReports";
 import CTASection from "@/components/CTASection";
 import Testimonials from "@/components/Testimonials";
@@ -18,6 +19,7 @@ const Index = () => {
         <MissionObjectives />
         <HowItWorks />
         <TrustBadge />
+        <BeforeAfterTelemetry />
         <MissionReports />
         <CTASection />
         <Testimonials />
