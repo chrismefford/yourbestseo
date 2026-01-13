@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { useState } from "react";
 import { toast } from "sonner";
+import { Link } from "react-router-dom";
 
 interface ServiceData {
   slug: string;
@@ -112,8 +113,13 @@ const ServiceLanding = ({ data }: { data: ServiceData }) => {
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                   <Button size="lg" variant="outline" asChild>
-                    <a href="/pricing#a-la-carte">View All Services</a>
+                    <a href="/#contact">Talk to an Expert</a>
                   </Button>
+                </div>
+                <div className="mt-4">
+                  <Link to="/pricing#a-la-carte" className="text-sm text-primary hover:underline">
+                    View All À La Carte Services →
+                  </Link>
                 </div>
 
                 <div className="flex items-center gap-6 mt-8 text-sm text-muted-foreground">

@@ -42,12 +42,14 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="xl" className="gap-2">
-                Let's Get Started
-                <ArrowRight className="w-5 h-5" />
+              <Button variant="hero" size="xl" className="gap-2" asChild>
+                <a href="/#contact">
+                  Let's Get Started
+                  <ArrowRight className="w-5 h-5" />
+                </a>
               </Button>
-              <Button variant="heroOutline" size="xl">
-                Let's Talk
+              <Button variant="heroOutline" size="xl" asChild>
+                <a href="tel:+18332374376">Let's Talk</a>
               </Button>
             </div>
           </motion.div>

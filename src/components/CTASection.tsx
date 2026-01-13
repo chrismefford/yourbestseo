@@ -36,12 +36,14 @@ const CTASection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Button variant="hero" size="xl" className="gap-2">
-              Get Your Free SEO Audit
-              <ArrowRight className="w-5 h-5" />
+            <Button variant="hero" size="xl" className="gap-2" asChild>
+              <a href="/#contact">
+                Get Your Free SEO Audit
+                <ArrowRight className="w-5 h-5" />
+              </a>
             </Button>
-            <Button variant="heroOutline" size="xl">
-              Get Your First Month Free
+            <Button variant="heroOutline" size="xl" asChild>
+              <a href="/pricing">View Pricing</a>
             </Button>
           </div>
 
