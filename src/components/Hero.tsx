@@ -26,10 +26,13 @@ const Hero = () => {
             </span>
 
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] mb-6">
-              Your{" "}
+              Your
+              <br />
               <span className="text-gradient-gold">Outsourced</span>
               <br />
-              SEO Department
+              SEO
+              <br />
+              Department
             </h1>
 
             <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8 max-w-lg">
