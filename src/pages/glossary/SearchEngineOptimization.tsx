@@ -28,7 +28,7 @@ SEO has evolved dramatically since the early days of keyword stuffing and link s
     ]}
     chartData={{ type: 'bar', title: 'Click-Through Rate by Search Position', data: [{ name: 'Position 1', value: 27.6 }, { name: 'Position 2', value: 15.8 }, { name: 'Position 3', value: 11.0 }, { name: 'Position 10', value: 2.4 }] }}
     imageUrl="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop"
-    imageAlt="SEO analytics dashboard showing search performance metrics"
+    imageAlt="Search engine optimization SEO strategy dashboard with ranking metrics and website performance analytics"
   />
 );
 

@@ -28,7 +28,7 @@ Each query produces a unique SERP based on Google's understanding of user intent
     ]}
     chartData={{ type: 'pie', title: 'SERP Click Distribution', data: [{ name: 'Organic', value: 45 }, { name: 'Zero-Click', value: 35 }, { name: 'Paid Ads', value: 15 }, { name: 'Other', value: 5 }] }}
     imageUrl="https://images.unsplash.com/photo-1555421689-3f034debb7a6?w=800&h=400&fit=crop"
-    imageAlt="Google search results page on computer screen"
+    imageAlt="SERP search engine results page showing organic listings, featured snippets, and Google search features"
   />
 );
 

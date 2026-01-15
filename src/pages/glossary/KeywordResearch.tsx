@@ -28,7 +28,7 @@ The landscape of keyword research has evolved significantly. While early SEO foc
     ]}
     chartData={{ type: 'bar', title: 'Keyword Type: Volume vs. Conversion', data: [{ name: 'Head Terms', value: 85 }, { name: 'Body Terms', value: 65 }, { name: 'Long-Tail', value: 35 }] }}
     imageUrl="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop"
-    imageAlt="Researcher analyzing keyword data on computer screens"
+    imageAlt="Keyword research process showing SEO keyword analysis tools and search term discovery on multiple screens"
   />
 );
 
