@@ -49,6 +49,16 @@ import ReviewManagement from "./pages/services/ReviewManagement";
 import SchemaMarkup from "./pages/services/SchemaMarkup";
 import RankingReports from "./pages/services/RankingReports";
 
+// Glossary pages
+import Glossary from "./pages/Glossary";
+import GoogleBusinessProfileGlossary from "./pages/glossary/GoogleBusinessProfile";
+import LocalPackGlossary from "./pages/glossary/LocalPack";
+import NAPConsistencyGlossary from "./pages/glossary/NAPConsistency";
+import LocalCitationsGlossary from "./pages/glossary/LocalCitations";
+import SchemaMarkupGlossary from "./pages/glossary/SchemaMarkup";
+import BacklinksGlossary from "./pages/glossary/Backlinks";
+import MetaDescriptionGlossary from "./pages/glossary/MetaDescription";
+
 const queryClient = new QueryClient();
 
 const App = () => (
