@@ -6,7 +6,7 @@ const serviceData = {
   name: "10 White-Hat Backlinks",
   tagline: "Authority Links That Move the Needle",
   description: "Premium backlink acquisition from high-authority, relevant websites. Every link is manually built through outreach, guest posting, or digital PR—no PBNs, no spam, no risk.",
-  price: 1999,
+  price: 300,
   priceId: "price_1SoypvGzDNqJj8E5YPvR3DT8",
   icon: Link2,
   heroGradient: "from-amber-500 to-orange-600",

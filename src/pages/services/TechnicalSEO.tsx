@@ -6,7 +6,7 @@ const serviceData = {
   name: "Technical SEO Quick-Fix Package",
   tagline: "Fix What's Holding Your Site Back",
   description: "A comprehensive technical SEO audit and implementation package that identifies and fixes the critical issues preventing your site from ranking. Get actionable fixes, not just a report.",
-  price: 449,
+  price: 300,
   priceId: "price_1SoyplGzDNqJj8E5KClYHyga",
   icon: Zap,
   heroGradient: "from-orange-500 to-red-600",

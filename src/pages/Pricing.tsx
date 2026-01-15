@@ -72,16 +72,16 @@ const pricingTiers = [
 ];
 
 const alaCarteServices = [
-  { name: "10 SEO-Optimized Blog Posts", href: "/services/seo-blog-posts", price: "$999" },
-  { name: "Technical SEO Quick-Fix Package", href: "/services/technical-seo", price: "$449" },
-  { name: "Google Business Profile Optimization", href: "/services/google-business-profile", price: "$399" },
-  { name: "Keyword Research & Roadmap", href: "/services/keyword-research", price: "$299" },
-  { name: "Competitor Keyword Analysis", href: "/services/competitor-analysis", price: "$349" },
-  { name: "10 White-Hat Backlinks", href: "/services/white-hat-backlinks", price: "$1,999" },
-  { name: "50 Local Citations", href: "/services/local-citations", price: "$799" },
-  { name: "Review Response Management", href: "/services/review-management", price: "$499" },
-  { name: "Schema Markup Implementation", href: "/services/schema-markup", price: "$899" },
-  { name: "Monthly Ranking Reports", href: "/services/ranking-reports", price: "$249" }
+  { name: "10 SEO-Optimized Blog Posts", href: "/services/seo-blog-posts", price: "$300" },
+  { name: "Technical SEO Quick-Fix Package", href: "/services/technical-seo", price: "$300" },
+  { name: "Google Business Profile Optimization", href: "/services/google-business-profile", price: "$300" },
+  { name: "Keyword Research & Roadmap", href: "/services/keyword-research", price: "$300" },
+  { name: "Competitor Keyword Analysis", href: "/services/competitor-analysis", price: "$300" },
+  { name: "10 White-Hat Backlinks", href: "/services/white-hat-backlinks", price: "$300" },
+  { name: "50 Local Citations", href: "/services/local-citations", price: "$300" },
+  { name: "Review Response Management", href: "/services/review-management", price: "$300" },
+  { name: "Schema Markup Implementation", href: "/services/schema-markup", price: "$300" },
+  { name: "Monthly Ranking Reports", href: "/services/ranking-reports", price: "$300" }
 ];
 
 const comparisonData = [

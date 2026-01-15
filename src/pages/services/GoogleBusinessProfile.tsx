@@ -6,7 +6,7 @@ const serviceData = {
   name: "Google Business Profile Optimization",
   tagline: "Dominate the Local Map Pack",
   description: "Transform your Google Business Profile into a lead-generating machine. We optimize every element to maximize visibility, clicks, and customer actions in local search.",
-  price: 399,
+  price: 300,
   priceId: "price_1SoypqGzDNqJj8E5Wezfrp5O",
   icon: MapPin,
   heroGradient: "from-green-500 to-teal-600",

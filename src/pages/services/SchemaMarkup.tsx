@@ -6,7 +6,7 @@ const serviceData = {
   name: "Schema Markup Implementation",
   tagline: "Rich Results That Get Clicks",
   description: "Implement structured data that helps Google understand your content and display rich results. Get stars, FAQs, prices, and more directly in search results.",
-  price: 899,
+  price: 300,
   priceId: "price_1SoypzGzDNqJj8E5H708ntUB",
   icon: Code,
   heroGradient: "from-purple-500 to-violet-600",

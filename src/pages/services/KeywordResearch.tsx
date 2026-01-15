@@ -6,7 +6,7 @@ const serviceData = {
   name: "Keyword Research and Roadmap",
   tagline: "Your Blueprint for Search Domination",
   description: "Strategic keyword research that uncovers high-value opportunities your competitors are missing. Get a complete roadmap for content creation and SEO prioritization.",
-  price: 299,
+  price: 300,
   priceId: "price_1SoyprGzDNqJj8E5Ly19McMj",
   icon: Search,
   heroGradient: "from-violet-500 to-indigo-600",

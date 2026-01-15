@@ -21,16 +21,16 @@ const states = [
 ];
 
 const services = [
-  { name: "SEO Blog Posts", path: "/services/seo-blog-posts", price: "$999" },
-  { name: "Technical SEO", path: "/services/technical-seo", price: "$449" },
-  { name: "Google Business Profile", path: "/services/google-business-profile", price: "$399" },
-  { name: "Keyword Research", path: "/services/keyword-research", price: "$299" },
-  { name: "Competitor Analysis", path: "/services/competitor-analysis", price: "$349" },
-  { name: "White-Hat Backlinks", path: "/services/white-hat-backlinks", price: "$1,999" },
-  { name: "Local Citations", path: "/services/local-citations", price: "$799" },
-  { name: "Review Management", path: "/services/review-management", price: "$499" },
-  { name: "Schema Markup", path: "/services/schema-markup", price: "$899" },
-  { name: "Ranking Reports", path: "/services/ranking-reports", price: "$249" },
+  { name: "SEO Blog Posts", path: "/services/seo-blog-posts", price: "$300" },
+  { name: "Technical SEO", path: "/services/technical-seo", price: "$300" },
+  { name: "Google Business Profile", path: "/services/google-business-profile", price: "$300" },
+  { name: "Keyword Research", path: "/services/keyword-research", price: "$300" },
+  { name: "Competitor Analysis", path: "/services/competitor-analysis", price: "$300" },
+  { name: "White-Hat Backlinks", path: "/services/white-hat-backlinks", price: "$300" },
+  { name: "Local Citations", path: "/services/local-citations", price: "$300" },
+  { name: "Review Management", path: "/services/review-management", price: "$300" },
+  { name: "Schema Markup", path: "/services/schema-markup", price: "$300" },
+  { name: "Ranking Reports", path: "/services/ranking-reports", price: "$300" },
 ];
 
 const Header = () => {

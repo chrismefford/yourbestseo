@@ -6,7 +6,7 @@ const serviceData = {
   name: "Monthly Ranking Reports",
   tagline: "Know Where You Stand",
   description: "Professional monthly ranking reports that track your position for target keywords, monitor competitor movements, and provide actionable insights for continued growth.",
-  price: 249,
+  price: 300,
   priceId: "price_1Soyq0GzDNqJj8E5ufi2msFt",
   icon: BarChart3,
   heroGradient: "from-sky-500 to-cyan-600",

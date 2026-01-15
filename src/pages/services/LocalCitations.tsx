@@ -6,7 +6,7 @@ const serviceData = {
   name: "50 Local Citations",
   tagline: "Consistency That Ranks",
   description: "Build your local SEO foundation with 50 accurate, consistent citations across top directories. We ensure your NAP (Name, Address, Phone) is perfect everywhere that matters.",
-  price: 799,
+  price: 300,
   priceId: "price_1SoypwGzDNqJj8E5XTqKboZW",
   icon: Building,
   heroGradient: "from-cyan-500 to-blue-600",

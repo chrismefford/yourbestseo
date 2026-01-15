@@ -6,7 +6,7 @@ const serviceData = {
   name: "Review Response Management",
   tagline: "Turn Reviews Into Revenue",
   description: "Professional review response management that builds trust, improves local SEO, and turns negative reviews into opportunities. We craft responses that showcase your brand.",
-  price: 499,
+  price: 300,
   priceId: "price_1SoypyGzDNqJj8E5cVMrfO8x",
   icon: MessageCircle,
   heroGradient: "from-emerald-500 to-green-600",

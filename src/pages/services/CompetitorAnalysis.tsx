@@ -6,7 +6,7 @@ const serviceData = {
   name: "Competitor Keyword Analysis",
   tagline: "Steal Their Traffic, Legally",
   description: "Deep-dive analysis of your competitors' SEO strategies. Discover what's working for them and how to outrank them with targeted keyword opportunities.",
-  price: 349,
+  price: 300,
   priceId: "price_1SoyptGzDNqJj8E54cCHqzlO",
   icon: Target,
   heroGradient: "from-red-500 to-pink-600",
