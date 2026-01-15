@@ -98,6 +98,13 @@ import WhatIsWhiteHatSEO from "./pages/questions/WhatIsWhiteHatSEO";
 import WhatIsBlackHatSEO from "./pages/questions/WhatIsBlackHatSEO";
 import HowToBuildTopicClusters from "./pages/questions/HowToBuildTopicClusters";
 import WhatIsSEOROI from "./pages/questions/WhatIsSEOROI";
+import SEOvsPPC from "./pages/questions/SEOvsPPC";
+import WhatIsGoogleSearchConsole from "./pages/questions/WhatIsGoogleSearchConsole";
+import WhatIsGoogleAnalytics from "./pages/questions/WhatIsGoogleAnalytics";
+import BestSEOTools from "./pages/questions/BestSEOTools";
+import HowToTrackKeywordRankings from "./pages/questions/HowToTrackKeywordRankings";
+import HowToDoASiteAudit from "./pages/questions/HowToDoASiteAudit";
+import WhatIsScreamingFrog from "./pages/questions/WhatIsScreamingFrog";
 import GoogleBusinessProfileGlossary from "./pages/glossary/GoogleBusinessProfile";
 import LocalPackGlossary from "./pages/glossary/LocalPack";
 import NAPConsistencyGlossary from "./pages/glossary/NAPConsistency";
@@ -299,6 +306,13 @@ const App = () => (
           <Route path="/questions/what-is-black-hat-seo" element={<WhatIsBlackHatSEO />} />
           <Route path="/questions/how-to-build-topic-clusters" element={<HowToBuildTopicClusters />} />
           <Route path="/questions/what-is-seo-roi" element={<WhatIsSEOROI />} />
+          <Route path="/questions/seo-vs-ppc" element={<SEOvsPPC />} />
+          <Route path="/questions/what-is-google-search-console" element={<WhatIsGoogleSearchConsole />} />
+          <Route path="/questions/what-is-google-analytics" element={<WhatIsGoogleAnalytics />} />
+          <Route path="/questions/best-seo-tools" element={<BestSEOTools />} />
+          <Route path="/questions/how-to-track-keyword-rankings" element={<HowToTrackKeywordRankings />} />
+          <Route path="/questions/how-to-do-a-site-audit" element={<HowToDoASiteAudit />} />
+          <Route path="/questions/what-is-screaming-frog" element={<WhatIsScreamingFrog />} />
           
           {/* San Diego neighborhood SEO pages */}
           <Route path="/san-diego/downtown-san-diego-seo" element={<DowntownSanDiegoSEO />} />
