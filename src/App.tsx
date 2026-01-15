@@ -58,6 +58,14 @@ import LocalCitationsGlossary from "./pages/glossary/LocalCitations";
 import SchemaMarkupGlossary from "./pages/glossary/SchemaMarkup";
 import BacklinksGlossary from "./pages/glossary/Backlinks";
 import MetaDescriptionGlossary from "./pages/glossary/MetaDescription";
+import CrawlabilityGlossary from "./pages/glossary/Crawlability";
+import CoreWebVitalsGlossary from "./pages/glossary/CoreWebVitals";
+import IndexabilityGlossary from "./pages/glossary/Indexability";
+import TitleTagGlossary from "./pages/glossary/TitleTag";
+import KeywordOptimizationGlossary from "./pages/glossary/KeywordOptimization";
+import HeaderTagsGlossary from "./pages/glossary/HeaderTags";
+import DomainAuthorityGlossary from "./pages/glossary/DomainAuthority";
+import LinkBuildingGlossary from "./pages/glossary/LinkBuilding";
 
 const queryClient = new QueryClient();
 
@@ -89,6 +97,24 @@ const App = () => (
           <Route path="/services/review-management" element={<ReviewManagement />} />
           <Route path="/services/schema-markup" element={<SchemaMarkup />} />
           <Route path="/services/ranking-reports" element={<RankingReports />} />
+          
+          {/* Glossary pages */}
+          <Route path="/glossary" element={<Glossary />} />
+          <Route path="/glossary/google-business-profile" element={<GoogleBusinessProfileGlossary />} />
+          <Route path="/glossary/local-pack" element={<LocalPackGlossary />} />
+          <Route path="/glossary/nap-consistency" element={<NAPConsistencyGlossary />} />
+          <Route path="/glossary/local-citations" element={<LocalCitationsGlossary />} />
+          <Route path="/glossary/schema-markup" element={<SchemaMarkupGlossary />} />
+          <Route path="/glossary/backlinks" element={<BacklinksGlossary />} />
+          <Route path="/glossary/meta-description" element={<MetaDescriptionGlossary />} />
+          <Route path="/glossary/crawlability" element={<CrawlabilityGlossary />} />
+          <Route path="/glossary/core-web-vitals" element={<CoreWebVitalsGlossary />} />
+          <Route path="/glossary/indexability" element={<IndexabilityGlossary />} />
+          <Route path="/glossary/title-tag" element={<TitleTagGlossary />} />
+          <Route path="/glossary/keyword-optimization" element={<KeywordOptimizationGlossary />} />
+          <Route path="/glossary/header-tags" element={<HeaderTagsGlossary />} />
+          <Route path="/glossary/domain-authority" element={<DomainAuthorityGlossary />} />
+          <Route path="/glossary/link-building" element={<LinkBuildingGlossary />} />
           
           {/* San Diego neighborhood SEO pages */}
           <Route path="/san-diego/downtown-san-diego-seo" element={<DowntownSanDiegoSEO />} />
