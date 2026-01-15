@@ -26,7 +26,7 @@ const StructuredDataGlossary = () => (
     ]}
     chartData={{ type: 'bar', title: 'CTR Improvement by Rich Result Type', data: [{ name: 'FAQ', value: 87 }, { name: 'Review Stars', value: 75 }, { name: 'Product', value: 68 }, { name: 'Recipe', value: 82 }, { name: 'How-To', value: 55 }] }}
     imageUrl="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop"
-    imageAlt="Structured data and schema markup implementation"
+    imageAlt="Structured data and schema markup implementation for rich search results and SEO"
   />
 );
 

@@ -26,7 +26,7 @@ const CoreWebVitalsGlossary = () => (
     ]}
     chartData={{ type: 'pie', title: 'Sites Passing Core Web Vitals (2024)', data: [{ name: 'Pass All', value: 42 }, { name: 'Fail LCP', value: 28 }, { name: 'Fail CLS', value: 18 }, { name: 'Fail INP', value: 12 }] }}
     imageUrl="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop"
-    imageAlt="Performance dashboard showing website speed metrics"
+    imageAlt="Core Web Vitals performance dashboard showing LCP, INP, and CLS metrics for website optimization"
   />
 );
 

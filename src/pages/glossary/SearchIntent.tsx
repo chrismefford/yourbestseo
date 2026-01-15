@@ -28,7 +28,7 @@ Mismatched intent is the most common reason quality content fails to rank. You c
     ]}
     chartData={{ type: 'pie', title: 'Distribution of Search Intent Types', data: [{ name: 'Informational', value: 55 }, { name: 'Commercial', value: 20 }, { name: 'Transactional', value: 15 }, { name: 'Navigational', value: 10 }] }}
     imageUrl="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&h=400&fit=crop"
-    imageAlt="Person searching on laptop representing search intent"
+    imageAlt="Search intent analysis showing user query types for keyword research and SEO strategy"
   />
 );
 

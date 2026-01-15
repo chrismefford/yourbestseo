@@ -26,7 +26,7 @@ const ContentFreshnessGlossary = () => (
     ]}
     chartData={{ type: 'pie', title: 'Query Types by Freshness Importance', data: [{ name: 'High Freshness Need', value: 25 }, { name: 'Moderate Need', value: 35 }, { name: 'Low Need (Evergreen)', value: 40 }] }}
     imageUrl="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop"
-    imageAlt="Content freshness and update strategy"
+    imageAlt="Content freshness strategy showing regular content updates for improved SEO rankings"
   />
 );
 

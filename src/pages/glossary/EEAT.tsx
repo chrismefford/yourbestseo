@@ -26,7 +26,7 @@ const EEATGlossary = () => (
     ]}
     chartData={{ type: 'pie', title: 'E-E-A-T Components Weight', data: [{ name: 'Trustworthiness', value: 40 }, { name: 'Experience', value: 20 }, { name: 'Expertise', value: 20 }, { name: 'Authoritativeness', value: 20 }] }}
     imageUrl="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop"
-    imageAlt="E-E-A-T quality and trust signals"
+    imageAlt="E-E-A-T Experience Expertise Authoritativeness Trustworthiness framework for Google content quality"
   />
 );
 

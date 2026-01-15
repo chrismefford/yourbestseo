@@ -26,7 +26,7 @@ const AIContentOptimizationGlossary = () => (
     ]}
     chartData={{ type: 'bar', title: 'AI Content Performance After Optimization', data: [{ name: 'Raw AI', value: 15 }, { name: 'Basic Edit', value: 35 }, { name: 'Full Optimization', value: 75 }, { name: 'Human Enhanced', value: 90 }] }}
     imageUrl="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop"
-    imageAlt="AI content optimization and enhancement"
+    imageAlt="AI-generated content optimization process showing quality enhancement for SEO rankings"
   />
 );
 

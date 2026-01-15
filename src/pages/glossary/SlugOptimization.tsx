@@ -26,7 +26,7 @@ const SlugOptimizationGlossary = () => (
     ]}
     chartData={{ type: 'bar', title: 'URL Slug Length vs Performance', data: [{ name: '1-2 words', value: 82 }, { name: '3-4 words', value: 78 }, { name: '5-6 words', value: 65 }, { name: '7+ words', value: 42 }] }}
     imageUrl="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=400&fit=crop"
-    imageAlt="URL slug optimization and SEO-friendly URLs"
+    imageAlt="URL slug optimization showing clean, keyword-rich web addresses for SEO-friendly URLs"
   />
 );
 

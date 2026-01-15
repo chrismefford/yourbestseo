@@ -26,7 +26,7 @@ const MobileFirstIndexingGlossary = () => (
     ]}
     chartData={{ type: 'pie', title: 'Global Search Traffic by Device', data: [{ name: 'Mobile', value: 63 }, { name: 'Desktop', value: 34 }, { name: 'Tablet', value: 3 }] }}
     imageUrl="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=400&fit=crop"
-    imageAlt="Mobile-first indexing and responsive design"
+    imageAlt="Mobile-first indexing concept showing responsive website design on smartphone for Google SEO"
   />
 );
 

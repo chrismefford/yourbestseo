@@ -26,7 +26,7 @@ const ResponsiveDesignGlossary = () => (
     ]}
     chartData={{ type: 'bar', title: 'User Engagement by Design Type', data: [{ name: 'Responsive', value: 85 }, { name: 'Adaptive', value: 72 }, { name: 'Separate Mobile', value: 58 }, { name: 'Desktop Only', value: 25 }] }}
     imageUrl="https://images.unsplash.com/photo-1555421689-d68471e189f2?w=800&h=400&fit=crop"
-    imageAlt="Responsive web design across devices"
+    imageAlt="Responsive web design showing adaptive layouts across desktop, tablet, and mobile devices for SEO"
   />
 );
 

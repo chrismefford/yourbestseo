@@ -26,7 +26,7 @@ const PillarPagesGlossary = () => (
     ]}
     chartData={{ type: 'bar', title: 'Pillar Page Performance', data: [{ name: 'Avg Word Count', value: 4500 }, { name: 'Cluster Links', value: 15 }, { name: 'Backlinks', value: 35 }, { name: 'Keywords Ranking', value: 150 }] }}
     imageUrl="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=800&h=400&fit=crop"
-    imageAlt="Pillar page content structure and strategy"
+    imageAlt="Pillar pages content strategy showing topic cluster hub architecture for SEO optimization"
   />
 );
 

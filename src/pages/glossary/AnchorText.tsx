@@ -26,7 +26,7 @@ const AnchorTextGlossary = () => (
     ]}
     chartData={{ type: 'pie', title: 'Healthy Anchor Text Distribution', data: [{ name: 'Branded', value: 40 }, { name: 'Partial Match', value: 25 }, { name: 'Naked URL', value: 15 }, { name: 'Generic', value: 10 }, { name: 'Exact Match', value: 10 }] }}
     imageUrl="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop"
-    imageAlt="Anchor text and hyperlink connections"
+    imageAlt="Anchor text optimization showing clickable hyperlink text examples for SEO"
   />
 );
 

@@ -26,7 +26,7 @@ const ImageAltTextGlossary = () => (
     ]}
     chartData={{ type: 'pie', title: 'Alt Text Implementation Status', data: [{ name: 'Missing Alt Text', value: 45 }, { name: 'Poor Quality', value: 25 }, { name: 'Good Quality', value: 20 }, { name: 'Optimized', value: 10 }] }}
     imageUrl="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop"
-    imageAlt="Image optimization and alt text for SEO"
+    imageAlt="Image alt text optimization showing accessible and SEO-friendly image descriptions"
   />
 );
 

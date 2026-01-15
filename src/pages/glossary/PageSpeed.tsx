@@ -26,7 +26,7 @@ const PageSpeedGlossary = () => (
     ]}
     chartData={{ type: 'bar', title: 'Bounce Rate by Load Time', data: [{ name: '1-2s', value: 9 }, { name: '2-3s', value: 24 }, { name: '3-5s', value: 38 }, { name: '5-10s', value: 58 }, { name: '10s+', value: 78 }] }}
     imageUrl="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop"
-    imageAlt="Page speed optimization and performance metrics"
+    imageAlt="Page speed optimization metrics showing website loading performance for SEO and user experience"
   />
 );
 

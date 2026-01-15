@@ -26,7 +26,7 @@ const SemanticSEOGlossary = () => (
     ]}
     chartData={{ type: 'pie', title: 'Modern SEO Focus Areas', data: [{ name: 'Topic Authority', value: 35 }, { name: 'User Intent', value: 30 }, { name: 'Entity Optimization', value: 20 }, { name: 'Keyword Targeting', value: 15 }] }}
     imageUrl="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop"
-    imageAlt="Semantic SEO and topic optimization"
+    imageAlt="Semantic SEO strategy showing topic-based optimization and entity relationships for content"
   />
 );
 

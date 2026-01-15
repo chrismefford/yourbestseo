@@ -26,7 +26,7 @@ const CanonicalTagsGlossary = () => (
     ]}
     chartData={{ type: 'bar', title: 'Canonical Implementation Issues', data: [{ name: 'Missing', value: 35 }, { name: 'Incorrect', value: 25 }, { name: 'Chain', value: 15 }, { name: 'Conflicting', value: 18 }, { name: 'Correct', value: 7 }] }}
     imageUrl="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&h=400&fit=crop"
-    imageAlt="Canonical tags and URL management"
+    imageAlt="Canonical tags implementation showing duplicate content management for technical SEO"
   />
 );
 

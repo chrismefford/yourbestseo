@@ -26,7 +26,7 @@ const LocalSEOGlossary = () => (
     ]}
     chartData={{ type: 'pie', title: 'Local Pack Ranking Factors', data: [{ name: 'GBP Signals', value: 35 }, { name: 'Reviews', value: 20 }, { name: 'On-Page', value: 15 }, { name: 'Citations', value: 15 }, { name: 'Links', value: 15 }] }}
     imageUrl="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&h=400&fit=crop"
-    imageAlt="Local SEO and location-based search optimization"
+    imageAlt="Local SEO optimization showing location-based search and Google Maps visibility for local businesses"
   />
 );
 

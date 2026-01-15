@@ -26,7 +26,7 @@ const TitleTagGlossary = () => (
     ]}
     chartData={{ type: 'bar', title: 'CTR Impact by Title Length', data: [{ name: '40-50 chars', value: 6.2 }, { name: '50-60 chars', value: 5.8 }, { name: '60-70 chars', value: 4.1 }, { name: '70+ chars', value: 3.2 }] }}
     imageUrl="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=400&fit=crop"
-    imageAlt="Browser tabs showing webpage title tags"
+    imageAlt="Title tag optimization showing SEO-optimized HTML title elements in browser tabs and search results"
   />
 );
 

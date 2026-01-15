@@ -28,7 +28,7 @@ Consider the difference: "shoes" gets millions of searches but is nearly impossi
     ]}
     chartData={{ type: 'bar', title: 'Keyword Type Comparison', data: [{ name: 'Volume', value: 15 }, { name: 'Competition', value: 20 }, { name: 'Conversion', value: 85 }, { name: 'Ranking Ease', value: 80 }] }}
     imageUrl="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?w=800&h=400&fit=crop"
-    imageAlt="Graph showing long-tail keyword distribution"
+    imageAlt="Long-tail keywords distribution chart showing specific search phrases with high conversion rates"
   />
 );
 

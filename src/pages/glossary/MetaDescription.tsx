@@ -26,7 +26,7 @@ const MetaDescriptionGlossary = () => (
     ]}
     chartData={{ type: 'bar', title: 'CTR Impact of Meta Description Quality', data: [{ name: 'Optimized', value: 5.8 }, { name: 'Basic', value: 3.2 }, { name: 'Missing', value: 2.1 }, { name: 'Truncated', value: 2.8 }] }}
     imageUrl="https://images.unsplash.com/photo-1522542550221-31fd8575f9d5?w=800&h=400&fit=crop"
-    imageAlt="Search engine results page showing meta descriptions"
+    imageAlt="Meta description optimization showing search result snippets for improved click-through rates"
   />
 );
 

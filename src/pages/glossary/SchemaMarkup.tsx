@@ -26,7 +26,7 @@ const SchemaMarkupGlossary = () => (
     ]}
     chartData={{ type: 'bar', title: 'CTR Improvement by Schema Type', data: [{ name: 'Review', value: 35 }, { name: 'FAQ', value: 28 }, { name: 'Product', value: 25 }, { name: 'HowTo', value: 22 }] }}
     imageUrl="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop"
-    imageAlt="Code editor showing structured data markup implementation"
+    imageAlt="Schema markup structured data code implementation for rich snippets in search results"
   />
 );
 

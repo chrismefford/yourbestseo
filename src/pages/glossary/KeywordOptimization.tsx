@@ -26,7 +26,7 @@ const KeywordOptimizationGlossary = () => (
     ]}
     chartData={{ type: 'pie', title: 'Keyword Intent Distribution', data: [{ name: 'Informational', value: 55 }, { name: 'Commercial', value: 20 }, { name: 'Transactional', value: 15 }, { name: 'Navigational', value: 10 }] }}
     imageUrl="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop"
-    imageAlt="Keyword research and analysis on computer screen"
+    imageAlt="Keyword optimization research showing strategic keyword placement for on-page SEO"
   />
 );
 

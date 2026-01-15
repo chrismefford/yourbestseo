@@ -26,7 +26,7 @@ const ClickThroughRateGlossary = () => (
     ]}
     chartData={{ type: 'bar', title: 'CTR by SERP Position', data: [{ name: 'Position 1', value: 30 }, { name: 'Position 2', value: 16 }, { name: 'Position 3', value: 11 }, { name: 'Position 4', value: 8 }, { name: 'Position 5', value: 5 }] }}
     imageUrl="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop"
-    imageAlt="Click-through rate analytics and performance metrics"
+    imageAlt="Click-through rate CTR analytics showing search performance metrics for SEO optimization"
   />
 );
 

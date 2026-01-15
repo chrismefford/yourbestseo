@@ -26,7 +26,7 @@ const KeywordDifficultyGlossary = () => (
     ]}
     chartData={{ type: 'pie', title: 'Keyword Difficulty Distribution', data: [{ name: 'Easy (0-20)', value: 15 }, { name: 'Moderate (21-40)', value: 25 }, { name: 'Hard (41-60)', value: 30 }, { name: 'Very Hard (61+)', value: 30 }] }}
     imageUrl="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop"
-    imageAlt="Analytics and difficulty metrics visualization"
+    imageAlt="Keyword difficulty score analysis showing SEO competition metrics for ranking assessment"
   />
 );
 
