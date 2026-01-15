@@ -8,6 +8,7 @@ import MissionReports from "@/components/MissionReports";
 import CTASection from "@/components/CTASection";
 import Testimonials from "@/components/Testimonials";
 import ContactSection from "@/components/ContactSection";
+import FunSection from "@/components/FunSection";
 import Footer from "@/components/Footer";
 import { SEO, generateWebPageSchema } from "@/components/SEO";
 
@@ -36,6 +37,7 @@ const Index = () => {
         <CTASection />
         <Testimonials />
         <ContactSection />
+        <FunSection />
       </main>
       <Footer />
     </div>
