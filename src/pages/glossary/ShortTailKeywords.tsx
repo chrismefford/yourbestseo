@@ -26,7 +26,7 @@ const ShortTailKeywordsGlossary = () => (
     ]}
     chartData={{ type: 'bar', title: 'Keyword Type Comparison', data: [{ name: 'Short-Tail Volume', value: 85 }, { name: 'Short-Tail Competition', value: 90 }, { name: 'Long-Tail Volume', value: 25 }, { name: 'Long-Tail Competition', value: 30 }] }}
     imageUrl="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop"
-    imageAlt="Search and keywords concept illustration"
+    imageAlt="Short-tail keywords showing high-volume competitive head terms for SEO keyword strategy"
   />
 );
 

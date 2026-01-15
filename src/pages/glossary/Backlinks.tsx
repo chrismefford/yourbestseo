@@ -26,7 +26,7 @@ const BacklinksGlossary = () => (
     ]}
     chartData={{ type: 'pie', title: 'Backlink Value Distribution', data: [{ name: 'High Authority', value: 45 }, { name: 'Medium Authority', value: 30 }, { name: 'Low Authority', value: 15 }, { name: 'Toxic', value: 10 }] }}
     imageUrl="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop"
-    imageAlt="Network connections representing website backlinks and link building"
+    imageAlt="Backlinks network visualization showing inbound links from authoritative websites for SEO"
   />
 );
 

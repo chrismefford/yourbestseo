@@ -26,7 +26,7 @@ const InternalLinkingGlossary = () => (
     ]}
     chartData={{ type: 'pie', title: 'Internal Link Types', data: [{ name: 'Contextual', value: 45 }, { name: 'Navigation', value: 30 }, { name: 'Breadcrumbs', value: 15 }, { name: 'Related Posts', value: 10 }] }}
     imageUrl="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop"
-    imageAlt="Internal linking and website structure visualization"
+    imageAlt="Internal linking structure showing connected web pages for SEO authority distribution"
   />
 );
 

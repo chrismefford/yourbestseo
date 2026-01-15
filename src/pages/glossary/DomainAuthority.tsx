@@ -26,7 +26,7 @@ const DomainAuthorityGlossary = () => (
     ]}
     chartData={{ type: 'bar', title: 'Avg DA by Search Result Position', data: [{ name: 'Position 1', value: 77 }, { name: 'Position 3', value: 68 }, { name: 'Position 5', value: 58 }, { name: 'Position 10', value: 42 }] }}
     imageUrl="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop"
-    imageAlt="Analytics dashboard showing domain authority metrics"
+    imageAlt="Domain Authority score analytics dashboard showing website ranking metrics and DA score"
   />
 );
 

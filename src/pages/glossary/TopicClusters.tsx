@@ -26,7 +26,7 @@ const TopicClustersGlossary = () => (
     ]}
     chartData={{ type: 'pie', title: 'Ideal Cluster Composition', data: [{ name: 'Cluster Articles', value: 70 }, { name: 'Pillar Page', value: 15 }, { name: 'FAQs/Glossary', value: 10 }, { name: 'Case Studies', value: 5 }] }}
     imageUrl="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&h=400&fit=crop"
-    imageAlt="Topic clusters and content organization strategy"
+    imageAlt="Topic clusters content strategy showing pillar pages and supporting cluster articles for SEO"
   />
 );
 

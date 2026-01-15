@@ -26,7 +26,7 @@ const MetaTitleGlossary = () => (
     ]}
     chartData={{ type: 'bar', title: 'Title Impact on CTR', data: [{ name: 'Optimized Title', value: 12 }, { name: 'Average Title', value: 5 }, { name: 'Poor Title', value: 2 }] }}
     imageUrl="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&h=400&fit=crop"
-    imageAlt="Title tag and meta title optimization"
+    imageAlt="Meta title tag optimization showing SEO title elements for improved search engine rankings"
   />
 );
 

@@ -26,7 +26,7 @@ const ImpressionsGlossary = () => (
     ]}
     chartData={{ type: 'pie', title: 'Impression Sources', data: [{ name: 'Standard Results', value: 60 }, { name: 'Featured Snippets', value: 15 }, { name: 'Image Results', value: 15 }, { name: 'Rich Results', value: 10 }] }}
     imageUrl="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop"
-    imageAlt="Search impressions and visibility analytics"
+    imageAlt="Search impressions analytics showing website visibility metrics in Google Search Console"
   />
 );
 

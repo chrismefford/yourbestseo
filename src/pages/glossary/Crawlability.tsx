@@ -26,7 +26,7 @@ const CrawlabilityGlossary = () => (
     ]}
     chartData={{ type: 'bar', title: 'Common Crawl Issues by Frequency', data: [{ name: 'Slow Response', value: 32 }, { name: 'Broken Links', value: 28 }, { name: 'Robots.txt', value: 18 }, { name: 'Redirects', value: 14 }] }}
     imageUrl="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop"
-    imageAlt="Server room representing website crawling infrastructure"
+    imageAlt="Website crawlability infrastructure showing search engine bot access to web pages"
   />
 );
 

@@ -106,7 +106,7 @@ To maximize ROI, set benchmarks for key metrics and track monthly progress. Most
         ]
       }}
       imageUrl="https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=800&h=400&fit=crop"
-      imageAlt="Business owner managing their Google Business Profile on a laptop"
+      imageAlt="Google Business Profile optimization on laptop showing local SEO management dashboard"
     />
   );
 };

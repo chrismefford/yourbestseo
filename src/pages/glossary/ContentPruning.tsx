@@ -26,7 +26,7 @@ const ContentPruningGlossary = () => (
     ]}
     chartData={{ type: 'bar', title: 'Common Pruning Decisions', data: [{ name: 'Improve', value: 40 }, { name: 'Consolidate', value: 25 }, { name: 'Redirect', value: 20 }, { name: 'Delete', value: 15 }] }}
     imageUrl="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&h=400&fit=crop"
-    imageAlt="Content pruning and website optimization"
+    imageAlt="Content pruning strategy showing removal of low-quality pages for improved SEO performance"
   />
 );
 

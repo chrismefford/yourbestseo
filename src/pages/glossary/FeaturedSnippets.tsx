@@ -28,7 +28,7 @@ Research shows featured snippets appear in approximately 12% of search queries, 
     ]}
     chartData={{ type: 'pie', title: 'Featured Snippet Types Distribution', data: [{ name: 'Paragraph', value: 70 }, { name: 'List', value: 19 }, { name: 'Table', value: 6 }, { name: 'Video', value: 5 }] }}
     imageUrl="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&h=400&fit=crop"
-    imageAlt="Google search results showing featured snippet box"
+    imageAlt="Featured snippets in Google search results showing position zero answer box for SEO"
   />
 );
 

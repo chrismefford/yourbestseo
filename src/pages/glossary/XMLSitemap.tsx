@@ -26,7 +26,7 @@ const XMLSitemapGlossary = () => (
     ]}
     chartData={{ type: 'bar', title: 'Sitemap Impact on Indexing', data: [{ name: 'With Sitemap', value: 85 }, { name: 'Without Sitemap', value: 60 }] }}
     imageUrl="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop"
-    imageAlt="XML sitemap structure and optimization"
+    imageAlt="XML sitemap file structure showing website URL mapping for search engine crawling"
   />
 );
 

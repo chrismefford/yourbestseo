@@ -26,7 +26,7 @@ const PageAuthorityGlossary = () => (
     ]}
     chartData={{ type: 'bar', title: 'Page Authority Benchmarks', data: [{ name: 'Top 3 Results', value: 55 }, { name: 'Page 1 Average', value: 40 }, { name: 'Page 2 Average', value: 25 }, { name: 'New Pages', value: 10 }] }}
     imageUrl="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop"
-    imageAlt="Page authority metrics and analytics"
+    imageAlt="Page Authority PA score metrics showing individual page ranking strength for off-page SEO"
   />
 );
 

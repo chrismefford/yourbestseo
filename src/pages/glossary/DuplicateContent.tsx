@@ -26,7 +26,7 @@ const DuplicateContentGlossary = () => (
     ]}
     chartData={{ type: 'pie', title: 'Common Duplicate Sources', data: [{ name: 'URL Variations', value: 35 }, { name: 'Parameters', value: 25 }, { name: 'Syndication', value: 20 }, { name: 'Boilerplate', value: 12 }, { name: 'Scraped', value: 8 }] }}
     imageUrl="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&h=400&fit=crop"
-    imageAlt="Duplicate content detection and resolution"
+    imageAlt="Duplicate content detection and resolution strategies for technical SEO optimization"
   />
 );
 

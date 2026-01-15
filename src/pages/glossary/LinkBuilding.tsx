@@ -26,7 +26,7 @@ const LinkBuildingGlossary = () => (
     ]}
     chartData={{ type: 'pie', title: 'Most Effective Link Building Tactics', data: [{ name: 'Content Marketing', value: 35 }, { name: 'Digital PR', value: 25 }, { name: 'Guest Posting', value: 20 }, { name: 'Outreach', value: 20 }] }}
     imageUrl="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=400&fit=crop"
-    imageAlt="Team collaborating on digital marketing and link building strategy"
+    imageAlt="Link building strategy showing team collaborating on acquiring quality backlinks for off-page SEO"
   />
 );
 

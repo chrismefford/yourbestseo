@@ -26,7 +26,7 @@ const LSIKeywordsGlossary = () => (
     ]}
     chartData={{ type: 'bar', title: 'Content with Related Terms Performance', data: [{ name: 'Primary Only', value: 45 }, { name: 'Some Related', value: 68 }, { name: 'Comprehensive', value: 85 }, { name: 'Keyword Stuffed', value: 25 }] }}
     imageUrl="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=800&h=400&fit=crop"
-    imageAlt="LSI keywords and semantic SEO"
+    imageAlt="LSI keywords and semantic SEO showing related search terms for content optimization"
   />
 );
 

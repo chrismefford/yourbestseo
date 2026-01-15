@@ -26,7 +26,7 @@ const ThinContentGlossary = () => (
     ]}
     chartData={{ type: 'bar', title: 'Content Quality Thresholds', data: [{ name: 'Thin (<300)', value: 15 }, { name: 'Basic (300-800)', value: 35 }, { name: 'Standard (800-1500)', value: 30 }, { name: 'Comprehensive (1500+)', value: 20 }] }}
     imageUrl="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=800&h=400&fit=crop"
-    imageAlt="Content quality and thin content analysis"
+    imageAlt="Thin content analysis showing low-value pages that harm SEO rankings and site quality"
   />
 );
 

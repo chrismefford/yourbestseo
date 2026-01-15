@@ -26,7 +26,7 @@ const CrawlBudgetGlossary = () => (
     ]}
     chartData={{ type: 'bar', title: 'Common Crawl Budget Issues', data: [{ name: 'Duplicates', value: 35 }, { name: 'Soft 404s', value: 25 }, { name: 'Redirects', value: 20 }, { name: 'Low Value', value: 15 }, { name: 'Orphans', value: 5 }] }}
     imageUrl="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop"
-    imageAlt="Crawl budget optimization and management"
+    imageAlt="Crawl budget optimization dashboard showing Googlebot crawling efficiency for technical SEO"
   />
 );
 

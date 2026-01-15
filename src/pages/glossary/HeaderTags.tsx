@@ -26,7 +26,7 @@ const HeaderTagsGlossary = () => (
     ]}
     chartData={{ type: 'bar', title: 'Average Headers per Top-Ranking Page', data: [{ name: 'H1', value: 1 }, { name: 'H2', value: 8 }, { name: 'H3', value: 12 }, { name: 'H4+', value: 5 }] }}
     imageUrl="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=800&h=400&fit=crop"
-    imageAlt="Document outline showing hierarchical header structure"
+    imageAlt="Header tags H1-H6 hierarchy showing proper heading structure for on-page SEO optimization"
   />
 );
 

@@ -117,7 +117,7 @@ The Local Pack continues to evolve with new features like messaging, appointment
         ]
       }}
       imageUrl="https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=800&h=400&fit=crop"
-      imageAlt="Google Maps showing local business listings on a mobile phone"
+      imageAlt="Local Pack Google Maps showing top 3 local business listings for local SEO rankings"
     />
   );
 };

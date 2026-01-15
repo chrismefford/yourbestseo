@@ -26,7 +26,7 @@ const RobotsTxtGlossary = () => (
     ]}
     chartData={{ type: 'bar', title: 'Most Common Robots.txt Directives', data: [{ name: 'Disallow', value: 85 }, { name: 'Allow', value: 45 }, { name: 'Sitemap', value: 72 }, { name: 'User-agent', value: 95 }, { name: 'Crawl-delay', value: 18 }] }}
     imageUrl="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop"
-    imageAlt="Robots.txt file configuration and crawler control"
+    imageAlt="Robots.txt file configuration showing search engine crawler access control for technical SEO"
   />
 );
 

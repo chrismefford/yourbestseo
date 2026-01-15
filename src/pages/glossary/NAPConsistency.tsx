@@ -131,7 +131,7 @@ Start with the most authoritative sites (Google, Facebook, Yelp, Apple Maps) and
         ]
       }}
       imageUrl="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=400&fit=crop"
-      imageAlt="Business documents and contact information being organized for consistency"
+      imageAlt="NAP consistency showing Name Address Phone number uniformity across business directories for local SEO"
     />
   );
 };

@@ -26,7 +26,7 @@ const PeopleAlsoAskGlossary = () => (
     ]}
     chartData={{ type: 'bar', title: 'PAA Appearance by Query Type', data: [{ name: 'How-to', value: 85 }, { name: 'What is', value: 75 }, { name: 'Why', value: 70 }, { name: 'Best', value: 45 }, { name: 'Commercial', value: 30 }] }}
     imageUrl="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop"
-    imageAlt="People Also Ask questions and search features"
+    imageAlt="People Also Ask box in Google SERP showing related search questions for SEO optimization"
   />
 );
 

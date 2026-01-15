@@ -26,7 +26,7 @@ const URLStructureGlossary = () => (
     ]}
     chartData={{ type: 'bar', title: 'URL Characteristics Correlation with Rankings', data: [{ name: 'Short URLs', value: 75 }, { name: 'Keywords', value: 68 }, { name: 'HTTPS', value: 82 }, { name: 'Clean Structure', value: 71 }, { name: 'No Params', value: 65 }] }}
     imageUrl="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop"
-    imageAlt="URL structure and website organization"
+    imageAlt="URL structure optimization showing SEO-friendly website address hierarchy and organization"
   />
 );
 

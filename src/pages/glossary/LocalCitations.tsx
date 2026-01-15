@@ -186,7 +186,7 @@ Most businesses see the strongest returns from getting the top 40-50 authoritati
         ]
       }}
       imageUrl="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&h=400&fit=crop"
-      imageAlt="Business listings and directories displayed on multiple screens"
+      imageAlt="Local citations showing business listings across online directories for local SEO visibility"
     />
   );
 };

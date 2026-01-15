@@ -92,12 +92,74 @@ const GlossaryTermPage = ({
     return acc;
   }, {} as Record<string, { label: string; color: string }>);
 
+  // Generate schema markup for SEO
+  const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    "name": term,
+    "description": definition,
+    "inDefinedTermSet": {
+      "@type": "DefinedTermSet",
+      "name": "SEO Glossary",
+      "url": "https://yourbestseo.lovable.app/glossary"
+    },
+    "url": `https://yourbestseo.lovable.app/glossary/${slug}`
+  };
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": `What is ${term}? - SEO Glossary Definition`,
+    "description": definition,
+    "image": imageUrl,
+    "author": {
+      "@type": "Organization",
+      "name": "Your Best SEO",
+      "url": "https://yourbestseo.lovable.app"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Your Best SEO",
+      "url": "https://yourbestseo.lovable.app"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://yourbestseo.lovable.app/glossary/${slug}`
+    }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://yourbestseo.lovable.app"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "SEO Glossary",
+        "item": "https://yourbestseo.lovable.app/glossary"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": term,
+        "item": `https://yourbestseo.lovable.app/glossary/${slug}`
+      }
+    ]
+  };
+
   return (
     <>
       <SEO 
-        title={`${term} - SEO Glossary Definition`}
-        description={definition}
+        title={`${term} - SEO Glossary | Your Best SEO`}
+        description={`Learn what ${term} means in SEO. ${definition.substring(0, 120)}...`}
         canonical={`/glossary/${slug}`}
+        schema={[schemaMarkup, articleSchema, breadcrumbSchema]}
       />
       <Header />
       <main className="min-h-screen bg-background pt-24 pb-16">

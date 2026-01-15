@@ -26,7 +26,7 @@ const IndexabilityGlossary = () => (
     ]}
     chartData={{ type: 'bar', title: 'Common Indexing Exclusion Reasons', data: [{ name: 'Duplicate', value: 35 }, { name: 'Noindex', value: 25 }, { name: 'Crawled Not Indexed', value: 22 }, { name: 'Soft 404', value: 12 }] }}
     imageUrl="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=400&fit=crop"
-    imageAlt="Filing cabinet representing search engine indexing database"
+    imageAlt="Website indexability concept showing search engine index database for technical SEO"
   />
 );
 
