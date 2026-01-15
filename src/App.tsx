@@ -215,6 +215,19 @@ const App = () => (
           <Route path="/glossary/content-pruning" element={<ContentPruningGlossary />} />
           <Route path="/glossary/lsi-keywords" element={<LSIKeywordsGlossary />} />
           
+          {/* Question pages */}
+          <Route path="/questions" element={<Questions />} />
+          <Route path="/questions/what-is-seo" element={<WhatIsSEO />} />
+          <Route path="/questions/how-long-does-seo-take" element={<HowLongDoesSEOTake />} />
+          <Route path="/questions/how-much-does-seo-cost" element={<HowMuchDoesSEOCost />} />
+          <Route path="/questions/what-is-organic-traffic" element={<WhatIsOrganicTraffic />} />
+          <Route path="/questions/what-are-keywords" element={<WhatAreKeywords />} />
+          <Route path="/questions/what-is-a-backlink" element={<WhatIsABacklink />} />
+          <Route path="/questions/what-is-domain-authority" element={<WhatIsDomainAuthority />} />
+          <Route path="/questions/what-is-a-serp" element={<WhatIsASERP />} />
+          <Route path="/questions/what-is-local-seo" element={<WhatIsLocalSEO />} />
+          <Route path="/questions/how-to-rank-in-google-maps" element={<HowToRankInGoogleMaps />} />
+          
           {/* San Diego neighborhood SEO pages */}
           <Route path="/san-diego/downtown-san-diego-seo" element={<DowntownSanDiegoSEO />} />
           <Route path="/san-diego/gaslamp-quarter-seo" element={<GaslampQuarterSEO />} />
