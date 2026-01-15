@@ -80,6 +80,14 @@ import WhatIsKeywordResearch from "./pages/questions/WhatIsKeywordResearch";
 import HowToDoLocalKeywordResearch from "./pages/questions/HowToDoLocalKeywordResearch";
 import WhatIsContentMarketing from "./pages/questions/WhatIsContentMarketing";
 import WhatIsSEOAudit from "./pages/questions/WhatIsSEOAudit";
+import WhatIsSearchIntent from "./pages/questions/WhatIsSearchIntent";
+import WhatIsXMLSitemap from "./pages/questions/WhatIsXMLSitemap";
+import WhatIsRobotsTxt from "./pages/questions/WhatIsRobotsTxt";
+import WhatAreCanonicalTags from "./pages/questions/WhatAreCanonicalTags";
+import HowToFixDuplicateContent from "./pages/questions/HowToFixDuplicateContent";
+import WhatAreLongTailKeywords from "./pages/questions/WhatAreLongTailKeywords";
+import WhatIsEEAT from "./pages/questions/WhatIsEEAT";
+import HowLongShouldBlogPostsBe from "./pages/questions/HowLongShouldBlogPostsBe";
 import GoogleBusinessProfileGlossary from "./pages/glossary/GoogleBusinessProfile";
 import LocalPackGlossary from "./pages/glossary/LocalPack";
 import NAPConsistencyGlossary from "./pages/glossary/NAPConsistency";
@@ -263,6 +271,14 @@ const App = () => (
           <Route path="/questions/how-to-do-local-keyword-research" element={<HowToDoLocalKeywordResearch />} />
           <Route path="/questions/what-is-content-marketing" element={<WhatIsContentMarketing />} />
           <Route path="/questions/what-is-an-seo-audit" element={<WhatIsSEOAudit />} />
+          <Route path="/questions/what-is-search-intent" element={<WhatIsSearchIntent />} />
+          <Route path="/questions/what-is-an-xml-sitemap" element={<WhatIsXMLSitemap />} />
+          <Route path="/questions/what-is-robots-txt" element={<WhatIsRobotsTxt />} />
+          <Route path="/questions/what-are-canonical-tags" element={<WhatAreCanonicalTags />} />
+          <Route path="/questions/how-to-fix-duplicate-content" element={<HowToFixDuplicateContent />} />
+          <Route path="/questions/what-are-long-tail-keywords" element={<WhatAreLongTailKeywords />} />
+          <Route path="/questions/what-is-eeat" element={<WhatIsEEAT />} />
+          <Route path="/questions/how-long-should-blog-posts-be" element={<HowLongShouldBlogPostsBe />} />
           
           {/* San Diego neighborhood SEO pages */}
           <Route path="/san-diego/downtown-san-diego-seo" element={<DowntownSanDiegoSEO />} />
