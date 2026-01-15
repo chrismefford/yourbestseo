@@ -51,6 +51,17 @@ import RankingReports from "./pages/services/RankingReports";
 
 // Glossary pages
 import Glossary from "./pages/Glossary";
+import Questions from "./pages/Questions";
+import WhatIsSEO from "./pages/questions/WhatIsSEO";
+import HowLongDoesSEOTake from "./pages/questions/HowLongDoesSEOTake";
+import HowMuchDoesSEOCost from "./pages/questions/HowMuchDoesSEOCost";
+import WhatIsOrganicTraffic from "./pages/questions/WhatIsOrganicTraffic";
+import WhatAreKeywords from "./pages/questions/WhatAreKeywords";
+import WhatIsABacklink from "./pages/questions/WhatIsABacklink";
+import WhatIsDomainAuthority from "./pages/questions/WhatIsDomainAuthority";
+import WhatIsASERP from "./pages/questions/WhatIsASERP";
+import WhatIsLocalSEO from "./pages/questions/WhatIsLocalSEO";
+import HowToRankInGoogleMaps from "./pages/questions/HowToRankInGoogleMaps";
 import GoogleBusinessProfileGlossary from "./pages/glossary/GoogleBusinessProfile";
 import LocalPackGlossary from "./pages/glossary/LocalPack";
 import NAPConsistencyGlossary from "./pages/glossary/NAPConsistency";
