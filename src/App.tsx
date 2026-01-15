@@ -97,6 +97,19 @@ import ThinContentGlossary from "./pages/glossary/ThinContent";
 import ContentFreshnessGlossary from "./pages/glossary/ContentFreshness";
 import SemanticSEOGlossary from "./pages/glossary/SemanticSEO";
 import XMLSitemapGlossary from "./pages/glossary/XMLSitemap";
+// Batch 5 - Additional terms
+import AIContentOptimizationGlossary from "./pages/glossary/AIContentOptimization";
+import StructuredDataGlossary from "./pages/glossary/StructuredData";
+import CrawlBudgetGlossary from "./pages/glossary/CrawlBudget";
+import RobotsTxtGlossary from "./pages/glossary/RobotsTxt";
+import PageSpeedGlossary from "./pages/glossary/PageSpeed";
+import MobileFirstIndexingGlossary from "./pages/glossary/MobileFirstIndexing";
+import ResponsiveDesignGlossary from "./pages/glossary/ResponsiveDesign";
+import CanonicalTagsGlossary from "./pages/glossary/CanonicalTags";
+import URLStructureGlossary from "./pages/glossary/URLStructure";
+import SlugOptimizationGlossary from "./pages/glossary/SlugOptimization";
+import ContentPruningGlossary from "./pages/glossary/ContentPruning";
+import LSIKeywordsGlossary from "./pages/glossary/LSIKeywords";
 
 const queryClient = new QueryClient();
 
@@ -177,6 +190,19 @@ const App = () => (
           <Route path="/glossary/content-freshness" element={<ContentFreshnessGlossary />} />
           <Route path="/glossary/semantic-seo" element={<SemanticSEOGlossary />} />
           <Route path="/glossary/xml-sitemap" element={<XMLSitemapGlossary />} />
+          {/* Batch 5 - Additional terms */}
+          <Route path="/glossary/ai-content-optimization" element={<AIContentOptimizationGlossary />} />
+          <Route path="/glossary/structured-data" element={<StructuredDataGlossary />} />
+          <Route path="/glossary/crawl-budget" element={<CrawlBudgetGlossary />} />
+          <Route path="/glossary/robots-txt" element={<RobotsTxtGlossary />} />
+          <Route path="/glossary/page-speed" element={<PageSpeedGlossary />} />
+          <Route path="/glossary/mobile-first-indexing" element={<MobileFirstIndexingGlossary />} />
+          <Route path="/glossary/responsive-design" element={<ResponsiveDesignGlossary />} />
+          <Route path="/glossary/canonical-tags" element={<CanonicalTagsGlossary />} />
+          <Route path="/glossary/url-structure" element={<URLStructureGlossary />} />
+          <Route path="/glossary/slug-optimization" element={<SlugOptimizationGlossary />} />
+          <Route path="/glossary/content-pruning" element={<ContentPruningGlossary />} />
+          <Route path="/glossary/lsi-keywords" element={<LSIKeywordsGlossary />} />
           
           {/* San Diego neighborhood SEO pages */}
           <Route path="/san-diego/downtown-san-diego-seo" element={<DowntownSanDiegoSEO />} />
