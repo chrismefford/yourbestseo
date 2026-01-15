@@ -30,6 +30,17 @@ interface QuestionPageProps {
   relatedTerms?: { slug: string; term: string }[];
 }
 
+// Parse basic markdown **bold** syntax
+const parseMarkdown = (text: string) => {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((part, index) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <strong key={index} className="text-foreground font-semibold">{part.slice(2, -2)}</strong>;
+    }
+    return part;
+  });
+};
+
 const CHART_COLORS = ['#F59E0B', '#10B981', '#3B82F6', '#8B5CF6', '#EC4899'];
 
 const QuestionPage = ({
@@ -221,8 +232,8 @@ const QuestionPage = ({
                     <h2 className="text-2xl font-bold text-foreground mb-4">{section.title}</h2>
                     <div className="prose prose-invert max-w-none">
                       {section.content.split('\n\n').map((paragraph, idx) => (
-                        <p key={idx} className="text-muted-foreground mb-4 leading-relaxed whitespace-pre-line">
-                          {paragraph}
+                        <p key={idx} className="text-muted-foreground mb-4 leading-relaxed">
+                          {parseMarkdown(paragraph)}
                         </p>
                       ))}
                     </div>
