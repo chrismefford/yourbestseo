@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { SEO, generateBreadcrumbSchema } from "@/components/SEO";
 
 const includedServices = [
   { service: "Keyword Research & Clustering", notes: "100+ keyword maps per topic" },
@@ -83,8 +84,34 @@ const itemVariants = {
 };
 
 const Services = () => {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Services", url: "/services" },
+  ]);
+
+  const servicesSchema = {
+    "@type": "Service",
+    name: "White-Label SEO Services",
+    description: "Full-stack, AI-powered SEO campaigns designed to dominate search results—faster, cheaper, and at scale.",
+    provider: {
+      "@type": "Organization",
+      name: "Your Best SEO"
+    },
+    serviceType: "SEO Services",
+    areaServed: {
+      "@type": "Country",
+      name: "United States"
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="SEO Services - Full-Stack AI-Powered SEO"
+        description="Award-winning SEO services built to get you ranked. AI-powered content, white-hat link building, local SEO, and technical audits at 1/10th the cost."
+        canonical="/services"
+        schema={[breadcrumbSchema, servicesSchema]}
+      />
       <Header />
       <main>
         {/* Hero Section */}

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { SEO, generateWebPageSchema, generateBreadcrumbSchema } from "@/components/SEO";
 
 const values = [
   {
@@ -49,8 +50,25 @@ const itemVariants = {
 };
 
 const About = () => {
+  const pageSchema = generateWebPageSchema({
+    name: "About Your Best SEO",
+    description: "Learn about our mission to democratize SEO. 15+ years of experience, 500+ clients served, and 98% client retention.",
+    url: "/about",
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "About", url: "/about" },
+  ]);
+
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="About Us - Our Mission & Team"
+        description="We're on a mission to democratize SEO. 15+ years of experience, 500+ clients served, 10M+ organic visits generated, and 98% client retention rate."
+        canonical="/about"
+        schema={[pageSchema, breadcrumbSchema]}
+      />
       <Header />
       
       {/* Hero Section */}
