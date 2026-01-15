@@ -62,6 +62,24 @@ import WhatIsDomainAuthority from "./pages/questions/WhatIsDomainAuthority";
 import WhatIsASERP from "./pages/questions/WhatIsASERP";
 import WhatIsLocalSEO from "./pages/questions/WhatIsLocalSEO";
 import HowToRankInGoogleMaps from "./pages/questions/HowToRankInGoogleMaps";
+import WhatIsGoogleBusinessProfile from "./pages/questions/WhatIsGoogleBusinessProfile";
+import HowToGetMoreGoogleReviews from "./pages/questions/HowToGetMoreGoogleReviews";
+import WhatAreLocalCitations from "./pages/questions/WhatAreLocalCitations";
+import WhatIsNAPConsistency from "./pages/questions/WhatIsNAPConsistency";
+import HowToOptimizeForNearMeSearches from "./pages/questions/HowToOptimizeForNearMeSearches";
+import WhatIsTheLocalPack from "./pages/questions/WhatIsTheLocalPack";
+import WhatIsTechnicalSEO from "./pages/questions/WhatIsTechnicalSEO";
+import HowToImprovePageSpeed from "./pages/questions/HowToImprovePageSpeed";
+import WhatAreCoreWebVitals from "./pages/questions/WhatAreCoreWebVitals";
+import WhatIsCrawlBudget from "./pages/questions/WhatIsCrawlBudget";
+import WhatIsSchemaMarkup from "./pages/questions/WhatIsSchemaMarkup";
+import WhatIsMobileFirstIndexing from "./pages/questions/WhatIsMobileFirstIndexing";
+import WhatIsOnPageSEO from "./pages/questions/WhatIsOnPageSEO";
+import WhatIsOffPageSEO from "./pages/questions/WhatIsOffPageSEO";
+import WhatIsKeywordResearch from "./pages/questions/WhatIsKeywordResearch";
+import HowToDoLocalKeywordResearch from "./pages/questions/HowToDoLocalKeywordResearch";
+import WhatIsContentMarketing from "./pages/questions/WhatIsContentMarketing";
+import WhatIsSEOAudit from "./pages/questions/WhatIsSEOAudit";
 import GoogleBusinessProfileGlossary from "./pages/glossary/GoogleBusinessProfile";
 import LocalPackGlossary from "./pages/glossary/LocalPack";
 import NAPConsistencyGlossary from "./pages/glossary/NAPConsistency";
@@ -227,6 +245,24 @@ const App = () => (
           <Route path="/questions/what-is-a-serp" element={<WhatIsASERP />} />
           <Route path="/questions/what-is-local-seo" element={<WhatIsLocalSEO />} />
           <Route path="/questions/how-to-rank-in-google-maps" element={<HowToRankInGoogleMaps />} />
+          <Route path="/questions/what-is-google-business-profile" element={<WhatIsGoogleBusinessProfile />} />
+          <Route path="/questions/how-to-get-more-google-reviews" element={<HowToGetMoreGoogleReviews />} />
+          <Route path="/questions/what-are-local-citations" element={<WhatAreLocalCitations />} />
+          <Route path="/questions/what-is-nap-consistency" element={<WhatIsNAPConsistency />} />
+          <Route path="/questions/how-to-optimize-for-near-me-searches" element={<HowToOptimizeForNearMeSearches />} />
+          <Route path="/questions/what-is-the-local-pack" element={<WhatIsTheLocalPack />} />
+          <Route path="/questions/what-is-technical-seo" element={<WhatIsTechnicalSEO />} />
+          <Route path="/questions/how-to-improve-page-speed" element={<HowToImprovePageSpeed />} />
+          <Route path="/questions/what-are-core-web-vitals" element={<WhatAreCoreWebVitals />} />
+          <Route path="/questions/what-is-crawl-budget" element={<WhatIsCrawlBudget />} />
+          <Route path="/questions/what-is-schema-markup" element={<WhatIsSchemaMarkup />} />
+          <Route path="/questions/what-is-mobile-first-indexing" element={<WhatIsMobileFirstIndexing />} />
+          <Route path="/questions/what-is-on-page-seo" element={<WhatIsOnPageSEO />} />
+          <Route path="/questions/what-is-off-page-seo" element={<WhatIsOffPageSEO />} />
+          <Route path="/questions/what-is-keyword-research" element={<WhatIsKeywordResearch />} />
+          <Route path="/questions/how-to-do-local-keyword-research" element={<HowToDoLocalKeywordResearch />} />
+          <Route path="/questions/what-is-content-marketing" element={<WhatIsContentMarketing />} />
+          <Route path="/questions/what-is-an-seo-audit" element={<WhatIsSEOAudit />} />
           
           {/* San Diego neighborhood SEO pages */}
           <Route path="/san-diego/downtown-san-diego-seo" element={<DowntownSanDiegoSEO />} />
