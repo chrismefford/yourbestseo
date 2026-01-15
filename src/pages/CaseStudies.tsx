@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { SEO, generateBreadcrumbSchema, generateWebPageSchema } from "@/components/SEO";
 
 const caseStudies = [
   {
@@ -131,8 +132,25 @@ const itemVariants = {
 };
 
 const CaseStudies = () => {
+  const pageSchema = generateWebPageSchema({
+    name: "SEO Case Studies - Missions Accomplished",
+    description: "Real SEO results from real clients. See verified outcomes, transparent timelines, and the strategies that drove +2300% traffic growth.",
+    url: "/case-studies",
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Case Studies", url: "/case-studies" },
+  ]);
+
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Case Studies - Real SEO Results"
+        description="Real results from real clients. Every mission documented with verified outcomes: +2300% organic traffic, +1300% lead growth, page 1 rankings."
+        canonical="/case-studies"
+        schema={[pageSchema, breadcrumbSchema]}
+      />
       <Header />
       
       {/* Hero Section */}

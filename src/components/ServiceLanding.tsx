@@ -7,6 +7,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useState } from "react";
 import { toast } from "sonner";
 import { Link } from "react-router-dom";
+import { SEO, generateServiceSchema, generateFAQSchema, generateBreadcrumbSchema } from "@/components/SEO";
 
 interface ServiceData {
   slug: string;
@@ -38,6 +39,21 @@ const ServiceLanding = ({ data }: { data: ServiceData }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState("");
 
+  const serviceSchema = generateServiceSchema({
+    name: data.name,
+    description: data.description,
+    price: data.price,
+    slug: data.slug,
+  });
+
+  const faqSchema = generateFAQSchema(data.faqs);
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Services", url: "/services" },
+    { name: data.name, url: `/services/${data.slug}` },
+  ]);
+
   const handlePurchase = async () => {
     setIsLoading(true);
     try {
@@ -65,6 +81,13 @@ const ServiceLanding = ({ data }: { data: ServiceData }) => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={`${data.name} - $${data.price} One-Time`}
+        description={`${data.tagline} ${data.description.substring(0, 120)}...`}
+        canonical={`/services/${data.slug}`}
+        type="service"
+        schema={[serviceSchema, faqSchema, breadcrumbSchema]}
+      />
       <Header />
       
       <main>

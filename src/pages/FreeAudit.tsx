@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
+import { SEO, generateBreadcrumbSchema } from "@/components/SEO";
 
 const auditIncludes = [
   { icon: Search, text: "Technical SEO health check" },
@@ -42,6 +43,11 @@ const FreeAudit = () => {
     goals: "",
   });
 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Free SEO Audit", url: "/free-audit" },
+  ]);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -63,6 +69,12 @@ const FreeAudit = () => {
   if (isSubmitted) {
     return (
       <div className="min-h-screen bg-background">
+        <SEO
+          title="Free SEO Audit Request Submitted"
+          description="Thank you for requesting a free SEO audit. We'll deliver your personalized analysis within 24 hours."
+          canonical="/free-audit"
+          noIndex={true}
+        />
         <Header />
         <section className="pt-32 pb-20">
           <div className="container mx-auto px-4 sm:px-6">
@@ -116,6 +128,12 @@ const FreeAudit = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Free SEO Audit - Get Your Personalized Analysis"
+        description="Get a free, personalized SEO audit for your website. Discover technical issues, keyword opportunities, and quick wins. Delivered within 24 hours."
+        canonical="/free-audit"
+        schema={breadcrumbSchema}
+      />
       <Header />
       
       {/* Hero Section */}

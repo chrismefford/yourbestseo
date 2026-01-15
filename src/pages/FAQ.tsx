@@ -10,6 +10,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { SEO, generateFAQSchema, generateBreadcrumbSchema } from "@/components/SEO";
 
 const faqCategories = [
   {
@@ -143,8 +144,23 @@ const itemVariants = {
 };
 
 const FAQ = () => {
+  // Collect all FAQs for schema
+  const allFaqs = faqCategories.flatMap(category => category.faqs);
+  const faqSchema = generateFAQSchema(allFaqs);
+  
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "FAQ", url: "/faq" },
+  ]);
+
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Frequently Asked Questions"
+        description="Everything you need to know about SEO and working with Your Best SEO. Learn about our process, pricing, timeline, and what to expect."
+        canonical="/faq"
+        schema={[faqSchema, breadcrumbSchema]}
+      />
       <Header />
       
       {/* Hero Section */}

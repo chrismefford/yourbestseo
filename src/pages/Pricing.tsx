@@ -10,6 +10,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { SEO, generateFAQSchema, generateBreadcrumbSchema } from "@/components/SEO";
 
 const pricingTiers = [
   {
@@ -128,8 +129,58 @@ const trustBadges = [
 ];
 
 const Pricing = () => {
+  const faqSchema = generateFAQSchema(faqs);
+  
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Pricing", url: "/pricing" },
+  ]);
+
+  // Pricing schema
+  const pricingSchema = {
+    "@type": "Product",
+    name: "White-Label SEO Services",
+    description: "Award-winning white-label SEO packages for agencies. Includes local SEO, technical audits, content creation, and link building.",
+    brand: {
+      "@type": "Brand",
+      name: "Your Best SEO"
+    },
+    offers: [
+      {
+        "@type": "Offer",
+        name: "Local Package",
+        price: "400",
+        priceCurrency: "USD",
+        priceValidUntil: "2026-12-31",
+        availability: "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        name: "Get Ranked Package",
+        price: "900",
+        priceCurrency: "USD",
+        priceValidUntil: "2026-12-31",
+        availability: "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        name: "Dominate Package",
+        price: "1900",
+        priceCurrency: "USD",
+        priceValidUntil: "2026-12-31",
+        availability: "https://schema.org/InStock"
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Pricing - White-Label SEO Packages"
+        description="SEO services at 1/10th traditional agency cost. Local Package $400/mo, Ranked Package $900/mo, Dominate Package $1,900/mo. Month-to-month terms."
+        canonical="/pricing"
+        schema={[faqSchema, breadcrumbSchema, pricingSchema]}
+      />
       <Header />
       
       {/* Hero Section */}
