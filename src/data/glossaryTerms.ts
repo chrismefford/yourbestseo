@@ -2,11 +2,110 @@ export interface GlossaryTerm {
   slug: string;
   term: string;
   shortDescription: string;
-  category: 'local-seo' | 'technical-seo' | 'on-page-seo' | 'off-page-seo';
+  category: 'local-seo' | 'technical-seo' | 'on-page-seo' | 'off-page-seo' | 'fundamentals' | 'content-seo';
   relatedTerms: string[];
 }
 
 export const glossaryTerms: GlossaryTerm[] = [
+  // Fundamentals
+  {
+    slug: 'search-engine-optimization',
+    term: 'Search Engine Optimization (SEO)',
+    shortDescription: 'The practice of optimizing websites to rank higher in search engine results and drive organic traffic.',
+    category: 'fundamentals',
+    relatedTerms: ['organic-traffic', 'serp', 'keyword-research'],
+  },
+  {
+    slug: 'organic-traffic',
+    term: 'Organic Traffic',
+    shortDescription: 'Visitors who come to your website through unpaid search engine results rather than ads.',
+    category: 'fundamentals',
+    relatedTerms: ['search-engine-optimization', 'serp', 'click-through-rate'],
+  },
+  {
+    slug: 'keyword-research',
+    term: 'Keyword Research',
+    shortDescription: 'The process of finding and analyzing search terms people use to find content, products, or services.',
+    category: 'fundamentals',
+    relatedTerms: ['long-tail-keywords', 'search-intent', 'keyword-difficulty'],
+  },
+  {
+    slug: 'search-intent',
+    term: 'Search Intent',
+    shortDescription: 'The underlying goal or purpose behind a user\'s search query—what they really want to find.',
+    category: 'fundamentals',
+    relatedTerms: ['keyword-research', 'serp', 'long-tail-keywords'],
+  },
+  {
+    slug: 'long-tail-keywords',
+    term: 'Long-Tail Keywords',
+    shortDescription: 'Longer, more specific keyword phrases that typically have lower search volume but higher conversion rates.',
+    category: 'fundamentals',
+    relatedTerms: ['short-tail-keywords', 'keyword-research', 'search-intent'],
+  },
+  {
+    slug: 'short-tail-keywords',
+    term: 'Short-Tail Keywords',
+    shortDescription: 'Broad, one to two-word search terms with high volume but intense competition and lower conversion rates.',
+    category: 'fundamentals',
+    relatedTerms: ['long-tail-keywords', 'keyword-research', 'keyword-difficulty'],
+  },
+  {
+    slug: 'keyword-difficulty',
+    term: 'Keyword Difficulty',
+    shortDescription: 'A metric that estimates how hard it would be to rank on the first page for a specific keyword.',
+    category: 'fundamentals',
+    relatedTerms: ['keyword-research', 'search-volume', 'domain-authority'],
+  },
+  {
+    slug: 'search-volume',
+    term: 'Search Volume',
+    shortDescription: 'The average number of times a keyword is searched per month in a given region.',
+    category: 'fundamentals',
+    relatedTerms: ['keyword-research', 'keyword-difficulty', 'impressions'],
+  },
+  {
+    slug: 'click-through-rate',
+    term: 'Click-Through Rate (CTR)',
+    shortDescription: 'The percentage of people who click on your search result after seeing it in the SERP.',
+    category: 'fundamentals',
+    relatedTerms: ['impressions', 'serp', 'meta-description'],
+  },
+  {
+    slug: 'impressions',
+    term: 'Impressions',
+    shortDescription: 'The number of times your website appears in search results, regardless of whether users click.',
+    category: 'fundamentals',
+    relatedTerms: ['click-through-rate', 'serp', 'organic-traffic'],
+  },
+  {
+    slug: 'serp',
+    term: 'SERP (Search Engine Results Page)',
+    shortDescription: 'The page displayed by search engines in response to a query, containing organic and paid results.',
+    category: 'fundamentals',
+    relatedTerms: ['featured-snippets', 'local-pack', 'organic-traffic'],
+  },
+  {
+    slug: 'featured-snippets',
+    term: 'Featured Snippets',
+    shortDescription: 'Highlighted answer boxes that appear at the top of Google search results, extracted from web pages.',
+    category: 'fundamentals',
+    relatedTerms: ['serp', 'people-also-ask', 'schema-markup'],
+  },
+  {
+    slug: 'people-also-ask',
+    term: 'People Also Ask (PAA)',
+    shortDescription: 'An expandable box in Google results showing related questions users frequently search for.',
+    category: 'fundamentals',
+    relatedTerms: ['featured-snippets', 'serp', 'search-intent'],
+  },
+  {
+    slug: 'eeat',
+    term: 'E-E-A-T (Experience, Expertise, Authority, Trust)',
+    shortDescription: 'Google\'s quality guidelines assessing content creators\' experience, expertise, authoritativeness, and trustworthiness.',
+    category: 'fundamentals',
+    relatedTerms: ['search-engine-optimization', 'content-freshness', 'domain-authority'],
+  },
   // Local SEO
   {
     slug: 'google-business-profile',
@@ -36,34 +135,111 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'local-seo',
     relatedTerms: ['nap-consistency', 'google-business-profile', 'local-pack'],
   },
+  {
+    slug: 'local-seo',
+    term: 'Local SEO',
+    shortDescription: 'Optimization strategies focused on improving visibility for location-based searches and Google Maps.',
+    category: 'local-seo',
+    relatedTerms: ['google-business-profile', 'local-pack', 'nap-consistency'],
+  },
   // Technical SEO
   {
     slug: 'schema-markup',
     term: 'Schema Markup',
     shortDescription: 'Structured data code that helps search engines understand and display your content in rich results.',
     category: 'technical-seo',
-    relatedTerms: ['rich-snippets', 'crawlability', 'core-web-vitals'],
+    relatedTerms: ['structured-data', 'crawlability', 'featured-snippets'],
+  },
+  {
+    slug: 'structured-data',
+    term: 'Structured Data',
+    shortDescription: 'Standardized format for providing information about a page and classifying content for search engines.',
+    category: 'technical-seo',
+    relatedTerms: ['schema-markup', 'featured-snippets', 'serp'],
   },
   {
     slug: 'crawlability',
     term: 'Crawlability',
     shortDescription: 'How easily search engine bots can access, read, and index the pages on your website.',
     category: 'technical-seo',
-    relatedTerms: ['indexability', 'schema-markup', 'core-web-vitals'],
+    relatedTerms: ['indexability', 'crawl-budget', 'robots-txt'],
   },
   {
     slug: 'core-web-vitals',
     term: 'Core Web Vitals',
     shortDescription: 'A set of specific metrics Google uses to measure user experience: loading, interactivity, and visual stability.',
     category: 'technical-seo',
-    relatedTerms: ['crawlability', 'schema-markup', 'indexability'],
+    relatedTerms: ['page-speed', 'mobile-first-indexing', 'crawlability'],
   },
   {
     slug: 'indexability',
     term: 'Indexability',
     shortDescription: 'Whether a page can be analyzed and added to a search engine\'s index for potential ranking.',
     category: 'technical-seo',
-    relatedTerms: ['crawlability', 'core-web-vitals', 'schema-markup'],
+    relatedTerms: ['crawlability', 'canonical-tags', 'robots-txt'],
+  },
+  {
+    slug: 'crawl-budget',
+    term: 'Crawl Budget',
+    shortDescription: 'The number of pages search engines will crawl on your site within a given timeframe.',
+    category: 'technical-seo',
+    relatedTerms: ['crawlability', 'xml-sitemap', 'robots-txt'],
+  },
+  {
+    slug: 'xml-sitemap',
+    term: 'XML Sitemap',
+    shortDescription: 'A file that lists all important pages on your website to help search engines discover and crawl them.',
+    category: 'technical-seo',
+    relatedTerms: ['crawl-budget', 'robots-txt', 'indexability'],
+  },
+  {
+    slug: 'robots-txt',
+    term: 'Robots.txt',
+    shortDescription: 'A text file that tells search engine crawlers which pages they can or cannot access on your site.',
+    category: 'technical-seo',
+    relatedTerms: ['crawlability', 'crawl-budget', 'xml-sitemap'],
+  },
+  {
+    slug: 'page-speed',
+    term: 'Page Speed',
+    shortDescription: 'How fast your web pages load, a critical factor for user experience and search rankings.',
+    category: 'technical-seo',
+    relatedTerms: ['core-web-vitals', 'mobile-first-indexing', 'responsive-design'],
+  },
+  {
+    slug: 'mobile-first-indexing',
+    term: 'Mobile-First Indexing',
+    shortDescription: 'Google\'s practice of primarily using the mobile version of content for indexing and ranking.',
+    category: 'technical-seo',
+    relatedTerms: ['responsive-design', 'page-speed', 'core-web-vitals'],
+  },
+  {
+    slug: 'responsive-design',
+    term: 'Responsive Design',
+    shortDescription: 'Web design approach that makes pages render well on all devices and screen sizes.',
+    category: 'technical-seo',
+    relatedTerms: ['mobile-first-indexing', 'page-speed', 'core-web-vitals'],
+  },
+  {
+    slug: 'canonical-tags',
+    term: 'Canonical Tags',
+    shortDescription: 'HTML elements that tell search engines which version of a page is the primary one to index.',
+    category: 'technical-seo',
+    relatedTerms: ['duplicate-content', 'indexability', 'url-structure'],
+  },
+  {
+    slug: 'url-structure',
+    term: 'URL Structure',
+    shortDescription: 'The format and organization of webpage addresses, affecting both usability and SEO.',
+    category: 'technical-seo',
+    relatedTerms: ['slug-optimization', 'canonical-tags', 'crawlability'],
+  },
+  {
+    slug: 'slug-optimization',
+    term: 'Slug Optimization',
+    shortDescription: 'Crafting clean, keyword-rich URL slugs that are readable and SEO-friendly.',
+    category: 'technical-seo',
+    relatedTerms: ['url-structure', 'keyword-optimization', 'crawlability'],
   },
   // On-Page SEO
   {
@@ -71,7 +247,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: 'Meta Description',
     shortDescription: 'An HTML element that provides a brief summary of a webpage, often displayed in search engine results.',
     category: 'on-page-seo',
-    relatedTerms: ['title-tag', 'keyword-optimization', 'header-tags'],
+    relatedTerms: ['title-tag', 'click-through-rate', 'header-tags'],
   },
   {
     slug: 'title-tag',
@@ -85,7 +261,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: 'Keyword Optimization',
     shortDescription: 'The process of researching, analyzing, and selecting the best keywords to target for organic search traffic.',
     category: 'on-page-seo',
-    relatedTerms: ['title-tag', 'meta-description', 'header-tags'],
+    relatedTerms: ['title-tag', 'meta-description', 'keyword-research'],
   },
   {
     slug: 'header-tags',
@@ -93,6 +269,27 @@ export const glossaryTerms: GlossaryTerm[] = [
     shortDescription: 'HTML elements that define headings and subheadings on a page, helping structure content for users and search engines.',
     category: 'on-page-seo',
     relatedTerms: ['title-tag', 'meta-description', 'keyword-optimization'],
+  },
+  {
+    slug: 'internal-linking',
+    term: 'Internal Linking',
+    shortDescription: 'Links that connect pages within your own website, distributing authority and helping users navigate.',
+    category: 'on-page-seo',
+    relatedTerms: ['anchor-text', 'crawlability', 'topic-clusters'],
+  },
+  {
+    slug: 'anchor-text',
+    term: 'Anchor Text',
+    shortDescription: 'The clickable text in a hyperlink that provides context about the linked page\'s content.',
+    category: 'on-page-seo',
+    relatedTerms: ['internal-linking', 'backlinks', 'link-building'],
+  },
+  {
+    slug: 'image-alt-text',
+    term: 'Image Alt Text',
+    shortDescription: 'Descriptive text added to images that helps search engines understand visual content and improves accessibility.',
+    category: 'on-page-seo',
+    relatedTerms: ['keyword-optimization', 'page-speed', 'header-tags'],
   },
   // Off-Page SEO
   {
@@ -107,7 +304,14 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: 'Domain Authority',
     shortDescription: 'A score developed by Moz that predicts how well a website will rank on search engine result pages.',
     category: 'off-page-seo',
-    relatedTerms: ['backlinks', 'link-building', 'anchor-text'],
+    relatedTerms: ['backlinks', 'page-authority', 'link-building'],
+  },
+  {
+    slug: 'page-authority',
+    term: 'Page Authority',
+    shortDescription: 'A Moz metric predicting how well a specific page will rank, based on its backlink profile.',
+    category: 'off-page-seo',
+    relatedTerms: ['domain-authority', 'backlinks', 'link-building'],
   },
   {
     slug: 'link-building',
@@ -116,18 +320,86 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: 'off-page-seo',
     relatedTerms: ['backlinks', 'domain-authority', 'anchor-text'],
   },
+  // Content SEO
+  {
+    slug: 'content-freshness',
+    term: 'Content Freshness',
+    shortDescription: 'How recently content was created or updated, a factor Google considers for time-sensitive queries.',
+    category: 'content-seo',
+    relatedTerms: ['content-pruning', 'eeat', 'topic-clusters'],
+  },
+  {
+    slug: 'content-pruning',
+    term: 'Content Pruning',
+    shortDescription: 'The practice of removing or consolidating low-performing content to improve overall site quality.',
+    category: 'content-seo',
+    relatedTerms: ['thin-content', 'content-freshness', 'duplicate-content'],
+  },
+  {
+    slug: 'topic-clusters',
+    term: 'Topic Clusters',
+    shortDescription: 'A content strategy organizing pages around central pillar topics with supporting cluster content.',
+    category: 'content-seo',
+    relatedTerms: ['pillar-pages', 'internal-linking', 'semantic-seo'],
+  },
+  {
+    slug: 'pillar-pages',
+    term: 'Pillar Pages',
+    shortDescription: 'Comprehensive pages covering a broad topic that link to more specific cluster content.',
+    category: 'content-seo',
+    relatedTerms: ['topic-clusters', 'internal-linking', 'semantic-seo'],
+  },
+  {
+    slug: 'semantic-seo',
+    term: 'Semantic SEO',
+    shortDescription: 'Optimization focused on topic meaning and context rather than just individual keywords.',
+    category: 'content-seo',
+    relatedTerms: ['lsi-keywords', 'topic-clusters', 'search-intent'],
+  },
+  {
+    slug: 'lsi-keywords',
+    term: 'LSI Keywords',
+    shortDescription: 'Latent Semantic Indexing keywords—terms conceptually related to your primary keyword.',
+    category: 'content-seo',
+    relatedTerms: ['semantic-seo', 'keyword-optimization', 'topic-clusters'],
+  },
+  {
+    slug: 'duplicate-content',
+    term: 'Duplicate Content',
+    shortDescription: 'Identical or very similar content appearing on multiple URLs, potentially causing ranking issues.',
+    category: 'content-seo',
+    relatedTerms: ['canonical-tags', 'thin-content', 'content-pruning'],
+  },
+  {
+    slug: 'thin-content',
+    term: 'Thin Content',
+    shortDescription: 'Pages with little valuable content that provide minimal value to users and may hurt rankings.',
+    category: 'content-seo',
+    relatedTerms: ['content-pruning', 'duplicate-content', 'eeat'],
+  },
+  {
+    slug: 'ai-content-optimization',
+    term: 'AI-Generated Content Optimization',
+    shortDescription: 'Strategies for improving AI-written content to meet quality standards and rank effectively.',
+    category: 'content-seo',
+    relatedTerms: ['eeat', 'content-freshness', 'thin-content'],
+  },
 ];
 
 export const categoryLabels: Record<GlossaryTerm['category'], string> = {
+  'fundamentals': 'SEO Fundamentals',
   'local-seo': 'Local SEO',
   'technical-seo': 'Technical SEO',
   'on-page-seo': 'On-Page SEO',
   'off-page-seo': 'Off-Page SEO',
+  'content-seo': 'Content SEO',
 };
 
 export const categoryColors: Record<GlossaryTerm['category'], string> = {
+  'fundamentals': 'bg-amber-500/20 text-amber-400 border-amber-500/30',
   'local-seo': 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
   'technical-seo': 'bg-blue-500/20 text-blue-400 border-blue-500/30',
   'on-page-seo': 'bg-purple-500/20 text-purple-400 border-purple-500/30',
   'off-page-seo': 'bg-orange-500/20 text-orange-400 border-orange-500/30',
+  'content-seo': 'bg-pink-500/20 text-pink-400 border-pink-500/30',
 };
