@@ -66,6 +66,14 @@ import KeywordOptimizationGlossary from "./pages/glossary/KeywordOptimization";
 import HeaderTagsGlossary from "./pages/glossary/HeaderTags";
 import DomainAuthorityGlossary from "./pages/glossary/DomainAuthority";
 import LinkBuildingGlossary from "./pages/glossary/LinkBuilding";
+// New glossary pages - Batch 1
+import SearchEngineOptimizationGlossary from "./pages/glossary/SearchEngineOptimization";
+import OrganicTrafficGlossary from "./pages/glossary/OrganicTraffic";
+import KeywordResearchGlossary from "./pages/glossary/KeywordResearch";
+import SearchIntentGlossary from "./pages/glossary/SearchIntent";
+import LongTailKeywordsGlossary from "./pages/glossary/LongTailKeywords";
+import SERPGlossary from "./pages/glossary/SERP";
+import FeaturedSnippetsGlossary from "./pages/glossary/FeaturedSnippets";
 
 const queryClient = new QueryClient();
 
@@ -115,6 +123,14 @@ const App = () => (
           <Route path="/glossary/header-tags" element={<HeaderTagsGlossary />} />
           <Route path="/glossary/domain-authority" element={<DomainAuthorityGlossary />} />
           <Route path="/glossary/link-building" element={<LinkBuildingGlossary />} />
+          {/* New glossary pages - Batch 1 */}
+          <Route path="/glossary/search-engine-optimization" element={<SearchEngineOptimizationGlossary />} />
+          <Route path="/glossary/organic-traffic" element={<OrganicTrafficGlossary />} />
+          <Route path="/glossary/keyword-research" element={<KeywordResearchGlossary />} />
+          <Route path="/glossary/search-intent" element={<SearchIntentGlossary />} />
+          <Route path="/glossary/long-tail-keywords" element={<LongTailKeywordsGlossary />} />
+          <Route path="/glossary/serp" element={<SERPGlossary />} />
+          <Route path="/glossary/featured-snippets" element={<FeaturedSnippetsGlossary />} />
           
           {/* San Diego neighborhood SEO pages */}
           <Route path="/san-diego/downtown-san-diego-seo" element={<DowntownSanDiegoSEO />} />
