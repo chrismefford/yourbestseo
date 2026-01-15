@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { ChevronRight, BookOpen, ArrowLeft, ExternalLink } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -62,6 +63,13 @@ const GlossaryTermPage = ({
   imageUrl,
   imageAlt,
 }: GlossaryTermPageProps) => {
+  const location = useLocation();
+  
+  // Scroll to top when navigating to a new glossary page
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [location.pathname]);
+
   const termData = glossaryTerms.find(t => t.slug === slug);
   const relatedTerms = termData?.relatedTerms
     .map(rt => glossaryTerms.find(t => t.slug === rt))
