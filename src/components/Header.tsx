@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
+import { Menu, X, ArrowRight, ChevronDown, PenLine, BookOpen, Search, Target, Link2, Zap, MapPin, Tag } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -49,12 +49,12 @@ const Header = () => {
   ];
 
   const glossaryHighlights = [
-    { name: "Search Engine Optimization", path: "/glossary/search-engine-optimization", emoji: "🔍" },
-    { name: "Keyword Research", path: "/glossary/keyword-research", emoji: "🎯" },
-    { name: "Backlinks", path: "/glossary/backlinks", emoji: "🔗" },
-    { name: "Core Web Vitals", path: "/glossary/core-web-vitals", emoji: "⚡" },
-    { name: "Local SEO", path: "/glossary/local-citations", emoji: "📍" },
-    { name: "Schema Markup", path: "/glossary/schema-markup", emoji: "🏷️" },
+    { name: "Search Engine Optimization", path: "/glossary/search-engine-optimization", icon: Search },
+    { name: "Keyword Research", path: "/glossary/keyword-research", icon: Target },
+    { name: "Backlinks", path: "/glossary/backlinks", icon: Link2 },
+    { name: "Core Web Vitals", path: "/glossary/core-web-vitals", icon: Zap },
+    { name: "Local SEO", path: "/glossary/local-citations", icon: MapPin },
+    { name: "Schema Markup", path: "/glossary/schema-markup", icon: Tag },
   ];
 
   useEffect(() => {
@@ -177,8 +177,8 @@ const Header = () => {
                       {/* Blog Section */}
                       <div className="p-5">
                         <div className="flex items-center gap-3 mb-4">
-                          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                            <span className="text-xl">📝</span>
+                          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center shadow-lg shadow-primary/20">
+                            <PenLine className="w-5 h-5 text-primary-foreground" />
                           </div>
                           <div>
                             <h3 className="font-semibold text-foreground">SEO Blog</h3>
@@ -201,24 +201,26 @@ const Header = () => {
                       {/* Glossary Section */}
                       <div className="p-5">
                         <div className="flex items-center gap-3 mb-4">
-                          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gold/20 to-gold/5 flex items-center justify-center">
-                            <span className="text-xl">📚</span>
+                          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gold to-gold/60 flex items-center justify-center shadow-lg shadow-gold/20">
+                            <BookOpen className="w-5 h-5 text-navy" />
                           </div>
                           <div>
                             <h3 className="font-semibold text-foreground">SEO Glossary</h3>
                             <p className="text-xs text-muted-foreground">50+ terms explained</p>
                           </div>
                         </div>
-                        <div className="space-y-1.5 mb-3">
+                        <div className="space-y-1 mb-3">
                           {glossaryHighlights.slice(0, 4).map((term) => (
                             <Link
                               key={term.name}
                               to={term.path}
                               onClick={() => setIsLearnOpen(false)}
-                              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors py-1"
+                              className="flex items-center gap-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors py-1.5 group"
                             >
-                              <span>{term.emoji}</span>
-                              <span>{term.name}</span>
+                              <div className="w-6 h-6 rounded-md bg-secondary/80 group-hover:bg-primary/10 flex items-center justify-center transition-colors">
+                                <term.icon className="w-3.5 h-3.5 text-muted-foreground group-hover:text-primary transition-colors" />
+                              </div>
+                              <span className="truncate">{term.name}</span>
                             </Link>
                           ))}
                         </div>
@@ -363,7 +365,9 @@ const Header = () => {
                     onClick={() => setIsMenuOpen(false)}
                     className="flex items-center gap-3 text-foreground py-2"
                   >
-                    <span className="text-lg">📝</span>
+                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center">
+                      <PenLine className="w-4 h-4 text-primary-foreground" />
+                    </div>
                     <span className="font-medium">SEO Blog</span>
                   </Link>
                   <Link
@@ -371,7 +375,9 @@ const Header = () => {
                     onClick={() => setIsMenuOpen(false)}
                     className="flex items-center gap-3 text-foreground py-2"
                   >
-                    <span className="text-lg">📚</span>
+                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-gold to-gold/60 flex items-center justify-center">
+                      <BookOpen className="w-4 h-4 text-navy" />
+                    </div>
                     <span className="font-medium">SEO Glossary</span>
                   </Link>
                 </div>
