@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ArrowRight, ChevronDown, PenLine, BookOpen, Search, Target, Link2, Zap, MapPin, Tag } from "lucide-react";
+import { Menu, X, ArrowRight, ChevronDown, PenLine, BookOpen, HelpCircle, Search, Target, Link2, Zap, MapPin, Tag } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -171,27 +171,24 @@ const Header = () => {
                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[480px] bg-card border border-border rounded-2xl shadow-2xl overflow-hidden z-50"
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[520px] bg-card border border-border rounded-2xl shadow-2xl overflow-hidden z-50"
                   >
-                    <div className="grid grid-cols-2 divide-x divide-border">
+                    <div className="grid grid-cols-3 divide-x divide-border">
                       {/* Blog Section */}
                       <div className="p-5">
                         <div className="flex items-center gap-3 mb-4">
                           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center shadow-lg shadow-primary/20">
                             <PenLine className="w-5 h-5 text-primary-foreground" />
                           </div>
-                          <div>
-                            <h3 className="font-semibold text-foreground">SEO Blog</h3>
-                            <p className="text-xs text-muted-foreground">Tips & insights</p>
-                          </div>
                         </div>
-                        <p className="text-sm text-muted-foreground mb-4">
-                          Expert SEO strategies, case studies, and actionable tips to boost your rankings.
+                        <h3 className="font-semibold text-foreground mb-1">SEO Blog</h3>
+                        <p className="text-xs text-muted-foreground mb-4">
+                          Tips & insights
                         </p>
                         <Link
                           to="/blog"
                           onClick={() => setIsLearnOpen(false)}
-                          className="inline-flex items-center gap-2 px-4 py-2.5 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg text-sm font-medium transition-colors"
+                          className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
                         >
                           Visit Blog
                           <ArrowRight className="w-4 h-4" />
@@ -204,32 +201,38 @@ const Header = () => {
                           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gold to-gold/60 flex items-center justify-center shadow-lg shadow-gold/20">
                             <BookOpen className="w-5 h-5 text-navy" />
                           </div>
-                          <div>
-                            <h3 className="font-semibold text-foreground">SEO Glossary</h3>
-                            <p className="text-xs text-muted-foreground">50+ terms explained</p>
-                          </div>
                         </div>
-                        <div className="space-y-1 mb-3">
-                          {glossaryHighlights.slice(0, 4).map((term) => (
-                            <Link
-                              key={term.name}
-                              to={term.path}
-                              onClick={() => setIsLearnOpen(false)}
-                              className="flex items-center gap-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors py-1.5 group"
-                            >
-                              <div className="w-6 h-6 rounded-md bg-secondary/80 group-hover:bg-primary/10 flex items-center justify-center transition-colors">
-                                <term.icon className="w-3.5 h-3.5 text-muted-foreground group-hover:text-primary transition-colors" />
-                              </div>
-                              <span className="truncate">{term.name}</span>
-                            </Link>
-                          ))}
-                        </div>
+                        <h3 className="font-semibold text-foreground mb-1">SEO Glossary</h3>
+                        <p className="text-xs text-muted-foreground mb-4">
+                          50+ terms explained
+                        </p>
                         <Link
                           to="/glossary"
                           onClick={() => setIsLearnOpen(false)}
                           className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
                         >
-                          View All Terms
+                          View Glossary
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
+                      </div>
+
+                      {/* Questions Section */}
+                      <div className="p-5">
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-500/60 flex items-center justify-center shadow-lg shadow-emerald-500/20">
+                            <HelpCircle className="w-5 h-5 text-white" />
+                          </div>
+                        </div>
+                        <h3 className="font-semibold text-foreground mb-1">SEO Questions</h3>
+                        <p className="text-xs text-muted-foreground mb-4">
+                          50+ answers
+                        </p>
+                        <Link
+                          to="/questions"
+                          onClick={() => setIsLearnOpen(false)}
+                          className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+                        >
+                          View Questions
                           <ArrowRight className="w-4 h-4" />
                         </Link>
                       </div>
@@ -379,6 +382,16 @@ const Header = () => {
                       <BookOpen className="w-4 h-4 text-navy" />
                     </div>
                     <span className="font-medium">SEO Glossary</span>
+                  </Link>
+                  <Link
+                    to="/questions"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex items-center gap-3 text-foreground py-2"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-emerald-500/60 flex items-center justify-center">
+                      <HelpCircle className="w-4 h-4 text-white" />
+                    </div>
+                    <span className="font-medium">SEO Questions</span>
                   </Link>
                 </div>
               </div>

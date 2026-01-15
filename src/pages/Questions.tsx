@@ -1,10 +1,11 @@
-import { Helmet } from 'react-helmet-async';
+import { useState, useMemo } from 'react';
+import { Link } from 'react-router-dom';
+import { Search, HelpCircle, ArrowRight } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import CTASection from '@/components/CTASection';
-import { Link } from 'react-router-dom';
-import { Search, ArrowRight } from 'lucide-react';
-import { useState } from 'react';
+import SEO from '@/components/SEO';
+import { Input } from '@/components/ui/input';
+import { Badge } from '@/components/ui/badge';
 
 interface Question {
   slug: string;
@@ -80,125 +81,165 @@ const categoryLabels: Record<Question['category'], string> = {
 };
 
 const categoryColors: Record<Question['category'], string> = {
-  'basics': 'bg-amber-500/20 text-amber-400 border-amber-500/30',
-  'local-seo': 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
-  'technical': 'bg-blue-500/20 text-blue-400 border-blue-500/30',
-  'content': 'bg-purple-500/20 text-purple-400 border-purple-500/30',
-  'strategy': 'bg-orange-500/20 text-orange-400 border-orange-500/30',
-  'tools': 'bg-pink-500/20 text-pink-400 border-pink-500/30',
+  'basics': 'border-amber-500/30 text-amber-400',
+  'local-seo': 'border-emerald-500/30 text-emerald-400',
+  'technical': 'border-blue-500/30 text-blue-400',
+  'content': 'border-purple-500/30 text-purple-400',
+  'strategy': 'border-orange-500/30 text-orange-400',
+  'tools': 'border-pink-500/30 text-pink-400',
 };
 
 const Questions = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<Question['category'] | 'all'>('all');
+  const [activeCategory, setActiveCategory] = useState<Question['category'] | 'all'>('all');
 
-  const filteredQuestions = questions.filter((q) => {
-    const matchesSearch = q.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      q.shortAnswer.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory = selectedCategory === 'all' || q.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
+  const filteredQuestions = useMemo(() => {
+    return questions.filter((q) => {
+      const matchesSearch = 
+        q.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        q.shortAnswer.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesCategory = activeCategory === 'all' || q.category === activeCategory;
+      return matchesSearch && matchesCategory;
+    });
+  }, [searchQuery, activeCategory]);
 
-  const categories = Object.keys(categoryLabels) as Question['category'][];
+  const groupedQuestions = useMemo(() => {
+    const groups: Record<string, Question[]> = {};
+    filteredQuestions.forEach((q) => {
+      const firstLetter = q.question[0].toUpperCase();
+      if (!groups[firstLetter]) {
+        groups[firstLetter] = [];
+      }
+      groups[firstLetter].push(q);
+    });
+    return Object.entries(groups).sort(([a], [b]) => a.localeCompare(b));
+  }, [filteredQuestions]);
+
+  const categories: Array<Question['category'] | 'all'> = ['all', 'basics', 'local-seo', 'technical', 'content', 'strategy', 'tools'];
 
   return (
     <>
-      <Helmet>
-        <title>SEO Questions & Answers | Your Best SEO</title>
-        <meta name="description" content="Get answers to the most common SEO questions. Learn about search engine optimization, local SEO, technical SEO, content strategy, and more." />
-        <link rel="canonical" href="https://yourbestseo.lovable.app/questions" />
-      </Helmet>
-
-      <div className="min-h-screen bg-background">
-        <Header />
-        
-        <main className="pt-24 pb-16">
+      <SEO 
+        title="SEO Questions & Answers"
+        description="Get expert answers to the most common SEO questions. Learn about search engine optimization, local SEO, technical SEO, content strategy, and more."
+        canonical="/questions"
+      />
+      <Header />
+      <main className="min-h-screen bg-background pt-24 pb-16">
+        {/* Hero Section */}
+        <section className="py-16 border-b border-border/50">
           <div className="container mx-auto px-4">
-            {/* Header */}
-            <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                SEO Questions & Answers
+            <div className="max-w-3xl mx-auto text-center">
+              <div className="inline-flex items-center gap-2 badge-outline mb-6">
+                <HelpCircle className="w-4 h-4" />
+                <span>SEO Knowledge Base</span>
+              </div>
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                SEO <span className="text-gradient-gold">Questions</span>
               </h1>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Get expert answers to the most common SEO questions. Learn how to improve your search rankings and drive more organic traffic.
+              <p className="text-lg text-muted-foreground mb-8">
+                Get expert answers to the most common SEO questions. Browse through {questions.length}+ 
+                questions covering SEO basics, local SEO, technical optimization, and strategy.
               </p>
-            </div>
-
-            {/* Search and Filter */}
-            <div className="mb-12 space-y-6">
+              
+              {/* Search Bar */}
               <div className="relative max-w-xl mx-auto">
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                <input
+                <Input
                   type="text"
                   placeholder="Search questions..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3 bg-card border border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+                  className="pl-12 py-6 text-lg bg-card border-border/50 focus:border-primary"
                 />
               </div>
+            </div>
+          </div>
+        </section>
 
-              <div className="flex flex-wrap justify-center gap-3">
+        {/* Category Filters */}
+        <section className="py-8 border-b border-border/50 sticky top-20 bg-background/95 backdrop-blur-sm z-10">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-wrap justify-center gap-3">
+              {categories.map((category) => (
                 <button
-                  onClick={() => setSelectedCategory('all')}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                    selectedCategory === 'all'
-                      ? 'bg-primary text-primary-foreground'
-                      : 'bg-card border border-border text-muted-foreground hover:text-foreground'
+                  key={category}
+                  onClick={() => setActiveCategory(category)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 border ${
+                    activeCategory === category
+                      ? 'bg-primary text-primary-foreground border-primary'
+                      : 'bg-card border-border/50 text-muted-foreground hover:border-primary/50 hover:text-foreground'
                   }`}
                 >
-                  All Questions
+                  {category === 'all' ? 'All Questions' : categoryLabels[category]}
                 </button>
-                {categories.map((cat) => (
-                  <button
-                    key={cat}
-                    onClick={() => setSelectedCategory(cat)}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                      selectedCategory === cat
-                        ? 'bg-primary text-primary-foreground'
-                        : 'bg-card border border-border text-muted-foreground hover:text-foreground'
-                    }`}
-                  >
-                    {categoryLabels[cat]}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Questions Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredQuestions.map((q) => (
-                <Link
-                  key={q.slug}
-                  to={`/questions/${q.slug}`}
-                  className="group bg-card/50 border border-border rounded-xl p-6 hover:border-primary/50 transition-all hover:shadow-lg hover:shadow-primary/5"
-                >
-                  <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium border ${categoryColors[q.category]} mb-4`}>
-                    {categoryLabels[q.category]}
-                  </span>
-                  <h2 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                    {q.question}
-                  </h2>
-                  <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
-                    {q.shortAnswer}
-                  </p>
-                  <span className="inline-flex items-center gap-1 text-sm text-primary">
-                    Read answer <ArrowRight className="w-4 h-4" />
-                  </span>
-                </Link>
               ))}
             </div>
+          </div>
+        </section>
 
-            {filteredQuestions.length === 0 && (
-              <div className="text-center py-12">
-                <p className="text-muted-foreground">No questions found matching your search.</p>
+        {/* Questions Grid */}
+        <section className="py-12">
+          <div className="container mx-auto px-4">
+            {filteredQuestions.length === 0 ? (
+              <div className="text-center py-16">
+                <p className="text-muted-foreground text-lg">No questions found matching "{searchQuery}"</p>
+              </div>
+            ) : (
+              <div className="space-y-12">
+                {groupedQuestions.map(([letter, questionsInGroup]) => (
+                  <div key={letter}>
+                    <div className="flex items-center gap-4 mb-6">
+                      <span className="text-4xl font-display font-bold text-primary">{letter}</span>
+                      <div className="flex-1 h-px bg-border/50" />
+                    </div>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {questionsInGroup.map((q) => (
+                        <Link
+                          key={q.slug}
+                          to={`/questions/${q.slug}`}
+                          className="group p-6 rounded-xl bg-card border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5"
+                        >
+                          <div className="flex items-start justify-between gap-4 mb-3">
+                            <h3 className="font-display text-lg font-semibold group-hover:text-primary transition-colors">
+                              {q.question}
+                            </h3>
+                            <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all flex-shrink-0" />
+                          </div>
+                          <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
+                            {q.shortAnswer}
+                          </p>
+                          <Badge variant="outline" className={`text-xs ${categoryColors[q.category]}`}>
+                            {categoryLabels[q.category]}
+                          </Badge>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </div>
             )}
           </div>
-        </main>
+        </section>
 
-        <CTASection />
-        <Footer />
-      </div>
+        {/* Stats Section */}
+        <section className="py-12 border-t border-border/50">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+              {Object.entries(categoryLabels).map(([key, label]) => {
+                const count = questions.filter(q => q.category === key).length;
+                return (
+                  <div key={key} className="text-center p-6 rounded-xl bg-card border border-border/50">
+                    <div className="text-3xl font-display font-bold text-primary mb-2">{count}</div>
+                    <div className="text-sm text-muted-foreground">{label}</div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
     </>
   );
 };
