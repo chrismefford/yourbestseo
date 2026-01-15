@@ -9,6 +9,10 @@ import Services from "./pages/Services";
 import Pricing from "./pages/Pricing";
 import NotFound from "./pages/NotFound";
 import PaymentSuccess from "./pages/PaymentSuccess";
+import About from "./pages/About";
+import CaseStudies from "./pages/CaseStudies";
+import FAQ from "./pages/FAQ";
+import FreeAudit from "./pages/FreeAudit";
 
 // San Diego neighborhood pages
 import DowntownSanDiegoSEO from "./pages/san-diego/DowntownSanDiegoSEO";
@@ -58,6 +62,10 @@ const App = () => (
           <Route path="/services" element={<Services />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/free-audit" element={<FreeAudit />} />
           <Route path="/payment-success" element={<PaymentSuccess />} />
           
           {/* À La Carte Service pages */}
