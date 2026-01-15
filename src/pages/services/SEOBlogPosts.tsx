@@ -6,7 +6,7 @@ const serviceData = {
   name: "10 SEO-Optimized Blog Posts",
   tagline: "Content That Ranks and Converts",
   description: "Get 10 professionally written, keyword-targeted blog posts that drive organic traffic and establish your authority. Each post is researched, optimized, and ready to publish.",
-  price: 999,
+  price: 300,
   priceId: "price_1Soyp6GzDNqJj8E5h8aUfLKz",
   icon: FileText,
   heroGradient: "from-blue-500 to-purple-600",
