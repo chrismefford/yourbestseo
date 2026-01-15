@@ -66,7 +66,7 @@ import KeywordOptimizationGlossary from "./pages/glossary/KeywordOptimization";
 import HeaderTagsGlossary from "./pages/glossary/HeaderTags";
 import DomainAuthorityGlossary from "./pages/glossary/DomainAuthority";
 import LinkBuildingGlossary from "./pages/glossary/LinkBuilding";
-// New glossary pages - Batch 1
+// Batch 1 - Fundamentals
 import SearchEngineOptimizationGlossary from "./pages/glossary/SearchEngineOptimization";
 import OrganicTrafficGlossary from "./pages/glossary/OrganicTraffic";
 import KeywordResearchGlossary from "./pages/glossary/KeywordResearch";
@@ -74,6 +74,29 @@ import SearchIntentGlossary from "./pages/glossary/SearchIntent";
 import LongTailKeywordsGlossary from "./pages/glossary/LongTailKeywords";
 import SERPGlossary from "./pages/glossary/SERP";
 import FeaturedSnippetsGlossary from "./pages/glossary/FeaturedSnippets";
+// Batch 2 - More fundamentals and on-page
+import ShortTailKeywordsGlossary from "./pages/glossary/ShortTailKeywords";
+import KeywordDifficultyGlossary from "./pages/glossary/KeywordDifficulty";
+import SearchVolumeGlossary from "./pages/glossary/SearchVolume";
+import ClickThroughRateGlossary from "./pages/glossary/ClickThroughRate";
+import ImpressionsGlossary from "./pages/glossary/Impressions";
+import PeopleAlsoAskGlossary from "./pages/glossary/PeopleAlsoAsk";
+import MetaTitleGlossary from "./pages/glossary/MetaTitle";
+import InternalLinkingGlossary from "./pages/glossary/InternalLinking";
+// Batch 3 - More terms
+import AnchorTextGlossary from "./pages/glossary/AnchorText";
+import PageAuthorityGlossary from "./pages/glossary/PageAuthority";
+import TopicClustersGlossary from "./pages/glossary/TopicClusters";
+import PillarPagesGlossary from "./pages/glossary/PillarPages";
+import EEATGlossary from "./pages/glossary/EEAT";
+import LocalSEOGlossary from "./pages/glossary/LocalSEO";
+// Batch 4 - Content and Technical
+import ImageAltTextGlossary from "./pages/glossary/ImageAltText";
+import DuplicateContentGlossary from "./pages/glossary/DuplicateContent";
+import ThinContentGlossary from "./pages/glossary/ThinContent";
+import ContentFreshnessGlossary from "./pages/glossary/ContentFreshness";
+import SemanticSEOGlossary from "./pages/glossary/SemanticSEO";
+import XMLSitemapGlossary from "./pages/glossary/XMLSitemap";
 
 const queryClient = new QueryClient();
 
@@ -123,7 +146,7 @@ const App = () => (
           <Route path="/glossary/header-tags" element={<HeaderTagsGlossary />} />
           <Route path="/glossary/domain-authority" element={<DomainAuthorityGlossary />} />
           <Route path="/glossary/link-building" element={<LinkBuildingGlossary />} />
-          {/* New glossary pages - Batch 1 */}
+          {/* Batch 1 - Fundamentals */}
           <Route path="/glossary/search-engine-optimization" element={<SearchEngineOptimizationGlossary />} />
           <Route path="/glossary/organic-traffic" element={<OrganicTrafficGlossary />} />
           <Route path="/glossary/keyword-research" element={<KeywordResearchGlossary />} />
@@ -131,6 +154,29 @@ const App = () => (
           <Route path="/glossary/long-tail-keywords" element={<LongTailKeywordsGlossary />} />
           <Route path="/glossary/serp" element={<SERPGlossary />} />
           <Route path="/glossary/featured-snippets" element={<FeaturedSnippetsGlossary />} />
+          {/* Batch 2 - More fundamentals and on-page */}
+          <Route path="/glossary/short-tail-keywords" element={<ShortTailKeywordsGlossary />} />
+          <Route path="/glossary/keyword-difficulty" element={<KeywordDifficultyGlossary />} />
+          <Route path="/glossary/search-volume" element={<SearchVolumeGlossary />} />
+          <Route path="/glossary/click-through-rate" element={<ClickThroughRateGlossary />} />
+          <Route path="/glossary/impressions" element={<ImpressionsGlossary />} />
+          <Route path="/glossary/people-also-ask" element={<PeopleAlsoAskGlossary />} />
+          <Route path="/glossary/meta-title" element={<MetaTitleGlossary />} />
+          <Route path="/glossary/internal-linking" element={<InternalLinkingGlossary />} />
+          {/* Batch 3 - More terms */}
+          <Route path="/glossary/anchor-text" element={<AnchorTextGlossary />} />
+          <Route path="/glossary/page-authority" element={<PageAuthorityGlossary />} />
+          <Route path="/glossary/topic-clusters" element={<TopicClustersGlossary />} />
+          <Route path="/glossary/pillar-pages" element={<PillarPagesGlossary />} />
+          <Route path="/glossary/eeat" element={<EEATGlossary />} />
+          <Route path="/glossary/local-seo" element={<LocalSEOGlossary />} />
+          {/* Batch 4 - Content and Technical */}
+          <Route path="/glossary/image-alt-text" element={<ImageAltTextGlossary />} />
+          <Route path="/glossary/duplicate-content" element={<DuplicateContentGlossary />} />
+          <Route path="/glossary/thin-content" element={<ThinContentGlossary />} />
+          <Route path="/glossary/content-freshness" element={<ContentFreshnessGlossary />} />
+          <Route path="/glossary/semantic-seo" element={<SemanticSEOGlossary />} />
+          <Route path="/glossary/xml-sitemap" element={<XMLSitemapGlossary />} />
           
           {/* San Diego neighborhood SEO pages */}
           <Route path="/san-diego/downtown-san-diego-seo" element={<DowntownSanDiegoSEO />} />
