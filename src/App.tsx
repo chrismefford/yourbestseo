@@ -88,6 +88,16 @@ import HowToFixDuplicateContent from "./pages/questions/HowToFixDuplicateContent
 import WhatAreLongTailKeywords from "./pages/questions/WhatAreLongTailKeywords";
 import WhatIsEEAT from "./pages/questions/WhatIsEEAT";
 import HowLongShouldBlogPostsBe from "./pages/questions/HowLongShouldBlogPostsBe";
+import HowToWriteSEOContent from "./pages/questions/HowToWriteSEOContent";
+import HowOftenShouldIPublishContent from "./pages/questions/HowOftenShouldIPublishContent";
+import WhatIsContentFreshness from "./pages/questions/WhatIsContentFreshness";
+import HowToDoCompetitorAnalysis from "./pages/questions/HowToDoCompetitorAnalysis";
+import WhatIsLinkBuilding from "./pages/questions/WhatIsLinkBuilding";
+import HowToRecoverFromGooglePenalty from "./pages/questions/HowToRecoverFromGooglePenalty";
+import WhatIsWhiteHatSEO from "./pages/questions/WhatIsWhiteHatSEO";
+import WhatIsBlackHatSEO from "./pages/questions/WhatIsBlackHatSEO";
+import HowToBuildTopicClusters from "./pages/questions/HowToBuildTopicClusters";
+import WhatIsSEOROI from "./pages/questions/WhatIsSEOROI";
 import GoogleBusinessProfileGlossary from "./pages/glossary/GoogleBusinessProfile";
 import LocalPackGlossary from "./pages/glossary/LocalPack";
 import NAPConsistencyGlossary from "./pages/glossary/NAPConsistency";
@@ -279,6 +289,16 @@ const App = () => (
           <Route path="/questions/what-are-long-tail-keywords" element={<WhatAreLongTailKeywords />} />
           <Route path="/questions/what-is-eeat" element={<WhatIsEEAT />} />
           <Route path="/questions/how-long-should-blog-posts-be" element={<HowLongShouldBlogPostsBe />} />
+          <Route path="/questions/how-to-write-seo-content" element={<HowToWriteSEOContent />} />
+          <Route path="/questions/how-often-should-i-publish-content" element={<HowOftenShouldIPublishContent />} />
+          <Route path="/questions/what-is-content-freshness" element={<WhatIsContentFreshness />} />
+          <Route path="/questions/how-to-do-competitor-analysis" element={<HowToDoCompetitorAnalysis />} />
+          <Route path="/questions/what-is-link-building" element={<WhatIsLinkBuilding />} />
+          <Route path="/questions/how-to-recover-from-google-penalty" element={<HowToRecoverFromGooglePenalty />} />
+          <Route path="/questions/what-is-white-hat-seo" element={<WhatIsWhiteHatSEO />} />
+          <Route path="/questions/what-is-black-hat-seo" element={<WhatIsBlackHatSEO />} />
+          <Route path="/questions/how-to-build-topic-clusters" element={<HowToBuildTopicClusters />} />
+          <Route path="/questions/what-is-seo-roi" element={<WhatIsSEOROI />} />
           
           {/* San Diego neighborhood SEO pages */}
           <Route path="/san-diego/downtown-san-diego-seo" element={<DowntownSanDiegoSEO />} />
