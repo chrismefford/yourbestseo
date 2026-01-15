@@ -56,9 +56,14 @@ serve(async (req) => {
       status: 200,
     });
   } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : "Unknown error";
-    console.error("Payment error:", errorMessage);
-    return new Response(JSON.stringify({ error: errorMessage }), {
+    // Log detailed error server-side for debugging
+    console.error("Payment error:", error instanceof Error ? error.message : error);
+    
+    // Return generic error message to client to avoid information leakage
+    return new Response(JSON.stringify({ 
+      error: "Payment processing failed. Please try again or contact support.",
+      code: "PAYMENT_ERROR"
+    }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 500,
     });
