@@ -28,7 +28,7 @@ The value of organic traffic extends beyond just being "free." These visitors ar
     ]}
     chartData={{ type: 'pie', title: 'Website Traffic Sources (Average)', data: [{ name: 'Organic Search', value: 53 }, { name: 'Direct', value: 22 }, { name: 'Paid Search', value: 15 }, { name: 'Social', value: 5 }, { name: 'Other', value: 5 }] }}
     imageUrl="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop"
-    imageAlt="Analytics graph showing organic traffic growth over time"
+    imageAlt="Organic traffic analytics dashboard displaying website visitor growth from search engine results"
   />
 );
 

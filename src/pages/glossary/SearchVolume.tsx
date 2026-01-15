@@ -26,7 +26,7 @@ const SearchVolumeGlossary = () => (
     ]}
     chartData={{ type: 'bar', title: 'Search Volume by Keyword Type', data: [{ name: 'Head Terms', value: 50000 }, { name: 'Body Keywords', value: 5000 }, { name: 'Long-Tail', value: 500 }] }}
     imageUrl="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop"
-    imageAlt="Search volume analytics and data visualization"
+    imageAlt="Search volume data showing monthly keyword search frequency metrics and SEO traffic potential analysis"
   />
 );
 
