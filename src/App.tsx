@@ -164,6 +164,7 @@ import URLStructureGlossary from "./pages/glossary/URLStructure";
 import SlugOptimizationGlossary from "./pages/glossary/SlugOptimization";
 import ContentPruningGlossary from "./pages/glossary/ContentPruning";
 import LSIKeywordsGlossary from "./pages/glossary/LSIKeywords";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -173,6 +174,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />
