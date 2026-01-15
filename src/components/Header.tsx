@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ArrowRight, ChevronDown, PenLine, BookOpen, HelpCircle, Search, Target, Link2, Zap, MapPin, Tag } from "lucide-react";
+import { Menu, X, ArrowRight, ChevronDown, BookOpen, HelpCircle, Search, Target, Link2, Zap, MapPin, Tag } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -173,28 +173,7 @@ const Header = () => {
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
                     className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[520px] bg-card border border-border rounded-2xl shadow-2xl overflow-hidden z-50"
                   >
-                    <div className="grid grid-cols-3 divide-x divide-border">
-                      {/* Blog Section */}
-                      <div className="p-5">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center shadow-lg shadow-primary/20">
-                            <PenLine className="w-5 h-5 text-primary-foreground" />
-                          </div>
-                        </div>
-                        <h3 className="font-semibold text-foreground mb-1">SEO Blog</h3>
-                        <p className="text-xs text-muted-foreground mb-4">
-                          Tips & insights
-                        </p>
-                        <Link
-                          to="/blog"
-                          onClick={() => setIsLearnOpen(false)}
-                          className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
-                        >
-                          Visit Blog
-                          <ArrowRight className="w-4 h-4" />
-                        </Link>
-                      </div>
-
+                    <div className="grid grid-cols-2 divide-x divide-border">
                       {/* Glossary Section */}
                       <div className="p-5">
                         <div className="flex items-center gap-3 mb-4">
@@ -363,16 +342,6 @@ const Header = () => {
               <div className="py-2">
                 <p className="text-sm font-medium text-primary mb-3 tracking-widest uppercase">Learn SEO</p>
                 <div className="grid grid-cols-1 gap-2">
-                  <Link
-                    to="/blog"
-                    onClick={() => setIsMenuOpen(false)}
-                    className="flex items-center gap-3 text-foreground py-2"
-                  >
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center">
-                      <PenLine className="w-4 h-4 text-primary-foreground" />
-                    </div>
-                    <span className="font-medium">SEO Blog</span>
-                  </Link>
                   <Link
                     to="/glossary"
                     onClick={() => setIsMenuOpen(false)}
