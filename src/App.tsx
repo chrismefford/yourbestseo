@@ -4,6 +4,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import Blog from "./pages/Blog";
+import BlogProvider from "./components/BlogProvider";
 import Services from "./pages/Services";
 import Pricing from "./pages/Pricing";
 import NotFound from "./pages/NotFound";
@@ -170,15 +172,17 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/about" element={<About />} />
+      <BlogProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/blog/*" element={<Blog />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/about" element={<About />} />
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/free-audit" element={<FreeAudit />} />
@@ -341,6 +345,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      </BlogProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );
