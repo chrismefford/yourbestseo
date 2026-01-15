@@ -103,16 +103,18 @@ const Questions = () => {
     });
   }, [searchQuery, activeCategory]);
 
-  const groupedQuestions = useMemo(() => {
+  const groupedByCategory = useMemo(() => {
     const groups: Record<string, Question[]> = {};
-    filteredQuestions.forEach((q) => {
-      const firstLetter = q.question[0].toUpperCase();
-      if (!groups[firstLetter]) {
-        groups[firstLetter] = [];
+    const categoryOrder: Question['category'][] = ['basics', 'local-seo', 'technical', 'content', 'strategy', 'tools'];
+    
+    categoryOrder.forEach(cat => {
+      const questionsInCategory = filteredQuestions.filter(q => q.category === cat);
+      if (questionsInCategory.length > 0) {
+        groups[cat] = questionsInCategory;
       }
-      groups[firstLetter].push(q);
     });
-    return Object.entries(groups).sort(([a], [b]) => a.localeCompare(b));
+    
+    return Object.entries(groups);
   }, [filteredQuestions]);
 
   const categories: Array<Question['category'] | 'all'> = ['all', 'basics', 'local-seo', 'technical', 'content', 'strategy', 'tools'];
@@ -178,7 +180,7 @@ const Questions = () => {
           </div>
         </section>
 
-        {/* Questions Grid */}
+        {/* Questions Grid by Category */}
         <section className="py-12">
           <div className="container mx-auto px-4">
             {filteredQuestions.length === 0 ? (
@@ -186,12 +188,17 @@ const Questions = () => {
                 <p className="text-muted-foreground text-lg">No questions found matching "{searchQuery}"</p>
               </div>
             ) : (
-              <div className="space-y-12">
-                {groupedQuestions.map(([letter, questionsInGroup]) => (
-                  <div key={letter}>
-                    <div className="flex items-center gap-4 mb-6">
-                      <span className="text-4xl font-display font-bold text-primary">{letter}</span>
+              <div className="space-y-16">
+                {groupedByCategory.map(([category, questionsInGroup]) => (
+                  <div key={category}>
+                    <div className="flex items-center gap-4 mb-8">
+                      <h2 className="text-2xl md:text-3xl font-display font-bold text-primary">
+                        {categoryLabels[category as Question['category']]}
+                      </h2>
                       <div className="flex-1 h-px bg-border/50" />
+                      <span className="text-sm text-muted-foreground">
+                        {questionsInGroup.length} questions
+                      </span>
                     </div>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                       {questionsInGroup.map((q) => (
@@ -206,12 +213,9 @@ const Questions = () => {
                             </h3>
                             <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all flex-shrink-0" />
                           </div>
-                          <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
+                          <p className="text-sm text-muted-foreground line-clamp-2">
                             {q.shortAnswer}
                           </p>
-                          <Badge variant="outline" className={`text-xs ${categoryColors[q.category]}`}>
-                            {categoryLabels[q.category]}
-                          </Badge>
                         </Link>
                       ))}
                     </div>
