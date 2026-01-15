@@ -92,7 +92,7 @@ const Testimonials = () => {
                 {group.items.map((item, itemIndex) => (
                   <div
                     key={itemIndex}
-                    className="p-6 lg:p-8 rounded-2xl card-gradient border border-border/50 transition-all duration-300 cursor-pointer hover:bg-primary hover:border-primary group"
+                    className="p-6 lg:p-8 rounded-2xl bg-card border border-border/50 transition-all duration-300 cursor-pointer hover:!bg-primary hover:border-primary group"
                   >
                     <p className="font-display text-lg font-semibold mb-4 transition-colors duration-300 group-hover:text-primary-foreground">
                       {item.quote}
