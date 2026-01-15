@@ -92,17 +92,17 @@ const Testimonials = () => {
                 {group.items.map((item, itemIndex) => (
                   <div
                     key={itemIndex}
-                    className="p-6 lg:p-8 rounded-2xl card-gradient border border-border/50"
+                    className="p-6 lg:p-8 rounded-2xl card-gradient border border-border/50 transition-all duration-300 cursor-pointer hover:bg-primary hover:border-primary group"
                   >
-                    <p className="font-display text-lg font-semibold mb-4">
+                    <p className="font-display text-lg font-semibold mb-4 transition-colors duration-300 group-hover:text-primary-foreground">
                       {item.quote}
                     </p>
-                    <p className="text-muted-foreground leading-relaxed mb-6">
+                    <p className="text-muted-foreground leading-relaxed mb-6 transition-colors duration-300 group-hover:text-primary-foreground/80">
                       "{item.text}"
                     </p>
                     <div>
-                      <p className="font-medium">{item.author}</p>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="font-medium transition-colors duration-300 group-hover:text-primary-foreground">{item.author}</p>
+                      <p className="text-sm text-muted-foreground transition-colors duration-300 group-hover:text-primary-foreground/70">
                         {item.role}
                       </p>
                     </div>
