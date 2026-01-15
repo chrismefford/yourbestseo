@@ -30,7 +30,7 @@ interface TableOfContentsItem {
 interface GlossaryTermPageProps {
   slug: string;
   term: string;
-  category: 'local-seo' | 'technical-seo' | 'on-page-seo' | 'off-page-seo';
+  category: 'local-seo' | 'technical-seo' | 'on-page-seo' | 'off-page-seo' | 'fundamentals' | 'content-seo';
   definition: string;
   content: {
     introduction: string;
