@@ -14,3 +14,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://yourbestseo.com/sitemap.xml
+Sitemap: https://yourbestseo.com/blog/feed?limit=50
