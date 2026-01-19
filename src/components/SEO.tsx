@@ -43,8 +43,10 @@ const organizationSchema = {
   },
   address: {
     "@type": "PostalAddress",
+    streetAddress: "8620 Ian Way",
     addressLocality: "San Diego",
     addressRegion: "CA",
+    postalCode: "92071",
     addressCountry: "US",
   },
 };
