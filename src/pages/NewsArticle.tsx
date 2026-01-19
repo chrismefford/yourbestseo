@@ -54,12 +54,12 @@ const NewsArticle = () => {
         type="article"
         schema={[articleSchema, breadcrumbSchema]}
       />
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-white">
         <Header />
         
         <main className="pt-24">
           <article 
-            className="py-12 md:py-20"
+            className="py-12 md:py-20 bg-white"
             itemScope 
             itemType="https://schema.org/NewsArticle"
           >
@@ -92,14 +92,14 @@ const NewsArticle = () => {
                   </Badge>
                   
                   <h1 
-                    className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight"
+                    className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight"
                     itemProp="headline"
                   >
                     {article.title}
                   </h1>
 
                   <p 
-                    className="text-xl text-muted-foreground mb-8 leading-relaxed"
+                    className="text-xl text-gray-600 mb-8 leading-relaxed"
                     itemProp="description"
                   >
                     {article.excerpt}
@@ -117,7 +117,7 @@ const NewsArticle = () => {
                         <User className="w-5 h-5 text-primary" />
                       </div>
                       <div>
-                        <p className="font-medium text-foreground" itemProp="name">{article.author}</p>
+                        <p className="font-medium text-black" itemProp="name">{article.author}</p>
                         <p className="text-sm text-muted-foreground">{article.authorRole}</p>
                       </div>
                     </div>
@@ -157,14 +157,14 @@ const NewsArticle = () => {
                 {/* Article Content */}
                 <div 
                   className="prose prose-lg max-w-none
-                    prose-headings:text-foreground prose-headings:font-bold
+                    prose-headings:text-black prose-headings:font-bold
                     prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
                     prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-                    prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mb-6
-                    prose-ul:text-muted-foreground prose-ul:my-6
-                    prose-ol:text-muted-foreground prose-ol:my-6
+                    prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6
+                    prose-ul:text-gray-700 prose-ul:my-6
+                    prose-ol:text-gray-700 prose-ol:my-6
                     prose-li:my-2
-                    prose-strong:text-foreground
+                    prose-strong:text-black
                     prose-a:text-primary prose-a:no-underline hover:prose-a:underline"
                   itemProp="articleBody"
                   dangerouslySetInnerHTML={{ __html: article.content }}
@@ -182,15 +182,15 @@ const NewsArticle = () => {
                   </div>
 
                   {/* Author Bio */}
-                  <div className="bg-muted/50 rounded-2xl p-6 md:p-8">
+                  <div className="bg-gray-100 rounded-2xl p-6 md:p-8">
                     <div className="flex items-start gap-4">
                       <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <User className="w-8 h-8 text-primary" />
                       </div>
                       <div>
-                        <p className="font-bold text-foreground mb-1">{article.author}</p>
+                        <p className="font-bold text-black mb-1">{article.author}</p>
                         <p className="text-sm text-primary mb-3">{article.authorRole}</p>
-                        <p className="text-muted-foreground">
+                        <p className="text-gray-600">
                           Expert in SEO strategy and digital marketing with years of experience helping businesses improve their online visibility and search rankings.
                         </p>
                       </div>
@@ -203,9 +203,9 @@ const NewsArticle = () => {
 
           {/* Related Articles */}
           {relatedArticles.length > 0 && (
-            <section className="py-16 bg-muted/30">
+            <section className="py-16 bg-gray-50">
               <div className="container mx-auto px-4">
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
+                <h2 className="text-2xl md:text-3xl font-bold text-black mb-8">
                   Related Articles
                 </h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -214,12 +214,12 @@ const NewsArticle = () => {
                       <Badge variant="secondary" className="mb-3">
                         {related.category}
                       </Badge>
-                      <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                      <h3 className="text-xl font-bold text-black mb-2 group-hover:text-primary transition-colors">
                         <Link to={`/news/${related.slug}`}>
                           {related.title}
                         </Link>
                       </h3>
-                      <p className="text-muted-foreground text-sm mb-3 line-clamp-2">
+                      <p className="text-gray-600 text-sm mb-3 line-clamp-2">
                         {related.excerpt}
                       </p>
                       <time className="text-xs text-muted-foreground">
@@ -237,12 +237,12 @@ const NewsArticle = () => {
           )}
 
           {/* CTA */}
-          <section className="py-16">
+          <section className="py-16 bg-white">
             <div className="container mx-auto px-4 text-center">
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
                 Ready to Improve Your SEO?
               </h2>
-              <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+              <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
                 Get a free comprehensive SEO audit and discover opportunities to boost your search rankings.
               </p>
               <Link 
