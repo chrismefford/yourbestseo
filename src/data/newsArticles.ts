@@ -57,9 +57,9 @@ const amazonKeywordContent = `<article>
     <ol class="space-y-2">
       <li><a href="#what-is-amazon-keyword-search-volume" class="text-primary hover:underline">What is Amazon Keyword Search Volume and Why Does It Matter?</a></li>
       <li><a href="#how-to-find-amazon-keyword-search-volume" class="text-primary hover:underline">How Can You Find Amazon Keyword Search Volume?</a></li>
-      <li class="ml-4"><a href="#free-amazon-keyword-search-volume-tool" class="text-primary hover:underline">Use a Free Amazon Keyword Search Volume Tool</a></li>
-      <li class="ml-4"><a href="#keyword-scout-advanced-insights" class="text-primary hover:underline">Leverage Keyword Scout for Advanced Insights</a></li>
-      <li class="ml-4"><a href="#kdp-keywords-generator" class="text-primary hover:underline">Use a KDP Keywords Generator for Amazon Authors</a></li>
+      <li><a href="#free-amazon-keyword-search-volume-tool" class="text-primary hover:underline">Use a Free Amazon Keyword Search Volume Tool</a></li>
+      <li><a href="#keyword-scout-advanced-insights" class="text-primary hover:underline">Leverage Keyword Scout for Advanced Insights</a></li>
+      <li><a href="#kdp-keywords-generator" class="text-primary hover:underline">Use a KDP Keywords Generator for Amazon Authors</a></li>
       <li><a href="#best-practices" class="text-primary hover:underline">Best Practices for Using Amazon Keyword Search Volume</a></li>
       <li><a href="#interpreting-data" class="text-primary hover:underline">How to Interpret Amazon Keyword Search Volume Data Accurately</a></li>
       <li><a href="#top-free-tools" class="text-primary hover:underline">Top Free Amazon Keyword Search Volume Tools</a></li>
@@ -94,7 +94,7 @@ const amazonKeywordContent = `<article>
 
   <p>Finding accurate amazon keyword search volume has gotten easier with advancements in SEO tools and Amazon's own data ecosystem. Here are top methods and tools to track keyword popularity effectively:</p>
 
-  <h2 id="free-amazon-keyword-search-volume-tool">1. Use a Free Amazon Keyword Search Volume Tool</h2>
+  <h2 id="free-amazon-keyword-search-volume-tool">Use a Free Amazon Keyword Search Volume Tool</h2>
 
   <p>There are several free keyword research tools for Amazon that provide basic amazon keyword search volume data. These tools are ideal for beginners or sellers with limited budgets.</p>
 
@@ -106,7 +106,7 @@ const amazonKeywordContent = `<article>
 
   <p>While free tools are useful for initial research, they often lack the precision and depth of paid options.</p>
 
-  <h2 id="keyword-scout-advanced-insights">2. Leverage Keyword Scout for Advanced Insights</h2>
+  <h2 id="keyword-scout-advanced-insights">Leverage Keyword Scout for Advanced Insights</h2>
 
   <p>Keyword Scout is an industry-leading paid tool designed specifically for Amazon sellers. It offers:</p>
 
@@ -119,7 +119,7 @@ const amazonKeywordContent = `<article>
 
   <p>Using Keyword Scout allows sellers to make data-backed decisions with confidence, increasing chances of ranking higher and selling more.</p>
 
-  <h2 id="kdp-keywords-generator">3. Use a KDP Keywords Generator for Amazon Authors</h2>
+  <h2 id="kdp-keywords-generator">Use a KDP Keywords Generator for Amazon Authors</h2>
 
   <p>For authors publishing on Amazon Kindle Direct Publishing (KDP), using a KDP keywords generator is essential to find the best keywords for book titles and descriptions.</p>
 
