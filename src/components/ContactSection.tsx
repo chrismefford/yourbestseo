@@ -51,14 +51,14 @@ const ContactSection = () => {
           </a>
 
           <a
-            href="tel:+18332374376"
+            href="tel:+16157726641"
             className="group p-8 rounded-2xl card-gradient border border-border/50 hover:border-primary/30 transition-all duration-500 text-center"
           >
             <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
               <Phone className="w-7 h-7 text-primary" />
             </div>
             <h3 className="font-display text-lg font-bold mb-2">Direct line</h3>
-            <p className="text-primary font-medium mb-2">+1 (833) 237-4376</p>
+            <p className="text-primary font-medium mb-2">(615) 772-6641</p>
             <p className="text-sm text-muted-foreground">
               Live call or text, 9a-6p PT
             </p>

@@ -49,7 +49,7 @@ const Hero = () => {
                 </a>
               </Button>
               <Button variant="heroOutline" size="xl" asChild>
-                <a href="tel:+18332374376">Let's Talk</a>
+                <a href="tel:+16157726641">Let's Talk</a>
               </Button>
             </div>
           </motion.div>

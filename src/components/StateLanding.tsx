@@ -74,7 +74,7 @@ const StateLanding = ({ data }: { data: StateData }) => {
                     </a>
                   </Button>
                   <Button size="lg" variant="outline" asChild>
-                    <a href="tel:+18332374376">Schedule a Call</a>
+                    <a href="tel:+16157726641">Schedule a Call</a>
                   </Button>
                 </div>
               </motion.div>
@@ -374,7 +374,7 @@ const StateLanding = ({ data }: { data: StateData }) => {
                     </a>
                   </Button>
                   <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" asChild>
-                    <a href="tel:+18332374376">Schedule a Call</a>
+                    <a href="tel:+16157726641">Schedule a Call</a>
                   </Button>
                 </div>
               </div>
