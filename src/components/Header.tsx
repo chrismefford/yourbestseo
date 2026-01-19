@@ -185,14 +185,17 @@ const Header = () => {
                         <p className="text-xs text-muted-foreground mb-4">
                           Tips & insights
                         </p>
-                        <Link
-                          to="/blog"
-                          onClick={() => setIsLearnOpen(false)}
+                        <button
+                          onClick={() => {
+                            setIsLearnOpen(false);
+                            navigate('/blog');
+                            window.scrollTo(0, 0);
+                          }}
                           className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
                         >
                           Visit Blog
                           <ArrowRight className="w-4 h-4" />
-                        </Link>
+                        </button>
                       </div>
 
                       {/* Glossary Section */}
@@ -363,16 +366,19 @@ const Header = () => {
               <div className="py-2">
                 <p className="text-sm font-medium text-primary mb-3 tracking-widest uppercase">Learn SEO</p>
                 <div className="grid grid-cols-1 gap-2">
-                  <Link
-                    to="/blog"
-                    onClick={() => setIsMenuOpen(false)}
-                    className="flex items-center gap-3 text-foreground py-2"
+                  <button
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      navigate('/blog');
+                      window.scrollTo(0, 0);
+                    }}
+                    className="flex items-center gap-3 text-foreground py-2 w-full text-left"
                   >
                     <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center">
                       <PenLine className="w-4 h-4 text-primary-foreground" />
                     </div>
                     <span className="font-medium">SEO Blog</span>
-                  </Link>
+                  </button>
                   <Link
                     to="/glossary"
                     onClick={() => setIsMenuOpen(false)}
