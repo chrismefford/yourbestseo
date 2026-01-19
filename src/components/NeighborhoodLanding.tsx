@@ -63,8 +63,8 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
                     Get Your Free SEO Audit
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
-                  <Button size="lg" variant="outline">
-                    Call (619) SEO-RANK
+                  <Button size="lg" variant="outline" asChild>
+                    <a href="tel:+16157726641">Call (615) 772-6641</a>
                   </Button>
                 </div>
               </motion.div>
@@ -493,8 +493,8 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
                     Get My Free SEO Audit
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
-                  <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
-                    Call (619) SEO-RANK
+                  <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" asChild>
+                    <a href="tel:+16157726641">Call (615) 772-6641</a>
                   </Button>
                 </div>
               </div>

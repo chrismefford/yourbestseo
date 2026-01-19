@@ -36,7 +36,7 @@ const organizationSchema = {
   ],
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+1-619-555-0123",
+    telephone: "+1-615-772-6641",
     contactType: "sales",
     email: "chris@yourbestseo.com",
     availableLanguage: ["English"],
