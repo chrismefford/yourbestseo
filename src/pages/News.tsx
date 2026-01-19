@@ -102,10 +102,21 @@ const News = () => {
                     itemScope 
                     itemType="https://schema.org/NewsArticle"
                   >
-                    {/* Featured Image Placeholder */}
+                    {/* Featured Image */}
                     {index === 0 && (
-                      <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl mb-6 lg:mb-0 flex items-center justify-center">
-                        <span className="text-muted-foreground text-sm">Featured Image</span>
+                      <div className="aspect-video rounded-2xl mb-6 lg:mb-0 overflow-hidden">
+                        {article.image ? (
+                          <img 
+                            src={article.image} 
+                            alt={article.title}
+                            className="w-full h-full object-cover"
+                            itemProp="image"
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                            <span className="text-muted-foreground text-sm">Featured Image</span>
+                          </div>
+                        )}
                       </div>
                     )}
                     
