@@ -1,11 +1,72 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, ArrowRight } from "lucide-react";
+import { Mail, Phone, ArrowRight, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
-
-const EMAIL_ADDRESS = "chris@yourbestseo.com";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactSection = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      toast.error("Please fill in all required fields");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: {
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim() || undefined,
+          message: formData.message.trim(),
+        },
+      });
+
+      if (error) {
+        console.error("Error sending contact form:", error);
+        throw new Error(error.message || "Failed to send message");
+      }
+
+      toast.success("Message sent!", {
+        description: "We'll get back to you within one business day.",
+      });
+
+      setFormData({ name: "", email: "", phone: "", message: "" });
+      setIsOpen(false);
+    } catch (error: any) {
+      console.error("Contact form error:", error);
+      toast.error("Failed to send message", {
+        description: "Please try again or email us directly.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section className="py-24 lg:py-32 relative" id="contact">
       <div className="absolute inset-0 bg-gradient-to-b from-background to-secondary/20" />
@@ -76,35 +137,94 @@ const ContactSection = () => {
             variant="hero"
             size="xl"
             className="gap-2"
-            onClick={async () => {
-              // In many embedded previews, `mailto:` can be blocked by the iframe.
-              // We'll try opening it, and also copy the email as a reliable fallback.
-              const mailto = `mailto:${EMAIL_ADDRESS}`;
-
-              try {
-                // Prefer _top to escape iframe restrictions when possible.
-                window.open(mailto, "_top");
-              } catch {
-                // ignore
-              }
-
-              try {
-                await navigator.clipboard.writeText(EMAIL_ADDRESS);
-                toast.success("Email copied", {
-                  description: "If your email app didn’t open, paste it into your message.",
-                });
-              } catch {
-                toast("Email address", {
-                  description: EMAIL_ADDRESS,
-                });
-              }
-            }}
+            onClick={() => setIsOpen(true)}
           >
             Send Us a Message
             <ArrowRight className="w-5 h-5" />
           </Button>
         </motion.div>
       </div>
+
+      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="font-display text-2xl">Send Us a Message</DialogTitle>
+            <DialogDescription>
+              Fill out the form below and we'll get back to you within one business day.
+            </DialogDescription>
+          </DialogHeader>
+          <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+            <div className="space-y-2">
+              <Label htmlFor="name">Name *</Label>
+              <Input
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Your name"
+                required
+                disabled={isSubmitting}
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="email">Email *</Label>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="you@example.com"
+                required
+                disabled={isSubmitting}
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="phone">Phone (optional)</Label>
+              <Input
+                id="phone"
+                name="phone"
+                type="tel"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="(615) 772-6641"
+                disabled={isSubmitting}
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="message">Message *</Label>
+              <Textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Tell us about your project or question..."
+                rows={4}
+                required
+                disabled={isSubmitting}
+              />
+            </div>
+            <Button
+              type="submit"
+              variant="hero"
+              className="w-full gap-2"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  Sending...
+                </>
+              ) : (
+                <>
+                  Send Message
+                  <ArrowRight className="w-4 h-4" />
+                </>
+              )}
+            </Button>
+          </form>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
