@@ -184,6 +184,23 @@ export const neighborhoodRoutes: RouteConfig[] = [
   { path: '/san-diego/east-village-seo', priority: 0.7, changefreq: 'monthly' },
   { path: '/san-diego/marina-district-seo', priority: 0.7, changefreq: 'monthly' },
   { path: '/san-diego/cortez-hill-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/north-park-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/kearny-mesa-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/santee-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/el-cajon-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/la-jolla-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/pacific-beach-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/ocean-beach-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/mission-beach-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/hillcrest-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/mission-valley-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/point-loma-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/chula-vista-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/national-city-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/clairemont-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/university-city-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/mira-mesa-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/rancho-bernardo-seo', priority: 0.7, changefreq: 'monthly' },
 ];
 
 // Combine all routes for sitemap generation
