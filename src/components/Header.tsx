@@ -4,22 +4,6 @@ import { Menu, X, ArrowRight, ChevronDown, PenLine, BookOpen, HelpCircle, Search
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 
-const states = [
-  { name: "California", path: "/states/california-seo" },
-  { name: "Oregon", path: "/states/oregon-seo" },
-  { name: "Washington", path: "/states/washington-seo" },
-  { name: "Arizona", path: "/states/arizona-seo" },
-  { name: "Colorado", path: "/states/colorado-seo" },
-  { name: "Utah", path: "/states/utah-seo" },
-  { name: "Nevada", path: "/states/nevada-seo" },
-  { name: "Hawaii", path: "/states/hawaii-seo" },
-  { name: "Alaska", path: "/states/alaska-seo" },
-  { name: "New Mexico", path: "/states/new-mexico-seo" },
-  { name: "Idaho", path: "/states/idaho-seo" },
-  { name: "Montana", path: "/states/montana-seo" },
-  { name: "Wyoming", path: "/states/wyoming-seo" },
-];
-
 const services = [
   { name: "SEO Blog Posts", path: "/services/seo-blog-posts", price: "$300" },
   { name: "Technical SEO", path: "/services/technical-seo", price: "$300" },
@@ -35,10 +19,8 @@ const services = [
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isStatesOpen, setIsStatesOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isLearnOpen, setIsLearnOpen] = useState(false);
-  const statesDropdownRef = useRef<HTMLDivElement>(null);
   const servicesDropdownRef = useRef<HTMLDivElement>(null);
   const learnDropdownRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
@@ -59,9 +41,6 @@ const Header = () => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (statesDropdownRef.current && !statesDropdownRef.current.contains(event.target as Node)) {
-        setIsStatesOpen(false);
-      }
       if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target as Node)) {
         setIsServicesOpen(false);
       }
@@ -85,7 +64,6 @@ const Header = () => {
   };
 
   const closeAllDropdowns = () => {
-    setIsStatesOpen(false);
     setIsServicesOpen(false);
     setIsLearnOpen(false);
   };
@@ -106,7 +84,7 @@ const Header = () => {
               <button 
                 onClick={() => {
                   setIsServicesOpen(!isServicesOpen);
-                  setIsStatesOpen(false);
+                  setIsLearnOpen(false);
                 }}
                 className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
@@ -157,7 +135,6 @@ const Header = () => {
               <button 
                 onClick={() => {
                   setIsLearnOpen(!isLearnOpen);
-                  setIsStatesOpen(false);
                   setIsServicesOpen(false);
                 }}
                 className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
@@ -265,45 +242,6 @@ const Header = () => {
               )
             ))}
             
-            {/* State Missions Dropdown */}
-            <div className="relative" ref={statesDropdownRef}>
-              <button 
-                onClick={() => {
-                  setIsStatesOpen(!isStatesOpen);
-                  setIsServicesOpen(false);
-                }}
-                className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-widest uppercase"
-              >
-                State Missions
-                <ChevronDown className={`w-4 h-4 transition-transform ${isStatesOpen ? 'rotate-180' : ''}`} />
-              </button>
-              <AnimatePresence>
-                {isStatesOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    className="absolute top-full right-0 mt-2 w-56 bg-card border border-border rounded-xl shadow-2xl overflow-hidden z-50"
-                  >
-                    <div className="p-3 border-b border-border bg-secondary/30">
-                      <p className="text-xs font-semibold text-primary tracking-widest uppercase">Western Deployments</p>
-                    </div>
-                    <div className="py-2 max-h-80 overflow-y-auto">
-                      {states.map((state) => (
-                        <Link
-                          key={state.name}
-                          to={state.path}
-                          onClick={() => setIsStatesOpen(false)}
-                          className="block px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary/50 transition-colors"
-                        >
-                          {state.name} SEO
-                        </Link>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
           </nav>
 
           {/* Desktop CTA */}
@@ -423,22 +361,6 @@ const Header = () => {
                 )
               ))}
 
-              {/* State Missions Section */}
-              <div className="py-2">
-                <p className="text-sm font-medium text-primary mb-3 tracking-widest uppercase">State Missions</p>
-                <div className="grid grid-cols-2 gap-2">
-                  {states.slice(0, 6).map((state) => (
-                    <Link
-                      key={state.name}
-                      to={state.path}
-                      onClick={() => setIsMenuOpen(false)}
-                      className="text-sm text-muted-foreground hover:text-foreground py-1"
-                    >
-                      {state.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
 
               <Button variant="hero" size="lg" className="mt-4 w-full gap-2" asChild>
                 <a href="tel:+16157726641">
