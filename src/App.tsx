@@ -21,6 +21,23 @@ import LittleItalySEO from "./pages/san-diego/LittleItalySEO";
 import EastVillageSEO from "./pages/san-diego/EastVillageSEO";
 import MarinaDistrictSEO from "./pages/san-diego/MarinaDistrictSEO";
 import CortezHillSEO from "./pages/san-diego/CortezHillSEO";
+import NorthParkSEO from "./pages/san-diego/NorthParkSEO";
+import KearnyMesaSEO from "./pages/san-diego/KearnyMesaSEO";
+import SanteeSEO from "./pages/san-diego/SanteeSEO";
+import ElCajonSEO from "./pages/san-diego/ElCajonSEO";
+import LaJollaSEO from "./pages/san-diego/LaJollaSEO";
+import PacificBeachSEO from "./pages/san-diego/PacificBeachSEO";
+import OceanBeachSEO from "./pages/san-diego/OceanBeachSEO";
+import MissionBeachSEO from "./pages/san-diego/MissionBeachSEO";
+import HillcrestSEO from "./pages/san-diego/HillcrestSEO";
+import MissionValleySEO from "./pages/san-diego/MissionValleySEO";
+import PointLomaSEO from "./pages/san-diego/PointLomaSEO";
+import ChulaVistaSEO from "./pages/san-diego/ChulaVistaSEO";
+import NationalCitySEO from "./pages/san-diego/NationalCitySEO";
+import ClairemontSEO from "./pages/san-diego/ClairemontSEO";
+import UniversityCitySEO from "./pages/san-diego/UniversityCitySEO";
+import MiraMesaSEO from "./pages/san-diego/MiraMesaSEO";
+import RanchoBernardoSEO from "./pages/san-diego/RanchoBernardoSEO";
 
 // State SEO pages
 import CaliforniaSEO from "./pages/states/CaliforniaSEO";
