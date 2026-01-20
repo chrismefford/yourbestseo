@@ -1,6 +1,7 @@
 import StateLanding from "@/components/StateLanding";
 
 const data = {
+  slug: "washington-seo",
   name: "Washington",
   heroTitle: "Washington SEO Services – Dominate the Pacific Northwest",
   heroDescription: "Award-winning SEO agency serving Washington State businesses. From Seattle enterprises to Spokane startups, we help Washington companies rank higher and grow faster.",

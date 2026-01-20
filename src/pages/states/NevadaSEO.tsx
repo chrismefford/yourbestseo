@@ -1,6 +1,7 @@
 import StateLanding from "@/components/StateLanding";
 
 const data = {
+  slug: "nevada-seo",
   name: "Nevada",
   heroTitle: "Nevada SEO Services – Dominate the Silver State",
   heroDescription: "Award-winning SEO agency serving Nevada businesses from Las Vegas to Reno. We help Nevada companies rank higher and drive more revenue through organic search.",

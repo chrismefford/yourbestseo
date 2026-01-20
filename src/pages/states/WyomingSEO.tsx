@@ -1,6 +1,7 @@
 import StateLanding from "@/components/StateLanding";
 
 const data = {
+  slug: "wyoming-seo",
   name: "Wyoming",
   heroTitle: "Wyoming SEO Services – Grow Your Cowboy State Business",
   heroDescription: "Top-rated SEO agency serving Wyoming businesses from Jackson Hole to Cheyenne. We help Wyoming companies rank higher and capture search traffic across this unique market.",

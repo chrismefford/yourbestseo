@@ -1,6 +1,7 @@
 import NeighborhoodLanding from "@/components/NeighborhoodLanding";
 
 const data = {
+  slug: "gaslamp-quarter-seo",
   name: "Gaslamp Quarter",
   heroTitle: "Gaslamp Quarter SEO Services – Rank Higher, Get More Customers",
   heroDescription: "Need an SEO agency in the Gaslamp Quarter? We help restaurants, nightlife venues, boutiques, and businesses in San Diego's historic Gaslamp Quarter dominate Google search results and attract more customers.",

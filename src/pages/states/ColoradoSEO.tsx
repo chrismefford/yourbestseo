@@ -1,6 +1,7 @@
 import StateLanding from "@/components/StateLanding";
 
 const data = {
+  slug: "colorado-seo",
   name: "Colorado",
   heroTitle: "Colorado SEO Services – Dominate the Rocky Mountain Market",
   heroDescription: "Award-winning SEO agency serving Colorado businesses from Denver to the mountain towns. We help Colorado companies rank higher and grow their organic traffic.",

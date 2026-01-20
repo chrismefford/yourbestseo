@@ -1,6 +1,7 @@
 import StateLanding from "@/components/StateLanding";
 
 const data = {
+  slug: "alaska-seo",
   name: "Alaska",
   heroTitle: "Alaska SEO Services – Dominate the Last Frontier",
   heroDescription: "Top-rated SEO agency serving Alaska businesses from Anchorage to Juneau. We help Alaska companies rank higher and reach customers across this unique market.",

@@ -1,6 +1,7 @@
 import StateLanding from "@/components/StateLanding";
 
 const data = {
+  slug: "arizona-seo",
   name: "Arizona",
   heroTitle: "Arizona SEO Services – Grow Your Southwest Business",
   heroDescription: "Top-rated SEO agency serving Arizona businesses from Phoenix to Tucson. We help Arizona companies dominate search results and generate more leads.",

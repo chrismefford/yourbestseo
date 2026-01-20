@@ -1,6 +1,7 @@
 import StateLanding from "@/components/StateLanding";
 
 const data = {
+  slug: "oregon-seo",
   name: "Oregon",
   heroTitle: "Oregon SEO Services – Grow Your Pacific Northwest Business",
   heroDescription: "Top-rated SEO agency serving Oregon businesses from Portland to Bend. We help Oregon companies rank higher on Google and drive sustainable organic growth.",

@@ -1,6 +1,7 @@
 import StateLanding from "@/components/StateLanding";
 
 const data = {
+  slug: "utah-seo",
   name: "Utah",
   heroTitle: "Utah SEO Services – Grow Your Silicon Slopes Business",
   heroDescription: "Top-rated SEO agency serving Utah businesses from Salt Lake City to Provo. We help Utah companies—especially SaaS and tech—rank higher and generate qualified leads.",

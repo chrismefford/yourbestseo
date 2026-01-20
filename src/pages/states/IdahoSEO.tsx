@@ -1,6 +1,7 @@
 import StateLanding from "@/components/StateLanding";
 
 const data = {
+  slug: "idaho-seo",
   name: "Idaho",
   heroTitle: "Idaho SEO Services – Grow Your Gem State Business",
   heroDescription: "Top-rated SEO agency serving Idaho businesses from Boise to Coeur d'Alene. We help Idaho companies rank higher and generate leads through organic search.",

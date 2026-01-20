@@ -1,6 +1,7 @@
 import StateLanding from "@/components/StateLanding";
 
 const data = {
+  slug: "montana-seo",
   name: "Montana",
   heroTitle: "Montana SEO Services – Dominate Big Sky Country",
   heroDescription: "Award-winning SEO agency serving Montana businesses from Bozeman to Missoula. We help Montana companies rank higher and reach customers across this growing market.",

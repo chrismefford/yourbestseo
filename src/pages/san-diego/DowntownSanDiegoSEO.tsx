@@ -1,6 +1,7 @@
 import NeighborhoodLanding from "@/components/NeighborhoodLanding";
 
 const data = {
+  slug: "downtown-san-diego-seo",
   name: "Downtown San Diego",
   heroTitle: "Downtown San Diego SEO Services – Dominate Local Search Results",
   heroDescription: "Looking for the best SEO company in Downtown San Diego? Our award-winning SEO agency helps Downtown San Diego businesses rank #1 on Google, drive targeted traffic, and increase revenue with proven search engine optimization strategies.",

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Trophy, Check, ArrowRight, MapPin, TrendingUp, Target, Users, BarChart3, Search, Globe } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -11,6 +12,7 @@ interface SearchIntentCategory {
 }
 
 interface StateData {
+  slug: string;
   name: string;
   heroTitle: string;
   heroDescription: string;
@@ -37,8 +39,52 @@ const itemVariants = {
 };
 
 const StateLanding = ({ data }: { data: StateData }) => {
+  const SITE_URL = "https://www.yourbestseo.com";
+  
+  // Generate FAQ schema
+  const faqSchema = {
+    "@type": "FAQPage",
+    mainEntity: data.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
+  // Generate LocalBusiness schema
+  const localBusinessSchema = {
+    "@type": "LocalBusiness",
+    "@id": `${SITE_URL}/states/${data.slug}/#localbusiness`,
+    name: `Your Best SEO - ${data.name} SEO Services`,
+    description: data.heroDescription,
+    areaServed: {
+      "@type": "State",
+      name: data.name,
+    },
+    parentOrganization: { "@id": `${SITE_URL}/#organization` },
+  };
+
+  // Generate Breadcrumb schema
+  const breadcrumbSchema = {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: `${data.name} SEO`, item: `${SITE_URL}/states/${data.slug}` },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={`${data.name} SEO Services - Local SEO Agency`}
+        description={data.heroDescription.substring(0, 155)}
+        canonical={`/states/${data.slug}`}
+        type="service"
+        schema={[faqSchema, localBusinessSchema, breadcrumbSchema]}
+      />
       <Header />
       <main>
         {/* Hero Section */}

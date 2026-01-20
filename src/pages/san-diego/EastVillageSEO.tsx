@@ -1,6 +1,7 @@
 import NeighborhoodLanding from "@/components/NeighborhoodLanding";
 
 const data = {
+  slug: "east-village-seo",
   name: "East Village",
   heroTitle: "East Village SEO Services – Grow Your San Diego Business Online",
   heroDescription: "Award-winning SEO company serving East Village, San Diego. From Petco Park businesses to innovative startups, we help East Village companies rank higher on Google and generate more leads through organic search.",

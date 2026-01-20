@@ -55,9 +55,10 @@ const QuestionPage = ({
   relatedQuestions = [],
   relatedTerms = [],
 }: QuestionPageProps) => {
+  const SITE_URL = "https://www.yourbestseo.com";
   const pageTitle = `${question} | SEO FAQ`;
   const pageDescription = shortAnswer.length > 155 ? shortAnswer.substring(0, 152) + '...' : shortAnswer;
-  const canonicalUrl = `https://yourbestseo.lovable.app/questions/${slug}`;
+  const canonicalUrl = `${SITE_URL}/questions/${slug}`;
 
   // Schema markup for FAQ page
   const faqSchema = {
@@ -89,7 +90,7 @@ const QuestionPage = ({
       name: 'Your Best SEO',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://yourbestseo.lovable.app/logo.png'
+        url: `${SITE_URL}/logo.png`
       }
     },
     mainEntityOfPage: {
@@ -103,8 +104,8 @@ const QuestionPage = ({
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://yourbestseo.lovable.app/' },
-      { '@type': 'ListItem', position: 2, name: 'Questions', item: 'https://yourbestseo.lovable.app/questions' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Questions', item: `${SITE_URL}/questions` },
       { '@type': 'ListItem', position: 3, name: question, item: canonicalUrl }
     ]
   };
