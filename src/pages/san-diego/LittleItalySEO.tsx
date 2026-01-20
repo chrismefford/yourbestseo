@@ -1,6 +1,7 @@
 import NeighborhoodLanding from "@/components/NeighborhoodLanding";
 
 const data = {
+  slug: "little-italy-seo",
   name: "Little Italy",
   heroTitle: "Little Italy SEO Services – Get Found by More San Diego Customers",
   heroDescription: "Top-rated SEO agency serving Little Italy, San Diego. We help Italian restaurants, art galleries, boutiques, and local businesses in Little Italy rank #1 on Google and drive more foot traffic and online leads.",

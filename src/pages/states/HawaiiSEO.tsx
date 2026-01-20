@@ -1,6 +1,7 @@
 import StateLanding from "@/components/StateLanding";
 
 const data = {
+  slug: "hawaii-seo",
   name: "Hawaii",
   heroTitle: "Hawaii SEO Services – Grow Your Island Business",
   heroDescription: "Top-rated SEO agency serving Hawaii businesses across all islands. We help Hawaii companies rank higher and capture tourism, local, and mainland search traffic.",

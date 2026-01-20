@@ -92,6 +92,8 @@ const GlossaryTermPage = ({
     return acc;
   }, {} as Record<string, { label: string; color: string }>);
 
+  const SITE_URL = "https://www.yourbestseo.com";
+  
   // Generate schema markup for SEO
   const schemaMarkup = {
     "@context": "https://schema.org",
@@ -101,9 +103,9 @@ const GlossaryTermPage = ({
     "inDefinedTermSet": {
       "@type": "DefinedTermSet",
       "name": "SEO Glossary",
-      "url": "https://yourbestseo.lovable.app/glossary"
+      "url": `${SITE_URL}/glossary`
     },
-    "url": `https://yourbestseo.lovable.app/glossary/${slug}`
+    "url": `${SITE_URL}/glossary/${slug}`
   };
 
   const articleSchema = {
@@ -115,16 +117,16 @@ const GlossaryTermPage = ({
     "author": {
       "@type": "Organization",
       "name": "Your Best SEO",
-      "url": "https://yourbestseo.lovable.app"
+      "url": SITE_URL
     },
     "publisher": {
       "@type": "Organization",
       "name": "Your Best SEO",
-      "url": "https://yourbestseo.lovable.app"
+      "url": SITE_URL
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://yourbestseo.lovable.app/glossary/${slug}`
+      "@id": `${SITE_URL}/glossary/${slug}`
     }
   };
 
@@ -136,19 +138,19 @@ const GlossaryTermPage = ({
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://yourbestseo.lovable.app"
+        "item": SITE_URL
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "SEO Glossary",
-        "item": "https://yourbestseo.lovable.app/glossary"
+        "item": `${SITE_URL}/glossary`
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": term,
-        "item": `https://yourbestseo.lovable.app/glossary/${slug}`
+        "item": `${SITE_URL}/glossary/${slug}`
       }
     ]
   };

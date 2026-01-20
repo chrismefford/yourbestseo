@@ -1,6 +1,7 @@
 import NeighborhoodLanding from "@/components/NeighborhoodLanding";
 
 const data = {
+  slug: "marina-district-seo",
   name: "Marina District",
   heroTitle: "Marina District SEO Services – Waterfront Business Marketing Experts",
   heroDescription: "Premier SEO agency for Marina District, San Diego businesses. We help hotels, restaurants, yacht services, and waterfront businesses rank #1 on Google and attract more visitors to San Diego's stunning Marina District.",

@@ -1,6 +1,7 @@
 import StateLanding from "@/components/StateLanding";
 
 const data = {
+  slug: "new-mexico-seo",
   name: "New Mexico",
   heroTitle: "New Mexico SEO Services – Grow Your Southwest Business",
   heroDescription: "Award-winning SEO agency serving New Mexico businesses from Albuquerque to Santa Fe. We help New Mexico companies rank higher and generate more leads.",

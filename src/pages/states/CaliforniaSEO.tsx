@@ -1,6 +1,7 @@
 import StateLanding from "@/components/StateLanding";
 
 const data = {
+  slug: "california-seo",
   name: "California",
   heroTitle: "California SEO Services – Dominate the Golden State",
   heroDescription: "Award-winning SEO agency serving California businesses from San Diego to San Francisco. We help California companies rank higher, drive more traffic, and generate leads through organic search.",

@@ -12,8 +12,8 @@ interface SEOProps {
 }
 
 const SITE_NAME = "Your Best SEO";
-const SITE_URL = "https://yourbestseo.com";
-const DEFAULT_IMAGE = "https://yourbestseo.com/og-image.png";
+const SITE_URL = "https://www.yourbestseo.com";
+const DEFAULT_IMAGE = "https://www.yourbestseo.com/og-image.png";
 const TWITTER_HANDLE = "@YourBestSEO";
 
 // Organization Schema - used on all pages

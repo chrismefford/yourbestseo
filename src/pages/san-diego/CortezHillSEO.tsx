@@ -1,6 +1,7 @@
 import NeighborhoodLanding from "@/components/NeighborhoodLanding";
 
 const data = {
+  slug: "cortez-hill-seo",
   name: "Cortez Hill",
   heroTitle: "Cortez Hill SEO Services – Local Search Experts for San Diego's Urban Core",
   heroDescription: "Trusted SEO company serving Cortez Hill, San Diego. We help professional services, law firms, medical practices, and local businesses in Cortez Hill dominate Google search results and generate more qualified leads.",
