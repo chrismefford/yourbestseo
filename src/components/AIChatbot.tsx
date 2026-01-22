@@ -1,10 +1,11 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, X, Send, Bot, User, Loader2, Minimize2 } from "lucide-react";
+import { MessageCircle, X, Send, Bot, User, Loader2, Minimize2, Mail, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 type Message = {
   role: "user" | "assistant";
@@ -30,8 +31,13 @@ const AIChatbot = () => {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [showEmailPrompt, setShowEmailPrompt] = useState(false);
+  const [email, setEmail] = useState("");
+  const [isSendingEmail, setIsSendingEmail] = useState(false);
+  const [emailSent, setEmailSent] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const { toast } = useToast();
 
   // Auto-scroll to bottom
   useEffect(() => {
@@ -93,6 +99,76 @@ const AIChatbot = () => {
 
   const handleQuickAction = (action: string) => {
     sendMessage(action);
+  };
+
+  const handleClose = () => {
+    // If there's been a real conversation (more than initial message), offer to email
+    if (messages.length > 2 && !emailSent) {
+      setShowEmailPrompt(true);
+    } else {
+      closeChat();
+    }
+  };
+
+  const closeChat = () => {
+    setIsOpen(false);
+    setShowEmailPrompt(false);
+    // Reset conversation after closing
+    setTimeout(() => {
+      setMessages([INITIAL_MESSAGE]);
+      setEmailSent(false);
+    }, 300);
+  };
+
+  const handleSendTranscript = async () => {
+    if (!email.trim() || !email.includes("@")) {
+      toast({
+        title: "Invalid email",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSendingEmail(true);
+
+    try {
+      const { error } = await supabase.functions.invoke("send-chat-transcript", {
+        body: { 
+          email,
+          messages: messages.map(m => ({
+            role: m.role,
+            content: m.content
+          }))
+        },
+      });
+
+      if (error) throw error;
+
+      setEmailSent(true);
+      toast({
+        title: "📧 Transcript sent!",
+        description: "Check your inbox for the conversation summary.",
+      });
+
+      // Close after a brief delay
+      setTimeout(() => {
+        closeChat();
+      }, 1500);
+    } catch (error) {
+      console.error("Email error:", error);
+      toast({
+        title: "Couldn't send email",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSendingEmail(false);
+    }
+  };
+
+  const skipEmail = () => {
+    closeChat();
   };
 
   return (
@@ -182,7 +258,7 @@ const AIChatbot = () => {
                   <Minimize2 className="w-4 h-4" />
                 </button>
                 <button
-                  onClick={() => setIsOpen(false)}
+                  onClick={handleClose}
                   className="p-2 hover:bg-primary-foreground/10 rounded-full transition-colors"
                   aria-label="Close chat"
                 >
@@ -192,7 +268,7 @@ const AIChatbot = () => {
             </div>
 
             {/* Messages - only show if not minimized */}
-            {!isMinimized && (
+            {!isMinimized && !showEmailPrompt && (
               <>
                 <ScrollArea className="flex-1 p-4" ref={scrollRef}>
                   <div className="space-y-4">
@@ -279,6 +355,83 @@ const AIChatbot = () => {
                   </div>
                 </form>
               </>
+            )}
+
+            {/* Email Transcript Prompt */}
+            {!isMinimized && showEmailPrompt && (
+              <div className="flex-1 p-6 flex flex-col items-center justify-center text-center">
+                <AnimatePresence mode="wait">
+                  {!emailSent ? (
+                    <motion.div
+                      key="email-form"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="w-full"
+                    >
+                      <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                        <Mail className="w-7 h-7 text-primary" />
+                      </div>
+                      <h3 className="font-display text-lg font-semibold mb-2">
+                        Want this conversation emailed?
+                      </h3>
+                      <p className="text-sm text-muted-foreground mb-4">
+                        We'll send you a summary to reference later.
+                      </p>
+                      <div className="space-y-3">
+                        <Input
+                          type="email"
+                          placeholder="Enter your email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          className="text-center"
+                        />
+                        <Button
+                          variant="hero"
+                          className="w-full gap-2"
+                          onClick={handleSendTranscript}
+                          disabled={isSendingEmail}
+                        >
+                          {isSendingEmail ? (
+                            <>
+                              <Loader2 className="w-4 h-4 animate-spin" />
+                              Sending...
+                            </>
+                          ) : (
+                            <>
+                              <Mail className="w-4 h-4" />
+                              Send Transcript
+                            </>
+                          )}
+                        </Button>
+                        <button
+                          onClick={skipEmail}
+                          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                        >
+                          No thanks, just close
+                        </button>
+                      </div>
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="success"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      className="text-center"
+                    >
+                      <div className="w-14 h-14 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-4">
+                        <Check className="w-7 h-7 text-green-500" />
+                      </div>
+                      <h3 className="font-display text-lg font-semibold mb-2">
+                        Sent! 📬
+                      </h3>
+                      <p className="text-sm text-muted-foreground">
+                        Check your inbox shortly.
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             )}
           </motion.div>
         )}
