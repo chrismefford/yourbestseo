@@ -11,6 +11,10 @@ import ContactSection from "@/components/ContactSection";
 import FunSection from "@/components/FunSection";
 import Footer from "@/components/Footer";
 import { SEO, generateWebPageSchema } from "@/components/SEO";
+import ExitIntentPopup from "@/components/ExitIntentPopup";
+import StickyCTABar from "@/components/StickyCTABar";
+import AIChatbot from "@/components/AIChatbot";
+import ROICalculator from "@/components/ROICalculator";
 
 const Index = () => {
   const pageSchema = generateWebPageSchema({
@@ -32,6 +36,7 @@ const Index = () => {
         <MissionObjectives />
         <HowItWorks />
         <TrustBadge />
+        <ROICalculator />
         <BeforeAfterTelemetry />
         <MissionReports />
         <CTASection />
@@ -40,6 +45,11 @@ const Index = () => {
         <FunSection />
       </main>
       <Footer />
+      
+      {/* Conversion Components */}
+      <ExitIntentPopup />
+      <StickyCTABar />
+      <AIChatbot />
     </div>
   );
 };
