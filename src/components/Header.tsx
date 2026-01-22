@@ -285,6 +285,10 @@ const Header = () => {
             className="lg:hidden bg-background border-b border-border"
           >
             <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
+              <Button variant="ghost" size="lg" className="w-full" onClick={handleShowOffer}>
+                Show offer
+              </Button>
+
               {/* Services Section */}
               <div className="py-2">
                 <p className="text-sm font-medium text-primary mb-3 tracking-widest uppercase">À La Carte Services</p>
