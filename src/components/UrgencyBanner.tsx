@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Clock, X, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -8,14 +8,15 @@ const UrgencyBanner = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 0, seconds: 0 });
   const [slotsLeft, setSlotsLeft] = useState(3);
+  const bannerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Check if dismissed this session
     const dismissed = sessionStorage.getItem("urgencyBannerDismissed");
     if (dismissed) return;
 
-    // Show after 3 seconds
-    const showTimer = setTimeout(() => setIsVisible(true), 3000);
+    // Show immediately (so it's never missed)
+    const showTimer = setTimeout(() => setIsVisible(true), 0);
 
     // Calculate time until end of week (Friday 5pm)
     const calculateTimeLeft = () => {
@@ -50,6 +51,31 @@ const UrgencyBanner = () => {
     };
   }, []);
 
+  // Coordinate with the fixed header: push it down by the banner height while visible.
+  useEffect(() => {
+    const root = document.documentElement;
+
+    const setOffset = () => {
+      const height = isVisible ? bannerRef.current?.offsetHeight ?? 0 : 0;
+      root.style.setProperty("--urgency-offset", `${height}px`);
+    };
+
+    setOffset();
+
+    const el = bannerRef.current;
+    if (!el) return;
+
+    const ro = new ResizeObserver(setOffset);
+    ro.observe(el);
+    window.addEventListener("resize", setOffset);
+
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", setOffset);
+      root.style.setProperty("--urgency-offset", "0px");
+    };
+  }, [isVisible]);
+
   const handleDismiss = () => {
     setIsVisible(false);
     sessionStorage.setItem("urgencyBannerDismissed", "true");
@@ -61,10 +87,11 @@ const UrgencyBanner = () => {
     <AnimatePresence>
       {isVisible && (
         <motion.div
+          ref={bannerRef}
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
-          className="bg-gradient-to-r from-primary via-primary to-primary/90 text-primary-foreground shadow-lg"
+          className="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-primary via-primary to-primary/90 text-primary-foreground shadow-lg"
         >
           <div className="container mx-auto px-4 py-3">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 relative">
