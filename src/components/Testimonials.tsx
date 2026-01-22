@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import VideoTestimonial from "./VideoTestimonial";
 
 const testimonials = [
   {
@@ -111,6 +112,9 @@ const Testimonials = () => {
               </div>
             </motion.div>
           ))}
+          
+          {/* Video Testimonial Section */}
+          <VideoTestimonial />
         </div>
       </div>
     </section>
