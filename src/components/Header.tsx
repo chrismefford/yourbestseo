@@ -68,6 +68,10 @@ const Header = () => {
     setIsLearnOpen(false);
   };
 
+  const handleShowOffer = () => {
+    window.dispatchEvent(new Event("urgencyBanner:show"));
+  };
+
   return (
     <header
       className="fixed left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50"
@@ -248,7 +252,10 @@ const Header = () => {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-2">
+            <Button variant="ghost" size="sm" onClick={handleShowOffer}>
+              Show offer
+            </Button>
             <Button variant="hero" size="default" className="gap-2" asChild>
               <a href="tel:+16157726641">
                 Call Us
