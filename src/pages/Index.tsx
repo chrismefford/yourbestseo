@@ -15,6 +15,8 @@ import ExitIntentPopup from "@/components/ExitIntentPopup";
 import StickyCTABar from "@/components/StickyCTABar";
 import AIChatbot from "@/components/AIChatbot";
 import ROICalculator from "@/components/ROICalculator";
+import SocialProofNotifications from "@/components/SocialProofNotifications";
+import UrgencyBanner from "@/components/UrgencyBanner";
 
 const Index = () => {
   const pageSchema = generateWebPageSchema({
@@ -47,6 +49,8 @@ const Index = () => {
       <Footer />
       
       {/* Conversion Components */}
+      <UrgencyBanner />
+      <SocialProofNotifications />
       <ExitIntentPopup />
       <StickyCTABar />
       <AIChatbot />
