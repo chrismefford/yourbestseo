@@ -9,11 +9,14 @@ const UrgencyBanner = () => {
   const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 0, seconds: 0 });
   const [slotsLeft, setSlotsLeft] = useState(3);
   const bannerRef = useRef<HTMLDivElement>(null);
+  const [isDismissed, setIsDismissed] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return Boolean(sessionStorage.getItem("urgencyBannerDismissed"));
+  });
 
   useEffect(() => {
-    // Check if dismissed this session
-    const dismissed = sessionStorage.getItem("urgencyBannerDismissed");
-    if (dismissed) return;
+    const forceShow = new URLSearchParams(window.location.search).get("debugBanner") === "1";
+    if (isDismissed && !forceShow) return;
 
     // Show immediately (so it's never missed)
     const showTimer = setTimeout(() => setIsVisible(true), 0);
@@ -49,6 +52,22 @@ const UrgencyBanner = () => {
       clearInterval(countdownInterval);
       clearInterval(slotsInterval);
     };
+  }, [isDismissed]);
+
+  // Allow re-showing the banner without clearing sessionStorage manually.
+  useEffect(() => {
+    const onShow = () => {
+      try {
+        sessionStorage.removeItem("urgencyBannerDismissed");
+      } catch {
+        // ignore
+      }
+      setIsDismissed(false);
+      setIsVisible(true);
+    };
+
+    window.addEventListener("urgencyBanner:show", onShow as EventListener);
+    return () => window.removeEventListener("urgencyBanner:show", onShow as EventListener);
   }, []);
 
   // Coordinate with the fixed header: push it down by the banner height while visible.
@@ -79,6 +98,7 @@ const UrgencyBanner = () => {
   const handleDismiss = () => {
     setIsVisible(false);
     sessionStorage.setItem("urgencyBannerDismissed", "true");
+    setIsDismissed(true);
   };
 
   const formatTime = (num: number) => num.toString().padStart(2, "0");
