@@ -29,6 +29,7 @@ const AIChatbot = () => {
   const [messages, setMessages] = useState<Message[]>([INITIAL_MESSAGE]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -99,20 +100,48 @@ const AIChatbot = () => {
       {/* Chat Button */}
       <AnimatePresence>
         {!isOpen && (
-          <motion.button
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0, opacity: 0 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => setIsOpen(true)}
-            className="fixed bottom-24 right-6 z-40 w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-lg flex items-center justify-center hover:bg-primary/90 transition-colors"
-            aria-label="Open chat"
-          >
-            <MessageCircle className="w-6 h-6" />
-            {/* Notification dot */}
-            <span className="absolute -top-1 -right-1 w-4 h-4 bg-accent rounded-full border-2 border-background animate-pulse" />
-          </motion.button>
+          <div className="fixed bottom-24 right-6 z-40">
+            {/* Hover tooltip */}
+            <AnimatePresence>
+              {isHovered && (
+                <motion.div
+                  initial={{ opacity: 0, x: 10, scale: 0.9 }}
+                  animate={{ opacity: 1, x: 0, scale: 1 }}
+                  exit={{ opacity: 0, x: 10, scale: 0.9 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute right-16 top-1/2 -translate-y-1/2 whitespace-nowrap"
+                >
+                  <div className="bg-background border border-border rounded-lg px-4 py-2 shadow-lg">
+                    <p className="text-sm font-medium">👋 Ask me anything!</p>
+                    <p className="text-xs text-muted-foreground">I'm here to help</p>
+                  </div>
+                  {/* Arrow pointing to button */}
+                  <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-full">
+                    <div className="border-8 border-transparent border-l-border" />
+                    <div className="absolute top-0 left-0 border-8 border-transparent border-l-background -ml-[1px]" />
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            {/* Chat button */}
+            <motion.button
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0, opacity: 0 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setIsOpen(true)}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              className="w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-lg flex items-center justify-center hover:bg-primary/90 transition-colors"
+              aria-label="Open chat"
+            >
+              <MessageCircle className="w-6 h-6" />
+              {/* Notification dot */}
+              <span className="absolute -top-1 -right-1 w-4 h-4 bg-accent rounded-full border-2 border-background animate-pulse" />
+            </motion.button>
+          </div>
         )}
       </AnimatePresence>
 
