@@ -61,10 +61,10 @@ const UrgencyBanner = () => {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          initial={{ opacity: 0, y: -100 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -100 }}
-          className="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-primary via-primary to-primary/90 text-primary-foreground shadow-lg"
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          exit={{ opacity: 0, height: 0 }}
+          className="bg-gradient-to-r from-primary via-primary to-primary/90 text-primary-foreground shadow-lg"
         >
           <div className="container mx-auto px-4 py-3">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 relative">

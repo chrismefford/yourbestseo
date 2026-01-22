@@ -32,6 +32,7 @@ const Index = () => {
         canonical="/"
         schema={pageSchema}
       />
+      <UrgencyBanner />
       <Header />
       <main>
         <Hero />
@@ -49,7 +50,6 @@ const Index = () => {
       <Footer />
       
       {/* Conversion Components */}
-      <UrgencyBanner />
       <SocialProofNotifications />
       <ExitIntentPopup />
       <StickyCTABar />
