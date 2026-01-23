@@ -4,7 +4,7 @@ import { X, Rocket, ArrowRight, Gift } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
-
+import { supabase } from "@/integrations/supabase/client";
 const ExitIntentPopup = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [hasShown, setHasShown] = useState(false);
@@ -50,17 +50,32 @@ const ExitIntentPopup = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate submission - in production, connect to your email service
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const { error } = await supabase.functions.invoke("send-exit-popup-email", {
+        body: { email },
+      });
 
-    toast({
-      title: "🚀 You're on the list!",
-      description: "Check your inbox for your free SEO checklist.",
-    });
+      if (error) {
+        throw error;
+      }
 
-    setIsSubmitting(false);
-    setIsVisible(false);
-    localStorage.setItem("exitPopupConverted", "true");
+      toast({
+        title: "🚀 You're on the list!",
+        description: "Check your inbox for your free SEO checklist.",
+      });
+
+      setIsVisible(false);
+      localStorage.setItem("exitPopupConverted", "true");
+    } catch (error) {
+      console.error("Error submitting email:", error);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleClose = () => {
