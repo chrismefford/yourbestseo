@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
-import { Trophy, Check, ArrowRight, MapPin, TrendingUp, Target, Users, BarChart3, Search, Globe } from "lucide-react";
+import { Trophy, Check, ArrowRight, MapPin, TrendingUp, Target, Users, BarChart3, Search, Globe, BookOpen, HelpCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 interface NeighborhoodData {
   slug: string;
@@ -510,14 +511,101 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
 
             <div className="flex flex-wrap justify-center gap-4 max-w-3xl mx-auto">
               {data.nearbyAreas.map((area, index) => (
-                <a
+                <Link
                   key={index}
-                  href={`/san-diego/${area.toLowerCase().replace(/\s+/g, '-')}-seo`}
+                  to={`/san-diego/${area.toLowerCase().replace(/\s+/g, '-')}-seo`}
                   className="px-6 py-3 rounded-full bg-secondary border border-border/50 hover:border-primary/50 hover:text-primary transition-all font-medium"
                 >
                   {area} SEO
-                </a>
+                </Link>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Learn More Section - Cross-linking */}
+        <section className="py-16 relative bg-secondary/20">
+          <div className="container mx-auto px-4 sm:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-8"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-bold mb-4">
+                Learn More About Local SEO
+              </h2>
+              <p className="text-muted-foreground max-w-xl mx-auto">
+                Explore our resources to understand how local SEO can help your {data.name} business grow.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {/* Related Questions */}
+              <div className="p-6 rounded-2xl bg-card border border-border/50">
+                <div className="flex items-center gap-2 mb-4">
+                  <HelpCircle className="w-5 h-5 text-primary" />
+                  <h3 className="font-display font-semibold">Common Questions</h3>
+                </div>
+                <div className="space-y-2">
+                  <Link to="/questions/what-is-local-seo" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+                    <ArrowRight className="w-4 h-4" /> What is Local SEO?
+                  </Link>
+                  <Link to="/questions/how-to-rank-in-google-maps" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+                    <ArrowRight className="w-4 h-4" /> How to Rank in Google Maps?
+                  </Link>
+                  <Link to="/questions/what-is-google-business-profile" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+                    <ArrowRight className="w-4 h-4" /> What is Google Business Profile?
+                  </Link>
+                  <Link to="/questions/how-to-get-more-google-reviews" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+                    <ArrowRight className="w-4 h-4" /> How to Get More Google Reviews?
+                  </Link>
+                </div>
+              </div>
+
+              {/* Related Glossary Terms */}
+              <div className="p-6 rounded-2xl bg-card border border-border/50">
+                <div className="flex items-center gap-2 mb-4">
+                  <BookOpen className="w-5 h-5 text-primary" />
+                  <h3 className="font-display font-semibold">SEO Terms to Know</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <Link to="/glossary/local-seo" className="px-3 py-1.5 text-xs rounded-full bg-secondary border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors">
+                    Local SEO
+                  </Link>
+                  <Link to="/glossary/google-business-profile" className="px-3 py-1.5 text-xs rounded-full bg-secondary border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors">
+                    Google Business Profile
+                  </Link>
+                  <Link to="/glossary/local-pack" className="px-3 py-1.5 text-xs rounded-full bg-secondary border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors">
+                    Local Pack
+                  </Link>
+                  <Link to="/glossary/local-citations" className="px-3 py-1.5 text-xs rounded-full bg-secondary border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors">
+                    Local Citations
+                  </Link>
+                  <Link to="/glossary/nap-consistency" className="px-3 py-1.5 text-xs rounded-full bg-secondary border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors">
+                    NAP Consistency
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Related Services */}
+            <div className="mt-8 p-6 rounded-2xl bg-primary/5 border border-primary/20 max-w-4xl mx-auto">
+              <h3 className="font-display font-semibold text-center mb-4">Our Local SEO Services</h3>
+              <div className="grid sm:grid-cols-3 gap-4">
+                <Link to="/services/google-business-profile" className="group flex items-center justify-between p-3 rounded-lg bg-background border border-border/50 hover:border-primary/50 transition-all">
+                  <span className="text-sm font-medium group-hover:text-primary transition-colors">Google Business Profile</span>
+                  <ArrowRight className="w-4 h-4 text-primary group-hover:translate-x-1 transition-all" />
+                </Link>
+                <Link to="/services/local-citations" className="group flex items-center justify-between p-3 rounded-lg bg-background border border-border/50 hover:border-primary/50 transition-all">
+                  <span className="text-sm font-medium group-hover:text-primary transition-colors">Local Citations</span>
+                  <ArrowRight className="w-4 h-4 text-primary group-hover:translate-x-1 transition-all" />
+                </Link>
+                <Link to="/services/review-management" className="group flex items-center justify-between p-3 rounded-lg bg-background border border-border/50 hover:border-primary/50 transition-all">
+                  <span className="text-sm font-medium group-hover:text-primary transition-colors">Review Management</span>
+                  <ArrowRight className="w-4 h-4 text-primary group-hover:translate-x-1 transition-all" />
+                </Link>
+              </div>
             </div>
           </div>
         </section>

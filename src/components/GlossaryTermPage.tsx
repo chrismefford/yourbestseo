@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ChevronRight, BookOpen, ArrowLeft, ExternalLink } from 'lucide-react';
+import { ChevronRight, BookOpen, ArrowLeft, ExternalLink, Wrench, HelpCircle } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
@@ -15,12 +15,57 @@ import {
   BreadcrumbSeparator 
 } from '@/components/ui/breadcrumb';
 import { glossaryTerms, categoryLabels, categoryColors } from '@/data/glossaryTerms';
+import { getRelatedQuestions, getRelatedServices } from '@/data/internalLinks';
 import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
 } from '@/components/ui/chart';
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+
+// Question title mappings for display
+const questionTitles: Record<string, string> = {
+  "what-is-seo": "What is SEO?",
+  "how-long-does-seo-take": "How Long Does SEO Take?",
+  "how-much-does-seo-cost": "How Much Does SEO Cost?",
+  "what-is-organic-traffic": "What is Organic Traffic?",
+  "what-is-a-backlink": "What is a Backlink?",
+  "what-is-domain-authority": "What is Domain Authority?",
+  "what-is-a-serp": "What is a SERP?",
+  "what-is-local-seo": "What is Local SEO?",
+  "how-to-rank-in-google-maps": "How to Rank in Google Maps?",
+  "what-is-google-business-profile": "What is Google Business Profile?",
+  "how-to-get-more-google-reviews": "How to Get More Google Reviews?",
+  "what-are-local-citations": "What Are Local Citations?",
+  "what-is-nap-consistency": "What is NAP Consistency?",
+  "what-is-the-local-pack": "What is the Local Pack?",
+  "what-is-technical-seo": "What is Technical SEO?",
+  "how-to-improve-page-speed": "How to Improve Page Speed?",
+  "what-are-core-web-vitals": "What Are Core Web Vitals?",
+  "what-is-crawl-budget": "What is Crawl Budget?",
+  "what-is-schema-markup": "What is Schema Markup?",
+  "what-is-mobile-first-indexing": "What is Mobile-First Indexing?",
+  "what-is-on-page-seo": "What is On-Page SEO?",
+  "what-is-off-page-seo": "What is Off-Page SEO?",
+  "what-is-keyword-research": "What is Keyword Research?",
+  "how-to-do-local-keyword-research": "How to Do Local Keyword Research?",
+  "what-is-an-xml-sitemap": "What is an XML Sitemap?",
+  "what-is-robots-txt": "What is Robots.txt?",
+  "what-are-canonical-tags": "What Are Canonical Tags?",
+  "how-to-fix-duplicate-content": "How to Fix Duplicate Content?",
+  "what-are-long-tail-keywords": "What Are Long-Tail Keywords?",
+  "what-is-eeat": "What is E-E-A-T?",
+  "how-to-write-seo-content": "How to Write SEO Content?",
+  "how-often-should-i-publish-content": "How Often Should I Publish Content?",
+  "what-is-content-freshness": "What is Content Freshness?",
+  "how-to-do-competitor-analysis": "How to Do Competitor Analysis?",
+  "what-is-link-building": "What is Link Building?",
+  "what-is-white-hat-seo": "What is White Hat SEO?",
+  "how-to-build-topic-clusters": "How to Build Topic Clusters?",
+  "seo-vs-ppc": "SEO vs PPC: Which is Better?",
+  "what-is-google-search-console": "What is Google Search Console?",
+  "how-to-track-keyword-rankings": "How to Track Keyword Rankings?",
+};
 
 interface TableOfContentsItem {
   id: string;
@@ -347,6 +392,62 @@ const GlossaryTermPage = ({
                   </div>
                 </section>
               )}
+
+              {/* Related Questions - Cross-linking to Questions */}
+              {(() => {
+                const relatedQuestionSlugs = getRelatedQuestions(slug);
+                if (relatedQuestionSlugs.length === 0) return null;
+                return (
+                  <section id="related-questions" className="mb-10">
+                    <div className="flex items-center gap-2 mb-4">
+                      <HelpCircle className="w-5 h-5 text-primary" />
+                      <h2 className="font-display text-2xl font-bold">Related Questions</h2>
+                    </div>
+                    <div className="space-y-2">
+                      {relatedQuestionSlugs.slice(0, 4).map((qSlug) => (
+                        <Link
+                          key={qSlug}
+                          to={`/questions/${qSlug}`}
+                          className="group flex items-center gap-3 p-4 rounded-xl bg-card border border-border/50 hover:border-primary/50 transition-all"
+                        >
+                          <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                          <span className="text-muted-foreground group-hover:text-primary transition-colors">
+                            {questionTitles[qSlug] || qSlug}
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  </section>
+                );
+              })()}
+
+              {/* Related Services - Cross-linking to Services */}
+              {(() => {
+                const relatedServicesList = getRelatedServices(slug);
+                if (relatedServicesList.length === 0) return null;
+                return (
+                  <section id="related-services" className="mb-10">
+                    <div className="flex items-center gap-2 mb-4">
+                      <Wrench className="w-5 h-5 text-primary" />
+                      <h2 className="font-display text-2xl font-bold">Related Services</h2>
+                    </div>
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      {relatedServicesList.slice(0, 4).map((service) => (
+                        <Link
+                          key={service.slug}
+                          to={service.path}
+                          className="group flex items-center justify-between p-4 rounded-xl bg-primary/5 border border-primary/20 hover:border-primary/50 transition-all"
+                        >
+                          <span className="font-medium text-foreground group-hover:text-primary transition-colors">
+                            {service.name}
+                          </span>
+                          <ChevronRight className="w-4 h-4 text-primary group-hover:translate-x-1 transition-all" />
+                        </Link>
+                      ))}
+                    </div>
+                  </section>
+                );
+              })()}
 
               {/* CTA */}
               <section className="p-8 rounded-xl bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20">
