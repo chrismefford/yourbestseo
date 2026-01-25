@@ -267,7 +267,10 @@ export const footerNavigation = {
     { name: "Downtown San Diego", path: "/san-diego/downtown-san-diego-seo" },
     { name: "La Jolla", path: "/san-diego/la-jolla-seo" },
     { name: "North Park", path: "/san-diego/north-park-seo" },
+    { name: "Pacific Beach", path: "/san-diego/pacific-beach-seo" },
     { name: "Hillcrest", path: "/san-diego/hillcrest-seo" },
+    { name: "Chula Vista", path: "/san-diego/chula-vista-seo" },
+    { name: "Mission Valley", path: "/san-diego/mission-valley-seo" },
   ],
   states: [
     { name: "California SEO", path: "/states/california-seo" },
