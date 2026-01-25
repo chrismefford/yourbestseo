@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import astronautImage from "@/assets/astronaut-hero.png";
+import astronautImage from "@/assets/astronaut-daisies.jpg";
 
 const Hero = () => {
   return (
