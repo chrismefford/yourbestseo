@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import astronautImage from "@/assets/astronaut-daisies.jpg";
 
 const Hero = () => {
   return (
@@ -54,7 +55,7 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Astronaut Image */}
+          {/* Astronaut Image - LCP optimized */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -63,9 +64,13 @@ const Hero = () => {
           >
             <div className="relative">
               <img
-                src="https://static.riff.new/public/thick-melancholic-rhythm-du4n/Astro%20Final.gif"
-                alt="Astronaut floating in space"
-                className="w-full max-w-md lg:max-w-lg xl:max-w-xl animate-float"
+                src={astronautImage}
+                alt="Astronaut floating in space with daisies - Your Best SEO"
+                width={512}
+                height={512}
+                fetchPriority="high"
+                decoding="async"
+                className="w-full max-w-md lg:max-w-lg xl:max-w-xl animate-float rounded-2xl"
               />
               {/* Glow behind astronaut */}
               <div className="absolute inset-0 bg-primary/10 rounded-full blur-3xl -z-10 scale-75" />
