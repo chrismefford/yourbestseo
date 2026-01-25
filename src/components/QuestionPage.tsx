@@ -3,8 +3,9 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CTASection from '@/components/CTASection';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, CheckCircle, Clock, User } from 'lucide-react';
+import { ArrowLeft, CheckCircle, Clock, User, Wrench, ArrowRight } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+import { getRelatedServicesForQuestion } from '@/data/internalLinks';
 
 interface QuestionPageProps {
   slug: string;
@@ -322,6 +323,34 @@ const QuestionPage = ({
                     </div>
                   </section>
                 )}
+
+                {/* Related Services - Cross-linking to Services */}
+                {(() => {
+                  const relatedServicesList = getRelatedServicesForQuestion(slug);
+                  if (relatedServicesList.length === 0) return null;
+                  return (
+                    <section id="related-services" className="mb-10">
+                      <div className="flex items-center gap-2 mb-4">
+                        <Wrench className="w-5 h-5 text-primary" />
+                        <h2 className="text-2xl font-bold text-foreground">Related Services</h2>
+                      </div>
+                      <div className="grid sm:grid-cols-2 gap-4">
+                        {relatedServicesList.slice(0, 4).map((service) => (
+                          <Link
+                            key={service.slug}
+                            to={service.path}
+                            className="group flex items-center justify-between p-4 rounded-xl bg-primary/5 border border-primary/20 hover:border-primary/50 transition-all"
+                          >
+                            <span className="font-medium text-foreground group-hover:text-primary transition-colors">
+                              {service.name}
+                            </span>
+                            <ArrowRight className="w-4 h-4 text-primary group-hover:translate-x-1 transition-all" />
+                          </Link>
+                        ))}
+                      </div>
+                    </section>
+                  );
+                })()}
               </article>
             </div>
           </div>
