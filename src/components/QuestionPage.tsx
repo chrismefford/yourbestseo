@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CTASection from '@/components/CTASection';
@@ -113,7 +113,7 @@ const QuestionPage = ({
 
   return (
     <>
-      <Helmet>
+      <Head>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
         <link rel="canonical" href={canonicalUrl} />
@@ -128,7 +128,7 @@ const QuestionPage = ({
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-      </Helmet>
+      </Head>
 
       <div className="min-h-screen bg-background">
         <Header />

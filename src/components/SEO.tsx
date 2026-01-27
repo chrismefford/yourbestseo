@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { Head } from "vite-react-ssg";
 
 interface SEOProps {
   title?: string;
@@ -93,7 +93,7 @@ export const SEO = ({
   }
 
   return (
-    <Helmet>
+    <Head>
       {/* Primary Meta Tags */}
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
@@ -120,7 +120,7 @@ export const SEO = ({
       <script type="application/ld+json">
         {JSON.stringify(schemaArray)}
       </script>
-    </Helmet>
+    </Head>
   );
 };
 
