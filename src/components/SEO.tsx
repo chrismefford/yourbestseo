@@ -12,8 +12,9 @@ interface SEOProps {
 }
 
 const SITE_NAME = "Your Best SEO";
-const SITE_URL = "https://www.yourbestseo.com";
-const DEFAULT_IMAGE = "https://www.yourbestseo.com/og-image.png";
+// Use non-www as the canonical domain (301 redirect from www → non-www should be configured at DNS/CDN level)
+const SITE_URL = "https://yourbestseo.com";
+const DEFAULT_IMAGE = "https://yourbestseo.com/og-image.png";
 const TWITTER_HANDLE = "@YourBestSEO";
 
 // Organization Schema - used on all pages

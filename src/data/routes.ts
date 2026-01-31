@@ -214,7 +214,7 @@ export const allRoutes: RouteConfig[] = [
 ];
 
 // Domain configuration
-export const SITE_DOMAIN = 'https://www.yourbestseo.com';
+export const SITE_DOMAIN = 'https://yourbestseo.com';
 
 /**
  * Generate sitemap XML string from routes
