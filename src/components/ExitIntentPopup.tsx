@@ -13,6 +13,9 @@ const ExitIntentPopup = () => {
   const { toast } = useToast();
 
   useEffect(() => {
+    // Guard against SSR/SSG - only run on client
+    if (typeof window === 'undefined') return;
+    
     // Check if already shown this session
     const alreadyShown = sessionStorage.getItem("exitPopupShown");
     if (alreadyShown) {
