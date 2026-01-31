@@ -137,7 +137,7 @@ const GlossaryTermPage = ({
     return acc;
   }, {} as Record<string, { label: string; color: string }>);
 
-  const SITE_URL = "https://www.yourbestseo.com";
+  const SITE_URL = "https://yourbestseo.com";
   
   // Generate schema markup for SEO
   const schemaMarkup = {

@@ -32,7 +32,7 @@ const itemVariants = {
 };
 
 const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
-  const SITE_URL = "https://www.yourbestseo.com";
+  const SITE_URL = "https://yourbestseo.com";
   
   // Generate FAQ schema
   const faqSchema = {
