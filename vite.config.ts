@@ -15,12 +15,10 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // SSG configuration for vite-react-ssg
   ssgOptions: {
-    // Generate static HTML for all routes
     script: "async",
-    // Use nested directory style for cleaner URLs
     dirStyle: "nested",
-    // Mock browser globals during SSG
     mock: true,
   },
 }));
