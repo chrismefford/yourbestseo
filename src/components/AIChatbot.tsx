@@ -41,6 +41,9 @@ const AIChatbot = () => {
 
   // Auto-scroll to bottom
   useEffect(() => {
+    // Guard against SSR/SSG - only run on client
+    if (typeof window === 'undefined') return;
+    
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }

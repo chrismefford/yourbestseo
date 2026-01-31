@@ -30,6 +30,9 @@ const SocialProofNotifications = () => {
 
   // Generate random viewer count
   useEffect(() => {
+    // Guard against SSR/SSG - only run on client
+    if (typeof window === 'undefined') return;
+    
     const updateViewers = () => {
       setViewerCount(Math.floor(Math.random() * 8) + 3); // 3-10 viewers
     };
@@ -40,6 +43,9 @@ const SocialProofNotifications = () => {
 
   // Show notifications periodically
   useEffect(() => {
+    // Guard against SSR/SSG - only run on client
+    if (typeof window === 'undefined') return;
+    
     const showNotification = () => {
       const randomName = names[Math.floor(Math.random() * names.length)];
       const randomCity = cities[Math.floor(Math.random() * cities.length)];

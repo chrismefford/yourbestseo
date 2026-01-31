@@ -1,4 +1,5 @@
 import { lazy, Suspense, useEffect, useState } from "react";
+import { ClientOnly } from "vite-react-ssg";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import MissionObjectives from "@/components/MissionObjectives";
@@ -15,7 +16,7 @@ import { SEO, generateWebPageSchema } from "@/components/SEO";
 import UrgencyBanner from "@/components/UrgencyBanner";
 import ROICalculator from "@/components/ROICalculator";
 
-// Lazy load non-critical conversion components
+// Lazy load non-critical conversion components that use browser APIs
 const ExitIntentPopup = lazy(() => import("@/components/ExitIntentPopup"));
 const StickyCTABar = lazy(() => import("@/components/StickyCTABar"));
 const AIChatbot = lazy(() => import("@/components/AIChatbot"));
@@ -26,13 +27,20 @@ const Index = () => {
 
   // Defer loading of conversion components until after initial paint
   useEffect(() => {
-    const timer = requestIdleCallback 
+    // Only run on client-side
+    if (typeof window === 'undefined') return;
+    
+    const timer = typeof requestIdleCallback !== 'undefined'
       ? requestIdleCallback(() => setShowDeferredComponents(true))
       : setTimeout(() => setShowDeferredComponents(true), 2000);
     
     return () => {
       if (typeof timer === 'number') {
-        cancelIdleCallback ? cancelIdleCallback(timer) : clearTimeout(timer);
+        if (typeof cancelIdleCallback !== 'undefined') {
+          cancelIdleCallback(timer);
+        } else {
+          clearTimeout(timer);
+        }
       }
     };
   }, []);
@@ -68,15 +76,17 @@ const Index = () => {
       </main>
       <Footer />
       
-      {/* Deferred Conversion Components - loaded after initial paint */}
-      {showDeferredComponents && (
-        <Suspense fallback={null}>
-          <SocialProofNotifications />
-          <ExitIntentPopup />
-          <StickyCTABar />
-          <AIChatbot />
-        </Suspense>
-      )}
+      {/* Client-only conversion components - wrapped to prevent SSG hydration issues */}
+      <ClientOnly>
+        {() => showDeferredComponents && (
+          <Suspense fallback={null}>
+            <SocialProofNotifications />
+            <ExitIntentPopup />
+            <StickyCTABar />
+            <AIChatbot />
+          </Suspense>
+        )}
+      </ClientOnly>
     </div>
   );
 };
