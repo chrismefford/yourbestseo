@@ -15,8 +15,8 @@ const BlogContentInner = () => {
   const bodyHtml = routeState.resolution?.payload?.body_html || "";
   const headData = routeState.resolution?.payload?.head_data;
   const headItems = routeState.resolution?.payload?.head_items;
-  const pageTitle = headData?.title || "SEO & Digital Marketing Blog | Your Best SEO";
-  const pageDescription = headData?.description || "Actionable SEO insights, advanced guides, and proven strategies for marketing agencies. Learn link building, keyword research, and technical SEO.";
+  const pageTitle = headData?.title || "Blog | Your Best SEO";
+  const pageDescription = headData?.description || "Expert SEO insights, tips, and strategies.";
 
   if (routeState.status === "loading") {
     return <div className="flex items-center justify-center py-20"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div></div>;
@@ -30,25 +30,9 @@ const BlogContentInner = () => {
 const BlogContent = () => {
   const location = useLocation();
   const canonicalPath = location.pathname === "/blog" || location.pathname === "/blog/" ? "/blog" : location.pathname;
-  
-  // FIXED: Unique title and description for the blog page - different from homepage
-  const blogTitle = "SEO & Digital Marketing Blog | Your Best SEO";
-  const blogDescription = "Actionable SEO insights, advanced guides, and proven strategies for marketing agencies. Learn link building, keyword research, and technical SEO.";
-  
   return (
     <div className="min-h-screen bg-background">
-      <Head>
-        <title>{blogTitle}</title>
-        <meta name="description" content={blogDescription} />
-        <link rel="canonical" href={`${SITE_URL}${canonicalPath}`} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={`${SITE_URL}${canonicalPath}`} />
-        <meta property="og:title" content={blogTitle} />
-        <meta property="og:description" content={blogDescription} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={blogTitle} />
-        <meta name="twitter:description" content={blogDescription} />
-      </Head>
+      <Head><title>Blog | Your Best SEO</title><meta name="description" content="Expert SEO insights, tips, and strategies to help your business dominate search results." /><link rel="canonical" href={`${SITE_URL}${canonicalPath}`} /><meta property="og:type" content="website" /><meta property="og:url" content={`${SITE_URL}${canonicalPath}`} /><meta property="og:title" content="Blog | Your Best SEO" /><meta property="og:description" content="Expert SEO insights, tips, and strategies." /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content="Blog | Your Best SEO" /><meta name="twitter:description" content="Expert SEO insights, tips, and strategies." /></Head>
       <Header />
       <main className="pt-24 pb-16"><div className="container mx-auto px-4 sm:px-6"><DropInBlogProvider blogId={DROPINBLOG_BLOG_ID} apiToken={DROPINBLOG_API_TOKEN} basePath="/blog"><ClientOnly>{() => <BlogContentInner />}</ClientOnly></DropInBlogProvider></div></main>
       <Footer />
@@ -57,4 +41,3 @@ const BlogContent = () => {
 };
 
 export default BlogContent;
-
