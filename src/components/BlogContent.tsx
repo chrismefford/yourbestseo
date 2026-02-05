@@ -1,4 +1,3 @@
-```tsx
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { DropInBlogProvider, useDropInBlogRoute, DropInBlogHead, DropInBlogContent } from "@dropinblog/react-core";
@@ -58,4 +57,4 @@ const BlogContent = () => {
 };
 
 export default BlogContent;
-```
+
