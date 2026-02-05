@@ -34,7 +34,7 @@ const Glossary = () => {
     return Object.entries(groups).sort(([a], [b]) => a.localeCompare(b));
   }, [filteredTerms]);
 
-  const categories: Array<GlossaryTerm['category'] | 'all'> = ['all', 'local-seo', 'technical-seo', 'on-page-seo', 'off-page-seo'];
+  const categories: Array<GlossaryTerm['category'] | 'all'> = ['all', 'fundamentals', 'local-seo', 'technical-seo', 'on-page-seo', 'off-page-seo', 'content-seo'];
 
   return (
     <>
