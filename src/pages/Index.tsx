@@ -13,7 +13,6 @@ import ContactSection from "@/components/ContactSection";
 import FunSection from "@/components/FunSection";
 import Footer from "@/components/Footer";
 import { SEO, generateWebPageSchema } from "@/components/SEO";
-import UrgencyBanner from "@/components/UrgencyBanner";
 import ROICalculator from "@/components/ROICalculator";
 
 // Lazy load non-critical conversion components that use browser APIs
@@ -59,7 +58,6 @@ const Index = () => {
         canonical="/"
         schema={pageSchema}
       />
-      <UrgencyBanner />
       <Header />
       <main>
         <Hero />
