@@ -203,7 +203,7 @@ const GlossaryTermPage = ({
   return (
     <>
       <SEO 
-        title={`${term} - SEO Glossary | Your Best SEO`}
+        title={`${term} - SEO Glossary`}
         description={`Learn what ${term} means in SEO. ${definition.substring(0, 120)}...`}
         canonical={`/glossary/${slug}`}
         schema={[schemaMarkup, articleSchema, breadcrumbSchema]}
