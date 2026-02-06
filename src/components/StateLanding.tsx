@@ -60,6 +60,16 @@ const StateLanding = ({ data }: { data: StateData }) => {
     "@id": `${SITE_URL}/states/${data.slug}/#localbusiness`,
     name: `Your Best SEO - ${data.name} SEO Services`,
     description: data.heroDescription,
+    url: `${SITE_URL}/states/${data.slug}`,
+    telephone: "+1-615-772-6641",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "8620 Ian Way",
+      addressLocality: "San Diego",
+      addressRegion: "CA",
+      postalCode: "92071",
+      addressCountry: "US",
+    },
     areaServed: {
       "@type": "State",
       name: data.name,
