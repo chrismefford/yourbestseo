@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 import CTASection from '@/components/CTASection';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, CheckCircle, Clock, User, Wrench, ArrowRight } from 'lucide-react';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+import { LazyChart } from '@/components/LazyChart';
 import { getRelatedServicesForQuestion } from '@/data/internalLinks';
 
 interface QuestionPageProps {
@@ -41,8 +41,6 @@ const parseMarkdown = (text: string) => {
     return part;
   });
 };
-
-const CHART_COLORS = ['#F59E0B', '#10B981', '#3B82F6', '#8B5CF6', '#EC4899'];
 
 const QuestionPage = ({
   slug,
@@ -248,40 +246,7 @@ const QuestionPage = ({
                     <h2 className="text-2xl font-bold text-foreground mb-4">Data Insights</h2>
                     <div className="bg-card/50 border border-border rounded-xl p-6">
                       <h3 className="text-lg font-semibold text-foreground mb-4">{chartData.title}</h3>
-                      <div className="h-64">
-                        <ResponsiveContainer width="100%" height="100%">
-                          {chartData.type === 'bar' ? (
-                            <BarChart data={chartData.data}>
-                              <XAxis dataKey="name" tick={{ fill: '#9CA3AF' }} />
-                              <YAxis tick={{ fill: '#9CA3AF' }} />
-                              <Tooltip
-                                contentStyle={{ backgroundColor: '#1F2937', border: '1px solid #374151' }}
-                                labelStyle={{ color: '#F9FAFB' }}
-                              />
-                              <Bar dataKey="value" fill="#F59E0B" radius={[4, 4, 0, 0]} />
-                            </BarChart>
-                          ) : (
-                            <PieChart>
-                              <Pie
-                                data={chartData.data}
-                                cx="50%"
-                                cy="50%"
-                                outerRadius={80}
-                                dataKey="value"
-                                label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
-                              >
-                                {chartData.data.map((_, index) => (
-                                  <Cell key={`cell-${index}`} fill={CHART_COLORS[index % CHART_COLORS.length]} />
-                                ))}
-                              </Pie>
-                              <Tooltip
-                                contentStyle={{ backgroundColor: '#1F2937', border: '1px solid #374151' }}
-                                labelStyle={{ color: '#F9FAFB' }}
-                              />
-                            </PieChart>
-                          )}
-                        </ResponsiveContainer>
-                      </div>
+                      <LazyChart chartData={chartData} />
                     </div>
                   </section>
                 )}
