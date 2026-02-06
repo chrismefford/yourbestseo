@@ -4,7 +4,7 @@
       "source": "/:path*",
       "has": [{ "type": "host", "value": "www.yourbestseo.com" }],
       "destination": "https://yourbestseo.com/:path*",
-      "permanent": true
+      "statusCode": 301
     }
   ],
   "rewrites": [
