@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronRight, BookOpen, ArrowLeft, ExternalLink, Wrench, HelpCircle } from 'lucide-react';
 import Header from '@/components/Header';
@@ -16,12 +16,9 @@ import {
 } from '@/components/ui/breadcrumb';
 import { glossaryTerms, categoryLabels, categoryColors } from '@/data/glossaryTerms';
 import { getRelatedQuestions, getRelatedServices } from '@/data/internalLinks';
-import {
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from '@/components/ui/chart';
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+
+// Lazy load heavy chart component
+const GlossaryChart = lazy(() => import('@/components/GlossaryChart'));
 
 // Question title mappings for display
 const questionTitles: Record<string, string> = {
@@ -95,7 +92,7 @@ interface GlossaryTermPageProps {
   imageAlt: string;
 }
 
-const CHART_COLORS = ['hsl(40, 91%, 55%)', 'hsl(220, 25%, 30%)', 'hsl(220, 25%, 40%)', 'hsl(220, 25%, 50%)', 'hsl(220, 25%, 60%)'];
+// CHART_COLORS moved to GlossaryChart component
 
 const GlossaryTermPage = ({
   slug,
@@ -129,13 +126,7 @@ const GlossaryTermPage = ({
     }
   };
 
-  const chartConfig = chartData.data.reduce((acc, item, index) => {
-    acc[item.name] = {
-      label: item.name,
-      color: item.color || CHART_COLORS[index % CHART_COLORS.length],
-    };
-    return acc;
-  }, {} as Record<string, { label: string; color: string }>);
+  // chartConfig moved to GlossaryChart component
 
   const SITE_URL = "https://yourbestseo.com";
   
@@ -337,37 +328,16 @@ const GlossaryTermPage = ({
                 </section>
               ))}
 
-              {/* Chart Section */}
+              {/* Chart Section - Lazy loaded for performance */}
               <section id="data-insights" className="mb-10">
                 <h2 className="font-display text-2xl font-bold mb-4">{chartData.title}</h2>
-                <div className="p-6 rounded-xl bg-card border border-border/50">
-                  <ChartContainer config={chartConfig} className="h-64 w-full">
-                    {chartData.type === 'bar' ? (
-                      <BarChart data={chartData.data}>
-                        <XAxis dataKey="name" tick={{ fill: 'hsl(215, 15%, 60%)', fontSize: 12 }} />
-                        <YAxis tick={{ fill: 'hsl(215, 15%, 60%)', fontSize: 12 }} />
-                        <ChartTooltip content={<ChartTooltipContent />} />
-                        <Bar dataKey="value" fill="hsl(40, 91%, 55%)" radius={[4, 4, 0, 0]} />
-                      </BarChart>
-                    ) : (
-                      <PieChart>
-                        <Pie
-                          data={chartData.data}
-                          cx="50%"
-                          cy="50%"
-                          outerRadius={80}
-                          dataKey="value"
-                          label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
-                        >
-                          {chartData.data.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={CHART_COLORS[index % CHART_COLORS.length]} />
-                          ))}
-                        </Pie>
-                        <ChartTooltip content={<ChartTooltipContent />} />
-                      </PieChart>
-                    )}
-                  </ChartContainer>
-                </div>
+                <Suspense fallback={
+                  <div className="h-64 w-full flex items-center justify-center bg-card/30 rounded-xl animate-pulse">
+                    <span className="text-muted-foreground text-sm">Loading chart...</span>
+                  </div>
+                }>
+                  <GlossaryChart chartData={chartData} />
+                </Suspense>
               </section>
 
               {/* Related Terms */}

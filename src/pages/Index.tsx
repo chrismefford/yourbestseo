@@ -5,21 +5,23 @@ import Hero from "@/components/Hero";
 import MissionObjectives from "@/components/MissionObjectives";
 import HowItWorks from "@/components/HowItWorks";
 import TrustBadge from "@/components/TrustBadge";
-import BeforeAfterTelemetry from "@/components/BeforeAfterTelemetry";
-import MissionReports from "@/components/MissionReports";
 import CTASection from "@/components/CTASection";
-import Testimonials from "@/components/Testimonials";
 import ContactSection from "@/components/ContactSection";
-import FunSection from "@/components/FunSection";
 import Footer from "@/components/Footer";
 import { SEO, generateWebPageSchema } from "@/components/SEO";
-import ROICalculator from "@/components/ROICalculator";
-import AIChatbot from "@/components/AIChatbot";
+
+// Lazy load below-the-fold components to reduce initial bundle
+const BeforeAfterTelemetry = lazy(() => import("@/components/BeforeAfterTelemetry"));
+const MissionReports = lazy(() => import("@/components/MissionReports"));
+const Testimonials = lazy(() => import("@/components/Testimonials"));
+const FunSection = lazy(() => import("@/components/FunSection"));
+const ROICalculator = lazy(() => import("@/components/ROICalculator"));
 
 // Lazy load non-critical conversion components that use browser APIs
 const ExitIntentPopup = lazy(() => import("@/components/ExitIntentPopup"));
 const StickyCTABar = lazy(() => import("@/components/StickyCTABar"));
 const SocialProofNotifications = lazy(() => import("@/components/SocialProofNotifications"));
+const AIChatbot = lazy(() => import("@/components/AIChatbot"));
 
 const Index = () => {
   const [showDeferredComponents, setShowDeferredComponents] = useState(false);
@@ -64,13 +66,24 @@ const Index = () => {
         <MissionObjectives />
         <HowItWorks />
         <TrustBadge />
-        <ROICalculator />
-        <BeforeAfterTelemetry />
-        <MissionReports />
+        {/* Lazy-loaded below-the-fold content */}
+        <Suspense fallback={<div className="h-96" />}>
+          <ROICalculator />
+        </Suspense>
+        <Suspense fallback={<div className="h-96" />}>
+          <BeforeAfterTelemetry />
+        </Suspense>
+        <Suspense fallback={<div className="h-96" />}>
+          <MissionReports />
+        </Suspense>
         <CTASection />
-        <Testimonials />
+        <Suspense fallback={<div className="h-96" />}>
+          <Testimonials />
+        </Suspense>
         <ContactSection />
-        <FunSection />
+        <Suspense fallback={<div className="h-48" />}>
+          <FunSection />
+        </Suspense>
       </main>
       <Footer />
       
