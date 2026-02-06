@@ -14,11 +14,11 @@ import FunSection from "@/components/FunSection";
 import Footer from "@/components/Footer";
 import { SEO, generateWebPageSchema } from "@/components/SEO";
 import ROICalculator from "@/components/ROICalculator";
+import AIChatbot from "@/components/AIChatbot";
 
 // Lazy load non-critical conversion components that use browser APIs
 const ExitIntentPopup = lazy(() => import("@/components/ExitIntentPopup"));
 const StickyCTABar = lazy(() => import("@/components/StickyCTABar"));
-const AIChatbot = lazy(() => import("@/components/AIChatbot"));
 const SocialProofNotifications = lazy(() => import("@/components/SocialProofNotifications"));
 
 const Index = () => {
