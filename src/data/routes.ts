@@ -201,6 +201,20 @@ export const neighborhoodRoutes: RouteConfig[] = [
   { path: '/san-diego/university-city-seo', priority: 0.7, changefreq: 'monthly' },
   { path: '/san-diego/mira-mesa-seo', priority: 0.7, changefreq: 'monthly' },
   { path: '/san-diego/rancho-bernardo-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/imperial-beach-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/university-heights-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/torrey-pines-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/middletown-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/uptown-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/bonita-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/utc-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/bankers-hill-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/otay-ranch-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/mission-hills-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/bird-rock-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/del-mar-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/eastlake-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/san-ysidro-seo', priority: 0.7, changefreq: 'monthly' },
 ];
 
 // Combine all routes for sitemap generation

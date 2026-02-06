@@ -40,6 +40,20 @@ import ClairemontSEO from "./pages/san-diego/ClairemontSEO";
 import UniversityCitySEO from "./pages/san-diego/UniversityCitySEO";
 import MiraMesaSEO from "./pages/san-diego/MiraMesaSEO";
 import RanchoBernardoSEO from "./pages/san-diego/RanchoBernardoSEO";
+import ImperialBeachSEO from "./pages/san-diego/ImperialBeachSEO";
+import UniversityHeightsSEO from "./pages/san-diego/UniversityHeightsSEO";
+import TorreyPinesSEO from "./pages/san-diego/TorreyPinesSEO";
+import MiddletownSEO from "./pages/san-diego/MiddletownSEO";
+import UptownSEO from "./pages/san-diego/UptownSEO";
+import BonitaSEO from "./pages/san-diego/BonitaSEO";
+import UTCSEO from "./pages/san-diego/UTCSEO";
+import BankersHillSEO from "./pages/san-diego/BankersHillSEO";
+import OtayRanchSEO from "./pages/san-diego/OtayRanchSEO";
+import MissionHillsSEO from "./pages/san-diego/MissionHillsSEO";
+import BirdRockSEO from "./pages/san-diego/BirdRockSEO";
+import DelMarSEO from "./pages/san-diego/DelMarSEO";
+import EastlakeSEO from "./pages/san-diego/EastlakeSEO";
+import SanYsidroSEO from "./pages/san-diego/SanYsidroSEO";
 
 // State SEO pages
 import CaliforniaSEO from "./pages/states/CaliforniaSEO";
@@ -349,6 +363,20 @@ export const routes: RouteRecord[] = [
       { path: "san-diego/university-city-seo", element: <UniversityCitySEO /> },
       { path: "san-diego/mira-mesa-seo", element: <MiraMesaSEO /> },
       { path: "san-diego/rancho-bernardo-seo", element: <RanchoBernardoSEO /> },
+      { path: "san-diego/imperial-beach-seo", element: <ImperialBeachSEO /> },
+      { path: "san-diego/university-heights-seo", element: <UniversityHeightsSEO /> },
+      { path: "san-diego/torrey-pines-seo", element: <TorreyPinesSEO /> },
+      { path: "san-diego/middletown-seo", element: <MiddletownSEO /> },
+      { path: "san-diego/uptown-seo", element: <UptownSEO /> },
+      { path: "san-diego/bonita-seo", element: <BonitaSEO /> },
+      { path: "san-diego/utc-seo", element: <UTCSEO /> },
+      { path: "san-diego/bankers-hill-seo", element: <BankersHillSEO /> },
+      { path: "san-diego/otay-ranch-seo", element: <OtayRanchSEO /> },
+      { path: "san-diego/mission-hills-seo", element: <MissionHillsSEO /> },
+      { path: "san-diego/bird-rock-seo", element: <BirdRockSEO /> },
+      { path: "san-diego/del-mar-seo", element: <DelMarSEO /> },
+      { path: "san-diego/eastlake-seo", element: <EastlakeSEO /> },
+      { path: "san-diego/san-ysidro-seo", element: <SanYsidroSEO /> },
       
       // State SEO pages
       { path: "states/california-seo", element: <CaliforniaSEO /> },
