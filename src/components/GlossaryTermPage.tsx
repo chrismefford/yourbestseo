@@ -100,6 +100,70 @@ interface GlossaryTermPageProps {
 
 // CHART_COLORS moved to GlossaryChart component
 
+// Helper function to render content with proper paragraph breaks and markdown formatting
+const renderFormattedContent = (text: string) => {
+  // Split by double newlines to create separate paragraphs
+  const paragraphs = text.split(/\n\n+/).filter(p => p.trim());
+  
+  return paragraphs.map((paragraph, pIndex) => {
+    // Check if this paragraph starts with a bold header (e.g., **Header**)
+    const headerMatch = paragraph.match(/^\*\*([^*]+)\*\*:?\s*([\s\S]*)/);
+    
+    if (headerMatch) {
+      const headerText = headerMatch[1];
+      const remainingText = headerMatch[2];
+      
+      // Check if remaining text contains list items
+      const hasListItems = remainingText.includes('\n-') || remainingText.includes('\n•');
+      
+      if (hasListItems) {
+        const lines = remainingText.split('\n');
+        const introText = lines[0]?.trim();
+        const listItems = lines.slice(1).filter(l => l.trim().startsWith('-') || l.trim().startsWith('•'));
+        
+        return (
+          <div key={pIndex} className="mb-4">
+            <h3 className="font-semibold text-foreground mb-2">{headerText}</h3>
+            {introText && <p className="text-muted-foreground mb-2">{introText}</p>}
+            <ul className="list-disc pl-5 space-y-1">
+              {listItems.map((item, i) => (
+                <li key={i} className="text-muted-foreground">{item.replace(/^[-•]\s*/, '')}</li>
+              ))}
+            </ul>
+          </div>
+        );
+      }
+      
+      return (
+        <div key={pIndex} className="mb-4">
+          <h3 className="font-semibold text-foreground mb-2">{headerText}</h3>
+          <p className="text-muted-foreground leading-relaxed">{renderInlineMarkdown(remainingText)}</p>
+        </div>
+      );
+    }
+    
+    // Handle regular paragraphs with inline markdown
+    return (
+      <p key={pIndex} className="text-muted-foreground leading-relaxed mb-4">
+        {renderInlineMarkdown(paragraph)}
+      </p>
+    );
+  });
+};
+
+// Helper function to render inline markdown (bold text)
+const renderInlineMarkdown = (text: string) => {
+  if (!text) return null;
+  
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <strong key={i} className="font-semibold text-foreground">{part.slice(2, -2)}</strong>;
+    }
+    return part;
+  });
+};
+
 const GlossaryTermPage = ({
   slug,
   term,
@@ -324,9 +388,7 @@ const GlossaryTermPage = ({
               <section id="introduction" className="mb-10">
                 <h2 className="font-display text-2xl font-bold mb-4">Introduction</h2>
                 <div className="prose prose-invert prose-lg max-w-none">
-                  <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
-                    {content.introduction}
-                  </p>
+                  {renderFormattedContent(content.introduction)}
                 </div>
               </section>
 
@@ -340,9 +402,7 @@ const GlossaryTermPage = ({
                     <h2 className="font-display text-2xl font-bold">Why {term} Matters for SEO</h2>
                   </div>
                   <div className="prose prose-invert prose-lg max-w-none">
-                    <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
-                      {content.whyItMatters}
-                    </p>
+                    {renderFormattedContent(content.whyItMatters)}
                   </div>
                 </section>
               )}
@@ -357,9 +417,7 @@ const GlossaryTermPage = ({
                     <h2 className="font-display text-2xl font-bold">How {term} Works</h2>
                   </div>
                   <div className="prose prose-invert prose-lg max-w-none">
-                    <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
-                      {content.howItWorks}
-                    </p>
+                    {renderFormattedContent(content.howItWorks)}
                   </div>
                 </section>
               )}
@@ -369,9 +427,7 @@ const GlossaryTermPage = ({
                 <section key={section.id} id={section.id} className="mb-10">
                   <h2 className="font-display text-2xl font-bold mb-4">{section.title}</h2>
                   <div className="prose prose-invert prose-lg max-w-none">
-                    <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
-                      {section.content}
-                    </p>
+                    {renderFormattedContent(section.content)}
                   </div>
                 </section>
               ))}
@@ -430,9 +486,7 @@ const GlossaryTermPage = ({
                     <h2 className="font-display text-2xl font-bold">Real-World Example</h2>
                   </div>
                   <div className="p-6 rounded-xl bg-primary/5 border border-primary/20">
-                    <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
-                      {content.example}
-                    </p>
+                    {renderFormattedContent(content.example)}
                   </div>
                 </section>
               )}
