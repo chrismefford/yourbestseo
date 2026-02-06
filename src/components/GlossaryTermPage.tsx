@@ -1,6 +1,6 @@
 import { useEffect, lazy, Suspense } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ChevronRight, BookOpen, ArrowLeft, ExternalLink, Wrench, HelpCircle } from 'lucide-react';
+import { ChevronRight, BookOpen, ArrowLeft, ExternalLink, Wrench, HelpCircle, Lightbulb, AlertTriangle, CheckCircle, Target } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
@@ -81,6 +81,12 @@ interface GlossaryTermPageProps {
       title: string;
       content: string;
     }[];
+    // New optional fields for expanded content
+    whyItMatters?: string;
+    howItWorks?: string;
+    bestPractices?: string[];
+    commonMistakes?: string[];
+    example?: string;
   };
   tableOfContents: TableOfContentsItem[];
   chartData: {
@@ -126,7 +132,15 @@ const GlossaryTermPage = ({
     }
   };
 
-  // chartConfig moved to GlossaryChart component
+  // Generate expanded table of contents including new sections
+  const expandedToc = [
+    ...tableOfContents,
+    ...(content.whyItMatters ? [{ id: 'why-it-matters', title: 'Why It Matters' }] : []),
+    ...(content.howItWorks ? [{ id: 'how-it-works', title: 'How It Works' }] : []),
+    ...(content.bestPractices?.length ? [{ id: 'best-practices', title: 'Best Practices' }] : []),
+    ...(content.commonMistakes?.length ? [{ id: 'common-mistakes', title: 'Common Mistakes' }] : []),
+    ...(content.example ? [{ id: 'real-world-example', title: 'Real-World Example' }] : []),
+  ];
 
   const SITE_URL = "https://yourbestseo.com";
   
@@ -238,7 +252,7 @@ const GlossaryTermPage = ({
                   Table of Contents
                 </h3>
                 <nav className="space-y-2">
-                  {tableOfContents.map((item) => (
+                  {expandedToc.map((item) => (
                     <button
                       key={item.id}
                       onClick={() => scrollToSection(item.id)}
@@ -282,7 +296,7 @@ const GlossaryTermPage = ({
                   Quick Navigation
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  {tableOfContents.map((item) => (
+                  {expandedToc.map((item) => (
                     <button
                       key={item.id}
                       onClick={() => scrollToSection(item.id)}
@@ -316,6 +330,40 @@ const GlossaryTermPage = ({
                 </div>
               </section>
 
+              {/* Why It Matters Section */}
+              {content.whyItMatters && (
+                <section id="why-it-matters" className="mb-10">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <Target className="w-5 h-5 text-primary" />
+                    </div>
+                    <h2 className="font-display text-2xl font-bold">Why {term} Matters for SEO</h2>
+                  </div>
+                  <div className="prose prose-invert prose-lg max-w-none">
+                    <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
+                      {content.whyItMatters}
+                    </p>
+                  </div>
+                </section>
+              )}
+
+              {/* How It Works Section */}
+              {content.howItWorks && (
+                <section id="how-it-works" className="mb-10">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <Lightbulb className="w-5 h-5 text-primary" />
+                    </div>
+                    <h2 className="font-display text-2xl font-bold">How {term} Works</h2>
+                  </div>
+                  <div className="prose prose-invert prose-lg max-w-none">
+                    <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
+                      {content.howItWorks}
+                    </p>
+                  </div>
+                </section>
+              )}
+
               {/* Content Sections */}
               {content.sections.map((section) => (
                 <section key={section.id} id={section.id} className="mb-10">
@@ -327,6 +375,67 @@ const GlossaryTermPage = ({
                   </div>
                 </section>
               ))}
+
+              {/* Best Practices Section */}
+              {content.bestPractices && content.bestPractices.length > 0 && (
+                <section id="best-practices" className="mb-10">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center">
+                      <CheckCircle className="w-5 h-5 text-green-500" />
+                    </div>
+                    <h2 className="font-display text-2xl font-bold">{term} Best Practices</h2>
+                  </div>
+                  <div className="p-6 rounded-xl bg-green-500/5 border border-green-500/20">
+                    <ul className="space-y-4">
+                      {content.bestPractices.map((practice, index) => (
+                        <li key={index} className="flex items-start gap-3">
+                          <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                          <span className="text-muted-foreground">{practice}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </section>
+              )}
+
+              {/* Common Mistakes Section */}
+              {content.commonMistakes && content.commonMistakes.length > 0 && (
+                <section id="common-mistakes" className="mb-10">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-lg bg-destructive/10 flex items-center justify-center">
+                      <AlertTriangle className="w-5 h-5 text-destructive" />
+                    </div>
+                    <h2 className="font-display text-2xl font-bold">Common {term} Mistakes to Avoid</h2>
+                  </div>
+                  <div className="p-6 rounded-xl bg-destructive/5 border border-destructive/20">
+                    <ul className="space-y-4">
+                      {content.commonMistakes.map((mistake, index) => (
+                        <li key={index} className="flex items-start gap-3">
+                          <AlertTriangle className="w-5 h-5 text-destructive mt-0.5 flex-shrink-0" />
+                          <span className="text-muted-foreground">{mistake}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </section>
+              )}
+
+              {/* Real-World Example Section */}
+              {content.example && (
+                <section id="real-world-example" className="mb-10">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <Lightbulb className="w-5 h-5 text-primary" />
+                    </div>
+                    <h2 className="font-display text-2xl font-bold">Real-World Example</h2>
+                  </div>
+                  <div className="p-6 rounded-xl bg-primary/5 border border-primary/20">
+                    <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
+                      {content.example}
+                    </p>
+                  </div>
+                </section>
+              )}
 
               {/* Chart Section - Lazy loaded for performance */}
               <section id="data-insights" className="mb-10">
@@ -344,6 +453,9 @@ const GlossaryTermPage = ({
               {relatedTerms.length > 0 && (
                 <section id="related-terms" className="mb-10">
                   <h2 className="font-display text-2xl font-bold mb-4">Related SEO Terms</h2>
+                  <p className="text-muted-foreground mb-4">
+                    Understanding {term} is easier when you also know these related SEO concepts. Each term connects to help you build a complete picture of how search engine optimization works.
+                  </p>
                   <div className="grid sm:grid-cols-2 gap-4">
                     {relatedTerms.map((related) => related && (
                       <Link
@@ -373,6 +485,9 @@ const GlossaryTermPage = ({
                       <HelpCircle className="w-5 h-5 text-primary" />
                       <h2 className="font-display text-2xl font-bold">Related Questions</h2>
                     </div>
+                    <p className="text-muted-foreground mb-4">
+                      Get deeper insights into {term} by exploring these commonly asked questions from SEO professionals and business owners.
+                    </p>
                     <div className="space-y-2">
                       {relatedQuestionSlugs.slice(0, 4).map((qSlug) => (
                         <Link
@@ -401,6 +516,9 @@ const GlossaryTermPage = ({
                       <Wrench className="w-5 h-5 text-primary" />
                       <h2 className="font-display text-2xl font-bold">Related Services</h2>
                     </div>
+                    <p className="text-muted-foreground mb-4">
+                      Ready to implement {term} strategies for your business? Our professional SEO services can help you get results faster.
+                    </p>
                     <div className="grid sm:grid-cols-2 gap-4">
                       {relatedServicesList.slice(0, 4).map((service) => (
                         <Link
@@ -419,11 +537,34 @@ const GlossaryTermPage = ({
                 );
               })()}
 
+              {/* Key Takeaways Summary */}
+              <section className="mb-10 p-6 rounded-xl bg-secondary/30 border border-border/50">
+                <h2 className="font-display text-xl font-bold mb-4">Key Takeaways: {term}</h2>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                    <span>{term} is essential for improving your website's search engine visibility and rankings.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                    <span>Proper implementation can lead to increased organic traffic, better user experience, and higher conversion rates.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                    <span>Avoid common mistakes by following best practices and staying updated with the latest SEO guidelines.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                    <span>Consider working with SEO professionals if you need help implementing {term} strategies effectively.</span>
+                  </li>
+                </ul>
+              </section>
+
               {/* CTA */}
               <section className="p-8 rounded-xl bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20">
                 <h2 className="font-display text-2xl font-bold mb-3">Need Help With Your SEO?</h2>
                 <p className="text-muted-foreground mb-6">
-                  Our team of SEO experts can help you implement these strategies and improve your search rankings.
+                  Our team of SEO experts specializes in {term} and can help you implement these strategies to improve your search rankings. Whether you're just getting started or looking to optimize your existing efforts, we're here to help you achieve measurable results.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Link to="/free-audit">

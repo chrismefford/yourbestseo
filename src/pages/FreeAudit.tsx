@@ -152,8 +152,83 @@ const FreeAudit = () => {
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Discover exactly what's holding your site back and get a personalized roadmap 
-              to better rankings. No sales pitch—just actionable insights.
+              to better rankings. No sales pitch—just actionable insights delivered within 24 hours.
             </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* What We Analyze Section - NEW */}
+      <section className="py-12 bg-secondary/20">
+        <div className="container mx-auto px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto"
+          >
+            <h2 className="font-display text-2xl md:text-3xl font-bold text-center mb-8">
+              What Our Free SEO Audit Covers
+            </h2>
+            <p className="text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
+              This isn't a basic automated report. Our team personally reviews your website using enterprise-grade tools and years of experience. Here's exactly what we analyze:
+            </p>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="p-5 rounded-xl bg-card border border-border/50">
+                <h3 className="font-bold mb-2 flex items-center gap-2">
+                  <Search className="w-5 h-5 text-primary" />
+                  Technical SEO Health
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  We crawl your site to identify indexation issues, broken links, redirect chains, duplicate content, and crawl errors that prevent search engines from properly understanding and ranking your pages.
+                </p>
+              </div>
+              <div className="p-5 rounded-xl bg-card border border-border/50">
+                <h3 className="font-bold mb-2 flex items-center gap-2">
+                  <BarChart3 className="w-5 h-5 text-primary" />
+                  Keyword Opportunities
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  We analyze your current rankings, identify keywords you're close to ranking for, and discover high-value terms your competitors rank for that you're missing entirely.
+                </p>
+              </div>
+              <div className="p-5 rounded-xl bg-card border border-border/50">
+                <h3 className="font-bold mb-2 flex items-center gap-2">
+                  <Zap className="w-5 h-5 text-primary" />
+                  Page Speed Analysis
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Slow sites lose rankings and visitors. We measure Core Web Vitals, load times, and identify specific bottlenecks causing performance issues on desktop and mobile.
+                </p>
+              </div>
+              <div className="p-5 rounded-xl bg-card border border-border/50">
+                <h3 className="font-bold mb-2 flex items-center gap-2">
+                  <FileText className="w-5 h-5 text-primary" />
+                  Content Gap Analysis
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  We identify topics and questions your target audience is searching for that your site doesn't address, representing immediate opportunities to capture more traffic.
+                </p>
+              </div>
+              <div className="p-5 rounded-xl bg-card border border-border/50">
+                <h3 className="font-bold mb-2 flex items-center gap-2">
+                  <Shield className="w-5 h-5 text-primary" />
+                  Competitor Comparison
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  We benchmark your site against top competitors to understand where you stand and what specific advantages they have that you can target and overcome.
+                </p>
+              </div>
+              <div className="p-5 rounded-xl bg-card border border-border/50">
+                <h3 className="font-bold mb-2 flex items-center gap-2">
+                  <Clock className="w-5 h-5 text-primary" />
+                  Quick-Win Recommendations
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  We prioritize findings by impact and effort, giving you a clear roadmap of what to fix first. Many clients see improvements just from implementing our quick wins.
+                </p>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -281,7 +356,7 @@ const FreeAudit = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <h2 className="font-display text-2xl font-bold mb-6">
-                What's Included
+                What You'll Receive
               </h2>
               <motion.div
                 variants={containerVariants}
@@ -304,7 +379,7 @@ const FreeAudit = () => {
               </motion.div>
 
               {/* Trust Elements */}
-              <div className="p-6 rounded-2xl border border-primary/20 bg-primary/5">
+              <div className="p-6 rounded-2xl border border-primary/20 bg-primary/5 mb-8">
                 <h3 className="font-display font-bold mb-4 flex items-center gap-2">
                   <Shield className="w-5 h-5 text-primary" />
                   Our Promise
@@ -326,11 +401,19 @@ const FreeAudit = () => {
                     <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                     Delivered within 24 hours
                   </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    Video walkthrough explaining findings
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    Priority roadmap organized by impact
+                  </li>
                 </ul>
               </div>
 
               {/* Testimonial */}
-              <blockquote className="mt-8 p-6 rounded-2xl card-gradient border border-border/50">
+              <blockquote className="p-6 rounded-2xl card-gradient border border-border/50">
                 <p className="text-muted-foreground italic mb-4">
                   "The free audit showed us exactly where we were losing traffic. 
                   We implemented their quick-wins and saw a 40% traffic increase in 30 days—before even becoming a client."
@@ -350,6 +433,94 @@ const FreeAudit = () => {
         </div>
       </section>
 
+      {/* The Audit Process - NEW */}
+      <section className="py-16 bg-secondary/20">
+        <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="font-display text-2xl md:text-3xl font-bold mb-4">
+              How Our Audit Process Works
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              From submission to delivery, here's exactly what happens when you request your free SEO audit. We've streamlined the process to deliver maximum value with minimal effort on your part.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-4 gap-6">
+            {[
+              { step: 1, title: "Submit Your Request", desc: "Fill out the simple form with your website URL and goals. Takes less than 2 minutes." },
+              { step: 2, title: "We Analyze Your Site", desc: "Our team runs your site through enterprise SEO tools and manually reviews the findings." },
+              { step: 3, title: "Personalized Report", desc: "We compile findings into a clear, prioritized report with specific action items." },
+              { step: 4, title: "Video Walkthrough", desc: "You receive everything via email, including a personalized video explaining the key findings." },
+            ].map((item) => (
+              <motion.div
+                key={item.step}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
+                <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center mx-auto mb-4">
+                  <span className="text-xl font-bold text-primary-foreground">{item.step}</span>
+                </div>
+                <h3 className="font-bold mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Results Section - NEW */}
+      <section className="py-16">
+        <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="font-display text-2xl md:text-3xl font-bold mb-4">
+              What Clients Discover From Their Audits
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Every audit reveals unique opportunities. Here are common issues we uncover that, when fixed, lead to significant ranking improvements.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-5 rounded-xl bg-card border border-border/50">
+              <h3 className="font-bold mb-2">Technical Issues Blocking Rankings</h3>
+              <p className="text-sm text-muted-foreground">
+                Broken links, slow load times, mobile usability problems, and indexation issues that prevent Google from properly ranking your pages. These are often easy fixes with immediate impact.
+              </p>
+            </div>
+            <div className="p-5 rounded-xl bg-card border border-border/50">
+              <h3 className="font-bold mb-2">Missing Keyword Opportunities</h3>
+              <p className="text-sm text-muted-foreground">
+                High-value keywords your competitors rank for that you're completely missing. These represent immediate content opportunities to capture more search traffic.
+              </p>
+            </div>
+            <div className="p-5 rounded-xl bg-card border border-border/50">
+              <h3 className="font-bold mb-2">On-Page Optimization Gaps</h3>
+              <p className="text-sm text-muted-foreground">
+                Missing or poorly optimized title tags, meta descriptions, header structure, and internal linking that limit your ranking potential for target keywords.
+              </p>
+            </div>
+            <div className="p-5 rounded-xl bg-card border border-border/50">
+              <h3 className="font-bold mb-2">Content Improvement Areas</h3>
+              <p className="text-sm text-muted-foreground">
+                Thin content that doesn't satisfy search intent, outdated information that needs refreshing, and opportunities to expand existing pages for better rankings.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Mini Section */}
       <section className="py-16 bg-secondary/20">
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
@@ -360,28 +531,63 @@ const FreeAudit = () => {
             <div className="p-5 rounded-xl card-gradient border border-border/50">
               <h3 className="font-bold mb-2">Is it really free?</h3>
               <p className="text-sm text-muted-foreground">
-                Yes, 100% free. No credit card, no obligation. We offer this because it often leads to great partnerships, but there's zero pressure.
+                Yes, 100% free. No credit card, no obligation. We offer this because it often leads to great partnerships, but there's zero pressure to become a client.
               </p>
             </div>
             <div className="p-5 rounded-xl card-gradient border border-border/50">
               <h3 className="font-bold mb-2">How long does it take?</h3>
               <p className="text-sm text-muted-foreground">
-                You'll receive your personalized audit within 24 hours of submission, delivered directly to your email.
+                You'll receive your personalized audit within 24 hours of submission, delivered directly to your email with a video walkthrough.
               </p>
             </div>
             <div className="p-5 rounded-xl card-gradient border border-border/50">
               <h3 className="font-bold mb-2">What if I'm a competitor?</h3>
               <p className="text-sm text-muted-foreground">
-                We don't audit competitors or agencies. This is for businesses genuinely looking to improve their SEO.
+                We don't audit competitors or agencies. This is for businesses genuinely looking to improve their SEO and grow their online presence.
               </p>
             </div>
             <div className="p-5 rounded-xl card-gradient border border-border/50">
               <h3 className="font-bold mb-2">Will you try to sell me?</h3>
               <p className="text-sm text-muted-foreground">
-                The audit stands alone. If you want to discuss working together, great. If not, you still get valuable insights.
+                The audit stands alone. If you want to discuss working together, great. If not, you still get valuable insights you can implement yourself or with another provider.
+              </p>
+            </div>
+            <div className="p-5 rounded-xl card-gradient border border-border/50">
+              <h3 className="font-bold mb-2">What happens after I receive the audit?</h3>
+              <p className="text-sm text-muted-foreground">
+                You can implement the recommendations yourself, share with your team, or schedule a free call to discuss the findings and potential next steps.
+              </p>
+            </div>
+            <div className="p-5 rounded-xl card-gradient border border-border/50">
+              <h3 className="font-bold mb-2">How is this different from free online tools?</h3>
+              <p className="text-sm text-muted-foreground">
+                Unlike automated tools, your audit is personally reviewed by our team. We provide context, prioritization, and actionable next steps—not just a list of issues.
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-16">
+        <div className="container mx-auto px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto text-center"
+          >
+            <h2 className="font-display text-2xl md:text-3xl font-bold mb-4">
+              Ready to Discover Your SEO Opportunities?
+            </h2>
+            <p className="text-muted-foreground mb-8">
+              Join hundreds of businesses who have used our free audit to identify quick wins and build a roadmap to better rankings. No cost, no obligation—just valuable insights.
+            </p>
+            <Button variant="hero" size="lg" className="gap-2" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+              Request Your Free Audit
+              <ArrowRight className="w-5 h-5" />
+            </Button>
+          </motion.div>
         </div>
       </section>
 
