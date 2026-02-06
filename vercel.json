@@ -1,4 +1,12 @@
 {
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.yourbestseo.com" }],
+      "destination": "https://yourbestseo.com/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/blog", "destination": "/index.html" },
     { "source": "/blog/(.*)", "destination": "/index.html" }
