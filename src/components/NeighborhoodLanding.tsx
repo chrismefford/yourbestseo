@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Trophy, Check, ArrowRight, MapPin, TrendingUp, Target, Users, BarChart3, Search, Globe, BookOpen, HelpCircle } from "lucide-react";
+import { Trophy, Check, ArrowRight, MapPin, TrendingUp, Target, Users, BarChart3, Search, Globe, BookOpen, HelpCircle, Building2, Briefcase, AlertCircle, Star } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -16,6 +16,12 @@ interface NeighborhoodData {
   services: { title: string; description: string }[];
   faqs: { question: string; answer: string }[];
   nearbyAreas: string[];
+  // New optional fields for expanded content
+  marketOverview?: string;
+  challenges?: string[];
+  industries?: string[];
+  successFactors?: string[];
+  whyChooseUs?: string;
 }
 
 const containerVariants = {
@@ -31,8 +37,49 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
+// Default content generators for consistent text-to-HTML ratio
+const getDefaultMarketOverview = (name: string) => 
+  `${name} represents one of San Diego's most dynamic neighborhoods for local businesses. With its unique blend of residential communities and commercial districts, ${name} offers tremendous opportunities for businesses that can establish strong local search visibility. The neighborhood's diverse population and steady foot traffic make it an ideal market for service providers, retailers, and professional services looking to grow their customer base through targeted local SEO strategies.`;
+
+const getDefaultChallenges = (name: string) => [
+  `Intense competition from established ${name} businesses with strong online presence`,
+  `Standing out in Google Maps and local pack results against competitors`,
+  `Building consistent NAP citations across hundreds of local directories`,
+  `Generating authentic customer reviews while maintaining reputation`,
+  `Keeping up with Google's frequent local algorithm updates`,
+  `Targeting the right local keywords that drive qualified traffic`
+];
+
+const getDefaultIndustries = (name: string) => [
+  "Restaurants & Food Service",
+  "Healthcare & Medical",
+  "Home Services & Contractors",
+  "Professional Services",
+  "Retail & Shopping",
+  "Fitness & Wellness"
+];
+
+const getDefaultSuccessFactors = (name: string) => [
+  `Complete and optimized Google Business Profile with ${name}-specific keywords`,
+  `Consistent NAP (Name, Address, Phone) across 50+ local citations`,
+  `Regular stream of positive reviews from ${name} customers`,
+  `Mobile-optimized website with fast load times`,
+  `Local content targeting ${name} neighborhoods and nearby areas`,
+  `Quality backlinks from local ${name} and San Diego publications`
+];
+
+const getDefaultWhyChooseUs = (name: string) =>
+  `Our team has deep expertise in the ${name} market and the San Diego business landscape. We understand the unique characteristics of ${name} consumers, the competitive dynamics of local businesses, and what it takes to achieve top rankings in this specific geographic area. We've helped dozens of ${name} businesses achieve page-one rankings and significant ROI from their local SEO investment. Our transparent reporting, proven strategies, and dedicated account management ensure you always know exactly how your investment is performing.`;
+
 const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
   const SITE_URL = "https://yourbestseo.com";
+  
+  // Use provided content or defaults
+  const marketOverview = data.marketOverview || getDefaultMarketOverview(data.name);
+  const challenges = data.challenges || getDefaultChallenges(data.name);
+  const industries = data.industries || getDefaultIndustries(data.name);
+  const successFactors = data.successFactors || getDefaultSuccessFactors(data.name);
+  const whyChooseUs = data.whyChooseUs || getDefaultWhyChooseUs(data.name);
   
   // Generate FAQ schema
   const faqSchema = {
@@ -120,9 +167,11 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
                   <span className="font-medium">2025 Finalist – Top 5 SEO Agencies in North America</span>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" className="group">
-                    Get Your Free SEO Audit
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <Button size="lg" className="group" asChild>
+                    <Link to="/free-audit">
+                      Get Your Free SEO Audit
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
                   </Button>
                   <Button size="lg" variant="outline" asChild>
                     <a href="tel:+16157726641">Call (615) 772-6641</a>
@@ -150,8 +199,35 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
           </div>
         </section>
 
+        {/* Local Market Overview Section - NEW */}
+        <section className="py-20 relative">
+          <div className="container mx-auto px-4 sm:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-4xl mx-auto"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Building2 className="w-6 h-6 text-primary" />
+                </div>
+                <h2 className="font-display text-3xl md:text-4xl font-bold">
+                  {data.name} Local Market Overview
+                </h2>
+              </div>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                {marketOverview}
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Whether you're a well-established {data.name} business looking to strengthen your online presence or a new venture seeking to build visibility from the ground up, local SEO is the most cost-effective way to connect with customers actively searching for your products and services. Our data-driven approach ensures every dollar you invest delivers measurable returns through increased visibility, traffic, and conversions.
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Stats Section */}
-        <section className="py-16 relative">
+        <section className="py-16 relative bg-secondary/20">
           <div className="container mx-auto px-4 sm:px-6">
             <motion.div
               variants={containerVariants}
@@ -174,8 +250,85 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
           </div>
         </section>
 
-        {/* Before & After Telemetry Section */}
+        {/* Industries We Serve - NEW */}
+        <section className="py-20 relative">
+          <div className="container mx-auto px-4 sm:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <Briefcase className="w-6 h-6 text-primary" />
+                <h2 className="font-display text-3xl md:text-4xl font-bold">
+                  Industries We Serve in {data.name}
+                </h2>
+              </div>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                We've helped businesses across every major industry achieve top rankings in {data.name}. Our specialized approach adapts to your unique market needs and competitive landscape.
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto"
+            >
+              {industries.map((industry, index) => (
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  className="flex items-center gap-3 p-4 rounded-xl bg-card border border-border/50"
+                >
+                  <Check className="w-5 h-5 text-primary flex-shrink-0" />
+                  <span className="text-foreground font-medium">{industry}</span>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Challenges Section - NEW */}
         <section className="py-20 relative bg-secondary/20">
+          <div className="container mx-auto px-4 sm:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-4xl mx-auto"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-destructive/10 flex items-center justify-center">
+                  <AlertCircle className="w-6 h-6 text-destructive" />
+                </div>
+                <h2 className="font-display text-3xl md:text-4xl font-bold">
+                  SEO Challenges {data.name} Businesses Face
+                </h2>
+              </div>
+              <p className="text-muted-foreground mb-8">
+                {data.name} businesses face unique local SEO challenges that require specialized knowledge and proven strategies to overcome. Here are the most common obstacles we help our clients navigate:
+              </p>
+              <div className="grid md:grid-cols-2 gap-4">
+                {challenges.map((challenge, index) => (
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    className="flex items-start gap-3 p-4 rounded-xl bg-card border border-border/50"
+                  >
+                    <AlertCircle className="w-5 h-5 text-destructive mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">{challenge}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Before & After Telemetry Section */}
+        <section className="py-20 relative">
           <div className="container mx-auto px-4 sm:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -293,8 +446,46 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
           </div>
         </section>
 
-        {/* Why Choose Us Section */}
+        {/* Success Factors Section - NEW */}
         <section className="py-20 relative bg-secondary/20">
+          <div className="container mx-auto px-4 sm:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-4xl mx-auto"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Star className="w-6 h-6 text-primary" />
+                </div>
+                <h2 className="font-display text-3xl md:text-4xl font-bold">
+                  What It Takes to Rank Locally in {data.name}
+                </h2>
+              </div>
+              <p className="text-muted-foreground mb-8">
+                Ranking in {data.name}'s competitive local search landscape requires a comprehensive approach. These are the key factors that determine whether your business appears on page one:
+              </p>
+              <div className="space-y-4">
+                {successFactors.map((factor, index) => (
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    className="flex items-start gap-4 p-5 rounded-xl bg-card border border-border/50"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Check className="w-4 h-4 text-primary" />
+                    </div>
+                    <span className="text-foreground">{factor}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Why Choose Us Section */}
+        <section className="py-20 relative">
           <div className="container mx-auto px-4 sm:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -305,8 +496,8 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
               <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
                 Why Choose Our {data.name} SEO Services?
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                We're the top-rated SEO company serving {data.name} businesses. Our local SEO experts understand the unique market dynamics of San Diego's {data.name} neighborhood.
+              <p className="text-muted-foreground max-w-3xl mx-auto">
+                {whyChooseUs}
               </p>
             </motion.div>
 
@@ -349,7 +540,7 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
         </section>
 
         {/* Services Section */}
-        <section className="py-20 relative">
+        <section className="py-20 relative bg-secondary/20">
           <div className="container mx-auto px-4 sm:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -394,7 +585,7 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
         </section>
 
         {/* Keywords Section */}
-        <section className="py-20 relative bg-secondary/20">
+        <section className="py-20 relative">
           <div className="container mx-auto px-4 sm:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -406,7 +597,7 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
                 Keywords We Target for {data.name}
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                We help your {data.name} business rank for high-intent, revenue-generating keywords
+                We help your {data.name} business rank for high-intent, revenue-generating keywords that actually convert visitors into customers.
               </p>
             </motion.div>
 
@@ -431,7 +622,7 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
         </section>
 
         {/* Process Section */}
-        <section className="py-20 relative">
+        <section className="py-20 relative bg-secondary/20">
           <div className="container mx-auto px-4 sm:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -442,6 +633,9 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
               <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
                 Our {data.name} SEO Process
               </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Our proven four-step process delivers consistent results for {data.name} businesses. Each phase builds on the previous one to create sustainable, long-term growth.
+              </p>
             </motion.div>
 
             <motion.div
@@ -452,10 +646,10 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
               className="grid md:grid-cols-4 gap-6"
             >
               {[
-                { icon: Search, title: "SEO Audit", desc: "Comprehensive analysis of your current rankings and opportunities" },
-                { icon: Target, title: "Strategy", desc: "Custom SEO roadmap tailored for your " + data.name + " business" },
-                { icon: Globe, title: "Execution", desc: "On-page, off-page, and technical SEO implementation" },
-                { icon: BarChart3, title: "Results", desc: "Monthly reporting with transparent KPIs and ROI tracking" },
+                { icon: Search, title: "SEO Audit", desc: "Comprehensive analysis of your current rankings, technical health, and competitive opportunities in " + data.name },
+                { icon: Target, title: "Strategy", desc: "Custom SEO roadmap tailored for your " + data.name + " business with specific milestones and KPIs" },
+                { icon: Globe, title: "Execution", desc: "On-page optimization, local citations, content creation, and technical SEO implementation" },
+                { icon: BarChart3, title: "Results", desc: "Monthly reporting with transparent KPIs, ROI tracking, and continuous optimization" },
               ].map((step, index) => (
                 <motion.div key={index} variants={itemVariants} className="text-center">
                   <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
@@ -471,7 +665,7 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-20 relative bg-secondary/20">
+        <section className="py-20 relative">
           <div className="container mx-auto px-4 sm:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -482,6 +676,9 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
               <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
                 {data.name} SEO FAQs
               </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Have questions about SEO for your {data.name} business? Here are answers to the most common questions we receive from local business owners.
+              </p>
             </motion.div>
 
             <motion.div
@@ -506,7 +703,7 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
         </section>
 
         {/* Nearby Areas Section */}
-        <section className="py-20 relative">
+        <section className="py-20 relative bg-secondary/20">
           <div className="container mx-auto px-4 sm:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -517,6 +714,9 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
               <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
                 Also Serving Nearby San Diego Areas
               </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Our local SEO expertise extends throughout the greater San Diego area. We help businesses in these neighboring communities achieve the same results.
+              </p>
             </motion.div>
 
             <div className="flex flex-wrap justify-center gap-4 max-w-3xl mx-auto">
@@ -534,7 +734,7 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
         </section>
 
         {/* Learn More Section - Cross-linking */}
-        <section className="py-16 relative bg-secondary/20">
+        <section className="py-16 relative">
           <div className="container mx-auto px-4 sm:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -621,7 +821,7 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 relative">
+        <section className="py-20 relative bg-secondary/20">
           <div className="container mx-auto px-4 sm:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -634,12 +834,14 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
                   Ready to Dominate {data.name} Search Results?
                 </h2>
                 <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
-                  Get a free SEO audit and discover how we can help your {data.name} business rank higher, drive more traffic, and generate more leads.
+                  Get a free SEO audit and discover how we can help your {data.name} business rank higher, drive more traffic, and generate more leads. Our team is ready to show you exactly what's possible.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button size="lg" variant="secondary" className="group">
-                    Get My Free SEO Audit
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <Button size="lg" variant="secondary" className="group" asChild>
+                    <Link to="/free-audit">
+                      Get My Free SEO Audit
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
                   </Button>
                   <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" asChild>
                     <a href="tel:+16157726641">Call (615) 772-6641</a>

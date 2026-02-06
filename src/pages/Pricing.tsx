@@ -215,6 +215,43 @@ const Pricing = () => {
         </div>
       </section>
 
+      {/* Why Our Pricing Works - NEW */}
+      <section className="py-16 bg-secondary/20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                Why Our Pricing Model Works
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Traditional agencies charge $5,000-$15,000/month for SEO. We deliver the same quality at a fraction of the cost because we've built systems that scale. No bloated overhead, no account managers who just shuffle papers—just results-focused execution.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="p-6 rounded-xl bg-card border border-border/50 text-center">
+                <div className="text-3xl font-bold text-primary mb-2">70%</div>
+                <div className="text-sm text-muted-foreground">Lower cost than traditional agencies while delivering the same enterprise-quality work</div>
+              </div>
+              <div className="p-6 rounded-xl bg-card border border-border/50 text-center">
+                <div className="text-3xl font-bold text-primary mb-2">24-48hr</div>
+                <div className="text-sm text-muted-foreground">Turnaround on à la carte services—fast execution that keeps your pipeline moving</div>
+              </div>
+              <div className="p-6 rounded-xl bg-card border border-border/50 text-center">
+                <div className="text-3xl font-bold text-primary mb-2">2-3X</div>
+                <div className="text-sm text-muted-foreground">Typical markup our partners apply when reselling to their clients</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Tiers */}
       <section className="py-20 relative">
         <div className="container mx-auto px-4">

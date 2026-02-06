@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Trophy, Check, ArrowRight, MapPin, TrendingUp, Target, Users, BarChart3, Search, Globe, BookOpen, HelpCircle } from "lucide-react";
+import { Trophy, Check, ArrowRight, MapPin, TrendingUp, Target, Users, BarChart3, Search, Globe, BookOpen, HelpCircle, Building2, Briefcase, AlertCircle, Star } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -23,6 +23,11 @@ interface StateData {
   services: { title: string; description: string }[];
   faqs: { question: string; answer: string }[];
   industries: string[];
+  // New optional fields for expanded content
+  marketOverview?: string;
+  challenges?: string[];
+  successFactors?: string[];
+  whyChooseUs?: string;
 }
 
 const containerVariants = {
@@ -38,8 +43,40 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
+// Default content generators for consistent text-to-HTML ratio
+const getDefaultMarketOverview = (name: string, industries: string[]) => 
+  `${name} represents a diverse and growing market for businesses seeking to establish strong search visibility. With major metropolitan areas and thriving local economies, ${name} offers tremendous opportunities for businesses that can capture organic search traffic effectively. The state's diverse population, robust economy featuring ${industries.slice(0, 3).join(", ")}, and growing digital adoption make it an ideal market for businesses investing in SEO. Our data-driven approach ensures your investment delivers measurable returns through increased visibility, qualified traffic, and higher conversion rates.`;
+
+const getDefaultChallenges = (name: string) => [
+  `Intense competition from established ${name} businesses with strong online presence`,
+  `Standing out in Google Maps and local pack results across multiple cities`,
+  `Building consistent NAP citations across hundreds of directories statewide`,
+  `Targeting diverse local keywords across different ${name} markets`,
+  `Keeping up with Google's frequent algorithm updates affecting local rankings`,
+  `Creating location-specific content that resonates with ${name} audiences`
+];
+
+const getDefaultSuccessFactors = (name: string) => [
+  `Comprehensive keyword strategy targeting both statewide and city-specific terms`,
+  `Optimized Google Business Profiles for each ${name} location`,
+  `Consistent NAP across 50+ directories for every business location`,
+  `Regular stream of positive reviews from ${name} customers`,
+  `Mobile-optimized website with fast load times across all devices`,
+  `Local content targeting specific ${name} cities and regions`,
+  `Quality backlinks from ${name} publications and industry sources`
+];
+
+const getDefaultWhyChooseUs = (name: string) =>
+  `Our team has extensive experience serving businesses across ${name}. We understand the unique characteristics of ${name} consumers, the competitive dynamics across different markets, and what it takes to achieve top rankings in this diverse state. We've helped businesses throughout ${name} achieve page-one rankings and significant ROI from their SEO investment. Our transparent reporting, proven strategies, and dedicated account management ensure you always know exactly how your investment is performing.`;
+
 const StateLanding = ({ data }: { data: StateData }) => {
   const SITE_URL = "https://yourbestseo.com";
+  
+  // Use provided content or defaults
+  const marketOverview = data.marketOverview || getDefaultMarketOverview(data.name, data.industries);
+  const challenges = data.challenges || getDefaultChallenges(data.name);
+  const successFactors = data.successFactors || getDefaultSuccessFactors(data.name);
+  const whyChooseUs = data.whyChooseUs || getDefaultWhyChooseUs(data.name);
   
   // Generate FAQ schema
   const faqSchema = {
@@ -124,10 +161,10 @@ const StateLanding = ({ data }: { data: StateData }) => {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" className="group" asChild>
-                    <a href="/#contact">
+                    <Link to="/free-audit">
                       Get Your Free SEO Audit
                       <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </a>
+                    </Link>
                   </Button>
                   <Button size="lg" variant="outline" asChild>
                     <a href="tel:+16157726641">Schedule a Call</a>
@@ -155,8 +192,35 @@ const StateLanding = ({ data }: { data: StateData }) => {
           </div>
         </section>
 
+        {/* Market Overview Section - NEW */}
+        <section className="py-20 relative">
+          <div className="container mx-auto px-4 sm:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-4xl mx-auto"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Building2 className="w-6 h-6 text-primary" />
+                </div>
+                <h2 className="font-display text-3xl md:text-4xl font-bold">
+                  {data.name} SEO Market Overview
+                </h2>
+              </div>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                {marketOverview}
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Whether you're an established {data.name} business looking to strengthen your online presence or a growing venture seeking to build visibility across the state, SEO is the most cost-effective way to connect with customers actively searching for your products and services. Our team understands the nuances of the {data.name} market and creates customized strategies that deliver results.
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Cities We Serve */}
-        <section className="py-16 relative">
+        <section className="py-16 relative bg-secondary/20">
           <div className="container mx-auto px-4 sm:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -167,6 +231,9 @@ const StateLanding = ({ data }: { data: StateData }) => {
               <h2 className="font-display text-2xl md:text-3xl font-bold mb-4">
                 Cities We Serve in {data.name}
               </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Our SEO services extend across all major {data.name} markets. We have experience helping businesses succeed in each of these communities.
+              </p>
             </motion.div>
             <div className="flex flex-wrap justify-center gap-3">
               {data.cities.map((city, index) => (
@@ -182,7 +249,7 @@ const StateLanding = ({ data }: { data: StateData }) => {
         </section>
 
         {/* Stats Section */}
-        <section className="py-16 relative bg-secondary/20">
+        <section className="py-16 relative">
           <div className="container mx-auto px-4 sm:px-6">
             <motion.div
               variants={containerVariants}
@@ -205,6 +272,121 @@ const StateLanding = ({ data }: { data: StateData }) => {
           </div>
         </section>
 
+        {/* Industries Section - Enhanced */}
+        <section className="py-20 relative bg-secondary/20">
+          <div className="container mx-auto px-4 sm:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <Briefcase className="w-6 h-6 text-primary" />
+                <h2 className="font-display text-3xl md:text-4xl font-bold">
+                  Industries We Serve in {data.name}
+                </h2>
+              </div>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                We've helped businesses across every major industry achieve top rankings throughout {data.name}. Our specialized approach adapts to your unique market needs and competitive landscape.
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto"
+            >
+              {data.industries.map((industry, index) => (
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  className="flex items-center gap-3 p-4 rounded-xl bg-card border border-border/50"
+                >
+                  <Check className="w-5 h-5 text-primary flex-shrink-0" />
+                  <span className="text-foreground font-medium">{industry}</span>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Challenges Section - NEW */}
+        <section className="py-20 relative">
+          <div className="container mx-auto px-4 sm:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-4xl mx-auto"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-destructive/10 flex items-center justify-center">
+                  <AlertCircle className="w-6 h-6 text-destructive" />
+                </div>
+                <h2 className="font-display text-3xl md:text-4xl font-bold">
+                  SEO Challenges {data.name} Businesses Face
+                </h2>
+              </div>
+              <p className="text-muted-foreground mb-8">
+                {data.name} businesses face unique SEO challenges that require specialized knowledge and proven strategies to overcome. Here are the most common obstacles we help our clients navigate:
+              </p>
+              <div className="grid md:grid-cols-2 gap-4">
+                {challenges.map((challenge, index) => (
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    className="flex items-start gap-3 p-4 rounded-xl bg-card border border-border/50"
+                  >
+                    <AlertCircle className="w-5 h-5 text-destructive mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">{challenge}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Success Factors Section - NEW */}
+        <section className="py-20 relative bg-secondary/20">
+          <div className="container mx-auto px-4 sm:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-4xl mx-auto"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Star className="w-6 h-6 text-primary" />
+                </div>
+                <h2 className="font-display text-3xl md:text-4xl font-bold">
+                  What It Takes to Rank in {data.name}
+                </h2>
+              </div>
+              <p className="text-muted-foreground mb-8">
+                Ranking across {data.name}'s competitive search landscape requires a comprehensive approach. These are the key factors that determine whether your business appears on page one:
+              </p>
+              <div className="space-y-4">
+                {successFactors.map((factor, index) => (
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    className="flex items-start gap-4 p-5 rounded-xl bg-card border border-border/50"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Check className="w-4 h-4 text-primary" />
+                    </div>
+                    <span className="text-foreground">{factor}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Why Choose Us Section */}
         <section className="py-20 relative">
           <div className="container mx-auto px-4 sm:px-6">
@@ -217,8 +399,8 @@ const StateLanding = ({ data }: { data: StateData }) => {
               <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
                 Why Choose Our {data.name} SEO Services?
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                We're the top-rated SEO company serving {data.name} businesses. Our experts understand the unique market dynamics across the state.
+              <p className="text-muted-foreground max-w-3xl mx-auto">
+                {whyChooseUs}
               </p>
             </motion.div>
 
@@ -235,7 +417,7 @@ const StateLanding = ({ data }: { data: StateData }) => {
                 </div>
                 <h3 className="font-display text-xl font-bold mb-4">Statewide Coverage</h3>
                 <p className="text-muted-foreground">
-                  From major metros to smaller markets across {data.name}, we optimize for local and statewide visibility.
+                  From major metros to smaller markets across {data.name}, we optimize for local and statewide visibility. Our strategies adapt to each unique market.
                 </p>
               </motion.div>
               <motion.div variants={itemVariants} className="p-8 rounded-2xl card-gradient border border-border/50">
@@ -244,7 +426,7 @@ const StateLanding = ({ data }: { data: StateData }) => {
                 </div>
                 <h3 className="font-display text-xl font-bold mb-4">Proven Results</h3>
                 <p className="text-muted-foreground">
-                  Our {data.name} clients see an average 200%+ increase in organic traffic within 90 days.
+                  Our {data.name} clients see an average 200%+ increase in organic traffic within 90 days. We deliver measurable ROI, not vanity metrics.
                 </p>
               </motion.div>
               <motion.div variants={itemVariants} className="p-8 rounded-2xl card-gradient border border-border/50">
@@ -253,7 +435,7 @@ const StateLanding = ({ data }: { data: StateData }) => {
                 </div>
                 <h3 className="font-display text-xl font-bold mb-4">Industry Expertise</h3>
                 <p className="text-muted-foreground">
-                  Deep experience in {data.name}'s key industries: {data.industries.slice(0, 3).join(", ")}, and more.
+                  Deep experience in {data.name}'s key industries: {data.industries.slice(0, 3).join(", ")}, and more. We understand your market.
                 </p>
               </motion.div>
             </motion.div>
@@ -272,6 +454,9 @@ const StateLanding = ({ data }: { data: StateData }) => {
               <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
                 SEO Services for {data.name} Businesses
               </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Comprehensive search engine optimization solutions tailored for {data.name} businesses looking to dominate local and organic search results.
+              </p>
             </motion.div>
 
             <motion.div
@@ -302,6 +487,49 @@ const StateLanding = ({ data }: { data: StateData }) => {
           </div>
         </section>
 
+        {/* Process Section - NEW */}
+        <section className="py-20 relative">
+          <div className="container mx-auto px-4 sm:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
+                Our {data.name} SEO Process
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Our proven four-step process delivers consistent results for {data.name} businesses. Each phase builds on the previous one to create sustainable, long-term growth.
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="grid md:grid-cols-4 gap-6"
+            >
+              {[
+                { icon: Search, title: "SEO Audit", desc: "Comprehensive analysis of your current rankings, technical health, and competitive opportunities across " + data.name },
+                { icon: Target, title: "Strategy", desc: "Custom SEO roadmap tailored for your " + data.name + " business with specific milestones and KPIs" },
+                { icon: Globe, title: "Execution", desc: "On-page optimization, local citations, content creation, and technical SEO implementation" },
+                { icon: BarChart3, title: "Results", desc: "Monthly reporting with transparent KPIs, ROI tracking, and continuous optimization" },
+              ].map((step, index) => (
+                <motion.div key={index} variants={itemVariants} className="text-center">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <step.icon className="w-8 h-8 text-primary" />
+                  </div>
+                  <div className="text-sm text-primary font-bold mb-2">Step {index + 1}</div>
+                  <h3 className="font-display text-lg font-bold mb-2">{step.title}</h3>
+                  <p className="text-muted-foreground text-sm">{step.desc}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
         {/* FAQ Section */}
         <section className="py-20 relative bg-secondary/20">
           <div className="container mx-auto px-4 sm:px-6">
@@ -314,6 +542,9 @@ const StateLanding = ({ data }: { data: StateData }) => {
               <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
                 {data.name} SEO FAQs
               </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Have questions about SEO for your {data.name} business? Here are answers to the most common questions we receive from business owners across the state.
+              </p>
             </motion.div>
 
             <motion.div
@@ -350,7 +581,7 @@ const StateLanding = ({ data }: { data: StateData }) => {
                 How {data.name} Businesses Find SEO Help
               </h3>
               <p className="text-muted-foreground text-sm max-w-xl mx-auto">
-                We understand where you are in your search—and we're ready to help.
+                We understand where you are in your search—and we're ready to help at every stage of your SEO journey.
               </p>
             </motion.div>
 
@@ -406,6 +637,74 @@ const StateLanding = ({ data }: { data: StateData }) => {
           </div>
         </section>
 
+        {/* Learn More Section - Cross-linking */}
+        <section className="py-16 relative bg-secondary/20">
+          <div className="container mx-auto px-4 sm:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-8"
+            >
+              <h2 className="font-display text-2xl md:text-3xl font-bold mb-4">
+                Learn More About SEO
+              </h2>
+              <p className="text-muted-foreground max-w-xl mx-auto">
+                Explore our resources to understand how SEO can help your {data.name} business grow and dominate search results.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {/* Related Questions */}
+              <div className="p-6 rounded-2xl bg-card border border-border/50">
+                <div className="flex items-center gap-2 mb-4">
+                  <HelpCircle className="w-5 h-5 text-primary" />
+                  <h3 className="font-display font-semibold">Common Questions</h3>
+                </div>
+                <div className="space-y-2">
+                  <Link to="/questions/what-is-seo" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+                    <ArrowRight className="w-4 h-4" /> What is SEO?
+                  </Link>
+                  <Link to="/questions/how-long-does-seo-take" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+                    <ArrowRight className="w-4 h-4" /> How Long Does SEO Take?
+                  </Link>
+                  <Link to="/questions/how-much-does-seo-cost" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+                    <ArrowRight className="w-4 h-4" /> How Much Does SEO Cost?
+                  </Link>
+                  <Link to="/questions/what-is-local-seo" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+                    <ArrowRight className="w-4 h-4" /> What is Local SEO?
+                  </Link>
+                </div>
+              </div>
+
+              {/* Related Glossary Terms */}
+              <div className="p-6 rounded-2xl bg-card border border-border/50">
+                <div className="flex items-center gap-2 mb-4">
+                  <BookOpen className="w-5 h-5 text-primary" />
+                  <h3 className="font-display font-semibold">SEO Terms to Know</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <Link to="/glossary/search-engine-optimization" className="px-3 py-1.5 text-xs rounded-full bg-secondary border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors">
+                    Search Engine Optimization
+                  </Link>
+                  <Link to="/glossary/organic-traffic" className="px-3 py-1.5 text-xs rounded-full bg-secondary border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors">
+                    Organic Traffic
+                  </Link>
+                  <Link to="/glossary/local-seo" className="px-3 py-1.5 text-xs rounded-full bg-secondary border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors">
+                    Local SEO
+                  </Link>
+                  <Link to="/glossary/keyword-research" className="px-3 py-1.5 text-xs rounded-full bg-secondary border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors">
+                    Keyword Research
+                  </Link>
+                  <Link to="/glossary/backlinks" className="px-3 py-1.5 text-xs rounded-full bg-secondary border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors">
+                    Backlinks
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="py-20 relative">
           <div className="container mx-auto px-4 sm:px-6">
@@ -420,17 +719,17 @@ const StateLanding = ({ data }: { data: StateData }) => {
                   Ready to Dominate {data.name} Search Results?
                 </h2>
                 <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
-                  Get a free SEO audit and discover how we can help your {data.name} business rank higher and generate more leads.
+                  Get a free SEO audit and discover how we can help your {data.name} business rank higher, drive more organic traffic, and generate more leads. Our team is ready to show you exactly what's possible.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button size="lg" variant="secondary" className="group" asChild>
-                    <a href="/#contact">
+                    <Link to="/free-audit">
                       Get My Free SEO Audit
                       <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </a>
+                    </Link>
                   </Button>
                   <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" asChild>
-                    <a href="tel:+16157726641">Schedule a Call</a>
+                    <a href="tel:+16157726641">Call (615) 772-6641</a>
                   </Button>
                 </div>
               </div>
