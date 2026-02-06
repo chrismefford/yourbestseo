@@ -54,6 +54,10 @@ import BirdRockSEO from "./pages/san-diego/BirdRockSEO";
 import DelMarSEO from "./pages/san-diego/DelMarSEO";
 import EastlakeSEO from "./pages/san-diego/EastlakeSEO";
 import SanYsidroSEO from "./pages/san-diego/SanYsidroSEO";
+import CityHeightsSEO from "./pages/san-diego/CityHeightsSEO";
+import KensingtonSEO from "./pages/san-diego/KensingtonSEO";
+import NormalHeightsSEO from "./pages/san-diego/NormalHeightsSEO";
+import SouthParkSEO from "./pages/san-diego/SouthParkSEO";
 
 // State SEO pages
 import CaliforniaSEO from "./pages/states/CaliforniaSEO";
@@ -377,6 +381,10 @@ export const routes: RouteRecord[] = [
       { path: "san-diego/del-mar-seo", element: <DelMarSEO /> },
       { path: "san-diego/eastlake-seo", element: <EastlakeSEO /> },
       { path: "san-diego/san-ysidro-seo", element: <SanYsidroSEO /> },
+      { path: "san-diego/city-heights-seo", element: <CityHeightsSEO /> },
+      { path: "san-diego/kensington-seo", element: <KensingtonSEO /> },
+      { path: "san-diego/normal-heights-seo", element: <NormalHeightsSEO /> },
+      { path: "san-diego/south-park-seo", element: <SouthParkSEO /> },
       
       // State SEO pages
       { path: "states/california-seo", element: <CaliforniaSEO /> },
