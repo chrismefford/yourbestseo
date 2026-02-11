@@ -199,32 +199,7 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
           </div>
         </section>
 
-        {/* Local Market Overview Section - NEW */}
-        <section className="py-20 relative">
-          <div className="container mx-auto px-4 sm:px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="max-w-4xl mx-auto"
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <Building2 className="w-6 h-6 text-primary" />
-                </div>
-                <h2 className="font-display text-3xl md:text-4xl font-bold">
-                  {data.name} Local Market Overview
-                </h2>
-              </div>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                {marketOverview}
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Whether you're a well-established {data.name} business looking to strengthen your online presence or a new venture seeking to build visibility from the ground up, local SEO is the most cost-effective way to connect with customers actively searching for your products and services. Our data-driven approach ensures every dollar you invest delivers measurable returns through increased visibility, traffic, and conversions.
-              </p>
-            </motion.div>
-          </div>
-        </section>
+
 
         {/* Stats Section */}
         <section className="py-16 relative bg-secondary/20">
@@ -698,6 +673,33 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
                   <p className="text-muted-foreground">{faq.answer}</p>
                 </motion.div>
               ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Local Market Overview Section */}
+        <section className="py-20 relative">
+          <div className="container mx-auto px-4 sm:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-4xl mx-auto"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Building2 className="w-6 h-6 text-primary" />
+                </div>
+                <h2 className="font-display text-3xl md:text-4xl font-bold">
+                  {data.name} Local Market Overview
+                </h2>
+              </div>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                {marketOverview}
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Whether you're a well-established {data.name} business looking to strengthen your online presence or a new venture seeking to build visibility from the ground up, local SEO is the most cost-effective way to connect with customers actively searching for your products and services. Our data-driven approach ensures every dollar you invest delivers measurable returns through increased visibility, traffic, and conversions.
+              </p>
             </motion.div>
           </div>
         </section>
