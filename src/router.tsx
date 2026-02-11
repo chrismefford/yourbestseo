@@ -58,6 +58,41 @@ import CityHeightsSEO from "./pages/san-diego/CityHeightsSEO";
 import KensingtonSEO from "./pages/san-diego/KensingtonSEO";
 import NormalHeightsSEO from "./pages/san-diego/NormalHeightsSEO";
 import SouthParkSEO from "./pages/san-diego/SouthParkSEO";
+import CarmelValleySEO from "./pages/san-diego/CarmelValleySEO";
+import ScrippsRanchSEO from "./pages/san-diego/ScrippsRanchSEO";
+import OldTownSEO from "./pages/san-diego/OldTownSEO";
+import GoldenHillSEO from "./pages/san-diego/GoldenHillSEO";
+import BarrioLoganSEO from "./pages/san-diego/BarrioLoganSEO";
+import BayParkSEO from "./pages/san-diego/BayParkSEO";
+import LindaVistaSEO from "./pages/san-diego/LindaVistaSEO";
+import SerraMesaSEO from "./pages/san-diego/SerraMesaSEO";
+import TierrasantaSEO from "./pages/san-diego/TierrasantaSEO";
+import CollegeAreaSEO from "./pages/san-diego/CollegeAreaSEO";
+import TalmadgeSEO from "./pages/san-diego/TalmadgeSEO";
+import RanchoPenasquitosSEO from "./pages/san-diego/RanchoPenasquitosSEO";
+import MidwayDistrictSEO from "./pages/san-diego/MidwayDistrictSEO";
+import ShelterIslandSEO from "./pages/san-diego/ShelterIslandSEO";
+import LoganHeightsSEO from "./pages/san-diego/LoganHeightsSEO";
+import AlliedGardensSEO from "./pages/san-diego/AlliedGardensSEO";
+import SanCarlosSEO from "./pages/san-diego/SanCarlosSEO";
+import ConvoyDistrictSEO from "./pages/san-diego/ConvoyDistrictSEO";
+import ParadiseHillsSEO from "./pages/san-diego/ParadiseHillsSEO";
+import EncantoSEO from "./pages/san-diego/EncantoSEO";
+import CoronadoSEO from "./pages/san-diego/CoronadoSEO";
+import LaMesaSEO from "./pages/san-diego/LaMesaSEO";
+import LemonGroveSEO from "./pages/san-diego/LemonGroveSEO";
+import SpringValleySEO from "./pages/san-diego/SpringValleySEO";
+import PowaySEO from "./pages/san-diego/PowaySEO";
+import EncinitasSEO from "./pages/san-diego/EncinitasSEO";
+import SolanaBeachSEO from "./pages/san-diego/SolanaBeachSEO";
+import CarlsbadSEO from "./pages/san-diego/CarlsbadSEO";
+import OceansideSEO from "./pages/san-diego/OceansideSEO";
+import EscondidoSEO from "./pages/san-diego/EscondidoSEO";
+import VistaSEO from "./pages/san-diego/VistaSEO";
+import SanMarcosSEO from "./pages/san-diego/SanMarcosSEO";
+import LakesideSEO from "./pages/san-diego/LakesideSEO";
+import AlpineSEO from "./pages/san-diego/AlpineSEO";
+import RamonaSEO from "./pages/san-diego/RamonaSEO";
 
 // State SEO pages
 import CaliforniaSEO from "./pages/states/CaliforniaSEO";
@@ -385,7 +420,41 @@ export const routes: RouteRecord[] = [
       { path: "san-diego/kensington-seo", element: <KensingtonSEO /> },
       { path: "san-diego/normal-heights-seo", element: <NormalHeightsSEO /> },
       { path: "san-diego/south-park-seo", element: <SouthParkSEO /> },
-      
+      { path: "san-diego/carmel-valley-seo", element: <CarmelValleySEO /> },
+      { path: "san-diego/scripps-ranch-seo", element: <ScrippsRanchSEO /> },
+      { path: "san-diego/old-town-seo", element: <OldTownSEO /> },
+      { path: "san-diego/golden-hill-seo", element: <GoldenHillSEO /> },
+      { path: "san-diego/barrio-logan-seo", element: <BarrioLoganSEO /> },
+      { path: "san-diego/bay-park-seo", element: <BayParkSEO /> },
+      { path: "san-diego/linda-vista-seo", element: <LindaVistaSEO /> },
+      { path: "san-diego/serra-mesa-seo", element: <SerraMesaSEO /> },
+      { path: "san-diego/tierrasanta-seo", element: <TierrasantaSEO /> },
+      { path: "san-diego/college-area-seo", element: <CollegeAreaSEO /> },
+      { path: "san-diego/talmadge-seo", element: <TalmadgeSEO /> },
+      { path: "san-diego/rancho-penasquitos-seo", element: <RanchoPenasquitosSEO /> },
+      { path: "san-diego/midway-district-seo", element: <MidwayDistrictSEO /> },
+      { path: "san-diego/shelter-island-seo", element: <ShelterIslandSEO /> },
+      { path: "san-diego/logan-heights-seo", element: <LoganHeightsSEO /> },
+      { path: "san-diego/allied-gardens-seo", element: <AlliedGardensSEO /> },
+      { path: "san-diego/san-carlos-seo", element: <SanCarlosSEO /> },
+      { path: "san-diego/convoy-district-seo", element: <ConvoyDistrictSEO /> },
+      { path: "san-diego/paradise-hills-seo", element: <ParadiseHillsSEO /> },
+      { path: "san-diego/encanto-seo", element: <EncantoSEO /> },
+      { path: "san-diego/coronado-seo", element: <CoronadoSEO /> },
+      { path: "san-diego/la-mesa-seo", element: <LaMesaSEO /> },
+      { path: "san-diego/lemon-grove-seo", element: <LemonGroveSEO /> },
+      { path: "san-diego/spring-valley-seo", element: <SpringValleySEO /> },
+      { path: "san-diego/poway-seo", element: <PowaySEO /> },
+      { path: "san-diego/encinitas-seo", element: <EncinitasSEO /> },
+      { path: "san-diego/solana-beach-seo", element: <SolanaBeachSEO /> },
+      { path: "san-diego/carlsbad-seo", element: <CarlsbadSEO /> },
+      { path: "san-diego/oceanside-seo", element: <OceansideSEO /> },
+      { path: "san-diego/escondido-seo", element: <EscondidoSEO /> },
+      { path: "san-diego/vista-seo", element: <VistaSEO /> },
+      { path: "san-diego/san-marcos-seo", element: <SanMarcosSEO /> },
+      { path: "san-diego/lakeside-seo", element: <LakesideSEO /> },
+      { path: "san-diego/alpine-seo", element: <AlpineSEO /> },
+      { path: "san-diego/ramona-seo", element: <RamonaSEO /> },
       // State SEO pages
       { path: "states/california-seo", element: <CaliforniaSEO /> },
       { path: "states/oregon-seo", element: <OregonSEO /> },
