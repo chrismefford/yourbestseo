@@ -3,9 +3,12 @@
  * 
  * This script runs after `vite build` and:
  * 1. Fetches all published blog posts from the DropInBlog API
- * 2. Generates static HTML files for /blog (listing) and /blog/:slug (each post)
- * 3. Each page gets unique <title>, <meta description>, OG tags, canonical URL, and JSON-LD
- * 4. Updates the sitemap.xml to include all blog URLs
+ * 2. Generates a static HTML file for /blog (listing page) with unique SEO meta tags
+ * 3. Updates the sitemap.xml to include all blog URLs
+ * 
+ * NOTE: Individual blog post pages (/blog/:slug) are NOT generated as static files.
+ * The DropInBlog React SDK handles SEO meta tags client-side via <DropInBlogHead>,
+ * and Vercel rewrites route these through the SPA's index.html.
  * 
  * Usage: node scripts/generate-blog-seo.mjs
  */
@@ -97,7 +100,7 @@ function generateHTML(template, { title, description, canonicalUrl, ogImage, jso
     <meta name="robots" content="index, follow" />
     
     <!-- Open Graph -->
-    <meta property="og:type" content="article" />
+    <meta property="og:type" content="website" />
     <meta property="og:title" content="${escapeHtml(title)}" />
     <meta property="og:description" content="${escapeHtml(description)}" />
     <meta property="og:url" content="${escapeHtml(canonicalUrl)}" />
@@ -152,61 +155,6 @@ function generateBlogListingPage(template, posts) {
     description,
     canonicalUrl,
     ogImage: posts[0]?.featuredImage || null,
-    jsonLd,
-  });
-}
-
-function generateBlogPostPage(template, post) {
-  const title = post.seoTitle || post.title;
-  const description = post.seoDescription || post.summary?.substring(0, 160) || '';
-  const canonicalUrl = post.canonicalUrl || `${SITE_URL}/blog/${post.slug}`;
-  const ogImage = post.featuredImage || null;
-
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    'headline': title,
-    'description': description,
-    'url': `${SITE_URL}/blog/${post.slug}`,
-    'datePublished': post.publishedAt,
-    'dateModified': post.modifiedAt || post.publishedAt,
-    ...(ogImage ? { 'image': ogImage } : {}),
-    ...(post.readtime ? { 'timeRequired': post.readtime } : {}),
-    'author': post.author ? {
-      '@type': 'Person',
-      'name': post.author.name || post.author,
-    } : {
-      '@type': 'Organization',
-      'name': 'Your Best SEO',
-    },
-    'publisher': {
-      '@type': 'Organization',
-      'name': 'Your Best SEO',
-      'url': SITE_URL,
-    },
-    'mainEntityOfPage': {
-      '@type': 'WebPage',
-      '@id': `${SITE_URL}/blog/${post.slug}`,
-    },
-  };
-
-  // Add FAQ schema if the post has FAQs
-  if (post.faqs && post.faqs.length > 0) {
-    jsonLd['hasPart'] = post.faqs.map(faq => ({
-      '@type': 'Question',
-      'name': faq.question,
-      'acceptedAnswer': {
-        '@type': 'Answer',
-        'text': faq.answer,
-      },
-    }));
-  }
-
-  return generateHTML(template, {
-    title,
-    description,
-    canonicalUrl: `${SITE_URL}/blog/${post.slug}`,
-    ogImage,
     jsonLd,
   });
 }
@@ -281,35 +229,28 @@ async function main() {
   const posts = await fetchAllBlogPosts();
   console.log(`📄 Found ${posts.length} published blog posts\n`);
 
-  let generated = 0;
-
-  // Generate /blog listing page
+  // Generate /blog listing page only
   const blogDir = path.join(DIST_DIR, 'blog');
   fs.mkdirSync(blogDir, { recursive: true });
 
   const blogListingHtml = generateBlogListingPage(template, posts);
   fs.writeFileSync(path.join(blogDir, 'index.html'), blogListingHtml);
   console.log(`  ✅ /blog → SEO & Digital Marketing Blog | Your Best SEO`);
-  generated++;
 
-  // Generate individual blog post pages
+  // Log info about individual posts (handled by DropInBlog SDK client-side)
+  console.log(`\n  ℹ️  ${posts.length} blog post pages handled by DropInBlog SDK (client-side SEO)`);
   for (const post of posts) {
-    const postDir = path.join(blogDir, post.slug);
-    fs.mkdirSync(postDir, { recursive: true });
-
-    const postHtml = generateBlogPostPage(template, post);
-    fs.writeFileSync(path.join(postDir, 'index.html'), postHtml);
-
     const displayTitle = (post.seoTitle || post.title).substring(0, 60);
-    console.log(`  ✅ /blog/${post.slug} → ${displayTitle}...`);
-    generated++;
+    console.log(`     📄 /blog/${post.slug} → ${displayTitle}...`);
   }
 
-  // Update sitemap
+  // Update sitemap with all blog URLs
   console.log('');
   updateSitemap(posts);
 
-  console.log(`\n🎉 Generated ${generated} static HTML pages with unique SEO meta tags.\n`);
+  console.log(`\n🎉 Generated 1 static HTML page + updated sitemap with ${posts.length + 1} blog URLs.\n`);
+  console.log('ℹ️  Individual blog post SEO is handled by the DropInBlog React SDK.');
+  console.log('   The SDK injects proper <title>, meta description, and OG tags client-side.\n');
 }
 
 main().catch(err => {
