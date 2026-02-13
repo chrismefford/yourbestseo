@@ -8,7 +8,8 @@
     }
   ],
   "rewrites": [
-    { "source": "/blog", "destination": "/index.html" },
-    { "source": "/blog/(.*)", "destination": "/index.html" }
+    { "source": "/blog/category/(.*)", "destination": "/blog/index.html" },
+    { "source": "/blog/author/(.*)", "destination": "/blog/index.html" },
+    { "source": "/blog/page/(.*)", "destination": "/blog/index.html" }
   ]
 }
