@@ -17,7 +17,7 @@
  * Usage: node scripts/generate-blog-seo.mjs
  */
 
-import fs from 'fs';
+import fs, { cpSync } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -451,6 +451,50 @@ async function main() {
   }
   console.log(`   • Updated sitemap with ${posts.length + 1} blog URLs`);
   console.log('\n✅ All blog content is now pre-rendered for Google indexing.\n');
+
+  // ─── Build Output API ────────────────────────────────────────────────────
+  createVercelBuildOutput();
+}
+
+// ─── Vercel Build Output API ─────────────────────────────────────────────────
+/**
+ * Creates the .vercel/output/ directory structure for Vercel's Build Output API.
+ * This gives us complete control over routing - no SPA fallback that would
+ * override our carefully generated static HTML files.
+ */
+function createVercelBuildOutput() {
+  console.log('\n🏗️  Creating Vercel Build Output API structure...');
+
+  const outputDir = path.join(__dirname, '..', '.vercel', 'output');
+  const staticDir = path.join(outputDir, 'static');
+
+  // Clean previous output
+  if (fs.existsSync(outputDir)) {
+    fs.rmSync(outputDir, { recursive: true });
+  }
+
+  // Copy dist/ to .vercel/output/static/
+  cpSync(DIST_DIR, staticDir, { recursive: true });
+  console.log('  📁 Copied dist/ → .vercel/output/static/');
+
+  // Create config.json with filesystem-only routing (no SPA fallback)
+  const config = {
+    version: 3,
+    routes: [
+      // Handle clean URLs - serve /about as /about/index.html
+      { handle: 'filesystem' },
+      // 404 for anything not found as a static file
+      { src: '/(.*)', status: 404, dest: '/404.html' }
+    ]
+  };
+
+  fs.writeFileSync(
+    path.join(outputDir, 'config.json'),
+    JSON.stringify(config, null, 2)
+  );
+  console.log('  ⚙️  Created .vercel/output/config.json (no SPA fallback)');
+  console.log('');
+  console.log('✅ Build Output API structure ready for deployment.\n');
 }
 
 main().catch(err => {
