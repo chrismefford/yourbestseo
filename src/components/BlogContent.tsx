@@ -10,6 +10,19 @@ const DROPINBLOG_API_TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5Y
 const SITE_URL = "https://yourbestseo.com";
 
 /**
+ * Remove the SSR pre-rendered content that was injected at build time.
+ * This content is only for Googlebot — once React hydrates, the SDK takes over.
+ */
+function useRemoveSSRContent() {
+  useEffect(() => {
+    const ssrContent = document.getElementById("dropinblog-ssr-content");
+    if (ssrContent) {
+      ssrContent.remove();
+    }
+  }, []);
+}
+
+/**
  * Converts DropInBlog query-parameter URLs to path-based URLs.
  * The DropInBlog API returns links like /blog?p=slug but the React SDK
  * expects path-based routing like /blog/slug.
@@ -26,18 +39,14 @@ function useQueryParamRedirect() {
     const page = params.get("page");
 
     if (postSlug) {
-      // /blog?p=slug → /blog/slug
       navigate(`/blog/${postSlug}`, { replace: true });
     } else if (categorySlug) {
-      // /blog?c=slug → /blog/category/slug
       const path = page ? `/blog/category/${categorySlug}/page/${page}` : `/blog/category/${categorySlug}`;
       navigate(path, { replace: true });
     } else if (authorSlug) {
-      // /blog?a=slug → /blog/author/slug
       const path = page ? `/blog/author/${authorSlug}/page/${page}` : `/blog/author/${authorSlug}`;
       navigate(path, { replace: true });
     } else if (page && location.pathname === "/blog") {
-      // /blog?page=2 → /blog/page/2
       navigate(`/blog/page/${page}`, { replace: true });
     }
   }, [location.search, location.pathname, navigate]);
@@ -57,7 +66,6 @@ function useLinkInterceptor(containerRef: React.RefObject<HTMLElement | null>) {
     const href = target.getAttribute("href");
     if (!href) return;
 
-    // Parse the href to check if it's a DropInBlog query-param link
     try {
       const url = new URL(href, window.location.origin);
       const isSameOrigin = url.origin === window.location.origin;
@@ -79,7 +87,6 @@ function useLinkInterceptor(containerRef: React.RefObject<HTMLElement | null>) {
       } else if (page && url.pathname === "/blog") {
         newPath = `/blog/page/${page}`;
       } else if (url.pathname.startsWith("/blog")) {
-        // Already a path-based blog link - use React Router navigation
         newPath = url.pathname;
       }
 
@@ -105,6 +112,9 @@ function useLinkInterceptor(containerRef: React.RefObject<HTMLElement | null>) {
 const BlogContentInner = () => {
   const location = useLocation();
   const contentRef = useRef<HTMLElement>(null);
+
+  // Remove SSR pre-rendered content (it's only for Googlebot)
+  useRemoveSSRContent();
 
   // Redirect query-param URLs to path-based URLs
   useQueryParamRedirect();
