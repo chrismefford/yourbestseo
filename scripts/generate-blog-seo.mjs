@@ -2,14 +2,17 @@
  * Post-Build SEO Generator for DropInBlog Pages
  * 
  * This script runs after `vite build` and:
- * 1. Fetches all published blog posts from the DropInBlog API
- * 2. Fetches the full rendered HTML (head + body) for each blog post
+ * 1. Discovers all published blog posts via the DropInBlog RSS feed (no auth required)
+ * 2. Fetches the full rendered HTML (head + body) for each blog post via the rendered API
  * 3. Generates static HTML files for /blog (listing) and /blog/:slug (each post)
  *    with full pre-rendered content visible to search engines without JavaScript
  * 4. Updates the sitemap.xml to include all blog URLs
  * 
  * This ensures Google can index the full blog content on first crawl,
  * while the React SPA hydrates on top for client-side navigation.
+ * 
+ * NOTE: This script does NOT require an API key. It uses the public RSS feed
+ * to discover posts and the public rendered endpoints for content.
  * 
  * Usage: node scripts/generate-blog-seo.mjs
  */
@@ -24,62 +27,82 @@ const DIST_DIR = path.join(__dirname, '..', 'dist');
 
 // DropInBlog Configuration
 const BLOG_ID = 'aaccbdb9-3466-4e98-8baf-d86ddbe61db7';
-const API_KEY = process.env.DROPINBLOG_API_KEY || process.env.VITE_DROPINBLOG_API_KEY || '';
 const SITE_URL = 'https://yourbestseo.com';
+const RSS_FEED_URL = `https://io.dropinblog.com/feed/${BLOG_ID}/?limit=100`;
 
-// ─── API Functions ───────────────────────────────────────────────────────────
+// ─── RSS Feed Parser ─────────────────────────────────────────────────────────
 
-async function fetchAllBlogPosts() {
-  if (!API_KEY) {
-    console.warn('⚠️  No DropInBlog API key found. Set DROPINBLOG_API_KEY env var.');
-    console.warn('   Skipping blog post page generation.');
+/**
+ * Fetch all blog post metadata from the DropInBlog RSS feed.
+ * No authentication required. Returns an array of post objects with:
+ * { slug, title, link, description, pubDate, author, featuredImage, categories }
+ */
+async function fetchPostsFromRSS() {
+  console.log('  📡 Fetching RSS feed...');
+  const res = await fetch(RSS_FEED_URL);
+  if (!res.ok) {
+    console.error(`  ❌ RSS feed error: ${res.status} ${res.statusText}`);
     return [];
   }
 
-  const allPosts = [];
-  let page = 1;
-  let lastPage = 1;
+  const xml = await res.text();
+  const posts = [];
 
-  do {
-    const url = `https://api.dropinblog.com/v2/blog/${BLOG_ID}/posts?limit=50&page=${page}`;
-    const res = await fetch(url, {
-      headers: {
-        'Authorization': `Bearer ${API_KEY}`,
-        'Accept': 'application/json',
-      },
+  // Parse each <item> from the RSS feed
+  const itemRegex = /<item>([\s\S]*?)<\/item>/g;
+  let match;
+  while ((match = itemRegex.exec(xml)) !== null) {
+    const item = match[1];
+
+    const getTag = (tag) => {
+      const m = item.match(new RegExp(`<${tag}>([\\s\\S]*?)<\\/${tag}>`));
+      return m ? m[1].replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1').trim() : '';
+    };
+
+    const link = getTag('link');
+    const slug = link.replace(`${SITE_URL}/blog/`, '').replace(/\/$/, '');
+
+    // Get featured image from media:content or media:thumbnail
+    const imageMatch = item.match(/media:content\s+url="([^"]+)"/);
+    const featuredImage = imageMatch ? imageMatch[1] : '';
+
+    // Get categories
+    const categoryMatches = [...item.matchAll(/<category>([^<]+)<\/category>/g)];
+    const categories = categoryMatches.map(m => m[1]);
+
+    // Get author
+    const author = getTag('dc:creator');
+
+    // Get description (may contain HTML)
+    const description = getTag('description')
+      .replace(/<[^>]*>/g, '')  // Strip HTML tags
+      .substring(0, 160);
+
+    posts.push({
+      slug,
+      title: getTag('title'),
+      link,
+      description,
+      pubDate: getTag('pubDate'),
+      author,
+      featuredImage,
+      categories,
     });
+  }
 
-    if (!res.ok) {
-      console.error(`❌ DropInBlog API error: ${res.status} ${res.statusText}`);
-      return allPosts;
-    }
-
-    const json = await res.json();
-    if (!json.success) {
-      console.error(`❌ DropInBlog API error: ${json.message}`);
-      return allPosts;
-    }
-
-    const posts = json.data.posts || [];
-    allPosts.push(...posts);
-    lastPage = json.data.pagination?.last_page || 1;
-    page++;
-  } while (page <= lastPage);
-
-  return allPosts;
+  return posts;
 }
 
+// ─── Rendered API Functions ──────────────────────────────────────────────────
+
 /**
- * Fetch the full rendered HTML for a specific blog post from the DropInBlog API.
- * Returns { head_html, body_html } with the complete rendered content.
+ * Fetch the full rendered HTML for a specific blog post.
+ * No authentication required. Returns { head_html, body_html }.
  */
 async function fetchRenderedPost(slug) {
   const url = `https://api.dropinblog.com/v2/blog/${BLOG_ID}/rendered/post/${encodeURIComponent(slug)}`;
   const res = await fetch(url, {
-    headers: {
-      'Authorization': `Bearer ${API_KEY}`,
-      'Accept': 'application/json',
-    },
+    headers: { 'Accept': 'application/json' },
   });
 
   if (!res.ok) {
@@ -88,25 +111,17 @@ async function fetchRenderedPost(slug) {
   }
 
   const json = await res.json();
-  if (!json.success && !json.data) {
-    console.error(`  ❌ API error for "${slug}": ${json.message || 'Unknown error'}`);
-    return null;
-  }
-
-  return json.data || json;
+  return json.data || null;
 }
 
 /**
  * Fetch the full rendered HTML for the blog listing page.
- * Returns { head_html, body_html } with the listing content.
+ * No authentication required. Returns { head_html, body_html }.
  */
 async function fetchRenderedListing() {
   const url = `https://api.dropinblog.com/v2/blog/${BLOG_ID}/rendered/list`;
   const res = await fetch(url, {
-    headers: {
-      'Authorization': `Bearer ${API_KEY}`,
-      'Accept': 'application/json',
-    },
+    headers: { 'Accept': 'application/json' },
   });
 
   if (!res.ok) {
@@ -115,7 +130,7 @@ async function fetchRenderedListing() {
   }
 
   const json = await res.json();
-  return json.data || json;
+  return json.data || null;
 }
 
 // ─── HTML Generation ─────────────────────────────────────────────────────────
@@ -132,10 +147,8 @@ function escapeHtml(str) {
 
 /**
  * Generate a full static HTML page with pre-rendered blog content.
- * The page includes:
- * - SEO meta tags from DropInBlog's head_html (or fallback meta tags)
- * - Full article body_html pre-rendered inside the page for Googlebot
- * - The SPA's JS bundle so React can hydrate and take over client-side
+ * Includes SEO meta tags from DropInBlog's head_html and the full article
+ * body_html pre-rendered inside the page for Googlebot.
  */
 function generateFullPage(template, { headHtml, bodyHtml, fallbackTitle, fallbackDescription, canonicalUrl, ogImage, jsonLd }) {
   let html = template;
@@ -149,15 +162,16 @@ function generateFullPage(template, { headHtml, bodyHtml, fallbackTitle, fallbac
   html = html.replace(/<meta\s+name="robots"[^>]*\/?>/gi, '');
   html = html.replace(/<script\s+type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/gi, '');
 
-  // Build the SEO head block
   let seoHead = '';
 
   if (headHtml) {
     // Use the DropInBlog-provided head HTML (includes title, meta, OG, twitter, JSON-LD, CSS)
+    // Check if canonical is already in headHtml
+    const hasCanonical = /<link\s+rel="canonical"/i.test(headHtml);
     seoHead = `
     <!-- DropInBlog SEO Head -->
     ${headHtml}
-    <link rel="canonical" href="${escapeHtml(canonicalUrl)}" />
+    ${!hasCanonical ? `<link rel="canonical" href="${escapeHtml(canonicalUrl)}" />` : ''}
     <meta name="robots" content="index, follow" />
     `;
   } else {
@@ -191,10 +205,7 @@ function generateFullPage(template, { headHtml, bodyHtml, fallbackTitle, fallbac
   html = html.replace(/<head([^>]*)>/, `<head$1>${seoHead}`);
 
   // Pre-render the blog content inside <div id="root"> for Googlebot
-  // The React app will hydrate on top of this content
   if (bodyHtml) {
-    // Insert pre-rendered content inside the root div
-    // We wrap it in a special container that the React app can identify and replace
     const preRenderedContent = `
       <div id="dropinblog-ssr-content" style="max-width:900px;margin:0 auto;padding:24px 16px;">
         ${bodyHtml}
@@ -206,49 +217,6 @@ function generateFullPage(template, { headHtml, bodyHtml, fallbackTitle, fallbac
     );
   }
 
-  return html;
-}
-
-/**
- * Generate a simple page with only SEO meta tags (no pre-rendered body content).
- * Used as a fallback when the rendered API fails.
- */
-function generateMetaOnlyPage(template, { title, description, canonicalUrl, ogImage, jsonLd }) {
-  let html = template;
-
-  html = html.replace(/<title[^>]*>.*?<\/title>/gi, '');
-  html = html.replace(/<meta\s+name="description"[^>]*\/?>/gi, '');
-  html = html.replace(/<meta\s+property="og:[^"]*"[^>]*\/?>/gi, '');
-  html = html.replace(/<meta\s+name="twitter:[^"]*"[^>]*\/?>/gi, '');
-  html = html.replace(/<link\s+rel="canonical"[^>]*\/?>/gi, '');
-  html = html.replace(/<meta\s+name="robots"[^>]*\/?>/gi, '');
-  html = html.replace(/<script\s+type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/gi, '');
-
-  const seoTags = `
-    <title>${escapeHtml(title)}</title>
-    <meta name="description" content="${escapeHtml(description)}" />
-    <link rel="canonical" href="${escapeHtml(canonicalUrl)}" />
-    <meta name="robots" content="index, follow" />
-    
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="${escapeHtml(title)}" />
-    <meta property="og:description" content="${escapeHtml(description)}" />
-    <meta property="og:url" content="${escapeHtml(canonicalUrl)}" />
-    <meta property="og:site_name" content="Your Best SEO" />
-    ${ogImage ? `<meta property="og:image" content="${escapeHtml(ogImage)}" />` : ''}
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="${escapeHtml(title)}" />
-    <meta name="twitter:description" content="${escapeHtml(description)}" />
-    ${ogImage ? `<meta name="twitter:image" content="${escapeHtml(ogImage)}" />` : ''}
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
-  `;
-
-  html = html.replace(/<head([^>]*)>/, `<head$1>${seoTags}`);
   return html;
 }
 
@@ -272,14 +240,13 @@ async function generateBlogListingPage(template, posts) {
     },
     'blogPost': posts.slice(0, 10).map(post => ({
       '@type': 'BlogPosting',
-      'headline': post.seoTitle || post.title,
-      'url': `${SITE_URL}/blog/${post.slug}`,
-      'datePublished': post.publishedAt,
+      'headline': post.title,
+      'url': post.link,
+      'datePublished': post.pubDate,
       ...(post.featuredImage ? { 'image': post.featuredImage } : {}),
     })),
   };
 
-  // Try to fetch the rendered listing page
   console.log('  📡 Fetching rendered blog listing...');
   const rendered = await fetchRenderedListing();
 
@@ -298,9 +265,11 @@ async function generateBlogListingPage(template, posts) {
 
   // Fallback to meta-only page
   console.log('  ⚠️  Using meta-only fallback for listing page');
-  return generateMetaOnlyPage(template, {
-    title,
-    description,
+  return generateFullPage(template, {
+    headHtml: null,
+    bodyHtml: null,
+    fallbackTitle: title,
+    fallbackDescription: description,
     canonicalUrl,
     ogImage: posts[0]?.featuredImage || null,
     jsonLd,
@@ -308,23 +277,20 @@ async function generateBlogListingPage(template, posts) {
 }
 
 async function generateBlogPostPage(template, post) {
-  const title = post.seoTitle || post.title;
-  const description = post.seoDescription || post.summary || `Read "${post.title}" on the Your Best SEO blog.`;
-  const canonicalUrl = `${SITE_URL}/blog/${post.slug}`;
+  const canonicalUrl = post.link;
   const ogImage = post.featuredImage || null;
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
-    'headline': title,
-    'description': description,
+    'headline': post.title,
+    'description': post.description,
     'url': canonicalUrl,
-    'datePublished': post.publishedAt,
-    'dateModified': post.updatedAt || post.publishedAt,
+    'datePublished': post.pubDate,
     ...(ogImage ? { 'image': ogImage } : {}),
     'author': {
       '@type': 'Person',
-      'name': post.author?.displayName || 'Your Best SEO',
+      'name': post.author || 'Your Best SEO',
     },
     'publisher': {
       '@type': 'Organization',
@@ -340,8 +306,8 @@ async function generateBlogPostPage(template, post) {
     return generateFullPage(template, {
       headHtml: rendered.head_html || null,
       bodyHtml: rendered.body_html,
-      fallbackTitle: title,
-      fallbackDescription: description,
+      fallbackTitle: post.title,
+      fallbackDescription: post.description,
       canonicalUrl,
       ogImage,
       jsonLd,
@@ -350,9 +316,11 @@ async function generateBlogPostPage(template, post) {
 
   // Fallback to meta-only page if rendered API fails
   console.log(`  ⚠️  Using meta-only fallback for "${post.slug}"`);
-  return generateMetaOnlyPage(template, {
-    title,
-    description,
+  return generateFullPage(template, {
+    headHtml: null,
+    bodyHtml: null,
+    fallbackTitle: post.title,
+    fallbackDescription: post.description,
     canonicalUrl,
     ogImage,
     jsonLd,
@@ -372,7 +340,6 @@ function updateSitemap(posts) {
   let sitemap = fs.readFileSync(sitemapPath, 'utf-8');
   const today = new Date().toISOString().split('T')[0];
 
-  // Build blog URL entries
   const blogUrls = [];
 
   // Blog listing page
@@ -385,14 +352,17 @@ function updateSitemap(posts) {
 
   // Individual blog posts
   for (const post of posts) {
-    const lastmod = post.updatedAt
-      ? post.updatedAt.split('T')[0]
-      : post.publishedAt
-        ? post.publishedAt.split('T')[0]
-        : today;
+    let lastmod = today;
+    if (post.pubDate) {
+      try {
+        lastmod = new Date(post.pubDate).toISOString().split('T')[0];
+      } catch (e) {
+        // Use today as fallback
+      }
+    }
 
     blogUrls.push(`  <url>
-    <loc>${SITE_URL}/blog/${post.slug}</loc>
+    <loc>${post.link}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -424,13 +394,13 @@ async function main() {
   }
   const template = fs.readFileSync(templatePath, 'utf-8');
 
-  // Fetch blog posts
-  console.log('📡 Fetching blog posts from DropInBlog API...');
-  const posts = await fetchAllBlogPosts();
+  // Discover all blog posts from RSS feed (no auth required)
+  console.log('📡 Discovering blog posts from RSS feed...');
+  const posts = await fetchPostsFromRSS();
   console.log(`📄 Found ${posts.length} published blog posts\n`);
 
   if (posts.length === 0) {
-    console.log('⚠️  No posts found. Only generating blog listing page with fallback meta tags.\n');
+    console.log('⚠️  No posts found in RSS feed.\n');
   }
 
   // Create blog directory
@@ -449,7 +419,7 @@ async function main() {
   let fallbackCount = 0;
 
   for (const post of posts) {
-    const displayTitle = (post.seoTitle || post.title).substring(0, 60);
+    const displayTitle = post.title.substring(0, 60);
     process.stdout.write(`  📡 /blog/${post.slug}...`);
 
     const postHtml = await generateBlogPostPage(template, post);
@@ -457,7 +427,6 @@ async function main() {
     fs.mkdirSync(postDir, { recursive: true });
     fs.writeFileSync(path.join(postDir, 'index.html'), postHtml);
 
-    // Check if we got full content or just meta tags
     if (postHtml.includes('dropinblog-ssr-content')) {
       console.log(` ✅ ${displayTitle}...`);
       successCount++;
