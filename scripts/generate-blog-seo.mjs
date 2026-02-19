@@ -454,8 +454,69 @@ async function main() {
   console.log(`   • Updated sitemap with ${posts.length + 1} blog URLs`);
   console.log('\n✅ All blog content is now pre-rendered for Google indexing.\n');
 
+  // ─── Global HTML Cleanup ───────────────────────────────────────────────
+  cleanupAllHtmlFiles();
+
   // ─── Build Output API ────────────────────────────────────────────────────
   createVercelBuildOutput();
+}
+
+// ─── Global HTML Cleanup ────────────────────────────────────────────────────
+/**
+ * Scans ALL HTML files in dist/ and removes empty/broken canonical tags,
+ * duplicate meta tags, and other SSG artifacts that hurt SEO.
+ * This runs after blog generation so it catches everything.
+ */
+function cleanupAllHtmlFiles() {
+  console.log('\n🧹 Running global HTML cleanup on all pages...');
+
+  let filesFixed = 0;
+  let emptyCanonicals = 0;
+
+  function walkDir(dir) {
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    for (const entry of entries) {
+      const fullPath = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        walkDir(fullPath);
+      } else if (entry.name === 'index.html') {
+        let html = fs.readFileSync(fullPath, 'utf-8');
+        let changed = false;
+
+        // Remove empty <link rel="canonical"> tags (no href attribute)
+        const emptyCanonicalRegex = /<link\s+rel="canonical"\s*\/?>/gi;
+        const emptyMatches = html.match(emptyCanonicalRegex);
+        if (emptyMatches) {
+          html = html.replace(emptyCanonicalRegex, '');
+          emptyCanonicals += emptyMatches.length;
+          changed = true;
+        }
+
+        // Ensure there's exactly one canonical tag per page
+        const allCanonicals = html.match(/<link[^>]*rel="canonical"[^>]*>/gi) || [];
+        if (allCanonicals.length > 1) {
+          // Keep the first one with an href, remove the rest
+          let kept = false;
+          for (const tag of allCanonicals) {
+            if (!kept && /href="[^"]+"/.test(tag)) {
+              kept = true;
+              continue;
+            }
+            html = html.replace(tag, '');
+            changed = true;
+          }
+        }
+
+        if (changed) {
+          fs.writeFileSync(fullPath, html);
+          filesFixed++;
+        }
+      }
+    }
+  }
+
+  walkDir(DIST_DIR);
+  console.log(`  ✅ Fixed ${filesFixed} files (removed ${emptyCanonicals} empty canonical tags)`);
 }
 
 // ─── Vercel Build Output API ─────────────────────────────────────────────────

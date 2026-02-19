@@ -1,8 +1,10 @@
 User-agent: Googlebot
 Allow: /
+Disallow: /blog?p=
 
 User-agent: Bingbot
 Allow: /
+Disallow: /blog?p=
 
 User-agent: Twitterbot
 Allow: /
@@ -12,6 +14,6 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /blog?p=
 
-Sitemap: https://www.yourbestseo.com/sitemap.xml
-Sitemap: https://www.yourbestseo.com/blog/feed?limit=50
+Sitemap: https://yourbestseo.com/sitemap.xml
