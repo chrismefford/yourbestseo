@@ -252,10 +252,25 @@ export const neighborhoodRoutes: RouteConfig[] = [
   { path: '/san-diego/ramona-seo', priority: 0.7, changefreq: 'monthly' },
 ];
 
+// Authority pillar pages
+export const authorityRoutes: RouteConfig[] = [
+  { path: '/authority/revenue-driven-seo', priority: 0.9, changefreq: 'monthly' },
+  { path: '/authority/ai-search-seo', priority: 0.9, changefreq: 'monthly' },
+  { path: '/authority/seo-for-service-businesses', priority: 0.9, changefreq: 'monthly' },
+  { path: '/authority/why-not-ranking', priority: 0.9, changefreq: 'monthly' },
+  { path: '/authority/technical-seo-audit', priority: 0.9, changefreq: 'monthly' },
+  { path: '/authority/local-seo-services', priority: 0.9, changefreq: 'monthly' },
+  { path: '/authority/seo-for-dentists', priority: 0.9, changefreq: 'monthly' },
+  { path: '/authority/ecommerce-seo', priority: 0.9, changefreq: 'monthly' },
+  { path: '/authority/white-label-seo', priority: 0.9, changefreq: 'monthly' },
+  { path: '/authority/seo-vs-google-ads', priority: 0.9, changefreq: 'monthly' },
+];
+
 // Combine all routes for sitemap generation
 export const allRoutes: RouteConfig[] = [
   ...mainRoutes,
   ...serviceRoutes,
+  ...authorityRoutes,
   ...glossaryRoutes,
   ...questionRoutes,
   ...stateRoutes,

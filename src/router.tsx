@@ -109,6 +109,18 @@ import IdahoSEO from "./pages/states/IdahoSEO";
 import MontanaSEO from "./pages/states/MontanaSEO";
 import WyomingSEO from "./pages/states/WyomingSEO";
 
+// Authority pillar pages
+import RevenueDrivenSEO from "./pages/authority/RevenueDrivenSEO";
+import AISearchSEO from "./pages/authority/AISearchSEO";
+import ServiceBusinessSEO from "./pages/authority/ServiceBusinessSEO";
+import WhyNotRanking from "./pages/authority/WhyNotRanking";
+import TechnicalSEOAudit from "./pages/authority/TechnicalSEOAudit";
+import LocalSEOServices from "./pages/authority/LocalSEOServices";
+import DentistSEO from "./pages/authority/DentistSEO";
+import EcommerceSEO from "./pages/authority/EcommerceSEO";
+import WhiteLabelSEO from "./pages/authority/WhiteLabelSEO";
+import SEOvsGoogleAds from "./pages/authority/SEOvsGoogleAds";
+
 // À La Carte Service pages
 import SEOBlogPosts from "./pages/services/SEOBlogPosts";
 import TechnicalSEO from "./pages/services/TechnicalSEO";
@@ -455,6 +467,18 @@ export const routes: RouteRecord[] = [
       { path: "san-diego/lakeside-seo", element: <LakesideSEO /> },
       { path: "san-diego/alpine-seo", element: <AlpineSEO /> },
       { path: "san-diego/ramona-seo", element: <RamonaSEO /> },
+      // Authority pillar pages
+      { path: "authority/revenue-driven-seo", element: <RevenueDrivenSEO /> },
+      { path: "authority/ai-search-seo", element: <AISearchSEO /> },
+      { path: "authority/seo-for-service-businesses", element: <ServiceBusinessSEO /> },
+      { path: "authority/why-not-ranking", element: <WhyNotRanking /> },
+      { path: "authority/technical-seo-audit", element: <TechnicalSEOAudit /> },
+      { path: "authority/local-seo-services", element: <LocalSEOServices /> },
+      { path: "authority/seo-for-dentists", element: <DentistSEO /> },
+      { path: "authority/ecommerce-seo", element: <EcommerceSEO /> },
+      { path: "authority/white-label-seo", element: <WhiteLabelSEO /> },
+      { path: "authority/seo-vs-google-ads", element: <SEOvsGoogleAds /> },
+
       // State SEO pages
       { path: "states/california-seo", element: <CaliforniaSEO /> },
       { path: "states/oregon-seo", element: <OregonSEO /> },
