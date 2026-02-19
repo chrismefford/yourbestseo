@@ -165,98 +165,119 @@ const Header = () => {
               <AnimatePresence>
                 {isLearnOpen && (
                   <motion.div
-                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    initial={{ opacity: 0, y: 12, scale: 0.97 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[700px] bg-card border border-border rounded-2xl shadow-2xl overflow-hidden z-50"
+                    exit={{ opacity: 0, y: 12, scale: 0.97 }}
+                    transition={{ duration: 0.18, ease: "easeOut" }}
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[860px] bg-card border border-border rounded-2xl shadow-2xl overflow-hidden z-50"
                   >
+                    {/* Top header bar */}
+                    <div className="px-6 py-4 border-b border-border bg-secondary/20 flex items-center justify-between">
+                      <p className="text-xs font-bold text-primary tracking-widest uppercase">Learn SEO</p>
+                      <p className="text-xs text-muted-foreground">Free resources to grow your rankings</p>
+                    </div>
+
                     <div className="grid grid-cols-4 divide-x divide-border">
                       {/* Blog Section */}
-                      <div className="p-5">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center shadow-lg shadow-primary/20">
-                            <PenLine className="w-5 h-5 text-primary-foreground" />
-                          </div>
+                      <div className="p-6 hover:bg-secondary/20 transition-colors group">
+                        <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-primary/50 flex items-center justify-center shadow-lg shadow-primary/25 mb-4 group-hover:scale-105 transition-transform">
+                          <PenLine className="w-6 h-6 text-primary-foreground" />
                         </div>
-                        <h3 className="font-semibold text-foreground mb-1">SEO Blog</h3>
-                        <p className="text-xs text-muted-foreground mb-4">
-                          Tips & insights
+                        <h3 className="font-bold text-foreground mb-1.5 text-base">SEO Blog</h3>
+                        <p className="text-xs text-muted-foreground mb-5 leading-relaxed">
+                          Actionable tips, case studies & SEO insights from our team.
                         </p>
+                        <div className="flex flex-col gap-1.5 mb-4">
+                          <span className="text-xs text-muted-foreground/70">✦ Monthly strategies</span>
+                          <span className="text-xs text-muted-foreground/70">✦ Real client wins</span>
+                          <span className="text-xs text-muted-foreground/70">✦ Industry updates</span>
+                        </div>
                         <button
                           onClick={() => {
                             setIsLearnOpen(false);
                             navigate('/blog');
                             window.scrollTo(0, 0);
                           }}
-                          className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+                          className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors group/btn"
                         >
                           Visit Blog
-                          <ArrowRight className="w-4 h-4" />
+                          <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform" />
                         </button>
                       </div>
 
                       {/* Glossary Section */}
-                      <div className="p-5">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gold to-gold/60 flex items-center justify-center shadow-lg shadow-gold/20">
-                            <BookOpen className="w-5 h-5 text-navy" />
-                          </div>
+                      <div className="p-6 hover:bg-secondary/20 transition-colors group">
+                        <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-500/50 flex items-center justify-center shadow-lg shadow-amber-400/25 mb-4 group-hover:scale-105 transition-transform">
+                          <BookOpen className="w-6 h-6 text-amber-900" />
                         </div>
-                        <h3 className="font-semibold text-foreground mb-1">SEO Glossary</h3>
-                        <p className="text-xs text-muted-foreground mb-4">
-                          50+ terms explained
+                        <h3 className="font-bold text-foreground mb-1.5 text-base">SEO Glossary</h3>
+                        <p className="text-xs text-muted-foreground mb-5 leading-relaxed">
+                          Every SEO term you'll ever need, explained in plain English.
                         </p>
+                        <div className="flex flex-col gap-1.5 mb-4">
+                          {glossaryHighlights.slice(0, 3).map((term) => (
+                            <Link
+                              key={term.path}
+                              to={term.path}
+                              onClick={() => setIsLearnOpen(false)}
+                              className="text-xs text-muted-foreground/70 hover:text-primary transition-colors flex items-center gap-1"
+                            >
+                              <span className="text-amber-400">✦</span> {term.name}
+                            </Link>
+                          ))}
+                        </div>
                         <Link
                           to="/glossary"
                           onClick={() => setIsLearnOpen(false)}
-                          className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+                          className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors group/btn"
                         >
-                          View Glossary
-                          <ArrowRight className="w-4 h-4" />
+                          View all 50+ terms
+                          <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform" />
                         </Link>
                       </div>
 
                       {/* Questions Section */}
-                      <div className="p-5">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-500/60 flex items-center justify-center shadow-lg shadow-emerald-500/20">
-                            <HelpCircle className="w-5 h-5 text-white" />
-                          </div>
+                      <div className="p-6 hover:bg-secondary/20 transition-colors group">
+                        <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-400 to-emerald-500/50 flex items-center justify-center shadow-lg shadow-emerald-400/25 mb-4 group-hover:scale-105 transition-transform">
+                          <HelpCircle className="w-6 h-6 text-white" />
                         </div>
-                        <h3 className="font-semibold text-foreground mb-1">SEO Questions</h3>
-                        <p className="text-xs text-muted-foreground mb-4">
-                          50+ answers
+                        <h3 className="font-bold text-foreground mb-1.5 text-base">SEO Questions</h3>
+                        <p className="text-xs text-muted-foreground mb-5 leading-relaxed">
+                          Straight answers to the questions everyone's Googling.
                         </p>
+                        <div className="flex flex-col gap-1.5 mb-4">
+                          <span className="text-xs text-muted-foreground/70"><span className="text-emerald-400">✦</span> How long does SEO take?</span>
+                          <span className="text-xs text-muted-foreground/70"><span className="text-emerald-400">✦</span> How much does SEO cost?</span>
+                          <span className="text-xs text-muted-foreground/70"><span className="text-emerald-400">✦</span> SEO vs PPC — which wins?</span>
+                        </div>
                         <Link
                           to="/questions"
                           onClick={() => setIsLearnOpen(false)}
-                          className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+                          className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors group/btn"
                         >
-                          View Questions
-                          <ArrowRight className="w-4 h-4" />
+                          View all 50+ answers
+                          <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform" />
                         </Link>
                       </div>
 
                       {/* Authority Guides Section */}
-                      <div className="p-5">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-violet-500/60 flex items-center justify-center shadow-lg shadow-violet-500/20">
-                            <TrendingUp className="w-5 h-5 text-white" />
-                          </div>
+                      <div className="p-6 hover:bg-secondary/20 transition-colors group">
+                        <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-violet-500 to-violet-600/50 flex items-center justify-center shadow-lg shadow-violet-500/25 mb-4 group-hover:scale-105 transition-transform">
+                          <TrendingUp className="w-6 h-6 text-white" />
                         </div>
-                        <h3 className="font-semibold text-foreground mb-1">Authority Guides</h3>
-                        <p className="text-xs text-muted-foreground mb-3">
-                          Deep-dive strategies
+                        <h3 className="font-bold text-foreground mb-1.5 text-base">Authority Guides</h3>
+                        <p className="text-xs text-muted-foreground mb-4 leading-relaxed">
+                          Deep-dive strategies for serious growth.
                         </p>
-                        <div className="flex flex-col gap-1.5">
-                          {authorityGuides.slice(0, 6).map((guide) => (
+                        <div className="flex flex-col gap-2">
+                          {authorityGuides.map((guide) => (
                             <Link
                               key={guide.path}
                               to={guide.path}
                               onClick={() => setIsLearnOpen(false)}
-                              className="text-xs text-muted-foreground hover:text-primary transition-colors leading-snug"
+                              className="text-xs text-muted-foreground hover:text-primary transition-colors leading-snug flex items-center gap-1.5"
                             >
-                              {guide.name}
+                              <span className="text-violet-400">›</span> {guide.name}
                             </Link>
                           ))}
                         </div>
