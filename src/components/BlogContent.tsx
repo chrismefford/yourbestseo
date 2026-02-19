@@ -56,7 +56,7 @@ function useQueryParamRedirect() {
  * Intercepts clicks on DropInBlog-rendered links that use query params
  * and converts them to path-based navigation for React Router.
  */
-function useLinkInterceptor(containerRef: React.RefObject<HTMLElement | null>) {
+function useLinkInterceptor(containerRef: React.RefObject<HTMLDivElement | null>) {
   const navigate = useNavigate();
 
   const handleClick = useCallback((e: MouseEvent) => {
@@ -111,7 +111,7 @@ function useLinkInterceptor(containerRef: React.RefObject<HTMLElement | null>) {
 
 const BlogContentInner = () => {
   const location = useLocation();
-  const contentRef = useRef<HTMLElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   // Remove SSR pre-rendered content (it's only for Googlebot)
   useRemoveSSRContent();
