@@ -153,14 +153,16 @@ function escapeHtml(str) {
 function generateFullPage(template, { headHtml, bodyHtml, fallbackTitle, fallbackDescription, canonicalUrl, ogImage, jsonLd }) {
   let html = template;
 
-  // Remove any existing meta tags that we'll replace
+  // Remove ALL existing meta tags that we'll replace, including data-rh="true" variants
+  // from vite-react-ssg's Head component (react-helmet-async)
   html = html.replace(/<title[^>]*>.*?<\/title>/gi, '');
-  html = html.replace(/<meta\s+name="description"[^>]*\/?>/gi, '');
-  html = html.replace(/<meta\s+property="og:[^"]*"[^>]*\/?>/gi, '');
-  html = html.replace(/<meta\s+name="twitter:[^"]*"[^>]*\/?>/gi, '');
-  html = html.replace(/<link\s+rel="canonical"[^>]*\/?>/gi, '');
-  html = html.replace(/<meta\s+name="robots"[^>]*\/?>/gi, '');
-  html = html.replace(/<script\s+type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/gi, '');
+  html = html.replace(/<meta[^>]*name="description"[^>]*\/?>/gi, '');
+  html = html.replace(/<meta[^>]*name="author"[^>]*\/?>/gi, '');
+  html = html.replace(/<meta[^>]*property="og:[^"]*"[^>]*\/?>/gi, '');
+  html = html.replace(/<meta[^>]*name="twitter:[^"]*"[^>]*\/?>/gi, '');
+  html = html.replace(/<link[^>]*rel="canonical"[^>]*\/?>/gi, '');
+  html = html.replace(/<meta[^>]*name="robots"[^>]*\/?>/gi, '');
+  html = html.replace(/<script[^>]*type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/gi, '');
 
   let seoHead = '';
 
