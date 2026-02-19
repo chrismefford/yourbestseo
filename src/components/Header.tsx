@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ArrowRight, ChevronDown, PenLine, BookOpen, HelpCircle, Search, Target, Link2, Zap, MapPin, Tag } from "lucide-react";
+import { Menu, X, ArrowRight, ChevronDown, PenLine, BookOpen, HelpCircle, Search, Target, Link2, Zap, MapPin, Tag, TrendingUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -37,6 +37,19 @@ const Header = () => {
     { name: "Core Web Vitals", path: "/glossary/core-web-vitals", icon: Zap },
     { name: "Local SEO", path: "/glossary/local-citations", icon: MapPin },
     { name: "Schema Markup", path: "/glossary/schema-markup", icon: Tag },
+  ];
+
+  const authorityGuides = [
+    { name: "Revenue-Driven SEO", path: "/authority/revenue-driven-seo" },
+    { name: "AI Search Optimization", path: "/authority/ai-search-seo" },
+    { name: "Why You're Not Ranking", path: "/authority/why-not-ranking" },
+    { name: "Technical SEO Audit", path: "/authority/technical-seo-audit" },
+    { name: "Local SEO Services", path: "/authority/local-seo-services" },
+    { name: "SEO vs Google Ads", path: "/authority/seo-vs-google-ads" },
+    { name: "White Label SEO", path: "/authority/white-label-seo" },
+    { name: "SEO for Dentists", path: "/authority/seo-for-dentists" },
+    { name: "Ecommerce SEO", path: "/authority/ecommerce-seo" },
+    { name: "SEO for Service Businesses", path: "/authority/seo-for-service-businesses" },
   ];
 
   useEffect(() => {
@@ -155,9 +168,9 @@ const Header = () => {
                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[520px] bg-card border border-border rounded-2xl shadow-2xl overflow-hidden z-50"
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[700px] bg-card border border-border rounded-2xl shadow-2xl overflow-hidden z-50"
                   >
-                    <div className="grid grid-cols-3 divide-x divide-border">
+                    <div className="grid grid-cols-4 divide-x divide-border">
                       {/* Blog Section */}
                       <div className="p-5">
                         <div className="flex items-center gap-3 mb-4">
@@ -222,6 +235,31 @@ const Header = () => {
                           View Questions
                           <ArrowRight className="w-4 h-4" />
                         </Link>
+                      </div>
+
+                      {/* Authority Guides Section */}
+                      <div className="p-5">
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-violet-500/60 flex items-center justify-center shadow-lg shadow-violet-500/20">
+                            <TrendingUp className="w-5 h-5 text-white" />
+                          </div>
+                        </div>
+                        <h3 className="font-semibold text-foreground mb-1">Authority Guides</h3>
+                        <p className="text-xs text-muted-foreground mb-3">
+                          Deep-dive strategies
+                        </p>
+                        <div className="flex flex-col gap-1.5">
+                          {authorityGuides.slice(0, 6).map((guide) => (
+                            <Link
+                              key={guide.path}
+                              to={guide.path}
+                              onClick={() => setIsLearnOpen(false)}
+                              className="text-xs text-muted-foreground hover:text-primary transition-colors leading-snug"
+                            >
+                              {guide.name}
+                            </Link>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </motion.div>
@@ -351,6 +389,23 @@ const Header = () => {
                     </div>
                     <span className="font-medium">SEO Questions</span>
                   </Link>
+                </div>
+              </div>
+
+              {/* Authority Guides for Mobile */}
+              <div className="py-2">
+                <p className="text-sm font-medium text-primary mb-3 tracking-widest uppercase">Authority Guides</p>
+                <div className="grid grid-cols-1 gap-1">
+                  {authorityGuides.map((guide) => (
+                    <Link
+                      key={guide.path}
+                      to={guide.path}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="text-sm text-muted-foreground hover:text-foreground py-1.5"
+                    >
+                      {guide.name}
+                    </Link>
+                  ))}
                 </div>
               </div>
 
