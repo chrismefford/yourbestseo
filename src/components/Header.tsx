@@ -169,7 +169,7 @@ const Header = () => {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 16, scale: 0.96 }}
                     transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-                    className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[1040px] bg-card border border-border/60 rounded-3xl shadow-[0_32px_80px_-12px_rgba(0,0,0,0.35)] overflow-hidden z-50"
+                    className="absolute top-full right-0 mt-4 w-[900px] max-w-[calc(100vw-2rem)] bg-card border border-border/60 rounded-3xl shadow-[0_32px_80px_-12px_rgba(0,0,0,0.35)] overflow-hidden z-50"
                   >
                     {/* Colorful top banner */}
                     <div className="relative px-8 py-5 bg-gradient-to-r from-primary/10 via-violet-500/10 to-emerald-500/10 border-b border-border/50 flex items-center justify-between overflow-hidden">
