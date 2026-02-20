@@ -165,108 +165,85 @@ const Header = () => {
               <AnimatePresence>
                 {isLearnOpen && (
                   <motion.div
-                    initial={{ opacity: 0, y: 10 }}
+                    initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
+                    exit={{ opacity: 0, y: 12 }}
                     transition={{ duration: 0.18, ease: "easeOut" }}
-                    className="fixed left-1/2 -translate-x-1/2 top-[80px] w-[min(860px,calc(100vw-32px))] bg-card border border-border rounded-2xl shadow-2xl z-[200]"
+                    className="fixed left-1/2 -translate-x-1/2 top-[80px] w-[min(820px,calc(100vw-32px))] bg-card border border-border rounded-2xl shadow-2xl z-[200] overflow-hidden"
                   >
-                    {/* 3-column top section */}
-                    <div className="grid grid-cols-3">
+                    {/* 3 big hero cards */}
+                    <div className="grid grid-cols-3 divide-x divide-border">
+
                       {/* Blog */}
-                      <div className="p-6 border-r border-border hover:bg-muted/40 transition-colors">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center shrink-0">
-                            <PenLine className="w-4 h-4 text-primary-foreground" />
-                          </div>
-                          <div>
-                            <p className="font-bold text-foreground text-sm">SEO Blog</p>
-                            <p className="text-xs text-muted-foreground">Strategies & case studies</p>
-                          </div>
+                      <button
+                        onClick={() => { setIsLearnOpen(false); navigate('/blog'); window.scrollTo(0, 0); }}
+                        className="group text-left p-8 hover:bg-muted/40 transition-colors flex flex-col gap-5"
+                      >
+                        <div className="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center group-hover:scale-110 transition-transform">
+                          <PenLine className="w-6 h-6 text-primary-foreground" />
                         </div>
-                        <div className="space-y-2 mb-4">
-                          {["Monthly SEO strategies", "Real client results", "Algorithm updates", "How-to guides"].map(i => (
-                            <p key={i} className="text-xs text-muted-foreground flex items-center gap-2">
-                              <span className="w-1 h-1 rounded-full bg-primary shrink-0" />{i}
-                            </p>
-                          ))}
+                        <div>
+                          <p className="text-lg font-bold text-foreground mb-1">SEO Blog</p>
+                          <p className="text-sm text-muted-foreground leading-relaxed">Real strategies, client wins, and algorithm updates from working SEOs.</p>
                         </div>
-                        <button
-                          onClick={() => { setIsLearnOpen(false); navigate('/blog'); window.scrollTo(0, 0); }}
-                          className="text-xs font-semibold text-primary flex items-center gap-1 hover:gap-2 transition-all"
-                        >
-                          Read the blog <ArrowRight className="w-3 h-3" />
-                        </button>
-                      </div>
+                        <span className="text-sm font-semibold text-primary flex items-center gap-1.5 group-hover:gap-3 transition-all mt-auto">
+                          Read the blog <ArrowRight className="w-4 h-4" />
+                        </span>
+                      </button>
 
                       {/* Glossary */}
-                      <div className="p-6 border-r border-border hover:bg-muted/40 transition-colors">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="w-9 h-9 rounded-xl bg-gold flex items-center justify-center shrink-0">
-                            <BookOpen className="w-4 h-4 text-background" />
-                          </div>
-                          <div>
-                            <p className="font-bold text-foreground text-sm">SEO Glossary</p>
-                            <p className="text-xs text-muted-foreground">50+ terms explained simply</p>
-                          </div>
+                      <Link
+                        to="/glossary"
+                        onClick={() => setIsLearnOpen(false)}
+                        className="group text-left p-8 hover:bg-muted/40 transition-colors flex flex-col gap-5"
+                      >
+                        <div className="w-12 h-12 rounded-2xl bg-gold flex items-center justify-center group-hover:scale-110 transition-transform">
+                          <BookOpen className="w-6 h-6 text-background" />
                         </div>
-                        <div className="grid grid-cols-2 gap-x-2 gap-y-2 mb-4">
-                          {glossaryHighlights.map((term) => (
-                            <Link
-                              key={term.path}
-                              to={term.path}
-                              onClick={() => setIsLearnOpen(false)}
-                              className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors truncate"
-                            >
-                              <term.icon className="w-3 h-3 shrink-0 text-gold" />
-                              {term.name}
-                            </Link>
-                          ))}
+                        <div>
+                          <p className="text-lg font-bold text-foreground mb-1">SEO Glossary</p>
+                          <p className="text-sm text-muted-foreground leading-relaxed">50+ terms explained in plain English. No jargon, no fluff — just clarity.</p>
                         </div>
-                        <Link to="/glossary" onClick={() => setIsLearnOpen(false)} className="text-xs font-semibold text-gold flex items-center gap-1 hover:gap-2 transition-all">
-                          Browse all terms <ArrowRight className="w-3 h-3" />
-                        </Link>
-                      </div>
+                        <span className="text-sm font-semibold text-gold flex items-center gap-1.5 group-hover:gap-3 transition-all mt-auto">
+                          Browse all terms <ArrowRight className="w-4 h-4" />
+                        </span>
+                      </Link>
 
                       {/* Questions */}
-                      <div className="p-6 hover:bg-muted/40 transition-colors">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="w-9 h-9 rounded-xl bg-navy flex items-center justify-center shrink-0">
-                            <HelpCircle className="w-4 h-4 text-primary-foreground" />
-                          </div>
-                          <div>
-                            <p className="font-bold text-foreground text-sm">SEO Questions</p>
-                            <p className="text-xs text-muted-foreground">50+ expert answers</p>
-                          </div>
+                      <Link
+                        to="/questions"
+                        onClick={() => setIsLearnOpen(false)}
+                        className="group text-left p-8 hover:bg-muted/40 transition-colors flex flex-col gap-5"
+                      >
+                        <div className="w-12 h-12 rounded-2xl bg-navy flex items-center justify-center group-hover:scale-110 transition-transform">
+                          <HelpCircle className="w-6 h-6 text-primary-foreground" />
                         </div>
-                        <div className="space-y-2 mb-4">
-                          {["How long does SEO take?", "How much does SEO cost?", "SEO vs. PPC — which wins?", "Rank in Google Maps?"].map((q) => (
-                            <p key={q} className="text-xs text-muted-foreground flex items-start gap-2">
-                              <span className="font-bold text-primary shrink-0">Q</span>{q}
-                            </p>
-                          ))}
+                        <div>
+                          <p className="text-lg font-bold text-foreground mb-1">SEO Questions</p>
+                          <p className="text-sm text-muted-foreground leading-relaxed">50+ straight answers to the questions your customers are already Googling.</p>
                         </div>
-                        <Link to="/questions" onClick={() => setIsLearnOpen(false)} className="text-xs font-semibold text-primary flex items-center gap-1 hover:gap-2 transition-all">
-                          See all answers <ArrowRight className="w-3 h-3" />
-                        </Link>
-                      </div>
+                        <span className="text-sm font-semibold text-navy flex items-center gap-1.5 group-hover:gap-3 transition-all mt-auto">
+                          See all answers <ArrowRight className="w-4 h-4" />
+                        </span>
+                      </Link>
                     </div>
 
                     {/* Authority Guides strip */}
-                    <div className="border-t border-border bg-muted/30 px-6 py-4">
-                      <div className="flex items-center gap-2 mb-3">
-                        <TrendingUp className="w-3.5 h-3.5 text-primary" />
+                    <div className="border-t border-border bg-muted/30 px-8 py-5">
+                      <div className="flex items-center gap-2 mb-4">
+                        <TrendingUp className="w-4 h-4 text-primary" />
                         <span className="text-xs font-bold text-foreground uppercase tracking-widest">Authority Guides</span>
+                        <span className="text-xs text-muted-foreground">— deep dives on specific topics</span>
                       </div>
-                      <div className="grid grid-cols-5 gap-1">
+                      <div className="grid grid-cols-5 gap-2">
                         {authorityGuides.map((guide) => (
                           <Link
                             key={guide.path}
                             to={guide.path}
                             onClick={() => setIsLearnOpen(false)}
-                            className="text-xs text-muted-foreground hover:text-foreground transition-colors py-1.5 px-2 rounded-lg hover:bg-muted flex items-center gap-1.5"
+                            className="text-xs text-muted-foreground hover:text-foreground transition-colors py-2 px-3 rounded-xl hover:bg-muted flex items-start gap-1.5"
                           >
-                            <ArrowRight className="w-3 h-3 shrink-0 text-primary" />
+                            <ArrowRight className="w-3 h-3 shrink-0 text-primary mt-0.5" />
                             {guide.name}
                           </Link>
                         ))}
