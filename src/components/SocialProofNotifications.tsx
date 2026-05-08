@@ -24,7 +24,6 @@ const SocialProofNotifications = () => {
     name: string;
     city: string;
     action: string;
-    timeAgo: string;
   } | null>(null);
   const [viewerCount, setViewerCount] = useState(0);
 
@@ -50,9 +49,8 @@ const SocialProofNotifications = () => {
       const randomName = names[Math.floor(Math.random() * names.length)];
       const randomCity = cities[Math.floor(Math.random() * cities.length)];
       const randomAction = actions[Math.floor(Math.random() * actions.length)];
-      const timeAgo = `${Math.floor(Math.random() * 5) + 1} minutes ago`;
 
-      setNotification({ name: randomName, city: randomCity, action: randomAction, timeAgo });
+      setNotification({ name: randomName, city: randomCity, action: randomAction });
 
       // Hide after 5 seconds
       setTimeout(() => setNotification(null), 5000);
@@ -110,7 +108,7 @@ const SocialProofNotifications = () => {
                 <div className="flex items-center gap-2 mt-1">
                   <MapPin className="w-3 h-3 text-muted-foreground" />
                   <span className="text-xs text-muted-foreground">
-                    {notification.city} • {notification.timeAgo}
+                    {notification.city}
                   </span>
                 </div>
               </div>
