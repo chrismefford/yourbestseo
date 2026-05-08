@@ -24,7 +24,6 @@ const SocialProofNotifications = () => {
     name: string;
     city: string;
     action: string;
-    timeAgo: string;
   } | null>(null);
   const [viewerCount, setViewerCount] = useState(0);
 
