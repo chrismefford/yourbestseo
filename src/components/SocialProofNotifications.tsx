@@ -49,9 +49,8 @@ const SocialProofNotifications = () => {
       const randomName = names[Math.floor(Math.random() * names.length)];
       const randomCity = cities[Math.floor(Math.random() * cities.length)];
       const randomAction = actions[Math.floor(Math.random() * actions.length)];
-      const timeAgo = `${Math.floor(Math.random() * 5) + 1} minutes ago`;
 
-      setNotification({ name: randomName, city: randomCity, action: randomAction, timeAgo });
+      setNotification({ name: randomName, city: randomCity, action: randomAction });
 
       // Hide after 5 seconds
       setTimeout(() => setNotification(null), 5000);
