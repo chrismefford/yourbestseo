@@ -21,7 +21,7 @@ const QUICK_ACTIONS = [
   "Tell me about your services",
   "How much does SEO cost?",
   "How long until I see results?",
-  "I want a free audit",
+  "I want to check my AI awareness",
 ];
 
 const AIChatbot = () => {
