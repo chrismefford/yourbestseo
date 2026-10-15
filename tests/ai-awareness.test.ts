@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { awarenessQuestions, buildReviewMessage, getAwarenessResult } from "./ai-awareness";
+import { awarenessQuestions, buildReviewMessage, getAwarenessResult } from "../src/lib/ai-awareness";
 
 describe("AI awareness quiz", () => {
   test("covers discovery, prompts, and customer topics", () => {
