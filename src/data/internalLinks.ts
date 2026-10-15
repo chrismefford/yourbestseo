@@ -293,7 +293,7 @@ export const footerNavigation = {
     { name: "Pricing", path: "/pricing" },
     { name: "Case Studies", path: "/case-studies" },
     { name: "FAQ", path: "/faq" },
-    { name: "Free SEO Audit", path: "/free-audit" },
+    { name: "AI Awareness Checker", path: "/free-audit" },
     { name: "Contact", path: "/#contact" },
   ],
 };

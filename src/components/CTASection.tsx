@@ -32,13 +32,13 @@ const CTASection = () => {
             Be the Business AI Recommends
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-10">
-            Your customers are asking ChatGPT and Google Maps who to call. Let's find out what they're hearing about you, for free.
+            Do you know how customers find businesses through AI? Check your awareness of ChatGPT, prompts, and customer questions—then request a personalized business review.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <Button variant="hero" size="xl" className="gap-2" asChild>
-              <a href="/#contact">
-                Get Your Free SEO Audit
+              <a href="/free-audit">
+                Check My AI Awareness
                 <ArrowRight className="w-5 h-5" />
               </a>
             </Button>

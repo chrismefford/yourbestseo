@@ -245,7 +245,7 @@ const ROICalculator = () => {
                       asChild
                     >
                       <Link to="/free-audit">
-                        Get Your Free SEO Audit
+                        Check My AI Awareness
                         <ArrowRight className="w-4 h-4" />
                       </Link>
                     </Button>

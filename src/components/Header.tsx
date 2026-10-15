@@ -81,7 +81,8 @@ const Header = () => {
   };
 
   const handleShowOffer = () => {
-    window.dispatchEvent(new Event("urgencyBanner:show"));
+    setIsMenuOpen(false);
+    navigate("/free-audit");
   };
 
   return (
@@ -279,7 +280,7 @@ const Header = () => {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-2">
             <Button variant="ghost" size="sm" onClick={handleShowOffer}>
-              Show offer
+              AI Checker
             </Button>
             <Button variant="hero" size="default" className="gap-2" asChild>
               <a href="tel:+16157726641">
@@ -311,7 +312,7 @@ const Header = () => {
           >
             <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
               <Button variant="ghost" size="lg" className="w-full" onClick={handleShowOffer}>
-                Show offer
+                AI Checker
               </Button>
 
               {/* Services Section */}

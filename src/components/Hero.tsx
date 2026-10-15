@@ -41,8 +41,8 @@ const Hero = () => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="hero" size="xl" className="gap-2" asChild>
-                <a href="/#contact">
-                  Get My Free AI Visibility Check
+                <a href="/free-audit">
+                  Check My AI Awareness
                   <ArrowRight className="w-5 h-5" />
                 </a>
               </Button>

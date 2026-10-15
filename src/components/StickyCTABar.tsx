@@ -58,11 +58,11 @@ const StickyCTABar = () => {
                   </div>
                   <div className="min-w-0">
                     <p className="text-primary-foreground font-medium text-sm sm:text-base truncate">
-                      <span className="hidden sm:inline">Ready to dominate search? </span>
-                      Get your free SEO audit today!
+                      <span className="hidden sm:inline">Would AI recommend you? </span>
+                      Check your AI awareness.
                     </p>
                     <p className="text-primary-foreground/70 text-xs hidden md:block">
-                      Discover exactly what's holding back your rankings
+                      ChatGPT, prompts, and the questions your customers ask
                     </p>
                   </div>
                 </div>
@@ -76,7 +76,7 @@ const StickyCTABar = () => {
                     asChild
                   >
                     <Link to="/free-audit">
-                      Free Audit
+                      AI Checker
                       <span className="hidden sm:inline">→</span>
                     </Link>
                   </Button>
