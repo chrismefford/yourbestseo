@@ -1,6 +1,6 @@
 # Your Best SEO
 
-> Expert SEO services for small businesses. We help local businesses rank higher on Google and attract more customers.
+> Local SEO and AI search specialists. We help local businesses get found on Google Maps and recommended by ChatGPT, Perplexity, and Claude.
 
 ## About
 
@@ -8,6 +8,7 @@ Your Best SEO is a San Diego-based SEO agency specializing in local SEO, technic
 
 ## Services
 
+- AI Search Visibility (ChatGPT, Perplexity, Claude, Google AI Overviews)
 - Local SEO & Google Business Profile Optimization
 - Technical SEO Audits & Implementation
 - Keyword Research & Strategy

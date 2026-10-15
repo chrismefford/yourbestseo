@@ -22,29 +22,27 @@ const Hero = () => {
             className="max-w-2xl"
           >
             <span className="badge-outline inline-block mb-6">
-              SEO That's Out of This World
+              Local SEO + AI Search Specialists
             </span>
 
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] mb-6">
-              Your
+              Get Found on
               <br />
-              <span className="text-gradient-gold">Outsourced</span>
+              <span className="text-gradient-gold">ChatGPT</span>
               <br />
-              SEO
-              <br />
-              Department
+              &amp; Google Maps
             </h1>
 
             <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8">
-              An SEO partner that shows you everything we do, delivers
+              When customers ask ChatGPT, Perplexity, Claude, or Google
               <br className="hidden sm:block" />
-              {" "}results fast, and costs 90% less—no excuses, no BS.
+              {" "}for the best business near them, we make sure it's you.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="hero" size="xl" className="gap-2" asChild>
                 <a href="/#contact">
-                  Let's Get Started
+                  Get My Free AI Visibility Check
                   <ArrowRight className="w-5 h-5" />
                 </a>
               </Button>

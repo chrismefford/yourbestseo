@@ -4,21 +4,21 @@ import { Search, Target, Handshake } from "lucide-react";
 const objectives = [
   {
     icon: Search,
-    title: "Total Transparency",
+    title: "Show Up in AI Answers",
     description:
-      "Plain-English reports, and zero jargon. You'll know exactly what we're doing, why we're doing it, and how it impacts your bottom line—no black box, no surprises.",
+      "Customers now ask ChatGPT, Perplexity, and Claude who to call. We shape how AI tools describe and recommend your business, so you're the name they hear.",
   },
   {
     icon: Target,
-    title: "No Overpromising & Underdelivering",
+    title: "Own the Google Map",
     description:
-      "Tired of agencies charging $500 per blog post or treating backlinks like luxury upgrades? We bundle everything you need and focus on one thing: getting you visible on page one.",
+      "Your Google Business Profile, reviews, and local listings tuned so you land in the top 3 on Google Maps when neighbors search for what you do.",
   },
   {
     icon: Handshake,
-    title: "No Lock-Ins, No Hidden Fees",
+    title: "Plain English, No Lock-Ins",
     description:
-      "Month-to-month agreements, transparent pricing, and all essential services included. Cancel anytime. We earn your business every month by delivering—not by trapping you in a contract.",
+      "Month-to-month, transparent pricing, and simple reports that show calls, visits, and AI mentions. We earn your business every month.",
   },
 ];
 
@@ -52,7 +52,7 @@ const MissionObjectives = () => {
           className="text-center mb-16"
         >
           <span className="text-sm font-medium text-muted-foreground tracking-widest uppercase mb-4 block">
-            This is for agencies that want to expand services without hiring anyone
+            Built for local business owners who want more calls, not more jargon
           </span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold">
             Mission Objectives

@@ -281,7 +281,7 @@ export const footerNavigation = {
     { name: "Oregon SEO", path: "/states/oregon-seo" },
   ],
   learn: [
-    { name: "SEO Blog", path: "/blog" },
+    { name: "Get Found by AI", path: "/authority/ai-search-seo" },
     { name: "SEO Glossary", path: "/glossary" },
     { name: "SEO Questions", path: "/questions" },
     { name: "What is SEO?", path: "/questions/what-is-seo" },

@@ -83,7 +83,7 @@ const MissionReports = () => {
           className="text-center mb-16"
         >
           <span className="text-sm font-medium text-muted-foreground tracking-widest uppercase mb-4 block">
-            Real outcomes from agency partnerships
+            Real results we've delivered
           </span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold">
             Mission Reports

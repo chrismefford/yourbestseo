@@ -36,23 +36,6 @@ const testimonials = [
       },
     ],
   },
-  {
-    category: "White-Label Partnership",
-    items: [
-      {
-        quote: "Our clients think we have a 10-person SEO team",
-        text: "We're a 6-person shop. We couldn't afford to hire SEO specialists, but now we don't need to. YourBestSeo.com shows up to client calls as our team, uses our branding, and makes us look like heroes. It's seamless.",
-        author: "Lisa R.",
-        role: "Creative Agency Owner",
-      },
-      {
-        quote: "Added $200K in revenue without hiring anyone",
-        text: "We now have 8 clients on SEO retainers—all white-labeled through YourBestSeo.com. That's $15K/month in client billing, $5,400 to them, nearly $10K pure profit. We literally printed money by saying 'yes' instead of 'we don't do SEO.'",
-        author: "Tom S.",
-        role: "Agency Principal",
-      },
-    ],
-  },
 ];
 
 const Testimonials = () => {
@@ -67,13 +50,13 @@ const Testimonials = () => {
           className="text-center mb-16"
         >
           <span className="text-sm font-medium text-muted-foreground tracking-widest uppercase mb-4 block">
-            What Partners Value Most
+            What Clients Value Most
           </span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold">
-            "They run like our dream SEO department"
+            "They actually move the needle"
           </h2>
           <p className="text-muted-foreground mt-4">
-            Every quote below comes from agencies powered by YourBestSeo.com.
+            Real words from people we work with.
           </p>
         </motion.div>
 

@@ -46,8 +46,7 @@ const Header = () => {
     { name: "Technical SEO Audit", path: "/authority/technical-seo-audit" },
     { name: "Local SEO Services", path: "/authority/local-seo-services" },
     { name: "SEO vs Google Ads", path: "/authority/seo-vs-google-ads" },
-    { name: "White Label SEO", path: "/authority/white-label-seo" },
-    { name: "SEO for Dentists", path: "/authority/seo-for-dentists" },
+        { name: "SEO for Dentists", path: "/authority/seo-for-dentists" },
     { name: "Ecommerce SEO", path: "/authority/ecommerce-seo" },
     { name: "SEO for Service Businesses", path: "/authority/seo-for-service-businesses" },
   ];
@@ -174,22 +173,23 @@ const Header = () => {
                     {/* 3 big hero cards */}
                     <div className="grid grid-cols-3 divide-x divide-border">
 
-                      {/* Blog */}
-                      <button
-                        onClick={() => { setIsLearnOpen(false); navigate('/blog'); window.scrollTo(0, 0); }}
+                      {/* AI Search */}
+                      <Link
+                        to="/authority/ai-search-seo"
+                        onClick={() => setIsLearnOpen(false)}
                         className="group text-left p-8 hover:bg-muted/40 transition-colors flex flex-col gap-5"
                       >
                         <div className="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center group-hover:scale-110 transition-transform">
                           <PenLine className="w-6 h-6 text-primary-foreground" />
                         </div>
                         <div>
-                          <p className="text-lg font-bold text-foreground mb-1">SEO Blog</p>
-                          <p className="text-sm text-muted-foreground leading-relaxed">Real strategies, client wins, and algorithm updates from working SEOs.</p>
+                          <p className="text-lg font-bold text-foreground mb-1">Get Found by AI</p>
+                          <p className="text-sm text-muted-foreground leading-relaxed">How to show up when customers ask ChatGPT, Perplexity, and Claude.</p>
                         </div>
                         <span className="text-sm font-semibold text-primary flex items-center gap-1.5 group-hover:gap-3 transition-all mt-auto">
-                          Read the blog <ArrowRight className="w-4 h-4" />
+                          Read the guide <ArrowRight className="w-4 h-4" />
                         </span>
-                      </button>
+                      </Link>
 
                       {/* Glossary */}
                       <Link
@@ -343,19 +343,16 @@ const Header = () => {
               <div className="py-2">
                 <p className="text-sm font-medium text-primary mb-3 tracking-widest uppercase">Learn SEO</p>
                 <div className="grid grid-cols-1 gap-2">
-                  <button
-                    onClick={() => {
-                      setIsMenuOpen(false);
-                      navigate('/blog');
-                      window.scrollTo(0, 0);
-                    }}
+                  <Link
+                    to="/authority/ai-search-seo"
+                    onClick={() => setIsMenuOpen(false)}
                     className="flex items-center gap-3 text-foreground py-2 w-full text-left"
                   >
                     <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center">
                       <PenLine className="w-4 h-4 text-primary-foreground" />
                     </div>
-                    <span className="font-medium">SEO Blog</span>
-                  </button>
+                    <span className="font-medium">Get Found by AI</span>
+                  </Link>
                   <Link
                     to="/glossary"
                     onClick={() => setIsMenuOpen(false)}

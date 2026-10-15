@@ -14,7 +14,7 @@ const Footer = () => {
               YOUR BEST SEO
             </Link>
             <p className="text-sm text-muted-foreground mb-4 max-w-xs">
-              Award-winning white-label SEO agency delivering enterprise-quality results at 90% cost savings.
+              Award-winning local SEO and AI search specialists helping local businesses get found on ChatGPT, Perplexity, Claude, and Google Maps.
             </p>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <MapPin className="w-4 h-4 flex-shrink-0" />
