@@ -20,7 +20,6 @@ const ROICalculator = lazy(() => import("@/components/ROICalculator"));
 // Lazy load non-critical conversion components that use browser APIs
 const ExitIntentPopup = lazy(() => import("@/components/ExitIntentPopup"));
 const StickyCTABar = lazy(() => import("@/components/StickyCTABar"));
-const SocialProofNotifications = lazy(() => import("@/components/SocialProofNotifications"));
 const AIChatbot = lazy(() => import("@/components/AIChatbot"));
 
 const Index = () => {
@@ -91,7 +90,6 @@ const Index = () => {
       <ClientOnly>
         {() => showDeferredComponents && (
           <Suspense fallback={null}>
-            <SocialProofNotifications />
             <ExitIntentPopup />
             <StickyCTABar />
             <AIChatbot />
