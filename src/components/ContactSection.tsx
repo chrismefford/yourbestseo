@@ -80,13 +80,13 @@ const ContactSection = () => {
           className="text-center mb-16"
         >
           <span className="text-sm font-medium text-muted-foreground tracking-widest uppercase mb-4 block">
-            Support Desk
+            Your next step
           </span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            Talk directly with the partner desk.
+            Get clarity on your AI visibility.
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            We answer within one business day. Send the brief, the prospect intel, or the client fire drill. We'll come back with coverage recommendations, margins, and a proposed rollout so you can move quickly with confidence.
+            Start with the free AI Awareness Checker, then request a personalized look at your business. Or contact us directly about getting found on ChatGPT, Perplexity, Claude, and Google Maps.
           </p>
         </motion.div>
 
@@ -107,7 +107,7 @@ const ContactSection = () => {
             <h3 className="font-display text-lg font-bold mb-2">Email</h3>
             <p className="text-primary font-medium mb-2">chris@yourbestseo.com</p>
             <p className="text-sm text-muted-foreground">
-              For detailed briefs + attachments
+              For business questions + attachments
             </p>
           </a>
 
@@ -131,10 +131,11 @@ const ContactSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-center mt-12"
+          className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-12"
         >
+          <Button variant="hero" size="xl" asChild><a href="/free-audit">Check My AI Awareness<ArrowRight className="w-5 h-5 ml-2" /></a></Button>
           <Button
-            variant="hero"
+            variant="outline"
             size="xl"
             className="gap-2"
             onClick={() => setIsOpen(true)}
