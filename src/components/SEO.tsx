@@ -21,7 +21,7 @@ const organizationSchema = {
   name: "Your Best SEO",
   url: SITE_URL,
   logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.png`, width: 200, height: 60 },
-  description: "Award-winning white-label SEO agency delivering AI-powered SEO services for agencies.",
+  description: "Local SEO and AI search specialists. We get local businesses found on ChatGPT, Perplexity, Claude, and Google Maps.",
   foundingDate: "2010",
   sameAs: ["https://twitter.com/YourBestSEO", "https://www.linkedin.com/company/yourbestseo"],
   contactPoint: { "@type": "ContactPoint", telephone: "+1-615-772-6641", contactType: "sales", email: "chris@yourbestseo.com", availableLanguage: ["English"] },
@@ -38,7 +38,7 @@ const websiteSchema = {
 };
 
 export const SEO = ({ title, description = "An SEO partner that shows you everything we do, delivers results fast, and costs 90% less.", canonical, type = "website", image = DEFAULT_IMAGE, noIndex = false, schema }: SEOProps) => {
-  const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} | Outsourced SEO Department for Agencies`;
+  const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} | Local SEO & AI Search Specialists`;
   const canonicalUrl = canonical ? `${SITE_URL}${canonical}` : SITE_URL;
   const schemaArray: object[] = [{ "@context": "https://schema.org", ...organizationSchema }, { "@context": "https://schema.org", ...websiteSchema }];
   if (schema) { if (Array.isArray(schema)) { schema.forEach((s) => schemaArray.push({ "@context": "https://schema.org", ...s })); } else { schemaArray.push({ "@context": "https://schema.org", ...schema }); } }

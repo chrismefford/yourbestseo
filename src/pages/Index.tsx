@@ -47,16 +47,16 @@ const Index = () => {
   }, []);
 
   const pageSchema = generateWebPageSchema({
-    name: "Your Best SEO - Outsourced SEO Department for Agencies",
-    description: "Award-winning white-label SEO agency delivering AI-powered SEO services. 90% cost savings with enterprise-quality results.",
+    name: "Your Best SEO - Local SEO & AI Search Specialists",
+    description: "We help local businesses get found on ChatGPT, Perplexity, Claude, and Google Maps.",
     url: "/",
   });
   
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Outsourced SEO Department for Agencies"
-        description="Award-winning white-label SEO agency. An SEO partner that shows you everything we do, delivers results fast, and costs 90% less—no excuses, no BS."
+        title="Get Found on ChatGPT & Google Maps"
+        description="Local SEO and AI search specialists. We get local businesses recommended by ChatGPT, Perplexity, Claude, and Google Maps."
         canonical="/"
         schema={pageSchema}
       />

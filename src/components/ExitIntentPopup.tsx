@@ -134,7 +134,7 @@ const ExitIntentPopup = () => {
                     Wait! Don't Leave Empty-Handed
                   </h2>
                   <p className="text-muted-foreground">
-                    Get our <span className="text-primary font-semibold">FREE 50-Point SEO Checklist</span> that helped 500+ agencies boost client rankings by 3x.
+                    Get our <span className="text-primary font-semibold">FREE 50-Point SEO Checklist</span> that helps local businesses show up on Google Maps and in AI answers.
                   </p>
                 </div>
 

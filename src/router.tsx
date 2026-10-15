@@ -7,7 +7,6 @@ import RootLayout from "./layouts/RootLayout";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
-import Blog from "./pages/Blog";
 import Services from "./pages/Services";
 import Pricing from "./pages/Pricing";
 import PaymentSuccess from "./pages/PaymentSuccess";
@@ -256,7 +255,6 @@ export const routes: RouteRecord[] = [
     children: [
       // Main pages
       { index: true, element: <Index /> },
-      { path: "blog/*", element: <Blog /> },
       { path: "services", element: <Services /> },
       { path: "pricing", element: <Pricing /> },
       { path: "about", element: <About /> },

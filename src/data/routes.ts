@@ -25,7 +25,6 @@ export const mainRoutes: RouteConfig[] = [
   { path: '/case-studies', priority: 0.8, changefreq: 'monthly' },
   { path: '/faq', priority: 0.7, changefreq: 'monthly' },
   { path: '/free-audit', priority: 0.9, changefreq: 'monthly' },
-  { path: '/blog', priority: 0.8, changefreq: 'daily' },
   { path: '/glossary', priority: 0.8, changefreq: 'weekly' },
   { path: '/questions', priority: 0.8, changefreq: 'weekly' },
 ];

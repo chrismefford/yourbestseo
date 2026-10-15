@@ -15,13 +15,13 @@ const TrustBadge = () => {
             transition={{ duration: 0.6 }}
           >
             <span className="text-sm font-medium text-muted-foreground tracking-widest uppercase mb-4 block">
-              Why agencies trust us
+              Why local businesses trust us
             </span>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
               Finalist for the 2025 Search Engine Land Awards
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Here's why agencies choose us: we're one of only five SEO teams in the United States recognized by the Search Engine Land Awards. Your clients get elite-level SEO. You get the credit.
+              We're one of only five SEO teams in the United States recognized by the Search Engine Land Awards. You get award-winning SEO at a local business price.
             </p>
           </motion.div>
 

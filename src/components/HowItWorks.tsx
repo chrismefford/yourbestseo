@@ -5,33 +5,33 @@ const steps = [
   {
     number: "01",
     icon: Rocket,
-    title: "Your client asks about SEO",
+    title: "We check what AI says about you",
     description:
-      "You panic internally because your team is maxed out and the last SEO vendor ghosted you for three weeks.",
+      "We ask ChatGPT, Perplexity, Claude, and Google about your business and your competitors, and show you exactly where you're missing.",
     color: "from-amber-500/20 to-amber-500/5",
   },
   {
     number: "02",
     icon: Phone,
-    title: "You call or email us",
+    title: "We fix your foundations",
     description:
-      "We jump on within a few hours, gather the intel we need, and show you a timeline that makes your client think you've had a plan all along.",
+      "Google Business Profile, listings, reviews, and your website get cleaned up so search engines and AI tools trust what they read about you.",
     color: "from-blue-500/20 to-blue-500/5",
   },
   {
     number: "03",
     icon: Zap,
-    title: "We move fast, you look brilliant",
+    title: "We build your AI reputation",
     description:
-      "While other agencies are still 'analyzing the competitive landscape' in week 3, we've already published 10 optimized pages and fixed 47 technical issues. Your client thinks you're a magician.",
+      "We publish clear answers about your services and get you mentioned on the local sites and directories AI tools pull from.",
     color: "from-emerald-500/20 to-emerald-500/5",
   },
   {
     number: "04",
     icon: DollarSign,
-    title: "You mark up our work, everyone wins",
+    title: "Your phone rings more",
     description:
-      "We charge $1,800. You charge $5K. Your client gets results faster than they've ever seen. You make $3,200 doing absolutely nothing. We all sleep well at night.",
+      "You show up in the Map Pack and in AI recommendations. We report back every month on calls, direction requests, and AI mentions.",
     color: "from-primary/20 to-primary/5",
   },
 ];
@@ -54,7 +54,7 @@ const HowItWorks = () => {
           className="text-center mb-16"
         >
           <span className="text-sm font-medium text-muted-foreground tracking-widest uppercase mb-4 block">
-            Agency in front. Us in the backend. Client never knows.
+            From invisible to recommended
           </span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold">
             How It Works, In Plain English

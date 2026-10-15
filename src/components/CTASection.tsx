@@ -26,13 +26,13 @@ const CTASection = () => {
           className="text-center max-w-3xl mx-auto"
         >
           <span className="text-sm font-medium text-muted-foreground tracking-widest uppercase mb-4 block">
-            Launch Your SEO Offerings to Another Orbit
+            Search has changed. Has your business?
           </span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-            Stop Turning Down SEO Work
+            Be the Business AI Recommends
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-10">
-            Your clients are asking for SEO. Your competitors are saying yes. Call us and we'll show you exactly how to add $100K+ in annual profit without hiring a single person.
+            Your customers are asking ChatGPT and Google Maps who to call. Let's find out what they're hearing about you, for free.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">

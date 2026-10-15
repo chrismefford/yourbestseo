@@ -5,11 +5,8 @@
       "has": [{ "type": "host", "value": "www.yourbestseo.com" }],
       "destination": "https://yourbestseo.com/:path*",
       "statusCode": 301
-    }
-  ],
-  "rewrites": [
-    { "source": "/blog/category/(.*)", "destination": "/blog/index.html" },
-    { "source": "/blog/author/(.*)", "destination": "/blog/index.html" },
-    { "source": "/blog/page/(.*)", "destination": "/blog/index.html" }
+    },
+    { "source": "/blog", "destination": "/", "statusCode": 301 },
+    { "source": "/blog/:path*", "destination": "/", "statusCode": 301 }
   ]
 }
