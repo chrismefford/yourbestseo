@@ -96,11 +96,11 @@ const Header = () => {
               <AnimatePresence>
                 {isLearnOpen && (
                   <motion.div
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 12 }}
+                    initial={{ opacity: 0, y: 12, x: "-50%" }}
+                    animate={{ opacity: 1, y: 0, x: "-50%" }}
+                    exit={{ opacity: 0, y: 12, x: "-50%" }}
                     transition={{ duration: 0.18, ease: "easeOut" }}
-                    className="learn-panel fixed left-1/2 -translate-x-1/2 top-[80px] w-[min(820px,calc(100vw-32px))] bg-card border border-border rounded-2xl shadow-2xl z-[200] overflow-hidden"
+                    className="learn-panel fixed left-1/2 top-[80px] w-[min(820px,calc(100vw-32px))] bg-card border border-border rounded-2xl shadow-2xl z-[200] overflow-hidden"
                   >
                     {/* 3 big hero cards */}
                     <div className="grid grid-cols-3 divide-x divide-border">
