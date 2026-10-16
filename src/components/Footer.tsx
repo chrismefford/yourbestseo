@@ -14,7 +14,7 @@ const Footer = () => {
               YOUR BEST SEO
             </Link>
             <p className="text-sm text-muted-foreground mb-4 max-w-xs">
-              Award-winning local SEO and AI search specialists helping local businesses get found on ChatGPT, Perplexity, Claude, and Google Maps.
+              Helping local businesses build awareness, climb Google and Maps results, and turn discovery into appointments—including discovery through ChatGPT, Perplexity, and Claude.
             </p>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <MapPin className="w-4 h-4 flex-shrink-0" />
@@ -22,11 +22,11 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Services Column */}
+          {/* Business Growth Column */}
           <div>
-            <h3 className="font-display font-semibold text-sm uppercase tracking-wider mb-4">Services</h3>
+            <h3 className="font-display font-semibold text-sm uppercase tracking-wider mb-4">Your Growth</h3>
             <ul className="space-y-2">
-              {footerNavigation.services.map((link) => (
+              {footerNavigation.growth.map((link) => (
                 <li key={link.path}>
                   <Link 
                     to={link.path} 

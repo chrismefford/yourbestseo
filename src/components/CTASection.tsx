@@ -29,7 +29,7 @@ const CTASection = () => {
             Search has changed. Has your business?
           </span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-            Be the Business AI Recommends
+            Your Next Appointment Starts With Being Found
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-10">
             Do you know how customers find businesses through AI? Check your awareness of ChatGPT, prompts, and customer questions—then request a personalized business review.
@@ -43,7 +43,7 @@ const CTASection = () => {
               </a>
             </Button>
             <Button variant="heroOutline" size="xl" asChild>
-              <a href="/pricing">View Pricing</a>
+              <a href="/#contact">Let’s Talk Growth</a>
             </Button>
           </div>
 

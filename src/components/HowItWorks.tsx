@@ -29,9 +29,9 @@ const steps = [
   {
     number: "04",
     icon: DollarSign,
-    title: "Your phone rings more",
+    title: "Turn discovery into bookings",
     description:
-      "You show up in the Map Pack and in AI recommendations. We report back every month on calls, direction requests, and AI mentions.",
+      "Make it easy for interested customers to call or request an appointment. Track inquiries alongside search rankings and AI mentions to see what is moving your business forward.",
     color: "from-primary/20 to-primary/5",
   },
 ];
@@ -54,10 +54,10 @@ const HowItWorks = () => {
           className="text-center mb-16"
         >
           <span className="text-sm font-medium text-muted-foreground tracking-widest uppercase mb-4 block">
-            From invisible to recommended
+            From awareness to appointments
           </span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold">
-            How It Works, In Plain English
+            Get Found. Build Trust. Get Booked.
           </h2>
         </motion.div>
 
