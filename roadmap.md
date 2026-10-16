@@ -1,6 +1,6 @@
 # AI awareness giveaway
-- [ ] Replace service catalog navigation and homepage messaging with awareness, appointments, and search rankings.
-- [ ] Verify updated navigation and outcome-focused pages in the preview.
+- [x] Replace service catalog navigation and homepage messaging with awareness, appointments, and search rankings.
+- [x] Verify updated navigation and outcome-focused pages in the preview.
 - [x] Build awareness quiz, score, and optional business review request.
 - [x] Replace main giveaway entry points and exit popup offer.
 - [x] Verify quiz, popup, mobile form, and focused scoring/lead tests.
