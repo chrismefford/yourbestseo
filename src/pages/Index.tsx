@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 import MissionObjectives from "@/components/MissionObjectives";
 import HowItWorks from "@/components/HowItWorks";
 import TrustBadge from "@/components/TrustBadge";
+import ImageStrip from "@/components/ImageStrip";
 import CTASection from "@/components/CTASection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -62,6 +63,7 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
+        <ImageStrip />
         <MissionObjectives />
         <HowItWorks />
         <TrustBadge />
