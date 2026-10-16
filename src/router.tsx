@@ -14,6 +14,7 @@ import About from "./pages/About";
 import CaseStudies from "./pages/CaseStudies";
 import FAQ from "./pages/FAQ";
 import FreeAudit from "./pages/FreeAudit";
+import Book from "./pages/Book";
 
 // San Diego neighborhood pages
 import DowntownSanDiegoSEO from "./pages/san-diego/DowntownSanDiegoSEO";
@@ -261,6 +262,7 @@ export const routes: RouteRecord[] = [
       { path: "case-studies", element: <CaseStudies /> },
       { path: "faq", element: <FAQ /> },
       { path: "free-audit", element: <FreeAudit /> },
+      { path: "book", element: <Book /> },
       { path: "payment-success", element: <PaymentSuccess /> },
       
       // À La Carte Service pages
