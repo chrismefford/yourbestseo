@@ -66,8 +66,8 @@ export default function AIAwarenessChecker() {
       <p className="text-muted-foreground mb-8">Tell us how to reach you to unlock your results and your free Google Business review.</p>
       <form onSubmit={capture} className="space-y-5">
         <div className="grid sm:grid-cols-2 gap-5">{([
-          ["name", "Your name", "text", true], ["phone", "Phone number", "tel", true], ["email", "Email", "email", true], ["website", "Website", "url", true],
-        ] as const).map(([k, label, type, required]) => <div key={k} className="space-y-2"><Label htmlFor={`lead-${k}`}>{label}{required ? " *" : ""}</Label><Input id={`lead-${k}`} type={type} required={required} maxLength={250} value={details[k]} disabled={sending} placeholder={k === "website" ? "https://yourbusiness.com" : undefined} onChange={e => setDetails(p => ({ ...p, [k]: e.target.value }))} /></div>)}</div>
+          ["name", "Your name", "text", true], ["phone", "Phone number", "tel", true], ["email", "Email", "email", true], ["website", "Website", "text", true],
+        ] as const).map(([k, label, type, required]) => <div key={k} className="space-y-2"><Label htmlFor={`lead-${k}`}>{label}{required ? " *" : ""}</Label><Input id={`lead-${k}`} type={type} inputMode={k === "website" ? "url" : undefined} required={required} maxLength={250} value={details[k]} disabled={sending} placeholder={k === "website" ? "yourbusiness.com" : undefined} onChange={e => setDetails(p => ({ ...p, [k]: e.target.value }))} /></div>)}</div>
         {error && <p role="alert" className="text-destructive">{error}</p>}
         <div className="flex flex-col-reverse sm:flex-row justify-between gap-3">
           <Button type="button" variant="ghost" onClick={() => setStage("quiz")}><ArrowLeft className="w-4 h-4 mr-2" />Back</Button>

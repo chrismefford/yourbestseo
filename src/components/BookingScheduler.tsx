@@ -63,7 +63,7 @@ export default function BookingScheduler({ contact: given, leadId, score, answer
 
   return <form onSubmit={book} className="space-y-6" aria-label="Book a meeting">
     {!given && <div className="grid sm:grid-cols-2 gap-4">{([
-      ["name", "Your name", "text"], ["phone", "Phone", "tel"], ["email", "Email", "email"], ["website", "Website", "url"],
+      ["name", "Your name", "text"], ["phone", "Phone", "tel"], ["email", "Email", "email"], ["website", "Website", "text"],
     ] as const).map(([k, label, type]) => <div key={k} className="space-y-2"><Label htmlFor={`book-${k}`}>{label} *</Label><Input id={`book-${k}`} type={type} required maxLength={250} value={contact[k]} onChange={e => setContact(p => ({ ...p, [k]: e.target.value }))} /></div>)}</div>}
 
     <div>
