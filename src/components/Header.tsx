@@ -4,29 +4,14 @@ import { Menu, X, ArrowRight, ChevronDown, PenLine, BookOpen, HelpCircle, Search
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 
-const services = [
-  { name: "SEO Blog Posts", path: "/services/seo-blog-posts", price: "$300" },
-  { name: "Technical SEO", path: "/services/technical-seo", price: "$300" },
-  { name: "Google Business Profile", path: "/services/google-business-profile", price: "$300" },
-  { name: "Keyword Research", path: "/services/keyword-research", price: "$300" },
-  { name: "Competitor Analysis", path: "/services/competitor-analysis", price: "$300" },
-  { name: "White-Hat Backlinks", path: "/services/white-hat-backlinks", price: "$300" },
-  { name: "Local Citations", path: "/services/local-citations", price: "$300" },
-  { name: "Review Management", path: "/services/review-management", price: "$300" },
-  { name: "Schema Markup", path: "/services/schema-markup", price: "$300" },
-  { name: "Ranking Reports", path: "/services/ranking-reports", price: "$300" },
-];
-
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isLearnOpen, setIsLearnOpen] = useState(false);
-  const servicesDropdownRef = useRef<HTMLDivElement>(null);
   const learnDropdownRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
   const navLinks = [
-    { label: "Pricing", href: "/pricing" },
+    { label: "Your Growth", href: "/#growth" },
     { label: "Contact", href: "/#contact" },
   ];
 
@@ -44,7 +29,7 @@ const Header = () => {
     { name: "AI Search Optimization", path: "/authority/ai-search-seo" },
     { name: "Why You're Not Ranking", path: "/authority/why-not-ranking" },
     { name: "Technical SEO Audit", path: "/authority/technical-seo-audit" },
-    { name: "Local SEO Services", path: "/authority/local-seo-services" },
+    { name: "Local Search Rankings", path: "/authority/local-seo-services" },
     { name: "SEO vs Google Ads", path: "/authority/seo-vs-google-ads" },
         { name: "SEO for Dentists", path: "/authority/seo-for-dentists" },
     { name: "Ecommerce SEO", path: "/authority/ecommerce-seo" },
@@ -53,9 +38,6 @@ const Header = () => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target as Node)) {
-        setIsServicesOpen(false);
-      }
       if (learnDropdownRef.current && !learnDropdownRef.current.contains(event.target as Node)) {
         setIsLearnOpen(false);
       }
@@ -76,7 +58,6 @@ const Header = () => {
   };
 
   const closeAllDropdowns = () => {
-    setIsServicesOpen(false);
     setIsLearnOpen(false);
   };
 
@@ -99,69 +80,18 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            {/* Services Dropdown */}
-            <div className="relative" ref={servicesDropdownRef}>
-              <button 
-                onClick={() => {
-                  setIsServicesOpen(!isServicesOpen);
-                  setIsLearnOpen(false);
-                }}
-                className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-              >
-                Services
-                <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
-              </button>
-              <AnimatePresence>
-                {isServicesOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    className="absolute top-full left-0 mt-2 w-72 bg-card border border-border rounded-xl shadow-2xl overflow-hidden z-50"
-                  >
-                    <div className="p-3 border-b border-border bg-secondary/30">
-                      <p className="text-xs font-semibold text-primary tracking-widest uppercase">À La Carte Services</p>
-                    </div>
-                    <div className="py-2 max-h-80 overflow-y-auto">
-                      {services.map((service) => (
-                        <Link
-                          key={service.name}
-                          to={service.path}
-                          onClick={() => setIsServicesOpen(false)}
-                          className="flex items-center justify-between px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary/50 transition-colors"
-                        >
-                          <span>{service.name}</span>
-                          <span className="text-primary font-medium text-xs">{service.price}</span>
-                        </Link>
-                      ))}
-                    </div>
-                    <div className="p-3 border-t border-border bg-secondary/30">
-                      <Link 
-                        to="/services" 
-                        onClick={() => setIsServicesOpen(false)}
-                        className="flex items-center justify-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
-                      >
-                        View Services Hub
-                        <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
             {/* Learn Dropdown */}
             <div className="relative" ref={learnDropdownRef}>
-              <button 
+              <Button variant="ghost" size="sm"
+                aria-expanded={isLearnOpen}
                 onClick={() => {
                   setIsLearnOpen(!isLearnOpen);
-                  setIsServicesOpen(false);
-                }}
+                              }}
                 className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
                 Learn
                 <ChevronDown className={`w-4 h-4 transition-transform ${isLearnOpen ? 'rotate-180' : ''}`} />
-              </button>
+              </Button>
               <AnimatePresence>
                 {isLearnOpen && (
                   <motion.div
@@ -314,31 +244,6 @@ const Header = () => {
               <Button variant="ghost" size="lg" className="w-full" onClick={handleShowOffer}>
                 AI Checker
               </Button>
-
-              {/* Services Section */}
-              <div className="py-2">
-                <p className="text-sm font-medium text-primary mb-3 tracking-widest uppercase">À La Carte Services</p>
-                <div className="grid grid-cols-1 gap-1">
-                  {services.slice(0, 5).map((service) => (
-                    <Link
-                      key={service.name}
-                      to={service.path}
-                      onClick={() => setIsMenuOpen(false)}
-                      className="flex items-center justify-between text-sm text-muted-foreground hover:text-foreground py-1.5"
-                    >
-                      <span>{service.name}</span>
-                      <span className="text-primary text-xs">{service.price}</span>
-                    </Link>
-                  ))}
-                </div>
-                <Link
-                  to="/services"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-sm text-primary font-medium mt-2 inline-block"
-                >
-                  View All Services →
-                </Link>
-              </div>
 
               {/* Learn Section for Mobile */}
               <div className="py-2">

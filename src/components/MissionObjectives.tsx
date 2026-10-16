@@ -1,24 +1,24 @@
 import { motion } from "framer-motion";
-import { Search, Target, Handshake } from "lucide-react";
+import { Search, Target, CalendarCheck } from "lucide-react";
 
 const objectives = [
   {
     icon: Search,
-    title: "Show Up in AI Answers",
+    title: "Build Awareness",
     description:
-      "Customers now ask ChatGPT, Perplexity, and Claude who to call. We shape how AI tools describe and recommend your business, so you're the name they hear.",
+      "Become a familiar name when local customers search or ask ChatGPT, Perplexity, and Claude. Build a clear, trusted presence around what your business does best.",
   },
   {
     icon: Target,
-    title: "Own the Google Map",
+    title: "Climb the Search Results",
     description:
-      "Your Google Business Profile, reviews, and local listings tuned so you land in the top 3 on Google Maps when neighbors search for what you do.",
+      "Compete for top positions on Google and Google Maps for the searches that matter to your business. Focus on customers looking for what you offer, right where you work.",
   },
   {
-    icon: Handshake,
-    title: "Plain English, No Lock-Ins",
+    icon: CalendarCheck,
+    title: "Turn Interest Into Appointments",
     description:
-      "Month-to-month, transparent pricing, and simple reports that show calls, visits, and AI mentions. We earn your business every month.",
+      "Give people a clear reason to choose you and an easy next step to call or book. Measure progress in qualified inquiries and appointments—not just website traffic.",
   },
 ];
 
@@ -39,7 +39,7 @@ const itemVariants = {
 
 const MissionObjectives = () => {
   return (
-    <section className="py-24 lg:py-32 relative" id="services">
+    <section className="py-24 lg:py-32 relative" id="growth">
       {/* Background accent */}
       <div className="absolute inset-0 bg-gradient-to-b from-secondary/20 to-background" />
 
@@ -55,7 +55,7 @@ const MissionObjectives = () => {
             Built for local business owners who want more calls, not more jargon
           </span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold">
-            Mission Objectives
+            More Awareness. More Appointments.
           </h2>
         </motion.div>
 
@@ -70,7 +70,7 @@ const MissionObjectives = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="group p-8 rounded-2xl card-gradient border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-lg hover:shadow-primary/5"
+              className="group p-8 rounded-lg card-gradient border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-lg hover:shadow-primary/5"
             >
               <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
                 <objective.icon className="w-7 h-7 text-primary" />

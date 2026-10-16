@@ -252,18 +252,16 @@ export const glossaryToService: Record<string, string[]> = {
 
 // ============= Navigation Categories =============
 export const footerNavigation = {
-  services: [
-    { name: "All Services", path: "/services" },
-    { name: "Technical SEO", path: "/services/technical-seo" },
-    { name: "Keyword Research", path: "/services/keyword-research" },
-    { name: "SEO Blog Posts", path: "/services/seo-blog-posts" },
-    { name: "White-Hat Backlinks", path: "/services/white-hat-backlinks" },
-    { name: "Local Citations", path: "/services/local-citations" },
-    { name: "Schema Markup", path: "/services/schema-markup" },
+  growth: [
+    { name: "Build Awareness", path: "/#growth" },
+    { name: "Get Found by AI", path: "/authority/ai-search-seo" },
+    { name: "Rank in Google Maps", path: "/questions/how-to-rank-in-google-maps" },
+    { name: "Turn Searches Into Appointments", path: "/#contact" },
+    { name: "Check My AI Awareness", path: "/free-audit" },
   ],
   localSeo: [
-    { name: "Google Business Profile", path: "/services/google-business-profile" },
-    { name: "Review Management", path: "/services/review-management" },
+    { name: "Google Maps Rankings", path: "/questions/how-to-rank-in-google-maps" },
+    { name: "Build Customer Trust", path: "/questions/how-to-get-more-google-reviews" },
     { name: "Downtown San Diego", path: "/san-diego/downtown-san-diego-seo" },
     { name: "La Jolla", path: "/san-diego/la-jolla-seo" },
     { name: "North Park", path: "/san-diego/north-park-seo" },

@@ -22,21 +22,19 @@ const Hero = () => {
             className="max-w-2xl"
           >
             <span className="badge-outline inline-block mb-6">
-              Local SEO + AI Search Specialists
+              Build Awareness. Win Appointments.
             </span>
 
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] mb-6">
-              Get Found on
+              Get Found.
               <br />
-              <span className="text-gradient-gold">ChatGPT</span>
+              <span className="text-gradient-gold">Get Chosen.</span>
               <br />
-              &amp; Google Maps
+              Get Booked.
             </h1>
 
             <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8">
-              When customers ask ChatGPT, Perplexity, Claude, or Google
-              <br className="hidden sm:block" />
-              {" "}for the best business near them, we make sure it's you.
+              Build awareness of your local business, compete for top Google and Google Maps rankings, and turn discovery into appointments. Get found when customers ask ChatGPT, Perplexity, or Claude who to call.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

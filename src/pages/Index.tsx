@@ -46,16 +46,16 @@ const Index = () => {
   }, []);
 
   const pageSchema = generateWebPageSchema({
-    name: "Your Best SEO - Local SEO & AI Search Specialists",
-    description: "We help local businesses get found on ChatGPT, Perplexity, Claude, and Google Maps.",
+    name: "Your Best SEO - Awareness, Appointments & Search Rankings",
+    description: "Build local business awareness, improve Google and Google Maps rankings, and turn AI search discovery into appointment inquiries.",
     url: "/",
   });
   
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Get Found on ChatGPT & Google Maps"
-        description="Local SEO and AI search specialists. We get local businesses recommended by ChatGPT, Perplexity, Claude, and Google Maps."
+        title="Local Awareness, Appointments & Search Rankings"
+        description="Build awareness, compete for top Google and Maps rankings, and turn discovery into appointments. Local SEO and ChatGPT, Perplexity, and Claude visibility."
         canonical="/"
         schema={pageSchema}
       />
