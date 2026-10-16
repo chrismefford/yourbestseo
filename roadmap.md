@@ -12,6 +12,6 @@
 - [ ] Email alerts to Chris for new leads/bookings — blocked by the same unverified Resend domain (calendar event still lands on his calendar).
 
 # Get the new site live on yourbestseo.com
-- [ ] Point yourbestseo.com and www at Lovable instead of Vercel (DNS is at Cloudflare; Lovable A record + TXT verification records are currently missing).
+- [x] Point yourbestseo.com and www at Lovable instead of Vercel — A + TXT records now publicly visible for both; stored status still shows "drifted" and should recover on its own within a few hours.
 - [ ] Set non-www as the primary domain so www redirects to it.
 - [ ] Re-check the live site after the switch: new homepage, /book, no blog.
