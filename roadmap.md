@@ -6,4 +6,7 @@
 - [x] Build awareness quiz, score, and optional business review request.
 - [x] Replace main giveaway entry points and exit popup offer.
 - [x] Verify quiz, popup, mobile form, and focused scoring/lead tests.
-- [ ] Complete successful review email delivery — blocked by unverified yourbestseo.com sender domain in Resend; live request correctly shows failure instead of false success.
+- [ ] Complete successful review email delivery — blocked by unverified yourbestseo.com sender domain in Resend; live request correctly shows failure instead of false success.- [x] Show phone number in header; replace "Let's Talk" with Book a Call.
+- [x] Google Calendar booking (30 min, phone/Zoom) at /book and inside the AI checker funnel.
+- [x] Funnel: quiz → contact capture → score → free Google Business review offer → booking.
+- [ ] Email alerts to Chris for new leads/bookings — blocked by the same unverified Resend domain (calendar event still lands on his calendar).
