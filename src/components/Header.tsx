@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ArrowRight, ChevronDown, PenLine, BookOpen, HelpCircle, Search, Target, Link2, Zap, MapPin, Tag, TrendingUp } from "lucide-react";
+import { Menu, X, ArrowRight, Phone, CalendarCheck, ChevronDown, PenLine, BookOpen, HelpCircle, Search, Target, Link2, Zap, MapPin, Tag, TrendingUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -213,11 +213,14 @@ const Header = () => {
             <Button variant="ghost" size="sm" onClick={handleShowOffer}>
               AI Checker
             </Button>
+            <a href="tel:+16157726641" className="flex items-center gap-1.5 px-2 text-sm font-semibold text-foreground hover:text-primary whitespace-nowrap">
+              <Phone className="w-4 h-4 text-primary" />(615) 772-6641
+            </a>
             <Button variant="hero" size="default" className="gap-2" asChild>
-              <a href="tel:+16157726641">
-                Call Us
-                <ArrowRight className="w-4 h-4" />
-              </a>
+              <Link to="/book">
+                <CalendarCheck className="w-4 h-4" />
+                Book a Call
+              </Link>
             </Button>
           </div>
 
@@ -323,11 +326,14 @@ const Header = () => {
 
 
               <Button variant="hero" size="lg" className="mt-4 w-full gap-2" asChild>
-                <a href="tel:+16157726641">
-                  Call Us
-                  <ArrowRight className="w-4 h-4" />
-                </a>
+                <Link to="/book" onClick={() => setIsMenuOpen(false)}>
+                  <CalendarCheck className="w-4 h-4" />
+                  Book a Free Call
+                </Link>
               </Button>
+              <a href="tel:+16157726641" className="mt-3 flex items-center justify-center gap-2 font-semibold text-foreground">
+                <Phone className="w-4 h-4 text-primary" />Call Chris: (615) 772-6641
+              </a>
             </nav>
           </motion.div>
         )}

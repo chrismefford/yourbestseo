@@ -14,7 +14,54 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      funnel_leads: {
+        Row: {
+          answers: Json | null
+          appointment_at: string | null
+          business: string
+          created_at: string
+          email: string
+          id: string
+          location: string
+          meeting_type: string | null
+          name: string
+          phone: string
+          score: number | null
+          service: string | null
+          website: string | null
+        }
+        Insert: {
+          answers?: Json | null
+          appointment_at?: string | null
+          business: string
+          created_at?: string
+          email: string
+          id?: string
+          location: string
+          meeting_type?: string | null
+          name: string
+          phone: string
+          score?: number | null
+          service?: string | null
+          website?: string | null
+        }
+        Update: {
+          answers?: Json | null
+          appointment_at?: string | null
+          business?: string
+          created_at?: string
+          email?: string
+          id?: string
+          location?: string
+          meeting_type?: string | null
+          name?: string
+          phone?: string
+          score?: number | null
+          service?: string | null
+          website?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
