@@ -35,10 +35,15 @@ const str = (v: unknown, max = 250) => typeof v === "string" ? v.trim().slice(0,
 const isEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 const esc = (v: string) => v.replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]!));
 
+function normalizeWebsite(v: string): string {
+  const s = v.trim().replace(/^https?:\/\//i, "").replace(/^www\./i, "").replace(/\/.*$/, "");
+  return /^[a-z0-9][a-z0-9.-]*\.[a-z]{2,}$/i.test(s) ? s.toLowerCase() : "";
+}
+
 function readLead(body: Record<string, unknown>) {
   const lead = {
     name: str(body.name), email: str(body.email), phone: str(body.phone, 40), business: str(body.business),
-    location: str(body.location), website: str(body.website), service: str(body.service),
+    location: str(body.location), website: normalizeWebsite(str(body.website)), service: str(body.service),
     score: typeof body.score === "number" ? Math.max(0, Math.min(100, Math.round(body.score))) : null,
     answers: Array.isArray(body.answers) ? body.answers.slice(0, 10) : null,
   };
