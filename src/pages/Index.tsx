@@ -6,6 +6,7 @@ import MissionObjectives from "@/components/MissionObjectives";
 import HowItWorks from "@/components/HowItWorks";
 import TrustBadge from "@/components/TrustBadge";
 import ImageStrip from "@/components/ImageStrip";
+import WideBanner from "@/components/WideBanner";
 import CTASection from "@/components/CTASection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -66,6 +67,7 @@ const Index = () => {
         <ImageStrip />
         <MissionObjectives />
         <HowItWorks />
+        <WideBanner />
         <TrustBadge />
         {/* Lazy-loaded below-the-fold content */}
         <Suspense fallback={<div className="h-96" />}>

@@ -21,7 +21,7 @@ const VideoTestimonial = () => {
           <div className="md:w-2/5 relative">
             <img
               src={testimonialHeadshot}
-              alt="Amanda Chen, CEO of TechFlow Solutions"
+              alt="Amanda Thomas, Dentist"
               className="w-full h-64 md:h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-card/80 via-transparent to-transparent" />
@@ -43,13 +43,13 @@ const VideoTestimonial = () => {
               <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20">
                 <img
                   src={testimonialHeadshot}
-                  alt="Amanda Chen"
+                  alt="Amanda Thomas"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div>
-                <p className="font-medium">Amanda Chen</p>
-                <p className="text-sm text-muted-foreground">CEO, TechFlow Solutions</p>
+                <p className="font-medium">Amanda Thomas</p>
+                <p className="text-sm text-muted-foreground">Dentist</p>
               </div>
             </div>
           </div>
