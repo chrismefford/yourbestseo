@@ -15,7 +15,7 @@ describe("booking slots", () => {
     expect(generateSlots(now).some(s => s.startsWith("2026-10-17") || s.startsWith("2026-10-18"))).toBe(false);
   });
   test("follows daylight saving (9am PST is 17:00 UTC in November)", () => {
-    expect(generateSlots(now)).toContain("2026-11-02T17:00:00.000Z");
+    expect(generateSlots(new Date("2026-10-30T13:00:00Z"))).toContain("2026-11-02T17:00:00.000Z");
   });
   test("requires 2 hours notice", () => {
     const late = new Date("2026-10-14T17:30:00Z"); // 10:30 AM PDT
