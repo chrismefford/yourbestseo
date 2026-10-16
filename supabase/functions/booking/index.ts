@@ -103,7 +103,7 @@ Deno.serve(async (req) => {
       const { error } = leadId ? await db.from("funnel_leads").update(update).eq("id", leadId) : await db.from("funnel_leads").insert({ ...lead, ...update });
       if (error) console.error("Lead save failed", error);
       const when = start.toLocaleString("en-US", { timeZone: BOOKING_TIMEZONE, dateStyle: "full", timeStyle: "short" });
-      await notifyChris(`New meeting booked: ${lead.name} — ${when}`, [`When: ${when} Pacific`, `How: ${how}`, `Name: ${lead.name}`, `Phone: ${lead.phone}`, `Email: ${lead.email}`, `City: ${lead.location}`]);
+      await notifyChris(`New meeting booked: ${lead.name} — ${when}`, [`When: ${when} Pacific`, `How: ${how}`, `Name: ${lead.name}`, `Phone: ${lead.phone}`, `Email: ${lead.email}`, `Website: ${lead.website}`]);
       return json({ success: true, start: start.toISOString() });
     }
 
