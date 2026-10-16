@@ -17,7 +17,6 @@ const BeforeAfterTelemetry = lazy(() => import("@/components/BeforeAfterTelemetr
 const MissionReports = lazy(() => import("@/components/MissionReports"));
 const Testimonials = lazy(() => import("@/components/Testimonials"));
 const FunSection = lazy(() => import("@/components/FunSection"));
-const ROICalculator = lazy(() => import("@/components/ROICalculator"));
 
 // Lazy load non-critical conversion components that use browser APIs
 const ExitIntentPopup = lazy(() => import("@/components/ExitIntentPopup"));
@@ -70,9 +69,6 @@ const Index = () => {
         <WideBanner />
         <TrustBadge />
         {/* Lazy-loaded below-the-fold content */}
-        <Suspense fallback={<div className="h-96" />}>
-          <ROICalculator />
-        </Suspense>
         <Suspense fallback={<div className="h-96" />}>
           <BeforeAfterTelemetry />
         </Suspense>
