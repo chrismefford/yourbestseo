@@ -5,7 +5,7 @@ import ownerImg from "@/assets/strip-owner.jpg";
 const panels = [
   { img: mapsImg, alt: "Phone showing local businesses pinned on a map at night", title: "Found on Google Maps", text: "Show up when customers search near them." },
   { img: aiImg, alt: "Person asking an AI assistant for a recommendation", title: "Recommended by AI", text: "Be the answer when they ask ChatGPT, Perplexity or Claude." },
-  { img: ownerImg, alt: "Smiling local shop owner in her doorway at sunset", title: "Chosen and Booked", text: "Turn discovery into calls and appointments." },
+  { img: ownerImg, alt: "Friendly HVAC technician and dentist smiling outdoors", title: "Found Near You", text: "Dentists, HVAC, plumbers and more: more calls, more appointments." },
 ];
 
 const ImageStrip = () => (
@@ -22,7 +22,7 @@ const ImageStrip = () => (
               loading="lazy"
               className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
             <figcaption className="absolute bottom-0 p-5">
               <h3 className="font-display text-xl sm:text-2xl font-bold text-foreground">{p.title}</h3>
               <p className="mt-1 text-sm text-muted-foreground">{p.text}</p>
