@@ -42,7 +42,7 @@ function readLead(body: Record<string, unknown>) {
     score: typeof body.score === "number" ? Math.max(0, Math.min(100, Math.round(body.score))) : null,
     answers: Array.isArray(body.answers) ? body.answers.slice(0, 10) : null,
   };
-  if (!lead.name || !isEmail(lead.email) || lead.phone.replace(/\D/g, "").length < 7 || !lead.business || !lead.location) return null;
+  if (!lead.name || !isEmail(lead.email) || lead.phone.replace(/\D/g, "").length < 7 || !lead.website) return null;
   return lead;
 }
 
@@ -71,10 +71,10 @@ Deno.serve(async (req) => {
 
     if (body.action === "lead") {
       const lead = readLead(body);
-      if (!lead) return json({ error: "Please fill in your name, email, phone, business, and city." }, 400);
+      if (!lead) return json({ error: "Please fill in your name, email, phone, and website." }, 400);
       const { data, error } = await db.from("funnel_leads").insert(lead).select("id").single();
       if (error) throw error;
-      await notifyChris(`New AI checker lead: ${lead.business}`, [`Name: ${lead.name}`, `Business: ${lead.business}`, `Phone: ${lead.phone}`, `Email: ${lead.email}`, `City: ${lead.location}`, `Website: ${lead.website || "—"}`, `Score: ${lead.score ?? "—"}/100`]);
+      await notifyChris(`New AI checker lead: ${lead.name}`, [`Name: ${lead.name}`, `Phone: ${lead.phone}`, `Email: ${lead.email}`, `Website: ${lead.website || "—"}`, `Score: ${lead.score ?? "—"}/100`]);
       return json({ success: true, leadId: data.id });
     }
 
@@ -90,8 +90,8 @@ Deno.serve(async (req) => {
       await gcal("/calendars/primary/events?sendUpdates=all", {
         method: "POST",
         body: JSON.stringify({
-          summary: `Free Google Business Review — ${lead.business}`,
-          description: [`Meeting: ${how}`, `Name: ${lead.name}`, `Business: ${lead.business}`, `Phone: ${lead.phone}`, `Email: ${lead.email}`, `City: ${lead.location}`, `Website: ${lead.website || "—"}`, `AI awareness score: ${lead.score ?? "—"}/100`, "Booked from yourbestseo.com"].join("\n"),
+          summary: `Free Google Business Review — ${lead.name}`,
+          description: [`Meeting: ${how}`, `Name: ${lead.name}`, `Phone: ${lead.phone}`, `Email: ${lead.email}`, `Website: ${lead.website || "—"}`, `AI awareness score: ${lead.score ?? "—"}/100`, "Booked from yourbestseo.com"].join("\n"),
           start: { dateTime: start.toISOString(), timeZone: BOOKING_TIMEZONE },
           end: { dateTime: end.toISOString(), timeZone: BOOKING_TIMEZONE },
           attendees: [{ email: lead.email, displayName: lead.name }],
@@ -103,7 +103,7 @@ Deno.serve(async (req) => {
       const { error } = leadId ? await db.from("funnel_leads").update(update).eq("id", leadId) : await db.from("funnel_leads").insert({ ...lead, ...update });
       if (error) console.error("Lead save failed", error);
       const when = start.toLocaleString("en-US", { timeZone: BOOKING_TIMEZONE, dateStyle: "full", timeStyle: "short" });
-      await notifyChris(`New meeting booked: ${lead.business} — ${when}`, [`When: ${when} Pacific`, `How: ${how}`, `Name: ${lead.name}`, `Phone: ${lead.phone}`, `Email: ${lead.email}`, `Business: ${lead.business}`, `City: ${lead.location}`]);
+      await notifyChris(`New meeting booked: ${lead.name} — ${when}`, [`When: ${when} Pacific`, `How: ${how}`, `Name: ${lead.name}`, `Phone: ${lead.phone}`, `Email: ${lead.email}`, `Website: ${lead.website}`]);
       return json({ success: true, start: start.toISOString() });
     }
 

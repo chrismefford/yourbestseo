@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { supabase } from "@/integrations/supabase/client";
 
-export interface BookingContact { name: string; email: string; phone: string; business: string; location: string; website?: string }
+export interface BookingContact { name: string; email: string; phone: string; website: string }
 
 interface Props { contact?: BookingContact; leadId?: string; score?: number | null; answers?: number[] }
 
@@ -19,7 +19,7 @@ export default function BookingScheduler({ contact: given, leadId, score, answer
   const [day, setDay] = useState("");
   const [slot, setSlot] = useState("");
   const [meetingType, setMeetingType] = useState<"phone" | "zoom">("phone");
-  const [contact, setContact] = useState<BookingContact>(given ?? { name: "", email: "", phone: "", business: "", location: "" });
+  const [contact, setContact] = useState<BookingContact>(given ?? { name: "", email: "", phone: "", website: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "done">("idle");
   const [error, setError] = useState("");
 
@@ -63,7 +63,7 @@ export default function BookingScheduler({ contact: given, leadId, score, answer
 
   return <form onSubmit={book} className="space-y-6" aria-label="Book a meeting">
     {!given && <div className="grid sm:grid-cols-2 gap-4">{([
-      ["name", "Your name", "text"], ["phone", "Phone", "tel"], ["email", "Email", "email"], ["business", "Business name", "text"], ["location", "City / service area", "text"],
+      ["name", "Your name", "text"], ["phone", "Phone", "tel"], ["email", "Email", "email"], ["website", "Website", "url"],
     ] as const).map(([k, label, type]) => <div key={k} className="space-y-2"><Label htmlFor={`book-${k}`}>{label} *</Label><Input id={`book-${k}`} type={type} required maxLength={250} value={contact[k]} onChange={e => setContact(p => ({ ...p, [k]: e.target.value }))} /></div>)}</div>}
 
     <div>
