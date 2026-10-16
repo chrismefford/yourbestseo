@@ -12,6 +12,7 @@
 - [ ] Email alerts to Chris for new leads/bookings — blocked by the same unverified Resend domain (calendar event still lands on his calendar).
 
 # Get the new site live on yourbestseo.com
-- [x] Point yourbestseo.com and www at Lovable instead of Vercel — A + TXT records now publicly visible for both; stored status still shows "drifted" and should recover on its own within a few hours.
-- [ ] Set non-www as the primary domain so www redirects to it.
+- [x] Point yourbestseo.com and www at Lovable instead of Vercel — both A + TXT records publicly visible and verified; root domain status recovered to "active_provisioning", www still shows a stale "drifted" label and should recover on its own.
+- [x] Set non-www as the primary domain so www redirects to it — confirmed primary: true on yourbestseo.com, www redirects to it.
+- [ ] Publish the current version so the new site replaces the old white-label page on the domain — publish was declined this turn; re-run when Chris is ready.
 - [ ] Re-check the live site after the switch: new homepage, /book, no blog.
