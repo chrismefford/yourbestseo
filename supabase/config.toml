@@ -11,3 +11,6 @@ verify_jwt = false
 
 [functions.send-exit-popup-email]
 verify_jwt = false
+
+[functions.booking]
+verify_jwt = false
