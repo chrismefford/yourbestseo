@@ -1,6 +1,6 @@
 # AI awareness giveaway
-- [ ] Restore visible headers across affected pages and verify navigation.
-- [ ] Replace About with Chris Mefford's personal biography and add an About Me menu link.
+- [x] Restore visible headers across affected pages and verify navigation.
+- [x] Replace About with Chris Mefford's personal biography and add an About Me menu link.
 - [x] Replace service catalog navigation and homepage messaging with awareness, appointments, and search rankings.
 - [x] Verify updated navigation and outcome-focused pages in the preview.
 - [x] Build awareness quiz, score, and optional business review request.
