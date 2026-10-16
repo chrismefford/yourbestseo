@@ -10,3 +10,8 @@
 - [x] Google Calendar booking (30 min, phone/Zoom) at /book and inside the AI checker funnel.
 - [x] Funnel: quiz → contact capture → score → free Google Business review offer → booking.
 - [ ] Email alerts to Chris for new leads/bookings — blocked by the same unverified Resend domain (calendar event still lands on his calendar).
+
+# Get the new site live on yourbestseo.com
+- [ ] Point yourbestseo.com and www at Lovable instead of Vercel (DNS is at Cloudflare; Lovable A record + TXT verification records are currently missing).
+- [ ] Set non-www as the primary domain so www redirects to it.
+- [ ] Re-check the live site after the switch: new homepage, /book, no blog.
