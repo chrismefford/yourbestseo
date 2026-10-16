@@ -130,6 +130,18 @@
   .badge-outline {
     @apply border border-primary/40 text-primary px-4 py-1.5 rounded-full text-sm font-medium tracking-widest uppercase;
   }
+
+  /* Light surface for the Learn dropdown: black copy on white, tokens scoped to the panel */
+  .learn-panel {
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 8%;
+    --foreground: 220 30% 8%;
+    --primary: 36 88% 36%;
+    --primary-foreground: 0 0% 100%;
+    --muted: 220 18% 94%;
+    --muted-foreground: 220 12% 36%;
+    --border: 220 15% 86%;
+  }
 }
 
 @layer utilities {

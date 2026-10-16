@@ -96,11 +96,11 @@ const Header = () => {
               <AnimatePresence>
                 {isLearnOpen && (
                   <motion.div
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 12 }}
+                    initial={{ opacity: 0, y: 12, x: "-50%" }}
+                    animate={{ opacity: 1, y: 0, x: "-50%" }}
+                    exit={{ opacity: 0, y: 12, x: "-50%" }}
                     transition={{ duration: 0.18, ease: "easeOut" }}
-                    className="fixed left-1/2 -translate-x-1/2 top-[80px] w-[min(820px,calc(100vw-32px))] bg-card border border-border rounded-2xl shadow-2xl z-[200] overflow-hidden"
+                    className="learn-panel fixed left-1/2 top-[80px] w-[min(820px,calc(100vw-32px))] bg-card border border-border rounded-2xl shadow-2xl z-[200] overflow-hidden"
                   >
                     {/* 3 big hero cards */}
                     <div className="grid grid-cols-3 divide-x divide-border">
@@ -109,7 +109,7 @@ const Header = () => {
                       <Link
                         to="/authority/ai-search-seo"
                         onClick={() => setIsLearnOpen(false)}
-                        className="group text-left p-8 hover:bg-muted/40 transition-colors flex flex-col gap-5"
+                        className="group text-left p-8 hover:bg-muted/70 transition-colors flex flex-col gap-5"
                       >
                         <div className="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center group-hover:scale-110 transition-transform">
                           <PenLine className="w-6 h-6 text-primary-foreground" />
@@ -127,7 +127,7 @@ const Header = () => {
                       <Link
                         to="/glossary"
                         onClick={() => setIsLearnOpen(false)}
-                        className="group text-left p-8 hover:bg-muted/40 transition-colors flex flex-col gap-5"
+                        className="group text-left p-8 hover:bg-muted/70 transition-colors flex flex-col gap-5"
                       >
                         <div className="w-12 h-12 rounded-2xl bg-gold flex items-center justify-center group-hover:scale-110 transition-transform">
                           <BookOpen className="w-6 h-6 text-background" />
@@ -136,7 +136,7 @@ const Header = () => {
                           <p className="text-lg font-bold text-foreground mb-1">SEO Glossary</p>
                           <p className="text-sm text-muted-foreground leading-relaxed">50+ terms explained in plain English. No jargon, no fluff — just clarity.</p>
                         </div>
-                        <span className="text-sm font-semibold text-gold flex items-center gap-1.5 group-hover:gap-3 transition-all mt-auto">
+                        <span className="text-sm font-semibold text-primary flex items-center gap-1.5 group-hover:gap-3 transition-all mt-auto">
                           Browse all terms <ArrowRight className="w-4 h-4" />
                         </span>
                       </Link>
@@ -145,7 +145,7 @@ const Header = () => {
                       <Link
                         to="/questions"
                         onClick={() => setIsLearnOpen(false)}
-                        className="group text-left p-8 hover:bg-muted/40 transition-colors flex flex-col gap-5"
+                        className="group text-left p-8 hover:bg-muted/70 transition-colors flex flex-col gap-5"
                       >
                         <div className="w-12 h-12 rounded-2xl bg-navy flex items-center justify-center group-hover:scale-110 transition-transform">
                           <HelpCircle className="w-6 h-6 text-primary-foreground" />
@@ -161,7 +161,7 @@ const Header = () => {
                     </div>
 
                     {/* Authority Guides strip */}
-                    <div className="border-t border-border bg-muted/30 px-8 py-5">
+                    <div className="border-t border-border bg-muted px-8 py-5">
                       <div className="flex items-center gap-2 mb-4">
                         <TrendingUp className="w-4 h-4 text-primary" />
                         <span className="text-xs font-bold text-foreground uppercase tracking-widest">Authority Guides</span>
