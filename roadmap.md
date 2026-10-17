@@ -1,5 +1,5 @@
 # AI awareness giveaway
-- [ ] Add and verify an AI-written overall SEO/AI assessment and three evidence-based next steps before contact capture.
+- [x] Add and verify an AI-written overall SEO/AI assessment and three evidence-based next steps before contact capture; real website review returned three steps and a public search source, download worked, desktop/mobile checked.
 - [x] Replace quiz with Local Search Opportunity Check, verified findings before contact capture, private report/lead storage and optional follow-up consent.
 - [x] Verify real public-website checks, saved request/consent, report download, help link, and desktop/mobile layouts; 23 tests passed.
 - [ ] Deliver opportunity reports by email — verified provider rejection: yourbestseo.com sender domain is unverified in Resend; requests remain saved and downloads work.

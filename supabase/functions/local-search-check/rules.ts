@@ -86,5 +86,6 @@ export function reportText(report: Report) {
 
 export function groundReview(review: AIReview, report: Report): AIReview {
   const known = new Set(report.checks.map(c => c.id));
-  return { ...review, strengths: review.strengths.slice(0, 3), steps: review.steps.slice(0, 3).map(s => ({ ...s, evidenceIds: s.evidenceIds.filter(id => known.has(id)) })), sources: review.sources.filter(s => { try { return new URL(s.url).protocol === "https:" || new URL(s.url).protocol === "http:"; } catch { return false; } }).slice(0, 8) };
+  const plain = (text: string) => text.replace(/\[([^\]]+)\]\(https?:\/\/[^)]+\)/g, "$1").replace(/【[^】]*】/g, "");
+  return { ...review, overview: plain(review.overview), seo: plain(review.seo), ai: plain(review.ai), strengths: review.strengths.slice(0, 3).map(plain), steps: review.steps.slice(0, 3).map(s => ({ ...s, title: plain(s.title).replace(/^\s*\d+[.)]\s*/, ""), action: plain(s.action), why: plain(s.why), evidenceIds: s.evidenceIds.filter(id => known.has(id)) })), sources: review.sources.filter(s => { try { return new URL(s.url).protocol === "https:" || new URL(s.url).protocol === "http:"; } catch { return false; } }).slice(0, 8) };
 }
