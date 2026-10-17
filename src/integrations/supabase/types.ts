@@ -14,6 +14,42 @@ export type Database = {
   }
   public: {
     Tables: {
+      appointment_sms_consents: {
+        Row: {
+          appointment_at: string
+          consent_text: string
+          consent_version: string
+          email: string
+          id: string
+          opted_in: boolean
+          phone: string
+          recorded_at: string
+          source_url: string
+        }
+        Insert: {
+          appointment_at: string
+          consent_text: string
+          consent_version: string
+          email: string
+          id?: string
+          opted_in?: boolean
+          phone: string
+          recorded_at?: string
+          source_url: string
+        }
+        Update: {
+          appointment_at?: string
+          consent_text?: string
+          consent_version?: string
+          email?: string
+          id?: string
+          opted_in?: boolean
+          phone?: string
+          recorded_at?: string
+          source_url?: string
+        }
+        Relationships: []
+      }
       funnel_leads: {
         Row: {
           answers: Json | null
