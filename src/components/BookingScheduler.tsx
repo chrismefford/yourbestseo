@@ -32,7 +32,7 @@ export default function BookingScheduler({ contact: given, leadId, score, answer
   const load = async () => {
     setLoadError("");
     const { data, error } = await supabase.functions.invoke("booking", { body: { action: "slots" } });
-    if (error || !Array.isArray(data?.slots)) { setLoadError("Couldn't load open times. Please call (615) 772-6641."); return; }
+    if (error || !Array.isArray(data?.slots)) { setLoadError("Couldn't load open times. Please call (619) 903-6599."); return; }
     setSlots(data.slots);
     setDay(data.slots[0] ? dayLabel(data.slots[0]) : "");
   };
@@ -52,7 +52,7 @@ export default function BookingScheduler({ contact: given, leadId, score, answer
     setError(""); setStatus("sending");
     const { data, error: err } = await supabase.functions.invoke("booking", { body: { action: "book", slot, meetingType, leadId, score, answers, ...contact, smsConsent: validConsent.data, smsConsentVersion: SMS_CONSENT_VERSION, smsConsentSource: location.pathname } });
     if (err || data?.success !== true) {
-      let msg = "Couldn't book that time. Please try another or call (615) 772-6641.";
+      let msg = "Couldn't book that time. Please try another or call (619) 903-6599.";
       try { const body = await (err as { context?: Response })?.context?.json(); if (body?.error) msg = body.error; } catch { /* keep default */ }
       setError(msg); setStatus("idle");
       if (msg.includes("taken")) { setSlot(""); load(); }
@@ -83,7 +83,7 @@ export default function BookingScheduler({ contact: given, leadId, score, answer
 
     <div>
       <Label className="block mb-3">Pick a day <span className="text-muted-foreground font-normal">(30 minutes, Pacific time)</span></Label>
-      {loadError ? <p role="alert" className="text-destructive">{loadError}</p> : !slots ? <p className="text-muted-foreground flex items-center gap-2"><Loader2 className="h-4 w-4 animate-spin" />Loading open times…</p> : days.size === 0 ? <p className="text-muted-foreground">No open times right now — please call (615) 772-6641.</p> : <>
+      {loadError ? <p role="alert" className="text-destructive">{loadError}</p> : !slots ? <p className="text-muted-foreground flex items-center gap-2"><Loader2 className="h-4 w-4 animate-spin" />Loading open times…</p> : days.size === 0 ? <p className="text-muted-foreground">No open times right now — please call (619) 903-6599.</p> : <>
         <div className="flex gap-2 overflow-x-auto pb-2">{[...days.keys()].map(d => <button type="button" key={d} onClick={() => { setDay(d); setSlot(""); }} className={`shrink-0 rounded-lg border px-4 py-2 text-sm ${day === d ? "border-primary bg-primary text-primary-foreground" : "border-border hover:border-primary/50"}`}>{d}</button>)}</div>
         <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 mt-4">{(days.get(day) ?? []).map(s => <button type="button" key={s} onClick={() => setSlot(s)} className={`rounded-lg border py-2 text-sm ${slot === s ? "border-primary bg-primary/15 text-primary font-semibold" : "border-border hover:border-primary/50"}`}>{timeLabel(s)}</button>)}</div>
       </>}

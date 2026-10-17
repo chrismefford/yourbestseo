@@ -213,8 +213,8 @@ const Header = () => {
             <Button variant="ghost" size="sm" onClick={handleShowOffer}>
               AI Checker
             </Button>
-            <a href="tel:+16157726641" className="flex items-center gap-1.5 px-2 text-sm font-semibold text-foreground hover:text-primary whitespace-nowrap">
-              <Phone className="w-4 h-4 text-primary" />(615) 772-6641
+            <a href="tel:+16199036599" className="flex items-center gap-1.5 px-2 text-sm font-semibold text-foreground hover:text-primary whitespace-nowrap">
+              <Phone className="w-4 h-4 text-primary" />(619) 903-6599
             </a>
             <Button variant="hero" size="default" className="gap-2" asChild>
               <Link to="/book">
@@ -331,8 +331,8 @@ const Header = () => {
                   Book a Free Call
                 </Link>
               </Button>
-              <a href="tel:+16157726641" className="mt-3 flex items-center justify-center gap-2 font-semibold text-foreground">
-                <Phone className="w-4 h-4 text-primary" />Call Chris: (615) 772-6641
+              <a href="tel:+16199036599" className="mt-3 flex items-center justify-center gap-2 font-semibold text-foreground">
+                <Phone className="w-4 h-4 text-primary" />Call Chris: (619) 903-6599
               </a>
             </nav>
           </motion.div>

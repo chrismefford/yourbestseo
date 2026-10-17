@@ -78,7 +78,7 @@ const AIChatbot = () => {
 
       const assistantMessage: Message = {
         role: "assistant",
-        content: data.message || "I apologize, but I'm having trouble responding. Please try again or contact us directly at (615) 772-6641.",
+        content: data.message || "I apologize, but I'm having trouble responding. Please try again or contact us directly at (619) 903-6599.",
       };
       setMessages((prev) => [...prev, assistantMessage]);
     } catch (error) {
@@ -87,7 +87,7 @@ const AIChatbot = () => {
         ...prev,
         {
           role: "assistant",
-          content: "I'm sorry, I'm having technical difficulties. Please call us at (615) 772-6641 or email chris@yourbestseo.com for immediate assistance.",
+          content: "I'm sorry, I'm having technical difficulties. Please call us at (619) 903-6599 or email chris@yourbestseo.com for immediate assistance.",
         },
       ]);
     } finally {

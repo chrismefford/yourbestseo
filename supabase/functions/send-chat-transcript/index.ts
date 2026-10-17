@@ -93,7 +93,7 @@ const handler = async (req: Request): Promise<Response> => {
           <div style="text-align: center; color: #9CA3AF; font-size: 12px;">
             <p>Your Best SEO | San Diego, CA</p>
             <p>
-              <a href="tel:+16157726641" style="color: #6B7280;">(615) 772-6641</a> | 
+              <a href="tel:+16199036599" style="color: #6B7280;">(619) 903-6599</a> | 
               <a href="mailto:chris@yourbestseo.com" style="color: #6B7280;">chris@yourbestseo.com</a>
             </p>
             <p><a href="https://www.yourbestseo.com" style="color: #6B7280;">www.yourbestseo.com</a></p>

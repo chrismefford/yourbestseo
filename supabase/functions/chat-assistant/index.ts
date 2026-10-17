@@ -13,10 +13,10 @@ const SYSTEM_PROMPT = `You are an expert SEO assistant for Your Best SEO, a loca
 - We are based in San Diego, California (address: 8620 Ian Way, San Diego, CA 92071)
 - We provide affordable, transparent SEO services
 - We offer a free SEO audit to show business owners how visible they are on Google and AI tools
-- Phone: (615) 772-6641
+- Phone: (619) 903-6599
 - Email: chris@yourbestseo.com
 - Website: https://www.yourbestseo.com
-- IMPORTANT: We are a San Diego, California company. Do NOT assume Nashville location based on the phone number.
+- IMPORTANT: We are a San Diego, California company. Use our San Diego address when describing our location.
 
 ## Key Services (mention when relevant):
 - Keyword Research & Roadmap ($249)
@@ -106,7 +106,7 @@ serve(async (req) => {
     return new Response(
       JSON.stringify({ 
         error: error instanceof Error ? error.message : "Unknown error",
-        message: "I'm having trouble connecting. Please call us at (615) 772-6641 for immediate assistance."
+        message: "I'm having trouble connecting. Please call us at (619) 903-6599 for immediate assistance."
       }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );

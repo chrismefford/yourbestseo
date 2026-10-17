@@ -87,7 +87,7 @@ const StickyCTABar = () => {
                     className="text-primary-foreground hover:bg-primary-foreground/10 gap-1 hidden sm:flex"
                     asChild
                   >
-                    <a href="tel:+16157726641">
+                    <a href="tel:+16199036599">
                       <Phone className="w-4 h-4" />
                       <span className="hidden md:inline">Call Now</span>
                     </a>
