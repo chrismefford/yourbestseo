@@ -257,7 +257,7 @@ export const footerNavigation = {
     { name: "Get Found by AI", path: "/authority/ai-search-seo" },
     { name: "Rank in Google Maps", path: "/questions/how-to-rank-in-google-maps" },
     { name: "Turn Searches Into Appointments", path: "/#contact" },
-    { name: "Check My AI Awareness", path: "/free-audit" },
+    { name: "Check My Website", path: "/free-audit" },
   ],
   localSeo: [
     { name: "Google Maps Rankings", path: "/questions/how-to-rank-in-google-maps" },
@@ -291,7 +291,7 @@ export const footerNavigation = {
     { name: "Pricing", path: "/pricing" },
     { name: "Case Studies", path: "/case-studies" },
     { name: "FAQ", path: "/faq" },
-    { name: "AI Awareness Checker", path: "/free-audit" },
+    { name: "Local Search Check", path: "/free-audit" },
     { name: "Contact", path: "/#contact" },
   ],
 };

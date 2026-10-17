@@ -82,7 +82,7 @@ Deno.serve(async req => {
     if (body.action !== "check") return response({ error: "Unknown request." }, 400);
     const input = inputSchema.parse(body);
     input.website = normalizeWebsite(input.website);
-    if (input.profile) { const profile = new URL(input.profile); if (!/^https?:$/.test(profile.protocol)) throw new Error("Enter a valid Google Business Profile link."); }
+    if (input.profile) { const profile = new URL(input.profile); if (!/^https?:$/.test(profile.protocol) || profile.username || profile.password || !/(^|\.)(google\.com|google\.[a-z]{2,3}|g\.page|goo\.gl|maps\.app\.goo\.gl)$/.test(profile.hostname)) throw new Error("Enter a Google Maps or Google Business Profile link."); }
     await validatePublic(new URL(input.website));
     let page: Page;
     try { page = pageFrom(await getPublic(input.website)); } catch { page = { url: input.website, title: "", description: "", headings: [], links: [], localSchema: false, noindex: false, unavailable: "The automated request could not read this page. The host may block checks or the connection may be unavailable." }; }

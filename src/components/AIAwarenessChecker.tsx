@@ -30,6 +30,7 @@ export default function AIAwarenessChecker() {
       if (requestError) { const details = await requestError.context?.json?.().catch(() => null); throw new Error(details?.error ?? "We couldn't complete the check. Please try again."); }
       if (!data?.success || !data.report) throw new Error(data?.error ?? "The check could not be completed.");
       setReport(data.report); setReportId(data.reportId);
+      document.getElementById("awareness-checker")?.scrollIntoView({ block: "start" });
       setEmailMessage(""); setEmailed(false);
     } catch (err) { setError(err instanceof Error ? err.message : "The check could not be completed."); }
     finally { setBusy(false); }
@@ -86,7 +87,7 @@ export default function AIAwarenessChecker() {
         <Button variant="ghost" onClick={download} className="gap-2 mt-4"><Download className="w-4 h-4" />Download full report</Button>
       </section>
       <section className="py-8"><h2 className="font-display text-2xl mb-2">Want help with the next step?</h2><p className="text-sm text-muted-foreground mb-5">Talk through your findings with Chris on a free 30-minute call.</p><Button variant="hero" asChild className="gap-2"><Link to="/book">Book a free call<ArrowRight className="w-4 h-4" /></Link></Button></section>
-      <Button variant="ghost" className="gap-2" onClick={() => { setReport(undefined); setError(""); setFollowUp(false); }}><RotateCcw className="w-4 h-4" />Check another website</Button>
+      <Button variant="ghost" className="gap-2" onClick={() => { setReport(undefined); setError(""); setFollowUp(false); window.scrollTo({ top: 0 }); }}><RotateCcw className="w-4 h-4" />Check another website</Button>
     </>}
   </div>;
 }
