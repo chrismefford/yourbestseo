@@ -1,6 +1,6 @@
 # AI awareness giveaway
 - [x] Diagnose Twilio setup: no saved connection; prior prompts were interrupted, not provider rejections. Uploaded screenshot exposed an API-key secret; Chris must revoke it and enter replacement credentials securely.
-- [ ] Resolve Twilio credential validation rejection shown in latest screenshot — awaiting details under “Show error”; do not repeat connection prompts until diagnosed.
+- [ ] Resolve Twilio credential validation rejection: expanded screenshot reports HTTP 401, code 8001, “actor doesn't have any assertions”; check Twilio guidance before retrying.
 - [ ] Add optional, unchecked appointment-SMS consent, linked SMS terms/privacy disclosures, and stored consent evidence; Chris chose owner alerts plus visitor appointment confirmations/reminders.
 - [ ] Enable owner and opted-in visitor SMS — blocked by Twilio connection, sender registration, and consent setup; do not enable sends before these are ready.
 - [x] Restore visible headers across affected pages and verify navigation.
