@@ -1,0 +1,21 @@
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { SEO } from "@/components/SEO";
+import { Link } from "react-router-dom";
+
+export default function PrivacyPolicy() {
+  return <div className="min-h-screen bg-background text-foreground">
+    <SEO title="Privacy Policy" description="How YourBestSEO collects, uses, and protects contact details and appointment text message consent." canonical="/privacy-policy" />
+    <Header />
+    <main className="max-w-3xl mx-auto px-4 sm:px-6 pt-32 pb-20 space-y-8">
+      <h1 className="font-display text-4xl font-bold">Privacy Policy</h1>
+      <p className="text-muted-foreground">Effective October 17, 2026 · YourBestSEO</p>
+      <section className="space-y-3"><h2 className="font-display text-2xl">Information we collect</h2><p>YourBestSEO, operated by Chris Mefford, collects the information you provide when you contact us, complete an AI awareness checker, request a business review, or schedule an appointment. This may include your name, email address, phone number, website, quiz answers, and appointment details. When you choose appointment texts, we retain your consent choice, phone number, consent wording and version, submission time, and the form used.</p></section>
+      <section className="space-y-3"><h2 className="font-display text-2xl">How we use information</h2><p>We use your information to respond to your request, provide your review, arrange appointments, and communicate about your appointment. Appointment confirmations and reminders by text require your separate, optional consent. You can book or request a review without agreeing to text messages. This consent does not authorize promotional text messages.</p></section>
+      <section className="space-y-3"><h2 className="font-display text-2xl">SMS privacy and sharing</h2><p>We do not sell or share your SMS opt-in data or personal information with third parties for marketing purposes.</p><p>We may use service providers to host our website, store submitted information, deliver emails and texts, and manage appointments. They receive information only as needed to perform those services, not for their own marketing. Information may also be disclosed when required by law.</p></section>
+      <section className="space-y-3"><h2 className="font-display text-2xl">Your choices</h2><p>Reply STOP to opt out of appointment texts or HELP for help. Message frequency varies. Message and data rates may apply. You may also contact Chris at <a className="text-primary underline" href="mailto:chris@yourbestseo.com">chris@yourbestseo.com</a> or <a className="text-primary underline" href="tel:+16157726641">(615) 772-6641</a> to ask about, correct, or request deletion of your information, subject to legal recordkeeping obligations.</p><p>See our <Link className="text-primary underline" to="/sms-terms">SMS Terms</Link> for the appointment messaging program.</p></section>
+      <section className="space-y-3"><h2 className="font-display text-2xl">Storage and security</h2><p>We use reasonable safeguards and limit access to submitted information. We retain it for as long as needed to handle your request, manage appointments, and meet legal or consent-record requirements. No online transmission or storage method can be guaranteed completely secure. Our website may use browser storage to remember form completion and website preferences.</p></section>
+      <section className="space-y-3"><h2 className="font-display text-2xl">Contact and updates</h2><p>YourBestSEO · Chris Mefford<br />8620 Ian Way, San Diego, CA 92071<br /><a className="text-primary underline" href="mailto:chris@yourbestseo.com">chris@yourbestseo.com</a> · (615) 772-6641</p><p>We may update this policy; the effective date above identifies the current version.</p></section>
+    </main><Footer />
+  </div>;
+}

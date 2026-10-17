@@ -1,5 +1,6 @@
 import { createClient } from "npm:@supabase/supabase-js@2";
 import { BOOKING_DAYS_AHEAD, BOOKING_TIMEZONE, SLOT_MINUTES, generateSlots, isBookableSlot, type BusyRange } from "../_shared/booking-slots.ts";
+import { buildSmsConsentEvidence, readSmsConsent } from "../_shared/sms-consent.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -87,10 +88,17 @@ Deno.serve(async (req) => {
       const lead = readLead(body);
       const slot = str(body.slot, 40);
       const meetingType = body.meetingType === "zoom" ? "zoom" : "phone";
+      let smsConsent: boolean;
+      try { smsConsent = readSmsConsent(body.smsConsent, body.smsConsentVersion); }
+      catch { return json({ error: "Please review the text message consent and try again." }, 400); }
       if (!lead || !slot || isNaN(Date.parse(slot))) return json({ error: "Missing booking details." }, 400);
       if (!isBookableSlot(slot, new Date(), await busyRanges())) return json({ error: "That time was just taken. Please pick another." }, 409);
       const start = new Date(slot);
       const end = new Date(start.getTime() + SLOT_MINUTES * 60000);
+      // Persist server-authored consent evidence before creating the appointment.
+      // This records the submitted preference even if calendar creation later fails.
+      const { error: consentError } = await db.from("appointment_sms_consents").insert(buildSmsConsentEvidence(smsConsent, lead.phone, lead.email, start.toISOString(), body.smsConsentSource));
+      if (consentError) throw consentError;
       const how = meetingType === "zoom" ? "Zoom (Chris will send the link)" : `Phone call — Chris will call ${lead.phone}`;
       await gcal("/calendars/primary/events?sendUpdates=all", {
         method: "POST",
