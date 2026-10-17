@@ -5,6 +5,7 @@
 - Keep `/free-audit` as the opportunity-check entry point so existing inbound links continue to work.
 - Store opportunity reports and report requests in service-only tables, send server-authored saved reports through the existing email provider, and confirm success only after provider acceptance so reports cannot be forged or falsely marked sent.
 - Validate public DNS addresses and every redirect before bounded website fetches, and mark unreadable checks unknown so the checker never invents results.
+- Generate AI website assessments server-side from verified checks and provider-returned web sources; retain the original checks and saved-report flow, stream pending responses, and distinguish AI readiness from actual consumer-product visibility because advice must not masquerade as measured rankings.
 - Preserve `/services` as a business-growth overview using shared outcome sections, rather than deleting the URL, so inbound links remain useful.
 - Booking slot rules live in supabase/functions/_shared/booking-slots.ts (pure, tested from tests/); the single `booking` function handles slots, lead capture, and calendar events so leads are saved even when email fails.
 - Keep SMS consent wording and validation in the shared pure consent module; the booking function stores server-authored, timestamped evidence in a service-only append-only table before calendar creation so visitor consent is auditable and never inferred from a phone number.
