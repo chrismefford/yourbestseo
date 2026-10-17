@@ -1,0 +1,2 @@
+export { FOLLOW_UP_WORDING, reportText, normalizeWebsite } from "../../supabase/functions/local-search-check/rules";
+export type { Report, Check } from "../../supabase/functions/local-search-check/rules";
