@@ -3,7 +3,7 @@
 - [x] Connect Twilio directly, as approved by Chris: Account SID and Auth Token saved securely; direct read-only phone-number request returned HTTP 200. No texts sent.
 - [x] Draft answers for Twilio’s message-flow and opt-in-proof fields; final submission waits on actual consent form and matching public privacy/SMS terms pages.
 - [x] Add optional, unchecked appointment-SMS consent, linked SMS terms/privacy disclosures, and stored consent evidence; Chris chose owner alerts plus visitor appointment confirmations/reminders.
-- [ ] Enable owner and opted-in visitor SMS — direct Twilio credentials verified; blocked by sender registration and consent setup. Enable SMS Pumping Protection and review SMS Geo Permissions before production sends.
+- [ ] Enable owner and opted-in visitor SMS — direct Twilio credentials verified; Chris reports campaign submitted and pending review, sending number +16199036599. Blocked by campaign approval; SMS sending and STOP/HELP handling still need implementation and verification. Enable SMS Pumping Protection and review SMS Geo Permissions before production sends.
 - [x] Restore visible headers across affected pages and verify navigation.
 - [x] Replace About with Chris Mefford's personal biography and add an About Me menu link.
 - [x] Replace service catalog navigation and homepage messaging with awareness, appointments, and search rankings.
