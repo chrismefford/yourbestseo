@@ -62,11 +62,21 @@ export default function AIAwarenessChecker() {
         </div>
         <div className="space-y-2"><Label htmlFor="check-profile">Google Business Profile link <span className="text-muted-foreground font-normal">(optional)</span></Label><Input id="check-profile" type="url" placeholder="https://maps.google.com/…" maxLength={500} value={input.profile} disabled={busy} onChange={e => setInput(p => ({ ...p, profile: e.target.value }))} /><p className="text-xs text-muted-foreground">This check focuses on your website—not an audit of your Google profile.</p></div>
         {error && <p role="alert" className="text-destructive">{error}</p>}
-        <Button variant="hero" size="lg" type="submit" className="w-full gap-2" disabled={busy}>{busy ? <><Loader2 className="w-5 h-5 animate-spin" />Checking public pages…</> : <><Search className="w-5 h-5" />Find my opportunities<ArrowRight className="w-5 h-5" /></>}</Button>
+        <Button variant="hero" size="lg" type="submit" className="w-full gap-2" disabled={busy}>{busy ? <><Loader2 className="w-5 h-5 animate-spin" />Preparing your AI & SEO report…</> : <><Search className="w-5 h-5" />Review my website<ArrowRight className="w-5 h-5" /></>}</Button>
         <p className="text-sm text-muted-foreground text-center flex justify-center items-center gap-2"><ShieldCheck className="w-4 h-4 shrink-0" />Free findings first. No contact details required.</p>
       </form>
     </section> : <>
       <section aria-label="Your website findings" className="space-y-6">
+        {report.aiError && <p role="alert" className="border border-border p-4 text-sm">{report.aiError}</p>}
+        {report.review && <div className="space-y-7">
+          <div className="border-b border-border pb-6"><p className="text-primary text-sm mb-3">Your AI & SEO website review</p><h2 className="font-display text-3xl mb-4">The big picture</h2><p className="leading-relaxed">{report.review.overview}</p><p className="text-xs text-muted-foreground mt-4 break-words">{report.website} · {new Date(report.checkedAt).toLocaleDateString()}</p></div>
+          <div className="grid sm:grid-cols-2 gap-6"><div><h3 className="font-display text-xl mb-2">Google & SEO</h3><p className="text-sm leading-relaxed text-muted-foreground">{report.review.seo}</p></div><div><h3 className="font-display text-xl mb-2">AI search readiness</h3><p className="text-sm leading-relaxed text-muted-foreground">{report.review.ai}</p></div></div>
+          {report.review.strengths.length > 0 && <div className="border-y border-border py-5"><h3 className="font-semibold mb-3">What’s working</h3><ul className="space-y-2">{report.review.strengths.map((s, i) => <li key={i} className="flex gap-2 text-sm"><CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />{s}</li>)}</ul></div>}
+          <h3 className="font-display text-2xl">What to do first</h3><ol className="space-y-5">{report.review.steps.map((step, i) => <li key={i} className="border-b border-border pb-5"><h4 className="font-display text-xl mb-2"><span className="text-primary mr-3">0{i + 1}</span>{step.title}</h4><p className="leading-relaxed">{step.action}</p><p className="text-sm text-muted-foreground mt-2">{step.why}</p><div className="flex flex-wrap gap-3 mt-3">{step.evidenceIds.map(id => { const c = report.checks.find(c => c.id === id); return c ? <a key={id} href={c.evidence} target="_blank" rel="noopener noreferrer" className="text-xs text-primary underline">{c.title}</a> : null; })}</div></li>)}</ol>
+          {report.review.sources.length > 0 && <div><h3 className="font-semibold mb-2">Public sources reviewed</h3><ul className="space-y-2">{report.review.sources.map((s, i) => <li key={i}><a href={s.url} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground underline break-words">{s.title}</a></li>)}</ul></div>}
+          <p className="text-xs text-muted-foreground">AI-written advice based on checked pages and available public search evidence—not a measurement of Google rankings or recommendations inside ChatGPT, Claude, or Perplexity.</p>
+        </div>}
+        <details open={!report.review} className="border-t border-border pt-5"><summary className="cursor-pointer font-semibold mb-5">Verified website findings</summary>
         <div className="border-b border-border pb-6"><p className="text-primary text-sm flex items-center gap-2 mb-3"><CheckCircle2 className="w-4 h-4" />Your website check</p><h2 className="font-display text-3xl mb-3">Your starting point</h2><p className="leading-relaxed">{report.summary}</p><p className="text-xs text-muted-foreground mt-4 break-words">{report.website} · Checked {new Date(report.checkedAt).toLocaleDateString()}</p></div>
         <ol className="space-y-4">{report.findings.map((finding, i) => <li key={finding.id} className="border border-border bg-card rounded-lg p-5 sm:p-6">
           <div className="flex justify-between items-start gap-3 mb-3"><h3 className="font-display text-xl"><span className="text-primary mr-2">0{i + 1}</span>{finding.title}</h3><span className="text-xs text-muted-foreground shrink-0">{finding.status === "unknown" ? "Not verified" : finding.status === "opportunity" ? "Opportunity" : "Observed"}</span></div>
@@ -74,6 +84,7 @@ export default function AIAwarenessChecker() {
           <a href={finding.evidence} target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground underline break-all inline-block mt-4">Checked source</a>
         </li>)}</ol>
         <div className="border-y border-border py-5"><h3 className="font-semibold mb-2">AI search readiness</h3><p className="text-sm text-muted-foreground">{report.checks.find(c => c.id === "ai")?.found}</p><p className="text-xs text-muted-foreground mt-3">{report.scope}</p></div>
+        </details>
       </section>
       <section aria-label="Email your free report" className="py-8 border-b border-border">
         <Mail className="w-6 h-6 text-primary mb-3" /><h2 className="font-display text-2xl mb-2">Email me the full report</h2><p className="text-muted-foreground text-sm mb-6">Free. Includes every completed check, what couldn't be verified, and practical next steps.</p>
