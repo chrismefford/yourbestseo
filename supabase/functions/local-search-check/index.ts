@@ -4,6 +4,7 @@ import { z } from "npm:zod@3";
 import { parseHTML } from "npm:linkedom@0.18.12";
 import ipaddr from "npm:ipaddr.js@2.5.0";
 import { buildReport, normalizeWebsite, reportText, FOLLOW_UP_WORDING, CONSENT_VERSION, type Page, type Report } from "./rules.ts";
+import { reviewWebsite } from "./ai-review.ts";
 
 const inputSchema = z.object({ website: z.string().trim().min(3).max(500), city: z.string().trim().min(2).max(100), service: z.string().trim().min(2).max(100), profile: z.string().trim().max(500).optional() });
 const emailSchema = z.object({ reportId: z.string().uuid(), name: z.string().trim().min(1).max(100), email: z.string().trim().email().max(250), followUp: z.boolean() });
@@ -82,6 +83,8 @@ Deno.serve(async req => {
     if (body.action !== "check") return response({ error: "Unknown request." }, 400);
     const input = inputSchema.parse(body);
     input.website = normalizeWebsite(input.website);
+    const { data: blocked } = await db.from("local_search_reports").select("report").contains("report", { aiBlocked: true }).limit(1);
+    if (blocked?.length) return response({ error: (blocked[0].report as Report).aiError ?? "AI reports are paused until provider access is restored." }, 403);
     if (input.profile) { const profile = new URL(input.profile); if (!/^https?:$/.test(profile.protocol) || profile.username || profile.password || !/(^|\.)(google\.com|google\.[a-z]{2,3}|g\.page|goo\.gl|maps\.app\.goo\.gl)$/.test(profile.hostname)) throw new Error("Enter a Google Maps or Google Business Profile link."); }
     await validatePublic(new URL(input.website));
     let page: Page;
@@ -94,7 +97,29 @@ Deno.serve(async req => {
     const report = buildReport(input, page, robots, pages, robotsNote);
     const { data: saved, error: saveError } = await db.from("local_search_reports").insert({ input, report }).select("id").single();
     if (saveError || !saved) return response({ error: "We couldn't prepare your report. Please try again." }, 500);
-    return response({ success: true, reportId: saved.id, report });
+    const encoder = new TextEncoder();
+    const stream = new ReadableStream({
+      async start(controller) {
+        controller.enqueue(encoder.encode("\n"));
+        const heartbeat = setInterval(() => { try { controller.enqueue(encoder.encode("\n")); } catch { clearInterval(heartbeat); } }, 5000);
+        try {
+          const generated = await reviewWebsite(input, report, req.signal);
+          report.review = generated.review;
+        } catch (error) {
+          const failure = error as { statusCode?: number; responseBody?: string; message?: string };
+          let safeMessage = "The AI report could not be completed. Your verified website findings are shown below.";
+          try { const details = JSON.parse(failure.responseBody ?? "{}"); safeMessage = details.message ?? details.error?.message ?? safeMessage; } catch { /* Do not expose raw provider payloads. */ }
+          if (!failure.statusCode && failure.message?.includes("AI report was incomplete")) safeMessage = failure.message;
+          report.aiError = safeMessage;
+          report.aiBlocked = failure.statusCode === 402 || failure.statusCode === 403 || failure.statusCode === 404;
+        }
+        const { error: updateError } = await db.from("local_search_reports").update({ report }).eq("id", saved.id);
+        clearInterval(heartbeat);
+        controller.enqueue(encoder.encode(JSON.stringify(updateError ? { error: "We couldn't save your completed report. Please try again." } : { success: true, reportId: saved.id, report })));
+        controller.close();
+      },
+    });
+    return new Response(stream, { headers: { ...corsHeaders, "Content-Type": "application/json", "Cache-Control": "no-store" } });
   } catch (error) {
     return response({ error: error instanceof z.ZodError ? "Please enter a valid website, service, city, and contact details." : error instanceof Error ? error.message : "The check could not be completed." }, 400);
   }
