@@ -32,13 +32,13 @@ const CTASection = () => {
             Your Next Appointment Starts With Being Found
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-10">
-            Do you know how customers find businesses through AI? Check your awareness of ChatGPT, prompts, and customer questions—then request a personalized business review.
+            Find practical local-search opportunities on your website, including AI search readiness. See useful findings first, then choose whether to request a free report.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <Button variant="hero" size="xl" className="gap-2" asChild>
               <a href="/free-audit">
-                Check My AI Awareness
+                Check My Website
                 <ArrowRight className="w-5 h-5" />
               </a>
             </Button>

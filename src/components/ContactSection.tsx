@@ -86,7 +86,7 @@ const ContactSection = () => {
             Get clarity on your AI visibility.
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Start with the free AI Awareness Checker, then request a personalized look at your business. Or contact us directly about getting found on ChatGPT, Perplexity, Claude, and Google Maps.
+            Start with the free Local Search Opportunity Check, then request help with your findings. Or contact us directly about getting found on ChatGPT, Perplexity, Claude, and Google Maps.
           </p>
         </motion.div>
 
@@ -133,7 +133,7 @@ const ContactSection = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-12"
         >
-          <Button variant="hero" size="xl" asChild><a href="/free-audit">Check My AI Awareness<ArrowRight className="w-5 h-5 ml-2" /></a></Button>
+          <Button variant="hero" size="xl" asChild><a href="/free-audit">Check My Website<ArrowRight className="w-5 h-5 ml-2" /></a></Button>
           <Button
             variant="outline"
             size="xl"
