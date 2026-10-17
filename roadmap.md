@@ -1,6 +1,7 @@
 # AI awareness giveaway
 - [x] Diagnose Twilio setup: no saved connection; prior prompts were interrupted, not provider rejections. Uploaded screenshot exposed an API-key secret; Chris must revoke it and enter replacement credentials securely.
 - [x] Connect Twilio directly, as approved by Chris: Account SID and Auth Token saved securely; direct read-only phone-number request returned HTTP 200. No texts sent.
+- [x] Draft answers for Twilio’s message-flow and opt-in-proof fields; final submission waits on actual consent form and matching public privacy/SMS terms pages.
 - [ ] Add optional, unchecked appointment-SMS consent, linked SMS terms/privacy disclosures, and stored consent evidence; Chris chose owner alerts plus visitor appointment confirmations/reminders.
 - [ ] Enable owner and opted-in visitor SMS — direct Twilio credentials verified; blocked by sender registration and consent setup. Enable SMS Pumping Protection and review SMS Geo Permissions before production sends.
 - [x] Restore visible headers across affected pages and verify navigation.
