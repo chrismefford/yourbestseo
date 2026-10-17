@@ -1,4 +1,5 @@
 # AI awareness giveaway
+- [ ] Confirm whether texts go only to Chris or also to visitors; establish appointment-text consent and registration proof before enabling visitor SMS — awaiting Chris's choice and texting-service connection.
 - [x] Restore visible headers across affected pages and verify navigation.
 - [x] Replace About with Chris Mefford's personal biography and add an About Me menu link.
 - [x] Replace service catalog navigation and homepage messaging with awareness, appointments, and search rankings.
