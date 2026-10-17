@@ -1,4 +1,6 @@
 # AI awareness giveaway
+- [ ] Replace quiz with Local Search Opportunity Check, verified findings before contact capture, private report/lead storage and optional follow-up consent.
+- [ ] Verify public-website checks and full report request on desktop/mobile; report email blockers honestly.
 - [x] Replace the former public phone number everywhere with (619) 903-6599; verified call links and search-engine schemas on six pages, and deployed updated chatbot, booking fallback, and transcript contact messages.
 - [x] Diagnose Twilio setup: no saved connection; prior prompts were interrupted, not provider rejections. Uploaded screenshot exposed an API-key secret; Chris must revoke it and enter replacement credentials securely.
 - [x] Connect Twilio directly, as approved by Chris: Account SID and Auth Token saved securely; direct read-only phone-number request returned HTTP 200. No texts sent.
