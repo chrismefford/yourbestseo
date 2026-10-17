@@ -211,7 +211,7 @@ const Header = () => {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-2">
             <Button variant="ghost" size="sm" onClick={handleShowOffer}>
-              AI Checker
+              Search Check
             </Button>
             <a href="tel:+16199036599" className="flex items-center gap-1.5 px-2 text-sm font-semibold text-foreground hover:text-primary whitespace-nowrap">
               <Phone className="w-4 h-4 text-primary" />(619) 903-6599
@@ -246,7 +246,7 @@ const Header = () => {
           >
             <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
               <Button variant="ghost" size="lg" className="w-full" onClick={handleShowOffer}>
-                AI Checker
+                Search Check
               </Button>
 
               {/* Learn Section for Mobile */}

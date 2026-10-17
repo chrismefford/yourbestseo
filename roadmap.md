@@ -1,4 +1,7 @@
 # AI awareness giveaway
+- [x] Replace quiz with Local Search Opportunity Check, verified findings before contact capture, private report/lead storage and optional follow-up consent.
+- [x] Verify real public-website checks, saved request/consent, report download, help link, and desktop/mobile layouts; 23 tests passed.
+- [ ] Deliver opportunity reports by email — verified provider rejection: yourbestseo.com sender domain is unverified in Resend; requests remain saved and downloads work.
 - [x] Replace the former public phone number everywhere with (619) 903-6599; verified call links and search-engine schemas on six pages, and deployed updated chatbot, booking fallback, and transcript contact messages.
 - [x] Diagnose Twilio setup: no saved connection; prior prompts were interrupted, not provider rejections. Uploaded screenshot exposed an API-key secret; Chris must revoke it and enter replacement credentials securely.
 - [x] Connect Twilio directly, as approved by Chris: Account SID and Auth Token saved securely; direct read-only phone-number request returned HTTP 200. No texts sent.

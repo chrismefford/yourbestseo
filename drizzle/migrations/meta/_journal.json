@@ -15,6 +15,13 @@
       "when": 1792274627671,
       "tag": "0001_add_appointment_sms_consent_evidence",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1792280445253,
+      "tag": "0002_local_search_opportunity_reports",
+      "breakpoints": true
     }
   ]
 }

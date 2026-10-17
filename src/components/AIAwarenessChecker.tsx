@@ -1,105 +1,93 @@
 import { useState } from "react";
-import { ArrowLeft, ArrowRight, CheckCircle2, Gift, Loader2, Lock, MapPin, MessageCircle, RotateCcw } from "lucide-react";
+import { ArrowRight, CheckCircle2, Download, Globe2, Loader2, Mail, RotateCcw, Search, ShieldCheck } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Progress } from "@/components/ui/progress";
+import { Checkbox } from "@/components/ui/checkbox";
 import { supabase } from "@/integrations/supabase/client";
-import BookingScheduler from "@/components/BookingScheduler";
-import { awarenessQuestions, getAwarenessResult, type AwarenessAnswer } from "@/lib/ai-awareness";
-
-const choices = [{ value: "2", label: "Yes" }, { value: "1", label: "Somewhat" }, { value: "0", label: "Not yet" }, { value: "3", label: "Not sure" }];
-type Stage = "quiz" | "capture" | "results";
-const empty = { name: "", phone: "", email: "", website: "" };
+import { FOLLOW_UP_WORDING, normalizeWebsite, reportText, type Report } from "@/lib/local-search";
 
 export default function AIAwarenessChecker() {
-  const [stage, setStage] = useState<Stage>("quiz");
-  const [step, setStep] = useState(0);
-  const [answers, setAnswers] = useState<AwarenessAnswer[]>([]);
-  const [details, setDetails] = useState(empty);
-  const [leadId, setLeadId] = useState<string>();
-  const [sending, setSending] = useState(false);
+  const [input, setInput] = useState({ website: "", city: "", service: "", profile: "" });
+  const [report, setReport] = useState<Report>();
+  const [reportId, setReportId] = useState("");
+  const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
-  const question = awarenessQuestions[step];
-  const result = getAwarenessResult(answers);
-  const totalSteps = awarenessQuestions.length + 1;
-  const reset = () => { setStage("quiz"); setStep(0); setAnswers([]); setError(""); };
+  const [contact, setContact] = useState({ name: "", email: "" });
+  const [followUp, setFollowUp] = useState(false);
+  const [emailBusy, setEmailBusy] = useState(false);
+  const [emailMessage, setEmailMessage] = useState("");
+  const [emailed, setEmailed] = useState(false);
 
-  const capture = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (sending || !result.complete) return;
-    setSending(true); setError("");
-    const { data, error: err } = await supabase.functions.invoke("booking", { body: { action: "lead", ...details, score: result.score, answers } });
-    setSending(false);
-    if (err || data?.success !== true) { setError("Something went wrong saving your details. Please try again or call (619) 903-6599."); return; }
-    setLeadId(data.leadId);
-    setStage("results");
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  if (stage === "quiz" && question) return <div className="max-w-2xl mx-auto" id="awareness-checker">
-    <section className="rounded-lg border border-border bg-card p-6 sm:p-10" aria-label="AI awareness quiz">
-      <div className="flex justify-between text-sm text-muted-foreground mb-3"><span>How visible are you on ChatGPT?</span><span>Step {step + 1} of {totalSteps}</span></div>
-      <Progress value={step / totalSteps * 100} className="h-1.5 mb-8" />
-      <MessageCircle className="h-8 w-8 text-primary mb-5" />
-      <h2 className="font-display text-2xl sm:text-3xl leading-snug mb-8">{question.title}</h2>
-      <RadioGroup value={answers[step]?.toString() ?? ""} onValueChange={value => {
-        if (!["0", "1", "2", "3"].includes(value)) return;
-        const next = [...answers]; next[step] = Number(value) as AwarenessAnswer; setAnswers(next);
-      }} className="gap-3">
-        {choices.map(c => <Label key={c.value} htmlFor={`${question.id}-${c.value}`} className="flex items-center gap-4 border border-border rounded-lg p-4 cursor-pointer has-[[data-state=checked]]:border-primary has-[[data-state=checked]]:bg-primary/5"><RadioGroupItem id={`${question.id}-${c.value}`} value={c.value} />{c.label}</Label>)}
-      </RadioGroup>
-      <div className="flex justify-between gap-3 mt-8">
-        <Button variant="ghost" disabled={step === 0} onClick={() => setStep(step - 1)}><ArrowLeft className="w-4 h-4 mr-2" />Back</Button>
-        <Button variant="hero" disabled={answers[step] === undefined} onClick={() => step === awarenessQuestions.length - 1 ? setStage("capture") : setStep(step + 1)}>Next<ArrowRight className="w-4 h-4 ml-2" /></Button>
-      </div>
-    </section>
-  </div>;
-
-  if (stage === "capture") return <div className="max-w-2xl mx-auto" id="awareness-checker">
-    <section className="rounded-lg border border-border bg-card p-6 sm:p-10" aria-label="Unlock your results">
-      <div className="flex justify-between text-sm text-muted-foreground mb-3"><span>Almost done</span><span>Step {totalSteps} of {totalSteps}</span></div>
-      <Progress value={95} className="h-1.5 mb-8" />
-      <Lock className="h-8 w-8 text-primary mb-5" />
-      <h2 className="font-display text-2xl sm:text-3xl leading-snug mb-2">Your score is ready.</h2>
-      <p className="text-muted-foreground mb-8">Tell us how to reach you to unlock your results and your free Google Business review.</p>
-      <form onSubmit={capture} className="space-y-5">
-        <div className="grid sm:grid-cols-2 gap-5">{([
-          ["name", "Your name", "text", true], ["phone", "Phone number", "tel", true], ["email", "Email", "email", true], ["website", "Website", "text", true],
-        ] as const).map(([k, label, type, required]) => <div key={k} className="space-y-2"><Label htmlFor={`lead-${k}`}>{label}{required ? " *" : ""}</Label><Input id={`lead-${k}`} type={type} inputMode={k === "website" ? "url" : undefined} required={required} maxLength={250} value={details[k]} disabled={sending} placeholder={k === "website" ? "yourbusiness.com" : undefined} onChange={e => setDetails(p => ({ ...p, [k]: e.target.value }))} /></div>)}</div>
-        {error && <p role="alert" className="text-destructive">{error}</p>}
-        <div className="flex flex-col-reverse sm:flex-row justify-between gap-3">
-          <Button type="button" variant="ghost" onClick={() => setStage("quiz")}><ArrowLeft className="w-4 h-4 mr-2" />Back</Button>
-          <Button type="submit" variant="hero" size="lg" disabled={sending}>{sending ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" />Unlocking…</> : <>Show my results<ArrowRight className="w-4 h-4 ml-2" /></>}</Button>
+  async function check(e: React.FormEvent) {
+    e.preventDefault(); if (busy) return;
+    setError("");
+    try { normalizeWebsite(input.website); } catch (err) { setError(err instanceof Error ? err.message : "Enter a valid website."); return; }
+    setBusy(true);
+    try {
+      const { data, error: requestError } = await supabase.functions.invoke("local-search-check", { body: { action: "check", ...input } });
+      if (requestError) { const details = await requestError.context?.json?.().catch(() => null); throw new Error(details?.error ?? "We couldn't complete the check. Please try again."); }
+      if (!data?.success || !data.report) throw new Error(data?.error ?? "The check could not be completed.");
+      setReport(data.report); setReportId(data.reportId);
+      document.getElementById("awareness-checker")?.scrollIntoView({ block: "start" });
+      setEmailMessage(""); setEmailed(false);
+    } catch (err) { setError(err instanceof Error ? err.message : "The check could not be completed."); }
+    finally { setBusy(false); }
+  }
+  async function email(e: React.FormEvent) {
+    e.preventDefault(); if (emailBusy || !reportId) return;
+    setEmailBusy(true); setEmailMessage("");
+    try {
+      const { data, error: requestError } = await supabase.functions.invoke("local-search-check", { body: { action: "email", reportId, ...contact, followUp } });
+      if (requestError) throw new Error("We couldn't send your report. You can download it below or try again.");
+      if (!data?.success) throw new Error(data?.error ?? "Email delivery could not be confirmed.");
+      setEmailed(true); setEmailMessage("Your full report has been sent to your email.");
+    } catch (err) { setEmailMessage(err instanceof Error ? err.message : "Email delivery could not be confirmed."); }
+    finally { setEmailBusy(false); }
+  }
+  function download() {
+    if (!report) return;
+    const url = URL.createObjectURL(new Blob([reportText(report)], { type: "text/plain;charset=utf-8" }));
+    const anchor = document.createElement("a"); anchor.href = url; anchor.download = "local-search-opportunity-report.txt"; anchor.click(); URL.revokeObjectURL(url);
+  }
+  return <div className="max-w-3xl mx-auto" id="awareness-checker">
+    {!report ? <section className="border border-border rounded-lg bg-card p-6 sm:p-8" aria-label="Check your website">
+      <div className="flex items-center gap-3 mb-6"><Globe2 className="w-6 h-6 text-primary" /><h2 className="font-display text-2xl">Start with your business</h2></div>
+      <form onSubmit={check} className="space-y-5">
+        <div className="space-y-2"><Label htmlFor="check-website">Website address</Label><Input id="check-website" inputMode="url" autoComplete="url" placeholder="yourbusiness.com" required maxLength={500} value={input.website} disabled={busy} onChange={e => setInput(p => ({ ...p, website: e.target.value }))} /></div>
+        <div className="grid sm:grid-cols-2 gap-5">
+          <div className="space-y-2"><Label htmlFor="check-city">City or service area</Label><Input id="check-city" placeholder="San Diego" required minLength={2} maxLength={100} value={input.city} disabled={busy} onChange={e => setInput(p => ({ ...p, city: e.target.value }))} /></div>
+          <div className="space-y-2"><Label htmlFor="check-service">Main service or product</Label><Input id="check-service" placeholder="HVAC repair" required minLength={2} maxLength={100} value={input.service} disabled={busy} onChange={e => setInput(p => ({ ...p, service: e.target.value }))} /></div>
         </div>
-        <p className="text-xs text-muted-foreground">No spam. Chris may call or email you about your results.</p>
+        <div className="space-y-2"><Label htmlFor="check-profile">Google Business Profile link <span className="text-muted-foreground font-normal">(optional)</span></Label><Input id="check-profile" type="url" placeholder="https://maps.google.com/…" maxLength={500} value={input.profile} disabled={busy} onChange={e => setInput(p => ({ ...p, profile: e.target.value }))} /><p className="text-xs text-muted-foreground">This check focuses on your website—not an audit of your Google profile.</p></div>
+        {error && <p role="alert" className="text-destructive">{error}</p>}
+        <Button variant="hero" size="lg" type="submit" className="w-full gap-2" disabled={busy}>{busy ? <><Loader2 className="w-5 h-5 animate-spin" />Checking public pages…</> : <><Search className="w-5 h-5" />Find my opportunities<ArrowRight className="w-5 h-5" /></>}</Button>
+        <p className="text-sm text-muted-foreground text-center flex justify-center items-center gap-2"><ShieldCheck className="w-4 h-4 shrink-0" />Free findings first. No contact details required.</p>
       </form>
-    </section>
-  </div>;
-
-  return <div className="max-w-2xl mx-auto" id="awareness-checker">
-    <section aria-label="Your results">
-      <div className="text-center pb-8 border-b border-border">
-        <p className="text-muted-foreground mb-2">{details.name.split(" ")[0]}, here's where your business stands</p>
-        <span className="text-primary font-display text-6xl font-bold">{result.score}<span className="text-xl text-muted-foreground"> / 100</span></span>
-        <h2 className="font-display text-3xl mt-4 mb-3">{result.label}</h2>
-        <p className="text-sm text-muted-foreground">Based on your answers — a starting point, not a live scan of ChatGPT.</p>
-      </div>
-      <div className="py-8 space-y-6">
-        {awarenessQuestions.map((item, i) => <div key={item.id} className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 shrink-0 text-primary mt-1" /><div><h3 className="font-semibold mb-2">{item.title}</h3><p className="text-sm text-muted-foreground leading-relaxed">{item.tip}</p><p className="text-xs text-primary mt-2">Your answer: {choices.find(c => c.value === String(answers[i]))?.label}</p></div></div>)}
-      </div>
-    </section>
-
-    <section className="rounded-xl border-2 border-primary bg-card p-6 sm:p-10" aria-label="Your free offer">
-      <div className="inline-flex items-center gap-2 rounded-full bg-primary/15 text-primary px-3 py-1 text-sm font-medium mb-4"><Gift className="h-4 w-4" />Your free bonus</div>
-      <h2 className="font-display text-3xl mb-3">Free Google Business Profile Review</h2>
-      <p className="text-muted-foreground mb-4">A 30-minute call with Chris. We'll look at your Google Maps listing, what ChatGPT says about your business, and the 3 fastest fixes to get more calls.</p>
-      <ul className="space-y-2 mb-8 text-sm">
-        {["Where you rank in Google Maps today", "What AI tools say when customers ask about you", "A simple plan to get more appointments"].map(t => <li key={t} className="flex gap-2"><MapPin className="h-4 w-4 text-primary shrink-0 mt-0.5" />{t}</li>)}
-      </ul>
-      <BookingScheduler contact={details} leadId={leadId} score={result.score} answers={answers} />
-    </section>
-    <Button variant="ghost" className="mt-6" onClick={reset}><RotateCcw className="h-4 w-4 mr-2" />Retake quiz</Button>
+    </section> : <>
+      <section aria-label="Your website findings" className="space-y-6">
+        <div className="border-b border-border pb-6"><p className="text-primary text-sm flex items-center gap-2 mb-3"><CheckCircle2 className="w-4 h-4" />Your website check</p><h2 className="font-display text-3xl mb-3">Your starting point</h2><p className="leading-relaxed">{report.summary}</p><p className="text-xs text-muted-foreground mt-4 break-words">{report.website} · Checked {new Date(report.checkedAt).toLocaleDateString()}</p></div>
+        <ol className="space-y-4">{report.findings.map((finding, i) => <li key={finding.id} className="border border-border bg-card rounded-lg p-5 sm:p-6">
+          <div className="flex justify-between items-start gap-3 mb-3"><h3 className="font-display text-xl"><span className="text-primary mr-2">0{i + 1}</span>{finding.title}</h3><span className="text-xs text-muted-foreground shrink-0">{finding.status === "unknown" ? "Not verified" : finding.status === "opportunity" ? "Opportunity" : "Observed"}</span></div>
+          <p className="leading-relaxed">{finding.found}</p><p className="text-sm text-muted-foreground mt-3"><strong className="text-foreground">Why it matters: </strong>{finding.why}</p><p className="text-sm mt-3"><strong className="text-primary">Next step: </strong>{finding.next}</p>
+          <a href={finding.evidence} target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground underline break-all inline-block mt-4">Checked source</a>
+        </li>)}</ol>
+        <div className="border-y border-border py-5"><h3 className="font-semibold mb-2">AI search readiness</h3><p className="text-sm text-muted-foreground">{report.checks.find(c => c.id === "ai")?.found}</p><p className="text-xs text-muted-foreground mt-3">{report.scope}</p></div>
+      </section>
+      <section aria-label="Email your free report" className="py-8 border-b border-border">
+        <Mail className="w-6 h-6 text-primary mb-3" /><h2 className="font-display text-2xl mb-2">Email me the full report</h2><p className="text-muted-foreground text-sm mb-6">Free. Includes every completed check, what couldn't be verified, and practical next steps.</p>
+        {!emailed && <form onSubmit={email} className="space-y-5">
+          <div className="grid sm:grid-cols-2 gap-5"><div className="space-y-2"><Label htmlFor="report-name">Your name</Label><Input id="report-name" autoComplete="name" required maxLength={100} value={contact.name} disabled={emailBusy} onChange={e => setContact(p => ({ ...p, name: e.target.value }))} /></div><div className="space-y-2"><Label htmlFor="report-email">Email address</Label><Input id="report-email" type="email" autoComplete="email" required maxLength={250} value={contact.email} disabled={emailBusy} onChange={e => setContact(p => ({ ...p, email: e.target.value }))} /></div></div>
+          <div className="flex items-start gap-3"><Checkbox id="report-follow-up" checked={followUp} disabled={emailBusy} onCheckedChange={checked => setFollowUp(checked === true)} /><Label htmlFor="report-follow-up" className="text-sm font-normal leading-relaxed">{FOLLOW_UP_WORDING}</Label></div>
+          <p className="text-xs text-muted-foreground">We save your request and report to fulfill this request. <Link to="/privacy-policy" className="underline">Privacy Policy</Link></p>
+          <Button variant="hero" type="submit" disabled={emailBusy} className="gap-2">{emailBusy ? <Loader2 className="w-4 h-4 animate-spin" /> : <Mail className="w-4 h-4" />}Email my free report</Button>
+        </form>}
+        {emailMessage && <p role="status" className="text-sm mt-4">{emailMessage}</p>}
+        <Button variant="ghost" onClick={download} className="gap-2 mt-4"><Download className="w-4 h-4" />Download full report</Button>
+      </section>
+      <section className="py-8"><h2 className="font-display text-2xl mb-2">Want help with the next step?</h2><p className="text-sm text-muted-foreground mb-5">Talk through your findings with Chris on a free 30-minute call.</p><Button variant="hero" asChild className="gap-2"><Link to="/book">Book a free call<ArrowRight className="w-4 h-4" /></Link></Button></section>
+      <Button variant="ghost" className="gap-2" onClick={() => { setReport(undefined); setError(""); setFollowUp(false); window.scrollTo({ top: 0 }); }}><RotateCcw className="w-4 h-4" />Check another website</Button>
+    </>}
   </div>;
 }

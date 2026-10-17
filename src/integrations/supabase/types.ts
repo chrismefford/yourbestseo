@@ -98,6 +98,71 @@ export type Database = {
         }
         Relationships: []
       }
+      local_search_report_leads: {
+        Row: {
+          consent_version: string
+          consent_wording: string
+          created_at: string
+          email: string
+          email_status: string
+          follow_up_consent: boolean
+          id: string
+          name: string
+          report_id: string
+        }
+        Insert: {
+          consent_version: string
+          consent_wording: string
+          created_at?: string
+          email: string
+          email_status?: string
+          follow_up_consent?: boolean
+          id?: string
+          name: string
+          report_id: string
+        }
+        Update: {
+          consent_version?: string
+          consent_wording?: string
+          created_at?: string
+          email?: string
+          email_status?: string
+          follow_up_consent?: boolean
+          id?: string
+          name?: string
+          report_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "local_search_report_leads_report_id_fkey"
+            columns: ["report_id"]
+            isOneToOne: false
+            referencedRelation: "local_search_reports"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      local_search_reports: {
+        Row: {
+          created_at: string
+          id: string
+          input: Json
+          report: Json
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          input: Json
+          report: Json
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          input?: Json
+          report?: Json
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

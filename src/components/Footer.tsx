@@ -149,14 +149,14 @@ const Footer = () => {
         <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
-              <h3 className="font-display font-semibold text-lg mb-1">Would AI Recommend Your Business?</h3>
-              <p className="text-sm text-muted-foreground">Check your AI awareness, then request a personalized business review.</p>
+              <h3 className="font-display font-semibold text-lg mb-1">Find Your Local Search Opportunities</h3>
+              <p className="text-sm text-muted-foreground">See practical website findings before sharing your email.</p>
             </div>
             <Link 
               to="/free-audit" 
               className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors whitespace-nowrap"
             >
-              AI Awareness Checker
+              Check My Website
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
