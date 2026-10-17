@@ -1,5 +1,6 @@
 # AI awareness giveaway
-- [ ] Confirm whether texts go only to Chris or also to visitors; establish appointment-text consent and registration proof before enabling visitor SMS — awaiting Chris's choice and texting-service connection.
+- [ ] Add optional, unchecked appointment-SMS consent, linked SMS terms/privacy disclosures, and stored consent evidence; Chris chose owner alerts plus visitor appointment confirmations/reminders.
+- [ ] Enable owner and opted-in visitor SMS — blocked by Twilio connection, sender registration, and consent setup; do not enable sends before these are ready.
 - [x] Restore visible headers across affected pages and verify navigation.
 - [x] Replace About with Chris Mefford's personal biography and add an About Me menu link.
 - [x] Replace service catalog navigation and homepage messaging with awareness, appointments, and search rankings.
