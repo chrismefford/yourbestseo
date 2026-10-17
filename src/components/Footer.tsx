@@ -170,8 +170,8 @@ const Footer = () => {
           <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-3">
             <Link to="/privacy-policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">Privacy Policy</Link>
             <Link to="/sms-terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">SMS Terms</Link>
-            <a href="tel:+16157726641" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              (615) 772-6641
+            <a href="tel:+16199036599" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              (619) 903-6599
             </a>
             <a href="mailto:chris@yourbestseo.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               chris@yourbestseo.com

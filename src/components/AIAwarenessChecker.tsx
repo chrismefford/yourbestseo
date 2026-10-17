@@ -32,7 +32,7 @@ export default function AIAwarenessChecker() {
     setSending(true); setError("");
     const { data, error: err } = await supabase.functions.invoke("booking", { body: { action: "lead", ...details, score: result.score, answers } });
     setSending(false);
-    if (err || data?.success !== true) { setError("Something went wrong saving your details. Please try again or call (615) 772-6641."); return; }
+    if (err || data?.success !== true) { setError("Something went wrong saving your details. Please try again or call (619) 903-6599."); return; }
     setLeadId(data.leadId);
     setStage("results");
     window.scrollTo({ top: 0, behavior: "smooth" });

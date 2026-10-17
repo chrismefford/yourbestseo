@@ -24,7 +24,7 @@ const organizationSchema = {
   description: "Local SEO and AI search specialists. We get local businesses found on ChatGPT, Perplexity, Claude, and Google Maps.",
   foundingDate: "2010",
   sameAs: ["https://twitter.com/YourBestSEO", "https://www.linkedin.com/company/yourbestseo"],
-  contactPoint: { "@type": "ContactPoint", telephone: "+1-615-772-6641", contactType: "sales", email: "chris@yourbestseo.com", availableLanguage: ["English"] },
+  contactPoint: { "@type": "ContactPoint", telephone: "+1-619-903-6599", contactType: "sales", email: "chris@yourbestseo.com", availableLanguage: ["English"] },
   address: { "@type": "PostalAddress", streetAddress: "8620 Ian Way", addressLocality: "San Diego", addressRegion: "CA", postalCode: "92071", addressCountry: "US" },
 };
 

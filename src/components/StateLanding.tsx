@@ -98,7 +98,7 @@ const StateLanding = ({ data }: { data: StateData }) => {
     name: `Your Best SEO - ${data.name} SEO Services`,
     description: data.heroDescription,
     url: `${SITE_URL}/states/${data.slug}`,
-    telephone: "+1-615-772-6641",
+    telephone: "+1-619-903-6599",
     address: {
       "@type": "PostalAddress",
       streetAddress: "8620 Ian Way",
@@ -167,7 +167,7 @@ const StateLanding = ({ data }: { data: StateData }) => {
                     </Link>
                   </Button>
                   <Button size="lg" variant="outline" asChild>
-                    <a href="tel:+16157726641">Schedule a Call</a>
+                    <a href="tel:+16199036599">Schedule a Call</a>
                   </Button>
                 </div>
               </motion.div>
@@ -729,7 +729,7 @@ const StateLanding = ({ data }: { data: StateData }) => {
                     </Link>
                   </Button>
                   <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" asChild>
-                    <a href="tel:+16157726641">Call (615) 772-6641</a>
+                    <a href="tel:+16199036599">Call (619) 903-6599</a>
                   </Button>
                 </div>
               </div>

@@ -123,6 +123,6 @@ Deno.serve(async (req) => {
     return json({ error: "Unknown action" }, 400);
   } catch (e) {
     console.error(e);
-    return json({ error: "Something went wrong. Please call (615) 772-6641." }, 500);
+    return json({ error: "Something went wrong. Please call (619) 903-6599." }, 500);
   }
 });

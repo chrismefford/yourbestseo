@@ -1,4 +1,5 @@
 # AI awareness giveaway
+- [ ] Replace the former public phone number everywhere with (619) 903-6599; verify call links and search-engine schemas.
 - [x] Diagnose Twilio setup: no saved connection; prior prompts were interrupted, not provider rejections. Uploaded screenshot exposed an API-key secret; Chris must revoke it and enter replacement credentials securely.
 - [x] Connect Twilio directly, as approved by Chris: Account SID and Auth Token saved securely; direct read-only phone-number request returned HTTP 200. No texts sent.
 - [x] Draft answers for Twilio’s message-flow and opt-in-proof fields; final submission waits on actual consent form and matching public privacy/SMS terms pages.
