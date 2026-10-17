@@ -167,7 +167,9 @@ const Footer = () => {
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} YourBestSEO. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-3">
+            <Link to="/privacy-policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link to="/sms-terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">SMS Terms</Link>
             <a href="tel:+16157726641" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               (615) 772-6641
             </a>

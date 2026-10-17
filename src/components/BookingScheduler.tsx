@@ -4,6 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { supabase } from "@/integrations/supabase/client";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Link, useLocation } from "react-router-dom";
+import { z } from "zod";
+import { SMS_CONSENT_TEXT, SMS_CONSENT_VERSION } from "../../supabase/functions/_shared/sms-consent";
 
 export interface BookingContact { name: string; email: string; phone: string; website: string }
 
@@ -22,6 +26,8 @@ export default function BookingScheduler({ contact: given, leadId, score, answer
   const [contact, setContact] = useState<BookingContact>(given ?? { name: "", email: "", phone: "", website: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "done">("idle");
   const [error, setError] = useState("");
+  const [smsConsent, setSmsConsent] = useState(false);
+  const location = useLocation();
 
   const load = async () => {
     setLoadError("");
@@ -41,8 +47,10 @@ export default function BookingScheduler({ contact: given, leadId, score, answer
   const book = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!slot || status === "sending") return;
+    const validConsent = z.boolean().safeParse(smsConsent);
+    if (!validConsent.success) { setError("Please review your text message preference."); return; }
     setError(""); setStatus("sending");
-    const { data, error: err } = await supabase.functions.invoke("booking", { body: { action: "book", slot, meetingType, leadId, score, answers, ...contact } });
+    const { data, error: err } = await supabase.functions.invoke("booking", { body: { action: "book", slot, meetingType, leadId, score, answers, ...contact, smsConsent: validConsent.data, smsConsentVersion: SMS_CONSENT_VERSION, smsConsentSource: location.pathname } });
     if (err || data?.success !== true) {
       let msg = "Couldn't book that time. Please try another or call (615) 772-6641.";
       try { const body = await (err as { context?: Response })?.context?.json(); if (body?.error) msg = body.error; } catch { /* keep default */ }
@@ -81,6 +89,17 @@ export default function BookingScheduler({ contact: given, leadId, score, answer
       </>}
     </div>
 
+    <div className="space-y-3 border-t border-border pt-5">
+      <div className="flex items-start gap-3">
+        <Checkbox id="booking-sms-consent" checked={smsConsent} onCheckedChange={value => setSmsConsent(value === true)} disabled={status === "sending"} className="mt-1" />
+        <Label htmlFor="booking-sms-consent" className="text-sm leading-relaxed font-normal cursor-pointer">{SMS_CONSENT_TEXT}</Label>
+      </div>
+      <p className="text-sm text-muted-foreground pl-7">Optional. You can book without agreeing to texts. Consent is not a condition of purchase.</p>
+      <div className="flex flex-wrap gap-x-5 gap-y-2 pl-7 text-sm">
+        <Link to="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-4">Privacy Policy</Link>
+        <Link to="/sms-terms" target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-4">SMS Terms</Link>
+      </div>
+    </div>
     {error && <p role="alert" className="text-destructive">{error}</p>}
     <Button type="submit" variant="hero" size="lg" className="w-full" disabled={!slot || status === "sending"}>
       {status === "sending" ? <><Loader2 className="h-4 w-4 mr-2 animate-spin" />Booking…</> : slot ? `Book ${dayLabel(slot)} at ${timeLabel(slot)}` : "Pick a time"}
