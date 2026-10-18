@@ -1,4 +1,5 @@
 # Architecture rules
+- Render the homepage's research-backed Google and AI visibility sections through a synchronously imported component so their explanatory content is included in pre-rendered HTML.
 - Route conversation and booking CTAs directly to `/book`; reserve `/#contact` for contact details so visitors reach the scheduler without hunting for it.
 - Render authority-guide navigation once in RootLayout for `/authority/*`; other pages retain their own headers to avoid duplicates.
 - Keep Chris Mefford's personal biography at `/about` with page-specific metadata, so existing About links remain useful.
