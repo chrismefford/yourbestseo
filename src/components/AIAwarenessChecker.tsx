@@ -25,6 +25,7 @@ export default function AIAwarenessChecker() {
   const [pct, setPct] = useState(0);
   const [guess, setGuess] = useState<number[]>([]);
   const [revealed, setRevealed] = useState(false);
+  const prompts = report?.review?.prompts ?? [];
   const seven = prompts.slice(0, 7);
   const order = useMemo(() => seven.map((_, i) => i).sort((a, b) => ((a * 7919 + seven.length * 31) % 13) - ((b * 7919 + seven.length * 31) % 13)), [report]);
   const hits = guess.filter(i => i < 3).length;
@@ -34,11 +35,6 @@ export default function AIAwarenessChecker() {
     return () => clearInterval(t);
   }, [busy]);
   const phase = pct < 25 ? "Reading your website…" : pct < 55 ? "Searching what customers ask about your business…" : pct < 80 ? "Ranking the most likely questions…" : "Almost done…";
-  const prompts = report?.review?.prompts ?? [];
-  const opportunities = report ? [
-    ...(report.review?.steps ?? []).map(s => ({ title: s.title, text: s.action })),
-    ...report.findings.filter(f => f.status === "opportunity").map(f => ({ title: f.title, text: f.next })),
-  ].slice(0, 5) : [];
 
   async function next(e: React.FormEvent) {
     e.preventDefault(); if (busy) return;
@@ -119,7 +115,7 @@ export default function AIAwarenessChecker() {
         </div>
       </section>}
       <section aria-label="Email your free report" className={`py-8 ${revealed || seven.length < 7 ? "" : "hidden"}`} >
-        <Mail className="w-6 h-6 text-primary mb-3" /><h2 className="font-display text-2xl mb-2">Email me the full report</h2><p className="text-muted-foreground text-sm mb-6">All 10 questions, your opportunities, and the website details for your web person. Free.</p>
+        <Mail className="w-6 h-6 text-primary mb-3" /><h2 className="font-display text-2xl mb-2">Email me the full report</h2><p className="text-muted-foreground text-sm mb-6">Your customer questions plus website details for your web person. Free.</p>
         {!emailed && <form onSubmit={email} className="space-y-5">
           <div className="grid sm:grid-cols-2 gap-5"><div className="space-y-2"><Label htmlFor="report-name">Your name</Label><Input id="report-name" autoComplete="name" required maxLength={100} value={contact.name} disabled={emailBusy} onChange={e => setContact(p => ({ ...p, name: e.target.value }))} /></div><div className="space-y-2"><Label htmlFor="report-email">Email address</Label><Input id="report-email" type="email" autoComplete="email" required maxLength={250} value={contact.email} disabled={emailBusy} onChange={e => setContact(p => ({ ...p, email: e.target.value }))} /></div></div>
           <div className="flex items-start gap-3"><Checkbox id="report-follow-up" checked={followUp} disabled={emailBusy} onCheckedChange={checked => setFollowUp(checked === true)} /><Label htmlFor="report-follow-up" className="text-sm font-normal leading-relaxed">{FOLLOW_UP_WORDING}</Label></div>
