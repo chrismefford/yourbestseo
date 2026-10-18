@@ -75,16 +75,19 @@ export default function SearchVisibilitySections() {
           <p className="text-sm font-semibold mb-5">LOCAL BUSINESS. REAL CUSTOMER QUESTIONS.</p>
           <h2 id="local-business-heading" className="text-3xl sm:text-4xl font-bold max-w-3xl leading-tight">Built for the businesses people need close to home.</h2>
           <img src={localBusinesses} alt="A dentist, an HVAC technician and a construction contractor at work" width={1536} height={640} loading="lazy" className="w-full aspect-[12/5] object-cover mt-10 rounded-lg" />
-          <div className="grid md:grid-cols-3 gap-8 mt-8">
-            {industries.map(({ title, question, text }) => (
-              <div key={title} className="border-t border-border pt-6">
-                <h3 className="text-xl font-bold">{title}</h3>
-                <p className="font-medium mt-3 leading-relaxed">{question}</p>
-                <p className="text-muted-foreground mt-3 leading-relaxed">{text}</p>
-              </div>
-            ))}
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mt-12">
+            {industries.map(({ title, question, text }, index) => {
+              const featured = index === 1;
+              return (
+                <div key={title} className={`flex h-full flex-col rounded-2xl border p-7 lg:p-8 ${featured ? "border-primary bg-primary text-primary-foreground" : "border-border bg-muted/50"}`}>
+                  <p className={`text-xs font-semibold uppercase tracking-[0.18em] ${featured ? "text-primary-foreground/70" : "text-muted-foreground"}`}>{title}</p>
+                  <p className="mt-5 text-xl font-bold leading-snug">{question}</p>
+                  <p className={`mt-5 leading-relaxed ${featured ? "text-primary-foreground/80" : "text-muted-foreground"}`}>{text}</p>
+                </div>
+              );
+            })}
           </div>
-          <p className="text-sm text-muted-foreground mt-5">Illustrative customer questions—not measured search volumes or client results.</p>
+
           <div className="grid lg:grid-cols-[1.4fr_1fr] gap-8 items-center border-t border-border mt-12 pt-10">
             <div>
               <h3 className="text-2xl sm:text-3xl font-bold mb-4">Why work with Chris Mefford?</h3>
