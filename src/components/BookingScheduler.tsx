@@ -11,19 +11,19 @@ import { SMS_CONSENT_TEXT, SMS_CONSENT_VERSION } from "../../supabase/functions/
 
 export interface BookingContact { name: string; email: string; phone: string; website: string }
 
-interface Props { contact?: BookingContact; leadId?: string; score?: number | null; answers?: number[] }
+interface Props { contact?: BookingContact; prefill?: Partial<BookingContact>; leadId?: string; score?: number | null; answers?: number[] }
 
 const TZ = "America/Los_Angeles";
 const dayLabel = (iso: string) => new Date(iso).toLocaleDateString("en-US", { timeZone: TZ, weekday: "short", month: "short", day: "numeric" });
 const timeLabel = (iso: string) => new Date(iso).toLocaleTimeString("en-US", { timeZone: TZ, hour: "numeric", minute: "2-digit" });
 
-export default function BookingScheduler({ contact: given, leadId, score, answers }: Props) {
+export default function BookingScheduler({ contact: given, prefill, leadId, score, answers }: Props) {
   const [slots, setSlots] = useState<string[] | null>(null);
   const [loadError, setLoadError] = useState("");
   const [day, setDay] = useState("");
   const [slot, setSlot] = useState("");
   const [meetingType, setMeetingType] = useState<"phone" | "zoom">("phone");
-  const [contact, setContact] = useState<BookingContact>(given ?? { name: "", email: "", phone: "", website: "" });
+  const [contact, setContact] = useState<BookingContact>(given ?? { name: "", email: "", phone: "", website: "", ...prefill });
   const [status, setStatus] = useState<"idle" | "sending" | "done">("idle");
   const [error, setError] = useState("");
   const [smsConsent, setSmsConsent] = useState(false);
@@ -72,7 +72,7 @@ export default function BookingScheduler({ contact: given, leadId, score, answer
   return <form onSubmit={book} className="space-y-6" aria-label="Book a meeting">
     {!given && <div className="grid sm:grid-cols-2 gap-4">{([
       ["name", "Your name", "text"], ["phone", "Phone", "tel"], ["email", "Email", "email"], ["website", "Website", "text"],
-    ] as const).map(([k, label, type]) => <div key={k} className="space-y-2"><Label htmlFor={`book-${k}`}>{label} *</Label><Input id={`book-${k}`} type={type} required maxLength={250} value={contact[k]} onChange={e => setContact(p => ({ ...p, [k]: e.target.value }))} /></div>)}</div>}
+    ] as const).filter(([k]) => !prefill?.[k]).map(([k, label, type]) => <div key={k} className="space-y-2"><Label htmlFor={`book-${k}`}>{label} *</Label><Input id={`book-${k}`} type={type} required maxLength={250} value={contact[k]} onChange={e => setContact(p => ({ ...p, [k]: e.target.value }))} /></div>)}</div>}
 
     <div>
       <Label className="block mb-3">How should we meet?</Label>
