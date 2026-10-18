@@ -1,3 +1,8 @@
+# Research-backed local search content
+- [x] Research Google Maps, Google search and AI visibility using US Semrush demand (local SEO services: 27,100/month; answer engine optimization: 6,600/month), official Google/OpenAI/Anthropic guidance and observed WebFX/Thrive pages. Demand does not imply easy rankings.
+- [x] Add separate homepage AI search/AEO/LLM and Google Maps/organic sections, generated dentist/HVAC/construction imagery, illustrative customer questions, Chris's experience and audit booking link. Include source links and no-guarantee boundaries.
+- [x] Verify sections and image rendering, four working official source links, audit CTA opening /book, desktop/mobile layouts without horizontal overflow, no runtime errors, focused lint and preview build OK. No booking created; publishing not requested.
+
 # Homepage focus and booking navigation
 - [x] Replace the vague homepage check button with one larger AI-search-readiness action; remove the second hero booking button. Verified desktop/mobile and entry into the check.
 - [x] Check booking links across pages, correct conversation links on About/growth/shared CTAs to /book, and verify the calendar opens with real slots and selectable Phone/Zoom choices; no test appointment created.

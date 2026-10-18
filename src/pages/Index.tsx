@@ -3,6 +3,7 @@ import { ClientOnly } from "vite-react-ssg";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import MissionObjectives from "@/components/MissionObjectives";
+import SearchVisibilitySections from "@/components/SearchVisibilitySections";
 import HowItWorks from "@/components/HowItWorks";
 import TrustBadge from "@/components/TrustBadge";
 import ImageStrip from "@/components/ImageStrip";
@@ -65,6 +66,7 @@ const Index = () => {
         <Hero />
         <ImageStrip />
         <MissionObjectives />
+        <SearchVisibilitySections />
         <HowItWorks />
         <WideBanner />
         <TrustBadge />
