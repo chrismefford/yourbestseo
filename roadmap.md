@@ -1,5 +1,6 @@
 # Retire outdated agency pages
-- [ ] Remove pricing and white-label content, replace old URLs with non-indexable unavailable pages, clean incoming links and sitemap, and verify.
+- [x] Delete pricing and white-label pages, remove incoming links and reseller pitches from related guides, and exclude both URLs from the sitemap. Old URLs show the noindex unavailable page; browser verification and seven SEO tests passed.
+- [ ] Publish these removals to the live site; existing search listings can take time to disappear after recrawling.
 
 # Google Analytics
 - [x] Connect GA4 and install the requested Google tag using the public connector measurement ID, without literal secret placeholders.
