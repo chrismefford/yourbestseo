@@ -31,7 +31,7 @@ export default function AIAwarenessChecker() {
   const hits = guess.filter(i => i < 3).length;
   useEffect(() => {
     if (!busy) { setPct(0); return; }
-    const t = setInterval(() => setPct(p => Math.min(95, p + (95 - p) * 0.04)), 400);
+    const t = setInterval(() => setPct(p => Math.min(95, p + (95 - p) * 0.012)), 400);
     return () => clearInterval(t);
   }, [busy]);
   const phase = pct < 25 ? "Reading your website…" : pct < 55 ? "Searching what customers ask about your business…" : pct < 80 ? "Ranking the most likely questions…" : "Almost done…";
