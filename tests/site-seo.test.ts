@@ -4,7 +4,7 @@ import { allRoutes, generateSitemapXML } from '../src/data/routes';
 import { stripSeoFallback } from '../scripts/seo-html';
 
 describe('indexable route coverage', () => {
-  test('covers every public registered route except the transaction confirmation', () => {
+  test('covers every public registered route except transaction and retired pages', () => {
     const router = readFileSync(new URL('../src/router.tsx', import.meta.url), 'utf8');
     const registered = ['/', ...Array.from(router.matchAll(/path: "([^"]+)"/g), m => m[1])
       .filter(path => !['/', '*', 'payment-success', 'pricing', 'authority/white-label-seo'].includes(path))
@@ -14,6 +14,14 @@ describe('indexable route coverage', () => {
   test('does not list removed blog or payment confirmation', () => {
     expect(allRoutes.some(route => route.path === '/blog')).toBe(false);
     expect(allRoutes.some(route => route.path === '/payment-success')).toBe(false);
+  });
+  test('excludes retired agency pricing from search listings', () => {
+    expect(allRoutes.some(route => route.path === '/pricing')).toBe(false);
+    expect(generateSitemapXML()).not.toContain('<loc>https://yourbestseo.com/pricing</loc>');
+  });
+  test('excludes retired white-label offers from search listings', () => {
+    expect(allRoutes.some(route => route.path === '/authority/white-label-seo')).toBe(false);
+    expect(generateSitemapXML()).not.toContain('<loc>https://yourbestseo.com/authority/white-label-seo</loc>');
   });
 });
 
