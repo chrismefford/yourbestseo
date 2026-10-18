@@ -1,4 +1,5 @@
 import BookingScheduler from "@/components/BookingScheduler";
+import { trackEvent } from "@/lib/analytics";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowRight, Loader2, RotateCcw, Search, ShieldCheck, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -58,7 +59,7 @@ export default function AIAwarenessChecker() {
   async function next(e: React.FormEvent) {
     e.preventDefault(); if (busy) return;
     setError("");
-    if (q === 0) { try { normalizeWebsite(input.website); setQ(1); } catch (err) { setError(err instanceof Error ? err.message : "Enter a valid website."); } return; }
+    if (q === 0) { try { normalizeWebsite(input.website); trackEvent("free_check_started"); setQ(1); } catch (err) { setError(err instanceof Error ? err.message : "Enter a valid website."); } return; }
     if (q < 3) { setQ(q + 1); return; }
     setBusy(true);
     try {
@@ -79,7 +80,7 @@ export default function AIAwarenessChecker() {
   function Progress({ step, total = 3 }: { step: number; total?: number }) {
     return <div className="mb-6"><p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">Step {step} of {total}</p><div className="h-1.5 rounded-full bg-muted overflow-hidden"><div className="h-full bg-primary transition-all duration-500" style={{ width: `${(step / total) * 100}%` }} /></div></div>;
   }
-  const GateForm = <form onSubmit={e => { e.preventDefault(); setGated(true); document.getElementById("awareness-checker")?.scrollIntoView({ block: "start", behavior: "smooth" }); }} className="space-y-5">
+  const GateForm = <form onSubmit={e => { e.preventDefault(); trackEvent("contact_submitted"); setGated(true); document.getElementById("awareness-checker")?.scrollIntoView({ block: "start", behavior: "smooth" }); }} className="space-y-5">
     <div className="space-y-4"><h2 className="font-display text-2xl">Where should we send your results?</h2><div className="rounded-lg bg-primary text-primary-foreground p-4 sm:p-5 flex items-start gap-3"><Zap className="w-6 h-6 shrink-0 mt-0.5" aria-hidden="true" /><p className="text-base sm:text-lg leading-snug"><span className="font-semibold">Fill this out and your results appear the moment you click “Show my results.”</span> We’ll email you a copy too.</p></div></div>
     <div className="space-y-2"><Label htmlFor="gate-name">Your name</Label><Input id="gate-name" autoComplete="name" required maxLength={100} value={contact.name} onChange={e => setContact(p => ({ ...p, name: e.target.value }))} /></div>
     <div className="grid sm:grid-cols-2 gap-5"><div className="space-y-2"><Label htmlFor="gate-email">Email</Label><Input id="gate-email" type="email" autoComplete="email" required maxLength={250} value={contact.email} onChange={e => setContact(p => ({ ...p, email: e.target.value }))} /></div><div className="space-y-2"><Label htmlFor="gate-phone">Phone</Label><Input id="gate-phone" type="tel" autoComplete="tel" required pattern="[0-9+().\s-]{7,25}" maxLength={25} value={contact.phone} onChange={e => setContact(p => ({ ...p, phone: e.target.value }))} /></div></div>

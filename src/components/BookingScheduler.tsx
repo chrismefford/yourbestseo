@@ -8,6 +8,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Link, useLocation } from "react-router-dom";
 import { z } from "zod";
 import { SMS_CONSENT_TEXT, SMS_CONSENT_VERSION } from "../../supabase/functions/_shared/sms-consent";
+import { trackEvent } from "@/lib/analytics";
 
 export interface BookingContact { name: string; email: string; phone: string; website: string }
 
@@ -59,6 +60,7 @@ export default function BookingScheduler({ contact: given, prefill, leadId, scor
       return;
     }
     setStatus("done");
+    trackEvent("booking_completed", { meeting_type: meetingType });
     localStorage.setItem("exitPopupConverted", "true");
   };
 
