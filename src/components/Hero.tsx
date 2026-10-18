@@ -40,7 +40,7 @@ const Hero = () => {
             <div className="max-w-xl">
               <Button variant="hero" size="xl" className="w-full sm:w-auto h-auto min-h-16 px-6 sm:px-8 py-4 gap-3 whitespace-normal text-left text-lg sm:text-xl leading-snug" asChild>
                 <a href="/free-audit">
-                  Is Your Website Ready for AI Search?
+                  Is your website getting found by AI search? Check now.
                   <ArrowRight className="w-5 h-5 shrink-0" />
                 </a>
               </Button>
