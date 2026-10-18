@@ -178,7 +178,6 @@ const RevenueDrivenSEO = () => {
                 "Companies spending $3K–$20K/month on paid ads and wanting to build an owned channel",
                 "Service businesses where a single closed client pays for 6 months of SEO",
                 "SaaS and B2B companies where organic content drives demo requests and trials",
-                "Agencies looking to white-label a revenue-focused SEO program for their clients",
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3 text-muted-foreground">
                   <CheckCircle className="w-5 h-5 text-primary mt-0.5 shrink-0" />
@@ -201,7 +200,7 @@ const RevenueDrivenSEO = () => {
                 <a href="/#contact">Request a Free SEO Audit <ArrowRight className="w-5 h-5" /></a>
               </Button>
               <Button variant="heroOutline" size="xl" asChild>
-                <a href="/pricing">View Pricing</a>
+                <a href="/services">Explore Local Business Growth</a>
               </Button>
             </div>
           </motion.div>
@@ -233,10 +232,10 @@ const RevenueDrivenSEO = () => {
             {[
               { label: "SEO vs Google Ads: Which Has Better ROI?", href: "/authority/seo-vs-google-ads" },
               { label: "Technical SEO Audit Services", href: "/authority/technical-seo-audit" },
-              { label: "White Label SEO for Agencies", href: "/authority/white-label-seo" },
+              { label: "Local Business Growth", href: "/services" },
               { label: "Local SEO for Small Businesses", href: "/authority/local-seo-services" },
               { label: "What Is SEO ROI?", href: "/questions/what-is-seo-roi" },
-              { label: "SEO Pricing", href: "/pricing" },
+              { label: "Book a Free Audit Call", href: "/book" },
             ].map((link, i) => (
               <a key={i} href={link.href} className="p-4 rounded-xl border border-border/50 hover:border-primary/40 hover:bg-secondary/30 transition-all text-sm font-medium text-muted-foreground hover:text-foreground">
                 {link.label} →

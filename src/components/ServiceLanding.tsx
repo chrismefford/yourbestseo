@@ -140,8 +140,8 @@ const ServiceLanding = ({ data }: { data: ServiceData }) => {
                   </Button>
                 </div>
                 <div className="mt-4">
-                  <Link to="/pricing#a-la-carte" className="text-sm text-primary hover:underline">
-                    View All À La Carte Services →
+                  <Link to="/services" className="text-sm text-primary hover:underline">
+                    Explore Local Business Growth →
                   </Link>
                 </div>
 

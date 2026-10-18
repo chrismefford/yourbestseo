@@ -20,7 +20,6 @@ export interface RouteConfig {
 export const mainRoutes: RouteConfig[] = [
   { path: '/', priority: 1.0, changefreq: 'weekly' },
   { path: '/services', priority: 0.9, changefreq: 'weekly' },
-  { path: '/pricing', priority: 0.9, changefreq: 'weekly' },
   { path: '/about', priority: 0.8, changefreq: 'monthly' },
   { path: '/case-studies', priority: 0.8, changefreq: 'monthly' },
   { path: '/faq', priority: 0.7, changefreq: 'monthly' },
@@ -268,7 +267,6 @@ export const authorityRoutes: RouteConfig[] = [
   { path: '/authority/local-seo-services', priority: 0.9, changefreq: 'monthly' },
   { path: '/authority/seo-for-dentists', priority: 0.9, changefreq: 'monthly' },
   { path: '/authority/ecommerce-seo', priority: 0.9, changefreq: 'monthly' },
-  { path: '/authority/white-label-seo', priority: 0.9, changefreq: 'monthly' },
   { path: '/authority/seo-vs-google-ads', priority: 0.9, changefreq: 'monthly' },
 ];
 

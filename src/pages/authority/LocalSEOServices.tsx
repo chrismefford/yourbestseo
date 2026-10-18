@@ -198,7 +198,7 @@ const LocalSEOServices = () => {
                 <a href="/#contact">Request a Free SEO Audit <ArrowRight className="w-5 h-5" /></a>
               </Button>
               <Button variant="heroOutline" size="xl" asChild>
-                <a href="/pricing">View Pricing</a>
+                <a href="/services">Explore Local Business Growth</a>
               </Button>
             </div>
           </motion.div>

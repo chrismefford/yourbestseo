@@ -8,7 +8,6 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
 import Services from "./pages/Services";
-import Pricing from "./pages/Pricing";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import About from "./pages/About";
 import CaseStudies from "./pages/CaseStudies";
@@ -120,7 +119,6 @@ import TechnicalSEOAudit from "./pages/authority/TechnicalSEOAudit";
 import LocalSEOServices from "./pages/authority/LocalSEOServices";
 import DentistSEO from "./pages/authority/DentistSEO";
 import EcommerceSEO from "./pages/authority/EcommerceSEO";
-import WhiteLabelSEO from "./pages/authority/WhiteLabelSEO";
 import SEOvsGoogleAds from "./pages/authority/SEOvsGoogleAds";
 
 // À La Carte Service pages
@@ -259,7 +257,7 @@ export const routes: RouteRecord[] = [
       // Main pages
       { index: true, element: <Index /> },
       { path: "services", element: <Services /> },
-      { path: "pricing", element: <Pricing /> },
+      { path: "pricing", element: <NotFound /> },
       { path: "about", element: <About /> },
       { path: "case-studies", element: <CaseStudies /> },
       { path: "faq", element: <FAQ /> },
@@ -480,7 +478,7 @@ export const routes: RouteRecord[] = [
       { path: "authority/local-seo-services", element: <LocalSEOServices /> },
       { path: "authority/seo-for-dentists", element: <DentistSEO /> },
       { path: "authority/ecommerce-seo", element: <EcommerceSEO /> },
-      { path: "authority/white-label-seo", element: <WhiteLabelSEO /> },
+      { path: "authority/white-label-seo", element: <NotFound /> },
       { path: "authority/seo-vs-google-ads", element: <SEOvsGoogleAds /> },
 
       // State SEO pages

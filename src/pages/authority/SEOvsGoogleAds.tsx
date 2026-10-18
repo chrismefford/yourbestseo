@@ -233,7 +233,7 @@ const SEOvsGoogleAds = () => {
                 <a href="/#contact">Request a Free SEO Audit <ArrowRight className="w-5 h-5" /></a>
               </Button>
               <Button variant="heroOutline" size="xl" asChild>
-                <a href="/pricing">View Pricing</a>
+                <a href="/services">Explore Local Business Growth</a>
               </Button>
             </div>
           </motion.div>
@@ -266,7 +266,7 @@ const SEOvsGoogleAds = () => {
               { label: "What Is SEO ROI?", href: "/questions/what-is-seo-roi" },
               { label: "SEO vs PPC", href: "/questions/seo-vs-ppc" },
               { label: "Technical SEO Audit", href: "/authority/technical-seo-audit" },
-              { label: "SEO Pricing", href: "/pricing" },
+              { label: "Book a Free Audit Call", href: "/book" },
               { label: "Free Audit", href: "/free-audit" },
             ].map((link, i) => (
               <a key={i} href={link.href} className="p-4 rounded-xl border border-border/50 hover:border-primary/40 hover:bg-secondary/30 transition-all text-sm font-medium text-muted-foreground hover:text-foreground">

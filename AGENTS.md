@@ -1,4 +1,5 @@
 # Architecture rules
+- Pre-render retired commercial URLs with the noindex NotFound page and exclude them from the sitemap; this prevents hosting fallbacks from serving indexable homepage content at retired URLs.
 - Initialize the Google tag once in the browser through the public connector measurement ID; track route views and explicit funnel outcomes centrally without sending contact details or report content.
 - Keep source homepage fallback metadata inside the marked block and strip it with the SSG pre-render hook, so source checks pass without duplicating route-specific heads.
 - Generate the existing sitemap from the route registry before preview/build, omit unverified modification dates, and link nearby-area chips only to registered neighborhood routes to prevent navigation drift.

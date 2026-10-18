@@ -351,7 +351,7 @@ const CaseStudies = () => {
                 </Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <Link to="/pricing">View Our Services</Link>
+                <Link to="/services">View Our Services</Link>
               </Button>
             </div>
           </motion.div>
