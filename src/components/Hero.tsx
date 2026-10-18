@@ -37,16 +37,16 @@ const Hero = () => {
               Build awareness of your local business, compete for top Google and Google Maps rankings, and turn discovery into appointments. Get found when customers ask ChatGPT, Perplexity, or Claude who to call.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="xl" className="gap-2" asChild>
+            <div className="max-w-xl">
+              <Button variant="hero" size="xl" className="w-full sm:w-auto h-auto min-h-16 px-6 sm:px-8 py-4 gap-3 whitespace-normal text-left text-lg sm:text-xl leading-snug" asChild>
                 <a href="/free-audit">
-                  Check My Website
-                  <ArrowRight className="w-5 h-5" />
+                  Is Your Website Ready for AI Search?
+                  <ArrowRight className="w-5 h-5 shrink-0" />
                 </a>
               </Button>
-              <Button variant="heroOutline" size="xl" asChild>
-                <a href="/book">Book a Free Call</a>
-              </Button>
+              <p className="mt-4 text-base text-muted-foreground leading-relaxed">
+                Discover questions your customers could ask ChatGPT about your business, then get a free audit with Chris to improve how you get found.
+              </p>
             </div>
           </motion.div>
 
