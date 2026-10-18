@@ -1,0 +1,1 @@
+ALTER TABLE public.local_search_report_leads ADD COLUMN IF NOT EXISTS phone text;

@@ -108,6 +108,7 @@ export type Database = {
           follow_up_consent: boolean
           id: string
           name: string
+          phone: string | null
           report_id: string
         }
         Insert: {
@@ -119,6 +120,7 @@ export type Database = {
           follow_up_consent?: boolean
           id?: string
           name: string
+          phone?: string | null
           report_id: string
         }
         Update: {
@@ -130,6 +132,7 @@ export type Database = {
           follow_up_consent?: boolean
           id?: string
           name?: string
+          phone?: string | null
           report_id?: string
         }
         Relationships: [
