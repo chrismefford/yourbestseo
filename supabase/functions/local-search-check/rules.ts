@@ -2,7 +2,7 @@ export const FOLLOW_UP_WORDING = "YourBestSEO.com may email me to follow up abou
 export const CONSENT_VERSION = "local-search-2026-10-17";
 export type Check = { id: string; title: string; status: "opportunity" | "observed" | "unknown"; found: string; why: string; next: string; evidence: string };
 export type AuditInput = { website: string; city: string; service: string; profile?: string };
-export type AIReview = { overview: string; seo: string; ai: string; strengths: string[]; steps: { title: string; action: string; why: string; evidenceIds: string[] }[]; sources: { url: string; title: string }[] };
+export type AIReview = { overview: string; seo: string; ai: string; strengths: string[]; prompts?: string[]; steps: { title: string; action: string; why: string; evidenceIds: string[] }[]; sources: { url: string; title: string }[] };
 export type Report = { website: string; checkedAt: string; summary: string; checks: Check[]; findings: Check[]; scope: string; review?: AIReview; aiError?: string; aiBlocked?: boolean };
 export type Page = { url: string; title: string; description: string; headings: string[]; links: { url: string; text: string }[]; localSchema: boolean; noindex: boolean; unavailable?: string };
 
@@ -81,11 +81,12 @@ export function buildReport(input: AuditInput, page: Page, robots: string | null
 
 export function reportText(report: Report) {
   const review = report.review;
+  if (review?.prompts?.length) return ["10 Customer Questions for Your Business — YourBestSEO.com", report.website, review.overview, "Suggested questions, not measured search popularity or confirmed AI recommendations.", "", ...review.prompts.map((p, i) => `${i + 1}. ${p}`), "", "How to get found for these questions", ...review.steps.flatMap((s, i) => [`${i + 1}. ${s.title}`, s.action, s.why, ""]), "Public sources", ...review.sources.map(s => `${s.title}: ${s.url}`), "Want help? https://yourbestseo.com/book · (619) 903-6599"].join("\n");
   return ["AI & SEO Website Review — YourBestSEO.com", report.website, `Checked: ${report.checkedAt}`, ...(review ? ["", review.overview, `SEO: ${review.seo}`, `AI search: ${review.ai}`, "What's working", ...review.strengths, "What to do first", ...review.steps.flatMap((s, i) => [`${i + 1}. ${s.title}`, s.action, `Why: ${s.why}`]), "Sources", ...review.sources.map(s => `${s.title}: ${s.url}`)] : []), report.aiError ?? "", report.scope, "", ...report.checks.flatMap(c => [`${c.title} (${c.status})`, `Found: ${c.found}`, `Why it matters: ${c.why}`, `Next: ${c.next}`, `Source: ${c.evidence}`, ""]), "Need help? https://yourbestseo.com/book · (619) 903-6599"].join("\n");
 }
 
 export function groundReview(review: AIReview, report: Report): AIReview {
   const known = new Set(report.checks.map(c => c.id));
-  const plain = (text: string) => text.replace(/\[([^\]]+)\]\(https?:\/\/[^)]+\)/g, "$1").replace(/【[^】]*】/g, "");
-  return { ...review, overview: plain(review.overview), seo: plain(review.seo), ai: plain(review.ai), strengths: review.strengths.slice(0, 3).map(plain), steps: review.steps.slice(0, 3).map(s => ({ ...s, title: plain(s.title).replace(/^\s*\d+[.)]\s*/, ""), action: plain(s.action), why: plain(s.why), evidenceIds: s.evidenceIds.filter(id => known.has(id)) })), sources: review.sources.filter(s => { try { return new URL(s.url).protocol === "https:" || new URL(s.url).protocol === "http:"; } catch { return false; } }).slice(0, 8) };
+  const plain = (text: string) => text.replace(/\[([^\]]+)\]\(https?:\/\/[^)]+\)/g, "$1").replace(/【[^】]*】/g, "").replace(/^\s*\d+[.)]\s*/, "");
+  return { ...review, prompts: review.prompts?.slice(0, 10).map(plain), overview: plain(review.overview), seo: plain(review.seo), ai: plain(review.ai), strengths: review.strengths.slice(0, 3).map(plain), steps: review.steps.slice(0, 3).map(s => ({ ...s, title: plain(s.title).replace(/^\s*\d+[.)]\s*/, ""), action: plain(s.action), why: plain(s.why), evidenceIds: s.evidenceIds.filter(id => known.has(id)) })), sources: review.sources.filter(s => { try { return new URL(s.url).protocol === "https:" || new URL(s.url).protocol === "http:"; } catch { return false; } }).slice(0, 8) };
 }
