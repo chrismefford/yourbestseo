@@ -1,6 +1,6 @@
 import BookingScheduler from "@/components/BookingScheduler";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ArrowRight, Loader2, RotateCcw, Search, ShieldCheck } from "lucide-react";
+import { ArrowRight, Loader2, RotateCcw, Search, ShieldCheck, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -80,7 +80,7 @@ export default function AIAwarenessChecker() {
     return <div className="mb-6"><p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">Step {step} of {total}</p><div className="h-1.5 rounded-full bg-muted overflow-hidden"><div className="h-full bg-primary transition-all duration-500" style={{ width: `${(step / total) * 100}%` }} /></div></div>;
   }
   const GateForm = <form onSubmit={e => { e.preventDefault(); setGated(true); document.getElementById("awareness-checker")?.scrollIntoView({ block: "start", behavior: "smooth" }); }} className="space-y-5">
-    <div><h2 className="font-display text-2xl mb-1">Where should we send your results?</h2><p className="text-sm text-muted-foreground">You'll see them right away, plus a copy by email.</p></div>
+    <div className="space-y-4"><h2 className="font-display text-2xl">Where should we send your results?</h2><div className="rounded-lg bg-primary text-primary-foreground p-4 sm:p-5 flex items-start gap-3"><Zap className="w-6 h-6 shrink-0 mt-0.5" aria-hidden="true" /><p className="text-base sm:text-lg leading-snug"><span className="font-semibold">Fill this out and your results appear the moment you click “Show my results.”</span> We’ll email you a copy too.</p></div></div>
     <div className="space-y-2"><Label htmlFor="gate-name">Your name</Label><Input id="gate-name" autoComplete="name" required maxLength={100} value={contact.name} onChange={e => setContact(p => ({ ...p, name: e.target.value }))} /></div>
     <div className="grid sm:grid-cols-2 gap-5"><div className="space-y-2"><Label htmlFor="gate-email">Email</Label><Input id="gate-email" type="email" autoComplete="email" required maxLength={250} value={contact.email} onChange={e => setContact(p => ({ ...p, email: e.target.value }))} /></div><div className="space-y-2"><Label htmlFor="gate-phone">Phone</Label><Input id="gate-phone" type="tel" autoComplete="tel" required pattern="[0-9+().\s-]{7,25}" maxLength={25} value={contact.phone} onChange={e => setContact(p => ({ ...p, phone: e.target.value }))} /></div></div>
     <div className="flex items-start gap-3"><Checkbox id="report-follow-up" checked={followUp} onCheckedChange={checked => setFollowUp(checked === true)} /><Label htmlFor="report-follow-up" className="text-sm font-normal leading-relaxed">{FOLLOW_UP_WORDING}</Label></div>
