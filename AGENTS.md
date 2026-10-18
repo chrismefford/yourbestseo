@@ -1,4 +1,5 @@
 # Architecture rules
+- Route conversation and booking CTAs directly to `/book`; reserve `/#contact` for contact details so visitors reach the scheduler without hunting for it.
 - Render authority-guide navigation once in RootLayout for `/authority/*`; other pages retain their own headers to avoid duplicates.
 - Keep Chris Mefford's personal biography at `/about` with page-specific metadata, so existing About links remain useful.
 - Keep local-search finding rules in a pure module beside the public website-check function, with the UI separate from its page, so findings and access rules are testable.
