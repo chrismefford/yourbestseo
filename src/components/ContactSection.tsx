@@ -99,9 +99,10 @@ const ContactSection = () => {
         >
           <a
             href="mailto:chris@yourbestseo.com"
-            className="group p-8 rounded-2xl card-gradient border border-border/50 hover:!bg-primary hover:border-primary transition-all duration-500 text-center"
+            className="group p-8 rounded-2xl card-gradient border border-border/50 hover:!bg-primary hover:!bg-none hover:border-primary transition-all duration-500 text-center"
           >
             <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4 transition-colors duration-500 group-hover:bg-primary-foreground/10">
+
               <Mail className="w-7 h-7 text-primary transition-colors duration-500 group-hover:text-primary-foreground" />
             </div>
             <h3 className="font-display text-lg font-bold mb-2 transition-colors duration-500 group-hover:text-primary-foreground">Email</h3>
@@ -112,7 +113,7 @@ const ContactSection = () => {
           </a>
 
 
-          <div className="group p-8 rounded-2xl card-gradient border border-border/50 hover:!bg-primary hover:border-primary transition-all duration-500 text-center">
+          <div className="group p-8 rounded-2xl card-gradient border border-border/50 hover:!bg-primary hover:!bg-none hover:border-primary transition-all duration-500 text-center">
             <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4 transition-colors duration-500 group-hover:bg-primary-foreground/10">
               <Phone className="w-7 h-7 text-primary transition-colors duration-500 group-hover:text-primary-foreground" />
             </div>
@@ -133,9 +134,10 @@ const ContactSection = () => {
 
           <a
             href="/book"
-            className="group p-8 rounded-2xl card-gradient border border-border/50 hover:!bg-primary hover:border-primary transition-all duration-500 text-center"
+            className="group p-8 rounded-2xl card-gradient border border-border/50 hover:!bg-primary hover:!bg-none hover:border-primary transition-all duration-500 text-center"
           >
             <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4 transition-colors duration-500 group-hover:bg-primary-foreground/10">
+
               <CalendarCheck className="w-7 h-7 text-primary transition-colors duration-500 group-hover:text-primary-foreground" />
             </div>
             <h3 className="font-display text-lg font-bold mb-2 transition-colors duration-500 group-hover:text-primary-foreground">Book a call</h3>
