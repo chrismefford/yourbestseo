@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, ArrowRight, Loader2 } from "lucide-react";
+import { Mail, Phone, MessageSquareText, CalendarCheck, ArrowRight, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
