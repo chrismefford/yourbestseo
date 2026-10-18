@@ -119,17 +119,20 @@ export default function AIAwarenessChecker() {
     </section> : <section className="border border-border rounded-lg bg-card p-6 sm:p-10" aria-label="Get your results">{GateForm}</section>) : <>
       {report.aiError && <p role="alert" className="border border-border p-4 text-sm mb-6">{report.aiError}</p>}
       <section className="space-y-8" aria-label="Your results" id="awareness-yes" style={{ scrollMarginTop: "7rem" }}>
-        {seven.length === 7 && <div className="border border-border rounded-lg bg-card p-6 sm:p-10 text-center">
+        {seven.length === 7 && <div className="border border-border rounded-lg bg-card p-6 sm:p-10 text-center overflow-hidden">
           <p className="font-display text-6xl mb-2">{hits}/3</p>
           <h2 className="font-display text-3xl mb-3">{hits === 3 ? "Wow—you nailed it." : hits === 2 ? "Close! You got 2 of 3." : hits === 1 ? "You got 1 of 3." : "None this time."}</h2>
           <p className="text-muted-foreground max-w-xl mx-auto">{hits === 3 ? "You know your customers. Now the question is whether AI knows to send them to you." : "Most owners miss these. Customers are asking questions you might not expect—and AI sends them to whoever answers best."}</p>
           <ol className="text-left mt-8 space-y-3 max-w-xl mx-auto">{[0, 1, 2].map(i => <li key={i} className="flex gap-3 items-start"><span className="w-7 h-7 shrink-0 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-semibold">{i + 1}</span><span className="text-lg leading-snug">{seven[i]} {guess.includes(i) ? <span className="text-sm font-medium whitespace-nowrap">✓ you got it</span> : <span className="text-sm text-muted-foreground whitespace-nowrap">— missed</span>}</span></li>)}</ol>
           <p className="text-xs text-muted-foreground mt-6">Ranking is our AI's estimate from a live web search for your business type and area—not exact search counts.</p>
+          <div className="mt-8 -mx-6 sm:-mx-10 -mb-6 sm:-mb-10 bg-primary text-primary-foreground p-6 sm:p-10 text-center">
+            <p className="text-xs uppercase tracking-widest mb-3">Next step</p>
+            <h2 className="font-display text-3xl mb-3">Your free full audit</h2>
+            <p className="text-lg leading-relaxed max-w-xl mx-auto mb-7">Chris will go through your website and show you exactly what to fix to get found for these questions—and whether AI is recommending you, or your competitors.</p>
+            <button type="button" onClick={() => { setAsk(1); setTimeout(() => document.getElementById("book-call")?.scrollIntoView({ block: "start", behavior: "smooth" }), 60); }} className="rounded-md bg-foreground text-background px-8 py-3.5 text-lg font-semibold">Continue to my free audit</button>
+          </div>
         </div>}
-        {ask < 2 && ask >= 0 && <div className="rounded-lg bg-primary text-primary-foreground p-6 sm:p-10 text-center" key={ask}>
-          {ask === 0 ? <><h2 className="font-display text-3xl mb-6">Want to know if AI is recommending you—or your competitors?</h2></> : <><h2 className="font-display text-3xl mb-3">Would you like a free full audit?</h2><p className="text-lg leading-relaxed mb-6 max-w-xl mx-auto">Chris will show you exactly how to improve your website, your search results, and how many visitors turn into customers.</p></>}
-          <div className="flex justify-center gap-3"><button type="button" onClick={() => { setAsk(ask + 1); if (ask === 1) setTimeout(() => document.getElementById("book-call")?.scrollIntoView({ block: "start", behavior: "smooth" }), 50); }} className="min-w-28 rounded-md bg-foreground text-background px-8 py-3 text-lg font-semibold">Yes</button><button type="button" onClick={() => setAsk(-1)} className="min-w-28 rounded-md border-2 border-foreground px-8 py-3 text-lg font-semibold">No</button></div>
-        </div>}
+        <p className="text-center text-sm text-muted-foreground">Want to keep these for now? <button type="button" className="underline" onClick={download}>Download your questions</button></p>
         {ask === -1 && <div className="rounded-lg border border-border p-6 text-center"><p className="mb-3">No problem. If you change your mind, Chris is happy to walk you through it.</p><button type="button" className="underline font-medium" onClick={() => setAsk(1)}>Actually, I'd like the free audit</button> <span className="text-muted-foreground">·</span> <button type="button" className="underline text-muted-foreground" onClick={download}>Download my questions</button></div>}
         {ask >= 1 && <div className="flex flex-col sm:flex-row gap-6 items-start border border-border rounded-lg p-6 sm:p-8">
           <div className="w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-display text-3xl shrink-0" aria-hidden="true">CM</div>
