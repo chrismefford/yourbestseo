@@ -1,6 +1,6 @@
 import BookingScheduler from "@/components/BookingScheduler";
 import { useState } from "react";
-import { ArrowRight, CheckCircle2, Download, Globe2, Loader2, Mail, RotateCcw, Search, ShieldCheck } from "lucide-react";
+import { ArrowRight, Download, Globe2, Loader2, Mail, RotateCcw, Search, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
