@@ -1,5 +1,5 @@
 # AI awareness giveaway
-- [ ] Simplify the giveaway to ten tailored customer prompts and three plain-language ways to get found; verify a real generated report and download.
+- [x] Simplify the giveaway to ten tailored customer prompts and three plain-language ways to get found; real generated report verified, download contents and counts tested (13 tests passed).
 - [x] Add and verify an AI-written overall SEO/AI assessment and three evidence-based next steps before contact capture; real website review returned three steps and a public search source, download worked, desktop/mobile checked.
 - [x] Replace quiz with Local Search Opportunity Check, verified findings before contact capture, private report/lead storage and optional follow-up consent.
 - [x] Verify real public-website checks, saved request/consent, report download, help link, and desktop/mobile layouts; 23 tests passed.
