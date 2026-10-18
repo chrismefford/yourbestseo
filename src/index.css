@@ -142,6 +142,34 @@
     --muted-foreground: 220 12% 36%;
     --border: 220 15% 86%;
   }
+
+  /* Light surface for the /free-audit tool: black copy on white, tokens scoped to the page main */
+  .light-surface {
+    --background: 0 0% 100%;
+    --foreground: 220 30% 8%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 8%;
+    --primary: 36 88% 36%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 20% 95%;
+    --secondary-foreground: 220 30% 8%;
+    --muted: 220 18% 96%;
+    --muted-foreground: 220 12% 38%;
+    --accent: 36 88% 36%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 42%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 15% 86%;
+    --input: 220 15% 86%;
+    --ring: 36 88% 36%;
+    --gradient-gold: linear-gradient(135deg, hsl(36 88% 36%) 0%, hsl(30 85% 42%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 18% 97%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(0 0% 98%) 100%);
+    --shadow-card: 0 4px 24px hsl(220 30% 8% / 0.08);
+    color: hsl(var(--foreground));
+  }
 }
 
 @layer utilities {
