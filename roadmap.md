@@ -1,3 +1,8 @@
+# Sitewide SEO and navigation review
+- [ ] Check all public routes for descriptions, canonical URLs, JSON-LD and pre-rendered content.
+- [ ] Check rendered links, section targets and public phone numbers; identify corrections.
+- [ ] Report verified findings and distinguish indexing readiness from actual Google indexing.
+
 # Research-backed local search content
 - [x] Research Google Maps, Google search and AI visibility using US Semrush demand (local SEO services: 27,100/month; answer engine optimization: 6,600/month), official Google/OpenAI/Anthropic guidance and observed WebFX/Thrive pages. Demand does not imply easy rankings.
 - [x] Add separate homepage AI search/AEO/LLM and Google Maps/organic sections, generated dentist/HVAC/construction imagery, illustrative customer questions, Chris's experience and audit booking link. Include source links and no-guarantee boundaries.
