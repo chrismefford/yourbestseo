@@ -25,6 +25,7 @@ export default function AIAwarenessChecker() {
   const [error, setError] = useState("");
   const [contact, setContact] = useState({ name: "", email: "", phone: "" });
   const [gated, setGated] = useState(false);
+  const [ask, setAsk] = useState(0);
   const [fact, setFact] = useState(0);
   const sent = useRef("");
   const [followUp, setFollowUp] = useState(false);
@@ -118,7 +119,7 @@ export default function AIAwarenessChecker() {
         <ul className="space-y-3">{order.map(i => { const on = guess.includes(i); return <li key={i}><button type="button" aria-pressed={on} onClick={() => setGuess(g => on ? g.filter(x => x !== i) : g.length < 3 ? [...g, i] : g)} className={`w-full text-left flex gap-4 items-center rounded-lg border p-4 transition-colors ${on ? "border-primary bg-primary/15" : "border-border hover:border-foreground/40"}`}><span className={`w-7 h-7 shrink-0 rounded-full flex items-center justify-center text-sm font-semibold ${on ? "bg-primary text-primary-foreground" : "bg-muted"}`}>{on ? guess.indexOf(i) + 1 : ""}</span><span className="text-lg leading-snug">{seven[i]}</span></button></li>; })}</ul>
         <Button variant="hero" size="lg" className="w-full gap-2 mt-6" disabled={guess.length < 3} onClick={() => { setRevealed(true); document.getElementById("awareness-checker")?.scrollIntoView({ block: "start", behavior: "smooth" }); }}>{guess.length < 3 ? `Pick ${3 - guess.length} more` : "See how I did"}<ArrowRight className="w-5 h-5" /></Button>
       </section>}
-      {(revealed || seven.length < 7) && <section className="space-y-8" aria-label="Your results">
+      {(revealed || seven.length < 7) && <section className="space-y-8" aria-label="Your results" id="awareness-yes" style={{ scrollMarginTop: "7rem" }}>
         {seven.length === 7 && <div className="border border-border rounded-lg bg-card p-6 sm:p-10 text-center">
           <p className="font-display text-6xl mb-2">{hits}/3</p>
           <h2 className="font-display text-3xl mb-3">{hits === 3 ? "Wow—you nailed it." : hits === 2 ? "Close! You got 2 of 3." : hits === 1 ? "You got 1 of 3." : "None this time."}</h2>
@@ -126,22 +127,18 @@ export default function AIAwarenessChecker() {
           <ol className="text-left mt-8 space-y-3 max-w-xl mx-auto">{[0, 1, 2].map(i => <li key={i} className="flex gap-3 items-start"><span className="w-7 h-7 shrink-0 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-semibold">{i + 1}</span><span className="text-lg leading-snug">{seven[i]} {guess.includes(i) ? <span className="text-sm font-medium whitespace-nowrap">✓ you got it</span> : <span className="text-sm text-muted-foreground whitespace-nowrap">— missed</span>}</span></li>)}</ol>
           <p className="text-xs text-muted-foreground mt-6">Ranking is our AI's estimate from a live web search for your business type and area—not exact search counts.</p>
         </div>}
-        <div className="rounded-lg bg-primary text-primary-foreground p-6 sm:p-10">
-          <h2 className="font-display text-3xl mb-3">Want to know if AI is recommending you—or your competitors?</h2>
-          <p className="text-lg leading-relaxed mb-6">Get a free full audit. Chris will look at your website, your Google Maps listing, and these questions, and show you exactly what to fix to get found.</p>
-          <a href="#book-call" className="inline-flex items-center gap-2 rounded-md bg-foreground text-background px-6 py-3 font-semibold">Book my free audit call<ArrowRight className="w-5 h-5" /></a>
-        </div>
-        <div className="flex flex-col sm:flex-row gap-6 items-start border border-border rounded-lg p-6 sm:p-8">
+        {ask < 2 && ask >= 0 && <div className="rounded-lg bg-primary text-primary-foreground p-6 sm:p-10 text-center" key={ask}>
+          {ask === 0 ? <><h2 className="font-display text-3xl mb-6">Want to know if AI is recommending you—or your competitors?</h2></> : <><h2 className="font-display text-3xl mb-3">Would you like a free full audit?</h2><p className="text-lg leading-relaxed mb-6 max-w-xl mx-auto">Chris will show you exactly how to improve your website, your search results, and how many visitors turn into customers.</p></>}
+          <div className="flex justify-center gap-3"><button type="button" onClick={() => { setAsk(ask + 1); if (ask === 1) setTimeout(() => document.getElementById("book-call")?.scrollIntoView({ block: "start", behavior: "smooth" }), 50); }} className="min-w-28 rounded-md bg-foreground text-background px-8 py-3 text-lg font-semibold">Yes</button><button type="button" onClick={() => setAsk(-1)} className="min-w-28 rounded-md border-2 border-foreground px-8 py-3 text-lg font-semibold">No</button></div>
+        </div>}
+        {ask === -1 && <div className="rounded-lg border border-border p-6 text-center"><p className="mb-3">No problem. If you change your mind, Chris is happy to walk you through it.</p><button type="button" className="underline font-medium" onClick={() => setAsk(1)}>Actually, I'd like the free audit</button> <span className="text-muted-foreground">·</span> <button type="button" className="underline text-muted-foreground" onClick={download}>Download my questions</button></div>}
+        {ask >= 1 && <div className="flex flex-col sm:flex-row gap-6 items-start border border-border rounded-lg p-6 sm:p-8">
           <div className="w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-display text-3xl shrink-0" aria-hidden="true">CM</div>
           <div><h3 className="font-display text-2xl mb-2">Who you'll talk to: Chris Mefford</h3><p className="leading-relaxed text-muted-foreground">Chris has spent 20 years in marketing, wrote a best-selling book, and ran one of the largest websites in the world—1.2 billion pages. Today he helps local businesses get found on Google Maps and recommended by AI tools like ChatGPT, so more searches turn into booked appointments.</p></div>
-        </div>
+        </div>}
       </section>}
-      <section aria-label="Your report" className={`py-8 ${revealed || seven.length < 7 ? "" : "hidden"}`}>
-        <p role="status" className="text-sm">{emailMessage || "Sending your report…"}</p>
-        <Button variant="ghost" onClick={download} className="gap-2 mt-2 -ml-4"><Download className="w-4 h-4" />Download full report</Button>
-      </section>
-      <section id="book-call" style={{ scrollMarginTop: "7rem" }} className={`py-8 border-t border-border ${revealed || seven.length < 7 ? "" : "hidden"}`} aria-label="Book a free call"><h2 className="font-display text-2xl mb-2">Book your free audit call</h2><p className="text-sm text-muted-foreground mb-6">Pick a phone call or Zoom—a free 30-minute call with Chris about becoming the answer to these questions.</p><BookingScheduler prefill={{ website: report.website, ...contact }} /></section>
-      <Button variant="ghost" className="gap-2" onClick={() => { setReport(undefined); setGated(false); setGuess([]); setRevealed(false); setQ(0); setKnows(""); setError(""); setFollowUp(false); window.scrollTo({ top: 0 }); }}><RotateCcw className="w-4 h-4" />Check another website</Button>
+      {ask === 2 && <section id="book-call" style={{ scrollMarginTop: "7rem" }} className="py-8" aria-label="Book a free call"><h2 className="font-display text-3xl mb-2">Great—pick a time for your free audit</h2><p className="text-muted-foreground mb-6">Phone or Zoom, 30 minutes. Chris will go over your full report with you.</p><BookingScheduler prefill={{ website: report.website, ...contact }} /></section>}
+      <Button variant="ghost" className="gap-2" onClick={() => { setReport(undefined); setAsk(0); setGated(false); setGuess([]); setRevealed(false); setQ(0); setKnows(""); setError(""); setFollowUp(false); window.scrollTo({ top: 0 }); }}><RotateCcw className="w-4 h-4" />Check another website</Button>
     </>}
   </div>;
 }
