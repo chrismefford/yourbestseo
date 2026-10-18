@@ -114,7 +114,7 @@ export default function AIAwarenessChecker() {
           <a href="#book-call" className="inline-flex items-center gap-2 rounded-md bg-foreground text-background px-6 py-3 font-semibold">Book my free audit call<ArrowRight className="w-5 h-5" /></a>
         </div>
         <div className="flex flex-col sm:flex-row gap-6 items-start border border-border rounded-lg p-6 sm:p-8">
-          <img src={chrisPhoto} alt="Chris Mefford" className="w-24 h-24 rounded-full object-cover shrink-0" loading="lazy" />
+          <div className="w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-display text-3xl shrink-0" aria-hidden="true">CM</div>
           <div><h3 className="font-display text-2xl mb-2">Who you'll talk to: Chris Mefford</h3><p className="leading-relaxed text-muted-foreground">Chris has spent 20 years in marketing, wrote a best-selling book, and ran one of the largest websites in the world—1.2 billion pages. Today he helps local businesses get found on Google Maps and recommended by AI tools like ChatGPT, so more searches turn into booked appointments.</p></div>
         </div>
       </section>}
