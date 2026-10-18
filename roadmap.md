@@ -1,6 +1,6 @@
 # Homepage focus and booking navigation
-- [ ] Replace the vague homepage check button with one larger AI-search-readiness action; remove the second hero booking button.
-- [ ] Check booking links across pages, correct misleading destinations, and verify the calendar opens.
+- [x] Replace the vague homepage check button with one larger AI-search-readiness action; remove the second hero booking button. Verified desktop/mobile and entry into the check.
+- [x] Check booking links across pages, correct conversation links on About/growth/shared CTAs to /book, and verify the calendar opens with real slots and selectable Phone/Zoom choices; no test appointment created.
 
 # AI awareness giveaway
 - [x] Simplify the giveaway to ten tailored customer prompts and three plain-language ways to get found; real generated report verified, download contents and counts tested (13 tests passed).
