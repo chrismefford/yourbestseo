@@ -1,3 +1,4 @@
+import BookingScheduler from "@/components/BookingScheduler";
 import { useState } from "react";
 import { ArrowRight, CheckCircle2, Download, Globe2, Loader2, Mail, RotateCcw, Search, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -96,7 +97,7 @@ export default function AIAwarenessChecker() {
         {emailMessage && <p role="status" className="text-sm mt-4">{emailMessage}</p>}
         <Button variant="ghost" onClick={download} className="gap-2 mt-4"><Download className="w-4 h-4" />Download full report</Button>
       </section>
-      <section className="py-8"><h2 className="font-display text-2xl mb-2">Want help with the next step?</h2><p className="text-sm text-muted-foreground mb-5">Find out how to make your business the answer to these questions on a free 30-minute call.</p><Button variant="hero" asChild className="gap-2"><Link to="/book">Book a free call<ArrowRight className="w-4 h-4" /></Link></Button></section>
+      <section className="py-8 border-t border-border" aria-label="Book a free call"><h2 className="font-display text-2xl mb-2">Want help with the next step?</h2><p className="text-sm text-muted-foreground mb-6">Pick a phone call or Zoom—a free 30-minute call with Chris about becoming the answer to these questions.</p><BookingScheduler key={emailed ? "known" : "new"} prefill={{ website: report.website, ...(emailed ? contact : {}) }} /></section>
       <Button variant="ghost" className="gap-2" onClick={() => { setReport(undefined); setError(""); setFollowUp(false); window.scrollTo({ top: 0 }); }}><RotateCcw className="w-4 h-4" />Check another website</Button>
     </>}
   </div>;
