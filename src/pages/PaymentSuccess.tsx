@@ -4,6 +4,7 @@ import { CheckCircle, ArrowRight, Rocket, Mail } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/SEO";
 
 const PaymentSuccess = () => {
   const [searchParams] = useSearchParams();
@@ -11,6 +12,7 @@ const PaymentSuccess = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title="Payment Confirmation" description="Your Best SEO purchase confirmation and contact information." canonical="/payment-success" noIndex />
       <Header />
       
       <main className="pt-32 pb-20">
@@ -85,7 +87,7 @@ const PaymentSuccess = () => {
                 </Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <a href="mailto:support@orbitseoglobal.com">
+                <a href="mailto:chris@yourbestseo.com">
                   <Mail className="mr-2 w-4 h-4" />
                   Contact Support
                 </a>

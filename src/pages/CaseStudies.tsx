@@ -237,7 +237,9 @@ const CaseStudies = () => {
                       {study.client}
                     </h2>
                     
-                    <a
+                    {study.url === "learnyourhomesvalue.com" ? (
+                      <span className="inline-flex text-sm text-muted-foreground mb-6">{study.url}</span>
+                    ) : <a
                       href={`https://${study.url}`}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -245,7 +247,7 @@ const CaseStudies = () => {
                     >
                       {study.url}
                       <ExternalLink className="w-3 h-3" />
-                    </a>
+                    </a>}
                     
                     <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary/50 text-sm text-muted-foreground mb-8">
                       <study.icon className="w-4 h-4 text-primary" />

@@ -155,7 +155,7 @@ Turn findings into a simple roadmap with owners and dates. An audit only matters
     imageUrl="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=630&fit=crop"
     imageAlt="SEO site audit checklist and technical analysis dashboard showing website health metrics and optimization opportunities"
     relatedQuestions={[
-      { slug: 'what-is-seo-audit', question: 'What is an SEO audit?' },
+      { slug: 'what-is-an-seo-audit', question: 'What is an SEO audit?' },
       { slug: 'what-is-technical-seo', question: 'What is technical SEO?' },
       { slug: 'what-are-core-web-vitals', question: 'What are Core Web Vitals?' },
       { slug: 'what-is-screaming-frog', question: 'What is Screaming Frog?' }

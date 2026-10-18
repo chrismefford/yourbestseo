@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { neighborhoodRoutes } from "@/data/routes";
 
 interface NeighborhoodData {
   slug: string;
@@ -722,15 +723,22 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
             </motion.div>
 
             <div className="flex flex-wrap justify-center gap-4 max-w-3xl mx-auto">
-              {data.nearbyAreas.map((area, index) => (
+              {data.nearbyAreas.map((area, index) => {
+                const slug = area.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\s+/g, "-");
+                const path = `/san-diego/${slug}-seo`;
+                if (!neighborhoodRoutes.some(route => route.path === path)) {
+                  return <span key={index} className="px-6 py-3 rounded-full bg-secondary border border-border/50 font-medium">{area} SEO</span>;
+                }
+                return (
                 <Link
                   key={index}
-                  to={`/san-diego/${area.toLowerCase().replace(/\s+/g, '-')}-seo`}
+                  to={path}
                   className="px-6 py-3 rounded-full bg-secondary border border-border/50 hover:border-primary/50 hover:text-primary transition-all font-medium"
                 >
                   {area} SEO
                 </Link>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>

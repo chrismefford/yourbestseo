@@ -2,24 +2,25 @@
  * Sitemap Generator Script
  * 
  * Run this script after adding new pages:
- * npx ts-node scripts/generate-sitemap.ts
+ * bun scripts/generate-sitemap.ts
  * 
  * Or it runs automatically during build via the prebuild script.
  */
 
-import { writeFileSync } from 'fs';
-import { join } from 'path';
+import { existsSync, readFileSync, writeFileSync } from 'fs';
+import { fileURLToPath } from 'url';
 
 // Import route configuration
 import { generateSitemapXML, getPageCount, SITE_DOMAIN } from '../src/data/routes';
 
-const SITEMAP_PATH = join(__dirname, '..', 'public', 'sitemap.xml');
+const SITEMAP_PATH = fileURLToPath(new URL('../public/sitemap.xml', import.meta.url));
 
 function main() {
   console.log('🗺️  Generating sitemap...');
   console.log(`📍 Domain: ${SITE_DOMAIN}`);
   
-  const sitemapContent = generateSitemapXML();
+  const existingXML = existsSync(SITEMAP_PATH) ? readFileSync(SITEMAP_PATH, 'utf-8') : '';
+  const sitemapContent = generateSitemapXML(existingXML);
   const pageCount = getPageCount();
   
   writeFileSync(SITEMAP_PATH, sitemapContent, 'utf-8');

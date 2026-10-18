@@ -25,6 +25,9 @@ export const mainRoutes: RouteConfig[] = [
   { path: '/case-studies', priority: 0.8, changefreq: 'monthly' },
   { path: '/faq', priority: 0.7, changefreq: 'monthly' },
   { path: '/free-audit', priority: 0.9, changefreq: 'monthly' },
+  { path: '/book', priority: 0.8, changefreq: 'monthly' },
+  { path: '/privacy-policy', priority: 0.3, changefreq: 'yearly' },
+  { path: '/sms-terms', priority: 0.3, changefreq: 'yearly' },
   { path: '/glossary', priority: 0.8, changefreq: 'weekly' },
   { path: '/questions', priority: 0.8, changefreq: 'weekly' },
 ];
@@ -184,6 +187,10 @@ export const neighborhoodRoutes: RouteConfig[] = [
   { path: '/san-diego/marina-district-seo', priority: 0.7, changefreq: 'monthly' },
   { path: '/san-diego/cortez-hill-seo', priority: 0.7, changefreq: 'monthly' },
   { path: '/san-diego/north-park-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/city-heights-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/kensington-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/normal-heights-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/south-park-seo', priority: 0.7, changefreq: 'monthly' },
   { path: '/san-diego/kearny-mesa-seo', priority: 0.7, changefreq: 'monthly' },
   { path: '/san-diego/santee-seo', priority: 0.7, changefreq: 'monthly' },
   { path: '/san-diego/el-cajon-seo', priority: 0.7, changefreq: 'monthly' },
@@ -282,18 +289,23 @@ export const SITE_DOMAIN = 'https://yourbestseo.com';
 /**
  * Generate sitemap XML string from routes
  */
-export function generateSitemapXML(): string {
-  const today = new Date().toISOString().split('T')[0];
-  
+export function generateSitemapXML(existingXML = ''): string {
+  // Preserve existing page dates of unknown provenance, but never invent build dates.
+  const lastModified = new Map<string, string>();
+  for (const entry of existingXML.matchAll(/<url>\s*([\s\S]*?)<\/url>/g)) {
+    const location = entry[1].match(/<loc>(.*?)<\/loc>/)?.[1];
+    const date = entry[1].match(/<lastmod>(\d{4}-\d{2}-\d{2}(?:T[^<]+)?)<\/lastmod>/)?.[1];
+    if (location && date) lastModified.set(location, date);
+  }
   const urlEntries = allRoutes.map(route => {
     const loc = `${SITE_DOMAIN}${route.path}`;
+    const date = lastModified.get(loc);
     const priority = route.priority ?? 0.5;
     const changefreq = route.changefreq ?? 'monthly';
     
     return `  <url>
     <loc>${loc}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>${changefreq}</changefreq>
+${date ? `    <lastmod>${date}</lastmod>\n` : ''}    <changefreq>${changefreq}</changefreq>
     <priority>${priority.toFixed(1)}</priority>
   </url>`;
   }).join('\n');
