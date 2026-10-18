@@ -7,7 +7,7 @@ describe('indexable route coverage', () => {
   test('covers every public registered route except the transaction confirmation', () => {
     const router = readFileSync(new URL('../src/router.tsx', import.meta.url), 'utf8');
     const registered = ['/', ...Array.from(router.matchAll(/path: "([^"]+)"/g), m => m[1])
-      .filter(path => path !== '/' && path !== '*' && path !== 'payment-success')
+      .filter(path => !['/', '*', 'payment-success', 'pricing', 'authority/white-label-seo'].includes(path))
       .map(path => `/${path}`)];
     expect(allRoutes.map(route => route.path).sort()).toEqual(registered.sort());
   });

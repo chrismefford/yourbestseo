@@ -288,7 +288,7 @@ export const footerNavigation = {
   ],
   company: [
     { name: "About", path: "/about" },
-    { name: "Pricing", path: "/pricing" },
+    { name: "Book a Call", path: "/book" },
     { name: "Case Studies", path: "/case-studies" },
     { name: "FAQ", path: "/faq" },
     { name: "Local Search Check", path: "/free-audit" },

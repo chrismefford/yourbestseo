@@ -1,3 +1,6 @@
+# Retire outdated agency pages
+- [ ] Remove pricing and white-label content, replace old URLs with non-indexable unavailable pages, clean incoming links and sitemap, and verify.
+
 # Google Analytics
 - [x] Connect GA4 and install the requested Google tag using the public connector measurement ID, without literal secret placeholders.
 - [x] Add page-view, free-check-start, contact-submission and successful-booking events without personal details. Browser verified one tag and queued page-view/free-check events; preview build OK.
