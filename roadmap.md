@@ -1,3 +1,7 @@
+# Google Analytics
+- [ ] Connect the GA4 measurement ID and install the requested Google tag without literal secret placeholders.
+- [ ] Track page visits, free-check starts, saved contact details and successful bookings without personal details; verify tracking.
+
 # Sitewide SEO and navigation review
 - [x] Check all 229 registered routes in published HTML and preview: 228 content pages have unique titles/descriptions, self-referencing canonicals and parseable JSON-LD; payment-success lacks metadata. All 89 LocalBusiness schemas contain url, telephone and address. Live content is pre-rendered; actual Google indexing not checked.
 - [x] Check rendered links, section targets and public phone numbers: 103 broken internal link occurrences, 56 missing destinations; one external client link returns 404. All tel/SMS links use +16199036599. About booking CTA opens /book with 15 real slots; no booking submitted. No runtime page errors across 229 preview routes.
