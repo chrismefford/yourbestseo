@@ -76,7 +76,7 @@ export default function AIAwarenessChecker() {
           {q > 0 && <Button type="button" variant="ghost" disabled={busy} onClick={() => setQ(q - 1)}>Back</Button>}
           {q !== 1 && <Button variant="hero" size="lg" type="submit" className="flex-1 gap-2" disabled={busy}>{busy ? <><Loader2 className="w-5 h-5 animate-spin" />Finding what customers ask AI…</> : q === 3 ? <><Search className="w-5 h-5" />Show my results</> : <>Next<ArrowRight className="w-5 h-5" /></>}</Button>}
         </div>
-        {q === 0 && <p className="text-sm text-muted-foreground text-center flex justify-center items-center gap-2 mt-4"><ShieldCheck className="w-4 h-4 shrink-0" />Free. Takes 30 seconds. No contact details required.</p>}
+        {q === 0 && <p className="text-sm text-muted-foreground text-center flex justify-center items-center gap-2 mt-4"><ShieldCheck className="w-4 h-4 shrink-0" />Free. Just 4 quick questions. No contact details needed.</p>}
       </form>
     </section> : <>
       <section aria-label="Your opportunities" className="space-y-8">
