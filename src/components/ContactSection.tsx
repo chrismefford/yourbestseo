@@ -99,49 +99,54 @@ const ContactSection = () => {
         >
           <a
             href="mailto:chris@yourbestseo.com"
-            className="group p-8 rounded-2xl card-gradient border border-border/50 hover:border-primary/30 transition-all duration-500 text-center"
+            className="group p-8 rounded-2xl card-gradient border border-border/50 hover:!bg-primary hover:!bg-none hover:border-primary transition-all duration-500 text-center"
           >
-            <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
-              <Mail className="w-7 h-7 text-primary" />
+            <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4 transition-colors duration-500 group-hover:bg-primary-foreground/10">
+
+              <Mail className="w-7 h-7 text-primary transition-colors duration-500 group-hover:text-primary-foreground" />
             </div>
-            <h3 className="font-display text-lg font-bold mb-2">Email</h3>
-            <p className="text-primary font-medium mb-2">chris@yourbestseo.com</p>
-            <p className="text-sm text-muted-foreground">
+            <h3 className="font-display text-lg font-bold mb-2 transition-colors duration-500 group-hover:text-primary-foreground">Email</h3>
+            <p className="text-primary font-medium mb-2 transition-colors duration-500 group-hover:text-primary-foreground">chris@yourbestseo.com</p>
+            <p className="text-sm text-muted-foreground transition-colors duration-500 group-hover:text-primary-foreground/80">
               For business questions + attachments
             </p>
           </a>
 
-          <div className="p-8 rounded-2xl card-gradient border border-border/50 hover:border-primary/30 transition-all duration-500 text-center">
-            <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-              <Phone className="w-7 h-7 text-primary" />
+
+          <div className="group p-8 rounded-2xl card-gradient border border-border/50 hover:!bg-primary hover:!bg-none hover:border-primary transition-all duration-500 text-center">
+            <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4 transition-colors duration-500 group-hover:bg-primary-foreground/10">
+              <Phone className="w-7 h-7 text-primary transition-colors duration-500 group-hover:text-primary-foreground" />
             </div>
-            <h3 className="font-display text-lg font-bold mb-2">Direct line</h3>
-            <a href="tel:+16199036599" className="text-primary font-medium hover:underline">
+            <h3 className="font-display text-lg font-bold mb-2 transition-colors duration-500 group-hover:text-primary-foreground">Direct line</h3>
+            <a href="tel:+16199036599" className="text-primary font-medium hover:underline transition-colors duration-500 group-hover:text-primary-foreground">
               (619) 903-6599
             </a>
-            <p className="text-sm text-muted-foreground mt-2">Call Chris directly</p>
+            <p className="text-sm text-muted-foreground mt-2 transition-colors duration-500 group-hover:text-primary-foreground/80">Call Chris directly</p>
             <a
               href="sms:+16199036599"
-              className="inline-flex items-center gap-1.5 mt-3 text-sm font-medium text-primary hover:underline"
+              className="inline-flex items-center gap-1.5 mt-3 text-sm font-medium text-primary hover:underline transition-colors duration-500 group-hover:text-primary-foreground"
             >
               <MessageSquareText className="w-4 h-4" />
               Or send a text
             </a>
           </div>
 
+
           <a
             href="/book"
-            className="group p-8 rounded-2xl card-gradient border border-border/50 hover:border-primary/30 transition-all duration-500 text-center"
+            className="group p-8 rounded-2xl card-gradient border border-border/50 hover:!bg-primary hover:!bg-none hover:border-primary transition-all duration-500 text-center"
           >
-            <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
-              <CalendarCheck className="w-7 h-7 text-primary" />
+            <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4 transition-colors duration-500 group-hover:bg-primary-foreground/10">
+
+              <CalendarCheck className="w-7 h-7 text-primary transition-colors duration-500 group-hover:text-primary-foreground" />
             </div>
-            <h3 className="font-display text-lg font-bold mb-2">Book a call</h3>
-            <p className="text-primary font-medium mb-2">Pick a time that works</p>
-            <p className="text-sm text-muted-foreground">
+            <h3 className="font-display text-lg font-bold mb-2 transition-colors duration-500 group-hover:text-primary-foreground">Book a call</h3>
+            <p className="text-primary font-medium mb-2 transition-colors duration-500 group-hover:text-primary-foreground">Pick a time that works</p>
+            <p className="text-sm text-muted-foreground transition-colors duration-500 group-hover:text-primary-foreground/80">
               Free 30-minute phone or Zoom call
             </p>
           </a>
+
         </motion.div>
 
         <motion.div
