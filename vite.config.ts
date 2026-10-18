@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
+import { stripSeoFallback } from "./scripts/seo-html";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -20,5 +21,6 @@ export default defineConfig(({ mode }) => ({
     script: "async",
     dirStyle: "nested",
     mock: true,
+    onBeforePageRender: (_route: string, html: string) => stripSeoFallback(html),
   },
 }));

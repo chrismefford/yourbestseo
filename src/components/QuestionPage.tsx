@@ -87,10 +87,7 @@ const QuestionPage = ({
     publisher: {
       '@type': 'Organization',
       name: 'Your Best SEO',
-      logo: {
-        '@type': 'ImageObject',
-        url: `${SITE_URL}/logo.png`
-      }
+      url: SITE_URL
     },
     mainEntityOfPage: {
       '@type': 'WebPage',

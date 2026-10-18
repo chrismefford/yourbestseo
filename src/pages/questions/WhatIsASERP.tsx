@@ -151,7 +151,6 @@ Studies suggest 50%+ of Google searches end without a click to any website. Goog
     relatedQuestions={[
       { slug: 'what-is-seo', question: 'What is SEO?' },
       { slug: 'what-is-organic-traffic', question: 'What is organic traffic?' },
-      { slug: 'what-is-a-featured-snippet', question: 'What is a featured snippet?' }
     ]}
     relatedTerms={[
       { slug: 'serp', term: 'SERP' },

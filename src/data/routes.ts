@@ -25,6 +25,9 @@ export const mainRoutes: RouteConfig[] = [
   { path: '/case-studies', priority: 0.8, changefreq: 'monthly' },
   { path: '/faq', priority: 0.7, changefreq: 'monthly' },
   { path: '/free-audit', priority: 0.9, changefreq: 'monthly' },
+  { path: '/book', priority: 0.8, changefreq: 'monthly' },
+  { path: '/privacy-policy', priority: 0.3, changefreq: 'yearly' },
+  { path: '/sms-terms', priority: 0.3, changefreq: 'yearly' },
   { path: '/glossary', priority: 0.8, changefreq: 'weekly' },
   { path: '/questions', priority: 0.8, changefreq: 'weekly' },
 ];
@@ -184,6 +187,10 @@ export const neighborhoodRoutes: RouteConfig[] = [
   { path: '/san-diego/marina-district-seo', priority: 0.7, changefreq: 'monthly' },
   { path: '/san-diego/cortez-hill-seo', priority: 0.7, changefreq: 'monthly' },
   { path: '/san-diego/north-park-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/city-heights-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/kensington-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/normal-heights-seo', priority: 0.7, changefreq: 'monthly' },
+  { path: '/san-diego/south-park-seo', priority: 0.7, changefreq: 'monthly' },
   { path: '/san-diego/kearny-mesa-seo', priority: 0.7, changefreq: 'monthly' },
   { path: '/san-diego/santee-seo', priority: 0.7, changefreq: 'monthly' },
   { path: '/san-diego/el-cajon-seo', priority: 0.7, changefreq: 'monthly' },
@@ -283,8 +290,6 @@ export const SITE_DOMAIN = 'https://yourbestseo.com';
  * Generate sitemap XML string from routes
  */
 export function generateSitemapXML(): string {
-  const today = new Date().toISOString().split('T')[0];
-  
   const urlEntries = allRoutes.map(route => {
     const loc = `${SITE_DOMAIN}${route.path}`;
     const priority = route.priority ?? 0.5;
@@ -292,7 +297,6 @@ export function generateSitemapXML(): string {
     
     return `  <url>
     <loc>${loc}</loc>
-    <lastmod>${today}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority.toFixed(1)}</priority>
   </url>`;

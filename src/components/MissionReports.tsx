@@ -112,7 +112,9 @@ const MissionReports = () => {
                 </span>
               </div>
 
-              <a
+              {report.url === "learnyourhomesvalue.com" ? (
+                <h3 className="font-display text-lg font-bold mb-6">{report.title}</h3>
+              ) : <a
                 href={`https://${report.url}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -122,7 +124,7 @@ const MissionReports = () => {
                   {report.title}
                 </h3>
                 <ExternalLink className="w-4 h-4 opacity-0 group-hover/link:opacity-100 transition-opacity" />
-              </a>
+              </a>}
 
               <div className="mb-6">
                 <span className="text-4xl lg:text-5xl font-display font-bold text-gradient-gold">
