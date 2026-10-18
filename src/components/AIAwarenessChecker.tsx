@@ -1,6 +1,6 @@
 import BookingScheduler from "@/components/BookingScheduler";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ArrowRight, Download, Loader2, Mail, RotateCcw, Search, ShieldCheck } from "lucide-react";
+import { ArrowRight, Download, Loader2, RotateCcw, Search, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -28,7 +28,6 @@ export default function AIAwarenessChecker() {
   const [fact, setFact] = useState(0);
   const sent = useRef("");
   const [followUp, setFollowUp] = useState(false);
-  const [emailBusy, setEmailBusy] = useState(false);
   const [emailMessage, setEmailMessage] = useState("");
   const [emailed, setEmailed] = useState(false);
   const [q, setQ] = useState(0);
@@ -70,17 +69,6 @@ export default function AIAwarenessChecker() {
       setEmailMessage(""); setEmailed(false);
     } catch (err) { setError(err instanceof Error ? err.message : "The check could not be completed."); }
     finally { setBusy(false); }
-  }
-  async function email(e: React.FormEvent) {
-    e.preventDefault(); if (emailBusy || !reportId) return;
-    setEmailBusy(true); setEmailMessage("");
-    try {
-      const { data, error: requestError } = await supabase.functions.invoke("local-search-check", { body: { action: "email", reportId, ...contact, followUp } });
-      if (requestError) throw new Error("We couldn't send your report. You can download it below or try again.");
-      if (!data?.success) throw new Error(data?.error ?? "Email delivery could not be confirmed.");
-      setEmailed(true); setEmailMessage("Your full report has been sent to your email.");
-    } catch (err) { setEmailMessage(err instanceof Error ? err.message : "Email delivery could not be confirmed."); }
-    finally { setEmailBusy(false); }
   }
   function download() {
     if (!report) return;
