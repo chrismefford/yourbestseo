@@ -1,6 +1,7 @@
 # Google Analytics
-- [ ] Connect the GA4 measurement ID and install the requested Google tag without literal secret placeholders.
-- [ ] Track page visits, free-check starts, saved contact details and successful bookings without personal details; verify tracking.
+- [x] Connect GA4 and install the requested Google tag using the public connector measurement ID, without literal secret placeholders.
+- [x] Add page-view, free-check-start, contact-submission and successful-booking events without personal details. Browser verified one tag and queued page-view/free-check events; preview build OK.
+- [ ] Confirm event receipt in Google Analytics after publishing; contact and booking completion events are installed but not exercised with a real lead/appointment.
 
 # Sitewide SEO and navigation review
 - [x] Check all 229 registered routes in published HTML and preview: 228 content pages have unique titles/descriptions, self-referencing canonicals and parseable JSON-LD; payment-success lacks metadata. All 89 LocalBusiness schemas contain url, telephone and address. Live content is pre-rendered; actual Google indexing not checked.
