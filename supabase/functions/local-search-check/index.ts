@@ -7,7 +7,7 @@ import { buildReport, normalizeWebsite, reportText, FOLLOW_UP_WORDING, CONSENT_V
 import { reviewWebsite } from "./ai-review.ts";
 
 const inputSchema = z.object({ website: z.string().trim().min(3).max(500), city: z.string().trim().min(2).max(100), service: z.string().trim().min(2).max(100), profile: z.string().trim().max(500).optional() });
-const emailSchema = z.object({ reportId: z.string().uuid(), name: z.string().trim().min(1).max(100), email: z.string().trim().email().max(250), followUp: z.boolean() });
+const emailSchema = z.object({ reportId: z.string().uuid(), name: z.string().trim().min(1).max(100), email: z.string().trim().email().max(250), phone: z.string().trim().regex(/^[0-9+().\s-]{7,25}$/).optional(), followUp: z.boolean() });
 const response = (body: unknown, status = 200) => new Response(JSON.stringify(body), { status, headers: { ...corsHeaders, "Content-Type": "application/json" } });
 
 async function validatePublic(url: URL) {
@@ -71,7 +71,7 @@ Deno.serve(async req => {
       const lead = emailSchema.parse(body);
       const { data: saved, error } = await db.from("local_search_reports").select("report").eq("id", lead.reportId).single();
       if (error || !saved) return response({ error: "This report is no longer available. Please run a new check." }, 404);
-      const { data: row, error: leadError } = await db.from("local_search_report_leads").insert({ report_id: lead.reportId, name: lead.name, email: lead.email, follow_up_consent: lead.followUp, consent_wording: FOLLOW_UP_WORDING, consent_version: CONSENT_VERSION }).select("id").single();
+      const { data: row, error: leadError } = await db.from("local_search_report_leads").insert({ report_id: lead.reportId, name: lead.name, email: lead.email, phone: lead.phone ?? null, follow_up_consent: lead.followUp, consent_wording: FOLLOW_UP_WORDING, consent_version: CONSENT_VERSION }).select("id").single();
       if (leadError || !row) return response({ error: "We couldn't save your report request. Please try again." }, 500);
       const key = Deno.env.get("RESEND_API_KEY");
       if (!key) { await db.from("local_search_report_leads").update({ email_status: "failed" }).eq("id", row.id); return response({ success: false, saved: true, error: "Your request is saved, but email delivery is not available. You can download the report below." }); }
