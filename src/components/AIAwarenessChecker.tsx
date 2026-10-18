@@ -27,7 +27,7 @@ export default function AIAwarenessChecker() {
   const [revealed, setRevealed] = useState(false);
   const prompts = report?.review?.prompts ?? [];
   const seven = prompts.slice(0, 7);
-  const order = useMemo(() => seven.map((_, i) => i).sort((a, b) => ((a * 7919 + seven.length * 31) % 13) - ((b * 7919 + seven.length * 31) % 13)), [report]);
+  const order = useMemo(() => seven.map((_, i) => i).map(i => [Math.random(), i]).sort((a, b) => a[0] - b[0]).map(x => x[1]), [report]); // eslint-disable-line react-hooks/exhaustive-deps
   const hits = guess.filter(i => i < 3).length;
   useEffect(() => {
     if (!busy) { setPct(0); return; }
