@@ -23,4 +23,10 @@ describe("Local Search Opportunity Check rules", () => {
     const report = buildReport(input, page, ""); report.review = { overview: "Public pages are accessible", seo: "Indexing unverified", ai: "Citations unverified", strengths: [], sources: [], steps: [{ title: "Confirm indexing", action: "Inspect your URL in Search Console", why: "HTML access alone is not indexing", evidenceIds: ["index"] }] };
     expect(reportText(report)).toContain("Public pages are accessible"); expect(reportText(report)).toContain("Inspect your URL in Search Console");
   });
+  test("customer report keeps ten prompts and three simple next steps", () => {
+    const report = buildReport(input, page, "");
+    report.review = groundReview({ overview: "Customer questions", seo: "", ai: "", strengths: [], sources: [], prompts: Array.from({ length: 12 }, (_, i) => `${i + 1}. Question ${i + 1}?`), steps: Array.from({ length: 4 }, () => ({ title: "Answer questions", action: "Share clear answers", why: "Help customers", evidenceIds: [] })) }, report);
+    expect(report.review.prompts?.length).toBe(10); expect(report.review.steps.length).toBe(3);
+    expect(reportText(report)).toContain("10. Question 10?"); expect(reportText(report)).not.toContain("11. Question");
+  });
 });
