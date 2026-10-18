@@ -66,7 +66,7 @@ export default function AIAwarenessChecker() {
   function Progress({ step }: { step: number }) {
     return <div className="mb-6"><p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">Step {step} of 3</p><div className="h-1.5 rounded-full bg-muted overflow-hidden"><div className="h-full bg-primary transition-all duration-500" style={{ width: `${step * 33.4}%` }} /></div></div>;
   }
-  return <div className="max-w-3xl mx-auto" id="awareness-checker">
+  return <div className="max-w-3xl mx-auto" id="awareness-checker" style={{ scrollMarginTop: "7rem" }}>
     {!report ? <section className="border border-border rounded-lg bg-card p-6 sm:p-8" aria-label="Check your website">
       <div className="flex items-center gap-3 mb-6"><Globe2 className="w-6 h-6 text-primary" /><h2 className="font-display text-2xl">Do you know what customers ask AI about businesses like yours?</h2></div>
       <form onSubmit={check} className="space-y-5">
