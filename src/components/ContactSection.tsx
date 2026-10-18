@@ -133,7 +133,7 @@ const ContactSection = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-12"
         >
-          <Button variant="hero" size="xl" asChild><a href="/free-audit">Check My Website<ArrowRight className="w-5 h-5 ml-2" /></a></Button>
+          <Button variant="hero" size="xl" className="h-auto min-h-14 whitespace-normal text-center py-3" asChild><a href="/free-audit">Check My AI Search Readiness<ArrowRight className="w-5 h-5 ml-2" /></a></Button>
           <Button
             variant="outline"
             size="xl"

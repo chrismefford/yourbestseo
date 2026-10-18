@@ -34,7 +34,7 @@ const Services = () => (
             <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-2xl">Your customers are searching Google, checking Maps, and asking AI who to call. Put your business in the conversation, compete for top search positions, and give people a reason to choose you.</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="hero" size="lg" asChild><Link to="/free-audit">Check My AI Awareness <ArrowRight className="ml-2 h-4 w-4" /></Link></Button>
-              <Button variant="heroOutline" size="lg" asChild><Link to="/#contact">Let’s Talk Growth</Link></Button>
+              <Button variant="heroOutline" size="lg" asChild><Link to="/book">Let’s Talk Growth</Link></Button>
             </div>
           </div>
         </div>

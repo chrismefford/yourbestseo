@@ -38,7 +38,7 @@ const About = () => {
               <p className="text-xl sm:text-2xl leading-relaxed text-foreground mb-5">A marketer. A best-selling author. Focused on getting you found—and turning attention into business.</p>
               <p className="text-lg leading-relaxed text-muted-foreground max-w-2xl">I've spent 20 years in marketing. Today, I bring that experience to local business owners who want more awareness, more appointments, and a stronger position in search.</p>
               <Button variant="hero" size="lg" asChild className="mt-8 gap-2">
-                <Link to="/#contact">Let's Talk About Your Business <ArrowRight className="h-5 w-5" /></Link>
+                <Link to="/book">Let's Talk About Your Business <ArrowRight className="h-5 w-5" /></Link>
               </Button>
             </div>
           </div>
@@ -81,7 +81,7 @@ const About = () => {
                 <Link to="/free-audit">Check My AI Awareness <ArrowRight className="w-5 h-5" /></Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <Link to="/#contact">Talk With Chris</Link>
+                <Link to="/book">Talk With Chris</Link>
               </Button>
             </div>
           </div>
