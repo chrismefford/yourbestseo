@@ -289,15 +289,23 @@ export const SITE_DOMAIN = 'https://yourbestseo.com';
 /**
  * Generate sitemap XML string from routes
  */
-export function generateSitemapXML(): string {
+export function generateSitemapXML(existingXML = ''): string {
+  // Preserve existing page dates of unknown provenance, but never invent build dates.
+  const lastModified = new Map<string, string>();
+  for (const entry of existingXML.matchAll(/<url>\s*([\s\S]*?)<\/url>/g)) {
+    const location = entry[1].match(/<loc>(.*?)<\/loc>/)?.[1];
+    const date = entry[1].match(/<lastmod>(\d{4}-\d{2}-\d{2}(?:T[^<]+)?)<\/lastmod>/)?.[1];
+    if (location && date) lastModified.set(location, date);
+  }
   const urlEntries = allRoutes.map(route => {
     const loc = `${SITE_DOMAIN}${route.path}`;
+    const date = lastModified.get(loc);
     const priority = route.priority ?? 0.5;
     const changefreq = route.changefreq ?? 'monthly';
     
     return `  <url>
     <loc>${loc}</loc>
-    <changefreq>${changefreq}</changefreq>
+${date ? `    <lastmod>${date}</lastmod>\n` : ''}    <changefreq>${changefreq}</changefreq>
     <priority>${priority.toFixed(1)}</priority>
   </url>`;
   }).join('\n');
