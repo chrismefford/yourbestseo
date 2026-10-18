@@ -1,6 +1,6 @@
 import BookingScheduler from "@/components/BookingScheduler";
-import { useEffect, useMemo, useState } from "react";
-import { ArrowRight, Download, Loader2, Mail, RotateCcw, Search, ShieldCheck } from "lucide-react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { ArrowRight, Download, Loader2, RotateCcw, Search, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,15 +9,25 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { supabase } from "@/integrations/supabase/client";
 import { FOLLOW_UP_WORDING, normalizeWebsite, reportText, type Report } from "@/lib/local-search";
 
+const FACTS = [
+  { q: "91% of people search online before visiting a local business.", a: "If they can't find you—or what they find is unclear—they pick someone else.", src: "https://145692682.fs1.hubspotusercontent-eu1.net/hubfs/145692682/Assets%202025/EN/Consumer%20Report%20%7C%20The%20Lowdown%20on%20Local%20Search.pdf" },
+  { q: "AI tools are now the 4th most-used way people find local businesses.", a: "ChatGPT, Gemini, and others are already part of how customers choose.", src: "https://145692682.fs1.hubspotusercontent-eu1.net/hubfs/145692682/Assets%202025/EN/Consumer%20Report%20%7C%20The%20Lowdown%20on%20Local%20Search.pdf" },
+  { q: "About 1 in 5 Americans now prefer ChatGPT for finding nearby businesses.", a: "In a 2025 survey of 1,151 U.S. adults, 21.9% picked ChatGPT as their go-to—Google Search was 31.7%.", src: "https://drugstorenews.com/how-are-americans-using-ai-find-local-businesses" },
+  { q: "85% of people visit a business within a week of finding it online.", a: "Being found is the difference between a booked appointment and a missed one.", src: "https://145692682.fs1.hubspotusercontent-eu1.net/hubfs/145692682/Assets%202025/EN/Consumer%20Report%20%7C%20The%20Lowdown%20on%20Local%20Search.pdf" },
+  { q: "48% of customers walked away because prices were unclear online.", a: "Answering the questions people actually ask—like cost—keeps them from leaving.", src: "https://145692682.fs1.hubspotusercontent-eu1.net/hubfs/145692682/Assets%202025/EN/Consumer%20Report%20%7C%20The%20Lowdown%20on%20Local%20Search.pdf" },
+];
+
 export default function AIAwarenessChecker() {
   const [input, setInput] = useState({ website: "", city: "", service: "", profile: "" });
   const [report, setReport] = useState<Report>();
   const [reportId, setReportId] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
-  const [contact, setContact] = useState({ name: "", email: "" });
+  const [contact, setContact] = useState({ name: "", email: "", phone: "" });
+  const [gated, setGated] = useState(false);
+  const [fact, setFact] = useState(0);
+  const sent = useRef("");
   const [followUp, setFollowUp] = useState(false);
-  const [emailBusy, setEmailBusy] = useState(false);
   const [emailMessage, setEmailMessage] = useState("");
   const [emailed, setEmailed] = useState(false);
   const [q, setQ] = useState(0);
@@ -34,6 +44,14 @@ export default function AIAwarenessChecker() {
     const t = setInterval(() => setPct(p => Math.min(95, p + (95 - p) * 0.012)), 400);
     return () => clearInterval(t);
   }, [busy]);
+  useEffect(() => { if (!busy && !report) return; const t = setInterval(() => setFact(f => (f + 1) % FACTS.length), 7000); return () => clearInterval(t); }, [busy, report]);
+  useEffect(() => {
+    if (!report || !gated || !reportId || sent.current === reportId) return;
+    sent.current = reportId;
+    supabase.functions.invoke("local-search-check", { body: { action: "email", reportId, ...contact, followUp } }).then(({ data }) => {
+      setEmailed(!!data?.success); setEmailMessage(data?.success ? "We've emailed your full report." : "Your results are saved. Email delivery isn't available right now—download your report below.");
+    });
+  }, [report, gated, reportId]); // eslint-disable-line react-hooks/exhaustive-deps
   const phase = pct < 25 ? "Reading your website…" : pct < 55 ? "Searching what customers ask about your business…" : pct < 80 ? "Ranking the most likely questions…" : "Almost done…";
 
   async function next(e: React.FormEvent) {
@@ -52,17 +70,6 @@ export default function AIAwarenessChecker() {
     } catch (err) { setError(err instanceof Error ? err.message : "The check could not be completed."); }
     finally { setBusy(false); }
   }
-  async function email(e: React.FormEvent) {
-    e.preventDefault(); if (emailBusy || !reportId) return;
-    setEmailBusy(true); setEmailMessage("");
-    try {
-      const { data, error: requestError } = await supabase.functions.invoke("local-search-check", { body: { action: "email", reportId, ...contact, followUp } });
-      if (requestError) throw new Error("We couldn't send your report. You can download it below or try again.");
-      if (!data?.success) throw new Error(data?.error ?? "Email delivery could not be confirmed.");
-      setEmailed(true); setEmailMessage("Your full report has been sent to your email.");
-    } catch (err) { setEmailMessage(err instanceof Error ? err.message : "Email delivery could not be confirmed."); }
-    finally { setEmailBusy(false); }
-  }
   function download() {
     if (!report) return;
     const url = URL.createObjectURL(new Blob([reportText(report)], { type: "text/plain;charset=utf-8" }));
@@ -72,14 +79,29 @@ export default function AIAwarenessChecker() {
     return <div className="mb-6"><p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">Step {step} of {total}</p><div className="h-1.5 rounded-full bg-muted overflow-hidden"><div className="h-full bg-primary transition-all duration-500" style={{ width: `${(step / total) * 100}%` }} /></div></div>;
   }
   return <div className="max-w-3xl mx-auto" id="awareness-checker" style={{ scrollMarginTop: "7rem" }}>
-    {!report ? <section className="border border-border rounded-lg bg-card p-6 sm:p-10 min-h-[340px] flex flex-col" aria-label="Check your website">
+    {(busy || report) && !gated ? <section className="border border-border rounded-lg bg-card p-6 sm:p-10 space-y-8" aria-label="Finding your questions">
+      <div role="status"><div className="flex justify-between text-sm mb-2"><span className="font-medium">{report ? "Your results are ready!" : phase}</span><span className="tabular-nums">{report ? 100 : Math.round(pct)}%</span></div><div className="h-3 rounded-full bg-muted overflow-hidden"><div className="h-full bg-primary transition-all duration-500" style={{ width: `${report ? 100 : pct}%` }} /></div>{!report && <p className="text-xs text-muted-foreground mt-2">This usually takes about a minute—we're doing a real search.</p>}</div>
+      <div className="rounded-lg bg-muted p-6 min-h-[170px]" key={fact}>
+        <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">Did you know?</p>
+        <p className="font-display text-2xl leading-snug mb-3">{FACTS[fact].q}</p>
+        <p className="text-muted-foreground">{FACTS[fact].a} <a href={FACTS[fact].src} target="_blank" rel="noopener noreferrer" className="underline text-xs whitespace-nowrap">Source</a></p>
+        <div className="flex gap-1.5 mt-4">{FACTS.map((_, i) => <button key={i} type="button" aria-label={`Fact ${i + 1}`} onClick={() => setFact(i)} className={`h-1.5 rounded-full transition-all ${i === fact ? "w-6 bg-primary" : "w-1.5 bg-border"}`} />)}</div>
+      </div>
+      <form onSubmit={e => { e.preventDefault(); setGated(true); document.getElementById("awareness-checker")?.scrollIntoView({ block: "start", behavior: "smooth" }); }} className="space-y-5">
+        <div><h2 className="font-display text-2xl mb-1">Where should we send your results?</h2><p className="text-sm text-muted-foreground">You'll see them right away, plus a copy by email.</p></div>
+        <div className="space-y-2"><Label htmlFor="gate-name">Your name</Label><Input id="gate-name" autoComplete="name" required maxLength={100} value={contact.name} onChange={e => setContact(p => ({ ...p, name: e.target.value }))} /></div>
+        <div className="grid sm:grid-cols-2 gap-5"><div className="space-y-2"><Label htmlFor="gate-email">Email</Label><Input id="gate-email" type="email" autoComplete="email" required maxLength={250} value={contact.email} onChange={e => setContact(p => ({ ...p, email: e.target.value }))} /></div><div className="space-y-2"><Label htmlFor="gate-phone">Phone</Label><Input id="gate-phone" type="tel" autoComplete="tel" required pattern="[0-9+().\s-]{7,25}" maxLength={25} value={contact.phone} onChange={e => setContact(p => ({ ...p, phone: e.target.value }))} /></div></div>
+        <div className="flex items-start gap-3"><Checkbox id="report-follow-up" checked={followUp} onCheckedChange={checked => setFollowUp(checked === true)} /><Label htmlFor="report-follow-up" className="text-sm font-normal leading-relaxed">{FOLLOW_UP_WORDING}</Label></div>
+        <p className="text-xs text-muted-foreground">We save your details and report to deliver your results. We won't text you. <Link to="/privacy-policy" className="underline">Privacy Policy</Link></p>
+        <Button variant="hero" size="lg" type="submit" className="w-full gap-2">{report ? "Show my results" : "Save & show my results when ready"}<ArrowRight className="w-5 h-5" /></Button>
+      </form>
+    </section> : gated && !report ? <section className="border border-border rounded-lg bg-card p-6 sm:p-10" role="status"><div className="flex justify-between text-sm mb-2"><span className="font-medium">Thanks, {contact.name.split(" ")[0]}! {phase}</span><span className="tabular-nums">{Math.round(pct)}%</span></div><div className="h-3 rounded-full bg-muted overflow-hidden"><div className="h-full bg-primary transition-all duration-500" style={{ width: `${pct}%` }} /></div><p className="font-display text-2xl leading-snug mt-8 mb-2">{FACTS[fact].q}</p><p className="text-muted-foreground">{FACTS[fact].a}</p></section> : !report ? <section className="border border-border rounded-lg bg-card p-6 sm:p-10 min-h-[340px] flex flex-col" aria-label="Check your website">
       <Progress step={q + 1} total={4} />
       <form onSubmit={next} className="flex-1 flex flex-col" key={q}>
         {q === 0 && <><Label htmlFor="check-website" className="font-display text-3xl font-normal leading-tight mb-2">What's your website?</Label><p className="text-muted-foreground mb-6">Just the address—like yourbusiness.com.</p><Input id="check-website" autoFocus inputMode="url" autoComplete="url" placeholder="yourbusiness.com" required maxLength={500} className="h-14 text-lg" value={input.website} onChange={e => setInput(p => ({ ...p, website: e.target.value }))} /></>}
         {q === 1 && <><h2 className="font-display text-3xl leading-tight mb-2">Do you know what customers ask ChatGPT when looking for a business like yours?</h2><p className="text-muted-foreground mb-6">No wrong answers.</p><div className="grid sm:grid-cols-3 gap-3">{["Yes", "Kind of", "No idea"].map(a => <button key={a} type="button" onClick={() => { setKnows(a); setQ(2); }} className={`rounded-lg border p-4 text-lg font-medium transition-colors ${knows === a ? "border-primary bg-primary text-primary-foreground" : "border-border hover:border-primary hover:bg-primary/10"}`}>{a}</button>)}</div></>}
         {q === 2 && <><Label htmlFor="check-service" className="font-display text-3xl font-normal leading-tight mb-2">What kind of business are you?</Label><p className="text-muted-foreground mb-6">Your main service—like dentist, HVAC repair, or roofing.</p><Input id="check-service" autoFocus placeholder="HVAC repair" required minLength={2} maxLength={100} className="h-14 text-lg" value={input.service} onChange={e => setInput(p => ({ ...p, service: e.target.value }))} /></>}
         {q === 3 && <><Label htmlFor="check-city" className="font-display text-3xl font-normal leading-tight mb-2">Where are your customers?</Label><p className="text-muted-foreground mb-6">Your city or service area.</p><Input id="check-city" autoFocus placeholder="San Diego" required minLength={2} maxLength={100} className="h-14 text-lg" value={input.city} disabled={busy} onChange={e => setInput(p => ({ ...p, city: e.target.value }))} /></>}
-        {busy && <div className="mt-6" role="status"><div className="flex justify-between text-sm mb-2"><span>{phase}</span><span className="tabular-nums">{Math.round(pct)}%</span></div><div className="h-3 rounded-full bg-muted overflow-hidden"><div className="h-full bg-primary transition-all duration-500" style={{ width: `${pct}%` }} /></div><p className="text-xs text-muted-foreground mt-2">This usually takes about a minute—we're doing a real search.</p></div>}
         {error && <p role="alert" className="text-destructive mt-4">{error}</p>}
         <div className="mt-auto pt-8 flex items-center gap-3">
           {q > 0 && <Button type="button" variant="ghost" disabled={busy} onClick={() => setQ(q - 1)}>Back</Button>}
@@ -114,19 +136,12 @@ export default function AIAwarenessChecker() {
           <div><h3 className="font-display text-2xl mb-2">Who you'll talk to: Chris Mefford</h3><p className="leading-relaxed text-muted-foreground">Chris has spent 20 years in marketing, wrote a best-selling book, and ran one of the largest websites in the world—1.2 billion pages. Today he helps local businesses get found on Google Maps and recommended by AI tools like ChatGPT, so more searches turn into booked appointments.</p></div>
         </div>
       </section>}
-      <section aria-label="Email your free report" className={`py-8 ${revealed || seven.length < 7 ? "" : "hidden"}`} >
-        <Mail className="w-6 h-6 text-primary mb-3" /><h2 className="font-display text-2xl mb-2">Email me the full report</h2><p className="text-muted-foreground text-sm mb-6">Your customer questions plus website details for your web person. Free.</p>
-        {!emailed && <form onSubmit={email} className="space-y-5">
-          <div className="grid sm:grid-cols-2 gap-5"><div className="space-y-2"><Label htmlFor="report-name">Your name</Label><Input id="report-name" autoComplete="name" required maxLength={100} value={contact.name} disabled={emailBusy} onChange={e => setContact(p => ({ ...p, name: e.target.value }))} /></div><div className="space-y-2"><Label htmlFor="report-email">Email address</Label><Input id="report-email" type="email" autoComplete="email" required maxLength={250} value={contact.email} disabled={emailBusy} onChange={e => setContact(p => ({ ...p, email: e.target.value }))} /></div></div>
-          <div className="flex items-start gap-3"><Checkbox id="report-follow-up" checked={followUp} disabled={emailBusy} onCheckedChange={checked => setFollowUp(checked === true)} /><Label htmlFor="report-follow-up" className="text-sm font-normal leading-relaxed">{FOLLOW_UP_WORDING}</Label></div>
-          <p className="text-xs text-muted-foreground">We save your request and report to fulfill this request. <Link to="/privacy-policy" className="underline">Privacy Policy</Link></p>
-          <Button variant="hero" type="submit" disabled={emailBusy} className="gap-2">{emailBusy ? <Loader2 className="w-4 h-4 animate-spin" /> : <Mail className="w-4 h-4" />}Email my free report</Button>
-        </form>}
-        {emailMessage && <p role="status" className="text-sm mt-4">{emailMessage}</p>}
-        <Button variant="ghost" onClick={download} className="gap-2 mt-4"><Download className="w-4 h-4" />Download full report</Button>
+      <section aria-label="Your report" className={`py-8 ${revealed || seven.length < 7 ? "" : "hidden"}`}>
+        <p role="status" className="text-sm">{emailMessage || "Sending your report…"}</p>
+        <Button variant="ghost" onClick={download} className="gap-2 mt-2 -ml-4"><Download className="w-4 h-4" />Download full report</Button>
       </section>
-      <section id="book-call" style={{ scrollMarginTop: "7rem" }} className={`py-8 border-t border-border ${revealed || seven.length < 7 ? "" : "hidden"}`} aria-label="Book a free call"><h2 className="font-display text-2xl mb-2">Book your free audit call</h2><p className="text-sm text-muted-foreground mb-6">Pick a phone call or Zoom—a free 30-minute call with Chris about becoming the answer to these questions.</p><BookingScheduler key={emailed ? "known" : "new"} prefill={{ website: report.website, ...(emailed ? contact : {}) }} /></section>
-      <Button variant="ghost" className="gap-2" onClick={() => { setReport(undefined); setGuess([]); setRevealed(false); setQ(0); setKnows(""); setError(""); setFollowUp(false); window.scrollTo({ top: 0 }); }}><RotateCcw className="w-4 h-4" />Check another website</Button>
+      <section id="book-call" style={{ scrollMarginTop: "7rem" }} className={`py-8 border-t border-border ${revealed || seven.length < 7 ? "" : "hidden"}`} aria-label="Book a free call"><h2 className="font-display text-2xl mb-2">Book your free audit call</h2><p className="text-sm text-muted-foreground mb-6">Pick a phone call or Zoom—a free 30-minute call with Chris about becoming the answer to these questions.</p><BookingScheduler prefill={{ website: report.website, ...contact }} /></section>
+      <Button variant="ghost" className="gap-2" onClick={() => { setReport(undefined); setGated(false); setGuess([]); setRevealed(false); setQ(0); setKnows(""); setError(""); setFollowUp(false); window.scrollTo({ top: 0 }); }}><RotateCcw className="w-4 h-4" />Check another website</Button>
     </>}
   </div>;
 }
