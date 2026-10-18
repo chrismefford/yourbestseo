@@ -1,3 +1,8 @@
+# Research-backed local search content
+- [ ] Research Google Maps, Google search and AI visibility using search-demand evidence and official sources.
+- [ ] Add clear homepage sections for AI search/AEO/LLMs and Google, with local-business examples and Chris's value.
+- [ ] Verify new content, links and desktop/mobile presentation.
+
 # Homepage focus and booking navigation
 - [x] Replace the vague homepage check button with one larger AI-search-readiness action; remove the second hero booking button. Verified desktop/mobile and entry into the check.
 - [x] Check booking links across pages, correct conversation links on About/growth/shared CTAs to /book, and verify the calendar opens with real slots and selectable Phone/Zoom choices; no test appointment created.
