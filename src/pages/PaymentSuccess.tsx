@@ -81,7 +81,7 @@ const PaymentSuccess = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
-                <Link to="/pricing">
+                <Link to="/services">
                   <ArrowRight className="mr-2 w-4 h-4" />
                   View More Services
                 </Link>

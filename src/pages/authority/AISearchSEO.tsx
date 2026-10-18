@@ -200,7 +200,7 @@ const AISearchSEO = () => {
                 <a href="/#contact">Request a Free SEO Audit <ArrowRight className="w-5 h-5" /></a>
               </Button>
               <Button variant="heroOutline" size="xl" asChild>
-                <a href="/pricing">View Pricing</a>
+                <a href="/services">Explore Local Business Growth</a>
               </Button>
             </div>
           </motion.div>
@@ -234,7 +234,7 @@ const AISearchSEO = () => {
               { label: "Technical SEO Audit Services", href: "/authority/technical-seo-audit" },
               { label: "Schema Markup Service", href: "/services/schema-markup" },
               { label: "What Is SEO ROI?", href: "/questions/what-is-seo-roi" },
-              { label: "White Label SEO for Agencies", href: "/authority/white-label-seo" },
+              { label: "Local Business Growth", href: "/services" },
               { label: "SEO vs Google Ads", href: "/authority/seo-vs-google-ads" },
             ].map((link, i) => (
               <a key={i} href={link.href} className="p-4 rounded-xl border border-border/50 hover:border-primary/40 hover:bg-secondary/30 transition-all text-sm font-medium text-muted-foreground hover:text-foreground">

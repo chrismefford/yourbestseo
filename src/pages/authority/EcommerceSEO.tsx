@@ -130,7 +130,7 @@ const EcommerceSEO = () => {
                 { title: "Revenue Attribution Built In", desc: "We connect GA4 ecommerce tracking to organic traffic so you see exactly which SEO work is generating sales—not just traffic." },
                 { title: "Technical Depth", desc: "Ecommerce SEO requires real technical expertise. We handle complex crawl architecture, dynamic rendering, and platform-specific issues." },
                 { title: "Category-First Thinking", desc: "Most SEO vendors obsess over product pages. We know the highest ROI often comes from category page optimization—which most competitors ignore." },
-                { title: "White Label Available", desc: "We work directly with brands or as a white-label partner for agencies serving retail clients. Same quality, either model." },
+                { title: "Direct Support for Your Business", desc: "Work directly with Chris on search visibility, customer inquiries, and the priorities that matter to your retail business." },
               ].map((item, i) => (
                 <div key={i} className="p-6 rounded-xl border border-border/50 bg-secondary/20">
                   <h3 className="font-display text-lg font-bold mb-2 text-primary">{item.title}</h3>
@@ -174,7 +174,6 @@ const EcommerceSEO = () => {
                 "Established retailers with significant product catalogs that haven't been properly optimized",
                 "Shopify, WooCommerce, or BigCommerce stores looking to reduce dependence on paid channels",
                 "Brands entering competitive product categories who want to build organic presence before ad costs escalate",
-                "Agencies managing ecommerce clients who need white-label SEO execution",
                 "Retailers with seasonal demand patterns who want organic traffic to reduce auction-driven ad cost spikes",
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3 text-muted-foreground">
@@ -198,7 +197,7 @@ const EcommerceSEO = () => {
                 <a href="/#contact">Request a Free SEO Audit <ArrowRight className="w-5 h-5" /></a>
               </Button>
               <Button variant="heroOutline" size="xl" asChild>
-                <a href="/pricing">View Pricing</a>
+                <a href="/services">Explore Local Business Growth</a>
               </Button>
             </div>
           </motion.div>
@@ -232,7 +231,7 @@ const EcommerceSEO = () => {
               { label: "SEO vs Google Ads", href: "/authority/seo-vs-google-ads" },
               { label: "Schema Markup Service", href: "/services/schema-markup" },
               { label: "What Is SEO ROI?", href: "/questions/what-is-seo-roi" },
-              { label: "White Label SEO for Agencies", href: "/authority/white-label-seo" },
+              { label: "Local Business Growth", href: "/services" },
             ].map((link, i) => (
               <a key={i} href={link.href} className="p-4 rounded-xl border border-border/50 hover:border-primary/40 hover:bg-secondary/30 transition-all text-sm font-medium text-muted-foreground hover:text-foreground">
                 {link.label} →
