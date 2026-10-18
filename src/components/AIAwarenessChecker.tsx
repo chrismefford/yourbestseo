@@ -133,13 +133,12 @@ export default function AIAwarenessChecker() {
           </div>
         </div>}
         <p className="text-center text-sm text-muted-foreground">Want to keep these for now? <button type="button" className="underline" onClick={download}>Download your questions</button></p>
-        {ask === -1 && <div className="rounded-lg border border-border p-6 text-center"><p className="mb-3">No problem. If you change your mind, Chris is happy to walk you through it.</p><button type="button" className="underline font-medium" onClick={() => setAsk(1)}>Actually, I'd like the free audit</button> <span className="text-muted-foreground">·</span> <button type="button" className="underline text-muted-foreground" onClick={download}>Download my questions</button></div>}
         {ask >= 1 && <div className="flex flex-col sm:flex-row gap-6 items-start border border-border rounded-lg p-6 sm:p-8">
           <div className="w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-display text-3xl shrink-0" aria-hidden="true">CM</div>
           <div><h3 className="font-display text-2xl mb-2">Who you'll talk to: Chris Mefford</h3><p className="leading-relaxed text-muted-foreground">Chris has spent 20 years in marketing, wrote a best-selling book, and ran one of the largest websites in the world—1.2 billion pages. Today he helps local businesses get found on Google Maps and recommended by AI tools like ChatGPT, so more searches turn into booked appointments.</p></div>
         </div>}
       </section>
-      {ask === 2 && <section id="book-call" style={{ scrollMarginTop: "7rem" }} className="py-8" aria-label="Book a free call"><h2 className="font-display text-3xl mb-2">Great—pick a time for your free audit</h2><p className="text-muted-foreground mb-6">Phone or Zoom, 30 minutes. Chris will go over your full report with you.</p><BookingScheduler prefill={{ website: report.website, ...contact }} /></section>}
+      {ask >= 1 && <section id="book-call" style={{ scrollMarginTop: "7rem" }} className="py-8" aria-label="Book a free call"><h2 className="font-display text-3xl mb-2">Great—pick a time for your free audit</h2><p className="text-muted-foreground mb-6">Phone or Zoom, 30 minutes. Chris will go over your full report with you.</p><BookingScheduler prefill={{ website: report.website, ...contact }} /></section>}
       <Button variant="ghost" className="gap-2" onClick={() => { setReport(undefined); setAsk(0); setGated(false); setGateOpen(false); setGuess([]); setQ(0); setKnows(""); setError(""); setFollowUp(false); window.scrollTo({ top: 0 }); }}><RotateCcw className="w-4 h-4" />Check another website</Button>
     </>}
   </div>;
