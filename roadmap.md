@@ -2,6 +2,8 @@
 - [x] Research Google Maps, Google search and AI visibility using US Semrush demand (local SEO services: 27,100/month; answer engine optimization: 6,600/month), official Google/OpenAI/Anthropic guidance and observed WebFX/Thrive pages. Demand does not imply easy rankings.
 - [x] Add separate homepage AI search/AEO/LLM and Google Maps/organic sections, generated dentist/HVAC/construction imagery, illustrative customer questions, Chris's experience and audit booking link. Include source links and no-guarantee boundaries.
 - [x] Verify sections and image rendering, four working official source links, audit CTA opening /book, desktop/mobile layouts without horizontal overflow, no runtime errors, focused lint and preview build OK. No booking created; publishing not requested.
+- [x] Restyle the dentist/HVAC/construction trio as spaced cards with the middle one in the bright brand yellow, and remove the illustrative-questions disclaimer line; verified colors, spacing and readability on desktop and phone.
+
 
 # Homepage focus and booking navigation
 - [x] Replace the vague homepage check button with one larger AI-search-readiness action; remove the second hero booking button. Verified desktop/mobile and entry into the check.
