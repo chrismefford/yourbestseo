@@ -26,7 +26,7 @@ export default function RedditMarketing() {
             <nav aria-label="Breadcrumb" className="mb-8 text-sm"><Link to="/" className="underline underline-offset-4">Home</Link><span className="mx-3" aria-hidden="true">/</span><span>Reddit Marketing</span></nav>
             <p className="text-sm font-semibold mb-5 flex items-center gap-2"><MessageCircle className="h-5 w-5" aria-hidden="true" />COMMUNITY. TRUST. DISCOVERY.</p>
             <h1 id="reddit-page-heading" className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight max-w-2xl">Reddit Marketing<br />& Community Management</h1>
-            <p className="mt-6 text-lg leading-relaxed max-w-xl">Get closer to the questions your customers really ask. Build a credible Reddit presence that supports local discovery, Google search and AI visibility.</p>
+            <p className="mt-6 text-lg leading-relaxed max-w-xl">Your website is only part of what AI can find. Make your expertise part of the Reddit conversations customers use to choose a local business.</p>
             <Button asChild size="lg" className="light-surface mt-8 h-auto min-h-12 py-4 whitespace-normal text-center"><Link to="/book">Talk to Chris about Reddit <ArrowRight className="shrink-0" aria-hidden="true" /></Link></Button>
           </div>
         </section>
@@ -34,8 +34,8 @@ export default function RedditMarketing() {
         <div className="light-surface bg-background text-foreground">
           <section className="py-16 lg:py-20" aria-labelledby="reddit-opportunity-heading">
             <div className="container mx-auto px-4 sm:px-6 grid lg:grid-cols-[1.15fr_1fr] gap-10 lg:gap-20">
-              <div><p className="text-sm font-semibold mb-4">THE OPPORTUNITY</p><h2 id="reddit-opportunity-heading" className="text-3xl sm:text-4xl font-bold leading-tight">Be useful where people are deciding who to trust.</h2></div>
-              <div className="space-y-5 text-muted-foreground leading-relaxed"><p>Someone choosing a dentist, replacing an air conditioner or planning a remodel may want more than a polished business website. Reddit gives people a place to compare experiences and ask follow-up questions. A relevant, honest answer can help a reader understand their options—even if they never click a link.</p><p>Reddit management for businesses starts with listening. Which communities discuss your work? What concerns keep coming up? Are professional replies welcome? We help you build a presence around your actual expertise, not a stream of disguised advertisements.</p></div>
+              <div><p className="text-sm font-semibold mb-4">THE MISSED OPPORTUNITY</p><h2 id="reddit-opportunity-heading" className="text-3xl sm:text-4xl font-bold leading-tight">If you're not in the conversation, your website can't tell the whole story.</h2></div>
+              <div className="space-y-5 text-muted-foreground leading-relaxed"><p>Someone choosing a dentist, replacing an air conditioner or planning a remodel may want more than a polished business website. Reddit gives people a place to compare experiences and ask follow-up questions. Those public discussions can also become sources for search and AI answers.</p><p>When relevant discussions include other providers but not your business, there may be a discovery gap worth addressing. That does not mean a Reddit account automatically earns recommendations. It means your experience could be missing from a conversation where it would genuinely help.</p><p>Reddit management for businesses starts with listening. Which communities discuss your work? What concerns keep coming up? Are professional replies welcome? We build around those openings—not a stream of disguised advertisements.</p></div>
             </div>
           </section>
 
@@ -44,6 +44,21 @@ export default function RedditMarketing() {
               <p className="text-sm font-semibold mb-4">REDDIT SEO · AEO · AI SEARCH</p><h2 id="reddit-ai-heading" className="text-3xl sm:text-4xl font-bold leading-tight">Why Reddit belongs in the AI search conversation.</h2>
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed">Google and OpenAI have announced partnerships with Reddit that provide access to Reddit content. That makes public community conversations relevant to a broader search strategy. It does not mean a post will get your company into ChatGPT, Claude, Perplexity or Google's AI answers.</p>
               <div className="grid md:grid-cols-2 gap-8 mt-10"><div className="border-t-2 border-foreground pt-5"><h3 className="text-xl font-bold mb-3">A useful source beyond your website</h3><p className="text-muted-foreground leading-relaxed">Reddit SEO is about discoverable, relevant discussions—not a guaranteed backlink formula. We look for questions connected to your services and use those insights alongside your <Link to="/authority/local-seo-services" className="underline underline-offset-4">Google Maps and local SEO strategy</Link>.</p></div><div className="border-t-2 border-foreground pt-5"><h3 className="text-xl font-bold mb-3">Evidence, not promises</h3><p className="text-muted-foreground leading-relaxed"><Link to="/authority/ai-search-seo" className="underline underline-offset-4">Answer engine optimization and LLM visibility</Link> depend on more than one channel. We distinguish visible mentions and cited sources from assumptions about how AI works. Training-data access is not the same as a live recommendation.</p></div></div>
+            </div>
+          </section>
+
+          <section className="py-16 lg:py-20 border-b border-border" aria-labelledby="reddit-gaps-heading">
+            <div className="container mx-auto px-4 sm:px-6">
+              <p className="text-sm font-semibold mb-4">FROM MISSING TO USEFUL</p>
+              <h2 id="reddit-gaps-heading" className="text-3xl sm:text-4xl font-bold max-w-3xl">Three openings we look for first.</h2>
+              <div className="grid md:grid-cols-3 gap-8 lg:gap-12 mt-10">
+                {[
+                  { title: "A question nobody answered well", example: "A homeowner asks what to compare in HVAC estimates.", action: "An openly identified professional can explain the factors that matter—without pushing a sale or promising a price." },
+                  { title: "A local comparison you're absent from", example: "Residents compare nearby dentists or contractors.", action: "Monitor the discussion and check the rules. Offer factual clarification only when welcome; never impersonate a satisfied customer." },
+                  { title: "A concern your website ignores", example: "People keep asking what happens before a remodel starts.", action: "Improve your website's answer, then share relevant guidance where links and professional contributions are permitted." },
+                ].map(({ title, example, action }) => <div key={title} className="border-t-2 border-foreground pt-5"><h3 className="text-xl font-bold mb-4">{title}</h3><p className="font-medium leading-relaxed mb-4">{example}</p><p className="text-muted-foreground leading-relaxed">{action}</p></div>)}
+              </div>
+              <p className="mt-8 text-sm text-muted-foreground leading-relaxed">These are example situations, not observed client discussions. We verify relevant activity and community rules before recommending action.</p>
             </div>
           </section>
 
