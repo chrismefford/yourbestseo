@@ -254,6 +254,7 @@ export const glossaryToService: Record<string, string[]> = {
 export const footerNavigation = {
   growth: [
     { name: "Build Awareness", path: "/#growth" },
+    { name: "Reddit Marketing", path: "/reddit-marketing" },
     { name: "Get Found by AI", path: "/authority/ai-search-seo" },
     { name: "Rank in Google Maps", path: "/questions/how-to-rank-in-google-maps" },
     { name: "Turn Searches Into Appointments", path: "/#contact" },
