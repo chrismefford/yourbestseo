@@ -8,6 +8,9 @@ import { redditDescription, redditFAQs, redditServices, redditSources } from "@/
 import communityImage from "@/assets/reddit-community.jpg";
 import redditLogoLight from "@/assets/reddit-logo-light.svg";
 import redditIcon from "@/assets/reddit-icon.svg";
+import redditVideo from "@/assets/videos/reddit-ai-explainer.mp4.asset.json";
+import redditVideoWebm from "@/assets/videos/reddit-ai-explainer.webm.asset.json";
+import redditVideoPoster from "@/assets/videos/reddit-ai-video-poster.jpg.asset.json";
 
 const pageSchema = [
   generateWebPageSchema({ name: "Reddit Marketing & Community Management", description: redditDescription, url: "/reddit-marketing" }),
@@ -35,6 +38,20 @@ export default function RedditMarketing() {
         </section>
 
         <div className="light-surface bg-background text-foreground">
+          <section className="border-b border-border py-12 md:py-16" aria-labelledby="reddit-video-heading">
+            <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
+              <p className="text-sm font-semibold mb-4">THE CONNECTION, IN 10 SECONDS</p>
+              <h2 id="reddit-video-heading" className="font-display text-3xl sm:text-4xl font-bold mb-7">How Reddit can become part of an AI answer.</h2>
+              <video controls playsInline preload="none" poster={redditVideoPoster.url} aria-label="How AI search can use Reddit discussions" className="w-full aspect-video bg-muted rounded-lg border border-border">
+                <source src={redditVideoWebm.url} type="video/webm" />
+                <source src={redditVideo.url} type="video/mp4" />
+                <track kind="captions" src="/reddit-ai-explainer.vtt" srcLang="en" label="English" />
+                <a href={redditVideo.url}>Watch the Reddit and AI explainer</a>
+              </video>
+              <p className="mt-4 text-sm text-muted-foreground leading-relaxed">An AI-generated illustration, not a recording of an actual search result. Sources and recommendations vary by tool and question.</p>
+              <details className="mt-4 text-sm"><summary className="cursor-pointer font-semibold">Video transcript</summary><p className="mt-3 leading-relaxed">AI search can use Reddit discussions alongside other web sources to build answers. Helpful, honest participation matters—not guaranteed recommendations.</p></details>
+            </div>
+          </section>
           <section className="py-16 lg:py-20" aria-labelledby="reddit-opportunity-heading">
             <div className="container mx-auto px-4 sm:px-6 grid lg:grid-cols-[1.15fr_1fr] gap-10 lg:gap-20">
               <div><p className="text-sm font-semibold mb-4">THE MISSED OPPORTUNITY</p><h2 id="reddit-opportunity-heading" className="text-3xl sm:text-4xl font-bold leading-tight">If you're not in the conversation, your website can't tell the whole story.</h2></div>
