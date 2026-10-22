@@ -3,6 +3,7 @@
 - [x] Research REDD, RECHO and Redditman, plus official Reddit/Google/OpenAI guidance. US Semrush demand: reddit marketing 880/month (difficulty 60); reddit marketing agency 320/month (difficulty 24). Do not promise citations or rankings.
 - [x] Add a synchronous Reddit marketing page and homepage section, local-business examples, Chris's background, natural keyword coverage, unique metadata, WebPage/Service/Breadcrumb JSON-LD and official source links.
 - [x] Add navigation/footer/llms links and regenerate the sitemap with 227 public pages. Seven SEO tests and focused lint pass; preview metadata/JSON, FAQ interaction, homepage-to-page-to-booking navigation and mobile overflow checks pass.
+- [x] Add Reddit as a top-level menu link and keep every desktop label on one line; tap-to-call stays icon-only below 1280px. Verified 1024/1120/1280/1440 plus the phone menu, no clipping or overlap.
 
 # Retire outdated agency pages
 - [x] Delete pricing and white-label pages, remove incoming links and reseller pitches from related guides, and exclude both URLs from the sitemap. Old URLs show the noindex unavailable page; browser verification and seven SEO tests passed.
