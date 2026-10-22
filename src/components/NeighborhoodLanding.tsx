@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Trophy, Check, ArrowRight, MapPin, TrendingUp, Target, Users, BarChart3, Search, Globe, BookOpen, HelpCircle, Building2, Briefcase, AlertCircle, Star } from "lucide-react";
+import { Check, ArrowRight, MapPin, TrendingUp, Target, Users, BarChart3, Search, Globe, BookOpen, HelpCircle, Building2, Briefcase, AlertCircle, Star } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -42,7 +42,7 @@ const itemVariants = {
 
 // Default content generators for consistent text-to-HTML ratio
 const getDefaultMarketOverview = (name: string) => 
-  `${name} represents one of San Diego's most dynamic neighborhoods for local businesses. With its unique blend of residential communities and commercial districts, ${name} offers tremendous opportunities for businesses that can establish strong local search visibility. The neighborhood's diverse population and steady foot traffic make it an ideal market for service providers, retailers, and professional services looking to grow their customer base through targeted local SEO strategies.`;
+  `${name} businesses win customers by showing up when people search locally. We make that happen: a strong Google Business Profile, a website built to rank, and visibility in AI search tools like ChatGPT and Google's AI answers.`;
 
 const getDefaultChallenges = (name: string) => [
   `Intense competition from established ${name} businesses with strong online presence`,
@@ -72,7 +72,7 @@ const getDefaultSuccessFactors = (name: string) => [
 ];
 
 const getDefaultWhyChooseUs = (name: string) =>
-  `Our team has deep expertise in the ${name} market and the San Diego business landscape. We understand the unique characteristics of ${name} consumers, the competitive dynamics of local businesses, and what it takes to achieve top rankings in this specific geographic area. We've helped dozens of ${name} businesses achieve page-one rankings and significant ROI from their local SEO investment. Our transparent reporting, proven strategies, and dedicated account management ensure you always know exactly how your investment is performing.`;
+  `We know ${name} and the San Diego market, and we focus on what moves the needle: rankings that turn into calls, visits, and booked jobs.`;
 
 const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
   const SITE_URL = "https://yourbestseo.com";
