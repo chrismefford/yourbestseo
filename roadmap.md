@@ -1,3 +1,8 @@
+# Reddit management and AI visibility
+- [ ] Research Reddit-management competitors, US search demand and official platform guidance.
+- [ ] Add a dedicated Reddit marketing page and linked homepage section with accurate metadata and structured data.
+- [ ] Update discoverability and sitemap; verify page links, booking flow and desktop/mobile rendering.
+
 # Retire outdated agency pages
 - [x] Delete pricing and white-label pages, remove incoming links and reseller pitches from related guides, and exclude both URLs from the sitemap. Old URLs show the noindex unavailable page; browser verification and seven SEO tests passed.
 - [ ] Publish these removals to the live site; existing search listings can take time to disappear after recrawling.
