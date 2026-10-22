@@ -1,4 +1,4 @@
-export const redditDescription = "Reddit marketing and community management for local businesses. Build trust, monitor conversations, and connect Reddit with Google and AI search visibility.";
+export const redditDescription = "Reddit management for local businesses and AI search visibility. Find missed conversations, share your expertise, and connect discovery to real inquiries.";
 
 export const redditServices = [
   { title: "Find the conversations worth joining", text: "Reddit social listening starts with your customers, not a posting quota. We identify relevant city and industry communities, questions about your services, and existing mentions of your business. We review each subreddit's rules and activity before recommending participation. If there is little relevant discussion, we say so rather than inventing an opportunity." },
@@ -18,6 +18,8 @@ export const redditFAQs = [
 ];
 
 export const redditSources = [
+  { label: "Semrush: Reddit posts cited in AI search (November 2025 study)", url: "https://www.semrush.com/blog/reddit-ai-search-visibility-study/" },
+  { label: "Ahrefs: cited sources across AI assistants (June 2025 data)", url: "https://ahrefs.com/blog/ai-assistants-bias-winners-losers/" },
   { label: "Reddit Rules: authentic participation and community standards", url: "https://redditinc.com/policies/reddit-rules" },
   { label: "Google: expanded partnership with Reddit", url: "https://blog.google/company-news/inside-google/company-announcements/expanded-reddit-partnership/" },
   { label: "OpenAI: Reddit partnership announcement", url: "https://openai.com/index/openai-and-reddit-partnership/" },

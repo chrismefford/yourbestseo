@@ -1,4 +1,5 @@
 # Reddit management and AI visibility
+- [x] Strengthen Reddit's role in AI discovery using Semrush November 2025 and Ahrefs June 2025 citation studies (product/date limits explicit), missed-opportunity messaging and three local-business openings. Preview navigation, FAQ, available booking times, desktop/mobile layout and seven SEO tests verified; no appointment created.
 - [x] Research REDD, RECHO and Redditman, plus official Reddit/Google/OpenAI guidance. US Semrush demand: reddit marketing 880/month (difficulty 60); reddit marketing agency 320/month (difficulty 24). Do not promise citations or rankings.
 - [x] Add a synchronous Reddit marketing page and homepage section, local-business examples, Chris's background, natural keyword coverage, unique metadata, WebPage/Service/Breadcrumb JSON-LD and official source links.
 - [x] Add navigation/footer/llms links and regenerate the sitemap with 227 public pages. Seven SEO tests and focused lint pass; preview metadata/JSON, FAQ interaction, homepage-to-page-to-booking navigation and mobile overflow checks pass.
