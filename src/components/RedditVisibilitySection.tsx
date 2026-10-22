@@ -1,11 +1,15 @@
 import { ArrowRight, MessageCircle, Search, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import redditLogo from "@/assets/reddit-logo.svg";
 
 export default function RedditVisibilitySection() {
   return (
     <section id="reddit-marketing" aria-labelledby="reddit-heading" className="light-surface bg-muted text-foreground border-y border-border py-20 lg:py-24">
       <div className="container mx-auto px-4 sm:px-6">
+        <div className="mb-6 inline-flex items-center rounded-full border border-border bg-background px-5 py-2.5">
+          <img src={redditLogo} alt="Reddit" width={250} height={81} loading="lazy" decoding="async" className="h-6 w-auto" />
+        </div>
         <p className="text-sm font-semibold mb-5 flex items-center gap-3"><MessageCircle className="h-5 w-5" aria-hidden="true" />03 / REDDIT & COMMUNITY DISCOVERY</p>
         <div className="grid lg:grid-cols-[1.25fr_1fr] gap-10 lg:gap-20">
           <div>

@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { SEO, generateBreadcrumbSchema, generateWebPageSchema } from "@/components/SEO";
 import { redditDescription, redditFAQs, redditServices, redditSources } from "@/data/reddit-marketing";
 import communityImage from "@/assets/reddit-community.jpg";
+import redditLogoLight from "@/assets/reddit-logo-light.svg";
+import redditIcon from "@/assets/reddit-icon.svg";
 
 const pageSchema = [
   generateWebPageSchema({ name: "Reddit Marketing & Community Management", description: redditDescription, url: "/reddit-marketing" }),
@@ -23,6 +25,7 @@ export default function RedditMarketing() {
           <img src={communityImage} alt="Local business owner reviewing conversations at his laptop" width={1536} height={1024} fetchPriority="high" className="absolute inset-0 -z-20 h-full w-full object-cover object-right" />
           <div className="absolute inset-0 -z-10 bg-background/65 lg:bg-background/45" />
           <div className="container mx-auto px-4 sm:px-6">
+            <img src={redditLogoLight} alt="Reddit" width={250} height={81} fetchPriority="high" className="h-8 sm:h-10 w-auto mb-7" />
             <nav aria-label="Breadcrumb" className="mb-8 text-sm"><Link to="/" className="underline underline-offset-4">Home</Link><span className="mx-3" aria-hidden="true">/</span><span>Reddit Marketing</span></nav>
             <p className="text-sm font-semibold mb-5 flex items-center gap-2"><MessageCircle className="h-5 w-5" aria-hidden="true" />COMMUNITY. TRUST. DISCOVERY.</p>
             <h1 id="reddit-page-heading" className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight max-w-2xl">Reddit Marketing<br />& Community Management</h1>
@@ -41,7 +44,7 @@ export default function RedditMarketing() {
 
           <section className="bg-muted border-y border-border py-16 lg:py-20" aria-labelledby="reddit-ai-heading">
             <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
-              <p className="text-sm font-semibold mb-4">REDDIT SEO · AEO · AI SEARCH</p><h2 id="reddit-ai-heading" className="text-3xl sm:text-4xl font-bold leading-tight">Why Reddit belongs in the AI search conversation.</h2>
+              <p className="text-sm font-semibold mb-4 flex items-center gap-3"><img src={redditIcon} alt="" width={80} height={80} aria-hidden="true" loading="lazy" decoding="async" className="h-5 w-5" />REDDIT SEO · AEO · AI SEARCH</p><h2 id="reddit-ai-heading" className="text-3xl sm:text-4xl font-bold leading-tight">Why Reddit belongs in the AI search conversation.</h2>
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed">Google and OpenAI have announced partnerships with Reddit that provide access to Reddit content. That makes public community conversations relevant to a broader search strategy. It does not mean a post will get your company into ChatGPT, Claude, Perplexity or Google's AI answers.</p>
               <div className="mt-8 border-l-4 border-primary pl-6 max-w-3xl">
                 <h3 className="text-xl font-bold mb-3">A recurring source in AI answers—not just a theory.</h3>
