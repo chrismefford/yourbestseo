@@ -18,6 +18,8 @@ export const redditFAQs = [
 ];
 
 export const redditSources = [
+  { label: "Semrush: Reddit posts cited in AI search (November 2025 study)", url: "https://www.semrush.com/blog/reddit-ai-search-visibility-study/" },
+  { label: "Ahrefs: cited sources across AI assistants (June 2025 data)", url: "https://ahrefs.com/blog/ai-assistants-bias-winners-losers/" },
   { label: "Reddit Rules: authentic participation and community standards", url: "https://redditinc.com/policies/reddit-rules" },
   { label: "Google: expanded partnership with Reddit", url: "https://blog.google/company-news/inside-google/company-announcements/expanded-reddit-partnership/" },
   { label: "OpenAI: Reddit partnership announcement", url: "https://openai.com/index/openai-and-reddit-partnership/" },
