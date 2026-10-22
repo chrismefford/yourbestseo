@@ -574,7 +574,7 @@ const StateLanding = ({ data }: { data: StateData }) => {
                 How {data.name} Businesses Find SEO Help
               </h3>
               <p className="text-muted-foreground text-sm max-w-xl mx-auto">
-                We understand where you are in your search—and we're ready to help at every stage of your SEO journey.
+                We can help at any stage of your SEO journey.
               </p>
             </motion.div>
 
@@ -643,7 +643,7 @@ const StateLanding = ({ data }: { data: StateData }) => {
                 Learn More About SEO
               </h2>
               <p className="text-muted-foreground max-w-xl mx-auto">
-                Explore our resources to understand how SEO can help your {data.name} business grow and dominate search results.
+                Learn how SEO helps your {data.name} business grow.
               </p>
             </motion.div>
 
@@ -712,7 +712,7 @@ const StateLanding = ({ data }: { data: StateData }) => {
                   Ready to Dominate {data.name} Search Results?
                 </h2>
                 <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
-                  Get a free SEO audit and discover how we can help your {data.name} business rank higher, drive more organic traffic, and generate more leads. Our team is ready to show you exactly what's possible.
+                  Get a free SEO audit and see exactly how to get your {data.name} business in front of more customers.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button size="lg" variant="secondary" className="group" asChild>
