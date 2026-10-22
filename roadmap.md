@@ -1,5 +1,5 @@
 # Reddit video
-- [ ] Create a generated-scene explainer of Reddit as a possible AI answer source, add accessible playback to the Reddit page and verify the clip and player.
+- [x] Create a 10-second generated-scene explainer and add controlled playback, MP4/WebM sources, cover image, captions and transcript to the Reddit page. CDN MP4 downloaded and probed (1080p, audio track present); sampled frames and desktop/mobile player verified. Local Chromium playback verified with downloaded WebM bytes because localhost asset proxy and H264 decoding are unavailable. Exact spoken audio not independently checked. Publish required for live page.
 
 # Reddit article
 - [x] Add the uploaded Reddit/ChatGPT article, label the composite story, verify and correct research claims, and link it from the Reddit page with Article/Person/Breadcrumb metadata and sitemap inclusion (228 pages). Seven SEO tests, focused lint, preview metadata/JSON, article-to-booking navigation and desktop/mobile screenshots pass. Publish required for the live article.
