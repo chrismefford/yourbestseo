@@ -1,4 +1,4 @@
-export const redditDescription = "Reddit marketing and community management for local businesses. Build trust, monitor conversations, and connect Reddit with Google and AI search visibility.";
+export const redditDescription = "Reddit management for local businesses and AI search visibility. Find missed conversations, share your expertise, and connect discovery to real inquiries.";
 
 export const redditServices = [
   { title: "Find the conversations worth joining", text: "Reddit social listening starts with your customers, not a posting quota. We identify relevant city and industry communities, questions about your services, and existing mentions of your business. We review each subreddit's rules and activity before recommending participation. If there is little relevant discussion, we say so rather than inventing an opportunity." },

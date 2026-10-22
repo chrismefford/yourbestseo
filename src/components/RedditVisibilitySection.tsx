@@ -9,16 +9,16 @@ export default function RedditVisibilitySection() {
         <p className="text-sm font-semibold mb-5 flex items-center gap-3"><MessageCircle className="h-5 w-5" aria-hidden="true" />03 / REDDIT & COMMUNITY DISCOVERY</p>
         <div className="grid lg:grid-cols-[1.25fr_1fr] gap-10 lg:gap-20">
           <div>
-            <h2 id="reddit-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">Your customers are talking.<br /><span className="bg-primary text-primary-foreground px-1">Don't miss Reddit.</span></h2>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">People use Reddit to compare local businesses, ask honest questions and decide who to trust. Helpful conversations can also become sources that Google and AI search tools discover.</p>
-            <p className="mt-4 text-muted-foreground leading-relaxed">Our Reddit marketing approach connects community listening, transparent participation and better website answers. For dentists, HVAC companies and contractors, it starts with finding out where you can genuinely help.</p>
+            <h2 id="reddit-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">AI answers don't stop<br />at your website.<br /><span className="bg-primary text-primary-foreground px-1">Neither should you.</span></h2>
+            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">Reddit is where people compare businesses, ask follow-up questions and share experiences. Those conversations can become sources for AI answers—not just another social feed.</p>
+            <p className="mt-4 text-muted-foreground leading-relaxed">If relevant conversations never include your business or expertise, you're missing a place customers—and AI search tools—could discover you. We help dentists, HVAC companies and contractors find those openings and contribute something worth reading.</p>
             <Button asChild size="lg" className="mt-8 h-auto min-h-12 py-4 whitespace-normal text-center"><Link to="/reddit-marketing">Explore Reddit management for your business <ArrowRight className="shrink-0" aria-hidden="true" /></Link></Button>
           </div>
           <div className="divide-y divide-border">
             {[
-              { icon: Search, title: "Listen before you post", text: "Find relevant communities, real customer questions and mentions of your business." },
-              { icon: MessageCircle, title: "Bring expertise, not a sales pitch", text: "Contribute useful answers with clear business affiliation and respect for community rules." },
-              { icon: ShieldCheck, title: "Build trust you can stand behind", text: "No fake customers or purchased votes. Track conversations, referral visits and inquiries—not manufactured popularity." },
+              { icon: Search, title: "Find the conversations you're missing", text: "Look for service questions, local recommendations and competitor mentions in relevant communities." },
+              { icon: MessageCircle, title: "Make your expertise part of the answer", text: "Contribute useful, openly affiliated answers where professional participation is welcome." },
+              { icon: ShieldCheck, title: "Connect visibility to real inquiries", text: "Track Reddit referrals and observed AI citations separately. No fake customers, purchased votes or manufactured popularity." },
             ].map(({ icon: Icon, title, text }) => <div key={title} className="flex gap-4 py-6 first:pt-0"><Icon className="h-6 w-6 shrink-0 mt-1" aria-hidden="true" /><div><h3 className="text-xl font-bold mb-3">{title}</h3><p className="leading-relaxed text-muted-foreground">{text}</p></div></div>)}
           </div>
         </div>
