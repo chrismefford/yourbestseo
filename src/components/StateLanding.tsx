@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Trophy, Check, ArrowRight, MapPin, TrendingUp, Target, Users, BarChart3, Search, Globe, BookOpen, HelpCircle, Building2, Briefcase, AlertCircle, Star } from "lucide-react";
+import { Check, ArrowRight, MapPin, TrendingUp, Target, Users, BarChart3, Search, Globe, BookOpen, HelpCircle, Building2, Briefcase, AlertCircle, Star } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -45,7 +45,7 @@ const itemVariants = {
 
 // Default content generators for consistent text-to-HTML ratio
 const getDefaultMarketOverview = (name: string, industries: string[]) => 
-  `${name} represents a diverse and growing market for businesses seeking to establish strong search visibility. With major metropolitan areas and thriving local economies, ${name} offers tremendous opportunities for businesses that can capture organic search traffic effectively. The state's diverse population, robust economy featuring ${industries.slice(0, 3).join(", ")}, and growing digital adoption make it an ideal market for businesses investing in SEO. Our data-driven approach ensures your investment delivers measurable returns through increased visibility, qualified traffic, and higher conversion rates.`;
+  `${name} businesses win customers by showing up when people search locally. We make that happen: a strong Google Business Profile, a website built to rank, and visibility in AI search tools like ChatGPT and Google's AI answers.`;
 
 const getDefaultChallenges = (name: string) => [
   `Intense competition from established ${name} businesses with strong online presence`,
@@ -67,7 +67,7 @@ const getDefaultSuccessFactors = (name: string) => [
 ];
 
 const getDefaultWhyChooseUs = (name: string) =>
-  `Our team has extensive experience serving businesses across ${name}. We understand the unique characteristics of ${name} consumers, the competitive dynamics across different markets, and what it takes to achieve top rankings in this diverse state. We've helped businesses throughout ${name} achieve page-one rankings and significant ROI from their SEO investment. Our transparent reporting, proven strategies, and dedicated account management ensure you always know exactly how your investment is performing.`;
+  `We know ${name} and focus on what moves the needle: rankings that turn into calls, visits, and booked jobs.`;
 
 const StateLanding = ({ data }: { data: StateData }) => {
   const SITE_URL = "https://yourbestseo.com";
@@ -155,10 +155,6 @@ const StateLanding = ({ data }: { data: StateData }) => {
                 <p className="text-lg md:text-xl text-muted-foreground mb-8">
                   {data.heroDescription}
                 </p>
-                <div className="flex items-center gap-2 text-primary mb-8">
-                  <Trophy className="w-5 h-5" />
-                  <span className="font-medium">2025 Finalist – Top 5 SEO Agencies in North America</span>
-                </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" className="group" asChild>
                     <Link to="/free-audit">
@@ -209,11 +205,8 @@ const StateLanding = ({ data }: { data: StateData }) => {
                   {data.name} SEO Market Overview
                 </h2>
               </div>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 {marketOverview}
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Whether you're an established {data.name} business looking to strengthen your online presence or a growing venture seeking to build visibility across the state, SEO is the most cost-effective way to connect with customers actively searching for your products and services. Our team understands the nuances of the {data.name} market and creates customized strategies that deliver results.
               </p>
             </motion.div>
           </div>
@@ -232,7 +225,7 @@ const StateLanding = ({ data }: { data: StateData }) => {
                 Cities We Serve in {data.name}
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Our SEO services extend across all major {data.name} markets. We have experience helping businesses succeed in each of these communities.
+                We serve businesses across {data.name}.
               </p>
             </motion.div>
             <div className="flex flex-wrap justify-center gap-3">
@@ -288,7 +281,7 @@ const StateLanding = ({ data }: { data: StateData }) => {
                 </h2>
               </div>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                We've helped businesses across every major industry achieve top rankings throughout {data.name}. Our specialized approach adapts to your unique market needs and competitive landscape.
+                We help {data.name} businesses get found — on Google, on Maps, and in AI search.
               </p>
             </motion.div>
 
@@ -331,7 +324,7 @@ const StateLanding = ({ data }: { data: StateData }) => {
                 </h2>
               </div>
               <p className="text-muted-foreground mb-8">
-                {data.name} businesses face unique SEO challenges that require specialized knowledge and proven strategies to overcome. Here are the most common obstacles we help our clients navigate:
+                These are the most common reasons {data.name} businesses get overlooked online — and what we do about them.
               </p>
               <div className="grid md:grid-cols-2 gap-4">
                 {challenges.map((challenge, index) => (
@@ -367,7 +360,7 @@ const StateLanding = ({ data }: { data: StateData }) => {
                 </h2>
               </div>
               <p className="text-muted-foreground mb-8">
-                Ranking across {data.name}'s competitive search landscape requires a comprehensive approach. These are the key factors that determine whether your business appears on page one:
+                Page one in {data.name} comes down to these fundamentals:
               </p>
               <div className="space-y-4">
                 {successFactors.map((factor, index) => (
@@ -426,7 +419,7 @@ const StateLanding = ({ data }: { data: StateData }) => {
                 </div>
                 <h3 className="font-display text-xl font-bold mb-4">Proven Results</h3>
                 <p className="text-muted-foreground">
-                  Our {data.name} clients see an average 200%+ increase in organic traffic within 90 days. We deliver measurable ROI, not vanity metrics.
+                  We track rankings, calls, and inquiries — and show you exactly what your investment is producing.
                 </p>
               </motion.div>
               <motion.div variants={itemVariants} className="p-8 rounded-2xl card-gradient border border-border/50">
@@ -455,7 +448,7 @@ const StateLanding = ({ data }: { data: StateData }) => {
                 SEO Services for {data.name} Businesses
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Comprehensive search engine optimization solutions tailored for {data.name} businesses looking to dominate local and organic search results.
+                The essentials {data.name} businesses need to rank locally — done right.
               </p>
             </motion.div>
 
