@@ -493,7 +493,7 @@ const StateLanding = ({ data }: { data: StateData }) => {
                 Our {data.name} SEO Process
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Our proven four-step process delivers consistent results for {data.name} businesses. Each phase builds on the previous one to create sustainable, long-term growth.
+                Four steps, clear reporting, steady growth.
               </p>
             </motion.div>
 
@@ -536,7 +536,7 @@ const StateLanding = ({ data }: { data: StateData }) => {
                 {data.name} SEO FAQs
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Have questions about SEO for your {data.name} business? Here are answers to the most common questions we receive from business owners across the state.
+                Common questions from {data.name} business owners.
               </p>
             </motion.div>
 
