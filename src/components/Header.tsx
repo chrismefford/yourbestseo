@@ -29,6 +29,7 @@ const Header = () => {
   const authorityGuides = [
     { name: "Revenue-Driven SEO", path: "/authority/revenue-driven-seo" },
     { name: "AI Search Optimization", path: "/authority/ai-search-seo" },
+    { name: "Reddit Marketing", path: "/reddit-marketing" },
     { name: "Why You're Not Ranking", path: "/authority/why-not-ranking" },
     { name: "Technical SEO Audit", path: "/authority/technical-seo-audit" },
     { name: "Local Search Rankings", path: "/authority/local-seo-services" },

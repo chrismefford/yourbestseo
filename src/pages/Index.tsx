@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import MissionObjectives from "@/components/MissionObjectives";
 import SearchVisibilitySections from "@/components/SearchVisibilitySections";
+import RedditVisibilitySection from "@/components/RedditVisibilitySection";
 import HowItWorks from "@/components/HowItWorks";
 import TrustBadge from "@/components/TrustBadge";
 import ImageStrip from "@/components/ImageStrip";
@@ -67,6 +68,7 @@ const Index = () => {
         <ImageStrip />
         <MissionObjectives />
         <SearchVisibilitySections />
+        <RedditVisibilitySection />
         <HowItWorks />
         <WideBanner />
         <TrustBadge />

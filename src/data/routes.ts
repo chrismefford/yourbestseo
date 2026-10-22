@@ -20,6 +20,7 @@ export interface RouteConfig {
 export const mainRoutes: RouteConfig[] = [
   { path: '/', priority: 1.0, changefreq: 'weekly' },
   { path: '/services', priority: 0.9, changefreq: 'weekly' },
+  { path: '/reddit-marketing', priority: 0.8, changefreq: 'monthly' },
   { path: '/about', priority: 0.8, changefreq: 'monthly' },
   { path: '/case-studies', priority: 0.8, changefreq: 'monthly' },
   { path: '/faq', priority: 0.7, changefreq: 'monthly' },
