@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { SEO, generateBreadcrumbSchema, generateWebPageSchema } from "@/components/SEO";
 import { redditDescription, redditFAQs, redditServices, redditSources } from "@/data/reddit-marketing";
 import communityImage from "@/assets/reddit-community.jpg";
+import redditLogoLight from "@/assets/reddit-logo-light.svg";
+import redditIcon from "@/assets/reddit-icon.svg";
 
 const pageSchema = [
   generateWebPageSchema({ name: "Reddit Marketing & Community Management", description: redditDescription, url: "/reddit-marketing" }),
