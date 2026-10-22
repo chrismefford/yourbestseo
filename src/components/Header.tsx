@@ -12,6 +12,7 @@ const Header = () => {
 
   const navLinks = [
     { label: "Your Growth", href: "/#growth" },
+    { label: "Reddit", href: "/reddit-marketing" },
     { label: "About Me", href: "/about" },
     { label: "Book a Call", href: "/book" },
     { label: "Contact", href: "/#contact" },
@@ -82,7 +83,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-4 xl:gap-8">
             {/* Learn Dropdown */}
             <div className="relative" ref={learnDropdownRef}>
               <Button variant="ghost" size="sm"
