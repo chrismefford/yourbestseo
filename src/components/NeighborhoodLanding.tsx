@@ -242,7 +242,7 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
                 </h2>
               </div>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                We've helped businesses across every major industry achieve top rankings in {data.name}. Our specialized approach adapts to your unique market needs and competitive landscape.
+                We help {data.name} businesses get found — on Google, on Maps, and in AI search.
               </p>
             </motion.div>
 
@@ -285,7 +285,7 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
                 </h2>
               </div>
               <p className="text-muted-foreground mb-8">
-                {data.name} businesses face unique local SEO challenges that require specialized knowledge and proven strategies to overcome. Here are the most common obstacles we help our clients navigate:
+                These are the most common reasons {data.name} businesses get overlooked online — and what we do about them.
               </p>
               <div className="grid md:grid-cols-2 gap-4">
                 {challenges.map((challenge, index) => (
@@ -321,7 +321,7 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
                 </h2>
               </div>
               <p className="text-muted-foreground mb-8">
-                Ranking in {data.name}'s competitive local search landscape requires a comprehensive approach. These are the key factors that determine whether your business appears on page one:
+                Page one in {data.name} comes down to these fundamentals:
               </p>
               <div className="space-y-4">
                 {successFactors.map((factor, index) => (
@@ -380,7 +380,7 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
                 </div>
                 <h3 className="font-display text-xl font-bold mb-4">Proven Results</h3>
                 <p className="text-muted-foreground">
-                  Our {data.name} clients see an average 312% increase in organic traffic within 90 days. We deliver measurable ROI, not vanity metrics.
+                  We track rankings, calls, and inquiries — and show you exactly what your investment is producing.
                 </p>
               </motion.div>
               <motion.div variants={itemVariants} className="p-8 rounded-2xl card-gradient border border-border/50">
@@ -409,7 +409,7 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
                 SEO Services for {data.name} Businesses
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Comprehensive search engine optimization solutions tailored for {data.name}, San Diego businesses looking to dominate local and organic search.
+                The essentials {data.name} businesses need to rank locally — done right.
               </p>
             </motion.div>
 
@@ -454,7 +454,7 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
                 Keywords We Target for {data.name}
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                We help your {data.name} business rank for high-intent, revenue-generating keywords that actually convert visitors into customers.
+                The searches that bring you customers — not just visitors.
               </p>
             </motion.div>
 
@@ -491,7 +491,7 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
                 Our {data.name} SEO Process
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Our proven four-step process delivers consistent results for {data.name} businesses. Each phase builds on the previous one to create sustainable, long-term growth.
+                Four steps, clear reporting, steady growth.
               </p>
             </motion.div>
 
@@ -534,7 +534,7 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
                 {data.name} SEO FAQs
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Have questions about SEO for your {data.name} business? Here are answers to the most common questions we receive from local business owners.
+                Common questions from {data.name} business owners.
               </p>
             </motion.div>
 
@@ -580,7 +580,7 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
                 {marketOverview}
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Whether you're a well-established {data.name} business looking to strengthen your online presence or a new venture seeking to build visibility from the ground up, local SEO is the most cost-effective way to connect with customers actively searching for your products and services. Our data-driven approach ensures every dollar you invest delivers measurable returns through increased visibility, traffic, and conversions.
+                Whether you're established in {data.name} or just starting out, getting found in local and AI search is the most direct path to more customers.
               </p>
             </motion.div>
           </div>
@@ -599,7 +599,7 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
                 Also Serving Nearby San Diego Areas
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Our local SEO expertise extends throughout the greater San Diego area. We help businesses in these neighboring communities achieve the same results.
+                We serve businesses across greater San Diego.
               </p>
             </motion.div>
 
@@ -725,7 +725,7 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
                   Ready to Dominate {data.name} Search Results?
                 </h2>
                 <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
-                  Get a free SEO audit and discover how we can help your {data.name} business rank higher, drive more traffic, and generate more leads. Our team is ready to show you exactly what's possible.
+                  Get a free SEO audit and see exactly how to get your {data.name} business in front of more customers.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button size="lg" variant="secondary" className="group" asChild>
