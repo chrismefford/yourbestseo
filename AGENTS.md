@@ -1,4 +1,5 @@
 # Architecture rules
+- Keep Reddit page content and source references in a shared data module, with a synchronous public route and homepage section, so search crawlers receive readable content and metadata without waiting for client loading.
 - Keep authentication email dispatch in the scaffolded managed auth-email-hook SDK handler; the platform owns delivery and retries, so do not add email queues or cron infrastructure.
 - Pre-render retired commercial URLs with the noindex NotFound page and exclude them from the sitemap; this prevents hosting fallbacks from serving indexable homepage content at retired URLs.
 - Initialize the Google tag once in the browser through the public connector measurement ID; track route views and explicit funnel outcomes centrally without sending contact details or report content.
