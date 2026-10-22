@@ -1,3 +1,7 @@
+# Useful neighborhood-page actions
+- [ ] Show the next three real calendar openings, refreshed while the page is open, with selection carried into the booking page.
+- [ ] Add an area-prefilled free AI search check to every neighborhood page and verify both paths with real calendar availability.
+
 # Reddit video
 - [x] Create a 10-second generated-scene explainer and add controlled playback, MP4/WebM sources, cover image, captions and transcript to the Reddit page. CDN MP4 downloaded and probed (1080p, audio track present); sampled frames and desktop/mobile player verified. Local Chromium playback verified with downloaded WebM bytes because localhost asset proxy and H264 decoding are unavailable. Exact spoken audio not independently checked. Publish required for live page.
 
