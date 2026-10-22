@@ -12,13 +12,13 @@ import { trackEvent } from "@/lib/analytics";
 
 export interface BookingContact { name: string; email: string; phone: string; website: string }
 
-interface Props { contact?: BookingContact; prefill?: Partial<BookingContact>; leadId?: string; score?: number | null; answers?: number[] }
+interface Props { contact?: BookingContact; prefill?: Partial<BookingContact>; leadId?: string; score?: number | null; answers?: number[]; initialSlot?: string }
 
 const TZ = "America/Los_Angeles";
 const dayLabel = (iso: string) => new Date(iso).toLocaleDateString("en-US", { timeZone: TZ, weekday: "short", month: "short", day: "numeric" });
 const timeLabel = (iso: string) => new Date(iso).toLocaleTimeString("en-US", { timeZone: TZ, hour: "numeric", minute: "2-digit" });
 
-export default function BookingScheduler({ contact: given, prefill, leadId, score, answers }: Props) {
+export default function BookingScheduler({ contact: given, prefill, leadId, score, answers, initialSlot }: Props) {
   const [slots, setSlots] = useState<string[] | null>(null);
   const [loadError, setLoadError] = useState("");
   const [day, setDay] = useState("");
@@ -29,15 +29,19 @@ export default function BookingScheduler({ contact: given, prefill, leadId, scor
   const [error, setError] = useState("");
   const [smsConsent, setSmsConsent] = useState(false);
   const location = useLocation();
+  const [slotNotice, setSlotNotice] = useState("");
 
   const load = async () => {
     setLoadError("");
     const { data, error } = await supabase.functions.invoke("booking", { body: { action: "slots" } });
     if (error || !Array.isArray(data?.slots)) { setLoadError("Couldn't load open times. Please call (619) 903-6599."); return; }
     setSlots(data.slots);
-    setDay(data.slots[0] ? dayLabel(data.slots[0]) : "");
+    const selected = initialSlot && data.slots.includes(initialSlot) ? initialSlot : "";
+    setSlot(selected);
+    setDay(selected ? dayLabel(selected) : data.slots[0] ? dayLabel(data.slots[0]) : "");
+    setSlotNotice(initialSlot && !selected ? "That time is no longer available. Please pick another opening below." : "");
   };
-  useEffect(() => { load(); }, []);
+  useEffect(() => { load(); }, [initialSlot]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const days = useMemo(() => {
     const map = new Map<string, string[]>();
@@ -85,6 +89,7 @@ export default function BookingScheduler({ contact: given, prefill, leadId, scor
 
     <div>
       <Label className="block mb-3">Pick a day <span className="text-muted-foreground font-normal">(30 minutes, Pacific time)</span></Label>
+      {slotNotice && <p role="status" className="text-muted-foreground mb-3">{slotNotice}</p>}
       {loadError ? <p role="alert" className="text-destructive">{loadError}</p> : !slots ? <p className="text-muted-foreground flex items-center gap-2"><Loader2 className="h-4 w-4 animate-spin" />Loading open times…</p> : days.size === 0 ? <p className="text-muted-foreground">No open times right now — please call (619) 903-6599.</p> : <>
         <div className="flex gap-2 overflow-x-auto pb-2">{[...days.keys()].map(d => <button type="button" key={d} onClick={() => { setDay(d); setSlot(""); }} className={`shrink-0 rounded-lg border px-4 py-2 text-sm ${day === d ? "border-primary bg-primary text-primary-foreground" : "border-border hover:border-primary/50"}`}>{d}</button>)}</div>
         <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 mt-4">{(days.get(day) ?? []).map(s => <button type="button" key={s} onClick={() => setSlot(s)} className={`rounded-lg border py-2 text-sm ${slot === s ? "border-primary bg-primary/15 text-primary font-semibold" : "border-border hover:border-primary/50"}`}>{timeLabel(s)}</button>)}</div>

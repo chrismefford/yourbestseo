@@ -6,6 +6,8 @@ import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { neighborhoodRoutes } from "@/data/routes";
+import LocalPageActions from "@/components/LocalPageActions";
+import { localCheckPath } from "@/lib/local-page-actions";
 
 interface NeighborhoodData {
   slug: string;
@@ -169,7 +171,7 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" className="group" asChild>
-                    <Link to="/free-audit">
+                    <Link to={localCheckPath(data.name)}>
                       Get Your Free SEO Audit
                       <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
@@ -201,6 +203,8 @@ const NeighborhoodLanding = ({ data }: { data: NeighborhoodData }) => {
         </section>
 
 
+
+        <LocalPageActions area={data.name} />
 
         {/* Stats Section */}
         <section className="py-16 relative bg-secondary/20">

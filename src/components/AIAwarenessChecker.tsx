@@ -2,7 +2,7 @@ import BookingScheduler from "@/components/BookingScheduler";
 import { trackEvent } from "@/lib/analytics";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowRight, Loader2, RotateCcw, Search, ShieldCheck, Zap } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -19,7 +19,10 @@ const FACTS = [
 ];
 
 export default function AIAwarenessChecker() {
+  const [searchParams] = useSearchParams();
   const [input, setInput] = useState({ website: "", city: "", service: "", profile: "" });
+  const area = searchParams.get("area")?.trim().slice(0, 100) ?? "";
+  useEffect(() => { if (area) setInput(p => ({ ...p, city: area })); }, [area]);
   const [report, setReport] = useState<Report>();
   const [reportId, setReportId] = useState("");
   const [busy, setBusy] = useState(false);
