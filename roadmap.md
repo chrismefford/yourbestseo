@@ -1,3 +1,6 @@
+# Reddit video
+- [ ] Create a generated-scene explainer of Reddit as a possible AI answer source, add accessible playback to the Reddit page and verify the clip and player.
+
 # Reddit article
 - [x] Add the uploaded Reddit/ChatGPT article, label the composite story, verify and correct research claims, and link it from the Reddit page with Article/Person/Breadcrumb metadata and sitemap inclusion (228 pages). Seven SEO tests, focused lint, preview metadata/JSON, article-to-booking navigation and desktop/mobile screenshots pass. Publish required for the live article.
 
