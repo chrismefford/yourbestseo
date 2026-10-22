@@ -9,6 +9,7 @@ import communityImage from "@/assets/reddit-community.jpg";
 import redditLogoLight from "@/assets/reddit-logo-light.svg";
 import redditIcon from "@/assets/reddit-icon.svg";
 import redditVideo from "@/assets/videos/reddit-ai-explainer.mp4.asset.json";
+import redditVideoWebm from "@/assets/videos/reddit-ai-explainer.webm.asset.json";
 import redditVideoPoster from "@/assets/videos/reddit-ai-video-poster.jpg.asset.json";
 
 const pageSchema = [
@@ -42,6 +43,7 @@ export default function RedditMarketing() {
               <p className="text-sm font-semibold mb-4">THE CONNECTION, IN 10 SECONDS</p>
               <h2 id="reddit-video-heading" className="font-display text-3xl sm:text-4xl font-bold mb-7">How Reddit can become part of an AI answer.</h2>
               <video controls playsInline preload="none" poster={redditVideoPoster.url} aria-label="How AI search can use Reddit discussions" className="w-full aspect-video bg-muted rounded-lg border border-border">
+                <source src={redditVideoWebm.url} type="video/webm" />
                 <source src={redditVideo.url} type="video/mp4" />
                 <track kind="captions" src="/reddit-ai-explainer.vtt" srcLang="en" label="English" />
                 <a href={redditVideo.url}>Watch the Reddit and AI explainer</a>
