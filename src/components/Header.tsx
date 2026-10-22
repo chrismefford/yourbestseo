@@ -78,7 +78,7 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="font-display font-bold text-sm tracking-[0.2em] text-primary">
+          <Link to="/" className="font-display font-bold text-sm tracking-[0.2em] text-primary whitespace-nowrap">
             YOUR BEST SEO
           </Link>
 
@@ -194,7 +194,7 @@ const Header = () => {
                 <button
                   key={link.label}
                   onClick={() => handleNavClick(link.href)}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap"
                 >
                   {link.label}
                 </button>
@@ -202,7 +202,7 @@ const Header = () => {
                 <Link
                   key={link.label}
                   to={link.href}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap"
                 >
                   {link.label}
                 </Link>
@@ -216,8 +216,8 @@ const Header = () => {
             <Button variant="ghost" size="sm" onClick={handleShowOffer}>
               Search Check
             </Button>
-            <a href="tel:+16199036599" className="flex items-center gap-1.5 px-2 text-sm font-semibold text-foreground hover:text-primary whitespace-nowrap">
-              <Phone className="w-4 h-4 text-primary" />(619) 903-6599
+            <a href="tel:+16199036599" aria-label="Call Chris at (619) 903-6599" className="flex items-center gap-1.5 px-2 text-sm font-semibold text-foreground hover:text-primary whitespace-nowrap">
+              <Phone className="w-4 h-4 text-primary" /><span className="hidden xl:inline">(619) 903-6599</span>
             </a>
             <Button variant="hero" size="default" className="gap-2" asChild>
               <Link to="/book">
