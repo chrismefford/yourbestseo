@@ -23,7 +23,6 @@ const FunSection = lazy(() => import("@/components/FunSection"));
 // Lazy load non-critical conversion components that use browser APIs
 const ExitIntentPopup = lazy(() => import("@/components/ExitIntentPopup"));
 const StickyCTABar = lazy(() => import("@/components/StickyCTABar"));
-const AIChatbot = lazy(() => import("@/components/AIChatbot"));
 
 const Index = () => {
   const [showDeferredComponents, setShowDeferredComponents] = useState(false);
@@ -96,7 +95,6 @@ const Index = () => {
           <Suspense fallback={null}>
             <ExitIntentPopup />
             <StickyCTABar />
-            <AIChatbot />
           </Suspense>
         )}
       </ClientOnly>
