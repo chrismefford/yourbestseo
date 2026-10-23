@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 import { MessageCircle, X, Send, Bot, User, Loader2, Minimize2, Mail, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -14,14 +15,14 @@ type Message = {
 
 const INITIAL_MESSAGE: Message = {
   role: "assistant",
-  content: "👋 Hi! I'm your SEO assistant. I can help you understand our services, answer SEO questions, or connect you with our team. What can I help you with today?",
+  content: "👋 Hi! Quick question: when someone asks ChatGPT or Google for a business like yours, does it recommend YOU — or your competitor?\n\nI can run a free check on your website right now, and if you'd like, we'll walk you through exactly how to get found. What's your website?",
 };
 
 const QUICK_ACTIONS = [
-  "Tell me about your services",
-  "How much does SEO cost?",
-  "How long until I see results?",
-  "I want to check my AI awareness",
+  "Is AI recommending my business?",
+  "Run a free check on my website",
+  "Book a free audit call",
+  "How do I rank higher on Google?",
 ];
 
 const AIChatbot = () => {
@@ -246,7 +247,7 @@ const AIChatbot = () => {
                   <Bot className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">SEO Assistant</h3>
+                  <h3 className="font-semibold">AI Search Assistant</h3>
                   <p className="text-xs opacity-80">
                     {isLoading ? "Typing..." : "Online now"}
                   </p>
@@ -335,8 +336,26 @@ const AIChatbot = () => {
                   )}
                 </ScrollArea>
 
+                {/* Conversion CTAs - always visible */}
+                <div className="px-4 pt-3 pb-0 border-t border-border grid grid-cols-2 gap-2">
+                  <Link
+                    to="/free-audit"
+                    onClick={closeChat}
+                    className="text-center text-xs font-semibold px-3 py-2 rounded-lg bg-accent text-accent-foreground hover:opacity-90 transition-opacity"
+                  >
+                    Run my free check
+                  </Link>
+                  <Link
+                    to="/book"
+                    onClick={closeChat}
+                    className="text-center text-xs font-semibold px-3 py-2 rounded-lg bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
+                  >
+                    Book a free call
+                  </Link>
+                </div>
+
                 {/* Input */}
-                <form onSubmit={handleSubmit} className="p-4 border-t border-border">
+                <form onSubmit={handleSubmit} className="p-4 pt-2 border-t-0 border-border">
                   <div className="flex gap-2">
                     <Input
                       ref={inputRef}

@@ -5,8 +5,12 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import ScrollToTop from "@/components/ScrollToTop";
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
+import { ClientOnly } from "vite-react-ssg";
 import { trackPageView } from "@/lib/analytics";
+
+// Chatbot funnel shown on every content page; lazy + client-only to keep SSG safe
+const AIChatbot = lazy(() => import("@/components/AIChatbot"));
 
 const queryClient = new QueryClient();
 
@@ -27,6 +31,13 @@ const RootLayout = () => {
       <ScrollToTop />
       {needsSharedHeader && <Header />}
       <Outlet />
+      <ClientOnly>
+        {() => (
+          <Suspense fallback={null}>
+            <AIChatbot />
+          </Suspense>
+        )}
+      </ClientOnly>
     </TooltipProvider>
   </QueryClientProvider>
   );
