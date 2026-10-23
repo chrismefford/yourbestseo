@@ -180,7 +180,7 @@ const AIChatbot = () => {
       {/* Chat Button */}
       <AnimatePresence>
         {!isOpen && (
-          <div className="fixed bottom-24 right-6 z-40">
+          <div className="chat-panel fixed bottom-24 right-6 z-40">
             {/* Hover tooltip */}
             <AnimatePresence>
               {isHovered && (
@@ -238,7 +238,7 @@ const AIChatbot = () => {
             }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="fixed bottom-24 right-6 z-50 w-[350px] sm:w-[380px] rounded-2xl bg-background border border-border shadow-2xl overflow-hidden flex flex-col"
+            className="chat-panel fixed bottom-24 right-6 z-50 w-[350px] sm:w-[380px] rounded-2xl bg-background border border-border shadow-2xl overflow-hidden flex flex-col"
           >
             {/* Header */}
             <div className="bg-primary text-primary-foreground p-4 flex items-center justify-between">
@@ -327,7 +327,7 @@ const AIChatbot = () => {
                         <button
                           key={action}
                           onClick={() => handleQuickAction(action)}
-                          className="text-xs px-3 py-1.5 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
+                          className="text-xs px-3 py-1.5 rounded-full border border-primary/50 bg-primary/15 text-foreground font-medium hover:bg-primary/30 transition-colors"
                         >
                           {action}
                         </button>
