@@ -19,3 +19,4 @@
 - Preserve `/services` as a business-growth overview using shared outcome sections, rather than deleting the URL, so inbound links remain useful.
 - Booking slot rules live in supabase/functions/_shared/booking-slots.ts (pure, tested from tests/); the single `booking` function handles slots, lead capture, and calendar events so leads are saved even when email fails.
 - Keep SMS consent wording and validation in the shared pure consent module; the booking function stores server-authored, timestamped evidence in a service-only append-only table before calendar creation so visitor consent is auditable and never inferred from a phone number.
+- Mount the conversion chatbot once in RootLayout for all content pages; pages must not mount AIChatbot themselves to avoid duplicate widgets.
