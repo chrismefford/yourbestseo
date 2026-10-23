@@ -143,6 +143,32 @@
     --border: 220 15% 86%;
   }
 
+  /* Light surface for the chat widget: black copy on white, tokens scoped to the widget */
+  .chat-panel {
+    --background: 0 0% 100%;
+    --foreground: 220 30% 8%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 8%;
+    --primary: 45 100% 51%;
+    --primary-foreground: 220 30% 6%;
+    --secondary: 220 20% 95%;
+    --secondary-foreground: 220 30% 8%;
+    --muted: 220 18% 96%;
+    --muted-foreground: 220 12% 38%;
+    --accent: 45 100% 51%;
+    --accent-foreground: 220 30% 6%;
+    --destructive: 0 72% 42%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 15% 86%;
+    --input: 220 15% 86%;
+    --ring: 45 100% 51%;
+    --shadow-card: 0 4px 24px hsl(220 30% 8% / 0.08);
+    color: hsl(var(--foreground));
+  }
+
+
   /* Light surface for the /free-audit tool: black copy on white, tokens scoped to the page main */
   .light-surface {
     --background: 0 0% 100%;
