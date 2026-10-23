@@ -327,7 +327,7 @@ const AIChatbot = () => {
                         <button
                           key={action}
                           onClick={() => handleQuickAction(action)}
-                          className="text-xs px-3 py-1.5 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
+                          className="text-xs px-3 py-1.5 rounded-full border border-primary/50 bg-primary/15 text-foreground font-medium hover:bg-primary/30 transition-colors"
                         >
                           {action}
                         </button>
