@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { SEO, generateArticleSchema, generateBreadcrumbSchema } from "@/components/SEO";
 import { redditArticle } from "@/data/reddit-ai-article";
+import { aiSignalStack } from "@/data/ai-signal-stack";
 import communityImage from "@/assets/reddit-community.jpg";
 import redditLogoLight from "@/assets/reddit-logo-light.svg";
 
@@ -43,6 +44,7 @@ export default function RedditAIArticle() {
           <section id="faq" className="scroll-mt-28 mb-12"><h2 className="font-display text-3xl font-bold mb-7">Frequently asked questions</h2><div className="space-y-8">{redditArticle.faqs.map(faq => <div key={faq.question}><h3 className="font-bold text-xl mb-3">{faq.question}</h3><p className="leading-relaxed text-base sm:text-lg">{faq.answer}</p></div>)}</div></section>
           <section className="border-y border-border py-9 mb-10"><h2 className="font-display text-3xl font-bold mb-5">The bottom line</h2><p className="text-lg leading-relaxed">AI search didn't kill word-of-mouth. It just started reading it. Run ten prompts about your business, see what the AI says, and find out which conversations are shaping those answers.</p><p className="mt-5 leading-relaxed">Want help running an AI visibility audit for your business? Let's look at your website, search results and the conversations your customers rely on.</p><Button asChild size="lg" className="mt-7 h-auto py-4 whitespace-normal"><Link to="/book">Go over my free audit with Chris <ArrowRight className="shrink-0" aria-hidden="true" /></Link></Button></section>
           <section aria-labelledby="article-sources"><h2 id="article-sources" className="text-xl font-bold mb-5">Sources</h2><ul className="space-y-4 text-sm leading-relaxed">{redditArticle.sources.map(source => <li key={source.url}><a href={source.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">{source.label}</a></li>)}</ul><p className="mt-6 text-sm text-muted-foreground leading-relaxed">Studies describe their own samples and dates, not guaranteed business results or private AI ranking rules. Your Best SEO is not affiliated with Reddit or any AI platform.</p></section>
+          <section className="border-t border-border mt-10 pt-8"><h2 className="font-display text-2xl font-bold mb-4">Beyond Reddit: The AI Signal Stack</h2><p className="leading-relaxed mb-5">See how YouTube, independent mentions, reviews and accurate business information fit alongside Reddit.</p><Link to={aiSignalStack.path} className="font-semibold underline underline-offset-4">Read Chris's AI signal stack</Link></section>
         </div>
       </article>
     </main>

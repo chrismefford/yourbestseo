@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 import Services from "./pages/Services";
 import RedditMarketing from "./pages/RedditMarketing";
 import RedditAIArticle from "./pages/RedditAIArticle";
+import AISignalStack from "./pages/AISignalStack";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import About from "./pages/About";
 import CaseStudies from "./pages/CaseStudies";
@@ -261,6 +262,7 @@ export const routes: RouteRecord[] = [
       { path: "services", element: <Services /> },
       { path: "reddit-marketing", element: <RedditMarketing /> },
       { path: "reddit-ai-search-chatgpt-citations-small-business", element: <RedditAIArticle /> },
+      { path: "ai-signal-stack-llm-visibility", element: <AISignalStack /> },
       { path: "pricing", element: <NotFound /> },
       { path: "about", element: <About /> },
       { path: "case-studies", element: <CaseStudies /> },
