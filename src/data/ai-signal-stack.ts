@@ -1,8 +1,8 @@
 export const aiSignalStack = {
   "path": "/ai-signal-stack-llm-visibility",
   "title": "The AI Signal Stack: How I Get Small Businesses Recommended by ChatGPT, Claude, and Google AI",
-  "metaTitle": "The AI Signal Stack: How I Get Small Businesses Into ChatGPT Answers",
-  "description": "After 17 years in SEO, Chris Mefford shares a practical AI signal stack: Reddit, YouTube, mentions, reviews and consistent business facts.",
+  "metaTitle": "AI Visibility for Local Businesses: 5 Signals",
+  "description": "Learn how Reddit, YouTube, reviews and business mentions can support visibility in ChatGPT, Claude and Google AI, with a practical plan from Chris Mefford.",
   "datePublished": "2026-10-23",
   "breadcrumbs": [
     {
