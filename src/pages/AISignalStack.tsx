@@ -8,6 +8,18 @@ import { SEO, generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema
 import { aiSignalStack as article } from "@/data/ai-signal-stack";
 import { redditArticle } from "@/data/reddit-ai-article";
 import searchImage from "@/assets/local-business-search.jpg";
+import communityImage from "@/assets/signal-community.jpg";
+import videoImage from "@/assets/signal-video.jpg";
+import trustImage from "@/assets/signal-trust.jpg";
+import clip from "@/assets/videos/ai-signal-stack.mp4.asset.json";
+import webmClip from "@/assets/videos/ai-signal-stack.webm.asset.json";
+import clipPoster from "@/assets/videos/ai-signal-stack-poster.jpg.asset.json";
+
+const sectionImages: Record<string, { src: string; alt: string; caption: string }> = {
+  "signal-1-reddit-the-word-of-mouth-layer": { src: communityImage, alt: "HVAC professional explaining a customer's question at a laptop", caption: "Community conversations start with useful answers, not a sales pitch." },
+  "signal-2-youtube-the-one-most-small-businesses-are-sleeping-on": { src: videoImage, alt: "Dentist recording an educational video with a smartphone and dental model", caption: "A clear answer to a real customer question is a strong starting point for video." },
+  "signal-4-reviews-and-directories-the-local-trust-layer": { src: trustImage, alt: "Contractor and homeowner discussing a renovation project portfolio", caption: "Real customer experiences and accurate business information add context." },
+};
 
 const author = { "@type": "Person", "@id": "https://yourbestseo.com/about#chris-mefford", name: "Chris Mefford", url: "https://yourbestseo.com/about" };
 const schema = [
@@ -39,6 +51,16 @@ export default function AISignalStack() {
       </section>
       <article className="light-surface bg-background text-foreground py-12 md:py-16">
         <div className="mx-auto max-w-3xl px-5 sm:px-6">
+          <section aria-labelledby="signal-video-heading" className="mb-12 border-b border-border pb-10">
+            <h2 id="signal-video-heading" className="font-display text-2xl sm:text-3xl font-bold tracking-normal mb-6">More than your website</h2>
+            <video aria-label="AI signal stack video" controls playsInline preload="none" poster={clipPoster.url} className="w-full aspect-video rounded-lg bg-muted">
+              <source src={webmClip.url} type="video/webm" />
+              <source src={clip.url} type="video/mp4" />
+              <track kind="captions" src="/ai-signal-stack.vtt" srcLang="en" label="English" />
+              Your browser does not support video. <a href={clip.url}>Watch the video</a>.
+            </video>
+            <p className="mt-4 text-sm text-muted-foreground leading-relaxed">AI-generated illustration of community participation, helpful video and local customer experiences—not client footage.</p>
+          </section>
           {article.sections.map((section, index) => <Fragment key={section.id}>
             {index === 2 && <section aria-labelledby="signal-stack-overview" className="my-12 border-y border-border py-8">
               <h2 id="signal-stack-overview" className="font-display text-2xl sm:text-3xl font-bold tracking-normal mb-6">The AI signal stack at a glance</h2>
@@ -47,6 +69,7 @@ export default function AISignalStack() {
             </section>}
             <section id={section.id} className="scroll-mt-28 mb-12">
               <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-normal leading-tight mb-6">{section.heading}</h2>
+              {sectionImages[section.id] && <figure className="mb-7"><img src={sectionImages[section.id].src} alt={sectionImages[section.id].alt} width={1536} height={1024} loading="lazy" className="w-full aspect-[3/2] object-cover rounded-lg" /><figcaption className="text-sm text-muted-foreground leading-relaxed mt-3">{sectionImages[section.id].caption}</figcaption></figure>}
               <div className="space-y-5 text-base sm:text-lg leading-relaxed">{section.paragraphs.map(text => <p key={text}>{text}</p>)}</div>
               {section.items.length > 0 && (section.ordered ? <ol className="list-decimal pl-6 mt-6 space-y-4 text-base sm:text-lg leading-relaxed">{section.items.map(text => <li key={text} className="pl-2">{text}</li>)}</ol> : <ul className="list-disc pl-6 mt-6 space-y-4 text-base sm:text-lg leading-relaxed">{section.items.map(text => <li key={text} className="pl-2">{text}</li>)}</ul>)}
               {section.id === "signal-1-reddit-the-word-of-mouth-layer" && <div className="mt-7 border-l-4 border-primary pl-5 space-y-4"><p><Link to={redditArticle.path} className="font-semibold underline underline-offset-4">How I Discovered Reddit Was the Back Door to ChatGPT</Link></p><p><Link to="/reddit-marketing" className="underline underline-offset-4">Reddit marketing & community management for local businesses</Link></p></div>}
