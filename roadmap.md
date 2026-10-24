@@ -1,3 +1,6 @@
+# AI signal stack article
+- [ ] Add the uploaded article with research-qualified copy, links to both Reddit pages, matching visible/schema breadcrumbs, metadata and sitemap inclusion; verify navigation and readable layouts.
+
 # Useful neighborhood-page actions
 - [x] Show the next three real calendar openings, refreshed every five minutes and on window focus, with selection carried into the booking page. Verified real Today/Tomorrow times and selected booking time; no appointment created.
 - [x] Add an area-prefilled free AI search check to all 76 neighborhood pages. Verified Mission Valley quiz prefill and La Mesa mobile layout; 16 focused tests, lint and preview build pass. Publish required for the live pages.
