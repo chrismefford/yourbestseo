@@ -59,7 +59,6 @@ export default function AISignalStack() {
               <track kind="captions" src="/ai-signal-stack.vtt" srcLang="en" label="English" />
               Your browser does not support video. <a href={clip.url}>Watch the video</a>.
             </video>
-            <p className="mt-4 text-sm text-muted-foreground leading-relaxed">AI-generated illustration of community participation, helpful video and local customer experiences—not client footage.</p>
           </section>
           {article.sections.map((section, index) => <Fragment key={section.id}>
             {index === 2 && <section aria-labelledby="signal-stack-overview" className="my-12 border-y border-border py-8">
