@@ -8,6 +8,7 @@ import { redditDescription, redditFAQs, redditServices, redditSources } from "@/
 import communityImage from "@/assets/reddit-community.jpg";
 import redditLogoLight from "@/assets/reddit-logo-light.svg";
 import redditIcon from "@/assets/reddit-icon.svg";
+import { aiSignalStack } from "@/data/ai-signal-stack";
 import redditVideo from "@/assets/videos/reddit-ai-explainer.mp4.asset.json";
 import redditVideoWebm from "@/assets/videos/reddit-ai-explainer.webm.asset.json";
 import redditVideoPoster from "@/assets/videos/reddit-ai-video-poster.jpg.asset.json";
@@ -103,6 +104,7 @@ export default function RedditMarketing() {
 
           <section className="py-12" aria-label="Reddit research sources"><div className="container mx-auto px-4 sm:px-6"><details><summary className="cursor-pointer font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring">Sources behind this approach</summary><ul className="mt-5 space-y-3 text-sm text-muted-foreground">{redditSources.map(({ label, url }) => <li key={url}><a href={url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">{label}</a></li>)}</ul><p className="text-sm text-muted-foreground mt-5 leading-relaxed">These sources document citation studies, platform relationships and rules—not promised results for any business. Your Best SEO is not affiliated with Reddit, Google or OpenAI.</p></details></div></section>
           <section className="border-t border-border py-12 md:py-16" aria-labelledby="reddit-article-heading"><div className="container mx-auto px-4 sm:px-6 max-w-5xl"><p className="text-sm font-semibold mb-4">FROM CHRIS MEFFORD</p><h2 id="reddit-article-heading" className="font-display text-3xl sm:text-4xl font-bold leading-tight max-w-3xl">How I Discovered Reddit Was the Back Door to ChatGPT</h2><p className="mt-5 text-lg leading-relaxed text-muted-foreground max-w-3xl">The research, the difference between mentions and citations, and a practical Reddit playbook for small businesses.</p><Button asChild variant="outline" size="lg" className="mt-7 h-auto py-4 whitespace-normal"><Link to="/reddit-ai-search-chatgpt-citations-small-business">Read Chris's article <ArrowRight className="shrink-0" aria-hidden="true" /></Link></Button></div></section>
+          <section className="border-t border-border py-12 md:py-16" aria-labelledby="signal-article-heading"><div className="container mx-auto px-4 sm:px-6 max-w-5xl"><p className="text-sm font-semibold mb-4">BEYOND REDDIT</p><h2 id="signal-article-heading" className="font-display text-3xl sm:text-4xl font-bold leading-tight max-w-3xl">The AI Signal Stack</h2><p className="mt-5 text-lg leading-relaxed text-muted-foreground max-w-3xl">How Reddit, YouTube, independent mentions, reviews and consistent business facts fit together in a small business AI visibility strategy.</p><Button asChild variant="outline" size="lg" className="mt-7 h-auto py-4 whitespace-normal"><Link to={aiSignalStack.path}>Read Chris's AI signal stack <ArrowRight className="shrink-0" aria-hidden="true" /></Link></Button></div></section>
         </div>
       </main>
       <Footer />
