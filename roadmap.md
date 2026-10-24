@@ -1,4 +1,5 @@
 # AI signal stack article
+- [ ] Add three relevant generated images and a generated-scene video; verify media playback and layouts.
 - [x] Add the uploaded article with research-qualified copy, links to both Reddit pages, matching visible/schema breadcrumbs, metadata and sitemap inclusion (229 pages). Seven SEO tests, focused lint, article/Reddit/booking navigation, desktop/mobile layouts and preview build pass. Publish required for the live article.
 
 # Useful neighborhood-page actions

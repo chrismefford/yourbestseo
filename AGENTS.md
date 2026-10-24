@@ -1,4 +1,5 @@
 # Architecture rules
+- Keep editorial videos CDN-backed with native controls, a poster, captions and a WebM fallback so media stays lightweight and accessible without autoplay.
 - Keep neighborhood action content synchronously rendered, fetch upcoming times from the existing booking function, and carry area/slot selections through URL parameters; booking revalidates selected times so availability is never invented or guaranteed.
 - Keep standalone editorial articles synchronously routed with their content in a data module, article/author/breadcrumb metadata and route-registry sitemap inclusion; this preserves readable pre-rendered pages without restoring the removed blog system.
 - Keep Reddit page content and source references in a shared data module, with a synchronous public route and homepage section, so search crawlers receive readable content and metadata without waiting for client loading.
