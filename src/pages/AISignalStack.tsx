@@ -10,15 +10,15 @@ import { redditArticle } from "@/data/reddit-ai-article";
 import searchImage from "@/assets/local-business-search.jpg";
 import communityImage from "@/assets/signal-community.jpg";
 import videoImage from "@/assets/signal-video.jpg";
-import trustImage from "@/assets/signal-trust.jpg";
-import clip from "@/assets/videos/ai-signal-stack.mp4.asset.json";
-import webmClip from "@/assets/videos/ai-signal-stack.webm.asset.json";
-import clipPoster from "@/assets/videos/ai-signal-stack-poster.jpg.asset.json";
+import trustInfographic from "@/assets/signal-four-infographic.png.asset.json";
+import clip from "@/assets/videos/ai-signal-stack-corrected.mp4.asset.json";
+import webmClip from "@/assets/videos/signal-corrected.webm.asset.json";
+import clipPoster from "@/assets/videos/signal-corrected-poster.jpg.asset.json";
 
 const sectionImages: Record<string, { src: string; alt: string; caption: string }> = {
   "signal-1-reddit-the-word-of-mouth-layer": { src: communityImage, alt: "HVAC professional explaining a customer's question at a laptop", caption: "Community conversations start with useful answers, not a sales pitch." },
   "signal-2-youtube-the-one-most-small-businesses-are-sleeping-on": { src: videoImage, alt: "Dentist recording an educational video with a smartphone and dental model", caption: "A clear answer to a real customer question is a strong starting point for video." },
-  "signal-4-reviews-and-directories-the-local-trust-layer": { src: trustImage, alt: "Contractor and homeowner discussing a renovation project portfolio", caption: "Real customer experiences and accurate business information add context." },
+  "signal-4-reviews-and-directories-the-local-trust-layer": { src: trustInfographic.url, alt: "Reviews and directories infographic: Google Business Profile, Yelp, industry directories and genuine reviews surround your business, with consistent name, contact details and service area.", caption: "Real customer experiences and accurate business information add context." },
 };
 
 const author = { "@type": "Person", "@id": "https://yourbestseo.com/about#chris-mefford", name: "Chris Mefford", url: "https://yourbestseo.com/about" };
