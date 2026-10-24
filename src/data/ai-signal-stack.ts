@@ -48,7 +48,7 @@ export const aiSignalStack = {
       "heading": "Signal 1: Reddit, the word of mouth layer",
       "paragraphs": [
         "I wrote a whole piece on this one, so here's the short version. Reddit can surface public experiences and practical comparisons, especially in “best X for Y” discussions. Replies and votes help people understand a conversation; they are not a verified AI ranking formula.",
-        "One update since I wrote that piece: Reddit isn't the undisputed king anymore. Data from Bluefish, reported by Adweek, found YouTube appeared as a cited source in 16% of LLM answers over six months, versus 10% for Reddit. (Adweek) Reddit still matters a lot, especially for ChatGPT. It's just sharing the stage now.",
+        "Bluefish data reported by Adweek found YouTube appeared as a cited source in 16% of tracked LLM answers over six months, versus 10% for Reddit. That is one sample, not a universal ranking. Reddit remains worth investigating alongside video, reviews and other sources.",
         "What I do: show up as a real person in local and niche subreddits, answer questions without pitching, and let customers mention the business on their own. The full playbook is in the companion article."
       ],
       "items": [],
@@ -58,14 +58,13 @@ export const aiSignalStack = {
       "id": "signal-2-youtube-the-one-most-small-businesses-are-sleeping-on",
       "heading": "Signal 2: YouTube, the one most small businesses are sleeping on",
       "paragraphs": [
-        "If I could only add one channel for a small business client right now, it would be YouTube. YouTube is the most cited domain in Google AI Overviews, with a 29.5% citation share according to BrightEdge. (BrightEdge)",
-        "Here's the part that should make every small business owner sit up. OtterlyAI found that 40.83% of AI-cited videos had fewer than 1,000 views, and the median cited channel had under 41 videos total. (VEED summary of OtterlyAI) You don't need to be MrBeast. You need to answer a real question clearly.",
+        "YouTube is a channel I would seriously consider for a small business. BrightEdge reported that 29.5% of the Google AI Overviews it tracked cited YouTube. This is a share of tracked answers, not a share of all citations or a permanent rate.",
+        "OtterlyAI’s 2026 study found that 40.83% of AI-cited YouTube videos in its sample had fewer than 1,000 views. You do not need a huge audience to make useful content. That does not guarantee a new video will be cited.",
         "Search-enabled AI tools can use video descriptions and transcripts, and capabilities vary by platform. Clear spoken answers, accurate captions and useful descriptions make the content easier to understand; do not assume every model processes video in the same way.",
-        "What I do for clients:",
         "An honest note on YouTube comments. People ask me whether dropping comments on popular videos helps. I haven't seen solid evidence that comments get cited the way transcripts and descriptions do. The bigger win is being mentioned in other creators' videos, because Ahrefs measured YouTube mentions as the strongest correlation with AI visibility. So I'd rather spend an hour getting a client featured on a local creator's channel than an hour leaving comments. Comments are fine for community building. Just don't expect them to move AI answers on their own."
       ],
       "items": [
-        "Long-form over Shorts. About 94% of YouTube AI citations go to long-form videos, and 10 to 20 minutes is the sweet spot. (Digiday)",
+        "Make complete answers, not just Shorts. OtterlyAI found roughly 94% of YouTube citations in its sample went to long-form videos. Let the customer’s question determine the length; there is no guaranteed sweet spot.",
         "Title each video as the question a customer would ask. \"How much does AC repair cost in San Diego?\" beats \"Episode 12.\"",
         "Say the business name, city, and service out loud in the first minute, since that ends up in the transcript.",
         "Review the captions after upload and correct misspelled names or inaccurate terms before making the video public.",
@@ -78,16 +77,16 @@ export const aiSignalStack = {
       "heading": "Signal 3: Third-party mentions, aka other people saying your name",
       "paragraphs": [
         "Independent reviews and articles can add context that your own website cannot provide alone. Think of the difference between a friend’s restaurant recommendation and the restaurant’s own billboard—not a universal rule about what every AI trusts.",
-        "One analysis of 23,387 citations found third-party sources captured 57% of citations on branded questions like \"Is [brand] any good?\" (Derivatex, citing Omniscient Digital) Those sources include reviews, listicles, forums, case studies, and comparison pages, because AI sees them as independent.",
-        "And the links don't even need to be there. Ahrefs found mentions count whether they're linked or unlinked. (Ahrefs) That's a big mindset shift for anyone raised on link building.",
+        "Reviews, listicles, forums, case studies and comparison pages can provide independent perspectives. Start with sources that actually appear for your customer questions rather than assuming a percentage applies to every tool.",
+        "Ahrefs studied linked and unlinked branded mentions. Both can be useful to investigate, but a correlation is not evidence that any individual mention will change an answer.",
         "Where I hunt for mentions for small businesses:"
       ],
       "items": [
-        "\"Best of\" listicles. Find the articles already ranking for \"best [service] in [city]\" and pitch the writer. These are the pages AI pulls from when someone asks for a recommendation.",
+        "“Best of” articles. Find credible guides to “best [service] in [city]” and pitch the writer a factual, useful reason to consider your business. Coverage and AI citations are never guaranteed.",
         "Local media. Neighborhood blogs, the local business journal, community newsletters. Small outlets, real trust.",
         "Podcasts. Local business and industry podcasts often publish transcripts and show notes, which gives AI more text with your name in it.",
         "Partners and suppliers. The brands you stock, the vendors you use, the chamber of commerce. Ask for a mention on their \"where to buy\" or member pages.",
-        "Trade press. In most industries, AI citations cluster around just 3 to 5 publications. (5W Trade Press AI Index) Find out which ones those are for your niche and aim there."
+        "Trade press. Check which industry publications are actually cited for your niche and focus on credible coverage there."
       ],
       "ordered": false
     },
@@ -96,15 +95,14 @@ export const aiSignalStack = {
       "heading": "Signal 4: Reviews and directories, the local trust layer",
       "paragraphs": [
         "For local businesses, accurate listings and genuine customer reviews are a practical foundation. Look beyond Google, and check which sources each AI tool actually shows.",
-        "Yelp is the surprise here. In an AirOps study of over 28 million local business queries, Yelp received 3.4 times more AI citations than the next closest local discovery platform. (Foundation Inc) Yelp has also licensed its reviews, ratings, and photos to OpenAI, so your Yelp profile now feeds ChatGPT's local recommendations directly. (WebFX)",
-        "Google Business Profile is still essential, especially for Google's own AI. BrightLocal found Google's AI models heavily favor GBP listings, while Facebook showed up as a source in both AI Mode and ChatGPT. (BrightLocal)",
-        "What I do:"
+        "Foundation, working with AirOps, reported that Yelp received 3.4 times as many citations as the next closest local-discovery platform across more than 28 million tracked AI responses to local-business queries. Separately, Axios reported a Yelp–OpenAI data-licensing partnership in July 2026. Neither finding guarantees that a particular business profile appears in ChatGPT.",
+        "Google Business Profile remains essential for Google Maps and local search. Keep Facebook and relevant directories accurate too, then compare the sources each AI tool actually shows."
       ],
       "items": [
         "Claim and fully complete Yelp, Google Business Profile, Facebook, Bing Places, and Apple Business Connect.",
         "Add the industry directories that matter, like Houzz for contractors or Healthgrades for practices.",
         "Follow each platform’s review rules. Google allows requests for genuine reviews without incentives; Yelp tells businesses not to ask for reviews. Never pressure customers or filter requests to only happy customers.",
-        "Answer reviews with specifics. \"Thanks for trusting us with your water heater replacement in Santee\" gives AI more context than \"Thanks!\""
+        "Reply to reviews thoughtfully without revealing private customer details. Explain your work in general terms; do not turn a response into keyword stuffing."
       ],
       "ordered": false
     },
@@ -114,7 +112,6 @@ export const aiSignalStack = {
       "paragraphs": [
         "This one is boring. It also quietly breaks everything else if you skip it.",
         "If Yelp says “Joe’s Heating,” Google says “Joe’s HVAC Services,” and your website and Facebook disagree about the service area, customers and search tools may find conflicting facts. Consistency reduces confusion; it is not a proven formula for more AI recommendations.",
-        "What I do:",
         "No one will ever compliment you on this. That's fine. Plumbing isn't glamorous either, but you notice when it's missing."
       ],
       "items": [
@@ -178,7 +175,7 @@ export const aiSignalStack = {
       "items": [
         "Don't fake reviews or Reddit posts. Platforms catch it, communities call it out, and a thread exposing your fake accounts is a mention you really don't want AI reading.",
         "Don't buy listicle placements from sketchy \"best of\" sites. Pay-to-play lists on low-quality sites are easy to spot, and they can make you look worse.",
-        "Don't pump out Shorts and call it a YouTube strategy. Shorts barely show up in AI answers outside Google's own surfaces.",
+        "Do not assume Shorts alone are a complete video strategy. Test the formats your customers need and measure which sources actually appear.",
         "Don't spam comments with links. It's not a signal, it's a nuisance.",
         "Don't abandon your website. AI still checks it to confirm facts. It's just not the only thing it reads anymore."
       ],
@@ -204,15 +201,15 @@ export const aiSignalStack = {
   "faqs": [
     {
       "question": "How do I get my business recommended by ChatGPT?",
-      "answer": "Get other people talking about you in places AI reads: Reddit, YouTube, review sites, directories, and articles. Then make sure the facts about your business match everywhere."
+      "answer": "Build accurate business profiles, helpful website answers and genuine independent coverage through relevant communities, video, reviews and articles. Track what ChatGPT actually shows. No one can guarantee a recommendation."
     },
     {
       "question": "Are backlinks still worth it?",
-      "answer": "Yes, but they're no longer the main event for AI visibility. Ahrefs found mentions correlated with AI visibility about three times more strongly than backlinks."
+      "answer": "Yes. Backlinks still matter for search. Ahrefs found branded mentions correlated more strongly with AI Overview visibility in its 75,000-brand study, but correlation is not a universal ranking rule."
     },
     {
       "question": "Is YouTube more important than Reddit now?",
-      "answer": "For Google's AI products, usually yes. For ChatGPT, Reddit still carries a lot of weight. I build both."
+      "answer": "It depends on the tool, question and sample. Both appear in citation research. I compare actual answers for a business before choosing where to invest."
     },
     {
       "question": "Do YouTube comments help with AI visibility?",
@@ -220,12 +217,85 @@ export const aiSignalStack = {
     },
     {
       "question": "How long does this take?",
-      "answer": "The foundation work shows up fastest. Mentions and video take months to build. I set expectations at 90 days for early movement and six months or more for steady results, with no guarantees, because nobody controls what an AI says."
+      "answer": "I use a 90-day work plan to build the foundation and begin outreach, not as a promise of results. Mentions and video take sustained effort, and some businesses may see no measurable AI visibility improvement."
     },
     {
       "question": "Can a small business really compete with big brands here?",
-      "answer": "Yes, especially locally. Plenty of AI-cited YouTube videos have under 1,000 views, and local review and Reddit signals don't care about your ad budget."
+      "answer": "A small business can create useful local answers and credible profiles without a large budget. OtterlyAI found many cited videos had fewer than 1,000 views, but that does not predict results for any one business."
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "label": "Ahrefs: AI Overview brand correlations—75,000 brands",
+      "url": "https://ahrefs.com/blog/ai-overview-brand-correlation/"
+    },
+    {
+      "label": "Ahrefs: Brand visibility correlations across ChatGPT, AI Mode and AI Overviews",
+      "url": "https://ahrefs.com/blog/ai-brand-visibility-correlations/"
+    },
+    {
+      "label": "BrightEdge: YouTube presence in AI search",
+      "url": "https://www.brightedge.com/resources/weekly-ai-search-insights/youtube-presence-ai-search"
+    },
+    {
+      "label": "Adweek: Bluefish analysis of YouTube and Reddit citations",
+      "url": "https://www.adweek.com/media/youtube-reddit-ai-search-engine-citations/"
+    },
+    {
+      "label": "OtterlyAI: YouTube AI citation study, 2026",
+      "url": "https://otterly.ai/blog/youtube-ai-citation-study-2026/"
+    },
+    {
+      "label": "Foundation / AirOps: Yelp and AI local discovery",
+      "url": "https://foundationinc.co/lab/yelp-ai-local-discovery/"
+    },
+    {
+      "label": "Axios: Yelp and OpenAI data partnership",
+      "url": "https://www.axios.com/2026/07/23/yelp-reviews-chatgpt-geo-partnership"
+    },
+    {
+      "label": "OpenAI: Reddit partnership",
+      "url": "https://openai.com/index/openai-and-reddit-partnership/"
+    },
+    {
+      "label": "Google: Tips to get more reviews",
+      "url": "https://support.google.com/business/answer/3474122"
+    },
+    {
+      "label": "Yelp: Why businesses should not ask for reviews",
+      "url": "https://business.yelp.com/resources/articles/why-you-shouldnt-ask-for-reviews/"
+    }
+  ],
+  "signals": [
+    {
+      "name": "Reddit",
+      "context": "Community conversations",
+      "action": "Helpful, openly identified participation in relevant communities.",
+      "id": "signal-1-reddit-the-word-of-mouth-layer"
+    },
+    {
+      "name": "YouTube",
+      "context": "Clear answers in video",
+      "action": "Customer questions, accurate captions and useful descriptions.",
+      "id": "signal-2-youtube-the-one-most-small-businesses-are-sleeping-on"
+    },
+    {
+      "name": "Third-party mentions",
+      "context": "Independent perspectives",
+      "action": "Credible local media, partners, podcasts and industry coverage.",
+      "id": "signal-3-third-party-mentions-aka-other-people-saying-your-name"
+    },
+    {
+      "name": "Reviews & directories",
+      "context": "Local business information",
+      "action": "Accurate listings and genuine reviews, following platform rules.",
+      "id": "signal-4-reviews-and-directories-the-local-trust-layer"
+    },
+    {
+      "name": "Entity consistency",
+      "context": "Facts that agree",
+      "action": "Consistent business name, contact details and service area.",
+      "id": "signal-5-entity-consistency-making-sure-the-internet-agrees-on-who-you-are"
+    }
+  ]
 };
