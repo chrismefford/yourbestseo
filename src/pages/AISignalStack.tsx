@@ -11,9 +11,9 @@ import searchImage from "@/assets/local-business-search.jpg";
 import communityImage from "@/assets/signal-community.jpg";
 import videoImage from "@/assets/signal-video.jpg";
 import trustInfographic from "@/assets/signal-four-infographic.png.asset.json";
-import clip from "@/assets/videos/ai-signal-stack-corrected.mp4.asset.json";
-import webmClip from "@/assets/videos/signal-corrected.webm.asset.json";
-import clipPoster from "@/assets/videos/signal-corrected-poster.jpg.asset.json";
+import clip from "@/assets/videos/signal-stack-monitor-fixed.mp4.asset.json";
+import webmClip from "@/assets/videos/signal-stack-monitor-fixed.webm.asset.json";
+import clipPoster from "@/assets/videos/signal-stack-monitor-fixed-poster.jpg.asset.json";
 
 const sectionImages: Record<string, { src: string; alt: string; caption: string }> = {
   "signal-1-reddit-the-word-of-mouth-layer": { src: communityImage, alt: "HVAC professional explaining a customer's question at a laptop", caption: "Community conversations start with useful answers, not a sales pitch." },
