@@ -244,10 +244,10 @@ export function parseGuide(raw: string, options: GuideParseOptions): ParsedGuide
     lines = [...lines.slice(0, start), ...lines.slice(end)];
   }
 
-  // 3. Title and byline.
-  const titleLine = lines.find((line) => line.startsWith("# "));
-  if (!titleLine) throw new Error(`${options.slug}: missing H1`);
-  const title = titleLine.slice(2).trim();
+  // 3. Title and byline (both removed from the body; the page renders its own).
+  const titleIdx = lines.findIndex((line) => line.startsWith("# "));
+  if (titleIdx === -1) throw new Error(`${options.slug}: missing H1`);
+  const title = lines[titleIdx].slice(2).trim();
 
   const bylineIdx = lines.findIndex((line) => BYLINE_RE.test(line.trim()));
   if (bylineIdx === -1) throw new Error(`${options.slug}: missing byline`);
@@ -255,7 +255,7 @@ export function parseGuide(raw: string, options: GuideParseOptions): ParsedGuide
   const parsedDate = new Date(dateLabel);
   if (Number.isNaN(parsedDate.getTime())) throw new Error(`${options.slug}: unparseable byline date`);
   const dateISO = parsedDate.toISOString().slice(0, 10);
-  lines = [...lines.slice(0, bylineIdx), ...lines.slice(bylineIdx + 1)];
+  lines = lines.filter((_, index) => index !== titleIdx && index !== bylineIdx);
 
   // 4. Split the article: body, FAQ, and the closing CTA section (after the FAQ).
   const faqIdx = lines.findIndex((line) => line.trim() === "## FAQ");
