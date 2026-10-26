@@ -96,6 +96,39 @@ Future customers read your replies as much as the reviews. A gracious reply to a
 - **Don't write fake reviews or ask employees and family to.** It's against the rules, and it can get reviews removed or your profile flagged.
 - **Don't buy reviews.** Ever.
 
+## Starting from almost nothing (the cold-start problem)
+
+If you have 5 reviews and your competitors have 200, don't panic — and don't try to close the gap in a week. The move is a sprint, then a habit:
+
+1. **List the last 20 customers you can still reach.** Old clients, recent jobs, regulars. The first ten reviews are the hardest; you likely have them sitting in your contacts already.
+2. **Ask in batches, not bursts.** Ten asks this week, ten next week. A steady drip looks natural; 50 in one day looks bought.
+3. **Make it effortless.** Send the link with the ask. Every extra step (find us on Google, click around, log in) loses people. The review link from your profile goes straight to the form.
+4. **Never write it for them.** "Here's what to say" crosses the line. Reminding them what you did ("the Tuesday drain repair") is fine and often enough.
+
+After the sprint, the habit takes over: every happy moment gets an ask, and the number grows on its own.
+
+## What to write back (templates that sound human)
+
+Replying to reviews is one of the few free things that clearly helps, and most businesses skip it. The bar is low: sound like a person, not a form letter.
+
+- **5-star review:** "Thank you — this made our week. Glad the [specific thing they mentioned] went smoothly. We appreciate you taking the time."
+- **4-star review:** "Thanks for the kind words — and for the honest feedback on [what they mentioned]. That's genuinely useful. If there's anything we could have done to earn that fifth star, we'd love to hear it."
+- **Negative review:** "We're sorry about your experience — that's not how we want to do business. We'd like to make it right. Please reach out to [contact] and ask for [you]."
+- **Obvious fake or spam:** report it to Google, and don't argue with it publicly. A calm, professional reply for future readers is still worth writing.
+
+Two rules for all replies: never get defensive, and remember you're writing for the *next* customer who's reading, not the reviewer.
+
+## What to do when a review you earned never shows up
+
+It happens, and it's usually not about you:
+
+- **Google's filter is aggressive.** New accounts, single-review accounts, and bursts of reviews get held. Ask the customer to try again in a few days.
+- **The customer may have posted on the wrong platform** — check Yelp, Facebook, and any industry directories before assuming it's lost.
+- **Review counts lag.** Sometimes a review appears on the profile but not in the count for a while.
+- **If reviews from the same person keep vanishing,** don't fight it. Move on to the next customer.
+
+One missing review is noise. The system works on volume and recency, not any single post.
+
 ## FAQ
 
 **How many Google reviews does a small business need?**
@@ -109,6 +142,21 @@ Yes. Text is often the most effective way, as long as the customer gave you thei
 
 **What should I do about a fake negative review?**
 Reply calmly and professionally, then report it through your Google Business Profile if it violates Google's policies.
+
+**How do I get more reviews without violating Google's policy?**
+Ask every customer, at the happy moment, without offering anything in return. That's it — that's the whole policy in practice. What gets you in trouble is incentives, review gating (only asking happy customers), buying reviews, or writing reviews yourself. The honest ask, done consistently, is both allowed and the thing that actually works.
+
+**Is it OK to ask customers in person?**
+It's the best way. People say yes far more often in person than by text or email, and there's no question of whether the ask was genuine. Hand them your phone with the review form open, or send the link on the spot. The ask should take under a minute.
+
+**A customer says they left a review but it's not showing. What do I do?**
+First, check on your profile directly rather than trusting the count. If it's genuinely missing, ask them to try again in a few days — Google holds back reviews from new or one-review accounts. Don't ask them to repost repeatedly; a few attempts is the limit.
+
+**Should I respond to every review?**
+Every single one, including the glowing ones. Replies are read by future customers and signal to Google that the profile is active. Short and human beats long and corporate. Templates are fine as a starting point — just vary the details so they don't read like copy-paste.
+
+**How often should I ask for reviews?**
+Every happy moment, forever. There's no quota where you should stop. The businesses that dominate their market ask after every single job — that's the entire difference between 20 reviews and 200.
 
 ## Want a review system set up for you?
 
