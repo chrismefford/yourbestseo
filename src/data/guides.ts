@@ -43,6 +43,15 @@ export const guides: Guide[] = parsedGuides.map((guide) => ({
   howTo: GUIDE_META[guide.slug]?.howTo ?? false,
 }));
 
+// The hub's brief describes its role instead of listing links; it points to all 9 others.
+const hubIndex = guides.findIndex((guide) => guide.slug === HUB_SLUG);
+if (hubIndex !== -1) {
+  guides[hubIndex] = {
+    ...guides[hubIndex],
+    linksTo: guides.filter((guide) => guide.slug !== HUB_SLUG).map((guide) => guide.slug),
+  };
+}
+
 export const getGuide = (slug: string): Guide | undefined => guides.find((guide) => guide.slug === slug);
 
 export const HUB = getGuide("local-seo-checklist")!;
