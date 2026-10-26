@@ -37,6 +37,7 @@ describe('guide routes', () => {
     for (const guide of guides) {
       expect(guide.path).toBe(`/${guide.slug}`);
       expect(guide.dateISO).toBe('2026-10-25');
+      expect(guide.image).toBeTruthy();
       expect(guide.faqs.length).toBeGreaterThanOrEqual(3);
       expect(guide.cta.buttonHref).toBe('/book');
       expect(guide.cta.buttonLabel.length).toBeGreaterThan(0);

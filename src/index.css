@@ -233,3 +233,28 @@
     padding-top: 0 !important;
   }
 }
+
+/* Light editorial theme for the Small Business Guides: white background, black text. */
+.guides-light {
+  --background: 0 0% 100%;
+  --foreground: 220 30% 8%;
+  --card: 0 0% 98%;
+  --card-foreground: 220 30% 8%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 220 30% 8%;
+  --secondary: 220 15% 95%;
+  --secondary-foreground: 220 30% 8%;
+  --muted: 220 15% 95%;
+  --muted-foreground: 220 10% 38%;
+  --accent: 220 15% 95%;
+  --accent-foreground: 220 30% 8%;
+  --border: 220 15% 88%;
+  --input: 220 15% 88%;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+/* Bright yellow is unreadable as text on white; use a deep amber for accent text inside the guides. */
+.guides-light .text-primary {
+  color: hsl(30 85% 30%);
+}
