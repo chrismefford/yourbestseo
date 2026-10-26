@@ -208,6 +208,55 @@ const Header = () => {
               </AnimatePresence>
             </div>
 
+            {/* Guides Dropdown */}
+            <div className="relative" ref={guidesDropdownRef}>
+              <Button variant="ghost" size="sm"
+                aria-expanded={isGuidesOpen}
+                onClick={() => {
+                  setIsGuidesOpen(!isGuidesOpen);
+                  setIsLearnOpen(false);
+                }}
+                className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Guides
+                <ChevronDown className={`w-4 h-4 transition-transform ${isGuidesOpen ? 'rotate-180' : ''}`} />
+              </Button>
+              <AnimatePresence>
+                {isGuidesOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 12, x: "-50%" }}
+                    animate={{ opacity: 1, y: 0, x: "-50%" }}
+                    exit={{ opacity: 0, y: 12, x: "-50%" }}
+                    transition={{ duration: 0.18, ease: "easeOut" }}
+                    className="guides-light fixed left-1/2 top-[80px] w-[min(680px,calc(100vw-32px))] bg-card border border-border rounded-2xl shadow-2xl z-[200] overflow-hidden"
+                  >
+                    <div className="grid grid-cols-2 gap-1 p-4">
+                      {guideLinks.map((guide) => (
+                        <Link
+                          key={guide.path}
+                          to={guide.path}
+                          onClick={() => setIsGuidesOpen(false)}
+                          className="flex items-start gap-2 rounded-xl px-3 py-2.5 text-sm text-foreground transition-colors hover:bg-muted"
+                        >
+                          <ArrowRight className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary" aria-hidden="true" />
+                          <span className="font-medium leading-snug">{guide.name}</span>
+                        </Link>
+                      ))}
+                    </div>
+                    <div className="border-t border-border bg-muted px-5 py-3">
+                      <Link
+                        to="/guides"
+                        onClick={() => setIsGuidesOpen(false)}
+                        className="flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-3 transition-all"
+                      >
+                        Browse all guides <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                      </Link>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
             {navLinks.map((link) => (
               link.href.startsWith("/#") ? (
                 <button
@@ -322,6 +371,30 @@ const Header = () => {
                       {guide.name}
                     </Link>
                   ))}
+                </div>
+              </div>
+
+              {/* Guides for Mobile */}
+              <div className="py-2">
+                <p className="text-sm font-medium text-primary mb-3 tracking-widest uppercase">Guides</p>
+                <div className="grid grid-cols-1 gap-1">
+                  {guideLinks.map((guide) => (
+                    <Link
+                      key={guide.path}
+                      to={guide.path}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="text-sm text-muted-foreground hover:text-foreground py-1.5"
+                    >
+                      {guide.name}
+                    </Link>
+                  ))}
+                  <Link
+                    to="/guides"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="text-sm font-semibold text-primary hover:text-foreground py-1.5"
+                  >
+                    Browse all guides
+                  </Link>
                 </div>
               </div>
 
