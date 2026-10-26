@@ -61,6 +61,11 @@ export default function GuideArticle({ slug }: { slug: string }) {
     .filter((block): block is Extract<typeof block, { kind: "h2" }> => block.kind === "h2")
     .map((block) => ({ id: block.id, text: block.text }));
 
+  // Sneak the self-check in before the second-to-last section so it sits
+  // mid-article with real content between it and the closing booking card.
+  const h2Indexes = guide.blocks.flatMap((block, index) => (block.kind === "h2" ? [index] : []));
+  const scorecardBeforeIndex = h2Indexes.length >= 2 ? h2Indexes[h2Indexes.length - 2] : -1;
+
   const keepReading = keepReadingFor(guide);
 
   return (
@@ -106,6 +111,7 @@ export default function GuideArticle({ slug }: { slug: string }) {
               <div className="max-w-[700px]">
                 {guide.blocks.map((block, index) => (
                   <Fragment key={index}>
+                    {index === scorecardBeforeIndex && <GuideScorecard slug={guide.slug} />}
                     {block.kind === "h2" && (
                       <h2 id={block.id} className="mb-5 mt-12 scroll-mt-28 font-display text-2xl font-bold tracking-normal sm:text-3xl">
                         {block.text}
@@ -167,8 +173,6 @@ export default function GuideArticle({ slug }: { slug: string }) {
                     ))}
                   </div>
                 </section>
-
-                <GuideScorecard slug={guide.slug} />
 
                 <section className="no-print mt-14 rounded-3xl border-2 border-primary bg-card p-7 sm:p-10">
                   <h2 className="mb-4 font-display text-2xl font-bold tracking-normal sm:text-3xl">{guide.cta.heading}</h2>
