@@ -93,6 +93,38 @@ Full guide: [How to Get Your Business Recommended by ChatGPT](/get-business-reco
 
 That's it. Fifteen minutes a month keeps you ahead of most of your competitors, because most of them aren't doing anything.
 
+## Part 8: Your first 90 days after the checklist
+
+The checklist gets you set up. This keeps it growing. Pick one or two items per week — that's it.
+
+**Month 1:**
+- Ask every happy customer for a review. Goal: a steady trickle, not a flood.
+- Reply to every review that comes in, old and new.
+- Send your profile link to five people you trust and ask if anything's wrong on it.
+
+**Month 2:**
+- Write one new page answering your single most common customer question.
+- Check Search Console once a week: are impressions trending up?
+- Make sure every listing you found in Part 4 still matches exactly.
+
+**Month 3:**
+- Write one more page for your second most common question.
+- Run the 5-minute AI check from Part 6 again. Did anything change?
+- Look at your competitors' profiles again. Any gap they have that you don't?
+
+After 90 days, this becomes the 15-minute monthly routine from Part 7. The businesses that win at local search aren't the ones who did something brilliant once — they're the ones who did something small every week while their competitors were busy.
+
+## How to tell it's working (the four numbers)
+
+You don't need a dashboard. Track these four once a month, on paper:
+
+1. **Google Business Profile views and calls.** In your profile's performance tab. Climbing numbers mean the map work is landing.
+2. **Search Console impressions.** Rising impressions mean Google is matching your pages to more searches — clicks follow later.
+3. **Review count and newest review date.** If the newest review is more than a few weeks old, the habit has slipped.
+4. **The one search that pays.** Pick your most valuable "service + city" search and check it the same way each time.
+
+Write the four numbers down on the first of every month. Two months of movement in the right direction is the signal that your effort is compounding. Flat numbers mean something in the checklist got missed — usually the review habit.
+
 ## When to stop DIYing
 
 Doing it yourself works great for a lot of businesses. It might be time to get help if:
@@ -103,10 +135,6 @@ Doing it yourself works great for a lot of businesses. It might be time to get h
 - Your time is worth more running the business than learning SEO
 
 Wondering what help costs? [How Much Does SEO Cost for a Small Business?](/how-much-does-seo-cost) Wondering how long it'll take? [How Long Does SEO Take?](/how-long-does-seo-take) Worried about getting burned? [9 SEO Scams Small Businesses Fall For](/seo-scams).
-
-## Still paying for every click?
-
-If ads are eating your budget, read [How to Get Customers Without Paying for Google Ads](/get-customers-without-google-ads) and [SEO vs. Google Ads](/seo-vs-google-ads). This checklist is step one of needing ads less.
 
 ## FAQ
 
@@ -121,6 +149,21 @@ About 3 to 4 hours for the first pass, then about 15 minutes a month to maintain
 
 **Do I need to pay for any tools?**
 No. Everything on this list can be done for free.
+
+**Can I do this on a Wix, Squarespace, or WordPress site?**
+Yes. Everything in this checklist works on any platform — none of it requires special software. The only platform-related caveats: make sure your site loads fast and works on phones, and if you can't edit pages yourself, get whoever built the site to make the changes from Part 5. If you're locked out of your own website, that's a problem worth fixing before anything else.
+
+**What if my website is old and I can't edit it?**
+Start with everything that doesn't touch the website: profile, reviews, listings, AI check. That's more than half the checklist and it doesn't care how old your site is. Then either get access to edit it or budget for a simple rebuild — but don't let the website stop you from doing the parts you can do today.
+
+**Do I need a blog?**
+No. You need pages that answer what your customers search. Five good pages — your services, your area, pricing questions, common problems — beat a blog nobody reads. Write a new page when you think of a real customer question, not on a schedule.
+
+**How often should I repeat this checklist?**
+The full checklist: once a year, or after any big change (new location, new services, new website). The monthly 15-minute routine in Part 7: every month, forever. The difference between businesses that get found and businesses that stay found is almost entirely that routine.
+
+**How much should I pay attention to my competitors?**
+Enough to know the bar, not enough to obsess. Check their profiles a few times a year for review counts, photos, and categories. If they have 200 reviews and you have 20, that's your answer about where to focus. Beyond that, copy nothing and focus on your own customers — the businesses that win locally are the ones that became genuinely better, not the ones that imitated best.
 
 ## Done with DIY?
 

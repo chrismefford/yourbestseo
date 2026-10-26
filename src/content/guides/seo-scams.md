@@ -76,6 +76,30 @@ AI search is real, and it matters. In BrightLocal's 2026 consumer survey, 45% of
 
 **Ask:** "Show me what ChatGPT says about my business today, and what you'll change."
 
+## What a legitimate SEO provider actually does every month
+
+You can't spot a scam if you don't know what honest work looks like. A real local SEO provider's month usually contains:
+
+- **Publishing or improving content** — a new page, or a real improvement to an existing one
+- **Profile and review management** — keeping the Google Business Profile active, making sure reviews get answered
+- **Technical upkeep** — fixing problems, watching site speed and search visibility
+- **A report in plain language** — what was done, what changed, what's next
+- **A short list of things they need from you** — photos, answers, approvals
+
+Notice what's *not* on the list: secret techniques, daily "submissions" to 500 directories, or a report that's just screenshots of tools. If the monthly work can't be described in a sentence, ask why. And if a provider's work never requires anything from you, they're not working on your business — they're working on a template with your logo on it.
+
+## Stuck in a contract you regret
+
+If you're already paying someone who promised things that haven't happened, you have more options than you think:
+
+1. **Read the actual contract.** Cancellation terms, notice periods, and auto-renewal clauses are usually in there. Many contracts that "can't be canceled" have a 30-day notice window you can use.
+2. **Find out who owns what.** Whose name is the website domain in? Whose account is the Google Business Profile? Whose Google Analytics? Get the logins for anything in your name, today. If everything is in the provider's accounts, that's a problem to solve carefully, in writing.
+3. **Get your data before you leave.** Analytics history, report history, any content they created for you. Request it in writing while the relationship is still cordial.
+4. **Put it in writing.** A short email: "Per the contract, I'm giving notice as of [date]. Please confirm and transfer access to [list]." Paper trails protect you.
+5. **Don't sign the "new improved plan"** they offer when you try to cancel. That's retention, not a solution.
+
+And if you believe you were genuinely defrauded — paid for guaranteed rankings that were faked, for example — your state attorney general's office and the FTC both take consumer complaints online. Most people never file. The ones who do sometimes get results.
+
 ## The 10 questions to ask any SEO before you hire them
 
 1. Which specific searches will you target, and how many people make them?
@@ -101,6 +125,21 @@ Google doesn't call to threaten removal or demand payment to keep your listing. 
 
 **I think I got scammed. What should I do?**
 First, make sure you have owner access to your Google Business Profile, website, domain, and analytics. Then get a second opinion on what was actually done.
+
+**Is it a scam if they ask for a 6-month contract?**
+Not automatically — building SEO takes months, and providers don't want to work for one month and lose you. But a first contract should be short enough to prove themselves: 3 months with a clear exit, or month-to-month after a 90-day initial term. A provider who won't let you leave on 30 days' notice after the first quarter is telling you something about how they keep clients.
+
+**Are cheap Fiverr or Upwork SEO gigs a scam?**
+Not always a scam, but usually low-value. The $50 gigs are almost always automated — directory submissions, keyword reports, "optimization" of things that don't matter. Occasionally you'll find a real freelancer at a low rate, but you have no way to judge their work, and they have no skin in your results. For local businesses, that money is better spent on the free checklist or on reviews.
+
+**What does a real monthly report look like?**
+One page, plain language: what was done this month, what changed in rankings and profile activity, what's coming next, and anything that needs your input. Numbers can be attached, but the *summary* should be readable by you, not by a data analyst. If a report makes you feel dumb, that's the report's fault, not yours.
+
+**How do I fire my SEO company?**
+Give notice in writing per your contract, request a full access transfer (domain, website, Google Business Profile, Analytics, any ad accounts) with a deadline, and confirm everything works before the final payment. Then export your data and change every password they might have had. Do it politely and completely — a clean handoff is worth more than winning the argument.
+
+**What if I already paid a scammer — can I get my money back?**
+Sometimes, but act fast. If you paid by credit card, dispute the charge with your card issuer (chargebacks usually have a 60–120 day window). Gather everything: the contract, the promises made (especially in writing or email), and evidence the work wasn't done. Then file complaints with the FTC and your state attorney general. You may not recover the money, but the paper trail protects you and the next business they call.
 
 ## Want an honest second opinion?
 

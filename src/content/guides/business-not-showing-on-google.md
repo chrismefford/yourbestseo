@@ -94,6 +94,35 @@ Sometimes nothing is wrong. Your competitors just have more reviews, better phot
 
 More customers now ask ChatGPT or Google's AI for recommendations instead of scrolling the map. Those tools lean heavily on your reviews, your listings, and what other sites say about you. If you're invisible on Google, you're probably invisible there too. More on that in [How to Get Your Business Recommended by ChatGPT](/get-business-recommended-by-chatgpt).
 
+## Why you show in Google search but not on Maps (and vice versa)
+
+These are two different systems, and they fail for different reasons.
+
+- **Not on Maps, but you show in regular search:** Maps is powered by your Google Business Profile. If the profile is missing, unverified, suspended, or placed in the wrong category, you won't appear on the map no matter how good your website is.
+- **On Maps, but not in regular search:** your profile is fine, but your website isn't being trusted for the search. This is usually a thin homepage, missing service pages, or weak signals from other sites. Fix #8 and Fix #11 cover most of it.
+- **Nowhere at all:** start with the profile. It's the faster of the two to fix and it feeds both.
+
+Knowing which of the three you are tells you where to start. Most owners jump straight to the website when the real problem is the profile.
+
+## Before you panic: four things to check first
+
+Half the "my business disappeared" emergencies I get are false alarms. Check these before changing anything:
+
+1. **Search in an incognito window.** Your browser's saved history and location can show you your own business where customers would never see it.
+2. **Search from a different device, on cell data.** Google personalizes results by location. If you work from home, you may be seeing a version of Google your customers never see.
+3. **Search the exact name on your profile, word for word.** If your sign says "Rivera's Plumbing" but your profile says "Rivera Plumbing & Drain Services," customers searching the sign version may not find you.
+4. **Check the date of your last edit.** If you changed your name, address, or category in the last couple of weeks, Google may be re-reviewing your profile. This usually resolves itself; making more changes makes it worse.
+
+If it's still missing after all four, work through the 12 fixes in order. The order matters: the first five are quick and fix the most common causes.
+
+## What not to do when you're invisible
+
+- **Don't create a second profile.** Duplicates split your reviews and can get both suspended.
+- **Don't buy reviews or review services.** Google removes them, and sudden fake review spikes are one of the fastest ways to get suspended.
+- **Don't keyword-stuff your business name** ("Joe's Plumbing Best Plumber San Diego"). It violates Google's guidelines and can get the profile suspended or renamed.
+- **Don't panic-edit everything at once.** Batch changes look suspicious. Fix one thing, wait, observe.
+- **Don't hire anyone who promises a specific ranking date.** Nobody can promise that. If they do, that's your answer about whether to trust them.
+
 ## What I'd do this week
 
 If you only have an hour:
@@ -117,6 +146,21 @@ You can run Google Ads, including ads that appear on Maps. But you can't pay to 
 
 **Does it matter if I work from home?**
 Yes. If customers don't come to you, set up your profile as a service-area business and hide your home address. Showing a home address when you shouldn't is a common reason for suspensions.
+
+**Why is my business not showing up on Google Maps?**
+The map is powered by your Google Business Profile, not your website. The usual causes are a missing profile, an unverified one, a suspension, or the wrong primary category. A perfect website won't put you on the map; a healthy profile will.
+
+**Why does my business show on Maps but not in Google search?**
+Your profile is doing its job, but Google doesn't trust your website enough to show it in the main results. That usually means a thin homepage, no pages that match what people search for, or almost no other sites mentioning you. Fixes 8, 9, and 11 are where to start.
+
+**I just verified my profile. Why can't I see it yet?**
+Verification is the start, not the finish. A brand-new profile can take days to a few weeks to appear in Maps and longer to rank. Also check it in an incognito window from a different device — you may already be live and just seeing a personalized view.
+
+**Why did my business suddenly disappear from Google?**
+The most common causes, in order: a recent edit triggered a re-review, the profile got suspended (often for a guideline violation like keyword-stuffing the business name), someone else claimed or reported the listing, or you're searching in a way that hides it (logged in, home address). Check each before changing anything.
+
+**Can I show up on Google without a website?**
+Yes, for Maps — a complete, verified profile with reviews can rank on the map with no website at all. But you'll struggle in regular search results, and AI tools like ChatGPT lean heavily on websites. A simple one-page site beats no site.
 
 ## Still stuck?
 

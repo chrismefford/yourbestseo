@@ -102,6 +102,42 @@ Once your profile is right, copy those exact details to:
 - [ ] Your industry's main directories
 - [ ] Your local Chamber of Commerce
 
+## Working from home? Read this before you publish
+
+If customers come to you (an office, a shop, a studio), your address should be visible — it helps you rank for "near me" searches.
+
+If customers don't come to you (plumbing, house cleaning, mobile notary, lawn care), you're a **service-area business**, and the setup is different:
+
+1. **Hide your address.** Google will show it as "Serves [area]" instead of your home.
+2. **List your service areas.** You can add up to 20 areas (cities or zip codes). Keep them real — areas where you'll genuinely drive to.
+3. **Don't create a profile for every city you serve.** One profile with multiple service areas. Multiple profiles for one business at one address get flagged as duplicates.
+
+Getting this wrong is one of the most common causes of suspensions, and it's completely avoidable.
+
+## The suspension causes you can prevent
+
+Most suspensions come from a short list of mistakes:
+
+- **Keyword-stuffing the business name.** "Joe's Plumbing — Best Plumber San Diego 24/7" is against the rules. Use your real name, the one on your storefront and license.
+- **A virtual office or mailbox address** you don't actually operate from.
+- **Multiple profiles** for the same business at the same address.
+- **Someone else managing the profile who's also managing your competitors.** Google treats this as a conflict; you can be affected by what they do.
+- **Big sudden changes** — renaming, recategorizing, or moving the pin all at once.
+
+If you do get suspended, appeal from the profile itself and be ready to prove you're a real business at that address: a license, utility bill, or photos of signage. It usually takes a week or two. Don't create a new profile while you wait — that makes it worse.
+
+## What your competitors' profiles tell you (10-minute exercise)
+
+Find the top three businesses ranking on the map for your main service. Open each profile and write down:
+
+- How many reviews they have, and how recent the newest one is
+- How many photos, and whether any are real (not stock)
+- Whether they post updates, and how often
+- What categories they use
+- Whether their description names their main service
+
+You now have a target list. You don't need to beat them everywhere — but any category where you're at zero is a gap Google can see.
+
 ## Your monthly 15-minute check
 
 - [ ] Search your business on Google Maps from your phone. Is everything right?
@@ -123,6 +159,21 @@ The most common reasons are keywords in the business name, using a P.O. box or v
 
 **Does my Google Business Profile affect ChatGPT and AI search?**
 Indirectly, yes. AI tools draw on local listings and reviews, and Google's own AI uses your profile directly to answer questions about your business.
+
+**Can I have more than one location?**
+Yes — each real, staffed location that customers can visit should have its own profile, and each one needs its own reviews and photos. One location means one profile. Extra profiles for places you don't actually operate from will get flagged.
+
+**Should I hide my address if I work from home?**
+If customers never come to your home, yes. Set it up as a service-area business: hide the address, list the areas you serve. Showing your home address when customers shouldn't visit is a common and avoidable suspension cause.
+
+**What photos actually help?**
+Real photos of your storefront, team, work in progress, and finished jobs. Google and customers both respond to them, and customers are more likely to click a profile with real photos. Skip stock images — people can tell, and Google has gotten good at it too.
+
+**How do I get my review link?**
+From your profile, there's a "share review form" or "ask for reviews" option that gives you a short link you can text or email. Save it in your phone so you can send it in ten seconds at the happy moment. More on the exact scripts in [How to Get More Google Reviews](/how-to-get-more-google-reviews).
+
+**What if someone else already claimed my business?**
+You can request access through the profile — Google will have the current owner verify or deny, and if they don't respond, you can claim it with proof (license, signage photos, business registration). Don't give up if your first request is ignored; the process favors the real business.
 
 ## Want me to do it for you?
 

@@ -74,6 +74,39 @@ This is where SEO stops feeling like work and starts feeling like an asset. Page
 
 If someone promises page-one rankings in two weeks, be very careful. Quick fixes can happen fast, but anyone guaranteeing rankings, especially #1, is either overpromising or doing something risky. More on that in [SEO Scams Small Businesses Fall For](/seo-scams).
 
+## Month one: the quiet month (and why most owners quit here)
+
+Month one almost never produces new customers. What it produces is groundwork:
+
+- Your Google Business Profile gets cleaned up and filled in
+- Your listing details get matched across the internet
+- Technical problems on your site get found and fixed
+- The first pages of real content get published
+
+If you're measuring only calls in month one, you'll think nothing happened. What actually happened is that everything you do in months two through twelve got its foundation. This is why SEO fails for so many small businesses — not because it doesn't work, but because month one looks like nothing, and the owner quits in week five.
+
+Here's the honest reframe: the first 30 days are you turning on the lights. Google doesn't walk in the door until it notices the lights are on.
+
+## Why some businesses see movement in 30 days and others wait a year
+
+The timeline isn't random. It's mostly four things:
+
+1. **Where you're starting from.** A site that's been around for ten years with decent content moves faster than a two-month-old site. If your site already ranks on page 3 for what you want, you're pushing on an open door.
+2. **How competitive your market is.** "Plumber in a town of 5,000" and "personal injury lawyer in Los Angeles" are not the same fight. The same work can show results in weeks in one and take a year in the other.
+3. **How much is done at once.** A steady 10 hours a week beats a heroic 40-hour weekend once a quarter. Google responds to consistency.
+4. **Whether the basics were ever done.** Businesses with a complete profile and a review habit from day one skip months of the first phase entirely.
+
+## How to check progress before the calls come in
+
+You don't have to wait for the phone to know it's working. These signals move first, and they're all free:
+
+- **Google Business Profile views and calls.** Your profile shows how many people viewed it and how many called or asked for directions. If those are climbing, the map work is landing.
+- **Search Console impressions.** Once your site is in Search Console, you can see how many times Google showed your pages — even before many people click. Impressions rising is the first real sign.
+- **Rankings for one or two tracked terms.** Pick your single most valuable search and check it the same way, same device, once a week. Not your favorite keyword — the one that pays.
+- **New reviews coming in.** If reviews have started flowing, the whole flywheel is turning.
+
+Track these four on one sheet of paper. When a client tells me "nothing is happening," we almost always find impressions and profile views climbing — the customers just hadn't arrived yet.
+
 ## How to get results while you wait
 
 - **Fix your Google Business Profile today.** It's the fastest free win. [Use the checklist](/google-business-profile-checklist).
@@ -93,6 +126,21 @@ Yes, by fixing your Google Business Profile, building reviews consistently, and 
 
 **How do I know if SEO is working before the calls come in?**
 Watch for more views and actions on your Google Business Profile, more searches you show up for, and more visitors to your website from Google.
+
+**How long does it take to rank on Google for a new website?**
+For a brand-new domain in a normal local market, expect 6 to 12 months for meaningful rankings, and treat the first 3 months as setup. A new site can move faster in low-competition niches, but "we ranked in two weeks" stories usually involve a keyword nobody searches for.
+
+**How long does it take for Google to notice my new pages?**
+Days to a few weeks, usually. Submitting your sitemap in Search Console speeds it up, and linking to the new page from pages Google already knows gets it found faster. "Indexed" and "ranking" are different steps — a page can be indexed for months before it climbs.
+
+**Can SEO results disappear after they arrive?**
+They can slip, and the usual causes are: you stopped everything (rankings decay without upkeep), a competitor started doing more, a site update broke something, or an algorithm update reshuffled results. Steady, boring maintenance is what makes results last — which is the whole advantage over renting ads.
+
+**What should I expect in the first 90 days?**
+Realistic 90-day goals: profile and listings fully cleaned up, your top technical problems fixed, 3 to 5 new pages published, impressions in Search Console trending up, and new reviews coming in weekly. Calls from organic search typically start somewhere after that. If an agency promises you steady new customers inside 90 days from a standing start, ask them exactly which pages and which keywords they mean.
+
+**Does changing my website now affect rankings immediately?**
+Rarely. Google recrawls and re-evaluates on its own schedule, and ranking changes from a single edit usually take weeks to show. The exception is something broken — if a change takes your site down or de-indexes pages, the drop can be fast. This is why we change one thing at a time and watch.
 
 ## Want a timeline for your business?
 

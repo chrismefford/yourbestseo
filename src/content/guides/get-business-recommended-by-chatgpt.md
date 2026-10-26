@@ -78,6 +78,39 @@ Search Reddit for your city plus your industry. If people are asking for recomme
 
 Same name, same address, same phone, same hours, everywhere. Boring? Yes. Important? Very.
 
+## The exact prompts to run on yourself
+
+Copy these into ChatGPT, Gemini, Copilot, or Perplexity and read the answers like a customer would. Do this once a quarter.
+
+- "Best [your service] in [your city]"
+- "I need a [your service] near [your neighborhood]. Who should I call?"
+- "[Your service] vs. [common alternative] — which is better for [situation]?"
+- "What should I look for when hiring a [your service]?"
+- "Is [your business name] a good choice for [your service]?"
+
+The last one is the one most owners never think to try, and it's the most revealing. If the AI doesn't know your business by name, it will rarely suggest it by category.
+
+## What AI tools actually do with your website (plain English)
+
+There are two ways AI tools learn about you, and both matter:
+
+1. **Training data.** The models were trained on years of the web, including review sites, directories, and articles. This is why consistency across the internet matters so much — years of matching information is a strong signal.
+2. **Live lookups.** Most modern AI tools can search the web when someone asks a fresh question. When they do, they're looking at your website, your Google Business Profile, your reviews, and what other sites say about you — right then.
+
+You don't need a special file or a secret technique to be "AI-friendly." You need the same things that make you trustworthy to a human: a clear website, real reviews that say something, consistent listings, and mentions in places people actually discuss your industry.
+
+## Which businesses get recommended most
+
+After looking at how AI answers come together, the patterns are consistent:
+
+- **The ones with review volume.** AI tools treat "200 reviews averaging 4.8" very differently than "6 reviews averaging 4.8."
+- **The ones whose reviews contain specifics.** "Fixed our AC in two hours on a Sunday" tells the AI more than "great service."
+- **The ones with clear, plain-language websites.** A site that says "we repair air conditioners in Chula Vista, usually same day" is quotable. "Quality You Can Trust Since 1998" is not.
+- **The ones discussed elsewhere.** AI answers often draw on review platforms, forum threads, and articles. If the only place your business exists is your own website, the AI has less to go on.
+- **The ones that have been around.** New businesses can break in fast with strong reviews, but history is an edge.
+
+Notice what's not on the list: ad spend, website age, or how many pages you have. None of that is what the recommendation is built on.
+
 ## What not to do
 
 - **Don't buy fake reviews.** It breaks the rules, and AI tools are getting better at spotting patterns.
@@ -97,6 +130,21 @@ It varies. Fixing wrong info can help within weeks. Building enough reviews and 
 
 **Is this different from regular SEO?**
 It overlaps a lot. The big difference is that AI leans even harder on what other people say about you, especially reviews and community conversations.
+
+**Which AI tools should I check?**
+The big four for local businesses: ChatGPT, Google Gemini (including the AI answers at the top of Google results), Microsoft Copilot, and Perplexity. Run the same prompts in each. You'll often see different answers, which tells you which tools know you and which don't.
+
+**Do I need an "llms.txt" file or special AI SEO?**
+No. "AI SEO" is mostly a new label on the same fundamentals: a clear website, consistent listings, real reviews, and content that answers customer questions. Nobody has shown that special AI-only files change what assistants recommend. Be skeptical of anyone selling you a magic AI technique.
+
+**Why did ChatGPT recommend my competitor instead of me?**
+Usually one of four things: they have more and better reviews, their website answers the question more clearly, they're mentioned in more places online, or the AI simply doesn't know your business exists yet. All four are fixable, and none of them require paying OpenAI anything.
+
+**Does my Reddit presence matter for AI?**
+It can. AI tools frequently draw on discussion threads and review sites when they answer questions, so being part of real conversations in your industry helps. I wrote a whole guide on it: [Managing Reddit for AI Search](/reddit-marketing).
+
+**Can AI see my website if it's brand new?**
+Eventually, yes, but new sites have little for AI to draw on. The fastest path for a new business is a complete Google Business Profile plus a steady flow of reviews, because those signals are picked up quickly. The website content catches up over the first year.
 
 ## Want to know where you stand?
 

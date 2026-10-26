@@ -60,6 +60,26 @@ For most of the local businesses I work with, the best plan looks like this:
 
 The goal is a business that doesn't panic when the ad budget pauses. More on that in [How to Get Customers Without Paying for Google Ads](/get-customers-without-google-ads).
 
+## The real cost of a click vs. the real cost of content
+
+Run the math on your own business. Using the industry averages from the table above — about $5.42 per click and $66.69 per lead — say you want ten new customer inquiries a month from search:
+
+- **With ads:** roughly $670/month in ad spend, every month, forever. Stop paying, the inquiries stop.
+- **With SEO:** a one-time investment in pages and profile work, plus upkeep. The same ten inquiries keep arriving after the work is done — and they usually convert better, because people trust organic results more than ads.
+
+That's the trade in one sentence: ads buy ten leads this month; SEO builds a machine that produces ten leads a month. The machine takes months to build and costs less per lead once it's running. Your actual numbers will differ — what you pay per click depends on your market, and your customer value depends on your business. But if you're paying $50+ per lead in a market where the search is winnable, the math usually favors building.
+
+## What changes over the first two years
+
+Here's what the shift actually looks like for most local businesses I work with:
+
+- **Months 0–3:** ads carry most of the load. SEO work is invisible — setup and groundwork.
+- **Months 3–9:** organic inquiries start appearing. The two channels overlap; you might actually raise the ad budget to catch the extra demand.
+- **Months 9–18:** organic is producing a meaningful share of leads. This is when you start trimming ads — gradually, watching the phone.
+- **Year 2+:** the mix stabilizes at whatever your market supports. Some businesses keep 30–50% in ads forever, and that's fine — ads by choice is a completely different feeling than ads by necessity.
+
+The businesses that get this wrong in either direction: those that cancel ads too early and starve while the machine is still being built, and those that keep paying the ad treadmill for a decade because they never started building.
+
 ## Questions to ask yourself
 
 - If I turned off ads tomorrow, how many calls would I lose?
@@ -82,6 +102,21 @@ Yes, and most businesses should, at least for a while. They support each other.
 
 **How long until SEO can replace my ads?**
 It depends on your market. Many local businesses see meaningful organic growth in 3 to 6 months and can start trimming ads within a year. See [How Long Does SEO Take?](/how-long-does-seo-take)
+
+**When should I use Google Ads vs. SEO for my business?**
+Use ads when you need customers now, you're testing a new offer, or your market is too small to bother with organic. Use SEO when you plan to be around for years and people search for what you do. Most businesses should use both at first, with ads carrying the short term while SEO builds the long term.
+
+**Is SEO or PPC better for local businesses?**
+For local businesses specifically, SEO has the edge over time — "near me" searches are exactly what the map pack and local organic results serve, and they don't cost per click. But PPC can win the race for brand-new businesses with no reviews yet, because ads don't need trust to work. Reviews and a profile get you into the organic game; ads work while you get there.
+
+**Can I pause my ads without losing anything?**
+You'll lose the ad leads — that's the nature of it. What you don't lose is the data: the search terms people used, which ads converted, what they clicked. Pause strategically: keep your best-performing campaigns off during slow periods, and before pausing entirely, make sure your organic channels are producing enough to catch the drop. [How to Get Customers Without Paying for Google Ads](/get-customers-without-google-ads) covers how to know you're ready.
+
+**How much should I budget for each?**
+A starting point many local businesses use: whatever you can spend on ads without wincing (often $500–$1,500/month), plus a fixed commitment to the SEO work — either a few hours of your own time a week or a provider. The ratio matters less than the direction: over time, the organic share should grow while total spend stays flat or drops. If both budgets keep growing forever, something's wrong.
+
+**Do ads help my SEO?**
+Indirectly, yes. Ads tell you which searches actually convert — that's free keyword research you can't buy any other way. They also drive traffic and activity that can nudge engagement signals. They're not a ranking shortcut (no, Google doesn't boost you for paying), but the information you get from a few months of ads makes your SEO smarter. That's the best argument for running both: each one makes the other better.
 
 ## Want help figuring out your mix?
 
