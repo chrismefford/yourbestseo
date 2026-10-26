@@ -13,10 +13,6 @@ export const parsedGuides: ParsedGuide[] = [
     "blocks": [
       {
         "kind": "p",
-        "text": "# Why Isn't My Business Showing Up on Google? 12 Fixes, From Easiest to Hardest"
-      },
-      {
-        "kind": "p",
         "text": "The most common call I get starts like this: \"I Googled my own business and I'm not there. What did I do wrong?\""
       },
       {
@@ -268,10 +264,6 @@ export const parsedGuides: ParsedGuide[] = [
     "blocks": [
       {
         "kind": "p",
-        "text": "# How to Get Your Business Recommended by ChatGPT and AI Search"
-      },
-      {
-        "kind": "p",
         "text": "A few months ago, a dentist in Carlsbad called me, a little rattled. A new patient had told her, \"ChatGPT said you were one of the best family dentists around here.\" She was thrilled, then immediately worried. \"If ChatGPT is sending people to dentists,\" she asked, \"how many is it sending to someone else?\""
       },
       {
@@ -478,10 +470,6 @@ export const parsedGuides: ParsedGuide[] = [
     "dateISO": "2026-10-25",
     "dateLabel": "Oct 25, 2026",
     "blocks": [
-      {
-        "kind": "p",
-        "text": "# How to Get Customers Without Paying for Google Ads (Stop Renting Your Customers)"
-      },
       {
         "kind": "p",
         "text": "A landscaper in El Cajon once showed me his Google Ads bill. He was spending about $2,400 a month. When I asked what happened the month he paused it, he laughed and said, \"The phone stopped ringing. So I turned it back on.\""
@@ -717,10 +705,6 @@ export const parsedGuides: ParsedGuide[] = [
     "blocks": [
       {
         "kind": "p",
-        "text": "# The Free Google Business Profile Checklist (2026 Edition)"
-      },
-      {
-        "kind": "p",
         "text": "If I could make every small business owner do one thing, it would be this checklist."
       },
       {
@@ -944,10 +928,6 @@ export const parsedGuides: ParsedGuide[] = [
     "blocks": [
       {
         "kind": "p",
-        "text": "# How Long Does SEO Take to Work? A Realistic Month-by-Month Timeline"
-      },
-      {
-        "kind": "p",
         "text": "\"So when will the phone start ringing?\""
       },
       {
@@ -1151,10 +1131,6 @@ export const parsedGuides: ParsedGuide[] = [
     "blocks": [
       {
         "kind": "p",
-        "text": "# How Much Does SEO Cost for a Small Business? (Honest Numbers, From Someone Who Sells It)"
-      },
-      {
-        "kind": "p",
         "text": "Here's an awkward truth about my industry: a lot of SEO companies won't tell you what they charge until you've had three sales calls. I've always thought that was backwards. You should know roughly what you're getting into before you pick up the phone."
       },
       {
@@ -1331,10 +1307,6 @@ export const parsedGuides: ParsedGuide[] = [
     "dateISO": "2026-10-25",
     "dateLabel": "Oct 25, 2026",
     "blocks": [
-      {
-        "kind": "p",
-        "text": "# How to Get More Google Reviews (Without Being Awkward About It)"
-      },
       {
         "kind": "p",
         "text": "I once asked a hair salon owner in Point Loma why she had only 11 Google reviews after eight years in business. Her answer: \"It feels like begging.\""
@@ -1542,10 +1514,6 @@ export const parsedGuides: ParsedGuide[] = [
     "dateISO": "2026-10-25",
     "dateLabel": "Oct 25, 2026",
     "blocks": [
-      {
-        "kind": "p",
-        "text": "# The DIY Local SEO Checklist: Get Found Online in One Afternoon"
-      },
       {
         "kind": "p",
         "text": "If you're a small business owner, there's a good chance you're also the marketing department. In BrightLocal's 2026 survey, 98% of small business owners said they're the ones making their own marketing decisions. So this checklist is for you: the owner with an afternoon, a laptop, and zero interest in jargon."
@@ -1760,10 +1728,6 @@ export const parsedGuides: ParsedGuide[] = [
     "blocks": [
       {
         "kind": "p",
-        "text": "# 9 SEO Scams Small Businesses Fall For (and the Questions That Expose Them)"
-      },
-      {
-        "kind": "p",
         "text": "I'm in the SEO business, and I'm about to tell you about the worst parts of it."
       },
       {
@@ -1951,10 +1915,6 @@ export const parsedGuides: ParsedGuide[] = [
     "dateISO": "2026-10-25",
     "dateLabel": "Oct 25, 2026",
     "blocks": [
-      {
-        "kind": "p",
-        "text": "# SEO vs. Google Ads: Which Should a Small Business Pay For?"
-      },
       {
         "kind": "p",
         "text": "You'd expect an SEO guy to tell you SEO always wins. I'm not going to, because it doesn't."
