@@ -92,6 +92,41 @@ The goal isn't zero ads. It's ads as a choice, not a life support system. For a 
 
 Then repeat. Slowly, the balance shifts from rented to owned.
 
+## How to know when you can cut ads (without gambling)
+
+Don't cancel ads on a feeling. Cut them when you can see the replacement working. The signals I look for:
+
+- **Your organic calls and forms are trending up for three straight months.** Month-to-month noise isn't a trend; a quarter of steady growth is.
+- **You know your cost per customer from each channel.** If you can't tell which calls came from ads versus search, you can't make this decision yet.
+- **Reviews are still coming in every week.** Reviews are the flywheel behind everything else. If they've stalled, the foundation is wobbling.
+- **You have a way to catch the drop.** When you trim ads, trim gradually and watch the phone weekly. A 20% cut you can measure beats a 100% cut you can't.
+
+The businesses that get hurt by ads are the ones that cancel on a bad month and sign back up on a good one. The businesses that win treat it as a dial, not a switch.
+
+## The cheapest customer you'll ever get
+
+Before chasing new customers, look at the ones you already have. The numbers here are almost always better:
+
+- **Repeat customers.** For restaurants, salons, and anything maintenance-related, the second visit costs nothing to get. A simple reminder text or email at the right interval does more than any ad.
+- **Referrals.** A happy customer who tells one neighbor is worth more than a click you paid for. Ask directly, at the happy moment: "If you know anyone else who needs this, send them my way."
+- **Your own list.** An email or text list is the only audience you own outright. No algorithm, no bidding, no platform can take it away. Start collecting it even if you only send something four times a year.
+
+Most local businesses I look at are sitting on more revenue in their existing customer base than they could buy with a year of ads.
+
+## What "owning" your customers actually means
+
+The difference between rented and owned comes down to what survives a bad month:
+
+| Asset | Survives a bad month? |
+| --- | --- |
+| Ad campaign | No — leads stop when payment stops |
+| Google Business Profile + reviews | Yes — keeps working quietly |
+| Pages that answer what people search | Yes — they're indexed and serving questions daily |
+| Email or text list | Yes — you can reach them whenever you want |
+| Referral relationships | Yes — trust doesn't have an off switch |
+
+You don't need all five to run a business. But every one you add makes the next slow month easier to survive.
+
 ## FAQ
 
 **Can a small business really get customers without ads?**
@@ -102,6 +137,21 @@ For most local businesses, it's a complete, active Google Business Profile with 
 
 **Should I stop my Google Ads right now?**
 Probably not all at once. Build your free channels first, then reduce ads gradually while you watch your call volume.
+
+**How much of my budget should still go to ads?**
+Early on, ads can carry most of it — they're the fastest way to find customers while the owned channels build. A common pattern for local businesses: ads are 70–80% of the spend in year one, then drop toward 30–50% as organic leads grow. The goal isn't zero ads. It's ads by choice instead of ads by necessity.
+
+**How long before I can reduce my ad spend?**
+Most local businesses see meaningful organic movement in 3 to 6 months and can start trimming ads somewhere in the 6 to 12 month range. The timeline depends on your market and competition. [How Long Does SEO Take?](/how-long-does-seo-take) walks through it month by month.
+
+**What if my customers only buy once — like roofing or a med spa?**
+The logic still works, with a twist. One-time buyers won't become repeat customers, so your owned assets are different: reviews (they compound forever), referrals (ask right after the job), and pages that answer research questions ("how much does a roof replacement cost in San Diego"). Those bring in the next wave of one-time buyers without paying per click.
+
+**Is social media worth it for a local business?**
+Sometimes — it depends on your customer. If you're a restaurant, gym, salon, or anything visual, a consistent local presence helps and costs only time. If you're a plumber or accountant, social media is rarely where customers come from; reviews and Google matter far more. Spend your limited energy where your customers already are.
+
+**What about Groupon or daily-deal sites?**
+Be careful. They can fill a slow calendar, but they usually bring deal-seekers who never pay full price and never come back. If you try one, cap it, measure whether those customers return, and treat it as a one-time experiment — not a channel.
 
 ## Want a plan to need ads less?
 
