@@ -83,3 +83,6 @@
 - [x] Build the /guides index, the shared article renderer (TOC, interactive checklists, copy cards, print, jump links, FAQ, schema, CTA) and register all 11 routes + sitemap entries.
 - [x] Add "Guides" to the main navigation, print styles, and tests locking in word-for-word copy and route coverage.
 - [ ] Publish so the guides go live.
+
+# Guide self-check funnel
+- [x] Add a per-guide three-question readiness scorecard to all 10 guides: one question per screen with animated progress, instant tier diagnosis with stage ladder, localStorage persistence, and a bridge to /book and /free-audit. Guide tests, build, and Playwright (full flow, persistence, mobile) pass. Publish required for live pages.
