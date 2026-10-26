@@ -103,16 +103,6 @@ Don't cancel ads on a feeling. Cut them when you can see the replacement working
 
 The businesses that get hurt by ads are the ones that cancel on a bad month and sign back up on a good one. The businesses that win treat it as a dial, not a switch.
 
-## The cheapest customer you'll ever get
-
-Before chasing new customers, look at the ones you already have. The numbers here are almost always better:
-
-- **Repeat customers.** For restaurants, salons, and anything maintenance-related, the second visit costs nothing to get. A simple reminder text or email at the right interval does more than any ad.
-- **Referrals.** A happy customer who tells one neighbor is worth more than a click you paid for. Ask directly, at the happy moment: "If you know anyone else who needs this, send them my way."
-- **Your own list.** An email or text list is the only audience you own outright. No algorithm, no bidding, no platform can take it away. Start collecting it even if you only send something four times a year.
-
-Most local businesses I look at are sitting on more revenue in their existing customer base than they could buy with a year of ads.
-
 ## What "owning" your customers actually means
 
 The difference between rented and owned comes down to what survives a bad month:
@@ -126,6 +116,16 @@ The difference between rented and owned comes down to what survives a bad month:
 | Referral relationships | Yes — trust doesn't have an off switch |
 
 You don't need all five to run a business. But every one you add makes the next slow month easier to survive.
+
+## The cheapest customer you'll ever get
+
+Before chasing new customers, look at the ones you already have. The numbers here are almost always better:
+
+- **Repeat customers.** For restaurants, salons, and anything maintenance-related, the second visit costs nothing to get. A simple reminder text or email at the right interval does more than any ad.
+- **Referrals.** A happy customer who tells one neighbor is worth more than a click you paid for. Ask directly, at the happy moment: "If you know anyone else who needs this, send them my way."
+- **Your own list.** An email or text list is the only audience you own outright. No algorithm, no bidding, no platform can take it away. Start collecting it even if you only send something four times a year.
+
+Most local businesses I look at are sitting on more revenue in their existing customer base than they could buy with a year of ads.
 
 ## FAQ
 

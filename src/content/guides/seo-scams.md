@@ -91,18 +91,6 @@ AI search is real, and it matters. In BrightLocal's 2026 consumer survey, 45% of
 
 Question 9 is my favorite. A good SEO will happily tell you what you can do yourself. A scammer will tell you it's too complicated.
 
-## What a legitimate SEO provider actually does every month
-
-You can't spot a scam if you don't know what honest work looks like. A real local SEO provider's month usually contains:
-
-- **Publishing or improving content** — a new page, or a real improvement to an existing one
-- **Profile and review management** — keeping the Google Business Profile active, making sure reviews get answered
-- **Technical upkeep** — fixing problems, watching site speed and search visibility
-- **A report in plain language** — what was done, what changed, what's next
-- **A short list of things they need from you** — photos, answers, approvals
-
-Notice what's *not* on the list: secret techniques, daily "submissions" to 500 directories, or a report that's just screenshots of tools. If the monthly work can't be described in a sentence, ask why. And if a provider's work never requires anything from you, they're not working on your business — they're working on a template with your logo on it.
-
 ## Stuck in a contract you regret
 
 If you're already paying someone who promised things that haven't happened, you have more options than you think:
@@ -114,6 +102,18 @@ If you're already paying someone who promised things that haven't happened, you 
 5. **Don't sign the "new improved plan"** they offer when you try to cancel. That's retention, not a solution.
 
 And if you believe you were genuinely defrauded — paid for guaranteed rankings that were faked, for example — your state attorney general's office and the FTC both take consumer complaints online. Most people never file. The ones who do sometimes get results.
+
+## What a legitimate SEO provider actually does every month
+
+You can't spot a scam if you don't know what honest work looks like. A real local SEO provider's month usually contains:
+
+- **Publishing or improving content** — a new page, or a real improvement to an existing one
+- **Profile and review management** — keeping the Google Business Profile active, making sure reviews get answered
+- **Technical upkeep** — fixing problems, watching site speed and search visibility
+- **A report in plain language** — what was done, what changed, what's next
+- **A short list of things they need from you** — photos, answers, approvals
+
+Notice what's *not* on the list: secret techniques, daily "submissions" to 500 directories, or a report that's just screenshots of tools. If the monthly work can't be described in a sentence, ask why. And if a provider's work never requires anything from you, they're not working on your business — they're working on a template with your logo on it.
 
 ## FAQ
 

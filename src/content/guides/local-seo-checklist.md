@@ -108,6 +108,17 @@ Wondering what help costs? [How Much Does SEO Cost for a Small Business?](/how-m
 
 If ads are eating your budget, read [How to Get Customers Without Paying for Google Ads](/get-customers-without-google-ads) and [SEO vs. Google Ads](/seo-vs-google-ads). This checklist is step one of needing ads less.
 
+## How to tell it's working (the four numbers)
+
+You don't need a dashboard. Track these four once a month, on paper:
+
+1. **Google Business Profile views and calls.** In your profile's performance tab. Climbing numbers mean the map work is landing.
+2. **Search Console impressions.** Rising impressions mean Google is matching your pages to more searches — clicks follow later.
+3. **Review count and newest review date.** If the newest review is more than a few weeks old, the habit has slipped.
+4. **The one search that pays.** Pick your most valuable "service + city" search and check it the same way each time.
+
+Write the four numbers down on the first of every month. Two months of movement in the right direction is the signal that your effort is compounding. Flat numbers mean something in the checklist got missed — usually the review habit.
+
 ## Part 8: Your first 90 days after the checklist
 
 The checklist gets you set up. This keeps it growing. Pick one or two items per week — that's it.
@@ -128,17 +139,6 @@ The checklist gets you set up. This keeps it growing. Pick one or two items per 
 - Look at your competitors' profiles again. Any gap they have that you don't?
 
 After 90 days, this becomes the 15-minute monthly routine from Part 7. The businesses that win at local search aren't the ones who did something brilliant once — they're the ones who did something small every week while their competitors were busy.
-
-## How to tell it's working (the four numbers)
-
-You don't need a dashboard. Track these four once a month, on paper:
-
-1. **Google Business Profile views and calls.** In your profile's performance tab. Climbing numbers mean the map work is landing.
-2. **Search Console impressions.** Rising impressions mean Google is matching your pages to more searches — clicks follow later.
-3. **Review count and newest review date.** If the newest review is more than a few weeks old, the habit has slipped.
-4. **The one search that pays.** Pick your most valuable "service + city" search and check it the same way each time.
-
-Write the four numbers down on the first of every month. Two months of movement in the right direction is the signal that your effort is compounding. Flat numbers mean something in the checklist got missed — usually the review habit.
 
 ## FAQ
 

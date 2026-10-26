@@ -114,6 +114,14 @@ These are two different systems, and they fail for different reasons.
 
 Knowing which of the three you are tells you where to start. Most owners jump straight to the website when the real problem is the profile.
 
+## What not to do when you're invisible
+
+- **Don't create a second profile.** Duplicates split your reviews and can get both suspended.
+- **Don't buy reviews or review services.** Google removes them, and sudden fake review spikes are one of the fastest ways to get suspended.
+- **Don't keyword-stuff your business name** ("Joe's Plumbing Best Plumber San Diego"). It violates Google's guidelines and can get the profile suspended or renamed.
+- **Don't panic-edit everything at once.** Batch changes look suspicious. Fix one thing, wait, observe.
+- **Don't hire anyone who promises a specific ranking date.** Nobody can promise that. If they do, that's your answer about whether to trust them.
+
 ## Before you panic: four things to check first
 
 Half the "my business disappeared" emergencies I get are false alarms. Check these before changing anything:
@@ -124,14 +132,6 @@ Half the "my business disappeared" emergencies I get are false alarms. Check the
 4. **Check the date of your last edit.** If you changed your name, address, or category in the last couple of weeks, Google may be re-reviewing your profile. This usually resolves itself; making more changes makes it worse.
 
 If it's still missing after all four, work through the 12 fixes in order. The order matters: the first five are quick and fix the most common causes.
-
-## What not to do when you're invisible
-
-- **Don't create a second profile.** Duplicates split your reviews and can get both suspended.
-- **Don't buy reviews or review services.** Google removes them, and sudden fake review spikes are one of the fastest ways to get suspended.
-- **Don't keyword-stuff your business name** ("Joe's Plumbing Best Plumber San Diego"). It violates Google's guidelines and can get the profile suspended or renamed.
-- **Don't panic-edit everything at once.** Batch changes look suspicious. Fix one thing, wait, observe.
-- **Don't hire anyone who promises a specific ranking date.** Nobody can promise that. If they do, that's your answer about whether to trust them.
 
 ## FAQ
 

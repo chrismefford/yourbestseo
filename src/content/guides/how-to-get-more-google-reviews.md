@@ -107,17 +107,6 @@ If you have 5 reviews and your competitors have 200, don't panic — and don't t
 
 After the sprint, the habit takes over: every happy moment gets an ask, and the number grows on its own.
 
-## What to write back (templates that sound human)
-
-Replying to reviews is one of the few free things that clearly helps, and most businesses skip it. The bar is low: sound like a person, not a form letter.
-
-- **5-star review:** "Thank you — this made our week. Glad the [specific thing they mentioned] went smoothly. We appreciate you taking the time."
-- **4-star review:** "Thanks for the kind words — and for the honest feedback on [what they mentioned]. That's genuinely useful. If there's anything we could have done to earn that fifth star, we'd love to hear it."
-- **Negative review:** "We're sorry about your experience — that's not how we want to do business. We'd like to make it right. Please reach out to [contact] and ask for [you]."
-- **Obvious fake or spam:** report it to Google, and don't argue with it publicly. A calm, professional reply for future readers is still worth writing.
-
-Two rules for all replies: never get defensive, and remember you're writing for the *next* customer who's reading, not the reviewer.
-
 ## What to do when a review you earned never shows up
 
 It happens, and it's usually not about you:
@@ -128,6 +117,17 @@ It happens, and it's usually not about you:
 - **If reviews from the same person keep vanishing,** don't fight it. Move on to the next customer.
 
 One missing review is noise. The system works on volume and recency, not any single post.
+
+## What to write back (templates that sound human)
+
+Replying to reviews is one of the few free things that clearly helps, and most businesses skip it. The bar is low: sound like a person, not a form letter.
+
+- **5-star review:** "Thank you — this made our week. Glad the [specific thing they mentioned] went smoothly. We appreciate you taking the time."
+- **4-star review:** "Thanks for the kind words — and for the honest feedback on [what they mentioned]. That's genuinely useful. If there's anything we could have done to earn that fifth star, we'd love to hear it."
+- **Negative review:** "We're sorry about your experience — that's not how we want to do business. We'd like to make it right. Please reach out to [contact] and ask for [you]."
+- **Obvious fake or spam:** report it to Google, and don't argue with it publicly. A calm, professional reply for future readers is still worth writing.
+
+Two rules for all replies: never get defensive, and remember you're writing for the *next* customer who's reading, not the reviewer.
 
 ## FAQ
 
