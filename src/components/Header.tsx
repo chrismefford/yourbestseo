@@ -12,6 +12,7 @@ const Header = () => {
 
   const navLinks = [
     { label: "Your Growth", href: "/#growth" },
+    { label: "Guides", href: "/guides" },
     { label: "Reddit", href: "/reddit-marketing" },
     { label: "About Me", href: "/about" },
     { label: "Book a Call", href: "/book" },

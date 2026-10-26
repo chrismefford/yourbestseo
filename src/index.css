@@ -217,3 +217,19 @@
     50% { box-shadow: 0 0 40px hsl(40 91% 55% / 0.4); }
   }
 }
+
+/* Print styles for the Small Business Guides */
+@media print {
+  header,
+  footer,
+  .no-print,
+  .fixed {
+    display: none !important;
+  }
+  .sticky {
+    position: static !important;
+  }
+  main {
+    padding-top: 0 !important;
+  }
+}

@@ -32,6 +32,21 @@ export const mainRoutes: RouteConfig[] = [
   { path: '/sms-terms', priority: 0.3, changefreq: 'yearly' },
   { path: '/glossary', priority: 0.8, changefreq: 'weekly' },
   { path: '/questions', priority: 0.8, changefreq: 'weekly' },
+  { path: '/guides', priority: 0.8, changefreq: 'monthly' },
+];
+
+// Small Business Guides (standalone editorial articles + hub)
+export const guideRoutes: RouteConfig[] = [
+  { path: '/business-not-showing-on-google', priority: 0.8, changefreq: 'monthly' },
+  { path: '/get-customers-without-google-ads', priority: 0.8, changefreq: 'monthly' },
+  { path: '/get-business-recommended-by-chatgpt', priority: 0.8, changefreq: 'monthly' },
+  { path: '/google-business-profile-checklist', priority: 0.8, changefreq: 'monthly' },
+  { path: '/how-much-does-seo-cost', priority: 0.8, changefreq: 'monthly' },
+  { path: '/seo-vs-google-ads', priority: 0.8, changefreq: 'monthly' },
+  { path: '/how-to-get-more-google-reviews', priority: 0.8, changefreq: 'monthly' },
+  { path: '/how-long-does-seo-take', priority: 0.8, changefreq: 'monthly' },
+  { path: '/seo-scams', priority: 0.8, changefreq: 'monthly' },
+  { path: '/local-seo-checklist', priority: 0.8, changefreq: 'monthly' },
 ];
 
 // Service pages
@@ -282,6 +297,7 @@ export const allRoutes: RouteConfig[] = [
   ...questionRoutes,
   ...stateRoutes,
   ...neighborhoodRoutes,
+  ...guideRoutes,
 ];
 
 // Domain configuration
