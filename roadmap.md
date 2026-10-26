@@ -77,3 +77,9 @@
 - [x] Set non-www as the primary domain so www redirects to it — confirmed primary: true on yourbestseo.com, www redirects to it.
 - [ ] Publish the current version so the new site replaces the old white-label page on the domain — publish was declined this turn; re-run when Chris is ready.
 - [ ] Re-check the live site after the switch: new homepage, /book, no blog.
+
+# Small Business Guides (10 articles + hub)
+- [x] Copy the 10 uploaded Markdown articles into src/content/guides/ and build a Markdown parser plus generated guide data.
+- [x] Build the /guides index, the shared article renderer (TOC, interactive checklists, copy cards, print, jump links, FAQ, schema, CTA) and register all 11 routes + sitemap entries.
+- [x] Add "Guides" to the main navigation, print styles, and tests locking in word-for-word copy and route coverage.
+- [ ] Publish so the guides go live.
