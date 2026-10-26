@@ -63,7 +63,7 @@ export default function GuideArticle({ slug }: { slug: string }) {
   const keepReading = keepReadingFor(guide);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="guides-light min-h-screen bg-background text-foreground">
       <SEO title={guide.metaTitle} description={guide.metaDescription} canonical={guide.path} type="article" schema={schema} />
       <Header />
       <main>
@@ -87,6 +87,15 @@ export default function GuideArticle({ slug }: { slug: string }) {
 
         <article className="bg-background py-12 text-foreground md:py-16">
           <div className="mx-auto max-w-6xl px-5 sm:px-6">
+            {guide.image && (
+              <img
+                src={guide.image}
+                alt={guide.title}
+                width={1536}
+                height={1024}
+                className="mb-12 aspect-[16/8] w-full rounded-3xl border border-border object-cover"
+              />
+            )}
             <div className={guide.toc ? "lg:grid lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-12" : ""}>
               {guide.toc && (
                 <aside className="lg:pt-1">

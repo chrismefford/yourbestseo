@@ -9,6 +9,16 @@
 
 import { parsedGuides } from "./guides.generated";
 import { HUB_SLUG, type ParsedGuide } from "@/lib/guides-parser";
+import imgBusinessNotShowing from "@/assets/guides/business-not-showing-on-google.jpg";
+import imgWithoutAds from "@/assets/guides/get-customers-without-google-ads.jpg";
+import imgRecommendedByChatgpt from "@/assets/guides/get-business-recommended-by-chatgpt.jpg";
+import imgProfileChecklist from "@/assets/guides/google-business-profile-checklist.jpg";
+import imgSeoCost from "@/assets/guides/how-much-does-seo-cost.jpg";
+import imgSeoVsAds from "@/assets/guides/seo-vs-google-ads.jpg";
+import imgMoreReviews from "@/assets/guides/how-to-get-more-google-reviews.jpg";
+import imgSeoTimeline from "@/assets/guides/how-long-does-seo-take.jpg";
+import imgSeoScams from "@/assets/guides/seo-scams.jpg";
+import imgLocalChecklist from "@/assets/guides/local-seo-checklist.jpg";
 
 export { HUB_SLUG };
 
@@ -20,7 +30,23 @@ export interface Guide extends ParsedGuide {
   printChecklist: boolean;
   /** Include HowTo structured data built from the checklist steps. */
   howTo: boolean;
+  /** Hero image shown on the article page and as the index-card thumbnail. */
+  image?: string;
 }
+
+/** Hero images, one per guide (keyed by slug). */
+const GUIDE_IMAGES: Record<string, string> = {
+  "business-not-showing-on-google": imgBusinessNotShowing,
+  "get-customers-without-google-ads": imgWithoutAds,
+  "get-business-recommended-by-chatgpt": imgRecommendedByChatgpt,
+  "google-business-profile-checklist": imgProfileChecklist,
+  "how-much-does-seo-cost": imgSeoCost,
+  "seo-vs-google-ads": imgSeoVsAds,
+  "how-to-get-more-google-reviews": imgMoreReviews,
+  "how-long-does-seo-take": imgSeoTimeline,
+  "seo-scams": imgSeoScams,
+  "local-seo-checklist": imgLocalChecklist,
+};
 
 const GUIDE_META: Record<string, { toc?: boolean; printChecklist?: boolean; howTo?: boolean }> = {
   "business-not-showing-on-google": { toc: true },
@@ -41,6 +67,7 @@ export const guides: Guide[] = parsedGuides.map((guide) => ({
   toc: GUIDE_META[guide.slug]?.toc ?? false,
   printChecklist: GUIDE_META[guide.slug]?.printChecklist ?? false,
   howTo: GUIDE_META[guide.slug]?.howTo ?? false,
+  image: GUIDE_IMAGES[guide.slug],
 }));
 
 // The hub's brief describes its role instead of listing links; it points to all 9 others.
