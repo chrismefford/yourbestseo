@@ -9,6 +9,7 @@ import { SEO, generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema
 import { getGuide, keepReadingFor, type Guide } from "@/data/guides";
 import { stripMarkdown } from "@/lib/guides-parser";
 import { Checklist, CopyCard, Inline, QuestionsCard, ResponsiveTable, Toc } from "@/components/guides/GuideParts";
+import { GuideScorecard } from "@/components/guides/GuideScorecard";
 
 const SITE_URL = "https://yourbestseo.com";
 
@@ -166,6 +167,8 @@ export default function GuideArticle({ slug }: { slug: string }) {
                     ))}
                   </div>
                 </section>
+
+                <GuideScorecard slug={guide.slug} />
 
                 <section className="no-print mt-14 rounded-3xl border-2 border-primary bg-card p-7 sm:p-10">
                   <h2 className="mb-4 font-display text-2xl font-bold tracking-normal sm:text-3xl">{guide.cta.heading}</h2>

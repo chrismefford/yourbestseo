@@ -2,6 +2,7 @@ import { describe, expect, test } from 'bun:test';
 import { readFileSync } from 'node:fs';
 import { allRoutes, generateSitemapXML } from '../src/data/routes';
 import { guides, getGuide, HUB, keepReadingFor } from '../src/data/guides';
+import { GUIDE_SCORECARDS } from '../src/data/guide-scorecards';
 
 const SLUGS = [
   'business-not-showing-on-google',
@@ -78,6 +79,22 @@ describe('guide content fidelity', () => {
     const guide = getGuide('business-not-showing-on-google')!;
     const ids = guide.blocks.filter((b) => b.kind === 'h3').map((b) => b.id);
     for (let n = 1; n <= 12; n++) expect(ids).toContain(`fix-${n}`);
+  });
+
+  test('every guide has a complete scorecard funnel with scoring that can fail', () => {
+    expect(Object.keys(GUIDE_SCORECARDS).sort()).toEqual([...SLUGS].sort());
+    for (const guide of guides) {
+      const card = GUIDE_SCORECARDS[guide.slug];
+      expect(card).toBeTruthy();
+      expect(card.questions).toHaveLength(3);
+      for (const question of card.questions) {
+        expect(question.question.length).toBeGreaterThan(0);
+        expect(question.options).toHaveLength(3);
+        expect(new Set(question.options.map((o) => o.score))).toEqual(new Set([0, 1, 2]));
+      }
+      expect(card.results).toHaveLength(4);
+      for (const result of card.results) expect(result.length).toBeGreaterThan(0);
+    }
   });
 
   test('the hub links to all 9 other guides; regular pages keep reading to 3', () => {
