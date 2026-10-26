@@ -7,16 +7,30 @@ import { Link, useNavigate } from "react-router-dom";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLearnOpen, setIsLearnOpen] = useState(false);
+  const [isGuidesOpen, setIsGuidesOpen] = useState(false);
   const learnDropdownRef = useRef<HTMLDivElement>(null);
+  const guidesDropdownRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
   const navLinks = [
     { label: "Your Growth", href: "/#growth" },
-    { label: "Guides", href: "/guides" },
     { label: "Reddit", href: "/reddit-marketing" },
     { label: "About Me", href: "/about" },
     { label: "Book a Call", href: "/book" },
     { label: "Contact", href: "/#contact" },
+  ];
+
+  const guideLinks = [
+    { name: "The DIY Local SEO Checklist", path: "/local-seo-checklist" },
+    { name: "Why Isn't My Business Showing Up on Google?", path: "/business-not-showing-on-google" },
+    { name: "Get Customers Without Paying for Google Ads", path: "/get-customers-without-google-ads" },
+    { name: "Get Recommended by ChatGPT and AI Search", path: "/get-business-recommended-by-chatgpt" },
+    { name: "Google Business Profile Checklist", path: "/google-business-profile-checklist" },
+    { name: "How Much Does SEO Cost?", path: "/how-much-does-seo-cost" },
+    { name: "SEO vs. Google Ads", path: "/seo-vs-google-ads" },
+    { name: "Get More Google Reviews", path: "/how-to-get-more-google-reviews" },
+    { name: "How Long Does SEO Take?", path: "/how-long-does-seo-take" },
+    { name: "How to Spot SEO Scams", path: "/seo-scams" },
   ];
 
   const glossaryHighlights = [
@@ -46,6 +60,9 @@ const Header = () => {
       if (learnDropdownRef.current && !learnDropdownRef.current.contains(event.target as Node)) {
         setIsLearnOpen(false);
       }
+      if (guidesDropdownRef.current && !guidesDropdownRef.current.contains(event.target as Node)) {
+        setIsGuidesOpen(false);
+      }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
@@ -64,6 +81,7 @@ const Header = () => {
 
   const closeAllDropdowns = () => {
     setIsLearnOpen(false);
+    setIsGuidesOpen(false);
   };
 
   const handleShowOffer = () => {
