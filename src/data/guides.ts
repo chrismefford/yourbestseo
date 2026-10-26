@@ -8,9 +8,9 @@
  */
 
 import { parsedGuides } from "./guides.generated";
-import type { ParsedGuide } from "@/lib/guides-parser";
+import { HUB_SLUG, type ParsedGuide } from "@/lib/guides-parser";
 
-export { HUB_SLUG } from "@/lib/guides-parser";
+export { HUB_SLUG };
 
 export interface Guide extends ParsedGuide {
   path: string;
