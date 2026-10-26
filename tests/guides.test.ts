@@ -81,6 +81,22 @@ describe('guide content fidelity', () => {
     for (let n = 1; n <= 12; n++) expect(ids).toContain(`fix-${n}`);
   });
 
+  test('every guide has a complete scorecard funnel with scoring that can fail', () => {
+    expect(Object.keys(GUIDE_SCORECARDS).sort()).toEqual([...SLUGS].sort());
+    for (const guide of guides) {
+      const card = GUIDE_SCORECARDS[guide.slug];
+      expect(card).toBeTruthy();
+      expect(card.questions).toHaveLength(3);
+      for (const question of card.questions) {
+        expect(question.question.length).toBeGreaterThan(0);
+        expect(question.options).toHaveLength(3);
+        expect(new Set(question.options.map((o) => o.score))).toEqual(new Set([0, 1, 2]));
+      }
+      expect(card.results).toHaveLength(4);
+      for (const result of card.results) expect(result.length).toBeGreaterThan(0);
+    }
+  });
+
   test('the hub links to all 9 other guides; regular pages keep reading to 3', () => {
     expect(HUB.linksTo).toHaveLength(9);
     expect(keepReadingFor(HUB)).toHaveLength(9);
