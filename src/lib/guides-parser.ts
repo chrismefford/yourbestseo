@@ -216,6 +216,7 @@ export function parseGuide(raw: string, options: GuideParseOptions): ParsedGuide
 
   const brief = new Map<string, string>();
   let cursor = briefIdx + 1;
+  while (cursor < lines.length && !lines[cursor].trim()) cursor++;
   while (cursor < lines.length && TABLE_RE.test(lines[cursor])) {
     const [key, value] = parseTableRow(lines[cursor]);
     if (key) brief.set(key, value ?? "");
