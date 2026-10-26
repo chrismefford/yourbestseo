@@ -11,6 +11,8 @@ import Services from "./pages/Services";
 import RedditMarketing from "./pages/RedditMarketing";
 import RedditAIArticle from "./pages/RedditAIArticle";
 import AISignalStack from "./pages/AISignalStack";
+import GuidesIndex from "./pages/guides/GuidesIndex";
+import GuidePage from "./pages/guides/GuidePage";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import About from "./pages/About";
 import CaseStudies from "./pages/CaseStudies";
@@ -263,6 +265,18 @@ export const routes: RouteRecord[] = [
       { path: "reddit-marketing", element: <RedditMarketing /> },
       { path: "reddit-ai-search-chatgpt-citations-small-business", element: <RedditAIArticle /> },
       { path: "ai-signal-stack-llm-visibility", element: <AISignalStack /> },
+      // Small Business Guides
+      { path: "guides", element: <GuidesIndex /> },
+      { path: "business-not-showing-on-google", element: <GuidePage slug="business-not-showing-on-google" /> },
+      { path: "get-customers-without-google-ads", element: <GuidePage slug="get-customers-without-google-ads" /> },
+      { path: "get-business-recommended-by-chatgpt", element: <GuidePage slug="get-business-recommended-by-chatgpt" /> },
+      { path: "google-business-profile-checklist", element: <GuidePage slug="google-business-profile-checklist" /> },
+      { path: "how-much-does-seo-cost", element: <GuidePage slug="how-much-does-seo-cost" /> },
+      { path: "seo-vs-google-ads", element: <GuidePage slug="seo-vs-google-ads" /> },
+      { path: "how-to-get-more-google-reviews", element: <GuidePage slug="how-to-get-more-google-reviews" /> },
+      { path: "how-long-does-seo-take", element: <GuidePage slug="how-long-does-seo-take" /> },
+      { path: "seo-scams", element: <GuidePage slug="seo-scams" /> },
+      { path: "local-seo-checklist", element: <GuidePage slug="local-seo-checklist" /> },
       { path: "pricing", element: <NotFound /> },
       { path: "about", element: <About /> },
       { path: "case-studies", element: <CaseStudies /> },
