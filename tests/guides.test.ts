@@ -2,6 +2,7 @@ import { describe, expect, test } from 'bun:test';
 import { readFileSync } from 'node:fs';
 import { allRoutes, generateSitemapXML } from '../src/data/routes';
 import { guides, getGuide, HUB, keepReadingFor } from '../src/data/guides';
+import { GUIDE_SCORECARDS } from '../src/data/guide-scorecards';
 
 const SLUGS = [
   'business-not-showing-on-google',
