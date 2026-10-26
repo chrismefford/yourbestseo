@@ -89,13 +89,6 @@ Bad reviews: stay calm, don't argue, take it offline. "I'm sorry this happened, 
 
 Future customers read your replies as much as the reviews. A gracious reply to a bad review can win you more business than a five-star review.
 
-## What not to do (Google's rules, plain English)
-
-- **Don't offer anything for reviews.** No discounts, freebies, or contest entries. Google doesn't allow incentivized reviews.
-- **Don't only ask happy customers.** Filtering who gets asked based on whether they'll leave a good review, sometimes called review gating, isn't allowed. Ask everyone.
-- **Don't write fake reviews or ask employees and family to.** It's against the rules, and it can get reviews removed or your profile flagged.
-- **Don't buy reviews.** Ever.
-
 ## Starting from almost nothing (the cold-start problem)
 
 If you have 5 reviews and your competitors have 200, don't panic — and don't try to close the gap in a week. The move is a sprint, then a habit:
@@ -106,6 +99,17 @@ If you have 5 reviews and your competitors have 200, don't panic — and don't t
 4. **Never write it for them.** "Here's what to say" crosses the line. Reminding them what you did ("the Tuesday drain repair") is fine and often enough.
 
 After the sprint, the habit takes over: every happy moment gets an ask, and the number grows on its own.
+
+## What to write back (templates that sound human)
+
+Replying to reviews is one of the few free things that clearly helps, and most businesses skip it. The bar is low: sound like a person, not a form letter.
+
+- **5-star review:** "Thank you — this made our week. Glad the [specific thing they mentioned] went smoothly. We appreciate you taking the time."
+- **4-star review:** "Thanks for the kind words — and for the honest feedback on [what they mentioned]. That's genuinely useful. If there's anything we could have done to earn that fifth star, we'd love to hear it."
+- **Negative review:** "We're sorry about your experience — that's not how we want to do business. We'd like to make it right. Please reach out to [contact] and ask for [you]."
+- **Obvious fake or spam:** report it to Google, and don't argue with it publicly. A calm, professional reply for future readers is still worth writing.
+
+Two rules for all replies: never get defensive, and remember you're writing for the *next* customer who's reading, not the reviewer.
 
 ## What to do when a review you earned never shows up
 
@@ -118,16 +122,12 @@ It happens, and it's usually not about you:
 
 One missing review is noise. The system works on volume and recency, not any single post.
 
-## What to write back (templates that sound human)
+## What not to do (Google's rules, plain English)
 
-Replying to reviews is one of the few free things that clearly helps, and most businesses skip it. The bar is low: sound like a person, not a form letter.
-
-- **5-star review:** "Thank you — this made our week. Glad the [specific thing they mentioned] went smoothly. We appreciate you taking the time."
-- **4-star review:** "Thanks for the kind words — and for the honest feedback on [what they mentioned]. That's genuinely useful. If there's anything we could have done to earn that fifth star, we'd love to hear it."
-- **Negative review:** "We're sorry about your experience — that's not how we want to do business. We'd like to make it right. Please reach out to [contact] and ask for [you]."
-- **Obvious fake or spam:** report it to Google, and don't argue with it publicly. A calm, professional reply for future readers is still worth writing.
-
-Two rules for all replies: never get defensive, and remember you're writing for the *next* customer who's reading, not the reviewer.
+- **Don't offer anything for reviews.** No discounts, freebies, or contest entries. Google doesn't allow incentivized reviews.
+- **Don't only ask happy customers.** Filtering who gets asked based on whether they'll leave a good review, sometimes called review gating, isn't allowed. Ask everyone.
+- **Don't write fake reviews or ask employees and family to.** It's against the rules, and it can get reviews removed or your profile flagged.
+- **Don't buy reviews.** Ever.
 
 ## FAQ
 

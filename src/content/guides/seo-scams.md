@@ -76,6 +76,30 @@ AI search is real, and it matters. In BrightLocal's 2026 consumer survey, 45% of
 
 **Ask:** "Show me what ChatGPT says about my business today, and what you'll change."
 
+## What a legitimate SEO provider actually does every month
+
+You can't spot a scam if you don't know what honest work looks like. A real local SEO provider's month usually contains:
+
+- **Publishing or improving content** — a new page, or a real improvement to an existing one
+- **Profile and review management** — keeping the Google Business Profile active, making sure reviews get answered
+- **Technical upkeep** — fixing problems, watching site speed and search visibility
+- **A report in plain language** — what was done, what changed, what's next
+- **A short list of things they need from you** — photos, answers, approvals
+
+Notice what's *not* on the list: secret techniques, daily "submissions" to 500 directories, or a report that's just screenshots of tools. If the monthly work can't be described in a sentence, ask why. And if a provider's work never requires anything from you, they're not working on your business — they're working on a template with your logo on it.
+
+## Stuck in a contract you regret
+
+If you're already paying someone who promised things that haven't happened, you have more options than you think:
+
+1. **Read the actual contract.** Cancellation terms, notice periods, and auto-renewal clauses are usually in there. Many contracts that "can't be canceled" have a 30-day notice window you can use.
+2. **Find out who owns what.** Whose name is the website domain in? Whose account is the Google Business Profile? Whose Google Analytics? Get the logins for anything in your name, today. If everything is in the provider's accounts, that's a problem to solve carefully, in writing.
+3. **Get your data before you leave.** Analytics history, report history, any content they created for you. Request it in writing while the relationship is still cordial.
+4. **Put it in writing.** A short email: "Per the contract, I'm giving notice as of [date]. Please confirm and transfer access to [list]." Paper trails protect you.
+5. **Don't sign the "new improved plan"** they offer when you try to cancel. That's retention, not a solution.
+
+And if you believe you were genuinely defrauded — paid for guaranteed rankings that were faked, for example — your state attorney general's office and the FTC both take consumer complaints online. Most people never file. The ones who do sometimes get results.
+
 ## The 10 questions to ask any SEO before you hire them
 
 1. Which specific searches will you target, and how many people make them?
@@ -90,30 +114,6 @@ AI search is real, and it matters. In BrightLocal's 2026 consumer survey, 45% of
 10. When should I expect to see results? (Be wary of anything faster than a few months for real growth.)
 
 Question 9 is my favorite. A good SEO will happily tell you what you can do yourself. A scammer will tell you it's too complicated.
-
-## Stuck in a contract you regret
-
-If you're already paying someone who promised things that haven't happened, you have more options than you think:
-
-1. **Read the actual contract.** Cancellation terms, notice periods, and auto-renewal clauses are usually in there. Many contracts that "can't be canceled" have a 30-day notice window you can use.
-2. **Find out who owns what.** Whose name is the website domain in? Whose account is the Google Business Profile? Whose Google Analytics? Get the logins for anything in your name, today. If everything is in the provider's accounts, that's a problem to solve carefully, in writing.
-3. **Get your data before you leave.** Analytics history, report history, any content they created for you. Request it in writing while the relationship is still cordial.
-4. **Put it in writing.** A short email: "Per the contract, I'm giving notice as of [date]. Please confirm and transfer access to [list]." Paper trails protect you.
-5. **Don't sign the "new improved plan"** they offer when you try to cancel. That's retention, not a solution.
-
-And if you believe you were genuinely defrauded — paid for guaranteed rankings that were faked, for example — your state attorney general's office and the FTC both take consumer complaints online. Most people never file. The ones who do sometimes get results.
-
-## What a legitimate SEO provider actually does every month
-
-You can't spot a scam if you don't know what honest work looks like. A real local SEO provider's month usually contains:
-
-- **Publishing or improving content** — a new page, or a real improvement to an existing one
-- **Profile and review management** — keeping the Google Business Profile active, making sure reviews get answered
-- **Technical upkeep** — fixing problems, watching site speed and search visibility
-- **A report in plain language** — what was done, what changed, what's next
-- **A short list of things they need from you** — photos, answers, approvals
-
-Notice what's *not* on the list: secret techniques, daily "submissions" to 500 directories, or a report that's just screenshots of tools. If the monthly work can't be described in a sentence, ask why. And if a provider's work never requires anything from you, they're not working on your business — they're working on a template with your logo on it.
 
 ## FAQ
 

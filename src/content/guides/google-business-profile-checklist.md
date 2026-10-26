@@ -102,14 +102,6 @@ Once your profile is right, copy those exact details to:
 - [ ] Your industry's main directories
 - [ ] Your local Chamber of Commerce
 
-## Your monthly 15-minute check
-
-- [ ] Search your business on Google Maps from your phone. Is everything right?
-- [ ] Reply to any new reviews
-- [ ] Add 2 to 3 new photos
-- [ ] Publish 2 posts
-- [ ] Update hours for any upcoming holidays
-
 ## Working from home? Read this before you publish
 
 If customers come to you (an office, a shop, a studio), your address should be visible — it helps you rank for "near me" searches.
@@ -121,6 +113,18 @@ If customers don't come to you (plumbing, house cleaning, mobile notary, lawn ca
 3. **Don't create a profile for every city you serve.** One profile with multiple service areas. Multiple profiles for one business at one address get flagged as duplicates.
 
 Getting this wrong is one of the most common causes of suspensions, and it's completely avoidable.
+
+## The suspension causes you can prevent
+
+Most suspensions come from a short list of mistakes:
+
+- **Keyword-stuffing the business name.** "Joe's Plumbing — Best Plumber San Diego 24/7" is against the rules. Use your real name, the one on your storefront and license.
+- **A virtual office or mailbox address** you don't actually operate from.
+- **Multiple profiles** for the same business at the same address.
+- **Someone else managing the profile who's also managing your competitors.** Google treats this as a conflict; you can be affected by what they do.
+- **Big sudden changes** — renaming, recategorizing, or moving the pin all at once.
+
+If you do get suspended, appeal from the profile itself and be ready to prove you're a real business at that address: a license, utility bill, or photos of signage. It usually takes a week or two. Don't create a new profile while you wait — that makes it worse.
 
 ## What your competitors' profiles tell you (10-minute exercise)
 
@@ -134,17 +138,13 @@ Find the top three businesses ranking on the map for your main service. Open eac
 
 You now have a target list. You don't need to beat them everywhere — but any category where you're at zero is a gap Google can see.
 
-## The suspension causes you can prevent
+## Your monthly 15-minute check
 
-Most suspensions come from a short list of mistakes:
-
-- **Keyword-stuffing the business name.** "Joe's Plumbing — Best Plumber San Diego 24/7" is against the rules. Use your real name, the one on your storefront and license.
-- **A virtual office or mailbox address** you don't actually operate from.
-- **Multiple profiles** for the same business at the same address.
-- **Someone else managing the profile who's also managing your competitors.** Google treats this as a conflict; you can be affected by what they do.
-- **Big sudden changes** — renaming, recategorizing, or moving the pin all at once.
-
-If you do get suspended, appeal from the profile itself and be ready to prove you're a real business at that address: a license, utility bill, or photos of signage. It usually takes a week or two. Don't create a new profile while you wait — that makes it worse.
+- [ ] Search your business on Google Maps from your phone. Is everything right?
+- [ ] Reply to any new reviews
+- [ ] Add 2 to 3 new photos
+- [ ] Publish 2 posts
+- [ ] Update hours for any upcoming holidays
 
 ## FAQ
 

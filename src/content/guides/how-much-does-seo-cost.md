@@ -81,10 +81,6 @@ I'll lose some business saying this, but here goes. SEO probably isn't your best
 - **You can't handle more customers.** Don't pay to grow a waitlist you can't serve.
 - **Your basics aren't done.** If your Google profile isn't verified and you have five reviews, start with the free stuff. Use the [Google Business Profile Checklist](/google-business-profile-checklist).
 
-## So is SEO worth it?
-
-For most local businesses that plan to be around for a while, yes. The big difference between SEO and ads is what happens when you stop paying. With ads, the calls stop. With SEO, the work keeps paying off for months or years. If you want the full comparison, read [SEO vs. Google Ads](/seo-vs-google-ads). If you want to know when to expect results, read [How Long Does SEO Take?](/how-long-does-seo-take).
-
 ## How SEO is priced (so you can compare quotes fairly)
 
 When you get three quotes and they're wildly different, it's usually because they're selling three different things:
@@ -95,6 +91,15 @@ When you get three quotes and they're wildly different, it's usually because the
 - **Performance-based.** "You pay only when you rank." It sounds attractive, but it usually means the cheapest possible tactics on keywords they know they can win — not the ones that bring your best customers. Approach with caution.
 
 The number on the invoice tells you the model, but not the value. Two $1,500/month quotes can be a great deal and a waste of money. What separates them is what's in the work.
+
+## The costs nobody puts on the quote
+
+Budget for these, because they show up whether or not your SEO provider mentions them:
+
+- **Your time.** Even with help, someone from your side has to approve content, gather photos, answer questions, and respond to reviews. Call it 2 to 4 hours a month. This is the cost most owners forget to count.
+- **Website fixes.** If your site is slow, broken on phones, or built on a platform that fights every change, part of the budget goes to repairs before growth. That's not the provider padding the bill — it's the price of the foundation.
+- **Content gathering.** Photos of real work, answers to customer questions, service details. Free to produce, but it takes someone's hours.
+- **Tools and tracking.** Usually built into a good retainer, but if you're doing it yourself, Search Console is free, and most of what a small business needs can be done with free tools.
 
 ## How to compare two quotes without getting fooled
 
@@ -107,14 +112,9 @@ Ask every provider these four questions, and compare the *answers*, not the pric
 
 If a provider can answer those four clearly, the price is a real number. If they can't, the price is a guess no matter how low it is.
 
-## The costs nobody puts on the quote
+## So is SEO worth it?
 
-Budget for these, because they show up whether or not your SEO provider mentions them:
-
-- **Your time.** Even with help, someone from your side has to approve content, gather photos, answer questions, and respond to reviews. Call it 2 to 4 hours a month. This is the cost most owners forget to count.
-- **Website fixes.** If your site is slow, broken on phones, or built on a platform that fights every change, part of the budget goes to repairs before growth. That's not the provider padding the bill — it's the price of the foundation.
-- **Content gathering.** Photos of real work, answers to customer questions, service details. Free to produce, but it takes someone's hours.
-- **Tools and tracking.** Usually built into a good retainer, but if you're doing it yourself, Search Console is free, and most of what a small business needs can be done with free tools.
+For most local businesses that plan to be around for a while, yes. The big difference between SEO and ads is what happens when you stop paying. With ads, the calls stop. With SEO, the work keeps paying off for months or years. If you want the full comparison, read [SEO vs. Google Ads](/seo-vs-google-ads). If you want to know when to expect results, read [How Long Does SEO Take?](/how-long-does-seo-take).
 
 ## FAQ
 

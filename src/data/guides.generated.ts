@@ -203,27 +203,6 @@ export const parsedGuides: ParsedGuide[] = [
       },
       {
         "kind": "h2",
-        "id": "what-id-do-this-week",
-        "text": "What I'd do this week"
-      },
-      {
-        "kind": "p",
-        "text": "If you only have an hour:"
-      },
-      {
-        "kind": "ol",
-        "items": [
-          "Search your business on Google Maps from your phone.",
-          "Log in to your Google Business Profile and fix anything wrong: verification, category, hours, phone, website link.",
-          "Text five happy customers and ask for a review."
-        ]
-      },
-      {
-        "kind": "p",
-        "text": "That's it. Do those three things and you'll be ahead of most of your competitors. For the full list, grab the [Google Business Profile Checklist](/google-business-profile-checklist)."
-      },
-      {
-        "kind": "h2",
         "id": "why-you-show-in-google-search-but-not-on-maps-and-vice-versa",
         "text": "Why you show in Google search but not on Maps (and vice versa)"
       },
@@ -242,21 +221,6 @@ export const parsedGuides: ParsedGuide[] = [
       {
         "kind": "p",
         "text": "Knowing which of the three you are tells you where to start. Most owners jump straight to the website when the real problem is the profile."
-      },
-      {
-        "kind": "h2",
-        "id": "what-not-to-do-when-youre-invisible",
-        "text": "What not to do when you're invisible"
-      },
-      {
-        "kind": "ul",
-        "items": [
-          "**Don't create a second profile.** Duplicates split your reviews and can get both suspended.",
-          "**Don't buy reviews or review services.** Google removes them, and sudden fake review spikes are one of the fastest ways to get suspended.",
-          "**Don't keyword-stuff your business name** (\"Joe's Plumbing Best Plumber San Diego\"). It violates Google's guidelines and can get the profile suspended or renamed.",
-          "**Don't panic-edit everything at once.** Batch changes look suspicious. Fix one thing, wait, observe.",
-          "**Don't hire anyone who promises a specific ranking date.** Nobody can promise that. If they do, that's your answer about whether to trust them."
-        ]
       },
       {
         "kind": "h2",
@@ -279,6 +243,42 @@ export const parsedGuides: ParsedGuide[] = [
       {
         "kind": "p",
         "text": "If it's still missing after all four, work through the 12 fixes in order. The order matters: the first five are quick and fix the most common causes."
+      },
+      {
+        "kind": "h2",
+        "id": "what-not-to-do-when-youre-invisible",
+        "text": "What not to do when you're invisible"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "**Don't create a second profile.** Duplicates split your reviews and can get both suspended.",
+          "**Don't buy reviews or review services.** Google removes them, and sudden fake review spikes are one of the fastest ways to get suspended.",
+          "**Don't keyword-stuff your business name** (\"Joe's Plumbing Best Plumber San Diego\"). It violates Google's guidelines and can get the profile suspended or renamed.",
+          "**Don't panic-edit everything at once.** Batch changes look suspicious. Fix one thing, wait, observe.",
+          "**Don't hire anyone who promises a specific ranking date.** Nobody can promise that. If they do, that's your answer about whether to trust them."
+        ]
+      },
+      {
+        "kind": "h2",
+        "id": "what-id-do-this-week",
+        "text": "What I'd do this week"
+      },
+      {
+        "kind": "p",
+        "text": "If you only have an hour:"
+      },
+      {
+        "kind": "ol",
+        "items": [
+          "Search your business on Google Maps from your phone.",
+          "Log in to your Google Business Profile and fix anything wrong: verification, category, hours, phone, website link.",
+          "Text five happy customers and ask for a review."
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "That's it. Do those three things and you'll be ahead of most of your competitors. For the full list, grab the [Google Business Profile Checklist](/google-business-profile-checklist)."
       }
     ],
     "faqs": [
@@ -496,19 +496,6 @@ export const parsedGuides: ParsedGuide[] = [
       },
       {
         "kind": "h2",
-        "id": "what-not-to-do",
-        "text": "What not to do"
-      },
-      {
-        "kind": "ul",
-        "items": [
-          "**Don't buy fake reviews.** It breaks the rules, and AI tools are getting better at spotting patterns.",
-          "**Don't stuff keywords into everything.** \"Best dentist Carlsbad dentist near me\" reads like a robot wrote it, because a robot will read it and not be impressed.",
-          "**Don't chase every new AI tool.** The fundamentals work across all of them."
-        ]
-      },
-      {
-        "kind": "h2",
         "id": "the-exact-prompts-to-run-on-yourself",
         "text": "The exact prompts to run on yourself"
       },
@@ -529,6 +516,26 @@ export const parsedGuides: ParsedGuide[] = [
       {
         "kind": "p",
         "text": "The last one is the one most owners never think to try, and it's the most revealing. If the AI doesn't know your business by name, it will rarely suggest it by category."
+      },
+      {
+        "kind": "h2",
+        "id": "what-ai-tools-actually-do-with-your-website-plain-english",
+        "text": "What AI tools actually do with your website (plain English)"
+      },
+      {
+        "kind": "p",
+        "text": "There are two ways AI tools learn about you, and both matter:"
+      },
+      {
+        "kind": "ol",
+        "items": [
+          "**Training data.** The models were trained on years of the web, including review sites, directories, and articles. This is why consistency across the internet matters so much — years of matching information is a strong signal.",
+          "**Live lookups.** Most modern AI tools can search the web when someone asks a fresh question. When they do, they're looking at your website, your Google Business Profile, your reviews, and what other sites say about you — right then."
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "You don't need a special file or a secret technique to be \"AI-friendly.\" You need the same things that make you trustworthy to a human: a clear website, real reviews that say something, consistent listings, and mentions in places people actually discuss your industry."
       },
       {
         "kind": "h2",
@@ -555,23 +562,16 @@ export const parsedGuides: ParsedGuide[] = [
       },
       {
         "kind": "h2",
-        "id": "what-ai-tools-actually-do-with-your-website-plain-english",
-        "text": "What AI tools actually do with your website (plain English)"
+        "id": "what-not-to-do",
+        "text": "What not to do"
       },
       {
-        "kind": "p",
-        "text": "There are two ways AI tools learn about you, and both matter:"
-      },
-      {
-        "kind": "ol",
+        "kind": "ul",
         "items": [
-          "**Training data.** The models were trained on years of the web, including review sites, directories, and articles. This is why consistency across the internet matters so much — years of matching information is a strong signal.",
-          "**Live lookups.** Most modern AI tools can search the web when someone asks a fresh question. When they do, they're looking at your website, your Google Business Profile, your reviews, and what other sites say about you — right then."
+          "**Don't buy fake reviews.** It breaks the rules, and AI tools are getting better at spotting patterns.",
+          "**Don't stuff keywords into everything.** \"Best dentist Carlsbad dentist near me\" reads like a robot wrote it, because a robot will read it and not be impressed.",
+          "**Don't chase every new AI tool.** The fundamentals work across all of them."
         ]
-      },
-      {
-        "kind": "p",
-        "text": "You don't need a special file or a secret technique to be \"AI-friendly.\" You need the same things that make you trustworthy to a human: a clear website, real reviews that say something, consistent listings, and mentions in places people actually discuss your industry."
       }
     ],
     "faqs": [
@@ -811,27 +811,6 @@ export const parsedGuides: ParsedGuide[] = [
       },
       {
         "kind": "h2",
-        "id": "a-realistic-plan-for-the-next-90-days",
-        "text": "A realistic plan for the next 90 days"
-      },
-      {
-        "kind": "p",
-        "text": "**Month 1:** Fix your Google Business Profile. Start asking every happy customer for a review. Make sure your info matches everywhere."
-      },
-      {
-        "kind": "p",
-        "text": "**Month 2:** Write three pages answering your most-asked customer questions. Get listed on five more directories."
-      },
-      {
-        "kind": "p",
-        "text": "**Month 3:** Check where your calls are coming from. If organic calls are climbing, trim your ad budget by 10 to 20% and watch what happens."
-      },
-      {
-        "kind": "p",
-        "text": "Then repeat. Slowly, the balance shifts from rented to owned."
-      },
-      {
-        "kind": "h2",
         "id": "how-to-know-when-you-can-cut-ads-without-gambling",
         "text": "How to know when you can cut ads (without gambling)"
       },
@@ -851,6 +830,27 @@ export const parsedGuides: ParsedGuide[] = [
       {
         "kind": "p",
         "text": "The businesses that get hurt by ads are the ones that cancel on a bad month and sign back up on a good one. The businesses that win treat it as a dial, not a switch."
+      },
+      {
+        "kind": "h2",
+        "id": "the-cheapest-customer-youll-ever-get",
+        "text": "The cheapest customer you'll ever get"
+      },
+      {
+        "kind": "p",
+        "text": "Before chasing new customers, look at the ones you already have. The numbers here are almost always better:"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "**Repeat customers.** For restaurants, salons, and anything maintenance-related, the second visit costs nothing to get. A simple reminder text or email at the right interval does more than any ad.",
+          "**Referrals.** A happy customer who tells one neighbor is worth more than a click you paid for. Ask directly, at the happy moment: \"If you know anyone else who needs this, send them my way.\"",
+          "**Your own list.** An email or text list is the only audience you own outright. No algorithm, no bidding, no platform can take it away. Start collecting it even if you only send something four times a year."
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "Most local businesses I look at are sitting on more revenue in their existing customer base than they could buy with a year of ads."
       },
       {
         "kind": "h2",
@@ -896,24 +896,24 @@ export const parsedGuides: ParsedGuide[] = [
       },
       {
         "kind": "h2",
-        "id": "the-cheapest-customer-youll-ever-get",
-        "text": "The cheapest customer you'll ever get"
+        "id": "a-realistic-plan-for-the-next-90-days",
+        "text": "A realistic plan for the next 90 days"
       },
       {
         "kind": "p",
-        "text": "Before chasing new customers, look at the ones you already have. The numbers here are almost always better:"
-      },
-      {
-        "kind": "ul",
-        "items": [
-          "**Repeat customers.** For restaurants, salons, and anything maintenance-related, the second visit costs nothing to get. A simple reminder text or email at the right interval does more than any ad.",
-          "**Referrals.** A happy customer who tells one neighbor is worth more than a click you paid for. Ask directly, at the happy moment: \"If you know anyone else who needs this, send them my way.\"",
-          "**Your own list.** An email or text list is the only audience you own outright. No algorithm, no bidding, no platform can take it away. Start collecting it even if you only send something four times a year."
-        ]
+        "text": "**Month 1:** Fix your Google Business Profile. Start asking every happy customer for a review. Make sure your info matches everywhere."
       },
       {
         "kind": "p",
-        "text": "Most local businesses I look at are sitting on more revenue in their existing customer base than they could buy with a year of ads."
+        "text": "**Month 2:** Write three pages answering your most-asked customer questions. Get listed on five more directories."
+      },
+      {
+        "kind": "p",
+        "text": "**Month 3:** Check where your calls are coming from. If organic calls are climbing, trim your ad budget by 10 to 20% and watch what happens."
+      },
+      {
+        "kind": "p",
+        "text": "Then repeat. Slowly, the balance shifts from rented to owned."
       }
     ],
     "faqs": [
@@ -1141,21 +1141,6 @@ export const parsedGuides: ParsedGuide[] = [
       },
       {
         "kind": "h2",
-        "id": "your-monthly-15-minute-check",
-        "text": "Your monthly 15-minute check"
-      },
-      {
-        "kind": "checklist",
-        "items": [
-          "Search your business on Google Maps from your phone. Is everything right?",
-          "Reply to any new reviews",
-          "Add 2 to 3 new photos",
-          "Publish 2 posts",
-          "Update hours for any upcoming holidays"
-        ]
-      },
-      {
-        "kind": "h2",
         "id": "working-from-home-read-this-before-you-publish",
         "text": "Working from home? Read this before you publish"
       },
@@ -1178,6 +1163,29 @@ export const parsedGuides: ParsedGuide[] = [
       {
         "kind": "p",
         "text": "Getting this wrong is one of the most common causes of suspensions, and it's completely avoidable."
+      },
+      {
+        "kind": "h2",
+        "id": "the-suspension-causes-you-can-prevent",
+        "text": "The suspension causes you can prevent"
+      },
+      {
+        "kind": "p",
+        "text": "Most suspensions come from a short list of mistakes:"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "**Keyword-stuffing the business name.** \"Joe's Plumbing — Best Plumber San Diego 24/7\" is against the rules. Use your real name, the one on your storefront and license.",
+          "**A virtual office or mailbox address** you don't actually operate from.",
+          "**Multiple profiles** for the same business at the same address.",
+          "**Someone else managing the profile who's also managing your competitors.** Google treats this as a conflict; you can be affected by what they do.",
+          "**Big sudden changes** — renaming, recategorizing, or moving the pin all at once."
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "If you do get suspended, appeal from the profile itself and be ready to prove you're a real business at that address: a license, utility bill, or photos of signage. It usually takes a week or two. Don't create a new profile while you wait — that makes it worse."
       },
       {
         "kind": "h2",
@@ -1204,26 +1212,18 @@ export const parsedGuides: ParsedGuide[] = [
       },
       {
         "kind": "h2",
-        "id": "the-suspension-causes-you-can-prevent",
-        "text": "The suspension causes you can prevent"
+        "id": "your-monthly-15-minute-check",
+        "text": "Your monthly 15-minute check"
       },
       {
-        "kind": "p",
-        "text": "Most suspensions come from a short list of mistakes:"
-      },
-      {
-        "kind": "ul",
+        "kind": "checklist",
         "items": [
-          "**Keyword-stuffing the business name.** \"Joe's Plumbing — Best Plumber San Diego 24/7\" is against the rules. Use your real name, the one on your storefront and license.",
-          "**A virtual office or mailbox address** you don't actually operate from.",
-          "**Multiple profiles** for the same business at the same address.",
-          "**Someone else managing the profile who's also managing your competitors.** Google treats this as a conflict; you can be affected by what they do.",
-          "**Big sudden changes** — renaming, recategorizing, or moving the pin all at once."
+          "Search your business on Google Maps from your phone. Is everything right?",
+          "Reply to any new reviews",
+          "Add 2 to 3 new photos",
+          "Publish 2 posts",
+          "Update hours for any upcoming holidays"
         ]
-      },
-      {
-        "kind": "p",
-        "text": "If you do get suspended, appeal from the profile itself and be ready to prove you're a real business at that address: a license, utility bill, or photos of signage. It usually takes a week or two. Don't create a new profile while you wait — that makes it worse."
       }
     ],
     "faqs": [
@@ -1437,19 +1437,6 @@ export const parsedGuides: ParsedGuide[] = [
       },
       {
         "kind": "h2",
-        "id": "how-to-get-results-while-you-wait",
-        "text": "How to get results while you wait"
-      },
-      {
-        "kind": "ul",
-        "items": [
-          "**Fix your Google Business Profile today.** It's the fastest free win. [Use the checklist](/google-business-profile-checklist).",
-          "**Start asking for reviews this week.** [Here's how](/how-to-get-more-google-reviews).",
-          "**Use ads strategically** to fill the gap, then scale them down as organic grows. See [SEO vs. Google Ads](/seo-vs-google-ads)."
-        ]
-      },
-      {
-        "kind": "h2",
         "id": "month-one-the-quiet-month-and-why-most-owners-quit-here",
         "text": "Month one: the quiet month (and why most owners quit here)"
       },
@@ -1476,6 +1463,24 @@ export const parsedGuides: ParsedGuide[] = [
       },
       {
         "kind": "h2",
+        "id": "why-some-businesses-see-movement-in-30-days-and-others-wait-a-year",
+        "text": "Why some businesses see movement in 30 days and others wait a year"
+      },
+      {
+        "kind": "p",
+        "text": "The timeline isn't random. It's mostly four things:"
+      },
+      {
+        "kind": "ol",
+        "items": [
+          "**Where you're starting from.** A site that's been around for ten years with decent content moves faster than a two-month-old site. If your site already ranks on page 3 for what you want, you're pushing on an open door.",
+          "**How competitive your market is.** \"Plumber in a town of 5,000\" and \"personal injury lawyer in Los Angeles\" are not the same fight. The same work can show results in weeks in one and take a year in the other.",
+          "**How much is done at once.** A steady 10 hours a week beats a heroic 40-hour weekend once a quarter. Google responds to consistency.",
+          "**Whether the basics were ever done.** Businesses with a complete profile and a review habit from day one skip months of the first phase entirely."
+        ]
+      },
+      {
+        "kind": "h2",
         "id": "how-to-check-progress-before-the-calls-come-in",
         "text": "How to check progress before the calls come in"
       },
@@ -1498,20 +1503,15 @@ export const parsedGuides: ParsedGuide[] = [
       },
       {
         "kind": "h2",
-        "id": "why-some-businesses-see-movement-in-30-days-and-others-wait-a-year",
-        "text": "Why some businesses see movement in 30 days and others wait a year"
+        "id": "how-to-get-results-while-you-wait",
+        "text": "How to get results while you wait"
       },
       {
-        "kind": "p",
-        "text": "The timeline isn't random. It's mostly four things:"
-      },
-      {
-        "kind": "ol",
+        "kind": "ul",
         "items": [
-          "**Where you're starting from.** A site that's been around for ten years with decent content moves faster than a two-month-old site. If your site already ranks on page 3 for what you want, you're pushing on an open door.",
-          "**How competitive your market is.** \"Plumber in a town of 5,000\" and \"personal injury lawyer in Los Angeles\" are not the same fight. The same work can show results in weeks in one and take a year in the other.",
-          "**How much is done at once.** A steady 10 hours a week beats a heroic 40-hour weekend once a quarter. Google responds to consistency.",
-          "**Whether the basics were ever done.** Businesses with a complete profile and a review habit from day one skip months of the first phase entirely."
+          "**Fix your Google Business Profile today.** It's the fastest free win. [Use the checklist](/google-business-profile-checklist).",
+          "**Start asking for reviews this week.** [Here's how](/how-to-get-more-google-reviews).",
+          "**Use ads strategically** to fill the gap, then scale them down as organic grows. See [SEO vs. Google Ads](/seo-vs-google-ads)."
         ]
       }
     ],
@@ -1705,15 +1705,6 @@ export const parsedGuides: ParsedGuide[] = [
       },
       {
         "kind": "h2",
-        "id": "so-is-seo-worth-it",
-        "text": "So is SEO worth it?"
-      },
-      {
-        "kind": "p",
-        "text": "For most local businesses that plan to be around for a while, yes. The big difference between SEO and ads is what happens when you stop paying. With ads, the calls stop. With SEO, the work keeps paying off for months or years. If you want the full comparison, read [SEO vs. Google Ads](/seo-vs-google-ads). If you want to know when to expect results, read [How Long Does SEO Take?](/how-long-does-seo-take)."
-      },
-      {
-        "kind": "h2",
         "id": "how-seo-is-priced-so-you-can-compare-quotes-fairly",
         "text": "How SEO is priced (so you can compare quotes fairly)"
       },
@@ -1733,6 +1724,24 @@ export const parsedGuides: ParsedGuide[] = [
       {
         "kind": "p",
         "text": "The number on the invoice tells you the model, but not the value. Two $1,500/month quotes can be a great deal and a waste of money. What separates them is what's in the work."
+      },
+      {
+        "kind": "h2",
+        "id": "the-costs-nobody-puts-on-the-quote",
+        "text": "The costs nobody puts on the quote"
+      },
+      {
+        "kind": "p",
+        "text": "Budget for these, because they show up whether or not your SEO provider mentions them:"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "**Your time.** Even with help, someone from your side has to approve content, gather photos, answer questions, and respond to reviews. Call it 2 to 4 hours a month. This is the cost most owners forget to count.",
+          "**Website fixes.** If your site is slow, broken on phones, or built on a platform that fights every change, part of the budget goes to repairs before growth. That's not the provider padding the bill — it's the price of the foundation.",
+          "**Content gathering.** Photos of real work, answers to customer questions, service details. Free to produce, but it takes someone's hours.",
+          "**Tools and tracking.** Usually built into a good retainer, but if you're doing it yourself, Search Console is free, and most of what a small business needs can be done with free tools."
+        ]
       },
       {
         "kind": "h2",
@@ -1758,21 +1767,12 @@ export const parsedGuides: ParsedGuide[] = [
       },
       {
         "kind": "h2",
-        "id": "the-costs-nobody-puts-on-the-quote",
-        "text": "The costs nobody puts on the quote"
+        "id": "so-is-seo-worth-it",
+        "text": "So is SEO worth it?"
       },
       {
         "kind": "p",
-        "text": "Budget for these, because they show up whether or not your SEO provider mentions them:"
-      },
-      {
-        "kind": "ul",
-        "items": [
-          "**Your time.** Even with help, someone from your side has to approve content, gather photos, answer questions, and respond to reviews. Call it 2 to 4 hours a month. This is the cost most owners forget to count.",
-          "**Website fixes.** If your site is slow, broken on phones, or built on a platform that fights every change, part of the budget goes to repairs before growth. That's not the provider padding the bill — it's the price of the foundation.",
-          "**Content gathering.** Photos of real work, answers to customer questions, service details. Free to produce, but it takes someone's hours.",
-          "**Tools and tracking.** Usually built into a good retainer, but if you're doing it yourself, Search Console is free, and most of what a small business needs can be done with free tools."
-        ]
+        "text": "For most local businesses that plan to be around for a while, yes. The big difference between SEO and ads is what happens when you stop paying. With ads, the calls stop. With SEO, the work keeps paying off for months or years. If you want the full comparison, read [SEO vs. Google Ads](/seo-vs-google-ads). If you want to know when to expect results, read [How Long Does SEO Take?](/how-long-does-seo-take)."
       }
     ],
     "faqs": [
@@ -1990,20 +1990,6 @@ export const parsedGuides: ParsedGuide[] = [
       },
       {
         "kind": "h2",
-        "id": "what-not-to-do-googles-rules-plain-english",
-        "text": "What not to do (Google's rules, plain English)"
-      },
-      {
-        "kind": "ul",
-        "items": [
-          "**Don't offer anything for reviews.** No discounts, freebies, or contest entries. Google doesn't allow incentivized reviews.",
-          "**Don't only ask happy customers.** Filtering who gets asked based on whether they'll leave a good review, sometimes called review gating, isn't allowed. Ask everyone.",
-          "**Don't write fake reviews or ask employees and family to.** It's against the rules, and it can get reviews removed or your profile flagged.",
-          "**Don't buy reviews.** Ever."
-        ]
-      },
-      {
-        "kind": "h2",
         "id": "starting-from-almost-nothing-the-cold-start-problem",
         "text": "Starting from almost nothing (the cold-start problem)"
       },
@@ -2023,6 +2009,28 @@ export const parsedGuides: ParsedGuide[] = [
       {
         "kind": "p",
         "text": "After the sprint, the habit takes over: every happy moment gets an ask, and the number grows on its own."
+      },
+      {
+        "kind": "h2",
+        "id": "what-to-write-back-templates-that-sound-human",
+        "text": "What to write back (templates that sound human)"
+      },
+      {
+        "kind": "p",
+        "text": "Replying to reviews is one of the few free things that clearly helps, and most businesses skip it. The bar is low: sound like a person, not a form letter."
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "**5-star review:** \"Thank you — this made our week. Glad the [specific thing they mentioned] went smoothly. We appreciate you taking the time.\"",
+          "**4-star review:** \"Thanks for the kind words — and for the honest feedback on [what they mentioned]. That's genuinely useful. If there's anything we could have done to earn that fifth star, we'd love to hear it.\"",
+          "**Negative review:** \"We're sorry about your experience — that's not how we want to do business. We'd like to make it right. Please reach out to [contact] and ask for [you].\"",
+          "**Obvious fake or spam:** report it to Google, and don't argue with it publicly. A calm, professional reply for future readers is still worth writing."
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "Two rules for all replies: never get defensive, and remember you're writing for the *next* customer who's reading, not the reviewer."
       },
       {
         "kind": "h2",
@@ -2048,25 +2056,17 @@ export const parsedGuides: ParsedGuide[] = [
       },
       {
         "kind": "h2",
-        "id": "what-to-write-back-templates-that-sound-human",
-        "text": "What to write back (templates that sound human)"
-      },
-      {
-        "kind": "p",
-        "text": "Replying to reviews is one of the few free things that clearly helps, and most businesses skip it. The bar is low: sound like a person, not a form letter."
+        "id": "what-not-to-do-googles-rules-plain-english",
+        "text": "What not to do (Google's rules, plain English)"
       },
       {
         "kind": "ul",
         "items": [
-          "**5-star review:** \"Thank you — this made our week. Glad the [specific thing they mentioned] went smoothly. We appreciate you taking the time.\"",
-          "**4-star review:** \"Thanks for the kind words — and for the honest feedback on [what they mentioned]. That's genuinely useful. If there's anything we could have done to earn that fifth star, we'd love to hear it.\"",
-          "**Negative review:** \"We're sorry about your experience — that's not how we want to do business. We'd like to make it right. Please reach out to [contact] and ask for [you].\"",
-          "**Obvious fake or spam:** report it to Google, and don't argue with it publicly. A calm, professional reply for future readers is still worth writing."
+          "**Don't offer anything for reviews.** No discounts, freebies, or contest entries. Google doesn't allow incentivized reviews.",
+          "**Don't only ask happy customers.** Filtering who gets asked based on whether they'll leave a good review, sometimes called review gating, isn't allowed. Ask everyone.",
+          "**Don't write fake reviews or ask employees and family to.** It's against the rules, and it can get reviews removed or your profile flagged.",
+          "**Don't buy reviews.** Ever."
         ]
-      },
-      {
-        "kind": "p",
-        "text": "Two rules for all replies: never get defensive, and remember you're writing for the *next* customer who's reading, not the reviewer."
       }
     ],
     "faqs": [
@@ -2274,59 +2274,6 @@ export const parsedGuides: ParsedGuide[] = [
       },
       {
         "kind": "h2",
-        "id": "when-to-stop-diying",
-        "text": "When to stop DIYing"
-      },
-      {
-        "kind": "p",
-        "text": "Doing it yourself works great for a lot of businesses. It might be time to get help if:"
-      },
-      {
-        "kind": "ul",
-        "items": [
-          "You've done this whole list and still aren't showing up after 3 to 4 months",
-          "Your Google profile is suspended and you can't get it back",
-          "You're in a very competitive market, like law, dental, or home services in a big city",
-          "Your time is worth more running the business than learning SEO"
-        ]
-      },
-      {
-        "kind": "p",
-        "text": "Wondering what help costs? [How Much Does SEO Cost for a Small Business?](/how-much-does-seo-cost) Wondering how long it'll take? [How Long Does SEO Take?](/how-long-does-seo-take) Worried about getting burned? [9 SEO Scams Small Businesses Fall For](/seo-scams)."
-      },
-      {
-        "kind": "h2",
-        "id": "still-paying-for-every-click",
-        "text": "Still paying for every click?"
-      },
-      {
-        "kind": "p",
-        "text": "If ads are eating your budget, read [How to Get Customers Without Paying for Google Ads](/get-customers-without-google-ads) and [SEO vs. Google Ads](/seo-vs-google-ads). This checklist is step one of needing ads less."
-      },
-      {
-        "kind": "h2",
-        "id": "how-to-tell-its-working-the-four-numbers",
-        "text": "How to tell it's working (the four numbers)"
-      },
-      {
-        "kind": "p",
-        "text": "You don't need a dashboard. Track these four once a month, on paper:"
-      },
-      {
-        "kind": "ol",
-        "items": [
-          "**Google Business Profile views and calls.** In your profile's performance tab. Climbing numbers mean the map work is landing.",
-          "**Search Console impressions.** Rising impressions mean Google is matching your pages to more searches — clicks follow later.",
-          "**Review count and newest review date.** If the newest review is more than a few weeks old, the habit has slipped.",
-          "**The one search that pays.** Pick your most valuable \"service + city\" search and check it the same way each time."
-        ]
-      },
-      {
-        "kind": "p",
-        "text": "Write the four numbers down on the first of every month. Two months of movement in the right direction is the signal that your effort is compounding. Flat numbers mean something in the checklist got missed — usually the review habit."
-      },
-      {
-        "kind": "h2",
         "id": "part-8-your-first-90-days-after-the-checklist",
         "text": "Part 8: Your first 90 days after the checklist"
       },
@@ -2373,6 +2320,50 @@ export const parsedGuides: ParsedGuide[] = [
       {
         "kind": "p",
         "text": "After 90 days, this becomes the 15-minute monthly routine from Part 7. The businesses that win at local search aren't the ones who did something brilliant once — they're the ones who did something small every week while their competitors were busy."
+      },
+      {
+        "kind": "h2",
+        "id": "how-to-tell-its-working-the-four-numbers",
+        "text": "How to tell it's working (the four numbers)"
+      },
+      {
+        "kind": "p",
+        "text": "You don't need a dashboard. Track these four once a month, on paper:"
+      },
+      {
+        "kind": "ol",
+        "items": [
+          "**Google Business Profile views and calls.** In your profile's performance tab. Climbing numbers mean the map work is landing.",
+          "**Search Console impressions.** Rising impressions mean Google is matching your pages to more searches — clicks follow later.",
+          "**Review count and newest review date.** If the newest review is more than a few weeks old, the habit has slipped.",
+          "**The one search that pays.** Pick your most valuable \"service + city\" search and check it the same way each time."
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "Write the four numbers down on the first of every month. Two months of movement in the right direction is the signal that your effort is compounding. Flat numbers mean something in the checklist got missed — usually the review habit."
+      },
+      {
+        "kind": "h2",
+        "id": "when-to-stop-diying",
+        "text": "When to stop DIYing"
+      },
+      {
+        "kind": "p",
+        "text": "Doing it yourself works great for a lot of businesses. It might be time to get help if:"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "You've done this whole list and still aren't showing up after 3 to 4 months",
+          "Your Google profile is suspended and you can't get it back",
+          "You're in a very competitive market, like law, dental, or home services in a big city",
+          "Your time is worth more running the business than learning SEO"
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "Wondering what help costs? [How Much Does SEO Cost for a Small Business?](/how-much-does-seo-cost) Wondering how long it'll take? [How Long Does SEO Take?](/how-long-does-seo-take) Worried about getting burned? [9 SEO Scams Small Businesses Fall For](/seo-scams)."
       }
     ],
     "faqs": [
@@ -2562,27 +2553,26 @@ export const parsedGuides: ParsedGuide[] = [
       },
       {
         "kind": "h2",
-        "id": "the-10-questions-to-ask-any-seo-before-you-hire-them",
-        "text": "The 10 questions to ask any SEO before you hire them"
+        "id": "what-a-legitimate-seo-provider-actually-does-every-month",
+        "text": "What a legitimate SEO provider actually does every month"
       },
       {
-        "kind": "ol",
+        "kind": "p",
+        "text": "You can't spot a scam if you don't know what honest work looks like. A real local SEO provider's month usually contains:"
+      },
+      {
+        "kind": "ul",
         "items": [
-          "Which specific searches will you target, and how many people make them?",
-          "Will I own every account?",
-          "What will you do in the first 90 days?",
-          "How will you report results? What counts as success?",
-          "How do you get links and reviews?",
-          "Can I see work you've done for businesses like mine?",
-          "Can I talk to two current clients?",
-          "What's the contract length, and how do I cancel?",
-          "What can I do myself to save money?",
-          "When should I expect to see results? (Be wary of anything faster than a few months for real growth.)"
+          "**Publishing or improving content** — a new page, or a real improvement to an existing one",
+          "**Profile and review management** — keeping the Google Business Profile active, making sure reviews get answered",
+          "**Technical upkeep** — fixing problems, watching site speed and search visibility",
+          "**A report in plain language** — what was done, what changed, what's next",
+          "**A short list of things they need from you** — photos, answers, approvals"
         ]
       },
       {
         "kind": "p",
-        "text": "Question 9 is my favorite. A good SEO will happily tell you what you can do yourself. A scammer will tell you it's too complicated."
+        "text": "Notice what's *not* on the list: secret techniques, daily \"submissions\" to 500 directories, or a report that's just screenshots of tools. If the monthly work can't be described in a sentence, ask why. And if a provider's work never requires anything from you, they're not working on your business — they're working on a template with your logo on it."
       },
       {
         "kind": "h2",
@@ -2609,26 +2599,27 @@ export const parsedGuides: ParsedGuide[] = [
       },
       {
         "kind": "h2",
-        "id": "what-a-legitimate-seo-provider-actually-does-every-month",
-        "text": "What a legitimate SEO provider actually does every month"
+        "id": "the-10-questions-to-ask-any-seo-before-you-hire-them",
+        "text": "The 10 questions to ask any SEO before you hire them"
       },
       {
-        "kind": "p",
-        "text": "You can't spot a scam if you don't know what honest work looks like. A real local SEO provider's month usually contains:"
-      },
-      {
-        "kind": "ul",
+        "kind": "ol",
         "items": [
-          "**Publishing or improving content** — a new page, or a real improvement to an existing one",
-          "**Profile and review management** — keeping the Google Business Profile active, making sure reviews get answered",
-          "**Technical upkeep** — fixing problems, watching site speed and search visibility",
-          "**A report in plain language** — what was done, what changed, what's next",
-          "**A short list of things they need from you** — photos, answers, approvals"
+          "Which specific searches will you target, and how many people make them?",
+          "Will I own every account?",
+          "What will you do in the first 90 days?",
+          "How will you report results? What counts as success?",
+          "How do you get links and reviews?",
+          "Can I see work you've done for businesses like mine?",
+          "Can I talk to two current clients?",
+          "What's the contract length, and how do I cancel?",
+          "What can I do myself to save money?",
+          "When should I expect to see results? (Be wary of anything faster than a few months for real growth.)"
         ]
       },
       {
         "kind": "p",
-        "text": "Notice what's *not* on the list: secret techniques, daily \"submissions\" to 500 directories, or a report that's just screenshots of tools. If the monthly work can't be described in a sentence, ask why. And if a provider's work never requires anything from you, they're not working on your business — they're working on a template with your logo on it."
+        "text": "Question 9 is my favorite. A good SEO will happily tell you what you can do yourself. A scammer will tell you it's too complicated."
       }
     ],
     "faqs": [
@@ -2799,21 +2790,23 @@ export const parsedGuides: ParsedGuide[] = [
       },
       {
         "kind": "h2",
-        "id": "questions-to-ask-yourself",
-        "text": "Questions to ask yourself"
+        "id": "the-real-cost-of-a-click-vs-the-real-cost-of-content",
+        "text": "The real cost of a click vs. the real cost of content"
+      },
+      {
+        "kind": "p",
+        "text": "Run the math on your own business. Using the industry averages from the table above — about $5.42 per click and $66.69 per lead — say you want ten new customer inquiries a month from search:"
       },
       {
         "kind": "ul",
         "items": [
-          "If I turned off ads tomorrow, how many calls would I lose?",
-          "What am I paying per customer from ads right now, not per click?",
-          "How many of my customers say they found me on Google, but not through an ad?",
-          "Do I need customers in the next 30 days, or am I building for next year?"
+          "**With ads:** roughly $670/month in ad spend, every month, forever. Stop paying, the inquiries stop.",
+          "**With SEO:** a one-time investment in pages and profile work, plus upkeep. The same ten inquiries keep arriving after the work is done — and they usually convert better, because people trust organic results more than ads."
         ]
       },
       {
         "kind": "p",
-        "text": "Your answers will tell you more than any blog post, including this one."
+        "text": "That's the trade in one sentence: ads buy ten leads this month; SEO builds a machine that produces ten leads a month. The machine takes months to build and costs less per lead once it's running. Your actual numbers will differ — what you pay per click depends on your market, and your customer value depends on your business. But if you're paying $50+ per lead in a market where the search is winnable, the math usually favors building."
       },
       {
         "kind": "h2",
@@ -2839,23 +2832,21 @@ export const parsedGuides: ParsedGuide[] = [
       },
       {
         "kind": "h2",
-        "id": "the-real-cost-of-a-click-vs-the-real-cost-of-content",
-        "text": "The real cost of a click vs. the real cost of content"
-      },
-      {
-        "kind": "p",
-        "text": "Run the math on your own business. Using the industry averages from the table above — about $5.42 per click and $66.69 per lead — say you want ten new customer inquiries a month from search:"
+        "id": "questions-to-ask-yourself",
+        "text": "Questions to ask yourself"
       },
       {
         "kind": "ul",
         "items": [
-          "**With ads:** roughly $670/month in ad spend, every month, forever. Stop paying, the inquiries stop.",
-          "**With SEO:** a one-time investment in pages and profile work, plus upkeep. The same ten inquiries keep arriving after the work is done — and they usually convert better, because people trust organic results more than ads."
+          "If I turned off ads tomorrow, how many calls would I lose?",
+          "What am I paying per customer from ads right now, not per click?",
+          "How many of my customers say they found me on Google, but not through an ad?",
+          "Do I need customers in the next 30 days, or am I building for next year?"
         ]
       },
       {
         "kind": "p",
-        "text": "That's the trade in one sentence: ads buy ten leads this month; SEO builds a machine that produces ten leads a month. The machine takes months to build and costs less per lead once it's running. Your actual numbers will differ — what you pay per click depends on your market, and your customer value depends on your business. But if you're paying $50+ per lead in a market where the search is winnable, the math usually favors building."
+        "text": "Your answers will tell you more than any blog post, including this one."
       }
     ],
     "faqs": [

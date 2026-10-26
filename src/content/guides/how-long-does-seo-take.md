@@ -74,12 +74,6 @@ This is where SEO stops feeling like work and starts feeling like an asset. Page
 
 If someone promises page-one rankings in two weeks, be very careful. Quick fixes can happen fast, but anyone guaranteeing rankings, especially #1, is either overpromising or doing something risky. More on that in [SEO Scams Small Businesses Fall For](/seo-scams).
 
-## How to get results while you wait
-
-- **Fix your Google Business Profile today.** It's the fastest free win. [Use the checklist](/google-business-profile-checklist).
-- **Start asking for reviews this week.** [Here's how](/how-to-get-more-google-reviews).
-- **Use ads strategically** to fill the gap, then scale them down as organic grows. See [SEO vs. Google Ads](/seo-vs-google-ads).
-
 ## Month one: the quiet month (and why most owners quit here)
 
 Month one almost never produces new customers. What it produces is groundwork:
@@ -93,6 +87,15 @@ If you're measuring only calls in month one, you'll think nothing happened. What
 
 Here's the honest reframe: the first 30 days are you turning on the lights. Google doesn't walk in the door until it notices the lights are on.
 
+## Why some businesses see movement in 30 days and others wait a year
+
+The timeline isn't random. It's mostly four things:
+
+1. **Where you're starting from.** A site that's been around for ten years with decent content moves faster than a two-month-old site. If your site already ranks on page 3 for what you want, you're pushing on an open door.
+2. **How competitive your market is.** "Plumber in a town of 5,000" and "personal injury lawyer in Los Angeles" are not the same fight. The same work can show results in weeks in one and take a year in the other.
+3. **How much is done at once.** A steady 10 hours a week beats a heroic 40-hour weekend once a quarter. Google responds to consistency.
+4. **Whether the basics were ever done.** Businesses with a complete profile and a review habit from day one skip months of the first phase entirely.
+
 ## How to check progress before the calls come in
 
 You don't have to wait for the phone to know it's working. These signals move first, and they're all free:
@@ -104,14 +107,11 @@ You don't have to wait for the phone to know it's working. These signals move fi
 
 Track these four on one sheet of paper. When a client tells me "nothing is happening," we almost always find impressions and profile views climbing — the customers just hadn't arrived yet.
 
-## Why some businesses see movement in 30 days and others wait a year
+## How to get results while you wait
 
-The timeline isn't random. It's mostly four things:
-
-1. **Where you're starting from.** A site that's been around for ten years with decent content moves faster than a two-month-old site. If your site already ranks on page 3 for what you want, you're pushing on an open door.
-2. **How competitive your market is.** "Plumber in a town of 5,000" and "personal injury lawyer in Los Angeles" are not the same fight. The same work can show results in weeks in one and take a year in the other.
-3. **How much is done at once.** A steady 10 hours a week beats a heroic 40-hour weekend once a quarter. Google responds to consistency.
-4. **Whether the basics were ever done.** Businesses with a complete profile and a review habit from day one skip months of the first phase entirely.
+- **Fix your Google Business Profile today.** It's the fastest free win. [Use the checklist](/google-business-profile-checklist).
+- **Start asking for reviews this week.** [Here's how](/how-to-get-more-google-reviews).
+- **Use ads strategically** to fill the gap, then scale them down as organic grows. See [SEO vs. Google Ads](/seo-vs-google-ads).
 
 ## FAQ
 

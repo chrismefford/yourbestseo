@@ -60,14 +60,14 @@ For most of the local businesses I work with, the best plan looks like this:
 
 The goal is a business that doesn't panic when the ad budget pauses. More on that in [How to Get Customers Without Paying for Google Ads](/get-customers-without-google-ads).
 
-## Questions to ask yourself
+## The real cost of a click vs. the real cost of content
 
-- If I turned off ads tomorrow, how many calls would I lose?
-- What am I paying per customer from ads right now, not per click?
-- How many of my customers say they found me on Google, but not through an ad?
-- Do I need customers in the next 30 days, or am I building for next year?
+Run the math on your own business. Using the industry averages from the table above — about $5.42 per click and $66.69 per lead — say you want ten new customer inquiries a month from search:
 
-Your answers will tell you more than any blog post, including this one.
+- **With ads:** roughly $670/month in ad spend, every month, forever. Stop paying, the inquiries stop.
+- **With SEO:** a one-time investment in pages and profile work, plus upkeep. The same ten inquiries keep arriving after the work is done — and they usually convert better, because people trust organic results more than ads.
+
+That's the trade in one sentence: ads buy ten leads this month; SEO builds a machine that produces ten leads a month. The machine takes months to build and costs less per lead once it's running. Your actual numbers will differ — what you pay per click depends on your market, and your customer value depends on your business. But if you're paying $50+ per lead in a market where the search is winnable, the math usually favors building.
 
 ## What changes over the first two years
 
@@ -80,14 +80,14 @@ Here's what the shift actually looks like for most local businesses I work with:
 
 The businesses that get this wrong in either direction: those that cancel ads too early and starve while the machine is still being built, and those that keep paying the ad treadmill for a decade because they never started building.
 
-## The real cost of a click vs. the real cost of content
+## Questions to ask yourself
 
-Run the math on your own business. Using the industry averages from the table above — about $5.42 per click and $66.69 per lead — say you want ten new customer inquiries a month from search:
+- If I turned off ads tomorrow, how many calls would I lose?
+- What am I paying per customer from ads right now, not per click?
+- How many of my customers say they found me on Google, but not through an ad?
+- Do I need customers in the next 30 days, or am I building for next year?
 
-- **With ads:** roughly $670/month in ad spend, every month, forever. Stop paying, the inquiries stop.
-- **With SEO:** a one-time investment in pages and profile work, plus upkeep. The same ten inquiries keep arriving after the work is done — and they usually convert better, because people trust organic results more than ads.
-
-That's the trade in one sentence: ads buy ten leads this month; SEO builds a machine that produces ten leads a month. The machine takes months to build and costs less per lead once it's running. Your actual numbers will differ — what you pay per click depends on your market, and your customer value depends on your business. But if you're paying $50+ per lead in a market where the search is winnable, the math usually favors building.
+Your answers will tell you more than any blog post, including this one.
 
 ## FAQ
 

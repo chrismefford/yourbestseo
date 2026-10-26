@@ -78,12 +78,6 @@ Search Reddit for your city plus your industry. If people are asking for recomme
 
 Same name, same address, same phone, same hours, everywhere. Boring? Yes. Important? Very.
 
-## What not to do
-
-- **Don't buy fake reviews.** It breaks the rules, and AI tools are getting better at spotting patterns.
-- **Don't stuff keywords into everything.** "Best dentist Carlsbad dentist near me" reads like a robot wrote it, because a robot will read it and not be impressed.
-- **Don't chase every new AI tool.** The fundamentals work across all of them.
-
 ## The exact prompts to run on yourself
 
 Copy these into ChatGPT, Gemini, Copilot, or Perplexity and read the answers like a customer would. Do this once a quarter.
@@ -95,6 +89,15 @@ Copy these into ChatGPT, Gemini, Copilot, or Perplexity and read the answers lik
 - "Is [your business name] a good choice for [your service]?"
 
 The last one is the one most owners never think to try, and it's the most revealing. If the AI doesn't know your business by name, it will rarely suggest it by category.
+
+## What AI tools actually do with your website (plain English)
+
+There are two ways AI tools learn about you, and both matter:
+
+1. **Training data.** The models were trained on years of the web, including review sites, directories, and articles. This is why consistency across the internet matters so much — years of matching information is a strong signal.
+2. **Live lookups.** Most modern AI tools can search the web when someone asks a fresh question. When they do, they're looking at your website, your Google Business Profile, your reviews, and what other sites say about you — right then.
+
+You don't need a special file or a secret technique to be "AI-friendly." You need the same things that make you trustworthy to a human: a clear website, real reviews that say something, consistent listings, and mentions in places people actually discuss your industry.
 
 ## Which businesses get recommended most
 
@@ -108,14 +111,11 @@ After looking at how AI answers come together, the patterns are consistent:
 
 Notice what's not on the list: ad spend, website age, or how many pages you have. None of that is what the recommendation is built on.
 
-## What AI tools actually do with your website (plain English)
+## What not to do
 
-There are two ways AI tools learn about you, and both matter:
-
-1. **Training data.** The models were trained on years of the web, including review sites, directories, and articles. This is why consistency across the internet matters so much — years of matching information is a strong signal.
-2. **Live lookups.** Most modern AI tools can search the web when someone asks a fresh question. When they do, they're looking at your website, your Google Business Profile, your reviews, and what other sites say about you — right then.
-
-You don't need a special file or a secret technique to be "AI-friendly." You need the same things that make you trustworthy to a human: a clear website, real reviews that say something, consistent listings, and mentions in places people actually discuss your industry.
+- **Don't buy fake reviews.** It breaks the rules, and AI tools are getting better at spotting patterns.
+- **Don't stuff keywords into everything.** "Best dentist Carlsbad dentist near me" reads like a robot wrote it, because a robot will read it and not be impressed.
+- **Don't chase every new AI tool.** The fundamentals work across all of them.
 
 ## FAQ
 
