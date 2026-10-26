@@ -133,7 +133,7 @@ export default function GuideArticle({ slug }: { slug: string }) {
                         </ol>
                       ))}
                     {block.kind === "checklist" && (
-                      <Checklist slug={guide.slug} sectionId={block.id ?? `checklist-${index}`} items={block.items} printable={guide.printChecklist} />
+                      <Checklist slug={guide.slug} sectionId={`checklist-${index}`} items={block.items} printable={guide.printChecklist} />
                     )}
                     {block.kind === "table" && (
                       <ResponsiveTable head={block.head} rows={block.rows} jump={guide.slug === "business-not-showing-on-google" && block.head.includes("Jump to")} />
