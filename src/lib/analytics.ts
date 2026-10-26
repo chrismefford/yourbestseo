@@ -28,7 +28,7 @@ export function initializeAnalytics(): boolean {
 }
 
 // Only allow non-identifying funnel properties. Never send form values or reports.
-export function trackEvent(name: "free_check_started" | "contact_submitted" | "booking_completed", properties: { meeting_type?: "phone" | "zoom" } = {}) {
+export function trackEvent(name: "free_check_started" | "contact_submitted" | "booking_completed" | "guide_scorecard_completed", properties: { meeting_type?: "phone" | "zoom" } = {}) {
   if (!initializeAnalytics()) return;
   (window as AnalyticsWindow).gtag?.("event", name, properties);
 }
