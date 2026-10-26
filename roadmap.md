@@ -85,4 +85,4 @@
 - [ ] Publish so the guides go live.
 
 # Guide self-check funnel
-- [x] Add a per-guide three-question readiness scorecard to all 10 guides: one question per screen with animated progress, instant tier diagnosis with stage ladder, localStorage persistence, and a bridge to /book and /free-audit. Guide tests, build, and Playwright (full flow, persistence, mobile) pass. Publish required for live pages.
+- [x] Add a per-guide three-question readiness scorecard to all 10 guides: one question per screen with animated progress, instant tier diagnosis with stage ladder, localStorage persistence, and a bridge to /book and /free-audit. Placed before each guide’s second-to-last section so it is separated from the closing booking card by real content; placement and funnel verified on two guides. Guide tests, build, and Playwright (full flow, persistence, mobile) pass. Publish required for live pages.
