@@ -221,6 +221,64 @@ export const parsedGuides: ParsedGuide[] = [
       {
         "kind": "p",
         "text": "That's it. Do those three things and you'll be ahead of most of your competitors. For the full list, grab the [Google Business Profile Checklist](/google-business-profile-checklist)."
+      },
+      {
+        "kind": "h2",
+        "id": "why-you-show-in-google-search-but-not-on-maps-and-vice-versa",
+        "text": "Why you show in Google search but not on Maps (and vice versa)"
+      },
+      {
+        "kind": "p",
+        "text": "These are two different systems, and they fail for different reasons."
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "**Not on Maps, but you show in regular search:** Maps is powered by your Google Business Profile. If the profile is missing, unverified, suspended, or placed in the wrong category, you won't appear on the map no matter how good your website is.",
+          "**On Maps, but not in regular search:** your profile is fine, but your website isn't being trusted for the search. This is usually a thin homepage, missing service pages, or weak signals from other sites. Fix #8 and Fix #11 cover most of it.",
+          "**Nowhere at all:** start with the profile. It's the faster of the two to fix and it feeds both."
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "Knowing which of the three you are tells you where to start. Most owners jump straight to the website when the real problem is the profile."
+      },
+      {
+        "kind": "h2",
+        "id": "before-you-panic-four-things-to-check-first",
+        "text": "Before you panic: four things to check first"
+      },
+      {
+        "kind": "p",
+        "text": "Half the \"my business disappeared\" emergencies I get are false alarms. Check these before changing anything:"
+      },
+      {
+        "kind": "ol",
+        "items": [
+          "**Search in an incognito window.** Your browser's saved history and location can show you your own business where customers would never see it.",
+          "**Search from a different device, on cell data.** Google personalizes results by location. If you work from home, you may be seeing a version of Google your customers never see.",
+          "**Search the exact name on your profile, word for word.** If your sign says \"Rivera's Plumbing\" but your profile says \"Rivera Plumbing & Drain Services,\" customers searching the sign version may not find you.",
+          "**Check the date of your last edit.** If you changed your name, address, or category in the last couple of weeks, Google may be re-reviewing your profile. This usually resolves itself; making more changes makes it worse."
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "If it's still missing after all four, work through the 12 fixes in order. The order matters: the first five are quick and fix the most common causes."
+      },
+      {
+        "kind": "h2",
+        "id": "what-not-to-do-when-youre-invisible",
+        "text": "What not to do when you're invisible"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "**Don't create a second profile.** Duplicates split your reviews and can get both suspended.",
+          "**Don't buy reviews or review services.** Google removes them, and sudden fake review spikes are one of the fastest ways to get suspended.",
+          "**Don't keyword-stuff your business name** (\"Joe's Plumbing Best Plumber San Diego\"). It violates Google's guidelines and can get the profile suspended or renamed.",
+          "**Don't panic-edit everything at once.** Batch changes look suspicious. Fix one thing, wait, observe.",
+          "**Don't hire anyone who promises a specific ranking date.** Nobody can promise that. If they do, that's your answer about whether to trust them."
+        ]
       }
     ],
     "faqs": [
@@ -239,6 +297,26 @@ export const parsedGuides: ParsedGuide[] = [
       {
         "question": "Does it matter if I work from home?",
         "answer": "Yes. If customers don't come to you, set up your profile as a service-area business and hide your home address. Showing a home address when you shouldn't is a common reason for suspensions."
+      },
+      {
+        "question": "Why is my business not showing up on Google Maps?",
+        "answer": "The map is powered by your Google Business Profile, not your website. The usual causes are a missing profile, an unverified one, a suspension, or the wrong primary category. A perfect website won't put you on the map; a healthy profile will."
+      },
+      {
+        "question": "Why does my business show on Maps but not in Google search?",
+        "answer": "Your profile is doing its job, but Google doesn't trust your website enough to show it in the main results. That usually means a thin homepage, no pages that match what people search for, or almost no other sites mentioning you. Fixes 8, 9, and 11 are where to start."
+      },
+      {
+        "question": "I just verified my profile. Why can't I see it yet?",
+        "answer": "Verification is the start, not the finish. A brand-new profile can take days to a few weeks to appear in Maps and longer to rank. Also check it in an incognito window from a different device — you may already be live and just seeing a personalized view."
+      },
+      {
+        "question": "Why did my business suddenly disappear from Google?",
+        "answer": "The most common causes, in order: a recent edit triggered a re-review, the profile got suspended (often for a guideline violation like keyword-stuffing the business name), someone else claimed or reported the listing, or you're searching in a way that hides it (logged in, home address). Check each before changing anything."
+      },
+      {
+        "question": "Can I show up on Google without a website?",
+        "answer": "Yes, for Maps — a complete, verified profile with reviews can rank on the map with no website at all. But you'll struggle in regular search results, and AI tools like ChatGPT lean heavily on websites. A simple one-page site beats no site."
       }
     ],
     "cta": {
@@ -428,6 +506,72 @@ export const parsedGuides: ParsedGuide[] = [
           "**Don't stuff keywords into everything.** \"Best dentist Carlsbad dentist near me\" reads like a robot wrote it, because a robot will read it and not be impressed.",
           "**Don't chase every new AI tool.** The fundamentals work across all of them."
         ]
+      },
+      {
+        "kind": "h2",
+        "id": "the-exact-prompts-to-run-on-yourself",
+        "text": "The exact prompts to run on yourself"
+      },
+      {
+        "kind": "p",
+        "text": "Copy these into ChatGPT, Gemini, Copilot, or Perplexity and read the answers like a customer would. Do this once a quarter."
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "\"Best [your service] in [your city]\"",
+          "\"I need a [your service] near [your neighborhood]. Who should I call?\"",
+          "\"[Your service] vs. [common alternative] — which is better for [situation]?\"",
+          "\"What should I look for when hiring a [your service]?\"",
+          "\"Is [your business name] a good choice for [your service]?\""
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "The last one is the one most owners never think to try, and it's the most revealing. If the AI doesn't know your business by name, it will rarely suggest it by category."
+      },
+      {
+        "kind": "h2",
+        "id": "what-ai-tools-actually-do-with-your-website-plain-english",
+        "text": "What AI tools actually do with your website (plain English)"
+      },
+      {
+        "kind": "p",
+        "text": "There are two ways AI tools learn about you, and both matter:"
+      },
+      {
+        "kind": "ol",
+        "items": [
+          "**Training data.** The models were trained on years of the web, including review sites, directories, and articles. This is why consistency across the internet matters so much — years of matching information is a strong signal.",
+          "**Live lookups.** Most modern AI tools can search the web when someone asks a fresh question. When they do, they're looking at your website, your Google Business Profile, your reviews, and what other sites say about you — right then."
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "You don't need a special file or a secret technique to be \"AI-friendly.\" You need the same things that make you trustworthy to a human: a clear website, real reviews that say something, consistent listings, and mentions in places people actually discuss your industry."
+      },
+      {
+        "kind": "h2",
+        "id": "which-businesses-get-recommended-most",
+        "text": "Which businesses get recommended most"
+      },
+      {
+        "kind": "p",
+        "text": "After looking at how AI answers come together, the patterns are consistent:"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "**The ones with review volume.** AI tools treat \"200 reviews averaging 4.8\" very differently than \"6 reviews averaging 4.8.\"",
+          "**The ones whose reviews contain specifics.** \"Fixed our AC in two hours on a Sunday\" tells the AI more than \"great service.\"",
+          "**The ones with clear, plain-language websites.** A site that says \"we repair air conditioners in Chula Vista, usually same day\" is quotable. \"Quality You Can Trust Since 1998\" is not.",
+          "**The ones discussed elsewhere.** AI answers often draw on review platforms, forum threads, and articles. If the only place your business exists is your own website, the AI has less to go on.",
+          "**The ones that have been around.** New businesses can break in fast with strong reviews, but history is an edge."
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "Notice what's not on the list: ad spend, website age, or how many pages you have. None of that is what the recommendation is built on."
       }
     ],
     "faqs": [
@@ -446,6 +590,26 @@ export const parsedGuides: ParsedGuide[] = [
       {
         "question": "Is this different from regular SEO?",
         "answer": "It overlaps a lot. The big difference is that AI leans even harder on what other people say about you, especially reviews and community conversations."
+      },
+      {
+        "question": "Which AI tools should I check?",
+        "answer": "The big four for local businesses: ChatGPT, Google Gemini (including the AI answers at the top of Google results), Microsoft Copilot, and Perplexity. Run the same prompts in each. You'll often see different answers, which tells you which tools know you and which don't."
+      },
+      {
+        "question": "Do I need an \"llms.txt\" file or special AI SEO?",
+        "answer": "No. \"AI SEO\" is mostly a new label on the same fundamentals: a clear website, consistent listings, real reviews, and content that answers customer questions. Nobody has shown that special AI-only files change what assistants recommend. Be skeptical of anyone selling you a magic AI technique."
+      },
+      {
+        "question": "Why did ChatGPT recommend my competitor instead of me?",
+        "answer": "Usually one of four things: they have more and better reviews, their website answers the question more clearly, they're mentioned in more places online, or the AI simply doesn't know your business exists yet. All four are fixable, and none of them require paying OpenAI anything."
+      },
+      {
+        "question": "Does my Reddit presence matter for AI?",
+        "answer": "It can. AI tools frequently draw on discussion threads and review sites when they answer questions, so being part of real conversations in your industry helps. I wrote a whole guide on it: [Managing Reddit for AI Search](/reddit-marketing)."
+      },
+      {
+        "question": "Can AI see my website if it's brand new?",
+        "answer": "Eventually, yes, but new sites have little for AI to draw on. The fastest path for a new business is a complete Google Business Profile plus a steady flow of reviews, because those signals are picked up quickly. The website content catches up over the first year."
       }
     ],
     "cta": {
@@ -665,6 +829,91 @@ export const parsedGuides: ParsedGuide[] = [
       {
         "kind": "p",
         "text": "Then repeat. Slowly, the balance shifts from rented to owned."
+      },
+      {
+        "kind": "h2",
+        "id": "how-to-know-when-you-can-cut-ads-without-gambling",
+        "text": "How to know when you can cut ads (without gambling)"
+      },
+      {
+        "kind": "p",
+        "text": "Don't cancel ads on a feeling. Cut them when you can see the replacement working. The signals I look for:"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "**Your organic calls and forms are trending up for three straight months.** Month-to-month noise isn't a trend; a quarter of steady growth is.",
+          "**You know your cost per customer from each channel.** If you can't tell which calls came from ads versus search, you can't make this decision yet.",
+          "**Reviews are still coming in every week.** Reviews are the flywheel behind everything else. If they've stalled, the foundation is wobbling.",
+          "**You have a way to catch the drop.** When you trim ads, trim gradually and watch the phone weekly. A 20% cut you can measure beats a 100% cut you can't."
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "The businesses that get hurt by ads are the ones that cancel on a bad month and sign back up on a good one. The businesses that win treat it as a dial, not a switch."
+      },
+      {
+        "kind": "h2",
+        "id": "the-cheapest-customer-youll-ever-get",
+        "text": "The cheapest customer you'll ever get"
+      },
+      {
+        "kind": "p",
+        "text": "Before chasing new customers, look at the ones you already have. The numbers here are almost always better:"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "**Repeat customers.** For restaurants, salons, and anything maintenance-related, the second visit costs nothing to get. A simple reminder text or email at the right interval does more than any ad.",
+          "**Referrals.** A happy customer who tells one neighbor is worth more than a click you paid for. Ask directly, at the happy moment: \"If you know anyone else who needs this, send them my way.\"",
+          "**Your own list.** An email or text list is the only audience you own outright. No algorithm, no bidding, no platform can take it away. Start collecting it even if you only send something four times a year."
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "Most local businesses I look at are sitting on more revenue in their existing customer base than they could buy with a year of ads."
+      },
+      {
+        "kind": "h2",
+        "id": "what-owning-your-customers-actually-means",
+        "text": "What \"owning\" your customers actually means"
+      },
+      {
+        "kind": "p",
+        "text": "The difference between rented and owned comes down to what survives a bad month:"
+      },
+      {
+        "kind": "table",
+        "head": [
+          "Asset",
+          "Survives a bad month?"
+        ],
+        "rows": [
+          [
+            "Ad campaign",
+            "No — leads stop when payment stops"
+          ],
+          [
+            "Google Business Profile + reviews",
+            "Yes — keeps working quietly"
+          ],
+          [
+            "Pages that answer what people search",
+            "Yes — they're indexed and serving questions daily"
+          ],
+          [
+            "Email or text list",
+            "Yes — you can reach them whenever you want"
+          ],
+          [
+            "Referral relationships",
+            "Yes — trust doesn't have an off switch"
+          ]
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "You don't need all five to run a business. But every one you add makes the next slow month easier to survive."
       }
     ],
     "faqs": [
@@ -679,6 +928,26 @@ export const parsedGuides: ParsedGuide[] = [
       {
         "question": "Should I stop my Google Ads right now?",
         "answer": "Probably not all at once. Build your free channels first, then reduce ads gradually while you watch your call volume."
+      },
+      {
+        "question": "How much of my budget should still go to ads?",
+        "answer": "Early on, ads can carry most of it — they're the fastest way to find customers while the owned channels build. A common pattern for local businesses: ads are 70–80% of the spend in year one, then drop toward 30–50% as organic leads grow. The goal isn't zero ads. It's ads by choice instead of ads by necessity."
+      },
+      {
+        "question": "How long before I can reduce my ad spend?",
+        "answer": "Most local businesses see meaningful organic movement in 3 to 6 months and can start trimming ads somewhere in the 6 to 12 month range. The timeline depends on your market and competition. [How Long Does SEO Take?](/how-long-does-seo-take) walks through it month by month."
+      },
+      {
+        "question": "What if my customers only buy once — like roofing or a med spa?",
+        "answer": "The logic still works, with a twist. One-time buyers won't become repeat customers, so your owned assets are different: reviews (they compound forever), referrals (ask right after the job), and pages that answer research questions (\"how much does a roof replacement cost in San Diego\"). Those bring in the next wave of one-time buyers without paying per click."
+      },
+      {
+        "question": "Is social media worth it for a local business?",
+        "answer": "Sometimes — it depends on your customer. If you're a restaurant, gym, salon, or anything visual, a consistent local presence helps and costs only time. If you're a plumber or accountant, social media is rarely where customers come from; reviews and Google matter far more. Spend your limited energy where your customers already are."
+      },
+      {
+        "question": "What about Groupon or daily-deal sites?",
+        "answer": "Be careful. They can fill a slow calendar, but they usually bring deal-seekers who never pay full price and never come back. If you try one, cap it, measure whether those customers return, and treat it as a one-time experiment — not a channel."
       }
     ],
     "cta": {
@@ -884,6 +1153,77 @@ export const parsedGuides: ParsedGuide[] = [
           "Publish 2 posts",
           "Update hours for any upcoming holidays"
         ]
+      },
+      {
+        "kind": "h2",
+        "id": "working-from-home-read-this-before-you-publish",
+        "text": "Working from home? Read this before you publish"
+      },
+      {
+        "kind": "p",
+        "text": "If customers come to you (an office, a shop, a studio), your address should be visible — it helps you rank for \"near me\" searches."
+      },
+      {
+        "kind": "p",
+        "text": "If customers don't come to you (plumbing, house cleaning, mobile notary, lawn care), you're a **service-area business**, and the setup is different:"
+      },
+      {
+        "kind": "ol",
+        "items": [
+          "**Hide your address.** Google will show it as \"Serves [area]\" instead of your home.",
+          "**List your service areas.** You can add up to 20 areas (cities or zip codes). Keep them real — areas where you'll genuinely drive to.",
+          "**Don't create a profile for every city you serve.** One profile with multiple service areas. Multiple profiles for one business at one address get flagged as duplicates."
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "Getting this wrong is one of the most common causes of suspensions, and it's completely avoidable."
+      },
+      {
+        "kind": "h2",
+        "id": "the-suspension-causes-you-can-prevent",
+        "text": "The suspension causes you can prevent"
+      },
+      {
+        "kind": "p",
+        "text": "Most suspensions come from a short list of mistakes:"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "**Keyword-stuffing the business name.** \"Joe's Plumbing — Best Plumber San Diego 24/7\" is against the rules. Use your real name, the one on your storefront and license.",
+          "**A virtual office or mailbox address** you don't actually operate from.",
+          "**Multiple profiles** for the same business at the same address.",
+          "**Someone else managing the profile who's also managing your competitors.** Google treats this as a conflict; you can be affected by what they do.",
+          "**Big sudden changes** — renaming, recategorizing, or moving the pin all at once."
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "If you do get suspended, appeal from the profile itself and be ready to prove you're a real business at that address: a license, utility bill, or photos of signage. It usually takes a week or two. Don't create a new profile while you wait — that makes it worse."
+      },
+      {
+        "kind": "h2",
+        "id": "what-your-competitors-profiles-tell-you-10-minute-exercise",
+        "text": "What your competitors' profiles tell you (10-minute exercise)"
+      },
+      {
+        "kind": "p",
+        "text": "Find the top three businesses ranking on the map for your main service. Open each profile and write down:"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "How many reviews they have, and how recent the newest one is",
+          "How many photos, and whether any are real (not stock)",
+          "Whether they post updates, and how often",
+          "What categories they use",
+          "Whether their description names their main service"
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "You now have a target list. You don't need to beat them everywhere — but any category where you're at zero is a gap Google can see."
       }
     ],
     "faqs": [
@@ -902,6 +1242,26 @@ export const parsedGuides: ParsedGuide[] = [
       {
         "question": "Does my Google Business Profile affect ChatGPT and AI search?",
         "answer": "Indirectly, yes. AI tools draw on local listings and reviews, and Google's own AI uses your profile directly to answer questions about your business."
+      },
+      {
+        "question": "Can I have more than one location?",
+        "answer": "Yes — each real, staffed location that customers can visit should have its own profile, and each one needs its own reviews and photos. One location means one profile. Extra profiles for places you don't actually operate from will get flagged."
+      },
+      {
+        "question": "Should I hide my address if I work from home?",
+        "answer": "If customers never come to your home, yes. Set it up as a service-area business: hide the address, list the areas you serve. Showing your home address when customers shouldn't visit is a common and avoidable suspension cause."
+      },
+      {
+        "question": "What photos actually help?",
+        "answer": "Real photos of your storefront, team, work in progress, and finished jobs. Google and customers both respond to them, and customers are more likely to click a profile with real photos. Skip stock images — people can tell, and Google has gotten good at it too."
+      },
+      {
+        "question": "How do I get my review link?",
+        "answer": "From your profile, there's a \"share review form\" or \"ask for reviews\" option that gives you a short link you can text or email. Save it in your phone so you can send it in ten seconds at the happy moment. More on the exact scripts in [How to Get More Google Reviews](/how-to-get-more-google-reviews)."
+      },
+      {
+        "question": "What if someone else already claimed my business?",
+        "answer": "You can request access through the profile — Google will have the current owner verify or deny, and if they don't respond, you can claim it with proof (license, signage photos, business registration). Don't give up if your first request is ignored; the process favors the real business."
       }
     ],
     "cta": {
@@ -1087,6 +1447,72 @@ export const parsedGuides: ParsedGuide[] = [
           "**Start asking for reviews this week.** [Here's how](/how-to-get-more-google-reviews).",
           "**Use ads strategically** to fill the gap, then scale them down as organic grows. See [SEO vs. Google Ads](/seo-vs-google-ads)."
         ]
+      },
+      {
+        "kind": "h2",
+        "id": "month-one-the-quiet-month-and-why-most-owners-quit-here",
+        "text": "Month one: the quiet month (and why most owners quit here)"
+      },
+      {
+        "kind": "p",
+        "text": "Month one almost never produces new customers. What it produces is groundwork:"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Your Google Business Profile gets cleaned up and filled in",
+          "Your listing details get matched across the internet",
+          "Technical problems on your site get found and fixed",
+          "The first pages of real content get published"
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "If you're measuring only calls in month one, you'll think nothing happened. What actually happened is that everything you do in months two through twelve got its foundation. This is why SEO fails for so many small businesses — not because it doesn't work, but because month one looks like nothing, and the owner quits in week five."
+      },
+      {
+        "kind": "p",
+        "text": "Here's the honest reframe: the first 30 days are you turning on the lights. Google doesn't walk in the door until it notices the lights are on."
+      },
+      {
+        "kind": "h2",
+        "id": "why-some-businesses-see-movement-in-30-days-and-others-wait-a-year",
+        "text": "Why some businesses see movement in 30 days and others wait a year"
+      },
+      {
+        "kind": "p",
+        "text": "The timeline isn't random. It's mostly four things:"
+      },
+      {
+        "kind": "ol",
+        "items": [
+          "**Where you're starting from.** A site that's been around for ten years with decent content moves faster than a two-month-old site. If your site already ranks on page 3 for what you want, you're pushing on an open door.",
+          "**How competitive your market is.** \"Plumber in a town of 5,000\" and \"personal injury lawyer in Los Angeles\" are not the same fight. The same work can show results in weeks in one and take a year in the other.",
+          "**How much is done at once.** A steady 10 hours a week beats a heroic 40-hour weekend once a quarter. Google responds to consistency.",
+          "**Whether the basics were ever done.** Businesses with a complete profile and a review habit from day one skip months of the first phase entirely."
+        ]
+      },
+      {
+        "kind": "h2",
+        "id": "how-to-check-progress-before-the-calls-come-in",
+        "text": "How to check progress before the calls come in"
+      },
+      {
+        "kind": "p",
+        "text": "You don't have to wait for the phone to know it's working. These signals move first, and they're all free:"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "**Google Business Profile views and calls.** Your profile shows how many people viewed it and how many called or asked for directions. If those are climbing, the map work is landing.",
+          "**Search Console impressions.** Once your site is in Search Console, you can see how many times Google showed your pages — even before many people click. Impressions rising is the first real sign.",
+          "**Rankings for one or two tracked terms.** Pick your single most valuable search and check it the same way, same device, once a week. Not your favorite keyword — the one that pays.",
+          "**New reviews coming in.** If reviews have started flowing, the whole flywheel is turning."
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "Track these four on one sheet of paper. When a client tells me \"nothing is happening,\" we almost always find impressions and profile views climbing — the customers just hadn't arrived yet."
       }
     ],
     "faqs": [
@@ -1105,6 +1531,26 @@ export const parsedGuides: ParsedGuide[] = [
       {
         "question": "How do I know if SEO is working before the calls come in?",
         "answer": "Watch for more views and actions on your Google Business Profile, more searches you show up for, and more visitors to your website from Google."
+      },
+      {
+        "question": "How long does it take to rank on Google for a new website?",
+        "answer": "For a brand-new domain in a normal local market, expect 6 to 12 months for meaningful rankings, and treat the first 3 months as setup. A new site can move faster in low-competition niches, but \"we ranked in two weeks\" stories usually involve a keyword nobody searches for."
+      },
+      {
+        "question": "How long does it take for Google to notice my new pages?",
+        "answer": "Days to a few weeks, usually. Submitting your sitemap in Search Console speeds it up, and linking to the new page from pages Google already knows gets it found faster. \"Indexed\" and \"ranking\" are different steps — a page can be indexed for months before it climbs."
+      },
+      {
+        "question": "Can SEO results disappear after they arrive?",
+        "answer": "They can slip, and the usual causes are: you stopped everything (rankings decay without upkeep), a competitor started doing more, a site update broke something, or an algorithm update reshuffled results. Steady, boring maintenance is what makes results last — which is the whole advantage over renting ads."
+      },
+      {
+        "question": "What should I expect in the first 90 days?",
+        "answer": "Realistic 90-day goals: profile and listings fully cleaned up, your top technical problems fixed, 3 to 5 new pages published, impressions in Search Console trending up, and new reviews coming in weekly. Calls from organic search typically start somewhere after that. If an agency promises you steady new customers inside 90 days from a standing start, ask them exactly which pages and which keywords they mean."
+      },
+      {
+        "question": "Does changing my website now affect rankings immediately?",
+        "answer": "Rarely. Google recrawls and re-evaluates on its own schedule, and ranking changes from a single edit usually take weeks to show. The exception is something broken — if a change takes your site down or de-indexes pages, the drop can be fast. This is why we change one thing at a time and watch."
       }
     ],
     "cta": {
@@ -1265,6 +1711,68 @@ export const parsedGuides: ParsedGuide[] = [
       {
         "kind": "p",
         "text": "For most local businesses that plan to be around for a while, yes. The big difference between SEO and ads is what happens when you stop paying. With ads, the calls stop. With SEO, the work keeps paying off for months or years. If you want the full comparison, read [SEO vs. Google Ads](/seo-vs-google-ads). If you want to know when to expect results, read [How Long Does SEO Take?](/how-long-does-seo-take)."
+      },
+      {
+        "kind": "h2",
+        "id": "how-seo-is-priced-so-you-can-compare-quotes-fairly",
+        "text": "How SEO is priced (so you can compare quotes fairly)"
+      },
+      {
+        "kind": "p",
+        "text": "When you get three quotes and they're wildly different, it's usually because they're selling three different things:"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "**Monthly retainer.** The standard model for ongoing work: content, profile management, technical upkeep, reporting. You're buying consistency and attention. This is what most local businesses actually need.",
+          "**One-time projects.** Good for a specific job: a technical cleanup, a set of service pages, a Google Business Profile overhaul. Fine as a start — just know that one-time work stops working eventually if nothing maintains it.",
+          "**Hourly.** Rare outside of consulting. If someone quotes hourly, ask what the hours actually produce, not just what they cost.",
+          "**Performance-based.** \"You pay only when you rank.\" It sounds attractive, but it usually means the cheapest possible tactics on keywords they know they can win — not the ones that bring your best customers. Approach with caution."
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "The number on the invoice tells you the model, but not the value. Two $1,500/month quotes can be a great deal and a waste of money. What separates them is what's in the work."
+      },
+      {
+        "kind": "h2",
+        "id": "the-costs-nobody-puts-on-the-quote",
+        "text": "The costs nobody puts on the quote"
+      },
+      {
+        "kind": "p",
+        "text": "Budget for these, because they show up whether or not your SEO provider mentions them:"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "**Your time.** Even with help, someone from your side has to approve content, gather photos, answer questions, and respond to reviews. Call it 2 to 4 hours a month. This is the cost most owners forget to count.",
+          "**Website fixes.** If your site is slow, broken on phones, or built on a platform that fights every change, part of the budget goes to repairs before growth. That's not the provider padding the bill — it's the price of the foundation.",
+          "**Content gathering.** Photos of real work, answers to customer questions, service details. Free to produce, but it takes someone's hours.",
+          "**Tools and tracking.** Usually built into a good retainer, but if you're doing it yourself, Search Console is free, and most of what a small business needs can be done with free tools."
+        ]
+      },
+      {
+        "kind": "h2",
+        "id": "how-to-compare-two-quotes-without-getting-fooled",
+        "text": "How to compare two quotes without getting fooled"
+      },
+      {
+        "kind": "p",
+        "text": "Ask every provider these four questions, and compare the *answers*, not the prices:"
+      },
+      {
+        "kind": "ol",
+        "items": [
+          "**What exactly will you do this month?** You want specific actions: \"publish two service pages, manage reviews, fix these three technical issues.\" \"We'll optimize your SEO\" means nothing.",
+          "**How will I see what changed?** A monthly report that shows rankings, profile activity, and what work was done — in plain language, not a wall of screenshots.",
+          "**What do you need from me?** A provider who asks nothing from you is probably doing generic work. A good one has a short list.",
+          "**What would make you tell me to stop?** Anyone who can't imagine saying \"this isn't working for you\" will never say it."
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "If a provider can answer those four clearly, the price is a real number. If they can't, the price is a guess no matter how low it is."
       }
     ],
     "faqs": [
@@ -1283,6 +1791,26 @@ export const parsedGuides: ParsedGuide[] = [
       {
         "question": "Should I sign a long SEO contract?",
         "answer": "Be cautious with anything longer than 6 to 12 months without an exit clause. Month-to-month or short terms keep everyone honest."
+      },
+      {
+        "question": "How much does an SEO audit cost?",
+        "answer": "A real audit — technical review, content gap analysis, competitor comparison, and a prioritized action list — typically runs $500 to $2,500 one-time, or free as the opening move from a provider who wants your business (I do them free; the audit is how I show my thinking). Be wary of $99 \"audits\" that are auto-generated reports from a tool. An audit you can't act on isn't worth any price."
+      },
+      {
+        "question": "How much does local SEO cost?",
+        "answer": "Local SEO usually costs less than national SEO because the battlefield is smaller — you're competing with the businesses around you, not the whole internet. For most single-location businesses, the honest range is $500 to $2,000 a month, or free if you work through [The DIY Local SEO Checklist](/local-seo-checklist) yourself."
+      },
+      {
+        "question": "How much does SEO cost per month?",
+        "answer": "The honest range for small businesses is $0 (doing it yourself) to around $3,000/month for full-service help, with most established local businesses landing between $500 and $1,500. Anyone quoting $5,000+ per month for a single-location local business needs to justify it with things you can see."
+      },
+      {
+        "question": "Why do quotes differ so much for the same business?",
+        "answer": "Because they're not selling the same thing. One is selling you a monthly retainer with real work; another is selling a templated package with your logo on it; a third is selling \"ranking guarantees\" that are actually just keyword stuffing on terms nobody searches. The price follows the model, not your business."
+      },
+      {
+        "question": "Is there a way to do this for less?",
+        "answer": "Yes, and honestly: do the free foundation yourself — profile, reviews, listings — using [The DIY Local SEO Checklist](/local-seo-checklist). Then hire help only for the parts that need an expert: technical fixes, content strategy, and the work that compounds. The worst version is paying for the free stuff and skipping the hard stuff."
       }
     ],
     "cta": {
@@ -1473,6 +2001,72 @@ export const parsedGuides: ParsedGuide[] = [
           "**Don't write fake reviews or ask employees and family to.** It's against the rules, and it can get reviews removed or your profile flagged.",
           "**Don't buy reviews.** Ever."
         ]
+      },
+      {
+        "kind": "h2",
+        "id": "starting-from-almost-nothing-the-cold-start-problem",
+        "text": "Starting from almost nothing (the cold-start problem)"
+      },
+      {
+        "kind": "p",
+        "text": "If you have 5 reviews and your competitors have 200, don't panic — and don't try to close the gap in a week. The move is a sprint, then a habit:"
+      },
+      {
+        "kind": "ol",
+        "items": [
+          "**List the last 20 customers you can still reach.** Old clients, recent jobs, regulars. The first ten reviews are the hardest; you likely have them sitting in your contacts already.",
+          "**Ask in batches, not bursts.** Ten asks this week, ten next week. A steady drip looks natural; 50 in one day looks bought.",
+          "**Make it effortless.** Send the link with the ask. Every extra step (find us on Google, click around, log in) loses people. The review link from your profile goes straight to the form.",
+          "**Never write it for them.** \"Here's what to say\" crosses the line. Reminding them what you did (\"the Tuesday drain repair\") is fine and often enough."
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "After the sprint, the habit takes over: every happy moment gets an ask, and the number grows on its own."
+      },
+      {
+        "kind": "h2",
+        "id": "what-to-write-back-templates-that-sound-human",
+        "text": "What to write back (templates that sound human)"
+      },
+      {
+        "kind": "p",
+        "text": "Replying to reviews is one of the few free things that clearly helps, and most businesses skip it. The bar is low: sound like a person, not a form letter."
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "**5-star review:** \"Thank you — this made our week. Glad the [specific thing they mentioned] went smoothly. We appreciate you taking the time.\"",
+          "**4-star review:** \"Thanks for the kind words — and for the honest feedback on [what they mentioned]. That's genuinely useful. If there's anything we could have done to earn that fifth star, we'd love to hear it.\"",
+          "**Negative review:** \"We're sorry about your experience — that's not how we want to do business. We'd like to make it right. Please reach out to [contact] and ask for [you].\"",
+          "**Obvious fake or spam:** report it to Google, and don't argue with it publicly. A calm, professional reply for future readers is still worth writing."
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "Two rules for all replies: never get defensive, and remember you're writing for the *next* customer who's reading, not the reviewer."
+      },
+      {
+        "kind": "h2",
+        "id": "what-to-do-when-a-review-you-earned-never-shows-up",
+        "text": "What to do when a review you earned never shows up"
+      },
+      {
+        "kind": "p",
+        "text": "It happens, and it's usually not about you:"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "**Google's filter is aggressive.** New accounts, single-review accounts, and bursts of reviews get held. Ask the customer to try again in a few days.",
+          "**The customer may have posted on the wrong platform** — check Yelp, Facebook, and any industry directories before assuming it's lost.",
+          "**Review counts lag.** Sometimes a review appears on the profile but not in the count for a while.",
+          "**If reviews from the same person keep vanishing,** don't fight it. Move on to the next customer."
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "One missing review is noise. The system works on volume and recency, not any single post."
       }
     ],
     "faqs": [
@@ -1491,6 +2085,26 @@ export const parsedGuides: ParsedGuide[] = [
       {
         "question": "What should I do about a fake negative review?",
         "answer": "Reply calmly and professionally, then report it through your Google Business Profile if it violates Google's policies."
+      },
+      {
+        "question": "How do I get more reviews without violating Google's policy?",
+        "answer": "Ask every customer, at the happy moment, without offering anything in return. That's it — that's the whole policy in practice. What gets you in trouble is incentives, review gating (only asking happy customers), buying reviews, or writing reviews yourself. The honest ask, done consistently, is both allowed and the thing that actually works."
+      },
+      {
+        "question": "Is it OK to ask customers in person?",
+        "answer": "It's the best way. People say yes far more often in person than by text or email, and there's no question of whether the ask was genuine. Hand them your phone with the review form open, or send the link on the spot. The ask should take under a minute."
+      },
+      {
+        "question": "A customer says they left a review but it's not showing. What do I do?",
+        "answer": "First, check on your profile directly rather than trusting the count. If it's genuinely missing, ask them to try again in a few days — Google holds back reviews from new or one-review accounts. Don't ask them to repost repeatedly; a few attempts is the limit."
+      },
+      {
+        "question": "Should I respond to every review?",
+        "answer": "Every single one, including the glowing ones. Replies are read by future customers and signal to Google that the profile is active. Short and human beats long and corporate. Templates are fine as a starting point — just vary the details so they don't read like copy-paste."
+      },
+      {
+        "question": "How often should I ask for reviews?",
+        "answer": "Every happy moment, forever. There's no quota where you should stop. The businesses that dominate their market ask after every single job — that's the entire difference between 20 reviews and 200."
       }
     ],
     "cta": {
@@ -1688,6 +2302,77 @@ export const parsedGuides: ParsedGuide[] = [
       {
         "kind": "p",
         "text": "If ads are eating your budget, read [How to Get Customers Without Paying for Google Ads](/get-customers-without-google-ads) and [SEO vs. Google Ads](/seo-vs-google-ads). This checklist is step one of needing ads less."
+      },
+      {
+        "kind": "h2",
+        "id": "part-8-your-first-90-days-after-the-checklist",
+        "text": "Part 8: Your first 90 days after the checklist"
+      },
+      {
+        "kind": "p",
+        "text": "The checklist gets you set up. This keeps it growing. Pick one or two items per week — that's it."
+      },
+      {
+        "kind": "p",
+        "text": "**Month 1:**"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Ask every happy customer for a review. Goal: a steady trickle, not a flood.",
+          "Reply to every review that comes in, old and new.",
+          "Send your profile link to five people you trust and ask if anything's wrong on it."
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "**Month 2:**"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Write one new page answering your single most common customer question.",
+          "Check Search Console once a week: are impressions trending up?",
+          "Make sure every listing you found in Part 4 still matches exactly."
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "**Month 3:**"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Write one more page for your second most common question.",
+          "Run the 5-minute AI check from Part 6 again. Did anything change?",
+          "Look at your competitors' profiles again. Any gap they have that you don't?"
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "After 90 days, this becomes the 15-minute monthly routine from Part 7. The businesses that win at local search aren't the ones who did something brilliant once — they're the ones who did something small every week while their competitors were busy."
+      },
+      {
+        "kind": "h2",
+        "id": "how-to-tell-its-working-the-four-numbers",
+        "text": "How to tell it's working (the four numbers)"
+      },
+      {
+        "kind": "p",
+        "text": "You don't need a dashboard. Track these four once a month, on paper:"
+      },
+      {
+        "kind": "ol",
+        "items": [
+          "**Google Business Profile views and calls.** In your profile's performance tab. Climbing numbers mean the map work is landing.",
+          "**Search Console impressions.** Rising impressions mean Google is matching your pages to more searches — clicks follow later.",
+          "**Review count and newest review date.** If the newest review is more than a few weeks old, the habit has slipped.",
+          "**The one search that pays.** Pick your most valuable \"service + city\" search and check it the same way each time."
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "Write the four numbers down on the first of every month. Two months of movement in the right direction is the signal that your effort is compounding. Flat numbers mean something in the checklist got missed — usually the review habit."
       }
     ],
     "faqs": [
@@ -1706,6 +2391,26 @@ export const parsedGuides: ParsedGuide[] = [
       {
         "question": "Do I need to pay for any tools?",
         "answer": "No. Everything on this list can be done for free."
+      },
+      {
+        "question": "Can I do this on a Wix, Squarespace, or WordPress site?",
+        "answer": "Yes. Everything in this checklist works on any platform — none of it requires special software. The only platform-related caveats: make sure your site loads fast and works on phones, and if you can't edit pages yourself, get whoever built the site to make the changes from Part 5. If you're locked out of your own website, that's a problem worth fixing before anything else."
+      },
+      {
+        "question": "What if my website is old and I can't edit it?",
+        "answer": "Start with everything that doesn't touch the website: profile, reviews, listings, AI check. That's more than half the checklist and it doesn't care how old your site is. Then either get access to edit it or budget for a simple rebuild — but don't let the website stop you from doing the parts you can do today."
+      },
+      {
+        "question": "Do I need a blog?",
+        "answer": "No. You need pages that answer what your customers search. Five good pages — your services, your area, pricing questions, common problems — beat a blog nobody reads. Write a new page when you think of a real customer question, not on a schedule."
+      },
+      {
+        "question": "How often should I repeat this checklist?",
+        "answer": "The full checklist: once a year, or after any big change (new location, new services, new website). The monthly 15-minute routine in Part 7: every month, forever. The difference between businesses that get found and businesses that stay found is almost entirely that routine."
+      },
+      {
+        "question": "How much should I pay attention to my competitors?",
+        "answer": "Enough to know the bar, not enough to obsess. Check their profiles a few times a year for review counts, photos, and categories. If they have 200 reviews and you have 20, that's your answer about where to focus. Beyond that, copy nothing and focus on your own customers — the businesses that win locally are the ones that became genuinely better, not the ones that imitated best."
       }
     ],
     "cta": {
@@ -1878,6 +2583,52 @@ export const parsedGuides: ParsedGuide[] = [
       {
         "kind": "p",
         "text": "Question 9 is my favorite. A good SEO will happily tell you what you can do yourself. A scammer will tell you it's too complicated."
+      },
+      {
+        "kind": "h2",
+        "id": "what-a-legitimate-seo-provider-actually-does-every-month",
+        "text": "What a legitimate SEO provider actually does every month"
+      },
+      {
+        "kind": "p",
+        "text": "You can't spot a scam if you don't know what honest work looks like. A real local SEO provider's month usually contains:"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "**Publishing or improving content** — a new page, or a real improvement to an existing one",
+          "**Profile and review management** — keeping the Google Business Profile active, making sure reviews get answered",
+          "**Technical upkeep** — fixing problems, watching site speed and search visibility",
+          "**A report in plain language** — what was done, what changed, what's next",
+          "**A short list of things they need from you** — photos, answers, approvals"
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "Notice what's *not* on the list: secret techniques, daily \"submissions\" to 500 directories, or a report that's just screenshots of tools. If the monthly work can't be described in a sentence, ask why. And if a provider's work never requires anything from you, they're not working on your business — they're working on a template with your logo on it."
+      },
+      {
+        "kind": "h2",
+        "id": "stuck-in-a-contract-you-regret",
+        "text": "Stuck in a contract you regret"
+      },
+      {
+        "kind": "p",
+        "text": "If you're already paying someone who promised things that haven't happened, you have more options than you think:"
+      },
+      {
+        "kind": "ol",
+        "items": [
+          "**Read the actual contract.** Cancellation terms, notice periods, and auto-renewal clauses are usually in there. Many contracts that \"can't be canceled\" have a 30-day notice window you can use.",
+          "**Find out who owns what.** Whose name is the website domain in? Whose account is the Google Business Profile? Whose Google Analytics? Get the logins for anything in your name, today. If everything is in the provider's accounts, that's a problem to solve carefully, in writing.",
+          "**Get your data before you leave.** Analytics history, report history, any content they created for you. Request it in writing while the relationship is still cordial.",
+          "**Put it in writing.** A short email: \"Per the contract, I'm giving notice as of [date]. Please confirm and transfer access to [list].\" Paper trails protect you.",
+          "**Don't sign the \"new improved plan\"** they offer when you try to cancel. That's retention, not a solution."
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "And if you believe you were genuinely defrauded — paid for guaranteed rankings that were faked, for example — your state attorney general's office and the FTC both take consumer complaints online. Most people never file. The ones who do sometimes get results."
       }
     ],
     "faqs": [
@@ -1892,6 +2643,26 @@ export const parsedGuides: ParsedGuide[] = [
       {
         "question": "I think I got scammed. What should I do?",
         "answer": "First, make sure you have owner access to your Google Business Profile, website, domain, and analytics. Then get a second opinion on what was actually done."
+      },
+      {
+        "question": "Is it a scam if they ask for a 6-month contract?",
+        "answer": "Not automatically — building SEO takes months, and providers don't want to work for one month and lose you. But a first contract should be short enough to prove themselves: 3 months with a clear exit, or month-to-month after a 90-day initial term. A provider who won't let you leave on 30 days' notice after the first quarter is telling you something about how they keep clients."
+      },
+      {
+        "question": "Are cheap Fiverr or Upwork SEO gigs a scam?",
+        "answer": "Not always a scam, but usually low-value. The $50 gigs are almost always automated — directory submissions, keyword reports, \"optimization\" of things that don't matter. Occasionally you'll find a real freelancer at a low rate, but you have no way to judge their work, and they have no skin in your results. For local businesses, that money is better spent on the free checklist or on reviews."
+      },
+      {
+        "question": "What does a real monthly report look like?",
+        "answer": "One page, plain language: what was done this month, what changed in rankings and profile activity, what's coming next, and anything that needs your input. Numbers can be attached, but the *summary* should be readable by you, not by a data analyst. If a report makes you feel dumb, that's the report's fault, not yours."
+      },
+      {
+        "question": "How do I fire my SEO company?",
+        "answer": "Give notice in writing per your contract, request a full access transfer (domain, website, Google Business Profile, Analytics, any ad accounts) with a deadline, and confirm everything works before the final payment. Then export your data and change every password they might have had. Do it politely and completely — a clean handoff is worth more than winning the argument."
+      },
+      {
+        "question": "What if I already paid a scammer — can I get my money back?",
+        "answer": "Sometimes, but act fast. If you paid by credit card, dispute the charge with your card issuer (chargebacks usually have a 60–120 day window). Gather everything: the contract, the promises made (especially in writing or email), and evidence the work wasn't done. Then file complaints with the FTC and your state attorney general. You may not recover the money, but the paper trail protects you and the next business they call."
       }
     ],
     "cta": {
@@ -2043,6 +2814,48 @@ export const parsedGuides: ParsedGuide[] = [
       {
         "kind": "p",
         "text": "Your answers will tell you more than any blog post, including this one."
+      },
+      {
+        "kind": "h2",
+        "id": "the-real-cost-of-a-click-vs-the-real-cost-of-content",
+        "text": "The real cost of a click vs. the real cost of content"
+      },
+      {
+        "kind": "p",
+        "text": "Run the math on your own business. Using the industry averages from the table above — about $5.42 per click and $66.69 per lead — say you want ten new customer inquiries a month from search:"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "**With ads:** roughly $670/month in ad spend, every month, forever. Stop paying, the inquiries stop.",
+          "**With SEO:** a one-time investment in pages and profile work, plus upkeep. The same ten inquiries keep arriving after the work is done — and they usually convert better, because people trust organic results more than ads."
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "That's the trade in one sentence: ads buy ten leads this month; SEO builds a machine that produces ten leads a month. The machine takes months to build and costs less per lead once it's running. Your actual numbers will differ — what you pay per click depends on your market, and your customer value depends on your business. But if you're paying $50+ per lead in a market where the search is winnable, the math usually favors building."
+      },
+      {
+        "kind": "h2",
+        "id": "what-changes-over-the-first-two-years",
+        "text": "What changes over the first two years"
+      },
+      {
+        "kind": "p",
+        "text": "Here's what the shift actually looks like for most local businesses I work with:"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "**Months 0–3:** ads carry most of the load. SEO work is invisible — setup and groundwork.",
+          "**Months 3–9:** organic inquiries start appearing. The two channels overlap; you might actually raise the ad budget to catch the extra demand.",
+          "**Months 9–18:** organic is producing a meaningful share of leads. This is when you start trimming ads — gradually, watching the phone.",
+          "**Year 2+:** the mix stabilizes at whatever your market supports. Some businesses keep 30–50% in ads forever, and that's fine — ads by choice is a completely different feeling than ads by necessity."
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "The businesses that get this wrong in either direction: those that cancel ads too early and starve while the machine is still being built, and those that keep paying the ad treadmill for a decade because they never started building."
       }
     ],
     "faqs": [
@@ -2061,6 +2874,26 @@ export const parsedGuides: ParsedGuide[] = [
       {
         "question": "How long until SEO can replace my ads?",
         "answer": "It depends on your market. Many local businesses see meaningful organic growth in 3 to 6 months and can start trimming ads within a year. See [How Long Does SEO Take?](/how-long-does-seo-take)"
+      },
+      {
+        "question": "When should I use Google Ads vs. SEO for my business?",
+        "answer": "Use ads when you need customers now, you're testing a new offer, or your market is too small to bother with organic. Use SEO when you plan to be around for years and people search for what you do. Most businesses should use both at first, with ads carrying the short term while SEO builds the long term."
+      },
+      {
+        "question": "Is SEO or PPC better for local businesses?",
+        "answer": "For local businesses specifically, SEO has the edge over time — \"near me\" searches are exactly what the map pack and local organic results serve, and they don't cost per click. But PPC can win the race for brand-new businesses with no reviews yet, because ads don't need trust to work. Reviews and a profile get you into the organic game; ads work while you get there."
+      },
+      {
+        "question": "Can I pause my ads without losing anything?",
+        "answer": "You'll lose the ad leads — that's the nature of it. What you don't lose is the data: the search terms people used, which ads converted, what they clicked. Pause strategically: keep your best-performing campaigns off during slow periods, and before pausing entirely, make sure your organic channels are producing enough to catch the drop. [How to Get Customers Without Paying for Google Ads](/get-customers-without-google-ads) covers how to know you're ready."
+      },
+      {
+        "question": "How much should I budget for each?",
+        "answer": "A starting point many local businesses use: whatever you can spend on ads without wincing (often $500–$1,500/month), plus a fixed commitment to the SEO work — either a few hours of your own time a week or a provider. The ratio matters less than the direction: over time, the organic share should grow while total spend stays flat or drops. If both budgets keep growing forever, something's wrong."
+      },
+      {
+        "question": "Do ads help my SEO?",
+        "answer": "Indirectly, yes. Ads tell you which searches actually convert — that's free keyword research you can't buy any other way. They also drive traffic and activity that can nudge engagement signals. They're not a ranking shortcut (no, Google doesn't boost you for paying), but the information you get from a few months of ads makes your SEO smarter. That's the best argument for running both: each one makes the other better."
       }
     ],
     "cta": {
